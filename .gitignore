@@ -1,0 +1,33 @@
+public/blog
+# enabled due to github.io version
+#public/assets
+
+# currently untracked directories due to different repos
+config
+src/api
+src/schchngr
+test
+
+logs
+*.log
+npm-debug.log*
+
+pids
+*.pid
+*.seed
+
+lib-cov
+coverage
+.gulp
+.lock-wscript
+
+build/Release
+node_modules
+.npm
+.node_repl_history
+
+jsconfig.json
+config.json
+
+.DS_Store
+.env
