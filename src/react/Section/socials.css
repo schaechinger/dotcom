@@ -1,0 +1,78 @@
+ul.socials {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.socials li {
+  display: inline-block;
+}
+
+ul.socials li a {
+  display: inline-block;
+  margin: 0.8em 0.5em 0 0.5em;
+  position: relative;
+}
+
+ul.socials li a:hover {
+  border-bottom-color: transparent;
+}
+
+ul.socials.invert li a::before {
+  content: '';
+  position: absolute;
+  left: calc(50% - 0.875em);
+  top: calc(50% - 1.025em);
+  border-radius: 50%;
+  background-color: transparent;
+  width: 1.75em;
+  height: 1.75em;
+  transition: background 0.333s ease-in-out;
+}
+
+ul.socials.invert li a:hover::before {
+  background-color: #fafafa;
+}
+
+ul.socials li span {
+  display: none;
+}
+
+ul.socials li a.email:hover,
+a.email:hover {
+  color: #565656;
+}
+
+ul.socials li a.facebook:hover,
+a.facebook:hover {
+  color: #3b5998;
+}
+ul.socials li a.github:hover,
+a.github:hover {
+  color: #4078c0;
+}
+ul.socials li a.instagram:hover,
+a.instagram:hover {
+  color: #fb3958;
+}
+ul.socials li a.linkedin:hover,
+a.linkedin:hover {
+  color: #0976b4;
+}
+ul.socials li a.twitter:hover,
+a.twitter:hover {
+  color: #55acee;
+}
+ul.socials li a.xing:hover,
+a.xing:hover {
+  color: #006567;
+}
+ul.socials li a.pocket:hover,
+a.pocket:hover {
+  color: #ef4056;
+}
+ul.socials li a.google-plus:hover,
+a.google-plus:hover {
+  color: #d34836;
+}

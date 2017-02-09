@@ -1,0 +1,74 @@
+[
+  {
+    "lang": "en",
+    "page": {
+      "menu": {
+        "about": "About",
+        "projects": "Projects",
+        "resume": "Resume",
+        "skills": "Skills",
+        "blog": "Blog"
+      },
+      "home": {
+        "subtitle": "JavaScript Developer",
+        "highlight": {
+          "about": "About",
+          "projects": "Projects",
+          "resume": "Resume",
+          "skills": "Skills",
+          "blog": "Blog"
+        },
+        "chapters": [
+          {
+            "headline": "Welcome to my Website",
+            "text": "You can get all the information about my projects and me. Have a look at the sections of the website and find out more! You can have a closer look at my career and inspect my private open source prejects in detail. Further there is a list of my professional skills. If there should be questions remaining or you want to contact me for another reason, feel free to do so at any time!"
+          },
+          {
+            "headline": "jsguys",
+            "text": "Please also visit the website of the jsguys that were founded by Maik Paulus and me. Browse through our blog and learn more about the latest technologies and other interesting stuff in the JavaScript universe. Get familiar with our projects, inquiries of any kind are always welcome!",
+            "link": "Visit jsguys.net"
+          }
+        ]
+      },
+      "blog": {
+        "teaser": [
+          "It will take a while to implement the blog and make it even more beautiful than the rest of the site and fill it will interesting content.",
+          "The topics will be widespread between travelling the world including my trip to Mexico in 2016, sport events like the Berlin Marathon this fall and fancy coding stuff so stay tuned to be one of the first to share it with the world :)"
+        ]
+      }
+    }
+  },
+  {
+    "lang": "de",
+    "page": {
+      "menu": {
+        "about": "Über mich",
+        "projects": "Projekte",
+        "resume": "Lebenslauf",
+        "skills": "Fähigkeiten",
+        "blog": "Blog"
+      },
+      "home": {
+        "subtitle": "JavaScript Entwickler",
+        "highlight": {
+          "about": "Über mich",
+          "projects": "Projekte",
+          "resume": "Lebenslauf",
+          "skills": "Fähigkeiten",
+          "blog": "Blog"
+        },
+        "chapters": [
+          {
+            "headline": "Willkommen auf meiner Website",
+            "text": "Hier finden Sie zahlreiche Informationen über mich und meine Projekte. Sehen Sie sich in den einzelnen Bereichen um und erfahren Sie mehr! Hier können Sie unter anderem einen Blick auf meine bisherige Laufbahn werfen und meine privaten Open Source Projekte genauer unter die Lupe nehmen. Weiterhin finden Sie eine Auflistung meiner fachlichen Fähigkeiten. Falls noch Fragen offen bleiben oder Sie mich aus anderen Gründen kontaktieren möchten, können Sie dies jederzeit gerne tun."
+          },
+          {
+            "headline": "jsguys",
+            "text": "Besuchen Sie auch die Website der von Maik Paulus und mir gegründeten jsguys. Hier können Sie unseren Blog nach den neuesten Technologien und weiteren spannenden Themen im JavaScript-Universum durchstöbern. Machen Sie sich mit unseren aktuellen Projekten vertraut, Anfragen zu Aufträgen oder anderen Themen sind jederzeit willkommen!",
+            "link": "jsguys.net besuchen"
+          }
+        ]
+      }
+    }
+  }
+]

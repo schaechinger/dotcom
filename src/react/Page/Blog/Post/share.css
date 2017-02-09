@@ -1,0 +1,75 @@
+.post-share span {
+  display: inline-block;
+  margin: 0 1.25rem 0.5rem 0;
+}
+
+.post-share i.social {
+  font-size: 1.5rem;
+  padding-right: 0.5rem;
+  top: 0.35rem;
+}
+
+
+.post-share .facebook,
+.post-share .facebook a {
+  color: #3b5998;
+}
+.post-share .facebook a:hover {
+  border-bottom-color: #3b5998;
+}
+
+.post-share .instagram,
+.post-share .instagram a {
+  color: #fb3958;
+}
+.post-share .instagram a:hover {
+  border-bottom-color: #fb3958;
+}
+
+.post-share .linkedin,
+.post-share .linkedin a {
+  color: #0976b4;
+}
+.post-share .linkedin a:hover {
+  border-bottom-color: #0976b4;
+}
+
+.post-share .twitter,
+.post-share .twitter a {
+  color: #55acee;
+}
+.post-share .twitter a:hover {
+  border-bottom-color: #55acee;
+}
+
+.post-share .xing,
+.post-share .xing a {
+  color: #006567;
+}
+.post-share .xing a:hover {
+  border-bottom-color: #006567;
+}
+
+.post-share .pocket,
+.post-share .pocket a {
+  color: #ef4056;
+}
+.post-share .pocket a:hover {
+  border-bottom-color: #ef4056;
+}
+
+.post-share .google-plus,
+.post-share .google-plus a {
+  color: #d34836;
+}
+.post-share .google-plus a:hover {
+  border-bottom-color: #d34836;
+}
+
+.post-share .mail,
+.post-share .mail a {
+  color: #565656;
+}
+.post-share .mail a:hover {
+  border-bottom-color: #565656;
+}

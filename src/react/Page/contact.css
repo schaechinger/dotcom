@@ -1,0 +1,45 @@
+.page-contact .card {
+  border: 1px solid #f0f0f0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.page-contact .card .image {
+  text-align: center;
+}
+
+
+.page-contact .card .image .m {
+  color: #fff;
+  display: inline-block;
+  font-size: 3rem;
+  margin-top: 3.5rem;
+  position: relative;
+}
+
+.page-contact .card .image .m::before {
+  content: '';
+  position: absolute;
+  left: -0.55em;
+  top: -0.333em;
+  height: 2em;
+  width: 2em;
+  background-color: #67b9c4;
+  border-radius: 10em;
+  z-index: -1;
+}
+
+.page-contact .card .content .name {
+  font-size: 1.5rem;
+}
+
+.page-contact .card .content .social-links a:not(:first-of-type) {
+  margin-left: 2.25rem;
+}
+
+
+@media only screen and (max-width: 40rem) {
+  .page-contact .card .image .m {
+    margin: 2rem 0;
+  }
+}

@@ -1,0 +1,17 @@
+/* TEAM */
+    
+    Chef:    Manuel Schächinger
+    Site:    https://schaechinger.com
+    Twitter: @theschaechinger
+    GitHub:  schaechinger
+    From:    Munich, Bavaria, Germany
+
+
+/* SITE */
+    
+    Last update: 2017/01/31
+    Language:    Deutsch, English
+    Doctype:     HTML5
+    Standards:   ES6, CSS3, HTML5
+    Frameworks:  React, Express
+    IDE:         Visual Studio Code

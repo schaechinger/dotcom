@@ -1,0 +1,19 @@
+.post-date span {
+  display: block;
+  text-align: center;
+}
+
+.post-date .month {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  padding-left: 0.25rem;
+}
+
+.post-date .date {
+  font-size: 1.5rem;
+}
+
+.post-date .year {
+  font-size: 0.75rem;
+}

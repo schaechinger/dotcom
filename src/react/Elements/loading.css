@@ -1,0 +1,124 @@
+.loading {
+  font-size: 0.75rem;
+  margin: 12.5% 0;
+  position: relative;
+}
+
+.loading .dot {
+  height: 1em;
+  width: 1em;
+  border-radius: 50%;
+  position: absolute;
+  top: -1em;
+}
+
+.dot.dot-1 {
+  -webkit-animation: dot-1-animation 2s infinite linear;
+  animation: dot-1-animation 2s infinite linear;
+  background-color: #67b9c4;
+  left: calc(50% - 2.25em);
+}
+
+@-webkit-keyframes dot-1-animation {
+  0% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+  }
+  12.5% {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.5);
+  }
+  25%, 100% {
+      -webkit-transform: scale(1);
+      transform: scale(1)
+  }
+}
+
+@keyframes dot-1-animation {
+  0% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+  }
+  12.5% {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.5);
+  }
+  25%, 100% {
+      -webkit-transform: scale(1);
+      transform: scale(1)
+  }
+}
+
+.dot.dot-2 {
+  -webkit-animation: dot-2-animation 2s infinite linear;
+  animation: dot-2-animation 2s infinite linear;
+  background-color: #5FBBA9;
+  left: calc(50% - 0.5em);
+}
+
+@-webkit-keyframes dot-2-animation {
+  0%, 25% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+  }
+  37.5% {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.5)
+  }
+  50%, 100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+  }
+}
+
+@keyframes dot-2-animation {
+  0%, 25% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+  }
+  37.5% {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.5)
+  }
+  50%, 100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+  }
+}
+
+.dot.dot-3 {
+  -webkit-animation: dot-3-animation 2s infinite linear;
+  animation: dot-3-animation 2s infinite linear;
+  background-color: #57bc90;
+  left: calc(50% + 1.25em);
+}
+
+@-webkit-keyframes dot-3-animation {
+  0%, 50% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+  }
+  62.5% {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.5)
+  }
+  75%, 100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+  }
+}
+
+@keyframes dot-3-animation {
+  0%, 50% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+  }
+  62.5% {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.5)
+  }
+  75%, 100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+  }
+}

@@ -1,0 +1,36 @@
+.cookie-confirm {
+  background-color: #fff;
+  border-top: 1px solid #67b9c4;
+  color: #565656;
+  font-size: 0.875rem;
+  padding: 1rem 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.app .cookie-confirm a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.cookie-confirm p {
+  margin: 0;
+}
+
+.cookie-confirm i.glyphicons {
+  color: #67b9c4;
+  cursor: pointer;
+  float: right;
+}
+
+.cookie-confirm i.glyphicons::before {
+  
+}
+
+@media only screen and (max-width: 40rem) {
+  .cookie-confirm {
+    padding: 0.5rem 0;
+  }
+}

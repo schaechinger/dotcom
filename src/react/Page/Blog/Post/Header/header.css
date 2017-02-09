@@ -1,0 +1,29 @@
+.page-blog-post .post-header.image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 15rem;
+  width: 100%;
+}
+
+.page-blog-post .post-header .header-bg {
+  background-color: rgba(255, 255, 255, 0.65);
+}
+
+.page-blog-post .post-header.image p {
+  display: block;
+  font-size: 0.75rem;
+  margin: 0;
+  padding: 0.25rem 0;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+@media only screen and (max-width: 40rem) {
+  .page-blog-post .post-header.image {
+    top: 3rem;
+    position: relative;
+    padding-top: 8rem;
+    margin-bottom: 3rem;
+  }
+}

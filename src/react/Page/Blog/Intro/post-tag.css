@@ -1,0 +1,13 @@
+.page-blog-list p a.main-tag,
+.page-blog-post p a.main-tag {
+  display: inline-block;
+  color: #57bc90;
+  font-size: 0.875em;
+  text-transform: uppercase;
+  margin-right: 0.5em;
+}
+
+.page-blog-list p a.main-tag:hover,
+.page-blog-post p a.main-tag:hover {
+  border-bottom-color: #57bc90;
+}

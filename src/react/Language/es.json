@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "about": "Sobre Mi",
+    "projects": {
+      "projects": "Projectos",
+      "feader": "feader",
+      "housemaid": "Housemaid"
+    },
+    "resume": "Currículum",
+    "blog": "Blog"
+  },
+  "home": {
+    "developer": "JavaScript Desarrollador"
+  },
+  "about": {
+    "title": "Sobre Mi",
+    "pageTitle": "Hola, soy Manuel."
+  }
+}

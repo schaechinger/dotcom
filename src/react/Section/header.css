@@ -1,0 +1,67 @@
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header {
+  background-color: #424242;
+  background: linear-gradient(141deg, #565656, #424242, #424242);
+  position: relative;
+}
+
+.header .title {
+  display: inline-block;
+  font-size: 1.25rem;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 0;
+}
+
+.header .title a {
+  color: #fff;
+  padding: 0.875rem 0;
+}
+
+.header .title a:hover {
+  border-bottom-color: transparent;
+}
+
+.m {
+  font-family: 'Isidora-Light', 'ClearSans', helvetica, arial, sans-serif;
+  font-weight: 800;
+  color: #67b9c4;
+}
+
+.header .title m {
+  font-size: 1.5rem;
+}
+
+.header ul.socials {
+  font-size: 1.25em;
+}
+.header ul.socials a {
+  color: #fafafa;
+}
+/*
+.header h1::before {
+  background-color: #02c8a7;
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -0.25em;
+  right: -0.25em;
+  transform: skew(-15deg);
+  z-index: -1;
+}
+*/
+
+.app .header .title {
+  font-family: 'ClearSans', helvetica, arial, sans-serif;
+}
+
+.header .title a:hover {
+  text-decoration: none;
+}

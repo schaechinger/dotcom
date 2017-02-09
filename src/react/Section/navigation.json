@@ -1,0 +1,12 @@
+{
+  "/about": "nav.about",
+  "/projects": {
+    "title": "nav.projects.projects",
+    "items": {
+      "/projects/housemaid": "nav.projects.housemaid",
+      "/projects/feader": "nav.projects.feader"
+    }
+  },
+  "/resume": "nav.resume",
+  "/blog": "nav.blog"
+}

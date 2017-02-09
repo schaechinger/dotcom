@@ -1,0 +1,61 @@
+.post-intro p {
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+.post-preview:not(:last-of-type) {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  position: relative;
+}
+
+.post-preview:not(:last-of-type)::before {
+  background: #57bc90; 
+  background: linear-gradient(141deg, #67b9c4, #67b9c4, #57bc90);
+  bottom: 0;
+  content: '';
+  height: 1px;
+  left: calc(50% - 8em);
+  position: absolute;
+  width: 16em;
+}
+
+.post-intro h2 {
+  color: #67b9c4;
+  display: inline-block;
+  font-size: 1.25rem;
+  margin: 0 0 0.25rem;
+  text-transform: none;
+  transition: border 0.25s ease-in-out;
+}
+
+.post-intro.preview p {
+  margin: 0;
+}
+
+.post-intro.preview p + p {
+  margin-top: 0.75em;
+}
+
+.post-intro.preview .meta-bar {
+  color: #565656;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.post-intro.preview i.glyphicons-circle-arrow-right::before {
+  padding: 0.125em 0 0 0.5em;
+}
+
+.post-intro.preview i.glyphicons-clock::before,
+i.glyphicons-warning-sign::before {
+  padding: 0.125em 0.5em 0 0;
+}

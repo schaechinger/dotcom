@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.schaechinger.com</loc>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com"/>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/about</loc>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/about"/>
+    <image:image>
+      <image:loc>https://www.schaechinger.com/img/schaechinger.jpg</image:loc>
+      <image:caption>Manuel Schächinger</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/projects</loc>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/projects"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/projects"/>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/projects/feader</loc>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/projects/feader"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/projects/feader"/>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/projects/housemaid</loc>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/projects/housemaid"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/projects/housemaid"/>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/resume</loc>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/resume"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/resume"/>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/blog</loc>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/blog"/>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/blog/2016-yucatan-mexiko</loc>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/blog/2016-yucatan-mexiko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/blog/2016-yucatan-mexiko"/>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/contact</loc>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/contact"/>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/imprint</loc>
+    <priority>0.50</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/imprint"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/imprint"/>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/privacy</loc>
+    <priority>0.50</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/de</loc>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de"/>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/de/about</loc>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/about"/>
+    <image:image>
+      <image:loc>https://www.schaechinger.com/img/schaechinger.jpg</image:loc>
+      <image:caption>Manuel Schächinger</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/de/projects</loc>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/projects"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/projects"/>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/de/projects/feader</loc>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/projects/feader"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/projects/feader"/>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/de/projects/housemaid</loc>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/projects/housemaid"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/projects/housemaid"/>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/de/resume</loc>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/resume"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/resume"/>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/de/blog</loc>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/blog"/>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/de/blog/2016-yucatan-mexiko</loc>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/blog/2016-yucatan-mexiko"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/blog/2016-yucatan-mexiko"/>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/de/contact</loc>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/contact"/>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/de/imprint</loc>
+    <priority>0.50</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/imprint"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/imprint"/>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/de/privacy</loc>
+    <priority>0.50</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/privacy"/>
+  </url>
+</urlset>

@@ -1,0 +1,393 @@
+{
+  "meta": {
+    "description": "Hi, I'm Manuel. A passionated JavaScript developer from Munich, Germany. Here you can find information about my resume, the latest projects and lots of different stuff im my blog."
+  },
+  "global": {
+    "sendMail": "Drop me a mail",
+    "githubLink": "View GitHub project",
+    "projectLink": "Show project",
+    "moreInformation": "More information",
+    "months": [
+      "Jan", "Feb", "Mar", "Apr",
+      "May", "Jun", "Jul", "Aug",
+      "Sep", "Oct", "Nov", "Dec"
+    ],
+    "dateFormat": "%{month}, %{year}",
+    "dateFormatLong": "%{month} %{date}, %{year}",
+    "dateExtension": "th|st|nd|rd",
+    "loading": "Just a second ..."
+  },
+  "nav": {
+    "about": "About Me",
+    "projects": {
+      "projects": "Projects",
+      "feader": "feader",
+      "housemaid": "Housemaid"
+    },
+    "resume": "Resume",
+    "blog": "Blog"
+  },
+  "home": {
+    "meta": {
+      "title": null,
+      "description": null
+    },
+    "job": "JavaScript Engineer",
+    "welcome": {
+      "title": "Welcome to my website",
+      "text": "You can get all the information about my projects and me. Have a look at the sections of the website and find out more! You can have a closer look at my career and inspect my private open source prejects in detail. Further there is a list of my professional skills. If there should be questions remaining or you want to contact me for another reason, feel free to do so at any time!"
+    },
+    "jsguys": {
+      "text": "Please also visit the website of the <a href=\"http://www.jsguys.net/\" target=\"_blank\">jsguys</a> that were founded by <a href=\"http://www.maikpaulus.com/\" target=\"_blank\">Maik Paulus</a> and me. Browse through our blog and learn more about the latest technologies and other interesting stuff in the JavaScript universe. Get familiar with our projects, inquiries of any kind are always welcome!",
+      "link": "Visit jsguys.net"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "About Me",
+      "description": "On this page it's all about me :)"
+    },
+    "title": "Hi, I'm Manuel.",
+    "text": [
+      "I am ",
+      " years old and live in Munich, Germany. I studied ",
+      "Computer Science",
+      " at the Munich University of Applied Sciences and I am now working as a software developer. Over the last three years I extended my knowledge in the web area – especially ",
+      ". I love programming tools with ",
+      " and the ",
+      "MEAN stack",
+      " because of the slim design and the strength of ",
+      " in both the backend and the frontend.",
+
+      "Besides programming I am mountainbiking and runnng as often as possible! Currently I am training for my first marathon this year. My interests are architecture and I have a faible for clean design and the beauty of simplicity in modern UI.",
+
+      "My passion is travelling around the world to get to know different countries and cultures. There will be a blog on this website soon that covers a mix of travelling, sport events and coding. Stay tuned!"
+    ],
+    "numbers": {
+      "title": "My year in figures",
+      "sections": [
+        "Orders of merit",
+        "Runs",
+        "Cups of coffee"
+      ]
+    },
+    "jsguys": {
+      "text": [
+        "As a co-founder of the ",
+        ", me and ",
+        " have the spirit to change the world of modern web applications. We believe that JavaScript and Node.js are far more than just another new web technologies and that there is much more to discover with them in the future. If you think so too, follow us on ",
+        ", stay up to date by reading our ",
+        "blog",
+        " and watch our latest projects on ",
+        ".",
+        "Do you want to find out more about us and our current work? Visit the jsguys website with more projects and detailed information on "
+      ]
+    }
+  },
+  "blog": {
+    "meta": {
+      "title": "Blog",
+      "description": null
+    },
+    "preview": {
+      "more": "Read more"
+    },
+    "title": "Blog",
+    "wait": {
+      "title": "It's worth the wait!",
+      "text": [
+        "It will take a while until the blog is implemented and looks even cooler than the rest of the website and contains interesting contents.",
+        "The topics are widespread from travelling including my trip to Mexico in 2016, sport events like the Berlin Marathon this fall and fancy code so stay tuned and be one of the first to share it with the world :)"
+      ]
+    },
+    "tags": {
+      "travel": "Travel",
+      "development": "Development",
+      "sport": "Sport",
+      "running": "Running"
+    },
+    "share": {
+      "title": "Share post",
+      "facebook": "just read that interesting post",
+      "linkedin": "Have a look at this post",
+      "mail": "Hey,\nhave a look at the post I just read: %{link}",
+      "twitter": "Here's a very interesting post:",
+      "xing": "Have a look at this post"
+    },
+    "germanOnly": {
+      "title": "German only",
+      "text": [
+        "The blog content is currently available in German only. I appologize for that and will try to translate it to English as well, soon. Thanks for your understanding!"
+      ]
+    },
+    "notFound": {
+      "title": "Post not found",
+      "text": [
+        "There could no post be found at the current url. It does not exist or is currently in review."
+      ],
+      "back": "Back to the overview"
+    }
+  },
+  "projects": {
+    "meta": {
+      "title": "Projects",
+      "description": null
+    },
+    "feader": {
+      "meta": {
+        "title": "feader",
+        "description": null
+      },
+      "text": [
+        "feader was the topic of my bachelor thesis and is uploaded in a light version on GitHub. The project resulted in a feed reader for rss and atom feeds that launched after the end of the Google Reader.",
+        "In contrast to should compeet agains alternatives with privacy protection of german law and a clean and modern design.",
+        "The project was my first one written in PHP and was a good experiment. After short period of time a few students noticed feader and after just one week the service served articles for 100 users.",
+        "The platform based on the Zend Framework used a MySQL database and a crawler written in C++ to update the feeds.",
+        "Between the end of my bachelor thesis and the start of my first job as a fulltime developer the project gained too much time without creating a sort of premium model so I decided to publish the project on GitHub."
+      ]
+    },
+    "housemaid": {
+      "meta": {
+        "title": "Housemaid",
+        "description": null
+      },
+      "text": [
+        "Housemaid is in a very early stage and has just the one feature that it was planned for originally: displaying missed phone calls.",
+        "The reason for the project was an error that did not allow my phone to display missed calls from my router. The software runs on a Raspberry π and crawls for new calls from the router. After an initial request of all missed calls so far it shows every new call with number and date on a small 20x2 LCD display.",
+        "I am currently working on a module system that integrates the missed call module. The system is controlled with a Leap Motion controller that can handle a various number of different modules with a wide area of features.",
+        "One can switch the current module with a single swipe gesture, navigate from page to page within the current module and even execute atomic actions.",
+        "The following modules are in development or planned right now:"
+      ],
+      "features": [
+        "Managing devices in the wifi network",
+        "Guest wifi that grants access through the MAC address and Facebook",
+        "Subway timetables",
+        "Weather forecast",
+        "Heating control",
+        "Contact information from the cloud",
+        "Calendar events for today"
+      ]
+    },
+    "moreInformation": "More information",
+    "githubLink": "Visit GitHub project",
+    "own": {
+      "title": "Own Projects",
+      "housemaid": {
+        "text": [
+          "A system based on",
+          "that controls all the information about the digitatl home."
+        ]
+      },
+      "feader": {
+        "text": [
+          "A web based responsive feed reader that keeps track of data privacy and user experience."
+        ]
+      }
+    },
+    "jsguys": {
+      "title": "jsguys projects",
+      "beerific": {
+        "text": [
+          "Beerific is an app for iOS and Android that was written with",
+          "to find beer gardens in the Munich area and make it easy to meet friends there."
+        ]
+      },
+      "presentation": {
+        "text": [
+          "A multi client online presentation software written in",
+          "and build with the",
+          "MEAN stack",
+          "that enables the audience to be part of an interactive presentation on their own devices."
+        ]
+      }
+    },
+    "more": {
+      "title": "This is not enough for you?",
+      "text": [
+        "More interesting projects are in the making and will be available online soon!",
+        "For the latest updates have a look at my",
+        "account!"
+      ]
+    }
+  },
+  "resume": {
+    "meta": {
+      "title": "Resume",
+      "description": null
+    },
+    "since": "Since",
+    "location": "in %{city}",
+    "experience": {
+      "title": "Experience",
+      "ff": {
+        "job": "Web & Database Developer",
+        "city": "Munich",
+        "text": [
+          "Implementation of highly efficient internal",
+          "tools with",
+          "and",
+          ". Besides that my tasks included code quality checks, automated testing and technical project management.",
+          "The backend was written in",
+          "based on MVC and an Oracle database."
+        ]
+      },
+      "keks": {
+        "job": "Java & iOS Developer (working student)",
+        "city": "Munich",
+        "text": [
+          "Developed a continuity app for iOS (",
+          ") with a counterpart written in",
+          "running on a Raspberry Pi that synchronizes video and audio files in realtime between the camera and sound devices and the iOS app as well as a bunch of meta data.",
+          "In addition to that I enhanced the",
+          "firmware of the sound devices to work with the synchronization and created a",
+          "based configuration interface to configure the sync process."
+        ]
+      },
+      "mec": {
+        "job": "Mobile App Developer (working student)",
+        "city": "Unterschleißheim",
+        "text": [
+          "In this position that started as my practical semester I could gain experience in the development of location based iOS (",
+          ") apps. This resulted in apps to locate ATMs, gas stations and restaurants as well as apps for external customers, i.e. an app to plan trips and calculate the best routes to a destination.",
+          "The backend used a",
+          "interface that was implemented in",
+          "."
+        ]
+      },
+      "parker": {
+        "job": "Rope Course Trainer",
+        "city": "Übersee a. Chiemsee & Munich",
+        "text": [
+          "Apprenticeship as a rope course trainer. Besides customer care team working skills could be extended. Coping with extreme conditions could be practiced during numerous rescue operations."
+        ]
+      }
+    },
+    "education": {
+      "title": "Education",
+      "cs": {
+        "title": "Computer Science (B.Sc.)",
+        "college": "Munich University of Applied Sciences",
+        "text": [
+          "Graduated from university with a bachelor of science in computer science."
+        ]
+      },
+      "thesis": {
+        "title": "Bachelor Thesis",
+        "college": "Munich University of Applied Sciences",
+        "text": [
+          "Topic: Development of the feed reader feader",
+          "For more details please have a look at the project page."
+        ]
+      }
+    },
+    "highlight": {
+      "title": "It's your turn!",
+      "text": [
+        "Do I have your attention and you want to offer a suitable job to me or need further information? The perfect match would be a job with the option to work remote for at few months to travel the world and develop great end efficient code meanwhile. Drop me a mail or get in touch via the listed social networks. Try to convince me!"
+      ]
+    },
+    "skills": {
+      "title": "Skills",
+      "programming": {
+        "title": "Programming Languages"
+      },
+      "libs": {
+        "title": "Frameworks & Libraries"
+      },
+      "db": {
+        "title": "Databases"
+      },
+      "others": {
+        "title": "Others",
+        "pm": "Project management"
+      }
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact"
+    },
+    "subline": "Get in touch with me",
+    "text": [
+      "Currently yuou can only reacht me via the networks of via mail."
+    ]
+  },
+  "imprint": {
+    "meta": {
+      "title": "Imprint"
+    },
+    "owner": {
+      "title": "Owner according to section 5 TMG (German law)",
+      "city": "Munich<br>Germany",
+      "contact": {
+        "title": "Contact",
+        "phone": "Phone number on request"
+      }
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "content": {
+        "title": "Internal content",
+        "text": [
+          "he content of my website has been compiled with meticulous care and to the best of my knowledge. However, I cannot assume any liability for the up-to-dateness, completeness or accuracy of any of the pages. Pursuant to section 7, para. 1 of the TMG (German law), I am liable for my own content on these pages in accordance with general laws. However, pursuant to sections 8 to 10 of the TMG, I am not under obligation to monitor external information provided or stored on my website. Once I have become aware of a specific infringement of the law, I will remove the content in question as soon as possible. Any liability concerning this matter can only be assumed from the point in time at which the infringement becomes known to me."
+        ]
+      },
+      "links": {
+        "title": "External links",
+        "text": [
+          "My website contains links to the websites of third parties (\"external links\"). As the content of these websites is not under my control, I cannot assume any liability for such external content. In all cases, the provider of information of the linked websites is liable for the content and accuracy of the information provided. At the point in time when the links were placed, no infringements of the law were recognisable to me. As soon as an infringement of the law becomes known to me, I will remove the link in question as soon as possible."
+        ]
+      },
+      "copyright": {
+        "title": "Copyright",
+        "text": [
+          "The content and works published on this website are governed by the copyright laws of Germany. Any duplication, processing, distribution or any form of utilisation beyond the scope of copyright law shall require the prior written consent of the author or authors in question."
+        ]
+      }
+    }
+  },
+  "privacy": {
+    "meta": {
+      "title": "Privacy Policy"
+    },
+    "ga": {
+      "title": "Google Analytics",
+      "text": [
+        "This website uses Google Analytics, a web analytics service provided by Google, Inc. (\"Google\"). Google Analytics uses cookies, which are text files placed on your computer, to help the website analyze how users use the site. The information generated by the cookie about your use of the website will be transmitted to and stored by Google on servers in the United States.",
+        "IP anonymisation is activated on this website, your IP address will be truncated within the area of Member States of the European Union or other parties to the Agreement on the European Economic Area. Only in exceptional cases the whole IP address will be first transfered to a Google server in the USA and truncated there. The IP anonymisation is active on this website.",
+        "Google will use this information on behalf of the operator of this website for the purpose of evaluating your use of the website, compiling reports on website activity for website operators and providing them other services relating to website activity and internet usage.",
+        "The IP address, that your Browser conveys within the scope of Google Analytics, will not be associated with any other data held by Google. You may refuse the use of cookies by selecting the appropriate settings on your browser, however please note that if you do this you may not be able to use the full functionality of this website. You can also opt-out from being tracked by Google Analytics with effect for the future by downloading and installing Google Analytics Opt-out Browser Addon for your current web browser:",
+        "As an alternative to the browser Addon or within browsers on mobile devices, you can <a href=\"javascript:gaOptout()\">click this link</a> in order to opt-out from being tracked by Google Analytics within this website in the future (the opt-out applies only for the browser in which you set it and within this domain)."
+      ]
+    }
+  },
+  "notFound": {
+    "meta": {
+      "title": "Page not found"
+    },
+    "subline": "The page could not be found.",
+    "text": [
+      "You definetly did not want to get here. Click the button below to get back to the landing page."
+    ],
+    "home": "Bring me home"
+  },
+  "footer": {
+    "imprint": "Imprint",
+    "privacy": "Privacy Policy",
+    "contact": "Contact",
+    "text": "Hi, I'm Manuel. My website is all about code, web development with JavaScript and Node.js, hobbies like sport or travelling and of cource about me. If you landed here you should rather scroll back to the top or go on to the next page. There is not more to see down here.",
+    "rightsReserved": "All rights reserved.",
+    "mwl": [
+      "Developed with much",
+      "in Munich."
+    ]
+  },
+  "socials": {
+    "mail": "Mail"
+  },
+  "cookie": {
+    "text": [
+      "My website uses cookies to improve the user experience. By using the website you accept the usage."
+    ]
+  }
+}

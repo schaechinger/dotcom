@@ -1,0 +1,40 @@
+.page .page-about .me {
+  background: #d6d6d6 url(/img/schaechinger.jpg) no-repeat 100%;
+  border: 0.25rem solid #d6d6d6;
+  border-radius: 50%;
+  display: inline-block;
+  height: 10em;
+  width: 10em;
+  z-index: 310;
+}
+
+.page-about .highlight-block .stats > .columns:first-of-type {
+  padding-left: 0;
+}
+
+.page-about .highlight-block .stats > .columns:last-of-type {
+  padding-right: 0;
+}
+
+.page-about .highlight-block .stats i.glyphicons::before {
+  font-size: 0.875em;
+  padding: 0 0.75rem 0 0;
+}
+
+.page-about .highlight-block .stats span {
+  color: #034249;
+  display: block;
+  font-size: 2rem;
+  padding: 1rem 0 0;
+}
+
+
+@media only screen and (max-width: 40rem) {
+  .page-about .highlight-block .stats span {
+    font-size: 1rem;
+  }
+
+  .page-about .highlight-block .stats i.glyphicons::before {
+    padding-right: 0.5rem;
+  }
+}

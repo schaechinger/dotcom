@@ -1,0 +1,39 @@
+.page-blog-post .content-image .image,
+.page-blog-post .content-image-full .image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 15rem;
+  width: 100%;
+}
+
+.page-blog-post .content-image p,
+.page-blog-post .content-image-full p {
+  color: #565656;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  text-align: center;
+}
+
+/* O L D */
+
+.page-blog-post .post-content blockquote {
+  border-left: 3px solid #f0f0f0;
+  margin: 1rem 0;
+  padding: 0.25rem 1.75rem 0.25rem 2.5rem;
+  position: relative;
+}
+
+.page-blog-post .post-content blockquote::before {
+  color: #a0a0a0;
+  content: '\201d';
+  font-size: 3rem;
+  position: absolute;
+  top: 0rem;
+  left: 0.5rem;
+}
+
+.page-blog-post .post-content ul {
+  margin: 1rem 0;
+  padding: 0.25rem 1.75rem;
+}

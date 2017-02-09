@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "about": "Pri Mi",
+    "projects": {
+      "projects": "Projektoj",
+      "feader": "feader",
+      "housemaid": "Housemaid"
+    },
+    "resume": "Vivresumo",
+    "blog": "Blogo"
+  },
+  "home": {
+    "developer": "JavaScript Ellaboranto"
+  },
+  "about": {
+    "title": "Pri Mi",
+    "pageTitle": "Saluton, mi estas Manuel."
+  }
+}

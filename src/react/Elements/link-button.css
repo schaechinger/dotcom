@@ -1,0 +1,32 @@
+.app a.link-button {
+  background-color: #fff;
+  border: 1px solid #67b9c4;
+  border-radius: 10rem;
+  color: #67b9c4;
+  display: inline-block;
+  font-size: 0.875rem;
+  margin: 0.25rem 0;
+  padding: 0.33em 0.75em;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  transition: background 0.25s ease-in-out, color 0.25s ease-in-out, border 0.25s ease-in-out;
+}
+
+.app a.link-button:hover {
+  background-color: #67b9c4;
+  color: #fff;
+}
+
+.app a.link-button i.fa {
+  display: inline-block;
+  padding: 0.5em 0;
+}
+
+.app a.link-button i.fa:first-of-type {
+  padding-right: 0.5em;
+}
+
+.app a.link-button i.fa:last-of-type {
+  padding-left: 0.5em;
+  padding-right: 0;
+}

@@ -1,0 +1,2 @@
+// Object.assign polyfill
+if('function'!==typeof Object.assign){Object.assign=function(target,varArgs){'use strict';if(!target){throw new TypeError('Cannot convert undefined or null to object');}var to=Object(target);for(var i=1;i<arguments.length;i++){var nextSource=arguments[i];if(null!==nextSource){for(var n in nextSource){if(Object.prototype.hasOwnProperty.call(nextSource,n)){to[n]=nextSource[n];}}}}return to;};}

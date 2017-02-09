@@ -1,0 +1,103 @@
+.footer .m {
+  font-size: 1.25rem;
+}
+
+.footer .m:hover {
+  border-bottom-color: transparent;
+}
+
+.footer .socials {
+  padding-bottom: 1em;
+  width: 100%;
+}
+
+.app .footer .socials a {
+  color: #d6d6d6;
+  font-size: 1.5rem;
+  padding: 0 0.5em;
+}
+
+.footer .socials li {
+  display: inline-block;
+  width: calc(100% / 6);
+}
+
+.footer .socials li > a {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}
+
+.footer {
+  border-top: 1px dashed #565656;
+  color: #565656;
+  margin-top: 1.5rem;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer p,
+.footer ul {
+  font-size: 0.875rem;
+}
+
+.footer .row {
+  padding: 1.5rem 0;
+  position: relative;
+}
+
+.footer .row > i.glyphicons-scissors-alt {
+  color: #565656;
+  font-size: 1.25rem;
+  left: 0.5rem;
+  position: absolute;
+  top: -0.85em;
+}
+
+.footer p.mwl i.glyphicons {
+  color: #fb3958;
+  display: inline-block;
+}
+
+.footer p.mwl i.glyphicons::before {
+  padding: 0.125em 0.25em 0;
+}
+
+.footer .language-select i.glyphicons::before {
+  padding: 0.125em 0 0 0;
+}
+
+.footer .language-select ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.footer .language-select ul li {
+  display: inline-block;
+  padding-left: 1em;
+}
+
+@media only screen and (max-width: 40rem) {
+  .footer ul.links li {
+    display: inline-block;
+    padding: 0 1.5em 0 0;
+  }
+
+  .footer ul.links li:first-of-type {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (min-width: 40.0625rem) {
+  .footer ul.links {
+    text-align: right;
+  }
+
+  .footer .socials li:first-of-type a {
+    padding-left: 0;
+  }
+}

@@ -1,0 +1,82 @@
+html,
+body,
+.app {
+  font: 1rem 'ClearSans-Bk', helvetica, arial, sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#app-root {
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'ClearSans', helvetica, arial, sans-serif;
+  font-weight: normal;
+}
+
+.app {
+  min-height: 100%;
+  word-wrap: break-word;
+}
+
+.app h2 {
+  color: #6c6c6c;
+  font-size: 1rem;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.app h2:not(.no-uppercase) {
+  text-transform: uppercase;
+}
+
+.app a,
+.app a:active:visited {
+  border-bottom: 2px solid transparent;
+  color: #67b9c4;
+  text-decoration: none;
+  transition: border 0.25s ease-in-out, color 0.25s ease-in-out;
+}
+
+.app a:hover {
+  border-bottom-color: #67b9c4;
+  text-decoration: none;
+}
+
+.app .center {
+  text-align: center;
+}
+
+.app .text-right {
+  text-align: right;
+}
+
+.app .git-new,
+.app .git-changed {
+  border-left: 2px solid;
+}
+
+.app .center {
+  text-align: center;
+}
+
+.app .element-block {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.app .element-block.element-block-bottom-only {
+  padding-top: 0;
+}
+
+main.page > div:first-child:not(.no-page-padding) {
+  padding-top: 4rem;
+}
