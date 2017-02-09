@@ -5,14 +5,11 @@
   },
   "env": {
     "browser": true,
-    // add support for 'require' keyword:
     "node": true
   },
   "plugins": [
-    // Add React/JSX-Semantic rules: http://eslint.org/blog/2015/03/eslint-0.17.0-released/
     "react"
   ],
-  // Add babel parser for ES7 features
   "parser": "babel-eslint",
   "rules": {
     "strict": [
@@ -20,14 +17,12 @@
       "global"
     ],
     "no-underscore-dangle": 0,
-    // vertical alignment in object literals
     "key-spacing": [
       2,
       {
         "align": "value"
       }
     ],
-    // force single quotes
     "quotes": [
       2,
       "single"
