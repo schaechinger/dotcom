@@ -16,7 +16,9 @@ class MapContent extends Component {
     let self = this;
 
     let options = {
-      scrollwheel: false
+      minZoom: 2,
+      scrollwheel: false,
+      streetViewControl: false
     };
 
     MapsLoader.load((google) => {
@@ -26,7 +28,7 @@ class MapContent extends Component {
 
       if (this.props.marker) {
         self.props.locations.forEach((location) => {
-          let color = location.color || 'blue';
+          const color = location.color || 'blue';
           let marker = new google.maps.Marker({
             position: {lat: location.lat, lng: location.lng},
             map: map,

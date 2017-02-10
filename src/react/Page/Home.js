@@ -7,11 +7,51 @@ import Language from '../Language/Language';
 import './home.css';
 
 class HomePage extends Page {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      displayLangSwitch: false
+    };
+  }
+
+  getLangSwitch() {
+    let switcher = null;
+
+    if (!Language.matchesUser()) {
+      const root = `lang.${Language.bestMatch()}.`;
+      const style = {
+        opacity: +this.state.displayLangSwitch
+      };
+
+      switcher = (
+        <div className="row lang-switch" style={style}>
+          <div className="columns small-12">
+            <p>{Language.t(`${root}switch.text.0`)}<Link
+              lang={Language.bestMatch()}>{Language.t(`${root}name`)}</Link>
+              {Language.t(`${root}switch.text.1`)}</p>
+          </div>
+        </div>
+      );
+    }
+
+    return switcher;
+  }
+
+  componentDidMount() {
+    window.setTimeout(() => {
+      this.setState({
+        displayLangSwitch: true
+      });
+    }, 750);
+  }
+
   render() {
     return (
       <div className="page-home no-page-padding">
         <div className="clearfix">
           <div className="hero">
+            {this.getLangSwitch()}
             <h1>Manuel Schächinger</h1>
             <h3>{Language.t('home.job')}</h3>
           </div>

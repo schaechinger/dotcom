@@ -30,8 +30,8 @@ class Footer extends Component {
             <div className="columns small-12 medium-8 large-7 end">
               <i className={globeClass} />
               <ul>
-                <li><Link lang="de">Deutsch</Link></li>
-                <li><Link lang="en">English</Link></li>
+                <li><Link lang="de">{Language.t('lang.de.name')}</Link></li>
+                <li><Link lang="en">{Language.t('lang.en.name')}</Link></li>
               </ul>
             </div>
           </div>

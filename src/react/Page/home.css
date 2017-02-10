@@ -5,6 +5,7 @@
   background-size: cover;
   height: 30rem;
   padding-top: 8rem;
+  position: relative;
   width: 100%;
 }
 
@@ -19,8 +20,32 @@
   font-size: 1.25rem;
 }
 
+.page .page-home .hero .lang-switch {
+  background-color: rgba(103, 185, 196, 0.75);
+  background: linear-gradient(141deg, rgba(103, 185, 196, 0.75), rgba(103, 185, 196, 0.5), rgba(87, 188, 144, 0.5));
+  color: rgba(255, 255, 255, 0.75);
+  left: calc(50% - 500px);
+  padding: 0.5rem 0 0.25rem;
+  position: absolute;
+  top: 3.5rem;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.page .page-home .hero .lang-switch a {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.page .page-home .hero .lang-switch a:hover {
+  color: #034249;
+  border-bottom-color: #034249;
+}
+
+.page .page-home .hero .lang-switch p {
+  margin: 0;
+}
+
 .page .highlight-block {
-  background: #67b9c4; 
   background: linear-gradient(141deg, #67b9c4, #67b9c4, #57bc90);
   color: #fff;
 }
@@ -71,6 +96,12 @@
   color: #034249;
 }
 
+
+@media only screen and (max-width: 62.5rem) {
+  .page .page-home .hero .lang-switch {
+    left: 0;
+  }
+}
 
 @media only screen and (max-width: 40rem) {
   .page .page-home .hero {

@@ -1,6 +1,7 @@
 import Polyglot from 'node-polyglot';
 import de from './de';
 import en from './en';
+import langContent from './langContent';
 //import eo from './eo';
 //import es from './es';
 
@@ -26,6 +27,7 @@ class Language {
     this.polyglot = new Polyglot({
       allowMissing: true
     });
+    this.polyglot.extend(langContent);
 
     this.setLanguage();
   }

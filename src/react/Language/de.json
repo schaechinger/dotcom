@@ -1,6 +1,6 @@
 {
   "meta": {
-    "description": "Hi, ich bin Manuel. Ein leidenschaftlicher JavaScript Entwickler aus München. Hier finden Sie neben meinem bisherigen Werdegang auch Informationen zu meinen Projekten und Auszüge aus meinem Leben im Blog."
+    "description": "Hi, ich bin Manuel. Ein leidenschaftlicher JavaScript Entwickler aus München. Hier findest du neben meinem bisherigen Werdegang auch Informationen zu meinen Projekten und Auszüge aus meinem Leben im Blog."
   },
   "global": {
     "sendMail": "E-Mail senden",
@@ -35,10 +35,10 @@
     "job": "JavaScript Entwickler",
     "welcome": {
       "title": "Willkommen auf meiner Website",
-      "text": "Hier finden Sie zahlreiche Informationen über mich und meine Projekte. Sehen Sie sich in den einzelnen Bereichen um und erfahren Sie mehr! Hier können Sie unter anderem einen Blick auf meine bisherige Laufbahn werfen und meine privaten Open Source Projekte genauer unter die Lupe nehmen. Weiterhin finden Sie eine Auflistung meiner fachlichen Fähigkeiten. Falls noch Fragen offen bleiben oder Sie mich aus anderen Gründen kontaktieren möchten, können Sie dies jederzeit gerne tun."
+      "text": "Hier findest du zahlreiche Informationen über mich und meine Projekte. Sieh dich in den einzelnen Bereichen um und erfahre mehr! Hier kannst du unter anderem einen Blick auf meine bisherige Laufbahn werfen und meine privaten Open Source Projekte genauer unter die Lupe nehmen. Weiterhin findest du eine Auflistung meiner fachlichen Fähigkeiten. Falls noch Fragen offen bleiben oder du mich aus anderen Gründen kontaktieren möchten, kannst du dies jederzeit gerne über die aufgelisteten sozialen Netzwerke oder per E-Mail tun."
     },
     "jsguys": {
-      "text": "Besuchen Sie auch die Website der von <a href=\"http://www.maikpaulus.com\" target=\"_blank\">Maik Paulus</a> und mir gegründeten <a href=\"http://www.jsguys.net\" target=\"_blank\">jsguys</a>. Hier können Sie unseren Blog nach den neuesten Technologien und weiteren spannenden Themen im JavaScript-Universum durchstöbern. Machen Sie sich mit unseren aktuellen Projekten vertraut, Anfragen zu Aufträgen oder anderen Themen sind jederzeit willkommen!",
+      "text": "Besuche auch die Website der von <a href=\"http://www.maikpaulus.com\" target=\"_blank\">Maik Paulus</a> und mir gegründeten <a href=\"http://www.jsguys.net\" target=\"_blank\">jsguys</a>. Hier kannst du unseren Blog nach den neuesten Technologien und weiteren spannenden Themen im JavaScript-Universum durchstöbern. Mach dich mit unseren aktuellen Projekten vertraut, Anfragen zu Aufträgen oder anderen Themen sind jederzeit willkommen!",
       "link": "jsguys.net besuchen"
     }
   },
@@ -61,7 +61,7 @@
 
       "Neben der Programmierung fahre ich Mountainbike und laufe so oft wie möglich! Derzeit trainiere ich für meinen ersten Marathon dieses Jahr. Ich interessiere mich für Architektur und habe ein Faible für Clean Design und die damit verbundene Schönheit der Einfachheit moderner UI.",
 
-      "Meine Leidenschaft ist das Reisen um die Welt, um verschiedene Länder und deren Kulturen kennen zu lernen. Bald wird auf dieser Website auch ein interessanter Blog mit einem bunten Mix aus Reisen, Sportevents und Coding-Themen. Bleiben Sie auf dem Laufenden!"
+      "Meine Leidenschaft ist das Reisen um die Welt, um verschiedene Länder und deren Kulturen kennen zu lernen. Bald wird auf dieser Website auch ein interessanter Blog mit einem bunten Mix aus Reisen, Sportevents und Coding-Themen. Bleib' auf dem Laufenden!"
     ],
     "numbers": {
       "title": "Mein Jahr in Zahlen",
@@ -75,12 +75,12 @@
       "text": [
         "Als Mitgründer des zweiköpfigen Teams ",
         " habe ich zusammen mit ",
-        " die Vision, die Welt moderner Webanwendungen zu verändern. Wir sind davon überzeugt, dass JavaScript und Node.js weit mehr als nur weiterere Webtechnologien sind und dass es in Zukunft noch viel mehr mit ihnen zu entdecken gibt. Wenn auch Sie dieser Meinung sind, folgen Sie uns auf ",
-        ", bleiben Sie mit unserem ",
+        " die Vision, die Welt moderner Webanwendungen zu verändern. Wir sind davon überzeugt, dass JavaScript und Node.js weit mehr als nur weiterere Webtechnologien sind und dass es in Zukunft noch viel mehr mit ihnen zu entdecken gibt. Wenn auch du dieser Meinung bist, folge uns auf ",
+        ", bleibe mit unserem ",
         "Blog",
-        " immer auf dem Laufenden und machen Sie sich mit unseren Projekten auf ",
+        " immer auf dem Laufenden und mach dich mit unseren Projekten auf ",
         " vertraut.",
-        "Sie möchten mehr über uns und unsere Arbeit herausfinden? Dann besuchen Sie unsere Website mit mehr Projekten und detailierten Informationen auf "
+        "Du möchtest mehr über uns und unsere Arbeit herausfinden? Dann besuche unsere Website mit mehr Projekten und detailierten Informationen auf "
       ]
     }
   },
@@ -97,7 +97,7 @@
       "title": "Das Warten lohnt sich!",
       "text": [
         "Es wird noch eine Weile dauern, bis der Blog implementiert und sogar noch stylischer als die restliche Website ist und mit spannenden Inhalten gefüllt wurde.",
-        "Die Themen werden sich in die Kategorien Reisen inklusive meines Trips nach Mexiko 2016, Sport Events wie der Berlin Marathon diesen Herbst und fancy Code aufteilen also freuen Sie sich darauf und teilen Sie es als erster mit der Welt :)"
+        "Die Themen werden sich in die Kategorien Reisen inklusive meines Trips nach Mexiko 2016, Sport Events wie der Berlin Marathon diesen Herbst und fancy Code aufteilen also freu' dich darauf und teile es als erster mit der Welt :)"
       ]
     },
     "tags": {
@@ -117,7 +117,7 @@
     "notFound": {
       "title": "Post nicht gefunden",
       "text": [
-        "Unter der angegebenen URL konnte kein Post gefunden werden. Gehen Sie bitte zurück zur Übersicht und öffnen Sie eine Post aus der Liste."
+        "Unter der angegebenen URL konnte kein Post gefunden werden. Geh bitte zurück zur Übersicht und öffne einen Post aus der Liste."
       ],
       "back": "Zurück zur Übersicht"
     }
@@ -275,9 +275,9 @@
       }
     },
     "highlight": {
-      "title": "Sie sind dran!",
+      "title": "Du bist dran!",
       "text": [
-        "Habe ich Ihr Interesse geweckt und Sie möchten mir eine passende Stelle anbieten oder wünschen weitere Informationen? Perfekt ist eine Position mit der Option ein paar Monate remote zu arbeiten, um so die Welt zu bereisen und währenddessen tollen und effizienten Code zu schreiben. Schreiben Sie mir eine E-Mail oder kontaktieren Sie mich über die aufgelisteten sozialen Netzwerke. Überzeugen Sie mich!"
+        "Habe ich dein Interesse geweckt und du möchtest mir eine passende Stelle anbieten oder wünschst weitere Informationen? Perfekt ist eine Position mit der Option, ein halbes bis ein Jahr remote zu arbeiten, um so die Welt zu bereisen und währenddessen tollen und effizienten Code zu schreiben. Schreib mir eine E-Mail oder kontaktiere mich über die aufgelisteten sozialen Netzwerke. Überzeug' mich!"
       ]
     },
     "skills": {
@@ -301,7 +301,7 @@
     "meta": {
       "title": "Kontakt"
     },
-    "subline": "So erreichen Sie mich",
+    "subline": "So kannst du mich erreichen",
     "text": [
       "Derzeit bin ich nur via E-Mail und soziale Netzwerke erreichbar."
     ]
@@ -335,7 +335,7 @@
       "copyright": {
         "title": "Copyright",
         "text": [
-          "Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Website sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitte ich um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Inhalte umgehend entfernen."
+          "Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Website sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Solltest du trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitte ich um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Inhalte umgehend entfernen."
         ]
       }
     }
@@ -348,10 +348,10 @@
       "title": "Google Analytics",
       "text": [
         "",
-        "Diese Website verwendet Google Analytics. Dies ist ein Dienst zur Analyse von Internetseiten der Google Inc. (\"Google\"). Google Analytics verwendet sogenannte Cookies. Die Cookies sind Dateien. Durch die Speicherung der Cookies auf Ihrem Computer kann Google Ihre Benutzung meiner Website analysieren. Diese Informationen und Ihre anonymisierte IP-Adresse werden an die Google-Server in den USA übermittelt und von diesen gespeichert.",
-        "Google wertet die Informationen Ihrer Nutzung meiner Website aus. Damit werden Berichte zu Ihren Aktivitäten auf meiner Seite erstellt und mir zugänglich gemacht. Dies kann auch der Möglichkeit dienen, weitere mit der Nutzung meiner Website oder der Nutzung des Internets verbundene Dienstleistungen anbieten oder erbringen zu können. Diese Informationen wird Google möglicherweise an Dritte weitergeben, wenn dies von Gesetzes wegen gefordert ist oder für den Fall, dass Dritte von Google beauftragt werden, diese Datenverarbeitung vorzunehmen. Keinesfalls wird Google jedoch Ihre IP-Adresse mit anderen Daten von Google verknüpfen.",
-        "Sie haben die Möglichkeit zu verhindern, dass die genannten Cookies auf Ihrem Computer gespeichert werden. Dazu müssen Sie an Ihrem Internetbrowser eine dementsprechende Einstellung vornehmen. Allerdings besteht dann die Möglichkeit, dass meine Website für Sie nur eingeschränkt nutzbar ist. Sie können die Erfassung, den Versand und die Verarbeitung Ihrer Daten sowie Ihrer IP-Adresse durch Google verhindern. Dazu können Sie ein Plugin für Ihren Internetbrowser herunterladen und installieren. Dieses Plugin ist unter folgendem Link verfügbar:",
-        "Alternativ dazu können Sie <a href=\"javascript:gaOptout()\">diesen Link</a> nutzen, um das Tracking durch Google Analytics zukünftig auf dieser zu deaktivieren (Dies gilt nur für den aktuell von Ihnen genutzten Browser und die derzeitige Domain dieser Website)."
+        "Diese Website verwendet Google Analytics. Dies ist ein Dienst zur Analyse von Internetseiten der Google Inc. (\"Google\"). Google Analytics verwendet sogenannte Cookies. Die Cookies sind Dateien. Durch die Speicherung der Cookies auf deinem Computer kann Google deine Benutzung meiner Website analysieren. Diese Informationen und deine anonymisierte IP-Adresse werden an die Google-Server in den USA übermittelt und von diesen gespeichert.",
+        "Google wertet die Informationen der Nutzung meiner Website aus. Damit werden Berichte zu deinen Aktivitäten auf meiner Seite erstellt und mir zugänglich gemacht. Dies kann auch der Möglichkeit dienen, weitere mit der Nutzung meiner Website oder der Nutzung des Internets verbundene Dienstleistungen anbieten oder erbringen zu können. Diese Informationen wird Google möglicherweise an Dritte weitergeben, wenn dies von Gesetzes wegen gefordert ist oder für den Fall, dass Dritte von Google beauftragt werden, diese Datenverarbeitung vorzunehmen. Keinesfalls wird Google jedoch deine IP-Adresse mit anderen Daten von Google verknüpfen.",
+        "Du hast die Möglichkeit zu verhindern, dass die genannten Cookies auf deinem Computer gespeichert werden. Dazu musst du an deinem Browser eine dementsprechende Einstellung vornehmen. Allerdings besteht dann die Möglichkeit, dass meine Website für dich nur eingeschränkt nutzbar ist. Du kannst die Erfassung, den Versand und die Verarbeitung deiner Daten sowie deine IP-Adresse durch Google verhindern. Dazu kannst du ein Plugin für deinen Browser herunterladen und installieren. Dieses Plugin ist unter folgendem Link verfügbar:",
+        "Alternativ dazu kannst du <a href=\"javascript:gaOptout()\">diesen Link</a> nutzen, um das Tracking durch Google Analytics zukünftig auf dieser zu deaktivieren (Dies gilt nur für den aktuell von dir genutzten Browser und die derzeitige Domain dieser Website)."
       ]
     }
   },
@@ -361,7 +361,7 @@
     },
     "subline": "Die Seite konnte nicht gefunden werden.",
     "text": [
-      "Hier wollten Sie wohl nicht hin. Klicken Sie auf den Button, um zurück zur Startseite zu kommen."
+      "Hier wolltest du wohl nicht hin. Klicke auf den Button, um zurück zur Startseite zu kommen."
     ],
     "home": "Zur Startseite"
   },
@@ -369,7 +369,7 @@
     "imprint": "Impressum",
     "privacy": "Datenschutz",
     "contact": "Kontakt",
-    "text": "Hi, ich bin Manuel. Auf meiner Website dreht sich alles um Code, Webentwicklung mit JavaScript und Node.js, Freizeitthemen wie Sport und Reisen und natürlich auch um mich. Wenn Sie hier gelandet sind, sollten Sie lieber wieder weiter nach oben scrollen oder zur nächsten Seite blättern. Hier geht's nicht weiter.",
+    "text": "Hi, ich bin Manuel. Auf meiner Website dreht sich alles um Code, Webentwicklung mit JavaScript und Node.js, Freizeitthemen wie Sport und Reisen und natürlich auch um mich. Wenn du hier gelandet sind, solltest du lieber wieder weiter nach oben scrollen oder zur nächsten Seite blättern. Hier geht's nicht weiter.",
     "rightsReserved": "Alle Rechte vorbehalten.",
     "mwl": [
       "Mit viel",
@@ -381,7 +381,7 @@
   },
   "cookie": {
     "text": [
-      "Meine Website verwendet Cookies, um die Nutzererfahrung zu verbessern. Durch das Verwenden der Website stimmen Sie der Nutzung zu."
+      "Meine Website verwendet Cookies, um die Nutzungserlebnis zu verbessern. Durch das Verwenden meiner Website stimmst du der Nutzung zu."
     ]
   }
 }

@@ -1,0 +1,22 @@
+{
+  "lang": {
+    "de": {
+      "switch": {
+        "text": [
+          "Website auf ",
+          " anzeigen."
+        ]
+      },
+      "name": "Deutsch"
+    },
+    "en": {
+      "switch": {
+        "text": [
+          "Display website in ",
+          "."
+        ]
+      },
+      "name": "English"
+    }
+  }
+}

@@ -1,6 +1,7 @@
 public/blog
 # disabled until github.io version is ready
-public/assets/js
+public/assets/js/app.min.js
+public/assets/js/vendor.min.js
 
 # currently untracked directories due to different repos
 src/api
