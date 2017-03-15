@@ -9,9 +9,9 @@
 
 /* SITE */
     
-    Last update: 2017/01/31
+    Last update: 2017/03/15
     Language:    Deutsch, English
     Doctype:     HTML5
     Standards:   ES6, CSS3, HTML5
-    Frameworks:  React, Express
+    Frameworks:  React, Express, Prismic.io
     IDE:         Visual Studio Code

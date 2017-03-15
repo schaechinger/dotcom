@@ -3,13 +3,7 @@ import Language from '../Language/Language';
 
 class DateFormatter extends Component {
   getDate() {
-    let date = new Date(this.props.at);
-
-    if (!date) {
-      date = new Date();
-    }
-
-    return date;
+    return new Date(this.props.at) || new Date();
   }
 
   render() {

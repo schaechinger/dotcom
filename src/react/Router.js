@@ -29,7 +29,9 @@ class AppRoutes extends Component {
         <Route path="de">
           {this.getRoutes()}
         </Route>
-        {this.getRoutes()}
+        <Route path="en">
+          {this.getRoutes()}
+        </Route>
         <Route path="*" component={NotFound} status="404" />
       </Route>
     );

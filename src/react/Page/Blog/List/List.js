@@ -3,13 +3,14 @@ import { browserHistory } from 'react-router';
 import Language from '../../../Language/Language';
 import Loading from '../../../Elements/Loading';
 import Intro from '../Intro/Intro'
+import Pagination from '../Pagination';
 import Api from '../../../Service/Api';
 import './list.css';
 
 class BlogList extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       posts: null
     };
@@ -28,7 +29,7 @@ class BlogList extends Component {
       this.state.posts.forEach((post) => {
         previews.push(
           <div key={post.get('uid')} className="columns small-12 post-preview">
-            <Intro {...post.export()} preview />
+            <Intro {...post.export() } preview />
           </div>
         );
       });
@@ -43,16 +44,16 @@ class BlogList extends Component {
     if ('de' !== Language.locale()) {
       germanOnly = (
         <div className="element-block highlight-block">
-        <div className="row">
-          <div className="columns small-12 medium-10 medium-offset-1">
-            <h3>
-              <i className="glyphicons glyphicons-conversation" />&nbsp;
+          <div className="row">
+            <div className="columns small-12 medium-10 medium-offset-1">
+              <h3>
+                <i className="glyphicons glyphicons-conversation" />&nbsp;
               {Language.t('blog.germanOnly.title')}
-            </h3>
+              </h3>
 
-            <p>{Language.t('blog.germanOnly.text.0')}</p>
+              <p>{Language.t('blog.germanOnly.text.0')}</p>
+            </div>
           </div>
-        </div>
         </div>
       );
     }
@@ -67,7 +68,7 @@ class BlogList extends Component {
 
     if (this.state.posts.length) {
       return (
-        <div> 
+        <div>
           {this.getGermanOnlyHint()}
           {this.insertContent()}
           <div className="element-block">
@@ -121,6 +122,14 @@ class BlogList extends Component {
     this.queryPosts();
   }
 
+  getPagination() {
+    if (this.state.pages) {
+      return <Pagination total={this.state.pages} current={this.state.page - 1} />;
+    }
+    
+    return null;
+  }
+
   render() {
     let content = this.getContent();
 
@@ -132,6 +141,11 @@ class BlogList extends Component {
           </div>
         </div>
         {content}
+        <div className="row">
+          <div className="columns small-12">
+            {this.getPagination()}
+          </div>
+        </div>
       </div>
     )
   }

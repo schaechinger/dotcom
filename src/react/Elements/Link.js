@@ -18,9 +18,6 @@ class LanguageLink extends Component {
       if (undefined === lang && 1 < pathname.length && 2 === pathname[1].length) {
         lang = pathname[1];
       }
-      if ('en' === lang) {
-        lang = '';
-      }
 
       if (lang) {
         props.to = '/' + lang + props.to;

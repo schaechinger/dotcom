@@ -1,9 +1,10 @@
 import Polyglot from 'node-polyglot';
+import { browserHistory } from 'react-router';
 import de from './de';
 import en from './en';
-import langContent from './langContent';
 //import eo from './eo';
 //import es from './es';
+import langContent from './langContent';
 
 class Language {
   constructor() {
@@ -53,6 +54,10 @@ class Language {
     return this.locale() === this.bestMatch();
   }
 
+  isKnown() {
+    return !this.unknownLang;
+  }
+
   getAlternates() {
     let self = this;
 
@@ -61,10 +66,7 @@ class Language {
     let { protocol, host } = window.location;
 
     languages.forEach((lang) => {
-      let link = self.getPath();
-      if ('en' !== lang) {
-        link = '/' + lang + link;
-      }
+      let link = '/' + lang + self.getPath();
       alternates.push({
         rel: 'alternate',
         hreflang: lang,
@@ -82,7 +84,7 @@ class Language {
   setLanguage() {
     let { pathname } = window.location;
     pathname = pathname.split('/');
-    let currentLang = 'en';
+    let currentLang = null;
 
     if (1 < pathname.length && 2 === pathname[1].length) {
       currentLang = pathname[1];
@@ -98,9 +100,16 @@ class Language {
     }
 
     if (currentLang !== this.currentLang) {
-      if (!this.phrases[currentLang]) {
+      this.unknownLang = !this.phrases[currentLang];
+
+      if (!currentLang) {
+        currentLang = this.bestMatch();
+        browserHistory.push(`/${currentLang + this.getPath()}`);
+      }
+      else if (this.unknownLang) {
         currentLang = 'en';
       }
+
       this.currentLang = currentLang;
       this.polyglot.locale(this.currentLang);
       this.polyglot.extend(this.phrases[currentLang]);

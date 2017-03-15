@@ -4,7 +4,7 @@
       "switch": {
         "text": [
           "Website auf ",
-          " anzeigen."
+          " anzeigen?"
         ]
       },
       "name": "Deutsch"
@@ -13,7 +13,7 @@
       "switch": {
         "text": [
           "Display website in ",
-          "."
+          "?"
         ]
       },
       "name": "English"
