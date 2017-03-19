@@ -1,0 +1,26 @@
+.page-bing .bing-thumb {
+  margin-bottom: 1rem;
+}
+
+.page-bing .bing-thumb div {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 7rem;
+}
+
+.page-bing .bing-thumb:not(.medium-4) div {
+  height: 20rem;
+  width: 100%;
+  display: block;
+}
+
+.page-bing .bing-thumb span {
+  font-size: 0.875rem;
+  background-color: #fff;
+  float: right;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0 0 0 2rem;
+  padding: 0.25rem 0 0 0.675em;
+}

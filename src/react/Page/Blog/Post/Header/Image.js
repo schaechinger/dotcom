@@ -16,6 +16,7 @@ class ImageHeader extends Component {
             </div>
           </div>
         </div>
+        <img src={this.props.header.src} alt="" style={{display: 'none'}} />
       </div>
     );
   }

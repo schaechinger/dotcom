@@ -93,11 +93,10 @@
       "more": "Read more"
     },
     "title": "Blog",
-    "wait": {
-      "title": "It's worth the wait!",
+    "error": {
+      "title": "Content is king!",
       "text": [
-        "It will take a while until the blog is implemented and looks even cooler than the rest of the website and contains interesting contents.",
-        "The topics are widespread from travelling including my trip to Mexico in 2016, sport events like the Berlin Marathon this fall and fancy code so stay tuned and be one of the first to share it with the world :)"
+        "Unfortunately the posts could not be loaded due to a problem getting the content. Please try it again in a few minutes!"
       ]
     },
     "tags": {

@@ -18,6 +18,8 @@ class Pagination extends Component {
     this.setState({
       current: page
     });
+
+    this.props.callback(page);
   }
 
   wrap(content, key, page = -1) {

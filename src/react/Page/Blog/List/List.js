@@ -12,14 +12,27 @@ class BlogList extends Component {
     super(props);
 
     this.state = {
-      posts: null
+      posts: null,
+      page: this.props.params.page || 1
     };
+
+    this.onPageChange = this.onPageChange.bind(this);
   }
 
   insertContent() {
     // TODO add live blog component
 
     return null;
+  }
+
+  onPageChange(page) {
+    page++;
+    let url = `/${Language.locale()}/blog`;
+    if (1 !== page) {
+      url += `/page/${page}`;
+    }
+    browserHistory.push(url)
+    this.queryPosts(page);
   }
 
   generatePreviews() {
@@ -88,10 +101,9 @@ class BlogList extends Component {
             <div className="columns small-12 medium-10 medium-offset-1">
               <h3>
                 <i className="glyphicons glyphicons-king" />
-                {Language.t('blog.wait.title')}
+                {Language.t('blog.error.title')}
               </h3>
-              <p>{Language.t('blog.wait.text.0')}</p>
-              <p>{Language.t('blog.wait.text.1')}</p>
+              <p>{Language.t('blog.error.text.0')}</p>
             </div>
           </div>
         </div>
@@ -99,10 +111,10 @@ class BlogList extends Component {
     }
   }
 
-  queryPosts() {
+  queryPosts(page = this.state.page) {
     let self = this;
 
-    Api.listPosts(0)
+    Api.listPosts(page)
       .then((posts) => {
         self.setState(posts);
       });
@@ -124,7 +136,13 @@ class BlogList extends Component {
 
   getPagination() {
     if (this.state.pages) {
-      return <Pagination total={this.state.pages} current={this.state.page - 1} />;
+      return (
+        <Pagination
+          total={this.state.pages}
+          current={this.state.page - 1}
+          callback={this.onPageChange}
+        />
+      );
     }
     
     return null;

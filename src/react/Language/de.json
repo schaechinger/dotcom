@@ -93,11 +93,10 @@
       "more": "weiterlesen"
     },
     "title": "Blog",
-    "wait": {
-      "title": "Das Warten lohnt sich!",
+    "error": {
+      "title": "Content ist King!",
       "text": [
-        "Es wird noch eine Weile dauern, bis der Blog implementiert und sogar noch stylischer als die restliche Website ist und mit spannenden Inhalten gefüllt wurde.",
-        "Die Themen werden sich in die Kategorien Reisen inklusive meines Trips nach Mexiko 2016, Sport Events wie der Berlin Marathon diesen Herbst und fancy Code aufteilen also freu' dich darauf und teile es als erster mit der Welt :)"
+        "Leider konnten die Posts nicht geladen werden, da die Inhalte derzeit nicht verfügbar sind. Bitte versuche es in ein paar Minuten noch einmal!"
       ]
     },
     "tags": {

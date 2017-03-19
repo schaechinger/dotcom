@@ -17,6 +17,7 @@ import BlogSwitch from './Page/Blog/Switcher';
 import Contact from './Page/Contact';
 import Imprint from './Page/Imprint';
 import Privacy from './Page/Privacy';
+import Bing from './Page/Bing';
 
 class AppRoutes extends Component {
   constructor(props) {
@@ -59,11 +60,13 @@ class AppRoutes extends Component {
         <Route path="blog" component={Blog}>
           <IndexRoute component={BlogList} />
           <Route path="tag/:tag" component={BlogListTag} />
+          <Route path="page/:page" component={BlogList} />
           <Route path="preview" component={BlogList} />
           <Route path=":uid" component={BlogSwitch} />
         </Route>
         <Route path="imprint" component={Imprint} />
         <Route path="privacy" component={Privacy} />
+        <Route path="bing(/:year/:month)" component={Bing} />
         <Redirect from="cv" to="resume" />
         <Redirect from="skills" to="resume" />
       </Route>

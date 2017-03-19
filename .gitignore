@@ -11,6 +11,7 @@ test
 logs
 *.log
 npm-debug.log*
+letsencrypt.txt
 
 pids
 *.pid
