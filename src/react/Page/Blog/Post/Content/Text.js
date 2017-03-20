@@ -6,6 +6,10 @@ class TextContent extends Component {
     let text = this.props.text;
     
     text = text.replace(/\\n/g, '\n');
+    text = text.replace(
+      /\[(.*?)\]\((.*?)\)/g,
+      '<a href="$2" target="_blank">$1</a>'
+    );
     text = marked(text);
 
     return (
