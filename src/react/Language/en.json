@@ -87,7 +87,7 @@
   "blog": {
     "meta": {
       "title": "Blog",
-      "description": null
+      "description": "My blog is all about code, web development with JavaScript and Node.js and hobbies like sport or travelling."
     },
     "preview": {
       "more": "Read more"
@@ -130,7 +130,7 @@
   "projects": {
     "meta": {
       "title": "Projects",
-      "description": null
+      "description": "A short list of my projects that were created in my spare time."
     },
     "feader": {
       "meta": {
@@ -212,7 +212,7 @@
   "resume": {
     "meta": {
       "title": "Resume",
-      "description": null
+      "description": "Here you can get more information about my career."
     },
     "since": "Since",
     "location": "in %{city}",
@@ -362,11 +362,12 @@
   },
   "notFound": {
     "meta": {
-      "title": "Page not found"
+      "title": "Page not found",
+      "description": ""
     },
-    "subline": "The page could not be found.",
     "text": [
-      "You definetly did not want to get here. Click the button below to get back to the landing page."
+      "This is not the right time to go swimming. ",
+      "You can reach your goal much faster here:"
     ],
     "home": "Bring me home"
   },

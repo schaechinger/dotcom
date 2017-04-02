@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import format from 'date-format';
+
 import Api from '../../../Service/Api';
+import Content from './Content/Content';
+import Intro from '../Intro/Intro';
 import Language from '../../../Language/Language';
 import PostHeader from './Header/Header';
 import Share from './Share';
-import Intro from '../Intro/Intro';
-import Content from './Content/Content';
 
 class BlogPost extends Component {
   constructor(props) {
@@ -17,8 +19,8 @@ class BlogPost extends Component {
     let notice = null;
 
     if ('preview' === this.post.get('status')) {
-      let token = Api.getPreviewToken();
-      let shareLink = `mailto:?subject=Blog Preview&body=https://schaechinger.com/de/blog/preview?token=${token}`;
+      const token = Api.getPreviewToken();
+      const shareLink = `mailto:?subject=Blog Preview&body=https://schaechinger.com/blog/preview?token=${token}`;
 
       notice = (
         <div className="row highlight-block" style={{marginTop: '1em', padding: '1em 0'}}>
@@ -40,7 +42,15 @@ class BlogPost extends Component {
   componentDidMount() {
     window.updateHelmet({
       description: this.post.get('intro'),
-      title: this.post.get('title')
+      title: this.post.get('title'),
+      article: {
+        publisher: 'https://facebook.com/schaechinger',
+        author: 'https://facebook.com/schaechinger',
+        section: this.post.get('tag'),
+        published_time: format(this.post.get('publishDate')),
+        modified_time: format(this.post.get('updateDate'))
+        //tag: []
+      }
     });
   }
 

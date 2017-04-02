@@ -82,7 +82,7 @@ class Language {
   }
 
   setLanguage() {
-    let { pathname } = window.location;
+    let { pathname, search, hash } = window.location;
     pathname = pathname.split('/');
     let currentLang = null;
 
@@ -104,7 +104,7 @@ class Language {
 
       if (!currentLang) {
         currentLang = this.bestMatch();
-        browserHistory.push(`/${currentLang + this.getPath()}`);
+        browserHistory.push('/' + currentLang + this.getPath() + search + hash);
       }
       else if (this.unknownLang) {
         currentLang = 'en';

@@ -1,24 +1,14 @@
-// temp dev server until webpack has been configured
-
 'use strict';
 
-const bodyParser = require('body-parser');
-const express = require('express');
+const http = require('http');
+const app = require('./src/website/app');
 
 const environment = process.env.NODE_ENV || 'development';
-let config = require('./config/' + environment);
-let isProduction = ('production' === environment);
+const config = require('./config/' + environment);
+const port = config.port || 1993;
 
-let app = express();
+const server = http.createServer(app);
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('./public'));
-app.set('port', config.port || 1993);
-
-app.get('*', (req, res) => {
-  res.sendFile(__dirname + '/public/index.html');
-});
-
-app.listen(app.get('port'), () => {
-  console.log('schaechinger.com running on port ' + app.get('port'));
+server.listen(port, () => {
+  console.log('schaechinger.com rocking port ' + port);
 });

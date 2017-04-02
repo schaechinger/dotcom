@@ -7,6 +7,6 @@
       "/projects/feader": "nav.projects.feader"
     }
   },
-  "/resume": "nav.resume",
-  "/blog": "nav.blog"
+  "/blog": "nav.blog",
+  "/resume": "nav.resume"
 }

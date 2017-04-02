@@ -205,13 +205,14 @@ class BlogApi {
         return post;
       })
       .catch((error) => {
+        console.log(error);
         return post;
       });
   }
 
   enablePreview(token) {
-    var date = new Date();
-    date.setTime(date.getTime() + 1800000);
+    const date = new Date();
+    date.setTime(date.getTime() + 30 * 60 * 1000);
     document.cookie = (
       `${PREVIEW_COOKIE}=${token}; expires=${date.toUTCString()}; path=/`
     );
@@ -220,8 +221,8 @@ class BlogApi {
   }
 
   getPreviewToken() {
-    let value = '; ' + document.cookie;
-    let parts = value.split(`; ${PREVIEW_COOKIE}=`);
+    const value = '; ' + document.cookie;
+    const parts = value.split(`; ${PREVIEW_COOKIE}=`);
     if (2 === parts.length) {
       return parts.pop().split(';').shift();
     }

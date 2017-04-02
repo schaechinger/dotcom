@@ -17,6 +17,11 @@
         ]
       },
       "name": "English"
+    },
+    "unknown": {
+      "text": [
+        "The language you entered is not available. Please choose one of the following:"
+      ]
     }
   }
 }

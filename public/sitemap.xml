@@ -6,7 +6,7 @@
     <loc>https://www.schaechinger.com/en</loc>
     <priority>1.00</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com"/en/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/en"/>
   </url>
   <url>
     <loc>https://www.schaechinger.com/en/about</loc>

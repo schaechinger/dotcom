@@ -8,6 +8,12 @@ class Head extends Component {
 
     this.init();
 
+    this.shorthands = {
+      twitter: 'name',
+      og: 'property',
+      article: 'property'
+    };
+
     this.forceState = false;
     this.state = {};
   }
@@ -82,14 +88,36 @@ class Head extends Component {
         content: description
       },
       {
-        name: 'og:title',
+        property: 'og:title',
         content: socialTitle
       },
       {
-        name: 'og:url',
+        property: 'og:url',
         content: protocol + '//' + host + pathname
       }
     );
+
+    for (let shorthand in this.shorthands) {
+      if (this.shorthands.hasOwnProperty(shorthand) && this.state[shorthand]) {
+        const data = this.state[shorthand];
+
+        for (let key in data) {
+          if (data.hasOwnProperty(key)) {
+            let values = data[key];
+            if (!(values instanceof Array)) {
+              values = [values];
+            }
+
+            values.forEach((value) => {
+              meta.push({
+                [this.shorthands[shorthand]]: `${shorthand}:${key}`,
+                content: value
+              });
+            });
+          }
+        }
+      }
+    }
 
     let props = {
       htmlAttributes: {

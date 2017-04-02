@@ -6,7 +6,11 @@ class Post {
       this.data.uid = post.uid;
       this.data.status = !!post.firstPublicationDate ? 'published' : 'preview';
 
-      this.import(post.data);
+      let data = post.data;
+      data['post.publishDate'] = post.firstPublicationDate;
+      data['post.updateDate'] = post.lastPublicationDate;
+
+      this.import(data);
     }
   }
 
@@ -23,16 +27,21 @@ class Post {
   }
 
   import(data) {
+    const keyRegex = /^post\./;
+
     for (let key in data) {
       if (data.hasOwnProperty(key)) {
         let field = data[key];
         
-        if (key.match(/^post\./)) {
+        if (key.match(keyRegex)) {
           key = key.substr(5);
         }
 
         let value = null;
-        if ('SliceZone' !== field.type) {
+        if (field instanceof Date) {
+          value = field;
+        }
+        else if ('SliceZone' !== field.type) {
           value = this.convertField(field);
         }
         else {

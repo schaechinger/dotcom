@@ -1,0 +1,64 @@
+.page-404 {
+  background-color: #a7cdf2;
+  height: 100%;
+  text-align: center;
+}
+
+.page-404 .marker {
+  padding-top: 20%;
+}
+
+.page-404 h1 {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin: 0;
+  padding: 0.25em 0.75em;
+}
+
+.page-404 .triangle {
+  border-left: 1rem solid transparent;
+  border-right: 1rem solid transparent;
+  border-top: 1rem solid #fff;
+  height: 0;
+  margin: -1px 0 0 calc(50% - 1rem);
+  width: 0;
+}
+
+.page-404 .marker i.glyphicons {
+  color: #57bc90;
+  display: block;
+  font-size: 2rem;
+  padding: 0.5rem 0 1rem;
+}
+
+.page-404 i.glyphicons-boat {
+  color: #f0f0f0;
+  display: inline-block;
+  font-size: 2.5rem;
+  left: 3rem;
+  position: absolute;
+  text-align: left;
+  top: 8rem;
+}
+
+.page-404 .lang-button-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page-404 .lang-button-list li {
+  display: inline-block;
+  padding-right: 0.5rem;
+}
+
+@media (orientation: portrait) {
+  .page-404 .marker {
+    padding-top: 40%;
+  }
+
+  .page-404 i.glyphicons-boat {
+    top: 17.5%;
+  }
+}

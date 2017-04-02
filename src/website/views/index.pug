@@ -1,0 +1,60 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='author', content='Manuel Schächinger')
+    // defaults
+    title Manuel Schächinger
+    // twitter card
+    meta(name='twitter:card', content='summary')
+    meta(name='twitter:site', content='@theschaechinger')
+    meta(name='twitter:image', content='https://www.schaechinger.com/img/schaechinger.jpg')
+    // open graph
+    meta(name='og:type', content='website')
+    meta(name='og:url', content='https://www.schaechinger.com')
+    meta(name='og:img', content='https://www.schaechinger.com/img/schaechinger.jpg')
+    meta(name='og:title', content='Manuel Schächinger')
+    // favicon
+    link(rel='shortcut icon', href='/img/favicon.ico')
+    // ios
+    meta(name='apple-mobile-web-app-title', content='Schächinger')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-touch-fullscreen', content='yes')
+    // feeds
+    link(rel='alternate', type='application/rss+xml', title='Manuel Schächinger', href='/blog/feed-rss.xml')
+
+  body
+    #app-root
+      noscript
+        link(rel='stylesheet', href='/assets/css/style-no-js.min.css')
+        .row.app-no-js
+          .columns.small-12
+            h1
+              span.m M/
+              | Schächinger
+
+            .center
+              img.me(src='/img/schaechinger.jpg', alt='Manuel Schächinger')
+            
+            h2 Hi, ich bin Manuel.
+            p
+              | Ich bin ein leidenschaftlicher JavaScript Entwickler aus München.
+              | Auf dieser Website gibt es viel über meine Arbeit und mich zu
+              | erfahren. Damit das möglich ist,
+              em.highlight aktivieren Sie bitte JavaScript
+              | in Ihrem Browser. Nur so kann die Website genutzt werden.
+
+            footer
+              p
+                a(href='https://schchn.gr/x') Xing
+                a(href='https://schchn.gr/in') LinkedIn
+                a(href='https://schchn.gr/gh') GitHub
+                a(href='https://schchn.gr/ig') Instagram
+                a(href='https://schchn.gr/t') Twitter
+              p &copy; 2017 Manuel Schächinger. Alle Rechte vorbehalten.
+    
+    //script.chunkd(src='/assets/js/vendors-' + chunkHashes.vendors + '.min.js', defer)
+    //script.chunkd(src='/assets/js/app-' + chunkHashes.app + '.min.js', defer)
+    script(src='/assets/js/app.min.js', defer)

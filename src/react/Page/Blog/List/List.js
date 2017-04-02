@@ -31,6 +31,7 @@ class BlogList extends Component {
     if (1 !== page) {
       url += `/page/${page}`;
     }
+
     browserHistory.push(url)
     this.queryPosts(page);
   }
@@ -112,20 +113,16 @@ class BlogList extends Component {
   }
 
   queryPosts(page = this.state.page) {
-    let self = this;
-
     Api.listPosts(page)
       .then((posts) => {
-        self.setState(posts);
+        this.setState(posts);
       });
   }
 
   componentDidMount() {
-    let self = this;
-
     if (window.location.search) {
       // TODO check if token exists
-      let token = window.location.search.substr(7);
+      const token = window.location.search.substr(7);
       Api.enablePreview(token);
 
       browserHistory.push('/de/blog');

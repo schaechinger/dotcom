@@ -22,6 +22,10 @@ class LinkButton extends Component {
         {config.text}
       </span>;
 
+    if (!config.link) {
+      config.link = Language.getPath();
+    }
+
     if (config.link.match(/:\/\//)) {
       button = <a href={config.link} target="_blank" className={className}>
         {button}
@@ -34,7 +38,13 @@ class LinkButton extends Component {
       </a>;
     }
     else {
-      button = <Link to={config.link} className={className}>{button}</Link>;
+      button = (
+        <Link to={config.link}
+              lang={config.lang}
+              className={className}>
+              {button}
+        </Link>
+      );
     }
 
     return button;

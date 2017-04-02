@@ -95,6 +95,19 @@
   border-bottom-color: transparent;
   color: #034249;
 }
+/*
+.page-home .overview .columns h3,
+.page-home .overview .columns p {
+  padding-left: 3rem;
+}
+
+.page-home .overview .columns i.glyphicons {
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0.75rem;
+  top: 0.5rem;
+}
+*/
 
 
 @media only screen and (max-width: 62.5rem) {

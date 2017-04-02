@@ -20,6 +20,7 @@ class Switcher extends Component {
         let state = {
           loaded: true
         };
+        console.log(post);
         if (post.success) {
           state.post = post.post;
         }

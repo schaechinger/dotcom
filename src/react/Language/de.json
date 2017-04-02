@@ -87,7 +87,7 @@
   "blog": {
     "meta": {
       "title": "Blog",
-      "description": null
+      "description": "In meinem Blog dreht sich alles um Code, Webentwicklung mit JavaScript und Node.js sowie Freizeitthemen wie Sport und Reisen."
     },
     "preview": {
       "more": "weiterlesen"
@@ -124,7 +124,7 @@
   "projects": {
     "meta": {
       "title": "Projekte",
-      "description": null
+      "description": "Eine kurze Liste meiner bisherigen Projekte, die in meiner Freizeit entstanden sind."
     },
     "feader": {
       "meta": {
@@ -206,7 +206,7 @@
   "resume": {
     "meta": {
       "title": "Lebenslauf",
-      "description": null
+      "description": "Hier erfährst du mehr über meine berufliche Laufbahn."
     },
     "since": "Seit",
     "location": "in %{city}",
@@ -356,11 +356,12 @@
   },
   "notFound": {
     "meta": {
-      "title": "Seite nicht gefunden"
+      "title": "Seite nicht gefunden",
+      "description": ""
     },
-    "subline": "Die Seite konnte nicht gefunden werden.",
     "text": [
-      "Hier wolltest du wohl nicht hin. Klicke auf den Button, um zurück zur Startseite zu kommen."
+      "Heute ist nicht der Tag zum Schwimmen, ",
+      "hier kommst du schneller ans Ziel:"
     ],
     "home": "Zur Startseite"
   },

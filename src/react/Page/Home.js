@@ -56,34 +56,35 @@ class HomePage extends Page {
             <h3>{Language.t('home.job')}</h3>
           </div>
         </div>
-        
-        <div className="element-block highlight-block">
+
+        <div className="element-block highlight-block overview">
           <div className="row">
-            <div className="center">
-              <div className="columns small-3">
-                <Link to="/about">
-                  <i className="glyphicons glyphicons-user" /><br />
-                  <span>{Language.t('nav.about')}</span>
-                </Link>
-              </div>
-              <div className="columns small-3">
-                <Link to="/projects">
-                  <i className="glyphicons glyphicons-lab" /><br />
-                  <span>{Language.t('nav.projects.projects')}</span>
-                </Link>
-              </div>
-              <div className="columns small-3">
-                <Link to="/resume">
-                  <i className="glyphicons glyphicons-education" /><br />
-                  <span>{Language.t('nav.resume')}</span>
-                </Link>
-              </div>
-              <div className="columns small-3">
-                <Link to="/blog">
-                  <i className="glyphicons glyphicons-book" /><br />
-                  <span>{Language.t('nav.blog')}</span>
-                </Link>
-              </div>
+            <div className="columns small-12 medium-4 medium-push-4">
+              <Link to="/blog">
+                <h3>
+                  <i className="glyphicons glyphicons-book" />
+                  {Language.t('nav.blog')}
+                </h3>
+              </Link>
+              <p>{Language.t('blog.meta.description')}</p>
+            </div>
+            <div className="columns small-12 medium-4 medium-pull-4">
+              <Link to="/projects">
+                <h3>
+                  <i className="glyphicons glyphicons-lab" />
+                  {Language.t('nav.projects.projects')}
+                </h3>
+              </Link>
+              <p>{Language.t('projects.meta.description')}</p>
+            </div>
+            <div className="columns small-12 medium-4">
+              <Link to="/resume">
+                <h3>
+                  <i className="glyphicons glyphicons-education" />
+                  {Language.t('nav.resume')}
+                </h3>
+              </Link>
+              <p>{Language.t('resume.meta.description')}</p>
             </div>
           </div>
         </div>
