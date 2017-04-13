@@ -1,4 +1,4 @@
-.app a.link-button {
+.app .link-button {
   background-color: #fff;
   border: 1px solid #67b9c4;
   border-radius: 10rem;
@@ -12,21 +12,21 @@
   transition: background 0.25s ease-in-out, color 0.25s ease-in-out, border 0.25s ease-in-out;
 }
 
-.app a.link-button:hover {
+.app .link-button:hover {
   background-color: #67b9c4;
   color: #fff;
 }
 
-.app a.link-button i.fa {
+.app .link-button i.fa {
   display: inline-block;
   padding: 0.5em 0;
 }
 
-.app a.link-button i.fa:first-of-type {
+.app .link-button i.fa:first-of-type {
   padding-right: 0.5em;
 }
 
-.app a.link-button i.fa:last-of-type {
+.app .link-button i.fa:last-of-type {
   padding-left: 0.5em;
   padding-right: 0;
 }

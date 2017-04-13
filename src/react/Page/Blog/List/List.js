@@ -5,6 +5,7 @@ import Loading from '../../../Elements/Loading';
 import Intro from '../Intro/Intro'
 import Pagination from '../Pagination';
 import Api from '../../../Service/Api';
+import SignupForm from '../Signup/SignupForm';
 import './list.css';
 
 class BlogList extends Component {
@@ -159,6 +160,11 @@ class BlogList extends Component {
         <div className="row">
           <div className="columns small-12">
             {this.getPagination()}
+          </div>
+        </div>
+        <div className="row">
+          <div className="columns small-12 large-8 large-offset-2 end">
+            <SignupForm />
           </div>
         </div>
       </div>

@@ -76,9 +76,34 @@ class Head extends Component {
       content: description
     });
 
+/*
+    // open graph
+    meta(property='og:type', content='website')
+    meta(property='og:url', content='https://www.schaechinger.com')
+    meta(property='og:image', content='https://www.schaechinger.com/img/schaechinger.jpg')
+    meta(property='og:title', content='Manuel Schächinger')
+    */
+
     // twitter card, open graph
     let socialTitle = (titleTemplate ? title + ' – ' : '') + 'Manuel Schächinger';
+    const defaltImage = 'https://www.schaechinger.com/img/schaechinger.jpg';
     meta.push(
+      {
+        name: 'twitter:card',
+        content: 'summary'
+      },
+      {
+        name: 'twitter:site',
+        content: '@theschaechinger'
+      },
+      {
+        name: 'twitter:creator',
+        content: '@theschaechinger'
+      },
+      {
+        name: 'twitter:image',
+        content: defaltImage
+      },
       {
         name: 'twitter:title',
         content: socialTitle
@@ -88,12 +113,24 @@ class Head extends Component {
         content: description
       },
       {
+        property: 'og:type',
+        content: 'website'
+      },
+      {
+        property: 'og:image',
+        content: defaltImage
+      },
+      {
         property: 'og:title',
         content: socialTitle
       },
       {
         property: 'og:url',
         content: protocol + '//' + host + pathname
+      },
+      {
+        name: 'og:description',
+        content: description
       }
     );
 
@@ -108,9 +145,21 @@ class Head extends Component {
               values = [values];
             }
 
+            const shortcutKey = this.shorthands[shorthand],
+                shortcutValue = `${shorthand}:${key}`;
+
+            for (let m in meta) {
+              if (meta.hasOwnProperty(m)) {
+                let metaObject = meta[m];
+                if (metaObject[shortcutKey] && shortcutValue ===  metaObject[shortcutKey]) {
+                  delete meta[m];
+                }
+              }
+            }
+
             values.forEach((value) => {
               meta.push({
-                [this.shorthands[shorthand]]: `${shorthand}:${key}`,
+                [shortcutKey]: shortcutValue,
                 content: value
               });
             });

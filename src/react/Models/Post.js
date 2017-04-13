@@ -27,18 +27,16 @@ class Post {
   }
 
   import(data) {
-    const keyRegex = /^post\./;
-
     for (let key in data) {
       if (data.hasOwnProperty(key)) {
         let field = data[key];
         
-        if (key.match(keyRegex)) {
+        if (key.match(/^post\./)) {
           key = key.substr(5);
         }
 
         let value = null;
-        if (field instanceof Date) {
+        if (!field || field instanceof Date) {
           value = field;
         }
         else if ('SliceZone' !== field.type) {
@@ -84,8 +82,6 @@ class Post {
         field = JSON.parse(field);
       }
       catch (e) {
-        // TODO warning in dev mode
-        console.warn(e);
         field = {};
       }
     }

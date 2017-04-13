@@ -1,0 +1,17 @@
+.signup-form input {
+  border: 1px solid #999; 
+  border-radius: 1em;
+  display: inline-block;
+  margin-right: 1em;
+  padding: 0.25rem 0.75rem;
+  width: auto !important;
+}
+
+.signup-form input:focus {
+  border-color: #000;
+}
+
+.signup-form p {
+  display: inline-block;
+  padding-right: 1em;
+}

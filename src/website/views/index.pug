@@ -7,15 +7,6 @@ html
     meta(name='author', content='Manuel Schächinger')
     // defaults
     title Manuel Schächinger
-    // twitter card
-    meta(name='twitter:card', content='summary')
-    meta(name='twitter:site', content='@theschaechinger')
-    meta(name='twitter:image', content='https://www.schaechinger.com/img/schaechinger.jpg')
-    // open graph
-    meta(name='og:type', content='website')
-    meta(name='og:url', content='https://www.schaechinger.com')
-    meta(name='og:img', content='https://www.schaechinger.com/img/schaechinger.jpg')
-    meta(name='og:title', content='Manuel Schächinger')
     // favicon
     link(rel='shortcut icon', href='/img/favicon.ico')
     // ios
@@ -57,4 +48,6 @@ html
     
     //script.chunkd(src='/assets/js/vendors-' + chunkHashes.vendors + '.min.js', defer)
     //script.chunkd(src='/assets/js/app-' + chunkHashes.app + '.min.js', defer)
+    script(src='https://unpkg.com/react@15.4.2/dist/react.js', defer)
+    script(src='https://unpkg.com/react-dom@15.4.2/dist/react-dom.js', defer)
     script(src='/assets/js/app.min.js', defer)

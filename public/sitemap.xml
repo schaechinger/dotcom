@@ -49,12 +49,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/en/blog"/>
   </url>
   <url>
-    <loc>https://www.schaechinger.com/en/blog/2016-yucatan-mexiko</loc>
-    <priority>1.00</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/blog/2016-yucatan-mexiko"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/en/blog/2016-yucatan-mexiko"/>
-  </url>
-  <url>
     <loc>https://www.schaechinger.com/en/contact</loc>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/contact"/>
@@ -121,8 +115,17 @@
   <url>
     <loc>https://www.schaechinger.com/de/blog/2016-yucatan-mexiko</loc>
     <priority>1.00</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.schaechinger.com/en/blog/2016-yucatan-mexiko"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/blog/2016-yucatan-mexiko"/>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/de/blog/2017-prismic-blog</loc>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/blog/2017-prismic-blog"/>
+  </url>
+  <url>
+    <loc>https://www.schaechinger.com/de/blog/2017-forstenrieder-volkslauf</loc>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schaechinger.com/de/blog/2017-forstenrieder-volkslauf"/>
   </url>
   <url>
     <loc>https://www.schaechinger.com/de/contact</loc>

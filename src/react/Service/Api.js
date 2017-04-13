@@ -2,7 +2,7 @@ import Prismic from 'prismic.io';
 import Post from '../Models/Post';
 
 const ROOT = 'https://schchngr.prismic.io/api';
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 5;
 const PREVIEW_COOKIE = 'io.prismic.preview';
 
 class BlogApi {
@@ -66,6 +66,58 @@ class BlogApi {
       })
       .catch((error) => {
         return posts;
+      });
+  }
+
+
+  getRunningLocations() {
+    return new Promise((resolve, reject) => {
+      resolve();
+    })
+      .then(() => {
+        return {
+          locations: [
+            {
+              lat: 48.076495,
+              lng: 11.472034,
+              text: 'München, Deutschland',
+              color: 'green',
+              link: '/blog/2017-forstenrieder-volkslauf'
+            },
+            {
+              lat: 21.529133,
+              lng: -87.373841,
+              text: 'Isla Holbox, Méxiko',
+              color: 'green',
+              link: '/blog/2016-yucatan-mexiko'
+            },
+            {
+              lat: 53.569879,
+              lng: 9.951251,
+              text: 'Hamburg, Deutschland'
+            },
+            {
+              lat: 53.287982,
+              lng: -6.122732,
+              text: 'Dublin, Ireland'
+            },
+            {
+              lat: 47.754900,
+              lng: 12.465599,
+              text: 'Marquartstein, Deutschland'
+            },
+            {
+              lat: 42.201021,
+              lng: -85.582955,
+              text: 'Portage, MI, USA'
+            },
+            {
+              lat: 49.019168,
+              lng: 12.098173,
+              text: 'Regensburg, Deutschland'
+            }
+          ]
+        }
       });
   }
 
@@ -205,7 +257,6 @@ class BlogApi {
         return post;
       })
       .catch((error) => {
-        console.log(error);
         return post;
       });
   }

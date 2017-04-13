@@ -18,10 +18,10 @@ class Content {
         break;
 
       case 'image':
-      case 'image-full':
         props.image = element.image;
         props.text = element.text;
-        props.full = !!element.full || ('image-full' === element.type);
+        props.full = !!element.full;
+        props.renderType = !!element.renderType;
         content = <ImageContent {...props} />;
         break;
 

@@ -8,7 +8,14 @@ class ImageContent extends Component {
       src = `/img/blog/${this.props.uid}/${src}`;
     }
 
-    let content = <div className="image" style={{backgroundImage: `url(${src})`}} alt={text} />;
+    let content = null;
+
+    if (this.props.renderType) {
+      content = <img src={src} alt={text} />;
+    }
+    else {
+      content = <div className="image" style={{backgroundImage: `url(${src})`}} />;
+    }
 
     if (!this.props.full) {
       content = (

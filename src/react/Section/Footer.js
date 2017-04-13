@@ -18,13 +18,13 @@ class Footer extends Component {
           <i className="glyphicons glyphicons-scissors-alt" />
 
           <div className="social-bar clearfix">
-            <div className="columns small-12 medium-7 medium-offset-3 end hide-for-large-up">
+            <div className="columns small-12 medium-8 medium-offset-2 end hide-for-large-up">
               <Socials />
             </div>
           </div>
 
           <div className="language-select clearfix">
-            <div className="columns medium-3 show-for-medium-up text-right">
+            <div className="columns medium-2 medium-offset-2 show-for-medium-up text-right">
               <Link to="/" className="m">M</Link>
             </div>
             <div className="columns small-12 medium-8 large-7 end">
@@ -37,14 +37,14 @@ class Footer extends Component {
           </div>
         
           <div className="link-section clearfix">
-            <div className="columns small-12 medium-3">
+            <div className="columns small-12 medium-2 medium-offset-2">
               <ul className="links">
                 <li><Link to="/imprint">{Language.t('footer.imprint')}</Link></li>
                 <li><Link to="/privacy">{Language.t('footer.privacy')}</Link></li>
                 <li><Link to="/contact">{Language.t('footer.contact')}</Link></li>
               </ul>
             </div>
-            <div className="columns small-12 medium-8 large-7 end">
+            <div className="columns small-12 medium-6 end">
               <p>{Language.t('footer.text')}</p>
               
               <p>&copy; {new Date().getFullYear()} Manuel Schächinger.&nbsp;

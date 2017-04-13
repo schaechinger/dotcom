@@ -38,6 +38,10 @@ var config = {
     path: path.join(__dirname, 'public', 'assets', 'js'),
     filename: '[name].min.js'
   },
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM'
+  },
   plugins: [
     /*new webpack.optimize.CommonsChunkPlugin({
       name: 'common',
@@ -59,10 +63,10 @@ var config = {
 };
 
 if (-1 !== process.argv.indexOf('-p')) {
-  config.externals = {
+  /*config.externals = {
     react: 'React',
     'react-dom': 'ReactDOM'
-  };
+  };*/
 
   config.plugins = config.plugins || [];
   config.plugins.push(

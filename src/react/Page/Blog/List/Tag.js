@@ -15,15 +15,25 @@ class BlogListTag extends BlogList {
   }
 
   componentDidMount() {
-    let self = this;
-
     super.componentDidMount();
 
-    if ('travel' === self.props.params.tag) {
-      Api.getTravelLocations()
-        .then((locations) => {
-          self.setState(locations);
-        });
+    switch (this.props.params.tag) {
+      case 'travel':
+        Api.getTravelLocations()
+          .then((locations) => {
+            this.setState(locations);
+          });
+          break;
+
+      case 'running':
+        Api.getRunningLocations()
+          .then((locations) => {
+            this.setState(locations);
+          });
+          break;
+
+        default:
+        break;
     }
   }
 
@@ -43,7 +53,7 @@ class BlogListTag extends BlogList {
   insertContent() {
     let content = null;
 
-    // render travel map
+    // render map
     if (this.state.locations.length) {
       const options = {
         locations: this.state.locations,
@@ -53,7 +63,7 @@ class BlogListTag extends BlogList {
       content = <MapContent {...options} />;
     }
 
-    let tagKey = `blog.tags.${this.props.params.tag}`;
+    const tagKey = `blog.tags.${this.props.params.tag}`;
     let tagTranslation = Language.t(tagKey);
     if (tagKey === tagTranslation) {
       tagTranslation = tag;

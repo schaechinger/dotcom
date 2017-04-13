@@ -16,3 +16,7 @@
 .pagination .page.clickable:hover {
   border-bottom-color: #67b9c4;
 }
+
+.pagination i.glyphicons::before {
+  padding: 0.125rem 0 0;
+}

@@ -40,7 +40,7 @@ class BlogPost extends Component {
   }
 
   componentDidMount() {
-    window.updateHelmet({
+    let metadata = {
       description: this.post.get('intro'),
       title: this.post.get('title'),
       article: {
@@ -48,10 +48,24 @@ class BlogPost extends Component {
         author: 'https://facebook.com/schaechinger',
         section: this.post.get('tag'),
         published_time: format(this.post.get('publishDate')),
-        modified_time: format(this.post.get('updateDate'))
-        //tag: []
-      }
-    });
+        modified_time: format(this.post.get('updateDate')),
+        tag: [this.post.get('tag')]
+      },
+      og: {
+        type: 'article'
+      },
+      twitter: {}
+    };
+
+    const postHeader = this.props.post.get('header');
+    if (postHeader && postHeader.src) {
+      let img = window.location.origin + postHeader.src;
+      metadata.article.image = img;
+      metadata.og.image = img;
+      metadata.twitter.image = img;
+    }
+
+    window.updateHelmet(metadata);
   }
 
   render() {
