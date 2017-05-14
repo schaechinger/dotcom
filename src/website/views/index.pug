@@ -1,5 +1,5 @@
 doctype html
-html
+html(prefix='og: http://ogp.me/ns#')
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no')
@@ -15,6 +15,15 @@ html
     meta(name='apple-touch-fullscreen', content='yes')
     // feeds
     link(rel='alternate', type='application/rss+xml', title='Manuel Schächinger', href='/blog/feed-rss.xml')
+    // generated
+    if meta
+      each m in meta
+        if m
+          meta(data-react-helmet='true')&attributes(m)
+    if links
+      each l in links
+        if l
+          link(data-react-helmet='true')&attributes(l)
 
   body
     #app-root
@@ -34,8 +43,8 @@ html
               | Ich bin ein leidenschaftlicher JavaScript Entwickler aus München.
               | Auf dieser Website gibt es viel über meine Arbeit und mich zu
               | erfahren. Damit das möglich ist,
-              em.highlight aktivieren Sie bitte JavaScript
-              | in Ihrem Browser. Nur so kann die Website genutzt werden.
+              em.highlight aktiviere bitte JavaScript&nbsp;
+              | in deinem Browser. Nur so kannst du die Website nutzen.
 
             footer
               p
@@ -46,8 +55,10 @@ html
                 a(href='https://schchn.gr/t') Twitter
               p &copy; 2017 Manuel Schächinger. Alle Rechte vorbehalten.
     
-    //script.chunkd(src='/assets/js/vendors-' + chunkHashes.vendors + '.min.js', defer)
-    //script.chunkd(src='/assets/js/app-' + chunkHashes.app + '.min.js', defer)
+    //-script.chunkd(src='/assets/js/vendors-' + chunkHashes.vendors + '.min.js', defer)
+    //-script.chunkd(src='/assets/js/app-' + chunkHashes.app + '.min.js', defer)
+
+    //- TODO: add dynamic min files in prod environment
     script(src='https://unpkg.com/react@15.4.2/dist/react.js', defer)
     script(src='https://unpkg.com/react-dom@15.4.2/dist/react-dom.js', defer)
     script(src='/assets/js/app.min.js', defer)

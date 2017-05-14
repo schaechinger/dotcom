@@ -33,12 +33,19 @@
       "description": null
     },
     "job": "JavaScript Entwickler",
+    "more": {
+      "blog": "Blog lesen",
+      "projects": "Projekte anzeigen",
+      "resume": "Lebenslauf ansehen",
+      "jsguys": "Zu den jsguys",
+      "verlagsprofis": "Zu den Verlagsprofis"
+    },
     "welcome": {
       "title": "Willkommen auf meiner Website",
       "text": "Hier findest du zahlreiche Informationen über mich und meine Projekte. Sieh dich in den einzelnen Bereichen um und erfahre mehr! Hier kannst du unter anderem einen Blick auf meine bisherige Laufbahn werfen und meine privaten Open Source Projekte genauer unter die Lupe nehmen. Weiterhin findest du eine Auflistung meiner fachlichen Fähigkeiten. Falls noch Fragen offen bleiben oder du mich aus anderen Gründen kontaktieren möchten, kannst du dies jederzeit gerne über die aufgelisteten sozialen Netzwerke oder per E-Mail tun."
     },
     "jsguys": {
-      "text": "Besuche auch die Website der von <a href=\"http://www.maikpaulus.com\" target=\"_blank\">Maik Paulus</a> und mir gegründeten <a href=\"http://www.jsguys.net\" target=\"_blank\">jsguys</a>. Hier kannst du unseren Blog nach den neuesten Technologien und weiteren spannenden Themen im JavaScript-Universum durchstöbern. Mach dich mit unseren aktuellen Projekten vertraut, Anfragen zu Aufträgen oder anderen Themen sind jederzeit willkommen!",
+      "text": "Besuche auch die Website der von Maik Paulus und mir gegründeten jsguys. Hier kannst du unseren Blog nach den neuesten Technologien und weiteren spannenden Themen im JavaScript-Universum durchstöbern. Mach dich mit unseren aktuellen Projekten vertraut, Anfragen zu Aufträgen oder anderen Themen sind jederzeit willkommen!",
       "link": "jsguys.net besuchen"
     }
   },
@@ -113,6 +120,14 @@
       "twitter": "Hier ein interessanter Post:",
       "xing": "Ich kann diesen Post empfehlen"
     },
+    "subscribe": {
+      "headline": "Blog abonnieren",
+      "text": [
+        "Verpasse keinen Post mehr!"
+      ],
+      "button": "Abonnieren",
+      "email": "E-Mail-Adresse"
+    },
     "notFound": {
       "title": "Post nicht gefunden",
       "text": [
@@ -124,7 +139,7 @@
   "projects": {
     "meta": {
       "title": "Projekte",
-      "description": "Eine kurze Liste meiner bisherigen Projekte, die in meiner Freizeit entstanden sind."
+      "description": "Eine kurze Liste meiner bisherigen Projekte und die der jsguys und Verlagsprofis, die in meiner Freizeit entstanden sind."
     },
     "feader": {
       "meta": {
@@ -178,7 +193,6 @@
       }
     },
     "jsguys": {
-      "title": "jsguys Projekte",
       "beerific": {
         "text": [
           "Beerific ist eine mit",
@@ -193,6 +207,11 @@
           "aufbaut. Presentation schafft die Notwendigkeit eines Beamers ab und bringt die Präsentation auf das Smartphone oder den Rechner der Teilnehmer, die dann interaktiv an dieser teilnehmen können."
         ]
       }
+    },
+    "verlagsprofis": {
+      "text": [
+        "Die Verlagsprofis helfen Verlägen dabei, anfallende Schwierigkeiten durch digitale Innovation zu beseitigen. Derzeit arbeiten wir an einem Tool zur einfachen Bewältigung des EVB (elektronisches Bestätigungsverfahren). In Kürze werden weitere Anwendungsbereiche folgen und das Angebot für alle Verläge verfügbar sein."
+      ]
     },
     "more": {
       "title": "Du hast noch nicht genug?",

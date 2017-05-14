@@ -57,34 +57,53 @@ class HomePage extends Page {
           </div>
         </div>
 
-        <div className="element-block highlight-block overview">
+        <div className="element-block highlight-block">
           <div className="row">
-            <div className="columns small-12 medium-4 medium-push-4">
-              <Link to="/blog">
+            <div className="clearfix">
+              <div className="columns small-12 medium-4 medium-push-4">
                 <h3>
                   <i className="glyphicons glyphicons-book" />
                   {Language.t('nav.blog')}
                 </h3>
-              </Link>
-              <p>{Language.t('blog.meta.description')}</p>
-            </div>
-            <div className="columns small-12 medium-4 medium-pull-4">
-              <Link to="/projects">
+                <p>{Language.t('blog.meta.description')}</p>
+                <span className="show-for-small-only">
+                  <LinkButton link="/blog">{Language.t('home.more.blog')}</LinkButton>
+                </span>
+              </div>
+              
+              <div className="columns small-12 medium-4 medium-pull-4">
                 <h3>
                   <i className="glyphicons glyphicons-lab" />
                   {Language.t('nav.projects.projects')}
                 </h3>
-              </Link>
-              <p>{Language.t('projects.meta.description')}</p>
-            </div>
-            <div className="columns small-12 medium-4">
-              <Link to="/resume">
+                <p>{Language.t('projects.meta.description')}</p>
+                <span className="show-for-small-only">
+                  <LinkButton link="/projects">{Language.t('home.more.projects')}</LinkButton>
+                </span>
+              </div>
+
+              <div className="columns small-12 medium-4">
                 <h3>
                   <i className="glyphicons glyphicons-education" />
                   {Language.t('nav.resume')}
                 </h3>
-              </Link>
-              <p>{Language.t('resume.meta.description')}</p>
+                <p>{Language.t('resume.meta.description')}</p>
+                <span className="show-for-small-only">
+                  <LinkButton link="/resume">{Language.t('home.more.resume')}</LinkButton>
+                </span>
+              </div>
+            </div>
+
+            <div className="show-for-medium-up clearfix">
+              <div className="columns medium-4">
+                <LinkButton link="/projects">{Language.t('home.more.projects')}</LinkButton>
+              </div>
+              <div className="columns medium-4">
+                <LinkButton link="/blog">{Language.t('home.more.blog')}</LinkButton>
+              </div>
+              <div className="columns medium-4">
+                <LinkButton link="/resume">{Language.t('home.more.resume')}</LinkButton>
+              </div>
             </div>
           </div>
         </div>
@@ -94,16 +113,29 @@ class HomePage extends Page {
             <h2>{Language.t('home.welcome.title')}</h2>
             
             <p>{Language.t('home.welcome.text')}</p>
+
+            <LinkButton link="/about">{Language.t('nav.about')}</LinkButton>
           </div>
         </div>
 
         <div className="row element-block">
           <div className="columns small-12">
-            <h2>jsguys</h2>
+            <h2>Mehr von mir</h2>
+          </div>
+          <div className="columns small-12 medium-6">
+            <h3>jsguys</h3>
 
-            <p dangerouslySetInnerHTML={{__html: Language.t('home.jsguys.text')}} />
+            <p>{Language.t('home.jsguys.text')}</p>
 
-            <LinkButton link="http://www.jsguys.net">{Language.t('home.jsguys.link')}</LinkButton>
+            <LinkButton link="/projects/jsguys">{Language.t('home.more.jsguys')}</LinkButton>
+          </div>
+
+          <div className="columns small-12 medium-6">
+            <h3>Die Verlagsprofis</h3>
+
+            <p>{Language.t('projects.verlagsprofis.text.0')}</p>
+
+            <LinkButton link="/projects/die-verlagsprofis">{Language.t('home.more.verlagsprofis')}</LinkButton>
           </div>
         </div>
       </div>

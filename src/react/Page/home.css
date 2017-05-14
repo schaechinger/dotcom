@@ -1,7 +1,7 @@
 .page .page-home .hero {
-  background-image: url(/img/hero-1.jpg);
+  background-image: url(/img/hero-2.jpg);
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center 30%;
   background-size: cover;
   height: 30rem;
   padding-top: 8rem;
@@ -11,7 +11,7 @@
 
 .page .page-home .hero h1,
 .page .page-home .hero h3 {
-  color: #fff;
+  color: #565656;
   margin: 0;
   text-align: center;
 }
@@ -118,12 +118,13 @@
 
 @media only screen and (max-width: 40rem) {
   .page .page-home .hero {
-    background-position: right 2rem;
+    background-position: center top;
     height: 25rem;
-    padding-top: 6.5rem;
+    padding-top: 10rem;
   }
 
-  .page .page-home .highlight-block a span {
-    display: none;
+  .page .page-home .hero h1,
+  .page .page-home .hero h3 {
+    color: #fff;
   }
 }

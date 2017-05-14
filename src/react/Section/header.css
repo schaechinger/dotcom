@@ -10,6 +10,11 @@ header {
   position: relative;
 }
 
+.header .m-logo {
+  height: 1rem;
+  width: auto;
+}
+
 .header .title {
   display: inline-block;
   font-size: 1.25rem;

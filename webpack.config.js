@@ -38,35 +38,15 @@ var config = {
     path: path.join(__dirname, 'public', 'assets', 'js'),
     filename: '[name].min.js'
   },
-  externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM'
-  },
   plugins: [
-    /*new webpack.optimize.CommonsChunkPlugin({
-      name: 'common',
-      minChunks: function(module, count) {
-        return !isExternal(module);
-      }
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendors',
-      //chunks: ['common'],
-      // or if you have an key value object for your entries
-      chunks: Object.keys(entry).concat('common'),
-      minChunks: function(module) {
-        return isExternal(module);
-      }
-    })*/
-    //new webpack.optimize.UglifyJsPlugin({sourceMap:0})
   ]
 };
 
 if (-1 !== process.argv.indexOf('-p')) {
-  /*config.externals = {
+  config.externals = {
     react: 'React',
     'react-dom': 'ReactDOM'
-  };*/
+  };
 
   config.plugins = config.plugins || [];
   config.plugins.push(

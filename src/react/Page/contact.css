@@ -8,6 +8,11 @@
   text-align: center;
 }
 
+.page-contact .card img.m-logo {
+  height: 4rem;
+  margin-top: 2.5rem;
+  width: auto;
+}
 
 .page-contact .card .image .m {
   color: #fff;

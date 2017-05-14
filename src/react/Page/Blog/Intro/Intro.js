@@ -27,6 +27,7 @@ class Intro extends Component {
     let tag = this.props.tag || null;
     let intro = this.props.intro;
     intro = intro.replace(/^<p>|<\/p>$/g, '');
+    let dateStyle = {};
 
     if (isPreview) {
       classNames += ' preview';
@@ -37,18 +38,26 @@ class Intro extends Component {
         </Link>
       );
       intro = intro.replace(/[^a-z0-9]+$/i, '');
+
+      if (this.props.header && 'image' === this.props.header.type) {
+        classNames += ' image';
+        dateStyle['backgroundImage'] = `url(${this.props.header.src})`;
+      }
     }
 
     return (
       <div className={classNames}>
         <div className="intro clearfix">
-          <div className="columns medium-2 large-offset large-2 show-for-medium-up">
-            <PostDate date={this.props.date} />
-          </div>
           <div className="columns small-12 show-for-small-only">
             <DateFormatter at={this.props.date} long />
           </div>
-          <div className="columns small-12 medium-8 large-8 end">
+          <div
+            className="columns medium-3 show-for-medium-up date-column"
+            style={dateStyle}
+          >
+            <PostDate date={this.props.date} />
+          </div>
+          <div className="columns small-12 medium-9">
             {title}
             <p>
               <PostTag tag={tag} />

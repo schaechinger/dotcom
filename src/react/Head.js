@@ -41,7 +41,7 @@ class Head extends Component {
       this.forceState = false;
     }
 
-    let { protocol, host, pathname } = window.location;
+    let { origin, pathname } = window.location;
 
     let langRoot = Language.getPath();
     langRoot = langRoot.substr(1);
@@ -71,6 +71,8 @@ class Head extends Component {
     if (`${langRoot}description` === description) {
       description = Language.t('meta.description');
     }
+
+
     meta.push({
       name: 'description',
       content: description
@@ -126,7 +128,7 @@ class Head extends Component {
       },
       {
         property: 'og:url',
-        content: protocol + '//' + host + pathname
+        content: origin + pathname
       },
       {
         name: 'og:description',
@@ -168,11 +170,12 @@ class Head extends Component {
       }
     }
 
+
     let props = {
       htmlAttributes: {
         lang: Language.locale()
       },
-      base: {href: `${protocol}//${host}`},
+      base: {href: origin},
       title: title,
       titleTemplate: titleTemplate,
       link: link,

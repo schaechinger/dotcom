@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NotFound from './Post/NotFound';
 import Post from './Post/Post';
 import Loading from '../../Elements/Loading';
-import Api from '../../Service/Api';
+import Api from '../../../shared/Blog/Service/Api';
 
 class Switcher extends Component {
   constructor(props) {

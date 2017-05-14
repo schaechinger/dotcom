@@ -5,9 +5,8 @@ import Language from '../Language/Language';
 class LanguageLink extends Component {
   processProps() {
     let props = Object.assign({}, this.props);
-    props.to = props.to;
     let lang = props.lang;
-    if (!props.to || !(props.to.match(/:\/\//) || props.to.match(/^mailto:/))) {
+    if (!props.to || !(props.to.match(/^https?:\/\//) || props.to.match(/^mailto:/))) {
       let { pathname } = window.location;
       pathname = pathname.split('/');
 

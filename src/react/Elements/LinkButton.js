@@ -17,6 +17,7 @@ class LinkButton extends Component {
   generateButton(config) {
     let icon = config.icon ? <i className={'glyphicons glyphicons-' + config.icon} /> : null;
     let className = 'link-button ' + (config.primary ? 'primary' : 'secondary');
+    
     let button = <span>
         {icon}
         {config.text}

@@ -5,7 +5,7 @@ import App from './App';
 import Home from './Page/Home';
 import About from './Page/About';
 import NotFound from './Page/NotFound';
-import Projects from './Page/Projects';
+import Projects, { Jsguys } from './Page/Projects';
 import ProjectOverview from './Page/Projects/Overview';
 import ProjectHousemaid from './Page/Projects/Housemaid';
 import ProjectFeader from './Page/Projects/Feader';
@@ -55,6 +55,9 @@ class AppRoutes extends Component {
           <IndexRoute component={ProjectOverview} />
           <Route path="housemaid" component={ProjectHousemaid} />
           <Route path="feader" component={ProjectFeader} />
+          <Route path="jsguys">
+            <IndexRoute component={Jsguys} />
+          </Route>
         </Route>
         <Route path="resume" component={Resume} />
         <Route path="blog" component={Blog}>
@@ -102,10 +105,9 @@ class AppRoutes extends Component {
   updateGa() {
     if (this.liveEnv) {
       const { pathname, hash, search } = window.location;
-      const url = pathname + search + hash;
-      ga('send', 'pageview', {page: url });
+      const page = pathname + search + hash;
+      ga('send', 'pageview', { page });
     }
-
   }
 
   render() {

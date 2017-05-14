@@ -4,7 +4,7 @@ import Language from '../../../Language/Language';
 import Loading from '../../../Elements/Loading';
 import Intro from '../Intro/Intro'
 import Pagination from '../Pagination';
-import Api from '../../../Service/Api';
+import Api from '../../../../shared/Blog/Service/Api';
 import SignupForm from '../Signup/SignupForm';
 import './list.css';
 

@@ -1,0 +1,11 @@
+.page-projects-overview a.github {
+  margin-left: 1rem;
+}
+
+.page-projects-overview a.github:hover {
+  border-bottom-color: transparent;
+}
+
+.page-projects-overview a.github i.social {
+  color: #6c6c6c;
+}

@@ -1,9 +1,9 @@
 import React from 'react';
-import Page from './Page';
-import Language from '../Language/Language';
-import DateFormatter from '../Elements/Date';
-import HighLight from '../Elements/HighLight';
-import LinkButton from '../Elements/LinkButton';
+import Page from '../Page';
+import Language from '../../Language/Language';
+import DateFormatter from '../../Elements/Date';
+import HighLight from '../../Elements/HighLight';
+import LinkButton from '../../Elements/LinkButton';
 import './resume.css';
 
 class ResumePage extends Page {
@@ -214,6 +214,7 @@ class ResumePage extends Page {
                   <li>Gulp</li>
                   <li>Jasmine</li>
                   <li>jQuery</li>
+                  <li>Karma</li>
                   <li>Material UI</li>
                   <li><HighLight>Node.js</HighLight></li>
                   <li><HighLight>React</HighLight></li>

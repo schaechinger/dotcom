@@ -1,6 +1,7 @@
 import React from 'react';
-import Page from './Page';
-import HighLight from '../Elements/HighLight';
+import Page from '../Page';
+import JsguysPage from './Jsguys';
+import HighLight from '../../Elements/HighLight';
 
 class ProjectsPage extends Page {
   render() {
@@ -14,4 +15,7 @@ class ProjectsPage extends Page {
   }
 }
 
+export const Jsguys = JsguysPage;
+
 export default ProjectsPage;
+

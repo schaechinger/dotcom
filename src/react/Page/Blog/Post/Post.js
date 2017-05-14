@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import format from 'date-format';
 
-import Api from '../../../Service/Api';
+import Api from '../../../../shared/Blog/Service/Api';
 import Content from './Content/Content';
 import Intro from '../Intro/Intro';
-import Language from '../../../Language/Language';
 import PostHeader from './Header/Header';
+import SignupForm from '../Signup/SignupForm';
 import Share from './Share';
 
 class BlogPost extends Component {
@@ -90,6 +90,14 @@ class BlogPost extends Component {
       </div>
     );
 
+    const subscriptionForm = (
+      <div className="subscription-element row">
+        <div className="columns small-12">
+          <SignupForm />
+        </div>
+      </div>
+    );
+
     let content = [];
     let body = this.post.get('body');
 
@@ -121,6 +129,9 @@ class BlogPost extends Component {
         </div>
         <div className="element-block">
           {shareElement}
+        </div>
+        <div className="element-block">
+          {subscriptionForm}
         </div>
       </div>
     );

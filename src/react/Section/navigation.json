@@ -3,8 +3,8 @@
   "/projects": {
     "title": "nav.projects.projects",
     "items": {
-      "/projects/housemaid": "nav.projects.housemaid",
-      "/projects/feader": "nav.projects.feader"
+      "/projects/jsguys": "jsguys",
+      "/projects/die-verlagsprofis": "Die Verlagsprofis"
     }
   },
   "/blog": "nav.blog",

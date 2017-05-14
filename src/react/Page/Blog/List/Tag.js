@@ -1,7 +1,7 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
 import BlogList from './List';
-import Api from '../../../Service/Api';
+import Api from '../../../../shared/Blog/Service/Api';
 import Language from '../../../Language/Language';
 import MapContent from '../Post/Content/Map';
 
@@ -10,31 +10,40 @@ class BlogListTag extends BlogList {
     super(props);
     
     this.state.locations = [];
+    this.state.tag = null;
 
     this.onClickTag = this.onClickTag.bind(this);
   }
 
-  componentDidMount() {
-    super.componentDidMount();
+  componentWillUpdate(props, state) {
+    const tag = props.params.tag;
 
-    switch (this.props.params.tag) {
+    if (tag === this.state.tag) {
+      return;
+    }
+
+    let promise = null;
+
+     switch (tag) {
       case 'travel':
-        Api.getTravelLocations()
-          .then((locations) => {
-            this.setState(locations);
-          });
-          break;
+        promise = Api.getTravelLocations();
+        break;
 
       case 'running':
-        Api.getRunningLocations()
-          .then((locations) => {
-            this.setState(locations);
-          });
-          break;
+        promise = Api.getRunningLocations();
+        break;
 
-        default:
+      default:
+        promise = Promise.resolve({
+          location: []
+        });
         break;
     }
+
+    promise.then((data) => {
+      data.tag = tag;
+      this.setState(data);
+    });
   }
 
   queryPosts() {

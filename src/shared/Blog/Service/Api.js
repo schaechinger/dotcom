@@ -1,7 +1,7 @@
-import Prismic from 'prismic.io';
-import Post from '../Models/Post';
+const Prismic = require('prismic.io');
+const Post = require('../Models/Post');
 
-const ROOT = 'https://schchngr.prismic.io/api';
+const ROOT = 'https://schchngr.cdn.prismic.io/api';
 const PAGE_SIZE = 5;
 const PREVIEW_COOKIE = 'io.prismic.preview';
 
@@ -11,7 +11,7 @@ class BlogApi {
   }
 
   listPostsByTag(page = 1, tag) {
-    let options = {
+    const options = {
       page: page,
       pageSize: PAGE_SIZE,
       orderings: '[my.post.date desc]'
@@ -23,10 +23,10 @@ class BlogApi {
     );
   }
 
-  listPosts(page = 1) {
-    let options = {
+  listPosts(page = 1, pageSize = PAGE_SIZE) {
+    const options = {
       page: page,
-      pageSize: PAGE_SIZE,
+      pageSize: pageSize,
       orderings: '[my.post.date desc]'
     };
 
@@ -92,6 +92,13 @@ class BlogApi {
               link: '/blog/2016-yucatan-mexiko'
             },
             {
+              lat: 58.970533,
+              lng: 5.730976,
+              text: 'Stavanger, Norge',
+              color: 'green',
+              link: '/blog/2017-worldrun-stavanger'
+            },
+            {
               lat: 53.569879,
               lng: 9.951251,
               text: 'Hamburg, Deutschland'
@@ -139,7 +146,14 @@ class BlogApi {
               lng: -88.179195,
               text: 'Yucatán, Méxiko',
               color: 'green',
-              link: '/de/blog/2016-yucatan-mexiko'
+              link: '/blog/2016-yucatan-mexiko'
+            },
+            {
+              lat: 58.970533,
+              lng: 5.730976,
+              text: 'Stavanger, Norge',
+              color: 'green',
+              link: '/blog/2017-worldrun-stavanger'
             },
             {
               lat: 41.862547,
@@ -286,9 +300,4 @@ class BlogApi {
   }
 }
 
-let api = new BlogApi();
-
-// TODO for testing only
-window.blogApi = api;
-
-export default api;
+exports = module.exports = new BlogApi();

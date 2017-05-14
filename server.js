@@ -3,9 +3,26 @@
 const http = require('http');
 const app = require('./src/website/app');
 
-const environment = process.env.NODE_ENV || 'development';
-const config = require('./config/' + environment);
-const port = config.port || 1993;
+const config = require('./config/');
+const port = config.port;
+
+
+
+
+/* TODO:
+ *
+ * refactor meta generation with objects
+ * add featured img <link rel="image_src" href="">
+ * make use of meta generation in frontend
+ * generated meta data in react and node should fit
+ * generate feeds
+ * reset function for cached data and source updates
+ * automated source deploy
+ * refactor app.js
+ */
+
+
+
 
 const server = http.createServer(app);
 

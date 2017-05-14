@@ -30,3 +30,14 @@
   padding-left: 0.5em;
   padding-right: 0;
 }
+
+.app .highlight-block .link-button {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.app .highlight-block .link-button:hover {
+  background-color: #fff;
+  color: #67b9c4;
+}

@@ -3,7 +3,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 15rem;
+  height: 20rem;
   width: 100%;
 }
 
@@ -13,6 +13,13 @@
   font-size: 0.75rem;
   margin-top: 0.25rem;
   text-align: center;
+}
+
+@media only screen and (max-width: 40rem) {
+  .page-blog-post .content-image .image,
+  .page-blog-post .content-image-full .image {
+    height: 12rem;
+  }
 }
 
 /* O L D */

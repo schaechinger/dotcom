@@ -33,12 +33,19 @@
       "description": null
     },
     "job": "JavaScript Engineer",
+    "more": {
+      "blog": "Read blog",
+      "projects": "Browse projects",
+      "resume": "Display resume",
+      "jsguys": "Visit jsguys",
+      "verlagsprofis": "Visit Die Verlagsprofis"
+    },
     "welcome": {
       "title": "Welcome to my website",
       "text": "You can get all the information about my projects and me. Have a look at the sections of the website and find out more! You can have a closer look at my career and inspect my private open source prejects in detail. Further there is a list of my professional skills. If there should be questions remaining or you want to contact me for another reason, feel free to do so at any time!"
     },
     "jsguys": {
-      "text": "Please also visit the website of the <a href=\"http://www.jsguys.net/\" target=\"_blank\">jsguys</a> that were founded by <a href=\"http://www.maikpaulus.com/\" target=\"_blank\">Maik Paulus</a> and me. Browse through our blog and learn more about the latest technologies and other interesting stuff in the JavaScript universe. Get familiar with our projects, inquiries of any kind are always welcome!",
+      "text": "Please also visit the website of the jsguys that were founded by Maik Paulus and me. Browse through our blog and learn more about the latest technologies and other interesting stuff in the JavaScript universe. Get familiar with our projects, inquiries of any kind are always welcome!",
       "link": "Visit jsguys.net"
     }
   },
@@ -112,6 +119,14 @@
       "mail": "Hey,\nhave a look at the post I just read: %{link}",
       "twitter": "Here's a very interesting post:",
       "xing": "Have a look at this post"
+    },
+    "subscribe": {
+      "headline": "Subscribe to the blog",
+      "text": [
+        "Don't miss another post!"
+      ],
+      "button": "Subscribe",
+      "email": "Mail address"
     },
     "germanOnly": {
       "title": "German only",
@@ -199,6 +214,11 @@
           "that enables the audience to be part of an interactive presentation on their own devices."
         ]
       }
+    },
+    "verlagsprofis": {
+      "text": [
+        "Die Verlagsprofis are there to help publishers to handle their difficulties with digital innovation. Currently we are working on a tool to manage the EBV process in an easy way. There will be more application fields soon and the tools will be available for all pulishers."
+      ]
     },
     "more": {
       "title": "This is not enough for you?",
