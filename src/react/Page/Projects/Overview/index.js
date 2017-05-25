@@ -60,7 +60,9 @@ export default () => (
 
         <p>{Language.t('projects.jsguys.text.0')}</p>
 
-        <LinkButton link="/projects/jsguys">{Language.t('projects.jsguys.link')}</LinkButton>
+        <LinkButton link="http://www.jsguys.net">
+          {Language.t('projects.jsguys.link')}
+        </LinkButton>
       </div>
 
       <div className="columns small-12 medium-6 project-summary">
@@ -106,7 +108,7 @@ export default () => (
       
         <div className="project-summary">
           <p>{Language.t('projects.verlagsprofis.text.0')}</p>
-          <LinkButton link="/projects/die-verlagsprofis">
+          <LinkButton link="http://www.die-verlagsprofis.de">
             {Language.t('projects.verlagsprofis.link')}
           </LinkButton>
         </div>

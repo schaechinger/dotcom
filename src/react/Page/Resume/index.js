@@ -20,11 +20,12 @@ class ResumePage extends Page {
               <h2>{Language.t('resume.experience.title')}</h2>
             </div>
 
-            <div className="resume-element">
+            <div className="resume-element clearfix">
               <div className="columns small-12 medium-9">
                 <h3>
+                  Fonds Finanz Maklerservice GmbH
                   <a href="https://fondsfinanz.de" target="_blank">
-                    Fonds Finanz Maklerservice GmbH
+                    <i className="glyphicons glyphicons-new-window-alt" />
                   </a>
                 </h3>
                 <h4>{Language.t('resume.experience.ff.job')}&nbsp;|&nbsp;
@@ -46,11 +47,12 @@ class ResumePage extends Page {
               </div>
             </div>
 
-            <div className="resume-element">
+            <div className="resume-element clearfix">
               <div className="columns small-12 medium-9">
                 <h3>
+                  Keksfabrik Produktion GbR
                   <a href="http://keksfabrik.tv" target="_blank">
-                    Keksfabrik Produktion GbR
+                    <i className="glyphicons glyphicons-new-window-alt" />
                   </a>
                 </h3>
                 <h4>{Language.t('resume.experience.keks.job')}&nbsp;|&nbsp;
@@ -72,11 +74,12 @@ class ResumePage extends Page {
               </div>
             </div>
 
-            <div className="resume-element">
+            <div className="resume-element clearfix">
               <div className="columns small-12 medium-9">
                 <h3>
+                  Mecomo Mobile Apps &amp; Content GmbH
                   <a href="http://mecomo.com" target="_blank">
-                    Mecomo Mobile Apps & Content GmbH
+                    <i className="glyphicons glyphicons-new-window-alt" />
                   </a>
                 </h3>
                 <h4>{Language.t('resume.experience.mec.job')}&nbsp;|&nbsp;
@@ -97,11 +100,12 @@ class ResumePage extends Page {
               </div>
             </div>
 
-            <div className="resume-element">
+            <div className="resume-element clearfix">
               <div className="columns small-12 medium-9">
                 <h3>
+                  Parker Outdoor GmbH
                   <a href="http://parkeroutdoor.com" target="_blank">
-                    Parker Outdoor GmbH
+                    <i className="glyphicons glyphicons-new-window-alt" />
                   </a>
                 </h3>
                 <h4>{Language.t('resume.experience.parker.job')}&nbsp;|&nbsp;
@@ -123,11 +127,12 @@ class ResumePage extends Page {
               <h2>{Language.t('resume.education.title')}</h2>
             </div>
 
-            <div className="resume-element">
+            <div className="resume-element clearfix">
               <div className="columns small-12 medium-9">
                 <h3>
+                  {Language.t('resume.education.cs.college')}  
                   <a href="http://cs.hm.edu" target="_blank">
-                    {Language.t('resume.education.cs.college')}  
+                    <i className="glyphicons glyphicons-new-window-alt" />
                   </a>
                 </h3>
                 <h4>{Language.t('resume.education.cs.title')}&nbsp;|&nbsp;
@@ -140,11 +145,12 @@ class ResumePage extends Page {
               </div>
             </div>
 
-            <div className="resume-element">
+            <div className="resume-element clearfix">
               <div className="columns small-12 medium-9">
                 <h3>
+                  {Language.t('resume.education.thesis.college')}  
                   <a href="http://cs.hm.edu" target="_blank">
-                    {Language.t('resume.education.thesis.college')}  
+                    <i className="glyphicons glyphicons-new-window-alt" />
                   </a>
                 </h3>
                 <h4>{Language.t('resume.education.thesis.title')}&nbsp;|&nbsp;

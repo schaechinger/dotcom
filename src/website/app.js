@@ -11,12 +11,15 @@ const Rss = require('./Feed/Rss');
 let app = express();
 
 const blogCache = Cache.getCache('blog');
+const assetsCache = Cache.getCache('assets');
 const rssFeed = new Rss();
 
 app.use(express.static(path.resolve(__dirname, '../../public')));
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
+
+// GET
 
 app.get('/blog/feed-rss.xml', (req, res) => {
   res.redirect('/de/blog/feed-rss');
@@ -41,39 +44,28 @@ app.get('/:lang([a-z]{2})?/blog/:slug', (req, res) => {
         options.links = blogCache.buildLink(post);
       }
 
-      res.render('index', options);
-
-      /*loadAppChunks((chunkHashes) => {
-        res.render('index', options);
-      });*/
+      render(res, options);
     });
 });
 
 app.get('*', (req, res) => {
-  // TODO: enable caching
-
-  res.render('index');
-  
-  /*loadAppChunks((chunkHashes) => {
-    res.render('index', { chunkHashes });
-  });*/
+  render(res);
 });
 
-const loadAppChunks = (callback) => {
-  const dir = path.resolve(__dirname, '../../public/assets/js');
-
-  fs.readdir(dir, (err, files) => {
-    let hashes = {};
-    files.forEach(file => {
-      let parts = file.match(/^([a-z]+)-([0-9a-f]+)/i);
-      if (parts && 3 === parts.length) {
-        hashes[parts[1]] = parts[2];
+const render = (res, options = {}) => {
+  assetsCache.get('app')
+    .then((hash) => {
+      if ('app' !== hash) {
+        options.chunkHashes = {
+          app: hash
+        };
       }
-    });
 
-    callback(hashes);
-  });
-}
+      res.render('index', options);
+    });
+};
+
+// POST
 
 app.use(bodyParser.json());
 app.post('/update/:type', (req, res) => {

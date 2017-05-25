@@ -1,12 +1,6 @@
 {
   "/about": "nav.about",
-  "/projects": {
-    "title": "nav.projects.projects",
-    "items": {
-      "/projects/jsguys": "jsguys",
-      "/projects/die-verlagsprofis": "Die Verlagsprofis"
-    }
-  },
+  "/projects": "nav.projects.projects",
   "/blog": "nav.blog",
   "/resume": "nav.resume"
 }

@@ -34,6 +34,7 @@
     },
     "job": "JavaScript Engineer",
     "more": {
+      "title": "More about me",
       "blog": "Read blog",
       "projects": "Browse projects",
       "resume": "Display resume",
@@ -42,7 +43,10 @@
     },
     "welcome": {
       "title": "Welcome to my website",
-      "text": "You can get all the information about my projects and me. Have a look at the sections of the website and find out more! You can have a closer look at my career and inspect my private open source prejects in detail. Further there is a list of my professional skills. If there should be questions remaining or you want to contact me for another reason, feel free to do so at any time!"
+      "text": [
+        "Hi, you can get all the information aboutme, my interests and hobbies. If you are more interested in my career, have a closer look at my resume page and the open source projects in detail. Have a look around and read my blog that covers all of my most important interests and provides you with articles in a variety of topics. If there should be questions remaining or you want to contact me, feel free to do so at any time!",
+        "But for now please start at the beginning:"
+      ]
     },
     "jsguys": {
       "text": "Please also visit the website of the jsguys that were founded by Maik Paulus and me. Browse through our blog and learn more about the latest technologies and other interesting stuff in the JavaScript universe. Get familiar with our projects, inquiries of any kind are always welcome!",
@@ -66,9 +70,9 @@
       " because of the slim design and the strength of ",
       " in both the backend and the frontend.",
 
-      "Besides programming I am mountainbiking and runnng as often as possible! Currently I am training for my first marathon this year. My interests are architecture and I have a faible for clean design and the beauty of simplicity in modern UI.",
+      "Besides programming I am running as often as possible and bike whenever it is not. Currently I am training for my first marathon in Berlin later this year. My interests are architecture and I have a faible for clean design and the beauty of simplicity in modern UI.",
 
-      "My passion is travelling around the world to get to know different countries and cultures. There will be a blog on this website soon that covers a mix of travelling, sport events and coding. Stay tuned!"
+      "My passion is travelling around the world to get to know different countries and cultures. The blog on this website reflects this mix of travelling, sport events and coding so have a look at it now!"
     ],
     "numbers": {
       "title": "My year in figures",
@@ -199,6 +203,10 @@
       }
     },
     "jsguys": {
+      "link": "Visit jsguys",
+      "text": [
+        ""
+      ],
       "title": "jsguys projects",
       "beerific": {
         "text": [
@@ -216,6 +224,7 @@
       }
     },
     "verlagsprofis": {
+      "link": "Visit Verlagsprofis",
       "text": [
         "Die Verlagsprofis are there to help publishers to handle their difficulties with digital innovation. Currently we are working on a tool to manage the EBV process in an easy way. There will be more application fields soon and the tools will be available for all pulishers."
       ]

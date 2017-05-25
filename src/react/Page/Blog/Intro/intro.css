@@ -2,7 +2,8 @@
   margin: 0;
 }
 
-.post-preview {
+.post-preview,
+.page-resume .resume-element:not(:last-child) > .columns {
   margin-bottom: 2.5rem;
   padding-bottom: 2.5rem;
   position: relative;
@@ -12,7 +13,8 @@
   margin-bottom: 0;
 }
 
-.post-preview::before {
+.post-preview::before,
+.page-resume .resume-element:not(:last-child) > .columns::before {
   background: #57bc90; 
   background: linear-gradient(141deg, #67b9c4, #67b9c4, #57bc90);
   bottom: 0;
@@ -67,4 +69,10 @@
 .post-intro.preview i.glyphicons-clock::before,
 i.glyphicons-warning-sign::before {
   padding: 0.125em 0.5em 0 0;
+}
+
+@media only screen and (max-width: 40rem) {
+  .post-preview .date-column {
+    margin-bottom: 1rem;
+  }
 }

@@ -8,6 +8,14 @@
   margin-top: 1rem;
 }
 
+.page .page-resume .resume-element h3 a {
+  margin-left: 0.5rem;
+}
+
+.page .page-resume .resume-element h3 i.glyphicons::before {
+  padding: 0.125rem 0 0;
+}
+
 .page ul.listing {
   margin: 0;
   padding: 0;

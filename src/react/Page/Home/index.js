@@ -1,9 +1,9 @@
 import React from 'react';
-import Link from '../Elements/Link';
-import Page from './Page';
-import HighLight from '../Elements/HighLight';
-import LinkButton from '../Elements/LinkButton';
-import Language from '../Language/Language';
+import Page from '../Page';
+import Link from '../../Elements/Link';
+import HighLight from '../../Elements/HighLight';
+import LinkButton from '../../Elements/LinkButton';
+import Language from '../../Language/Language';
 import './home.css';
 
 class HomePage extends Page {
@@ -112,7 +112,10 @@ class HomePage extends Page {
           <div className="columns small-12">
             <h2>{Language.t('home.welcome.title')}</h2>
             
-            <p>{Language.t('home.welcome.text')}</p>
+            <p>
+              {Language.t('home.welcome.text.0')}<br />
+              {Language.t('home.welcome.text.1')}
+            </p>
 
             <LinkButton link="/about">{Language.t('nav.about')}</LinkButton>
           </div>
@@ -120,14 +123,14 @@ class HomePage extends Page {
 
         <div className="row element-block">
           <div className="columns small-12">
-            <h2>Mehr von mir</h2>
+            <h2>{Language.t('home.more.title')}</h2>
           </div>
           <div className="columns small-12 medium-6">
             <h3>jsguys</h3>
 
             <p>{Language.t('home.jsguys.text')}</p>
 
-            <LinkButton link="/projects/jsguys">{Language.t('home.more.jsguys')}</LinkButton>
+            <LinkButton link="http://www.jsguys.net">{Language.t('home.more.jsguys')}</LinkButton>
           </div>
 
           <div className="columns small-12 medium-6">
@@ -135,7 +138,7 @@ class HomePage extends Page {
 
             <p>{Language.t('projects.verlagsprofis.text.0')}</p>
 
-            <LinkButton link="/projects/die-verlagsprofis">{Language.t('home.more.verlagsprofis')}</LinkButton>
+            <LinkButton link="http://www.die-verlagsprofis.de">{Language.t('home.more.verlagsprofis')}</LinkButton>
           </div>
         </div>
       </div>

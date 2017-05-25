@@ -41,23 +41,22 @@ class Intro extends Component {
 
       if (this.props.header && 'image' === this.props.header.type) {
         classNames += ' image';
-        dateStyle['backgroundImage'] = `url(${this.props.header.src})`;
+        let src = this.props.header.src;
+        src = src.replace('header', 'header-thumb');
+        dateStyle['backgroundImage'] = `url(${src})`;
       }
     }
 
     return (
       <div className={classNames}>
         <div className="intro clearfix">
-          <div className="columns small-12 show-for-small-only">
-            <DateFormatter at={this.props.date} long />
-          </div>
           <div
-            className="columns medium-3 show-for-medium-up date-column"
+            className="columns small-12 medium-4 large-3 date-column"
             style={dateStyle}
           >
             <PostDate date={this.props.date} />
           </div>
-          <div className="columns small-12 medium-9">
+          <div className="columns small-12 medium-8 large-9">
             {title}
             <p>
               <PostTag tag={tag} />
@@ -69,29 +68,6 @@ class Intro extends Component {
       </div>
     );
   }
-/*
-  render() {
-    let link = `/blog/${this.props.uid}`;
-    let intro = this.props.intro;
-    intro = intro.replace(/[^a-z0-9]+$/i, '');
-
-    return (
-      <div className="post-preview clearfix">
-        <div className="columns medium-2 large-offset-1 large-1 show-for-medium-up post-date">
-          <PostDate date={this.props.date} />
-        </div>
-        <div className="columns small-12 medium-10 large-8 end">
-          
-          <p>
-            <PostTag tag={this.props.tag} />
-            {intro}&nbsp;<Link to={link}>...</Link>
-          </p>
-          <div className="meta-bar show-for-small-only">
-            <DateFormatter at={this.props.date} long />
-          </div>
-        </div>
-      </div>
-      */
 }
 
 export default Intro;

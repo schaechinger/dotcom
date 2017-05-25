@@ -1,8 +1,8 @@
 import React from 'react';
-import Page from './Page';
-import HighLight from '../Elements/HighLight';
-import Link from '../Elements/Link';
-import Language from '../Language/Language';
+import Page from '../Page';
+import HighLight from '../../Elements/HighLight';
+import Link from '../../Elements/Link';
+import Language from '../../Language/Language';
 import './about.css';
 
 class AboutPage extends Page {
@@ -56,8 +56,6 @@ class AboutPage extends Page {
                 <HighLight>JavaScript</HighLight>
                 {Language.t('about.text.8')}
               </p>
-              <p>{Language.t('about.text.9')}</p>
-              <p>{Language.t('about.text.10')}</p>
             </div>
           </div>
         </div>
@@ -107,28 +105,8 @@ class AboutPage extends Page {
         <div className="element-block">
           <div className="row">
             <div className="columns small-12">
-              <h2>jsguys</h2>
-
-              <p>
-                {Language.t('about.jsguys.text.0')}
-                jsguys
-                {Language.t('about.jsguys.text.1')}
-                <Link to="http://www.maikpaulus.com">Maik Paulus</Link>
-                {Language.t('about.jsguys.text.2')}
-                <Link to="https://twitter.com/jsguysnet">Twitter</Link>
-                {Language.t('about.jsguys.text.3')}
-                <Link to="http://www.jsguys.net/blog">
-                  {Language.t('about.jsguys.text.4')}
-                </Link>
-                {Language.t('about.jsguys.text.5')}
-                <Link to="https://github.com/jsguysnet">GitHub</Link>
-                {Language.t('about.jsguys.text.6')}
-              </p>
-              
-              <p>
-                {Language.t('about.jsguys.text.7')}
-                <Link to="http://www.jsguys.net">jsguys.net</Link>!
-              </p>
+              <p>{Language.t('about.text.9')}</p>
+              <p>{Language.t('about.text.10')}</p>
             </div>
           </div>
         </div>

@@ -95,20 +95,12 @@
   border-bottom-color: transparent;
   color: #034249;
 }
-/*
-.page-home .overview .columns h3,
-.page-home .overview .columns p {
-  padding-left: 3rem;
-}
 
-.page-home .overview .columns i.glyphicons {
-  font-size: 1.5rem;
-  position: absolute;
-  left: 0.75rem;
-  top: 0.5rem;
+@media only screen and (max-width: 64rem) {
+  .page .page-home .hero {
+    padding-top: 6rem;
+  }
 }
-*/
-
 
 @media only screen and (max-width: 62.5rem) {
   .page .page-home .hero .lang-switch {
@@ -126,5 +118,9 @@
   .page .page-home .hero h1,
   .page .page-home .hero h3 {
     color: #fff;
+  }
+
+  .page .page-home .highlight-block .columns {
+    margin-bottom: 2rem;
   }
 }

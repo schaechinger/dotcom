@@ -34,6 +34,7 @@
     },
     "job": "JavaScript Entwickler",
     "more": {
+      "title": "Mehr von mir",
       "blog": "Blog lesen",
       "projects": "Projekte anzeigen",
       "resume": "Lebenslauf ansehen",
@@ -42,7 +43,10 @@
     },
     "welcome": {
       "title": "Willkommen auf meiner Website",
-      "text": "Hier findest du zahlreiche Informationen über mich und meine Projekte. Sieh dich in den einzelnen Bereichen um und erfahre mehr! Hier kannst du unter anderem einen Blick auf meine bisherige Laufbahn werfen und meine privaten Open Source Projekte genauer unter die Lupe nehmen. Weiterhin findest du eine Auflistung meiner fachlichen Fähigkeiten. Falls noch Fragen offen bleiben oder du mich aus anderen Gründen kontaktieren möchten, kannst du dies jederzeit gerne über die aufgelisteten sozialen Netzwerke oder per E-Mail tun."
+      "text": [
+        "Hi, auf meiner Website findest du viele Informationen über mich, meine Interessen und Hobbies. Falls du dich mehr für meine berufliche Laufbahn interessierst, nimm meinen Lebenslauf und die Open Source Projekte genauer unter die Lupe. Sieh dich um und lies dir auch meinen Blog durch, der alle meiner mir wichtigen Interessen abdeckt und dich mit unterhaltsamen Artikeln zu einer Vielzahl verschiedener Themen versorgt. Falls noch Fragen offen bleiben oder du mich aus kontaktieren möchtest, kannst du dies jederzeit gerne über die aufgelisteten sozialen Netzwerke oder per E-Mail tun.",
+        "Aber fang doch einfach am Anfang an:"
+      ]
     },
     "jsguys": {
       "text": "Besuche auch die Website der von Maik Paulus und mir gegründeten jsguys. Hier kannst du unseren Blog nach den neuesten Technologien und weiteren spannenden Themen im JavaScript-Universum durchstöbern. Mach dich mit unseren aktuellen Projekten vertraut, Anfragen zu Aufträgen oder anderen Themen sind jederzeit willkommen!",
@@ -66,9 +70,9 @@
       " zu entwickeln, da er ein schlankes Design aufweist und die Stärken von ",
       " im Backend und Frontend aufweist.",
 
-      "Neben der Programmierung fahre ich Mountainbike und laufe so oft wie möglich! Derzeit trainiere ich für meinen ersten Marathon dieses Jahr. Ich interessiere mich für Architektur und habe ein Faible für Clean Design und die damit verbundene Schönheit der Einfachheit moderner UI.",
+      "Neben dem Programmieren laufe ich so oft wie möglich und fahre mit dem Mountainbike, falls das mal nicht geht. Aktuell trainiere ich für meinen ersten Marathon in Berlin Ende des Jahres. Ich interessiere mich für Architektur und habe ein Faible für Clean Design und die damit verbundene Schönheit der Einfachheit moderner UI.",
 
-      "Meine Leidenschaft ist das Reisen um die Welt, um verschiedene Länder und deren Kulturen kennen zu lernen. Bald wird auf dieser Website auch ein interessanter Blog mit einem bunten Mix aus Reisen, Sportevents und Coding-Themen. Bleib' auf dem Laufenden!"
+      "Meine Leidenschaft ist das Reisen um die Welt, um verschiedene Länder und deren Kulturen kennen zu lernen. Der Blog auf dieser Website spiegelt diesen bunten Mix aus Reisen, Sportevents und Coding-Themen wider und gibt dir ein paar Einblicke in meine Welt!"
     ],
     "numbers": {
       "title": "Mein Jahr in Zahlen",
@@ -94,7 +98,7 @@
   "blog": {
     "meta": {
       "title": "Blog",
-      "description": "In meinem Blog dreht sich alles um Code, Webentwicklung mit JavaScript und Node.js sowie Freizeitthemen wie Sport und Reisen."
+      "description": "In meinem Blog dreht sich alles um Laufen, Reisen sowie Webentwicklung mit JavaScript und Node.js."
     },
     "preview": {
       "more": "weiterlesen"
@@ -193,6 +197,10 @@
       }
     },
     "jsguys": {
+      "link": "Zu den jsguys",
+      "text": [
+        ""
+      ],
       "beerific": {
         "text": [
           "Beerific ist eine mit",
@@ -209,8 +217,9 @@
       }
     },
     "verlagsprofis": {
+      "link": "Zu den Verlagsprofis",
       "text": [
-        "Die Verlagsprofis helfen Verlägen dabei, anfallende Schwierigkeiten durch digitale Innovation zu beseitigen. Derzeit arbeiten wir an einem Tool zur einfachen Bewältigung des EVB (elektronisches Bestätigungsverfahren). In Kürze werden weitere Anwendungsbereiche folgen und das Angebot für alle Verläge verfügbar sein."
+        "Die Verlagsprofis helfen Verlägen dabei, anfallende Schwierigkeiten durch digitale Innovation zu beseitigen. Derzeit arbeiten wir an einem Tool zur einfachen Bewältigung des EBV (elektronisches Bestätigungsverfahren). In Kürze werden weitere Anwendungsbereiche folgen und das Angebot für alle Verläge verfügbar sein."
       ]
     },
     "more": {
@@ -388,7 +397,7 @@
     "imprint": "Impressum",
     "privacy": "Datenschutz",
     "contact": "Kontakt",
-    "text": "Hi, ich bin Manuel. Auf meiner Website dreht sich alles um Code, Webentwicklung mit JavaScript und Node.js, Freizeitthemen wie Sport und Reisen und natürlich auch um mich. Wenn du hier gelandet bist, solltest du lieber wieder weiter nach oben scrollen oder zur nächsten Seite blättern. Hier geht's nicht weiter.",
+    "text": "Hi, ich bin Manuel. Auf meiner Website dreht sich alles um Laufen, Reisen um die Welt, um Webentwicklung mit JavaScript und Node.js und natürlich auch um mich. Wenn du hier gelandet bist, solltest du lieber wieder weiter nach oben scrollen und wie vielen weiteren Seite der Website ansehen. Hier geht's nicht weiter.",
     "rightsReserved": "Alle Rechte vorbehalten.",
     "mwl": [
       "Mit viel",

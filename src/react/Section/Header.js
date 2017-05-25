@@ -13,7 +13,7 @@ class Header extends Component {
           <div className="columns small-12">
             <span className="title">
               <Link to="/">
-                <span className="m">M/</span>Schächinger
+                <span className="m-logo logo-sm">M/</span><span className="m-logo logo-l">Manuel</span>Schächinger
               </Link>
             </span>
             <Navigation />

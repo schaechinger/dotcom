@@ -14,7 +14,7 @@ html(prefix='og: http://ogp.me/ns#')
     meta(name='apple-mobile-web-app-capable', content='yes')
     meta(name='apple-touch-fullscreen', content='yes')
     // feeds
-    link(rel='alternate', type='application/rss+xml', title='Manuel Schächinger', href='/blog/feed-rss.xml')
+    link(rel='alternate', type='application/rss+xml', title='Manuel Schächinger', href='/de/blog/feed-rss')
     // generated
     if meta
       each m in meta
@@ -55,10 +55,9 @@ html(prefix='og: http://ogp.me/ns#')
                 a(href='https://schchn.gr/t') Twitter
               p &copy; 2017 Manuel Schächinger. Alle Rechte vorbehalten.
     
-    //-script.chunkd(src='/assets/js/vendors-' + chunkHashes.vendors + '.min.js', defer)
-    //-script.chunkd(src='/assets/js/app-' + chunkHashes.app + '.min.js', defer)
-
-    //- TODO: add dynamic min files in prod environment
-    script(src='https://unpkg.com/react@15.4.2/dist/react.js', defer)
-    script(src='https://unpkg.com/react-dom@15.4.2/dist/react-dom.js', defer)
-    script(src='/assets/js/app.min.js', defer)
+    if (chunkHashes)
+      script(src='https://unpkg.com/react@15.4.2/dist/react.js', defer)
+      script(src='https://unpkg.com/react-dom@15.4.2/dist/react-dom.js', defer)
+      script(src='/assets/js/app.' + chunkHashes.app + '.min.js', defer)
+    else
+      script(src='/assets/js/app.min.js', defer)

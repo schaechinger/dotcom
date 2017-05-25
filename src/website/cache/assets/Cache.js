@@ -1,20 +1,23 @@
+const fs = require('fs');
+const path = require('path');
 const Cache = require('../Cache');
 
+const baseDir = path.resolve(__dirname, '../../../../public/assets/js');
+
 class AssetsCache extends Cache {
-  getAssets() {
+  _loadCacheData(id) {
+    return new Promise((resolve, reject) => {
 
-  }
+      fs.readdir(baseDir, (err, files) => {
+        files.forEach(file => {
+          const parts = file.split('.');
 
-  _loadCacheData(slug) {
-    return Api.getPostContent(slug)
-      .then((data) => {
-        if (data.success) {
-          this._updatePostDates(data.post);
-          return data.post;
-        }
-
-        return null;
+          if (id === parts[0]) {
+            resolve(4 <= parts.length ? parts[1] : parts[0]);
+          }
+        });
       });
+    });
   }
 }
 

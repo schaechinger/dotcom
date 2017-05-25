@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 import MapsLoader from 'google-maps';
+import Language from '../../../../Language/Language';
 
 class MapContent extends Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class MapContent extends Component {
 
     MapsLoader.KEY = 'AIzaSyA5M0ChH7z265Ypy6LLg8NIloj2ZHiADms';
     MapsLoader.LIBRARIES = ['geometry'];
+    MapsLoader.LANGUAGE = Language.locale();
 
     this.mapDiv = null;
   }

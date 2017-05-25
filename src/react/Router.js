@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Redirect, Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 import App from './App';
-import Home from './Page/Home';
-import About from './Page/About';
+import Home from './Page/Home/';
+import About from './Page/About/';
 import NotFound from './Page/NotFound';
 import Projects, { Jsguys } from './Page/Projects';
 import ProjectOverview from './Page/Projects/Overview';
@@ -14,7 +14,7 @@ import Blog from './Page/Blog';
 import BlogList from './Page/Blog/List/List';
 import BlogListTag from './Page/Blog/List/Tag';
 import BlogSwitch from './Page/Blog/Switcher';
-import Contact from './Page/Contact';
+import Contact from './Page/Contact/';
 import Imprint from './Page/Imprint';
 import Privacy from './Page/Privacy';
 import Bing from './Page/Bing';
@@ -98,7 +98,18 @@ class AppRoutes extends Component {
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     }
     gaFn(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create','UA-70769809-1','auto');
+
+    const gaId = 'UA-70769809-1';
+    const disableStr = 'ga-disable-' + gaId;
+    if (0 <= document.cookie.indexOf(disableStr + '=true')) {
+      window[disableStr] = true;
+    }
+    window.gaOptout = () => {
+      document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+      window[disableStr] = true;
+    };
+
+    ga('create',gaId,'auto');
     ga('set','anonymizeIp',true);
   }
 

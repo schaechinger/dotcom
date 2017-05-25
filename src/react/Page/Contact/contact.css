@@ -8,10 +8,14 @@
   text-align: center;
 }
 
-.page-contact .card img.m-logo {
-  height: 4rem;
-  margin-top: 2.5rem;
-  width: auto;
+.page-contact .card .me {
+  border: 0.25rem solid #d6d6d6;
+  border-radius: 50%;
+  display: inline-block;
+  height: 8em;
+  margin-top: 1.5rem;
+  width: 8em;
+  z-index: 310;
 }
 
 .page-contact .card .image .m {

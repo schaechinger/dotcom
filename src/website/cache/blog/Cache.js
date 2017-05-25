@@ -23,6 +23,12 @@ class BlogCache extends Cache {
       });
   }
 
+  reset() {
+    super.reset();
+
+    this.postDates = [];
+  }
+
   buildMeta(post) {
     let metadata = {
       article: {

@@ -22,10 +22,9 @@ class LanguageLink extends Component {
         props.to = '/' + lang + props.to;
       }
 
-      let index = props.to.length - 1;
-      if ('/' === props.to[index]) {
+      if ('/' !== props.to[props.to.length - 1]) {
         // TODO extend for hash links or parameters
-        props.to = props.to.substr(0, index);
+        props.to += '/';
       }
 
       props.to = props.to || '/';

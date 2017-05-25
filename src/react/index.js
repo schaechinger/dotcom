@@ -2,7 +2,7 @@ import './ie';
 import React from 'react';
 import { render } from 'react-dom';
 import AppRoutes from './Router';
-import './vendors';
+import './vendors/';
 
 render(
   <AppRoutes />,

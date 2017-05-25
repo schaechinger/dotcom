@@ -94,9 +94,9 @@ class Language {
       this.absPath = window.location.pathname;
     }
     let index = this.absPath.length - 1;
-    if ('/' === this.absPath[index]) {
+    if ('/' !== this.absPath[index]) {
       // TODO extend for hash links or parameters
-      this.absPath = this.absPath.substr(0, index);
+      this.absPath += '/';
     }
 
     if (currentLang !== this.currentLang) {

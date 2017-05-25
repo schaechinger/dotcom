@@ -24,10 +24,7 @@ class Footer extends Component {
           </div>
 
           <div className="language-select clearfix">
-            <div className="columns medium-2 medium-offset-2 show-for-medium-up text-right">
-              <Link to="/" className="m">M</Link>
-            </div>
-            <div className="columns small-12 medium-8 large-7 end">
+            <div className="columns small-12 medium-8 medium-offset-4 large-7 end">
               <i className={globeClass} />
               <ul>
                 <li><Link lang="de">{Language.t('lang.de.name')}</Link></li>

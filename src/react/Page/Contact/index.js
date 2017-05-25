@@ -1,9 +1,9 @@
 import React from 'react';
-import Page from './Page';
-import Link from '../Elements/Link';
-import { MailLink } from '../Elements/LinkButton';
-import Language from '../Language/Language';
-import HighLight from '../Elements/HighLight';
+import Page from '../Page';
+import Link from '../../Elements/Link';
+import { MailLink } from '../../Elements/LinkButton';
+import Language from '../../Language/Language';
+import HighLight from '../../Elements/HighLight';
 import './contact.css';
 
 class ContactPage extends Page {
@@ -14,7 +14,7 @@ class ContactPage extends Page {
       </Link>
     ];
     socialLinks.splice(
-      ('de' === Language.locale()) ? 0 : 1,
+      0 + ('de' === Language.locale()),
       0,
       <Link to="https://schchn.gr/x" key="xing">Xing</Link>
     );
@@ -32,7 +32,7 @@ class ContactPage extends Page {
             <div className="columns small-12 medium-10 medium-offset-1 large-8 large-offset-2 end">
               <div className="card clearfix">
                 <div className="columns small-12 medium-4 image">
-                  <span className="m">M</span>
+                  <img src="/img/schaechinger.jpg" className="me" />
                 </div>
                 <div className="columns small-12 medium-8 content">
                   <p>

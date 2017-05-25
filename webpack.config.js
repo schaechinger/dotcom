@@ -22,6 +22,7 @@ var config = {
         loader: 'babel-loader',
         include: [
           path.join(__dirname, 'src', 'react'),
+          path.join(__dirname, 'src', 'shared'),
         ],
         test: /\.jsx?$/,
         query: {
@@ -48,12 +49,16 @@ if (-1 !== process.argv.indexOf('-p')) {
     'react-dom': 'ReactDOM'
   };
 
+  // TODO: clear assets dir
+
+  config.output.filename = '[name].[chunkhash].min.js';
+
   config.plugins = config.plugins || [];
-  config.plugins.push(
+  /*config.plugins.push(
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     })
-  );
+  );*/
 }
 
 module.exports = config;

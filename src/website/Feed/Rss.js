@@ -78,8 +78,7 @@ class RSS {
   }
 
   buildChannel(latest) {
-    console.log(latest);
-    this.channel[this.channel.length - 1].pubDate = this.formatDate(latest);
+    this.channel[this.channel.length - 1].pubDate = this.formatDate(latest, true);
   }
 
   buildItems(posts) {
@@ -109,12 +108,14 @@ class RSS {
         },
         { pubDate: this.formatDate(post) }
       ]);
-    })
+    });
   }
 
-  formatDate(post) {
+  formatDate(post, useUpdateDate = false) {
+    let date = useUpdateDate ? post.get('updateDate') : post.get('publishDate');
+    date = date || post.get('date');
     try {
-      return format(post.get('updateDate'), 'UTC:ddd, dd mmm yyyy HH:MM:ss o');
+      return format(date, 'UTC:ddd, dd mmm yyyy HH:MM:ss o');
     }
     catch (e) {
       return '';

@@ -8,8 +8,8 @@
   },
   "scripts": {
     "clean": "rm -rf public/assets/js",
-    "dev": "./node_modules/.bin/webpack -w",
-    "dist": "./node_modules/.bin/webpack -p",
+    "dev": "npm run clean && ./node_modules/.bin/webpack -w",
+    "dist": "npm run clean && ./node_modules/.bin/webpack -p",
     "test": "./node_modules/.bin/karma --single-run"
   },
   "keywords": [

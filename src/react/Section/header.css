@@ -11,8 +11,7 @@ header {
 }
 
 .header .m-logo {
-  height: 1rem;
-  width: auto;
+  color: #67b9c4;
 }
 
 .header .title {
@@ -49,19 +48,6 @@ header {
 .header ul.socials a {
   color: #fafafa;
 }
-/*
-.header h1::before {
-  background-color: #02c8a7;
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -0.25em;
-  right: -0.25em;
-  transform: skew(-15deg);
-  z-index: -1;
-}
-*/
 
 .app .header .title {
   font-family: 'ClearSans', helvetica, arial, sans-serif;
@@ -69,4 +55,24 @@ header {
 
 .header .title a:hover {
   text-decoration: none;
+}
+
+@media only screen and (max-width: 64rem) {
+  .header .logo-sm {
+    display: inline;
+  }
+  
+  .header .logo-l {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 64.0625rem) {
+  .header .logo-sm {
+    display: none;
+  }
+
+  .header .logo-l {
+    display: inline;
+  }
 }
