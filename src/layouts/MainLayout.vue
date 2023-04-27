@@ -4,7 +4,7 @@
       <q-toolbar class="container">
         <q-btn
           to="/"
-          class="section__schchngr"
+          class="section__schchngr q-mr-sm"
           color="primary"
           flat
           round
@@ -13,7 +13,7 @@
             <img src="https://images.schaechinger.com/2/schaechinger.jpg" />
           </q-avatar>
         </q-btn>
-        <q-separator :color="isMm ? 'white' : 'grey'" inset spaced vertical />
+        <q-separator v-if="false" :color="isMm ? 'white' : 'grey'" inset spaced vertical />
         <q-btn
           to="/medalmonday"
           class="section__mm"

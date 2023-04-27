@@ -116,4 +116,19 @@ export default defineComponent({
     font-size: 0.875rem;
   }
 }
+
+body.body--dark {
+  .footer {
+    &__dashed {
+      border-top: 1px dashed #646464;
+
+      .q-icon {
+        color:#a0a0a0;
+        position: relative;
+        top: -0.875rem;
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
 </style>

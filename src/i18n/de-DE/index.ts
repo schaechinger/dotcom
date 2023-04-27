@@ -52,6 +52,15 @@ export default {
       },
     },
   },
+  availability: {
+    title: 'Meine wöchentliche Verfügbarkeit',
+    count: 'ausgebucht | {count}d / Woche',
+    hint: 'Die Angaben beziehen sich auf verfügbare Arbeitstage pro Woche.',
+    text: [
+      'Auch wenn meine Verfügbarkeit nicht für Ihre Bedürfnisse ausreicht, melden sie sich gerne bei mir.',
+      'Wir bereden, wie wir Ihre Anforderung umsetzen können.',
+    ],
+  },
   blog: {
     title: 'Blog',
   },

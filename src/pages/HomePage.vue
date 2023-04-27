@@ -13,19 +13,21 @@
       <div class="absolute-top text-center" style="background-color:transparent;">
         <hero-logo :class="$q.screen.lt.sm ? 'q-pt-sm' : 'q-pt-xl'" dark />
       </div>
-      <div v-if="$q.screen.gt.xs" class="absolute-bottom text-center row">
-        <div
-          v-for="customer in customers"
-          :key="customer.key"
-          class="col"
-        >
-          <q-img
-            :src="`https://images.schaechinger.com/customers/${customer.key}.png`"
-            :alt="customer.name"
-            style="width:2rem"
+      <div v-if="$q.screen.gt.xs" class="absolute-bottom text-center">
+        <div class="container row">
+          <div
+            v-for="customer in customers"
+            :key="customer.key"
+            class="col"
           >
-            <q-tooltip>{{ customer.name }}</q-tooltip>
-          </q-img>
+            <q-img
+              :src="`https://images.schaechinger.com/customers/${customer.key}.png`"
+              :alt="customer.name"
+              style="width:2rem"
+            >
+              <q-tooltip>{{ customer.name }}</q-tooltip>
+            </q-img>
+          </div>
         </div>
       </div>
     </q-img>
@@ -46,17 +48,31 @@
         }}</p>
       </div>
     </div>
+
+    <div class="container row">
+      <div class="col-12 q-pa-md">
+        <h2 class="text-h2">{{ $t('availability.title') }}</h2>
+
+        <availability-status :days="4" class="q-my-md" />
+        <p>
+          {{ $t('availability.text.0') }}<br />
+          {{ $t('availability.text.1') }}
+        </p>
+      </div>
+    </div>
   </q-page>
 </template>
 
 <script lang="ts" scoped>
 import { defineComponent } from 'vue';
 import HeroLogo from 'components/schaechinger/HeroLogo.vue';
+import AvailabilityStatus from 'components/work/AvailabilityStatus.vue';
 
 export default defineComponent({
   name: 'HomePage',
 
   components: {
+    AvailabilityStatus,
     HeroLogo,
   },
 
