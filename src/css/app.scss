@@ -1,0 +1,110 @@
+@import 'fonts';
+
+body {
+  font-family: 'ClearSans', sans-serif;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+#q-app {
+  a {
+    &,
+    &:active,
+    &:visited {
+      color: $primary;
+    }
+  }
+
+  .bg-mm-primary {
+    background-color: $mm-primary;
+  }
+  .text-mm-primary,
+  a.text-mm-primary {
+    color: $mm-primary;
+  }
+
+  // smaller text sized for mobile
+  @media screen and (max-width: $breakpoint-xs-max) {
+    .q-btn.q-btn--outline {
+      &,
+      .q-btn__content {
+        width: 100%;
+      }
+    }
+  }
+  @media screen and (max-width: $breakpoint-sm-max) {
+    h1,
+    .text-h1 {
+      font-size: 2rem;
+      line-height: 2.125rem;
+      letter-spacing: -.00833em;
+      font-weight: 400;
+    }
+    h2,
+    .text-h2 {
+      font-size: 1.5rem;
+      line-height: 1.625rem;
+      letter-spacing: .00735em;
+      font-weight: 400;
+    }
+    h3,
+    .text-h3 {
+      font-size: 1.375rem;
+      line-height: 1.5rem;
+      letter-spacing: normal;
+      font-weight: 400;
+    }
+    h4,
+    .text-h4 {
+      font-size: 1.25rem;
+      line-height: 1.375rem;
+      letter-spacing: .0125em;
+      font-weight: 400;
+    }
+    // $subtitle1: (size: 1rem, line-height: 1.75rem, letter-spacing: .00937em, weight: 400) !default;
+    // $subtitle2: (size: .875rem, line-height: 1.375rem, letter-spacing: .00714em, weight: 500) !default;
+    // $body1: (size: 1rem, line-height: 1.5rem, letter-spacing: .03125em, weight: 400) !default;
+    // $body2: (size: .875rem, line-height: 1.25rem, letter-spacing: .01786em, weight: 400) !default;
+    // $overline: (size: .75rem, line-height: 2rem, letter-spacing: .16667em, weight: 500) !default;
+    // $caption: (size: .75rem, line-height: 1.25rem, letter-spacing: .03333em, weight: 400) !default;
+  }
+}
+
+.font-thin {
+  font-weight: 100;
+}
+.font-bold,
+.text-bold {
+  font-weight: 500;
+}
+
+.container {
+  &,
+  &-sm,
+  &-md {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+}
+
+.container {
+  max-width: 80rem;
+}
+
+.container-sm {
+  max-width: 30rem;
+}
+
+.container-md {
+  max-width: 45rem;
+}
