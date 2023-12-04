@@ -1,0 +1,11 @@
+.page--medalmonday {
+  h2 {
+    &::before {
+      @apply bg-medalmonday-500;
+    }
+  }
+
+  a {
+    @apply hover:text-medalmonday-500 dark:hover:text-medalmonday-500;
+  }
+}

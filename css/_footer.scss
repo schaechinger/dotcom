@@ -1,0 +1,31 @@
+.footer {
+  &__love {
+    &:after {
+      animation: cursor 1s infinite;
+      content: " |";
+      font-weight: bold;
+      opacity: 0;
+      right: 0;
+
+      @apply text-primary-500;
+    }
+
+    @keyframes cursor {
+      0% {
+        opacity: 0;
+      }
+      40% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+}

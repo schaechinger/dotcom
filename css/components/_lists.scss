@@ -1,0 +1,17 @@
+ul.bullet-list {
+  li {
+    margin-left: 1.25rem;
+    position: relative;
+
+    &::before {
+      content: '';
+      height: 1px;
+      left: -1.05rem;
+      position: absolute;
+      top: 0.65em;
+      width: 0.42rem;
+
+      @apply bg-slate-700 dark:bg-slate-300;
+    }
+  }
+}

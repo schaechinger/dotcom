@@ -1,0 +1,51 @@
+@tailwind base;
+/* @tailwind components; */
+@tailwind utilities;
+
+@import 'fonts';
+
+@import 'footer';
+
+@import 'components/career';
+@import 'components/lists';
+
+@layer base {
+  h2 {
+    position: relative;
+
+    @apply text-2xl text-dark-950 dark:text-dark-50 mb-7 font-normal;
+
+    &::before {
+      position: absolute;
+      content: '';
+      left: -0.5rem;
+      bottom: -0.25rem;
+      width: 3.5rem;
+      height: 3px;
+      
+      @apply bg-primary-300;
+    }
+  }
+
+  h3 {
+    @apply text-xl text-dark-950 dark:text-dark-50 mb-2 font-normal;
+  }
+
+  a {
+    @apply text-dark-950 dark:text-dark-50 font-bold hover:text-primary-500 dark:hover:text-primary-500 transition-colors;
+
+    &.inline-link {
+      @apply hover:underline hover:underline-offset-4;
+    }
+  }
+
+  strong.highlight-label {
+    @apply text-transparent bg-clip-text bg-gradient-to-br from-primary-500 to-primary-400;
+  }
+}
+
+@import 'layouts/medalmonday';
+
+html {
+  font-family: 'Clear Sans';
+}
