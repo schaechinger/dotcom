@@ -1,8 +1,10 @@
+import { unstable_noStore } from 'next/cache';
 import CareerItem from '@/app/components/career/CareerItem';
 import LinkButton from '@/app/components/LinkButton';
 import { loadCareer } from '@/app/lib/career';
 
 const CareerList = async () => {
+  unstable_noStore();
   const career = await loadCareer();
 
   return (

@@ -1,3 +1,5 @@
+import { unstable_noStore } from 'next/cache';
+
 import ProjectItem from '@/app/components/projects/ProjectItem';
 import LinkButton from '@/app/components/LinkButton';
 import { loadProjects } from '@/app/lib/projects';
@@ -7,6 +9,7 @@ interface ProjectListProps {
 }
 
 const ProjectList = async  ({ highlights }: ProjectListProps) => {
+  unstable_noStore();
   const projects = await loadProjects(highlights || false);
 
   return (
