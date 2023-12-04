@@ -11,7 +11,7 @@ const Home = () => (
 
       <p className="mb-2">
         Seit über 10 Jahren entwickle ich professionelle Anwendungen sowohl im Backend als auch
-        im Frontend tätig. Ich habe mich auf <strong className="highlight-label"
+        im Frontend. Ich habe mich auf <strong className="highlight-label"
         >JavaScript</strong> spezialisiert, da diese Sprache ein fast grenzenloses Spektrum an
         Möglichkeiten und Einsatzgebieten ermöglicht.
       </p>
