@@ -5,6 +5,8 @@ import Sidebar from '@/app/components/Sidebar';
 
 import '@/css/style.scss';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: {
     template: '%s – Manuel Schächinger',

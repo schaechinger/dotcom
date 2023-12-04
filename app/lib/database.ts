@@ -10,19 +10,23 @@ export const getDb = async () => {
       const password = process.env.DB_PASSWORD;
       const host = process.env.DB_HOST;
 
-      const client = new MongoClient(
-        `mongodb+srv://${username}:${password}@${host}/?retryWrites=true&w=majority`,
-      );
+      if (host) {
+        const client = new MongoClient(
+          `mongodb+srv://${username}:${password}@${host}/?retryWrites=true&w=majority`,
+        );
 
-      void client.connect()
-        .then(() => {
-          instance = client.db(process.env.DB_DATABASE);
+        void client.connect()
+          .then(() => {
+            instance = client.db(process.env.DB_DATABASE);
 
-          return instance.command({ ping: 1 });
-        })
-        .then(() => {
-          resolve();
-        });
+            return instance.command({ ping: 1 });
+          })
+          .then(() => {
+            resolve();
+          });
+      } else {
+        resolve();
+      }
     });
   }
 

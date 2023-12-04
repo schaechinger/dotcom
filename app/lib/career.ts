@@ -1,3 +1,5 @@
+import { cache } from 'react';
+
 import { CareerData } from '@/models/career';
 import { getDb } from './database';
 
@@ -16,7 +18,7 @@ export const sortCareerList = (a: CareerData, b: CareerData) => {
   return aDate >= bDate ? -1 : 1;
 };
 
-export const loadCareer = async () => {
+export const loadCareer = cache(async () => {
   const db = await getDb();
   const career = db?.collection('career');
 
@@ -28,4 +30,4 @@ export const loadCareer = async () => {
       _id: undefined,
     }))
     .sort(sortCareerList);
-};
+});
