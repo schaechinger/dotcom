@@ -1,11 +1,9 @@
-import { cache } from 'react';
-
 import { ProjectData } from '@/models/project';
 
 import { getDb } from './database';
 import { sortCareerList } from './career';
 
-export const loadProjects = cache(async (highlights = false) => {
+export const loadProjects = async (highlights = false) => {
   const db = await getDb();
   const projects = db?.collection('projects');
 
@@ -22,9 +20,9 @@ export const loadProjects = cache(async (highlights = false) => {
       _id: undefined,
     }))
     .sort(sortCareerList);
-});
+};
 
-export const loadProjectBySlug = cache(async (slug: string) => {
+export const loadProjectBySlug = async (slug: string) => {
   const db = await getDb();
   const projects = db?.collection('projects');
 
@@ -34,4 +32,4 @@ export const loadProjectBySlug = cache(async (slug: string) => {
   }
 
   return project;
-});
+};
