@@ -1,4 +1,4 @@
-import { locale } from '@/app/layout';
+export const locale = 'de';
 
 /**
  * Format the date in mm.yyyy format.

@@ -2,10 +2,9 @@ import type { Metadata } from 'next';
 
 import Footer from '@/app/components/Footer';
 import Sidebar from '@/app/components/Sidebar';
+import { locale } from '@/services/utils';
 
 import '@/css/style.scss';
-
-export const locale = 'de';
 
 export const revalidate = 3600;
 

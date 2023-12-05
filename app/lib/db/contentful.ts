@@ -1,4 +1,4 @@
-import { locale } from '@/app/layout';
+import { locale } from '@/services/utils';
 import { sortCareerList } from '@/models/career';
 import { ProjectData } from '@/models/project';
 import { Database } from './interface';
