@@ -25,38 +25,16 @@ const Sidebar = () => (
       className="hidden lg:inline-block" /> performance-kritische Anwendungen.</p>
     <nav className="hidden lg:block">
       <ul className="flex flex-col gap-2 py-2">
-        <li>
-          <Link href="/#ueber-mich" className="font-normal">
-            Über mich
-          </Link>
-        </li>
-        <li>
-          <Link href="/#erfahrungen" className="font-normal">
-            <span>Berufliche Erfahrung</span>
-          </Link>
-        </li>
-        <li>
-          <Link href="/projekte" className="font-normal">
-            <span>Projekte</span>
-          </Link>
-        </li>
-        {/* <li>
-          <Link href="/#medalmonday" className="font-normal text-medalmonday-500 dark:text-medalmonday-500">
-            <span>Medal Monday</span>
-          </Link>
-        </li> */}
-        <li>
-          <Link href="/#kontakt" className="font-normal">
-            <span>Kontakt</span>
-          </Link>
-        </li>
-        {/* <li>
-          <button
-            onClick={toggleTheme}
-            className='bg-gray-800 dark:bg-gray-50 hover:bg-gray-600 dark:hover:bg-gray-300 transition-all duration-100 text-white dark:text-gray-800 px-8 py-2 text-2xl md:text-4xl rounded-lg absolute bottom-32'>
-            Toggle Mode
-        </button>
-        </li> */}
+        { [
+            { link: '/#ueber-mich', label: 'Über mich' },
+            { link: '/lebenslauf', label: 'Lebenslauf' },
+            { link: '/projekte', label: 'Projekte' },
+            { link: '/kontakt', label: 'Kontakt' },
+          ].map((item) => (
+            <li key={item.link}>
+              <Link href={item.link} className="font-normal">{ item.label }</Link>
+            </li>
+          )) }
       </ul>
     </nav>
   </aside>

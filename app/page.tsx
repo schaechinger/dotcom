@@ -3,6 +3,7 @@ import Link from 'next/link';
 import AvailabilityIndicator from '@/app/components/freelance/AvailabilityIndicator';
 import CareerList from '@/app/components/career/CareerList';
 import ProjectList from '@/app/components/projects/ProjectList';
+import LinkButton from './components/LinkButton';
 
 const Home = () => (
   <div className="home-page lg:mr-80">
@@ -39,7 +40,7 @@ const Home = () => (
       <AvailabilityIndicator />
 
       <p className="mt-4">
-        Auch wenn meine Verfügbarkeit für Ihre Bedürfnisse nicht ausreicht, <Link href="/#kontakt"
+        Auch wenn meine Verfügbarkeit für Ihre Bedürfnisse nicht ausreicht, <Link href="/kontakt"
           className="inline-link">kontaktieren</Link> Sie mich gerne. Wir finden einen Weg, Ihr
         Projekt umzusetzen.
       </p>
@@ -48,7 +49,7 @@ const Home = () => (
     <section id="erfahrungen" className="pt-4 lg:pt-10 mb-8">
       <h2>Berufliche Erfahrung</h2>
 
-      <CareerList />
+      <CareerList latest />
     </section>
 
     <section id="projekte" className="pt-4 lg:pt-10 mb-8">
@@ -60,13 +61,12 @@ const Home = () => (
     <section id="kontakt" className="pt-4 lg:pt-10">
       <h2>Kontakt</h2>
 
-      <p className="mb-2">
-        Nehmen Sie gerne Kontakt mit mir auf, um über Ihr Projekt oder Ihr Anliegen zu sprechen!
+      <p className="mb-4">
+        Nehmen Sie gerne Kontakt mit mir auf, um gemeinsam Ihr Vorhaben zu verwirklichen und
+        Ihre Herausforderung zu meistern.
       </p>
 
-      <a href="mailto:manuel@schaechinger.com">Per E-Mail</a>
-      <br />
-      <a href="tel:+4916097506593">Telefonisch</a>
+      <LinkButton href="/kontakt" label="Jetzt kontaktieren" />
     </section>
   </div>
 );

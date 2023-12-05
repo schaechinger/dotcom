@@ -1,11 +1,16 @@
 import { unstable_noStore } from 'next/cache';
+
 import CareerItem from '@/app/components/career/CareerItem';
 import LinkButton from '@/app/components/LinkButton';
-import { loadCareer } from '@/app/lib/career';
+import { getDatabase } from '@/app/lib/db/factory';
 
-const CareerList = async () => {
+const CareerList = async ({ latest }: { latest?: boolean }) => {
   unstable_noStore();
-  const career = await loadCareer();
+  let career = await getDatabase()?.loadCareer() || [];
+
+  if (latest) {
+    career = career.slice(0, 3);
+  }
 
   return (
     <div className="-mt-4">
@@ -13,12 +18,19 @@ const CareerList = async () => {
         <CareerItem key={c.slug} item={c} />
       ))}
       { (!career.length)
-        ? <p className="pt-4">Leider konnten die bisherigen Positionen nicht geladen werden.</p>
+        ? <p className="py-4">Leider konnten die bisherigen Positionen nicht geladen werden.</p>
         : '' }
-      <LinkButton
-        href="https://static.schaechinger.com/de/lebenslauf-manuel-schaechinger.pdf"
-        label="Lebenslauf ansehen"
-      />
+      <div>
+        { latest
+          ? <LinkButton
+            href="/lebenslauf"
+            label="Vollständigen Werdegang ansehen"
+          />
+          :  <LinkButton
+            href="https://static.schaechinger.com/de/lebenslauf-manuel-schaechinger.pdf"
+            label="Lebenslauf herunterladen"
+          /> }
+      </div>
     </div>
   );
 };

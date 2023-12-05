@@ -21,7 +21,7 @@ const LinkButton = (props: LinkButtonProps) => {
       target={target}
     >
       { props.label || props.children }
-      <ChevronRight className="inline-block -mt-0.5 ml-1 transition-colors text-primary-300 group-hover:text-primary-500" />
+      <ChevronRight className="inline-block -mt-0.5 ml-1 transition-colors text-primary-300 group-hover:text-current" />
     </Component>
   );
 };

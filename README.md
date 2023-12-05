@@ -2,7 +2,7 @@
 
 This is the code that runs www.schaechinger.com based on Next.js and Tailwind.
 
-The backend is using a MongoDB database to retrieve data.
+The backend is using Contentful to retrieve data.
 
 ## Getting Started
 

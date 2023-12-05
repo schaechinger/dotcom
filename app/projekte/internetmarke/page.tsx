@@ -72,9 +72,11 @@ const InternetmarkePage = () => (
 
       <p>
         Das Projekt finden Sie auf <Link href="https://github.com/schaechinger/internetmarke#readme"
-          target="_blank">GitHub</Link>.<br />
+          target="_blank" className="inline-link">GitHub</Link>.
+      </p>
+      <p>
         Sie können das Paket mit <Link href="https://npmjs.org/package/internetmarke"
-          target="_blank">npm</Link> in Ihr Projekt einbinden.
+          target="_blank" className="inline-link">npm</Link> in Ihr Projekt einbinden.
       </p>
     </section>
   </div>

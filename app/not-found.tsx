@@ -9,7 +9,10 @@ const NotFound = () => (
         <h2>404 &ndash; Seite nicht gefunden</h2>
       </header>
 
-      <p className="mb-2">Hier geht es nicht weiter, bitte gehen Sie zur Startseite oder wählen Sie einen passenden Punkt aus dem Menü aus.</p>
+      <p className="mb-4">
+        Hier geht es nicht weiter, bitte gehen Sie zur Startseite oder wählen Sie einen
+        passenden Punkt aus dem Menü aus.
+      </p>
 
       <p>
         <LinkButton href="/" label="Zur Startseite" />

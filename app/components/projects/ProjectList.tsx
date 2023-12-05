@@ -2,15 +2,11 @@ import { unstable_noStore } from 'next/cache';
 
 import ProjectItem from '@/app/components/projects/ProjectItem';
 import LinkButton from '@/app/components/LinkButton';
-import { loadProjects } from '@/app/lib/projects';
+import { getDatabase } from '@/app/lib/db/factory';
 
-interface ProjectListProps {
-  highlights?: boolean;
-}
-
-const ProjectList = async  ({ highlights }: ProjectListProps) => {
+const ProjectList = async  ({ highlights }: { highlights?: boolean }) => {
   unstable_noStore();
-  const projects = await loadProjects(highlights || false);
+  const projects = await getDatabase()?.loadProjects(highlights || false) || [];
 
   return (
     <div className="-mt-4">
@@ -18,7 +14,7 @@ const ProjectList = async  ({ highlights }: ProjectListProps) => {
         <ProjectItem key={p.slug} item={p} />
       ))}
       { (!projects.length)
-        ? <p className="pt-4">Leider konnten die bisherigen Projekte nicht geladen werden.</p>
+        ? <p className="py-4">Leider konnten die bisherigen Projekte nicht geladen werden.</p>
         : '' }
       { (highlights && projects.length)
         ? <LinkButton href="/projekte" label="Alle Projekte ansehen" /> : null}
