@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import LinkButton from './components/LinkButton';
 import ArrowRight from './components/icons/ArrowRight';
-import SlightlySmiling from './components/icons/SlightlySmiling';
 
 const NotFound = () => {
   const code = ['arrowup', 'arrowup', 'arrowdown', 'arrowdown', 'arrowleft', 'arrowright', 'arrowleft', 'arrowright', 'b', 'a'];
@@ -30,7 +29,7 @@ const NotFound = () => {
     return () => {
       window.removeEventListener('keydown', onKeyDown);
     };
-  }, [index]);
+  }, [index, code]);
 
   return (
     <div className="not-found-page pt-4 lg:pt-10 lg:mr-80">
