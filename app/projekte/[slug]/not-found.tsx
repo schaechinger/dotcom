@@ -14,7 +14,7 @@ const ProjectNotFoundPage = (props: { params: { slug: string } }) => (
       <h2>404 &ndash; Projekt nicht gefunden</h2>
 
 
-      <p className="mb-2">
+      <p className="mb-4">
         Dieses Projekt existiert nicht oder ist nicht mehr verfgbar. Sehen Sie sich gerne meine
         anderen Projekte an und finden Sie das passende.
       </p>

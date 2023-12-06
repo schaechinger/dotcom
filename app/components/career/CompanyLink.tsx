@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import { Company } from '@/models/career';
 
 const CompanyLink = ({ company }: { company?: Company }) => {

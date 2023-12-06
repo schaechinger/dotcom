@@ -4,6 +4,7 @@ import CompanyLink from '@/app/components/career/CompanyLink';
 import TechItem from '@/app/components/career/TechItem';
 import TimeSpan from '@/app/components/career/TimeSpan';
 import ArrowRight from '@/app/components/icons/ArrowRight';
+import ProjectType from '@/app/components/projects/ProjectType';
 import { ProjectData } from '@/models/project';
 
 interface ProjectItemProps {
@@ -23,9 +24,12 @@ const ProjectItem = ({ item }: ProjectItemProps) => (
         </Link>
       </h4>
     </header>
-    { item.company ? <div className="font-thin mb-2">
-      <CompanyLink company={item.company} />
-    </div> : null }
+    { item.company
+      ? <div className="font-thin mb-2">
+        <ProjectType type={item.type} />
+        <CompanyLink company={item.company} />
+      </div>
+      : <ProjectType type={item.type} label /> }
     { item.description ? <p>{ item.description }</p> : null }
     { (!item.description && item.bullets?.length) ? (
       <ul className="bullet-list">{

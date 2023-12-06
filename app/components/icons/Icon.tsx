@@ -1,6 +1,8 @@
 import { SVGProps } from 'react';
 
-const Icon = (props: SVGProps<SVGSVGElement>) => (
+export type IconProps = SVGProps<SVGSVGElement> & { title?: string };
+
+const Icon = (props: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 32 32"
@@ -11,6 +13,7 @@ const Icon = (props: SVGProps<SVGSVGElement>) => (
       className: `inline-block${props.className ? ` ${props.className}` : ''}`,
       style: { ...(props.style || {}), fill: 'currentColor' },
       children: undefined,
+      title: props.title,
     } }
   >{ props.children }</svg>
 )

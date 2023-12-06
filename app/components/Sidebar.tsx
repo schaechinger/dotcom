@@ -27,7 +27,7 @@ const Sidebar = () => (
       <ul className="flex flex-col gap-2 py-2">
         { [
             { link: '/#ueber-mich', label: 'Über mich' },
-            { link: '/lebenslauf', label: 'Lebenslauf' },
+            { link: '/lebenslauf', label: 'Berufserfahrung' },
             { link: '/projekte', label: 'Projekte' },
             { link: '/kontakt', label: 'Kontakt' },
           ].map((item) => (

@@ -4,10 +4,11 @@ import { useEffect, useState } from 'react';
 import LinkButton from './components/LinkButton';
 import ArrowRight from './components/icons/ArrowRight';
 
-const NotFound = () => {
-  const code = ['arrowup', 'arrowup', 'arrowdown', 'arrowdown', 'arrowleft', 'arrowright', 'arrowleft', 'arrowright', 'b', 'a'];
-  const [index, setIndex] = useState(0);
+const code = ['arrowup', 'arrowup', 'arrowdown', 'arrowdown', 'arrowleft', 'arrowright', 'arrowleft', 'arrowright', 'b', 'a'];
 
+const NotFound = () => {
+  const [index, setIndex] = useState(0);
+  
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (['Shift', 'CapsLock'].includes(e.key)) {
@@ -29,7 +30,7 @@ const NotFound = () => {
     return () => {
       window.removeEventListener('keydown', onKeyDown);
     };
-  }, [index, code]);
+  }, [index]);
 
   return (
     <div className="not-found-page pt-4 lg:pt-10 lg:mr-80">
@@ -83,7 +84,8 @@ const NotFound = () => {
         { 10 <= index
           ? <p className="mt-2">
             <LinkButton
-              href={`mailto:manuel@schaechinger.com?subject=[${code.map((c, i) => c[index - (i + 1)]).reverse().join('')}] Anfrage`}
+              href={`mailto:manuel@schaechinger.com?subject=Projekt-Anfrage über Homepage [${
+                code.map((c, i) => c[index - (i + 1)]).reverse().join('')}]`}
               label="Jetzt durchstarten"
             />
           </p>
