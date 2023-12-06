@@ -2,6 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import Logo from '@/app/components/Logo';
+import LinkedIn from '@/app/components/icons/LinkedIn';
+import Xing from '@/app/components/icons/Xing';
+import Instagram from './icons/Instagram';
+import GitHub from './icons/GitHub';
 
 const Sidebar = () => (
   <aside className="lg:sticky lg:top-0 lg:h-screen lg:flex-none lg:w-80 px-4 sm:px-10 md:px-20 lg:px-4">
@@ -29,6 +33,21 @@ const Sidebar = () => (
           <Link href={item.link} key={item.link} className="font-normal">{ item.label }</Link>
         )) }
     </nav>
+
+    <div className='text-xl flex gap-4 mt-4'>
+      <a href="https://linkedin.com/in/schaechinger">
+        <LinkedIn className="" />
+      </a>
+      <a href="https://xing.com/profile/Manuel-Schaechinger">
+        <Xing />
+      </a>
+      <a href="https://github.com/schaechinger">
+        <GitHub />
+      </a>
+      <a href="https://instagram.com/theschaechinger">
+        <Instagram />
+      </a>
+    </div>
   </aside>
 );
 
