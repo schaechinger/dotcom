@@ -48,6 +48,12 @@ const config: Config = {
           from: '#42d392',
           to: '#42d39266',
         },
+        snes: {
+          a: '#e60012',
+          b: '#ffe100',
+          x: '#00a7eb',
+          y: '#6eb92b',
+        },
       },
     },
     fontFamily: {

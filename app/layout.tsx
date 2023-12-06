@@ -21,7 +21,7 @@ interface RootLayoutProps {
 }
 
 const RootLayout = ({ children }: RootLayoutProps) => (
-  <html className="dark" lang={locale}>
+  <html className="dar" lang={locale}>
     <body className="dark:text-dark-200 dark:bg-dark-800">
       <div className="lg:flex lg:gap-8 w-full max-w-screen-xl mx-auto">
         <Sidebar />

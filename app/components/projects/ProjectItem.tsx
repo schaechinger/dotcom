@@ -3,7 +3,7 @@ import Link from 'next/link';
 import CompanyLink from '@/app/components/career/CompanyLink';
 import TechItem from '@/app/components/career/TechItem';
 import TimeSpan from '@/app/components/career/TimeSpan';
-import ArrowRight from '@/app/components/icons/ArrowThinRight';
+import ArrowRight from '@/app/components/icons/ArrowRight';
 import { ProjectData } from '@/models/project';
 
 interface ProjectItemProps {

@@ -1,12 +1,14 @@
 import Link from 'next/link';
 
 import HeartEmpty from '@/app/components/icons/HeartEmpty';
-import Scissors from '@/app/components/icons/Scissors';
+import SnesButtons from '@/app/components/mario/SnesButtons';
 
 const Footer = () => (
-  <footer className="footer relative pb-6 pt-6 mt-6 sm:text-left text-sm border-t border-t-slate-600 border-dashed">
-    <Scissors className="absolute text-xl -top-2.5 left-2 rotate-90 text-slate-400" />
-    <ul className="sm:flex sm:justify-start sm:gap-4 mb-2">
+  <footer className="footer pb-6 mt-10 sm:text-left text-sm">
+    
+    <SnesButtons />
+
+    <ul className="sm:flex sm:justify-start sm:gap-4 mt-10 mb-2">
       <li>
         <Link href="/impressum" className="font-normal">
           Impressum
@@ -22,7 +24,7 @@ const Footer = () => (
       &copy; { new Date().getFullYear() } Manuel Schächinger. Alle Rechte vorbehalten.
     </p>
     <p className="footer__love">Mit viel <HeartEmpty
-      className="text-lg -mt-1 mx-1 transition-all" style={{ color: '#fb3958' }} /> in München entwickelt.</p>
+      className="text-lg -mt-1 mx-1 text-snes-a transition-colors" /> in München entwickelt.</p>
   </footer>
 );
 

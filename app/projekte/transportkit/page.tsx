@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Transportkit',
+  title: 'TransportKit',
 };
 
 const InternetmarkePage = () => (
@@ -11,7 +11,7 @@ const InternetmarkePage = () => (
       href="https://static.schaechinger.com/projects/transportkit/latest/transportkit.min.css?gc=v4" />
 
     <section id="transportkit">
-      <h2>Transportkit</h2>
+      <h2>TransportKit</h2>
 
       <p>
         Mit Transportkit können Linien des öffentlichen Nahverkehrs einiger Großstädte mittels

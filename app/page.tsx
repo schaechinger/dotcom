@@ -18,11 +18,11 @@ const Home = () => (
       </p>
 
       <p className="mb-2">
-        In diversen freiberuflichen Projekten sowie meiner bisherigen beruflichen Laufbahn konnte
-        ich erfolgreich den gesamten Projektzyklus von der Idee bis hin zum fertigen Produkt
-        begleiten und war sowohl beratend als auch als Entwickler tätig. Meine Aufgabenbereiche
-        erstrecken sich über komplexe APIs mit <strong className="highlight-label">Node.js</strong>,
-        performante Frontends mit <strong className="highlight-label">Vue</strong> und <strong
+        In zahlreichen Projekten konnte ich erfolgreich den gesamten Projektzyklus von der Idee
+        bis hin zum fertigen Produkt begleiten und war sowohl beratend als auch als Entwickler
+        tätig. Meine Aufgabenbereiche erstrecken sich über komplexe APIs mit <strong
+          className="highlight-label">Node.js</strong>, performante Frontends mit <strong
+          className="highlight-label">Vue</strong> und <strong
           className="highlight-label">React</strong>, Absicherung von Systemen sowie Deployment
         und Übergabe an Kunden.
       </p>
