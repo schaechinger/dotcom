@@ -24,12 +24,10 @@ const ProjectItem = ({ item }: ProjectItemProps) => (
         </Link>
       </h4>
     </header>
-    { item.company
-      ? <div className="font-thin mb-2">
-        <ProjectType type={item.type} />
-        <CompanyLink company={item.company} />
+      <div className="font-thin mb-2">
+        <ProjectType type={item.type} label={!item.company} />
+        { item.company ? <CompanyLink company={item.company} /> : null }
       </div>
-      : <ProjectType type={item.type} label /> }
     { item.description ? <p>{ item.description }</p> : null }
     { (!item.description && item.bullets?.length) ? (
       <ul className="bullet-list">{

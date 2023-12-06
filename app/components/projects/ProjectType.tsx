@@ -26,7 +26,7 @@ const ProjectType = ({ type, label }: { type: ProjectType; label?: boolean }) =>
 
   return (
     <>
-      <TypeIcon title={projectTypeLabels[type]} className="inline-block -mt-0.5 mr-2" />
+      <TypeIcon title={projectTypeLabels[type]} className="inline-block -mt-1 mr-2" />
       { label ? projectTypeLabels[type] : null }
     </>
   );

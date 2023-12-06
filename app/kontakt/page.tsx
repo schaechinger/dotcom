@@ -20,7 +20,7 @@ const ResumePage = () => (
       <p className="mb-2">
         <LinkButton href="mailto:manuel@schaechinger.com">Per E-Mail</LinkButton>
       </p>
-      <p className="mb-2">
+      <p>
         <LinkButton href="tel:+4916097506593">Telefonisch</LinkButton>
       </p>
     </section>
