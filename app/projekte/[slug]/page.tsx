@@ -49,28 +49,29 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
         ? <DetailBlock id="umsetzung" title="Umsetzung des Projekts" content={project.details.implementation} />
         : null }
 
-      { project.links
-        ? <section id="links" className="pt-10">
-            <h3>Links</h3>
+      <section id="links" className="pt-10">
+        <h3>Links</h3>
 
-            { project.links?.project
-              ? <p>Das Projekt finden Sie auf <Link href={project.links.project.link}
-                target="_blank" className="inline-link">{ project.links.project.label }</Link>.</p>
-              : null
-            }
-            { project.links?.code
-              ? <p>Den Code zum Projekt finden Sie auf <Link href={project.links.code.link}
-                target="_blank" className="inline-link">{ project.links.code.label }</Link>.</p>
-              : null
-            }
-            { project.links?.package
-              ? <p>Sie können das Paket mit <Link href={project.links.package.link}
-                target="_blank" className="inline-link">{ project.links.package.label }</Link> in Ihr Projekt einbinden.</p>
-              : null
-            }
-        </section>
-        : null
-      }
+        { project.links?.project
+          ? <p>Das Projekt finden Sie auf <Link href={project.links.project.link}
+            target="_blank" className="inline-link">{ project.links.project.label }</Link>.</p>
+          : null
+        }
+        { project.links?.code
+          ? <p>Den Code zum Projekt finden Sie auf <Link href={project.links.code.link}
+            target="_blank" className="inline-link">{ project.links.code.label }</Link>.</p>
+          : null
+        }
+        { project.links?.package
+          ? <p>Sie können das Paket mit <Link href={project.links.package.link}
+            target="_blank" className="inline-link">{ project.links.package.label }</Link> in Ihr Projekt einbinden.</p>
+          : null
+        }
+
+        { !project.links
+          ? <p>Das Projekt wird intern verwendet und ist daher nicht öffentlich zugänglich.</p>
+          : null }
+      </section>
 
       <p className="mt-4">
         <LinkButton href="/projekte" label="Zur Projektliste" />

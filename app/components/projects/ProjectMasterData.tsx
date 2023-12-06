@@ -25,7 +25,7 @@ const ProjectMasterData = ({ project }: { project: ProjectData }) => (
 
     <ul className="flex flex-wrap mt-3 gap-2">
       { (project.tech || []).map((t) => (
-        <TechItem key={t.slug} item={t} />
+        <TechItem key={t.slug} item={t} color={'medalmonday' === project.slug ? project.slug : undefined} />
       ))}
     </ul>
   </section>

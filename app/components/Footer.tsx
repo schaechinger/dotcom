@@ -8,7 +8,7 @@ const Footer = () => (
     
     <SnesButtons />
 
-    <ul className="sm:flex sm:justify-start sm:gap-4 mt-10 mb-2">
+    <ul className="flex justify-start gap-4 mt-10 mb-2">
       <li>
         <Link href="/impressum" className="font-normal">
           Impressum

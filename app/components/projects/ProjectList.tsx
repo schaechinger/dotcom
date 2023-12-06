@@ -3,6 +3,7 @@ import { unstable_noStore } from 'next/cache';
 import ProjectItem from '@/app/components/projects/ProjectItem';
 import LinkButton from '@/app/components/LinkButton';
 import { getDatabase } from '@/app/lib/db/factory';
+import ProjectType, { projectTypeLabels } from './ProjectType';
 
 const ProjectList = async  ({ highlights }: { highlights?: boolean }) => {
   unstable_noStore();
@@ -13,7 +14,7 @@ const ProjectList = async  ({ highlights }: { highlights?: boolean }) => {
       {projects.map((p) => (
         <ProjectItem key={p.slug} item={p} />
       ))}
-      { (!projects.length)
+      { !projects.length
         ? <p className="py-4">Leider konnten die bisherigen Projekte nicht geladen werden.</p>
         : '' }
       { (highlights && projects.length)

@@ -27,10 +27,14 @@ const Home = () => (
         und Übergabe an Kunden.
       </p>
 
-      <p>
+      <p className="mb-4">
         Abseits der Arbeit bin ich leidenschaftlicher Läufer und trainiere fast immer für den
         nächsten Marathon. Mein großes Ziel ist die Teilnahmen an den sechs großen Marathons der
         Welt, von denen ich bis auf Boston schon fünf abschließen konnte.
+      </p>
+
+      <p>
+        <LinkButton href="/taetigkeit" label="Mehr zu meiner Tätigkeit" />
       </p>
     </section>
 

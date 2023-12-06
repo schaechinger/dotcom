@@ -3,6 +3,7 @@
 import { Metadata } from 'next';
 
 import LinkButton from '@/app/components/LinkButton';
+import KonamiCode from '@/app/components/KonamiCode';
 
 export const metadata: Metadata = {
   title: 'Projekt nicht gefunden',
@@ -23,6 +24,8 @@ const ProjectNotFoundPage = (props: { params: { slug: string } }) => (
         href="/projekte"
         label="Zur Projektliste"
       />
+
+      <KonamiCode />
     </section>
   </div>
 );
