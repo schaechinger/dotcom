@@ -6,6 +6,7 @@ import TechItem from '@components/career/TechItem';
 
 export const metadata: Metadata = {
   title: 'Berufserfahrung',
+  description: 'Erfahren Sie mehr über meinen beruflichen Werdegang.',
 };
 
 const ResumePage = () => (

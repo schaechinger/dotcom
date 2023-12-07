@@ -5,15 +5,29 @@ import { notFound } from 'next/navigation';
 
 import LinkButton from '@components/LinkButton';
 import ProjectMasterData from '@components/projects/ProjectMasterData';
-import { getDatabase } from '@lib/db/factory';
+import { loadProjectBySlug } from '@/app/lib/contentful';
+import { ProjectPageProps } from '../[slug]/page';
 
-export const metadata: Metadata = {
-  title: 'Internetmarke',
+export async function generateMetadata(
+  { params }: ProjectPageProps,
+): Promise<Metadata> {
+  const metadata: Metadata = {
+    title: 'Projektdetails',
+  };
+
+  const project = await loadProjectBySlug('internetmarke');
+
+  if (project) {
+    metadata.title = project.title;
+    metadata.description = project.description;
+  }
+
+  return metadata;
 };
 
 const InternetmarkePage = async () => {
   unstable_noStore();
-  const project = await getDatabase()?.loadProjectBySlug('internetmarke');
+  const project = await loadProjectBySlug('internetmarke');
 
   if (!project) {
     return notFound();

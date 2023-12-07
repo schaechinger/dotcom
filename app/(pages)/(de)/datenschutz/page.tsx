@@ -1,3 +1,4 @@
+import LinkButton from '@/app/components/LinkButton';
 import { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -28,18 +29,14 @@ const PrivacyPage = () => (
     <section id="verantwortlicher" className="pt-10">
       <h3>Verantwortlicher</h3>
 
-      <p className="mb-2">
+      <p className="mb-4">
         Manuel Schächinger<br />
         An der Ottosäule 16<br />
         85521 Ottobrunn
       </p>
 
-      <p className="mb-2">
-        <a href="mailto:manuel@schaechinger.com">E-Mail senden</a>
-      </p>
-
       <p>
-        <Link href="/impressum">Impressum</Link>
+        <LinkButton href="/impressum" label="Impressum" />
       </p>
     </section>
 

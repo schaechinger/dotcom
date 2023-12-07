@@ -1,11 +1,11 @@
 import { unstable_noStore } from 'next/cache';
 
 import Clock from '@components/icons/Clock';
-import { getDatabase } from '@lib/db/factory';
+import { loadAvailability } from '@/app/lib/contentful';
 
 const AvailabilityIndicator = async () => {
   unstable_noStore();
-  const availibility = await getDatabase()?.loadAvailability();
+  const availibility = await loadAvailability();
 
   return (
     <div className="text-primary-500 bg-primary-100 border border-primary-100 rounded-sm px-2 py-1 font-bold inline-block">

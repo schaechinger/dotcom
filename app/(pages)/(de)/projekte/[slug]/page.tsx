@@ -5,9 +5,9 @@ import { notFound } from 'next/navigation';
 import LinkButton from '@components/LinkButton';
 import DetailBlock from '@components/projects/DetailBlock';
 import ProjectMasterData from '@components/projects/ProjectMasterData';
-import { getDatabase } from '@lib/db/factory';
+import { loadProjectBySlug } from '@/app/lib/contentful';
 
-interface ProjectPageProps {
+export interface ProjectPageProps {
   params: {
     slug: string;
   }
@@ -20,7 +20,7 @@ export async function generateMetadata(
     title: 'Projektdetails',
   };
 
-  const project = await getDatabase()?.loadProjectBySlug(params.slug);
+  const project = await loadProjectBySlug(params.slug);
 
   if (project) {
     metadata.title = project.title;
@@ -31,7 +31,7 @@ export async function generateMetadata(
 };
 
 const ProjectPage = async ({ params }: ProjectPageProps) => {
-  const project = await getDatabase()?.loadProjectBySlug(params.slug);
+  const project = await loadProjectBySlug(params.slug);
 
   if (!project) {
     return notFound();

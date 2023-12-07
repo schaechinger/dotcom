@@ -2,11 +2,11 @@ import { unstable_noStore } from 'next/cache';
 
 import LinkButton from '@components/LinkButton';
 import CareerItem from '@components/career/CareerItem';
-import { getDatabase } from '@lib/db/factory';
+import { loadCareer } from '@/app/lib/contentful';
 
 const CareerList = async ({ latest }: { latest?: boolean }) => {
   unstable_noStore();
-  let career = await getDatabase()?.loadCareer() || [];
+  let career = await loadCareer() || [];
 
   if (latest) {
     career = career.slice(0, 3);

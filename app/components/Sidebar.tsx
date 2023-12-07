@@ -15,12 +15,13 @@ const Sidebar = () => (
           width={200}
           height={200}
           className="w-1/3 sm:w-11 rounded-full border-2 border-slate-300 mb-6 mt-2 sm:mt-0 sm:mb-0 mx-auto sm:ml-0 sm:mr-4"
+          priority
         />
       </Link>
       <Logo />
     </div>
     <p className="hidden sm:block text-sm mb-4 lg:mb-10">Entwickler für skalierbare und<br
-      className="hidden lg:inline-block" /> performance-kritische Anwendungen.</p>
+      className="hidden lg:inline-block" /> performance-kritische Softwaresysteme.</p>
     <nav className="hidden lg:flex lg:flex-col lg:gap-2 py-2">
       { [
           { link: '/#ueber-mich', label: 'Über mich' },

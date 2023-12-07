@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: '%s – Manuel Schächinger',
     default: 'Manuel Schächinger',
   },
-  description: 'Fullstack JavaScript Engineer für skalierbare und performance-kritische Anwendungen.',
+  description: 'Freiberuflicher Fullstack JavaScript Engineer und Berater für komplexe Softwaresysteme aus München.',
 }
 
 interface RootLayoutProps {

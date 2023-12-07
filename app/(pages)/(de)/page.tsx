@@ -18,9 +18,7 @@ const Home = () => (
       </p>
 
       <p className="mb-2">
-        In zahlreichen Projekten konnte ich erfolgreich den gesamten Projektzyklus von der Idee
-        bis hin zum fertigen Produkt begleiten und war sowohl beratend als auch als Entwickler
-        tätig. Meine Aufgabenbereiche erstrecken sich über komplexe APIs mit <strong
+        Meine Aufgabenbereiche erstrecken sich über komplexe APIs mit <strong
           className="highlight-label">Node.js</strong>, performante Frontends mit <strong
           className="highlight-label">Vue</strong> und <strong
           className="highlight-label">React</strong>, Absicherung von Systemen sowie Deployment
@@ -28,9 +26,9 @@ const Home = () => (
       </p>
 
       <p className="mb-4">
-        Abseits der Arbeit bin ich leidenschaftlicher Läufer und trainiere fast immer für den
-        nächsten Marathon. Mein großes Ziel ist die Teilnahmen an den sechs großen Marathons der
-        Welt, von denen ich bis auf Boston schon fünf abschließen konnte.
+        Abseits der Arbeit bin ich leidenschaftlicher Läufer. Mein großes Ziel ist die
+        Teilnahmen an den sechs großen Marathons der Welt, von denen ich bis auf Boston
+        schon fünf abschließen konnte.
       </p>
 
       <p>

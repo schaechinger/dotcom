@@ -2,11 +2,11 @@ import { unstable_noStore } from 'next/cache';
 
 import LinkButton from '@components/LinkButton';
 import ProjectItem from '@components/projects/ProjectItem';
-import { getDatabase } from '@lib/db/factory';
+import { loadProjects } from '@/app/lib/contentful';
 
 const ProjectList = async  ({ highlights }: { highlights?: boolean }) => {
   unstable_noStore();
-  const projects = await getDatabase()?.loadProjects(highlights || false) || [];
+  const projects = await loadProjects(highlights || false) || [];
 
   return (
     <div className="-mt-4">

@@ -5,15 +5,29 @@ import { notFound } from 'next/navigation';
 
 import LinkButton from '@components/LinkButton';
 import ProjectMasterData from '@components/projects/ProjectMasterData';
-import { getDatabase } from '@lib/db/factory';
+import { loadProjectBySlug } from '@/app/lib/contentful';
+import { ProjectPageProps } from '../[slug]/page';
 
-export const metadata: Metadata = {
-  title: 'TransportKit',
+export async function generateMetadata(
+  { params }: ProjectPageProps,
+): Promise<Metadata> {
+  const metadata: Metadata = {
+    title: 'Projektdetails',
+  };
+
+  const project = await loadProjectBySlug('transportkit');
+
+  if (project) {
+    metadata.title = project.title;
+    metadata.description = project.description;
+  }
+
+  return metadata;
 };
 
 const TransportKitPage = async () => {
   unstable_noStore();
-  const project = await getDatabase()?.loadProjectBySlug('transportkit');
+  const project = await loadProjectBySlug('transportkit');
 
   if (!project) {
     return notFound();
