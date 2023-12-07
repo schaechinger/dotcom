@@ -1,10 +1,7 @@
-import { unstable_noStore } from 'next/cache';
-
 import Clock from '@components/icons/Clock';
 import { loadAvailability } from '@/app/lib/contentful';
 
 const AvailabilityIndicator = async () => {
-  unstable_noStore();
   const availibility = await loadAvailability();
 
   return (

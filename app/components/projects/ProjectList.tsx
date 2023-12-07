@@ -1,11 +1,8 @@
-import { unstable_noStore } from 'next/cache';
-
 import LinkButton from '@components/LinkButton';
 import ProjectItem from '@components/projects/ProjectItem';
-import { loadProjects } from '@/app/lib/contentful';
+import { loadProjects } from '@lib/contentful';
 
 const ProjectList = async  ({ highlights }: { highlights?: boolean }) => {
-  unstable_noStore();
   const projects = await loadProjects(highlights || false) || [];
 
   return (

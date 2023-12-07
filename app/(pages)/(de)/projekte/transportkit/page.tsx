@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import { unstable_noStore } from 'next/cache';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
@@ -26,7 +25,6 @@ export async function generateMetadata(
 };
 
 const TransportKitPage = async () => {
-  unstable_noStore();
   const project = await loadProjectBySlug('transportkit');
 
   if (!project) {

@@ -107,24 +107,28 @@ const getEntryFields = <T>(collection: EntryCollection<any>) => (
   (collection.items || []).map((e) => parseEntry(e)) as T[]
 );
 
-export const loadAvailability = () => (
-  connect()?.getEntries<AvailabilityEntrySkeleton>({
+export const loadAvailability = cache(async () => {
+  const availability = await connect()?.getEntries<AvailabilityEntrySkeleton>({
     content_type: 'availability',
   })
     .then(getEntryFields<AvailabilityData>)
-    .then((availabilities) => availabilities[0])
-);
+    .then((availabilities) => availabilities[0]);
 
-export const loadCareer = () => (
-  connect()?.getEntries<CareerEntrySkeleton>({
+  return availability;
+});
+
+export const loadCareer = cache(async () => {
+  const career = await connect()?.getEntries<CareerEntrySkeleton>({
     content_type: 'career',
   })
     .then(getEntryFields<CareerData>)
-    .then(sortCareerList)
-);
+    .then(sortCareerList);
 
-export const loadProjects = (highlights = false) => (
-  connect()?.getEntries<ProjectEntrySkeleton>({
+  return career;
+});
+
+export const loadProjects = cache(async (highlights = false) => {
+  const projects = await connect()?.getEntries<ProjectEntrySkeleton>({
     content_type: 'project',
     'fields.highlight': highlights || undefined,
   })
@@ -144,14 +148,18 @@ export const loadProjects = (highlights = false) => (
         type: p.type,
         highlight: p.highlight,
       }))
-    ))
-);
+    ));
 
-export const loadProjectBySlug = cache((slug: string) => (
-  connect()?.getEntries<ProjectEntrySkeleton>({
+  return projects;
+});
+
+export const loadProjectBySlug = cache(async (slug: string) => {
+  const project = connect()?.getEntries<ProjectEntrySkeleton>({
     content_type: 'project',
     'fields.slug': slug,
   })
     .then(getEntryFields<ProjectData>)
-    .then((projects) => projects[0])
-));
+    .then((projects) => projects[0]);
+
+  return project;
+});

@@ -1,11 +1,8 @@
-import { unstable_noStore } from 'next/cache';
-
 import LinkButton from '@components/LinkButton';
 import CareerItem from '@components/career/CareerItem';
 import { loadCareer } from '@/app/lib/contentful';
 
 const CareerList = async ({ latest }: { latest?: boolean }) => {
-  unstable_noStore();
   let career = await loadCareer() || [];
 
   if (latest) {
