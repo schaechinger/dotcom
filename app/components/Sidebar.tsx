@@ -1,14 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import Logo from '@/app/components/Logo';
-import LinkedIn from '@/app/components/icons/LinkedIn';
-import Xing from '@/app/components/icons/Xing';
-import Instagram from './icons/Instagram';
-import GitHub from './icons/GitHub';
+import Logo from '@components/Logo';
+import SocialLinks from '@components/SocialLinks';
+import ThemeToggle from '@components/ThemeToggle';
 
 const Sidebar = () => (
-  <aside className="lg:sticky lg:top-0 lg:h-screen lg:flex-none lg:w-80 px-4 sm:px-10 md:px-20 lg:px-4">
+  <header className="lg:sticky lg:top-0 lg:h-screen lg:flex-none lg:w-80 px-4 sm:px-10 md:px-20 lg:px-4">
     <div className="sm:flex items-center py-4 lg:py-10">
       <Link href="/">
         <Image
@@ -32,23 +30,13 @@ const Sidebar = () => (
         ].map((item) => (
           <Link href={item.link} key={item.link} className="font-normal">{ item.label }</Link>
         )) }
+        <ThemeToggle />
     </nav>
 
-    <div className='text-xl flex gap-4 mt-4'>
-      <a href="https://linkedin.com/in/schaechinger">
-        <LinkedIn className="" />
-      </a>
-      <a href="https://xing.com/profile/Manuel-Schaechinger">
-        <Xing />
-      </a>
-      <a href="https://github.com/schaechinger">
-        <GitHub />
-      </a>
-      <a href="https://instagram.com/theschaechinger">
-        <Instagram />
-      </a>
+    <div className="hidden lg:block mt-4 lg:mt-10">
+      <SocialLinks />
     </div>
-  </aside>
+  </header>
 );
 
 export default Sidebar;

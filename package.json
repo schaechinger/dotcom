@@ -9,13 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@typeform/embed-react": "3.9.0",
-    "mongodb": "6.3.0",
+    "mongodb": "^6.3.0",
     "next": "^14.0.3",
-    "next-themes": "0.2.1",
+    "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
-    "sharp": "0.33.0"
+    "sharp": "^0.33.0"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -23,7 +22,7 @@
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
-    "eslint-config-next": "14.0.3",
+    "eslint-config-next": "^14.0.3",
     "postcss": "^8",
     "sass": "^1.69.5",
     "tailwindcss": "^3.3.0",

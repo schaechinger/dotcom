@@ -1,4 +1,4 @@
-import { TechData } from '@/models/career';
+import { TechData } from '@models/career';
 
 const TechItem = ({ item, color }: { item: TechData, color?: string }) => {
   const colorClasses = 'medalmonday' === color

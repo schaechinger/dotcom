@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-import ChevronRight from '@/app/components/icons/ChevronRight';
+import ChevronRight from '@components/icons/ChevronRight';
 
 interface LinkButtonProps {
   href: string;
@@ -21,7 +21,7 @@ const LinkButton = (props: LinkButtonProps) => {
       target={target}
     >
       { props.label || props.children }
-      <ChevronRight className="inline-block -mt-0.5 ml-1 transition-colors text-primary-300 group-hover:text-current" />
+      <ChevronRight className="inline-block -mt-0.5 ml-1 transition-all text-primary-300 group-hover:text-current group-hover:text-lg group-hover:-mt-0.5" />
     </Component>
   );
 };

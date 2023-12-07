@@ -1,8 +1,8 @@
-import Banknotes from '@/app/components/icons/Banknotes';
-import BuildingsCity from '@/app/components/icons/BuildingsCity';
-import HeartEmpty from '@/app/components/icons/HeartEmpty';
-import Knight from '@/app/components/icons/Knight';
-import { ProjectType } from '@/models/project';
+import Banknotes from '@components/icons/Banknotes';
+import BuildingsCity from '@components/icons/BuildingsCity';
+import HeartEmpty from '@components/icons/HeartEmpty';
+import Knight from '@components/icons/Knight';
+import { ProjectType } from '@models/project';
 
 export const projectTypeLabels = {
   employee: 'Angestellter',

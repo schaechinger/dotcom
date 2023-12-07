@@ -1,7 +1,7 @@
 import { unstable_noStore } from 'next/cache';
 
-import Clock from '@/app/components/icons/Clock';
-import { getDatabase } from '@/app/lib/db/factory';
+import Clock from '@components/icons/Clock';
+import { getDatabase } from '@lib/db/factory';
 
 const AvailabilityIndicator = async () => {
   unstable_noStore();

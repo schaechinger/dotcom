@@ -6,7 +6,7 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  // darkMode: 'class',
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -54,6 +54,12 @@ const config: Config = {
           x: '#00a7eb',
           y: '#6eb92b',
         },
+        social: {
+          github: '#24292e',
+          instagram: '#fb3958',
+          linkedin: '#0077b5',
+          xing: '#0698a0',
+        }
       },
     },
     fontFamily: {

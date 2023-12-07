@@ -1,4 +1,4 @@
-import { formatDate } from '@/services/utils';
+import { formatDate } from '@app/utils';
 
 const TimeSpan = ({ startDate, endDate }: { startDate: string; endDate?: string }) => (
   <>

@@ -1,10 +1,11 @@
-import LinkButton from '@/app/components/LinkButton';
-import ProjectMasterData from '@/app/components/projects/ProjectMasterData';
-import { getDatabase } from '@/app/lib/db/factory';
 import { Metadata } from 'next';
 import { unstable_noStore } from 'next/cache';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+
+import LinkButton from '@components/LinkButton';
+import ProjectMasterData from '@components/projects/ProjectMasterData';
+import { getDatabase } from '@lib/db/factory';
 
 export const metadata: Metadata = {
   title: 'TransportKit',

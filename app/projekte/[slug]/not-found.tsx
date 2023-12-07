@@ -2,8 +2,8 @@
 
 import { Metadata } from 'next';
 
-import LinkButton from '@/app/components/LinkButton';
-import KonamiCode from '@/app/components/KonamiCode';
+import KonamiCode from '@components/KonamiCode';
+import LinkButton from '@components/LinkButton';
 
 export const metadata: Metadata = {
   title: 'Projekt nicht gefunden',

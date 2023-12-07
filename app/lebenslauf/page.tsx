@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
-import CareerList from '@/app/components/career/CareerList';
-import LinkButton from '../components/LinkButton';
-import TechItem from '../components/career/TechItem';
+import LinkButton from '@components/LinkButton';
+import CareerList from '@components/career/CareerList';
+import TechItem from '@components/career/TechItem';
 
 export const metadata: Metadata = {
   title: 'Berufserfahrung',

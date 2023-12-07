@@ -1,8 +1,8 @@
-import { locale } from '@/services/utils';
-import { sortCareerList } from '@/models/career';
-import { ProjectData } from '@/models/project';
-import { Database } from './interface';
-import { AvailabilityData } from '@/models/availability';
+import { locale } from '@app/utils';
+import { AvailabilityData } from '@models/availability';
+import { sortCareerList } from '@models/career';
+import { ProjectData } from '@models/project';
+import { Database } from '@lib/db/interface';
 
 const baseUrl = `${process.env.CONTENTFUL_HOST}/spaces/${process.env.CONTENTFUL_SPACE
   }/environments/${process.env.CONTENTFUL_ENVIRONMENT || 'master'}`;

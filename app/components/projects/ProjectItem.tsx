@@ -1,11 +1,11 @@
 import Link from 'next/link';
 
-import CompanyLink from '@/app/components/career/CompanyLink';
-import TechItem from '@/app/components/career/TechItem';
-import TimeSpan from '@/app/components/career/TimeSpan';
-import ArrowRight from '@/app/components/icons/ArrowRight';
-import ProjectType from '@/app/components/projects/ProjectType';
-import { ProjectData } from '@/models/project';
+import CompanyLink from '@components/career/CompanyLink';
+import TechItem from '@components/career/TechItem';
+import TimeSpan from '@components/career/TimeSpan';
+import ArrowRight from '@components/icons/ArrowRight';
+import ProjectType from '@components/projects/ProjectType';
+import { ProjectData } from '@models/project';
 
 interface ProjectItemProps {
   item: ProjectData;
@@ -20,7 +20,7 @@ const ProjectItem = ({ item }: ProjectItemProps) => (
       <h4 className="text-lg text-dark-950 dark:text-dark-50 font-bold mb-0 sm:order-1">
         <Link href={`/projekte/${item.slug}`} className="group">
           { item.title }
-          <ArrowRight className="inline-block -mt-0.5 ml-1 text-primary-300 -rotate-45 transition-colors group-hover:text-primary-500" />
+          <ArrowRight className="inline-block -mt-0.5 mx-1 text-primary-300 -rotate-45 transition-colors group-hover:text-primary-500 group-hover:text-xl group-hover:-mt-0.5 group-hover:mr-0.5" />
         </Link>
       </h4>
     </header>

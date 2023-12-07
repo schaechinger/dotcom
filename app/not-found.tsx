@@ -1,5 +1,5 @@
-import KonamiCode from '@/app/components/KonamiCode';
-import LinkButton from '@/app/components/LinkButton';
+import KonamiCode from '@components/KonamiCode';
+import LinkButton from '@components/LinkButton';
 
 const NotFound = () => (
   <div className="not-found-page pt-4 lg:pt-10 lg:mr-80">

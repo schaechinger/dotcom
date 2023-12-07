@@ -1,9 +1,8 @@
 import { unstable_noStore } from 'next/cache';
 
-import ProjectItem from '@/app/components/projects/ProjectItem';
-import LinkButton from '@/app/components/LinkButton';
-import { getDatabase } from '@/app/lib/db/factory';
-import ProjectType, { projectTypeLabels } from './ProjectType';
+import LinkButton from '@components/LinkButton';
+import ProjectItem from '@components/projects/ProjectItem';
+import { getDatabase } from '@lib/db/factory';
 
 const ProjectList = async  ({ highlights }: { highlights?: boolean }) => {
   unstable_noStore();

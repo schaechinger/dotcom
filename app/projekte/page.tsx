@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-import ProjectList from '@/app/components/projects/ProjectList';
+import ProjectList from '@components/projects/ProjectList';
 
 export const metadata: Metadata = {
   title: 'Projekte',

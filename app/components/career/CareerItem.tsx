@@ -1,5 +1,5 @@
-import TechItem from '@/app/components/career/TechItem';
-import { CareerData } from '@/models/career';
+import TechItem from '@components/career/TechItem';
+import { CareerData } from '@models/career';
 import CompanyLink from './CompanyLink';
 import TimeSpan from './TimeSpan';
 

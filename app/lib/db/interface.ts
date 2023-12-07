@@ -1,6 +1,6 @@
-import { AvailabilityData } from '@/models/availability';
-import { CareerData } from '@/models/career';
-import { ProjectData } from '@/models/project';
+import { AvailabilityData } from '@models/availability';
+import { CareerData } from '@models/career';
+import { ProjectData } from '@models/project';
 
 export interface Database {
   loadAvailability: () => Promise<AvailabilityData>;

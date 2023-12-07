@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
-import AvailabilityIndicator from '@/app/components/freelance/AvailabilityIndicator';
-import CareerList from '@/app/components/career/CareerList';
-import ProjectList from '@/app/components/projects/ProjectList';
-import LinkButton from './components/LinkButton';
+import LinkButton from '@components/LinkButton';
+import CareerList from '@components/career/CareerList';
+import AvailabilityIndicator from '@components/freelance/AvailabilityIndicator';
+import ProjectList from '@components/projects/ProjectList';
 
 const Home = () => (
   <div className="home-page lg:mr-80">

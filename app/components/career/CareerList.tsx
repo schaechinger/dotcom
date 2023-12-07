@@ -1,8 +1,8 @@
 import { unstable_noStore } from 'next/cache';
 
-import LinkButton from '@/app/components/LinkButton';
-import CareerItem from '@/app/components/career/CareerItem';
-import { getDatabase } from '@/app/lib/db/factory';
+import LinkButton from '@components/LinkButton';
+import CareerItem from '@components/career/CareerItem';
+import { getDatabase } from '@lib/db/factory';
 
 const CareerList = async ({ latest }: { latest?: boolean }) => {
   unstable_noStore();

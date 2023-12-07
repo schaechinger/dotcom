@@ -2,10 +2,10 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-import LinkButton from '@/app/components/LinkButton';
-import DetailBlock from '@/app/components/projects/DetailBlock';
-import { getDatabase } from '@/app/lib/db/factory';
-import ProjectMasterData from '@/app/components/projects/ProjectMasterData';
+import LinkButton from '@components/LinkButton';
+import DetailBlock from '@components/projects/DetailBlock';
+import ProjectMasterData from '@components/projects/ProjectMasterData';
+import { getDatabase } from '@lib/db/factory';
 
 interface ProjectPageProps {
   params: {

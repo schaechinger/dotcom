@@ -1,4 +1,4 @@
-import { Company } from '@/models/career';
+import { Company } from '@models/career';
 
 const CompanyLink = ({ company }: { company?: Company }) => {
   const CompanyTag = company?.link ? 'a' : 'span';

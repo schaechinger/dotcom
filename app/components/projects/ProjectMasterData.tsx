@@ -1,9 +1,9 @@
 
-import CompanyLink from '@/app/components/career/CompanyLink';
-import TechItem from '@/app/components/career/TechItem';
-import TimeSpan from '@/app/components/career/TimeSpan';
-import ProjectType from '@/app/components/projects/ProjectType';
-import { ProjectData } from '@/models/project';
+import CompanyLink from '@components/career/CompanyLink';
+import TechItem from '@components/career/TechItem';
+import TimeSpan from '@components/career/TimeSpan';
+import ProjectType from '@components/projects/ProjectType';
+import { ProjectData } from '@models/project';
 
 const ProjectMasterData = ({ project }: { project: ProjectData }) => (
   <section id={project.slug}>
