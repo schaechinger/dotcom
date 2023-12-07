@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
-import LinkButton from '../components/LinkButton';
+
+import LinkButton from '@components/LinkButton';
 
 export const metadata: Metadata = {
   title: 'Gehen wir es an!',
