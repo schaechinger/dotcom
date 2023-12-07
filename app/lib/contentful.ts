@@ -9,10 +9,10 @@ import { cache } from 'react';
 let instance: ContentfulClientApi<any> | null = null;
 
 const connect = () => {
-  if (!instance) {
+  if (!instance && process.env.CONTENTFUL_API_KEY) {
     instance = createClient({
       space: process.env.CONTENTFUL_SPACE!,
-      accessToken: process.env.CONTENTFUL_API_KEY!,
+      accessToken: process.env.CONTENTFUL_API_KEY,
     });
   }
 
@@ -108,7 +108,7 @@ const getEntryFields = <T>(collection: EntryCollection<any>) => (
 );
 
 export const loadAvailability = () => (
-  connect().getEntries<AvailabilityEntrySkeleton>({
+  connect()?.getEntries<AvailabilityEntrySkeleton>({
     content_type: 'availability',
   })
     .then(getEntryFields<AvailabilityData>)
@@ -116,7 +116,7 @@ export const loadAvailability = () => (
 );
 
 export const loadCareer = () => (
-  connect().getEntries<CareerEntrySkeleton>({
+  connect()?.getEntries<CareerEntrySkeleton>({
     content_type: 'career',
   })
     .then(getEntryFields<CareerData>)
@@ -124,7 +124,7 @@ export const loadCareer = () => (
 );
 
 export const loadProjects = (highlights = false) => (
-  connect().getEntries<ProjectEntrySkeleton>({
+  connect()?.getEntries<ProjectEntrySkeleton>({
     content_type: 'project',
     'fields.highlight': highlights || undefined,
   })
@@ -148,7 +148,7 @@ export const loadProjects = (highlights = false) => (
 );
 
 export const loadProjectBySlug = cache((slug: string) => (
-  connect().getEntries<ProjectEntrySkeleton>({
+  connect()?.getEntries<ProjectEntrySkeleton>({
     content_type: 'project',
     'fields.slug': slug,
   })
