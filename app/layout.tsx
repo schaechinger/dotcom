@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 
 import { locale } from '@app/utils';
-import Footer from '@components/Footer';
-import Sidebar from '@components/Sidebar';
+import Footer from '@components/layout/Footer';
+import Header from '@components/layout/Header';
 
 import '@/css/style.scss';
 import Provider from './provider';
 
-export const revalidate = 3600;
+export const revalidate = 600;
 
 export const metadata: Metadata = {
   title: {
@@ -26,7 +26,7 @@ const RootLayout = ({ children }: RootLayoutProps) => (
       <body className="dark:text-dark-200 dark:bg-dark-800">
       <Provider>
         <div className="lg:flex lg:gap-8 w-full max-w-screen-xl mx-auto">
-          <Sidebar />
+          <Header />
 
           <div className="lg:flex-auto lg:w-3/4 px-4 sm:px-10 md:px-20 lg:px-4">
             <main className="min-h-screen">

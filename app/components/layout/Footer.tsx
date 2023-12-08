@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
-import SocialLinks from '@components/SocialLinks';
 import HeartEmpty from '@components/icons/HeartEmpty';
+import SocialLinks from '@components/layout/SocialLinks';
+import ThemeToggle from '@components/layout/ThemeToggle';
 import SnesButtons from '@components/mario/SnesButtons';
-import ThemeToggle from './ThemeToggle';
 
 const Footer = () => (
   <footer className="footer mb-6 mt-10 sm:text-left text-sm">

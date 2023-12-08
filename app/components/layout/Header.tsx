@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import Logo from '@components/Logo';
-import SocialLinks from '@components/SocialLinks';
-import ThemeToggle from '@components/ThemeToggle';
+import Logo from '@components/layout/Logo';
+import Navigation from '@components/layout/Navigation';
+import SocialLinks from '@components/layout/SocialLinks';
 
-const Sidebar = () => (
+const Header = () => (
   <header className="lg:sticky lg:top-0 lg:h-screen lg:flex-none lg:w-80 px-4 sm:px-10 md:px-20 lg:px-4">
     <div className="sm:flex items-center py-4 lg:py-10">
       <Link href="/">
@@ -21,18 +21,9 @@ const Sidebar = () => (
       <Logo />
     </div>
     <p className="hidden sm:block text-sm mb-4 lg:mb-10">Entwickler für skalierbare und<br
-      className="hidden lg:inline-block" /> performance-kritische Softwaresysteme.</p>
-    <nav className="hidden lg:flex lg:flex-col lg:gap-2 py-2">
-      { [
-          { link: '/#ueber-mich', label: 'Über mich' },
-          { link: '/lebenslauf', label: 'Berufserfahrung' },
-          { link: '/projekte', label: 'Projekte' },
-          { link: '/kontakt', label: 'Kontakt' },
-        ].map((item) => (
-          <Link href={item.link} key={item.link} className="font-normal">{ item.label }</Link>
-        )) }
-        <ThemeToggle />
-    </nav>
+      className="hidden lg:inline" /> performance-kritische Softwaresysteme.</p>
+
+    <Navigation />
 
     <div className="hidden lg:block mt-4 lg:mt-10">
       <SocialLinks />
@@ -40,4 +31,4 @@ const Sidebar = () => (
   </header>
 );
 
-export default Sidebar;
+export default Header;

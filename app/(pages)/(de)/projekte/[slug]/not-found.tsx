@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   title: 'Projekt nicht gefunden',
 };
 
-const ProjectNotFoundPage = (props: { params: { slug: string } }) => (
+const ProjectNotFoundPage = () => (
   <div className={`project-page page--error pt-4 lg:pt-10 lg:mr-80`}>
     <section id="project-not-found">
-      <h2>404 &ndash; Projekt nicht gefunden</h2>
+      <h2>Projekt nicht gefunden</h2>
 
 
       <p className="mb-4">

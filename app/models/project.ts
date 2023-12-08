@@ -7,6 +7,11 @@ export interface ProjectLink {
   label: string;
 }
 
+export interface ProjectImage {
+  src: string;
+  label?: string;
+}
+
 export interface ProjectData extends CareerData {
   links?: {
     project?: ProjectLink;
@@ -15,8 +20,12 @@ export interface ProjectData extends CareerData {
   };
   type: ProjectType;
   highlight?: boolean;
+  images?: ProjectImage[];
   details?: {
+    description?: string[];
+    goal?: string[];
     requirements?: string[];
     implementation?: string[];
+    features?: string[];
   };
 }

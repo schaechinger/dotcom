@@ -9,15 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@slack/web-api": "6.10.0",
-    "contentful": "10.6.14",
+    "@slack/web-api": "^6.10.0",
+    "contentful": "^10.6.14",
     "mongodb": "^6.3.0",
     "next": "^14.0.3",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
     "sharp": "^0.33.0",
-    "zod": "3.22.4"
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -1,10 +1,9 @@
 import { ContentfulClientApi, Entry, EntryCollection, EntryFieldTypes, createClient } from 'contentful';
+import { cache } from 'react';
 
-import { locale } from '@app/utils';
 import { AvailabilityData } from '@models/availability';
 import { CareerData, sortCareerList } from '@models/career';
 import { ProjectData } from '@models/project';
-import { cache } from 'react';
 
 let instance: ContentfulClientApi<any> | null = null;
 
