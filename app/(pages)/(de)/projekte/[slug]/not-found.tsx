@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const ProjectNotFoundPage = () => (
-  <div className={`project-page page--error pt-4 lg:pt-10 lg:mr-80`}>
+  <div className="project-page page--error pt-4 lg:pt-10 lg:max-w-screen-sm">
     <section id="project-not-found">
       <h2>Projekt nicht gefunden</h2>
 

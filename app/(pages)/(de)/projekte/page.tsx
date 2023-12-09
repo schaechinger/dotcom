@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 }
 
 const ProjectsPage = () => (
-  <div className="projects-page pt-4 lg:pt-10 lg:mr-80">
+  <div className="projects-page pt-4 lg:pt-10 lg:max-w-screen-sm">
     <section id="projekte">
       <h2>Projekte</h2>
 

@@ -6,7 +6,7 @@ import AvailabilityIndicator from '@components/freelance/AvailabilityIndicator';
 import ProjectList from '@components/projects/ProjectList';
 
 const Home = () => (
-  <div className="home-page lg:mr-80">
+  <div className="home-page lg:max-w-screen-sm">
     <section id="ueber-mich" className="pt-4 lg:pt-10 mb-8">
       <h2>Servus, ich bin Manuel.</h2>
 

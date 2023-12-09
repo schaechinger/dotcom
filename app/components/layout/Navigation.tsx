@@ -17,8 +17,8 @@ const Navigation = () => {
       >Über&nbsp;mich</Link>
       { [
         { link: '/lebenslauf', label: <>
-          <span className="hidden lg:inline">Berufserfahrung</span>
-          <span className="lg:hidden">Erfahrung</span>
+          <span className="hidden sm:inline">Berufserfahrung</span>
+          <span className="sm:hidden">Erfahrung</span>
         </> },
         { link: '/projekte', label: 'Projekte' },
         { link: '/kontakt', label: 'Kontakt' },

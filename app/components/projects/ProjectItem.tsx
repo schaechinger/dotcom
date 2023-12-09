@@ -12,7 +12,7 @@ interface ProjectItemProps {
 }
 
 const ProjectItem = ({ item }: ProjectItemProps) => (
-  <article className="career-item max-w-screen-sm hover:bg-primary-100 transition-colors lg:rounded-md my-4 -mx-4 px-4 py-3">
+  <article className="career-item max-w-screen-sm hover:bg-primary-100 transition-colors sm:rounded-md my-4 -mx-4 px-4 py-3">
     <header className="career-item__headline sm:flex items-center">
       <div className="career-item__dates text-sm font-normal sm:order-2">
         <TimeSpan startDate={item.startDate} endDate={item.endDate} />

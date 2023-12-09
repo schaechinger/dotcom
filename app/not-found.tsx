@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 const NotFound = () => (
-  <div className="not-found-page pt-4 lg:pt-10 lg:mr-80">
+  <div className="not-found-page pt-4 lg:pt-10 lg:max-w-screen-sm">
     <section>
       <h2>Seite nicht gefunden</h2>
 

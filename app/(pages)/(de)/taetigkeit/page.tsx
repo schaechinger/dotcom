@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 const ResumePage = () => (
-  <div className="resume-page pt-4 lg:pt-10 lg:mr-80">
+  <div className="resume-page pt-4 lg:pt-10 lg:max-w-screen-sm">
     <section id="taetigkeit">
       <h2>Meine Tätigkeit</h2>
 

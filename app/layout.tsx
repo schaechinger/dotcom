@@ -23,7 +23,7 @@ interface RootLayoutProps {
 
 const RootLayout = ({ children }: RootLayoutProps) => (
   <html className="light" style={{ colorScheme: 'light' }} lang={locale}>
-      <body className="dark:text-dark-200 dark:bg-dark-800">
+      <body className="dark:text-dark-200 dark:bg-dark-700">
       <Provider>
         <div className="lg:flex lg:gap-8 w-full max-w-screen-xl mx-auto">
           <Header />
