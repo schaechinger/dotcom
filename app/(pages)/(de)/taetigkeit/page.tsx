@@ -60,8 +60,8 @@ const ResumePage = () => (
         </p>
 
         <p>
-          Kontaktieren Sie mich gere mit Ihrem speziellen Anliegen, um gemeinsam eine
-          Lösung zu finden.
+          Kontaktiere mich gere mit deinem spezifischen Anliegen, um gemeinsam eine
+          Lösung dafür zu finden.
         </p>
       </div>
 

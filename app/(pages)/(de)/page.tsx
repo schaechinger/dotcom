@@ -42,8 +42,8 @@ const Home = () => (
       <AvailabilityIndicator />
 
       <p className="mt-4">
-        Auch wenn meine Verfügbarkeit für Ihre Bedürfnisse nicht ausreicht, <Link href="/kontakt"
-          className="inline-link">kontaktieren</Link> Sie mich gerne. Wir finden einen Weg, Ihr
+        Auch wenn meine Verfügbarkeit für die Bedürfnisse nicht ausreicht, <Link href="/kontakt"
+          className="inline-link">kontaktiere</Link> mich gerne. Wir finden einen Weg, das
         Projekt umzusetzen.
       </p>
     </section>
@@ -64,8 +64,8 @@ const Home = () => (
       <h2>Kontakt</h2>
 
       <p className="mb-4">
-        Nehmen Sie gerne Kontakt mit mir auf, um gemeinsam Ihr Vorhaben zu verwirklichen und
-        Ihre Herausforderung zu meistern.
+        Nimm gerne Kontakt mit mir auf, um gemeinsam dein Vorhaben zu verwirklichen und
+        die Herausforderung zu meistern.
       </p>
 
       <LinkButton href="/kontakt" label="Jetzt kontaktieren" />

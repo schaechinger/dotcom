@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import Home from '@components/icons/Home';
 import ThemeToggle from '@components/layout/ThemeToggle';
 
 const Navigation = () => {
@@ -13,9 +14,12 @@ const Navigation = () => {
       <Link
         href="/#ueber-mich"
         className={`hidden lg:block font-normal${'/' === path ? ' text-primary-500 dark:text-primary-500' : ''}`}
-      >Über mich</Link>
+      >
+        <span className="hidden lg:inline-block">Über mich</span>
+        <Home className="lg:hidden" />
+      </Link>
       { [
-        { link: '/lebenslauf', label: 'Erfahrung' },
+        { link: '/lebenslauf', label: 'Berufserfahrung' },
         { link: '/projekte', label: 'Projekte' },
         { link: '/kontakt', label: 'Kontakt' },
       ].map((item) => (

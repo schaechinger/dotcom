@@ -5,7 +5,7 @@ import ContactForm from '@components/forms/ContactForm';
 
 export const metadata: Metadata = {
   title: 'Kontakt',
-  description: 'Hier können Sie auf schnellem Weg mit mir in Kontakt treten.',
+  description: 'Hier kannst du auf schnellem Weg mit mir in Kontakt treten.',
 };
 
 const ResumePage = () => (
@@ -13,10 +13,10 @@ const ResumePage = () => (
     <section id="kontakt">
       <h2>Kontakt</h2>
 
-      <p className="mb-2">Der erste Schritt liegt bei Ihnen.</p>
+      <p className="mb-2">Der erste Schritt liegt bei dir.</p>
 
       <p>
-        Melden Sie sich gerne und wir setzen Ihr Vorhaben so um, wie Sie es sich vorstellen!
+        Melde dich gerne und wir setzen dein Vorhaben so um, wie du es dir vorstellst!
       </p>
 
       <div className="flex flex-wrap mt-10 gap-y-10">

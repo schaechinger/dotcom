@@ -16,8 +16,8 @@ const ProjectNotFoundPage = () => (
 
 
       <p className="mb-4">
-        Dieses Projekt existiert nicht oder ist nicht mehr verfgbar. Sehen Sie sich gerne meine
-        anderen Projekte an und finden Sie das passende.
+        Dieses Projekt existiert nicht oder ist nicht mehr verfgbar. Sieh dir gerne meine
+        anderen Projekte an und finde das für dich passende.
       </p>
 
       <LinkButton

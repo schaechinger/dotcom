@@ -42,7 +42,7 @@ const TransportKitPage = async () => {
         <h3>Was ist Transportkit</h3>
 
         <p className="mb-2">
-          Mit TransportKit können Icons von Linien vieler Großstädte einfach in Ihr Projekt
+          Mit TransportKit können Icons von Linien vieler Großstädte einfach in Projekte
           eingebunden werden.<br />
           Die Linien sind für helle und dunklere Hintergründe angepasst und können so überall
           eingesetzt werden.
@@ -50,7 +50,7 @@ const TransportKitPage = async () => {
 
         <p>
           Das Projekt ist Open Source und kann auf GitHub heruntergeladen werden. Viel Spaß bei
-          der Nutzung. Bitte beachten Sie vorab mögliche Beschränkungen oder benötigte Lizenzen
+          der Nutzung. Bitte beachte vorab mögliche Beschränkungen oder benötigte Lizenzen
           durch die Rechteinhaber.
         </p>
       </section>
@@ -90,7 +90,7 @@ const TransportKitPage = async () => {
       <section id="links" className="pt-10">
         <h3>Links</h3>
 
-        <p>Den Code zum Projekt finden Sie auf <Link href="https://github.com/schaechinger/transportkit"
+        <p>Den Code zum Projekt findest du auf <Link href="https://github.com/schaechinger/transportkit"
           target="_blank" className="inline-link">GitHub</Link>.</p>
       </section>
 

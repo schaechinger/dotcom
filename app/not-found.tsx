@@ -13,7 +13,7 @@ const NotFound = () => (
       <h2>Seite nicht gefunden</h2>
 
       <p className="mb-4">
-        Hier geht es nicht weiter, bitte gehen Sie zur Startseite oder wählen Sie einen
+        Hier geht es nicht weiter, bitte geh zur Startseite oder wähle einen
         passenden Punkt aus dem Menü aus.
       </p>
 

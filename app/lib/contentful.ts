@@ -106,59 +106,79 @@ const getEntryFields = <T>(collection: EntryCollection<any>) => (
   (collection.items || []).map((e) => parseEntry(e)) as T[]
 );
 
-export const loadAvailability = cache(async () => {
-  const availability = await connect()?.getEntries<AvailabilityEntrySkeleton>({
-    content_type: 'availability',
-  })
-    .then(getEntryFields<AvailabilityData>)
-    .then((availabilities) => availabilities[0]);
+export const loadAvailability = async () => {
+  const client = connect();
+  if (!client) {
+    return null;
+  }
 
-  return availability;
-});
+  return cache(async () => (
+    await client.getEntries<AvailabilityEntrySkeleton>({
+      content_type: 'availability',
+    })
+      .then(getEntryFields<AvailabilityData>)
+      .then((availabilities) => availabilities[0])
+  ))();
+};
 
-export const loadCareer = cache(async () => {
-  const career = await connect()?.getEntries<CareerEntrySkeleton>({
-    content_type: 'career',
-  })
-    .then(getEntryFields<CareerData>)
-    .then(sortCareerList);
+export const loadCareer = async () => {
+  const client = connect();
+  if (!client) {
+    return null;
+  }
 
-  return career;
-});
+  return cache(async () => (
+    await client.getEntries<CareerEntrySkeleton>({
+      content_type: 'career',
+    })
+      .then(getEntryFields<CareerData>)
+      .then(sortCareerList)
+  ))();
+};
 
-export const loadProjects = cache(async (highlights = false) => {
-  const projects = await connect()?.getEntries<ProjectEntrySkeleton>({
-    content_type: 'project',
-    'fields.highlight': highlights || undefined,
-  })
-    .then(getEntryFields<ProjectData>)
-    .then(sortCareerList)
-    .then((projects) => (
-      projects.map((p) => ({
-        title: p.title,
-        slug: p.slug,
-        company: p.company,
-        description: p.description,
-        bullets: p.bullets,
-        tech: p.tech,
-        startDate: p.startDate,
-        endDate: p.endDate,
-        links: p.links,
-        type: p.type,
-        highlight: p.highlight,
-      }))
-    ));
+export const loadProjects = async (highlights = false) => {
+  const client = connect();
+  if (!client) {
+    return null;
+  }
 
-  return projects;
-});
+  return cache(async () => (
+    await client.getEntries<ProjectEntrySkeleton>({
+      content_type: 'project',
+      'fields.highlight': highlights || undefined,
+    })
+      .then(getEntryFields<ProjectData>)
+      .then(sortCareerList)
+      .then((projects) => (
+        projects.map((p) => ({
+          title: p.title,
+          slug: p.slug,
+          company: p.company,
+          description: p.description,
+          bullets: p.bullets,
+          tech: p.tech,
+          startDate: p.startDate,
+          endDate: p.endDate,
+          links: p.links,
+          type: p.type,
+          highlight: p.highlight,
+        }))
+      ))
+  ))();
+};
 
-export const loadProjectBySlug = cache(async (slug: string) => {
-  const project = connect()?.getEntries<ProjectEntrySkeleton>({
-    content_type: 'project',
-    'fields.slug': slug,
-  })
-    .then(getEntryFields<ProjectData>)
-    .then((projects) => projects[0]);
+export const loadProjectBySlug = async (slug: string) => {
+  const client = connect();
+  if (!client) {
+    return null;
+  }
 
-  return project;
-});
+  return cache(async () => (
+    client.getEntries<ProjectEntrySkeleton>({
+      content_type: 'project',
+      'fields.slug': slug,
+    })
+      .then(getEntryFields<ProjectData>)
+      .then((projects) => projects[0])
+  ))();
+};

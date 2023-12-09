@@ -68,18 +68,18 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
         <h3>Links</h3>
 
         { project.links?.project
-          ? <p>Das Projekt finden Sie auf <Link href={project.links.project.link}
+          ? <p>Das Projekt findest du auf <Link href={project.links.project.link}
             target="_blank" className="inline-link">{ project.links.project.label }</Link>.</p>
           : null
         }
         { project.links?.code
-          ? <p>Den Code zum Projekt finden Sie auf <Link href={project.links.code.link}
+          ? <p>Den Code zum Projekt findest du auf <Link href={project.links.code.link}
             target="_blank" className="inline-link">{ project.links.code.label }</Link>.</p>
           : null
         }
         { project.links?.package
-          ? <p>Sie können das Paket mit <Link href={project.links.package.link}
-            target="_blank" className="inline-link">{ project.links.package.label }</Link> in Ihr Projekt einbinden.</p>
+          ? <p>Du kannst das Paket mit <Link href={project.links.package.link}
+            target="_blank" className="inline-link">{ project.links.package.label }</Link> in dein Projekt einbinden.</p>
           : null
         }
 

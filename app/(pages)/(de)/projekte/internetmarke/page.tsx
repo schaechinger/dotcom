@@ -90,12 +90,12 @@ const InternetmarkePage = async () => {
         <h3>Links</h3>
 
         <p>
-          Das Projekt finden Sie auf <Link href="https://github.com/schaechinger/internetmarke#readme"
+          Das Projekt findest du auf <Link href="https://github.com/schaechinger/internetmarke#readme"
             target="_blank" className="inline-link">GitHub</Link>.
         </p>
         <p>
-          Sie können das Paket mit <Link href="https://npmjs.org/package/internetmarke"
-            target="_blank" className="inline-link">npm</Link> in Ihr Projekt einbinden.
+          Du kannst das Paket mit <Link href="https://npmjs.org/package/internetmarke"
+            target="_blank" className="inline-link">npm</Link> in dein Projekt einbinden.
         </p>
       </section>
 

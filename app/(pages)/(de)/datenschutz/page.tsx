@@ -15,7 +15,7 @@ const PrivacyPage = () => (
 
       <ul className="list-disc ml-5">
         <li><Link href="#verantwortlicher">Verantwortlicher</Link></li>
-        <li><Link href="#widerruf">Widerruf Ihrer Einwilligung zur Datenverarbeitung</Link></li>
+        <li><Link href="#widerruf">Widerruf deiner Einwilligung zur Datenverarbeitung</Link></li>
         <li><Link href="#beschwerde">Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde</Link></li>
         <li><Link href="#datenuebertragbarkeit">Recht auf Datenübertragbarkeit</Link></li>
         <li><Link href="#auskunft">Recht auf Auskunft, Berichtigung, Sperrung und Löschung</Link></li>
@@ -41,11 +41,11 @@ const PrivacyPage = () => (
     </section>
 
     <section id="widerruf" className="pt-10">
-      <h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>
+      <h3>Widerruf deiner Einwilligung zur Datenverarbeitung</h3>
 
       <p>
-        Nur mit Ihrer ausdrücklichen Einwilligung sind einige Vorgänge der Datenverarbeitung
-        möglich. Ein Widerruf Ihrer bereits erteilten Einwilligung ist jederzeit möglich.
+        Nur mit deiner ausdrücklichen Einwilligung sind einige Vorgänge der Datenverarbeitung
+        möglich. Ein Widerruf deiner bereits erteilten Einwilligung ist jederzeit möglich.
         Für den Widerruf genügt eine formlose Mitteilung per E-Mail. Die Rechtmäßigkeit der bis
         zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.
       </p>
@@ -55,7 +55,7 @@ const PrivacyPage = () => (
       <h3>Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde</h3>
 
       <p>
-        Als Betroffener steht Ihnen im Falle eines datenschutzrechtlichen Verstoßes ein
+        Als Betroffener steht dir im Falle eines datenschutzrechtlichen Verstoßes ein
         Beschwerderecht bei der zuständigen Aufsichtsbehörde zu. Zuständige Aufsichtsbehörde
         bezüglich datenschutzrechtlicher Fragen ist der Landesdatenschutzbeauftragte des
         Bundeslandes, in dem sich der Sitz meines Unternehmens befindet. Der folgende Link
@@ -68,9 +68,9 @@ const PrivacyPage = () => (
       <h3>Recht auf Datenübertragbarkeit</h3>
 
       <p>
-        Ihnen steht das Recht zu, Daten, die ich auf Grundlage Ihrer Einwilligung oder in
-        Erfüllung eines Vertrags automatisiert verarbeite, an sich oder an Dritte aushändigen zu
-        lassen. Die Bereitstellung erfolgt in einem maschinenlesbaren Format. Sofern Sie die
+        Dir steht das Recht zu, Daten, die ich auf Grundlage deiner Einwilligung oder in
+        Erfüllung eines Vertrags automatisiert verarbeite, an dich oder an Dritte aushändigen zu
+        lassen. Die Bereitstellung erfolgt in einem maschinenlesbaren Format. Sofern du die
         direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies
         nur, soweit es technisch machbar ist.
       </p>
@@ -80,11 +80,11 @@ const PrivacyPage = () => (
       <h3>Recht auf Auskunft, Berichtigung, Sperrung und Löschung</h3>
 
       <p>
-        Sie haben jederzeit im Rahmen der geltenden gesetzlichen Bestimmungen das Recht auf
-        unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, Herkunft der
+        Du hast jederzeit im Rahmen der geltenden gesetzlichen Bestimmungen das Recht auf
+        unentgeltliche Auskunft über deine gespeicherten personenbezogenen Daten, Herkunft der
         Daten, deren Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf
         Berichtigung, Sperrung oder Löschung dieser Daten. Diesbezüglich und auch zu weiteren
-        Fragen zum Thema personenbezogene Daten können Sie sich jederzeit über die im Impressum
+        Fragen zum Thema personenbezogene Daten kannst du dir jederzeit über die im Impressum
         aufgeführten Kontaktmöglichkeiten an mich wenden.
       </p>
     </section>
@@ -93,10 +93,10 @@ const PrivacyPage = () => (
       <h3>SSL- bzw. TLS-Verschlüsselung</h3>
 
       <p>
-        Aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, die Sie an
+        Aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, die du an
         mich als Seitenbetreiber senden, nutzt meine Website eine SSL- bzw. TLS-Verschlüsselung.
-        Damit sind Daten, die Sie über diese Website übermitteln, für Dritte nicht mitlesbar.
-        Sie erkennen eine verschlüsselte Verbindung an der „https://“ Adresszeile Ihres Browsers
+        Damit sind Daten, die du über diese Website übermitteln, für Dritte nicht mitlesbar.
+        Du erkennst eine verschlüsselte Verbindung an der „https://“ Adresszeile deines Browsers
         und am Schloss-Symbol in der Browserzeile.
       </p>
     </section>
@@ -106,7 +106,7 @@ const PrivacyPage = () => (
 
       <p className="mb-2">
         In Server-Log-Dateien erhebt und speichert der Provider der Website automatisch
-        Informationen, die Ihr Browser automatisch an mich übermittelt. Dies sind:
+        Informationen, die dein Browser automatisch an mich übermittelt. Dies sind:
       </p>
 
       <ul className="list-disc ml-5 mb-2">
@@ -130,22 +130,22 @@ const PrivacyPage = () => (
       <h3>Kontaktformular</h3>
 
       <p className="mb-2">
-        Per Kontaktformular übermittelte Daten werden einschließlich Ihrer Kontaktdaten
-        gespeichert, um Ihre Anfrage bearbeiten zu können oder um für Anschlussfragen
-        bereitzustehen. Eine Weitergabe dieser Daten findet ohne Ihre Einwilligung nicht statt.
+        Per Kontaktformular übermittelte Daten werden einschließlich deine Kontaktdaten
+        gespeichert, um dein Anfrage bearbeiten zu können oder um für Anschlussfragen
+        bereitzustehen. Eine Weitergabe dieser Daten findet ohne deine Einwilligung nicht statt.
       </p>
 
       <p className="mb-2">
         Die Verarbeitung der in das Kontaktformular eingegebenen Daten erfolgt ausschließlich
-        auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Ein Widerruf Ihrer bereits
+        auf Grundlage deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Ein Widerruf deiner bereits
         erteilten Einwilligung ist jederzeit möglich. Für den Widerruf genügt eine formlose
         Mitteilung per E-Mail. Die Rechtmäßigkeit der bis zum Widerruf erfolgten
         Datenverarbeitungsvorgänge bleibt vom Widerruf unberührt.
       </p>
 
       <p>
-        Über das Kontaktformular übermittelte Daten verbleiben bei mir, bis Sie mich zur Löschung
-        auffordern, Ihre Einwilligung zur Speicherung widerrufen oder keine Notwendigkeit der
+        Über das Kontaktformular übermittelte Daten verbleiben bei mir, bis du mich zur Löschung
+        aufforderst, deine Einwilligung zur Speicherung widerrufst oder keine Notwendigkeit der
         Datenspeicherung mehr besteht. Zwingende gesetzliche Bestimmungen – insbesondere
         Aufbewahrungsfristen – bleiben unberührt.
       </p>
@@ -155,20 +155,20 @@ const PrivacyPage = () => (
       <h3>Cookies</h3>
 
       <p className="mb-2">
-        Meine Website verwendet Cookies. Das sind kleine Textdateien, die Ihr Webbrowser auf
-        Ihrem Endgerät speichert. Cookies helfen mir dabei, mein Angebot nutzerfreundlicher,
+        Meine Website verwendet Cookies. Das sind kleine Textdateien, die dein Webbrowser auf
+        deinem Endgerät speichert. Cookies helfen mir dabei, mein Angebot nutzerfreundlicher,
         effektiver und sicherer zu machen.
       </p>
 
       <p className="mb-2">
-        Einige Cookies sind “Session-Cookies.” Solche Cookies werden nach Ende Ihrer
-        Browser-Sitzung von selbst gelöscht. Hingegen bleiben andere Cookies auf Ihrem Endgerät
-        bestehen, bis Sie diese selbst löschen. Solche Cookies helfen mir, Sie bei Rückkehr auf
+        Einige Cookies sind “Session-Cookies.” Solche Cookies werden nach Ende deiner
+        Browser-Sitzung von selbst gelöscht. Hingegen bleiben andere Cookies auf deinem Endgerät
+        bestehen, bis du diese selbst löschen. Solche Cookies helfen mir, dich bei Rückkehr auf
         meine Website wiederzuerkennen.
       </p>
 
       <p className="mb-2">
-        Mit einem modernen Webbrowser können Sie das Setzen von Cookies überwachen, einschränken
+        Mit einem modernen Webbrowser kannst du das Setzen von Cookies überwachen, einschränken
         oder unterbinden. Viele Webbrowser lassen sich so konfigurieren, dass Cookies mit dem
         Schließen des Programms von selbst gelöscht werden. Die Deaktivierung von Cookies kann
         eine eingeschränkte Funktionalität meiner Website zur Folge haben.

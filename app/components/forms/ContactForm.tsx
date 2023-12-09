@@ -14,9 +14,9 @@ const ContactForm = () => {
       <div>
         <p className="text-lg mb-2">
           <CircleCheck className="text-2xl text-primary-500 -mt-1 mr-2" />
-          Ihre Anfrage wurde versendet!
+          Deine Anfrage wurde versendet!
         </p>
-        <p>Danke für Ihre Nachricht, ich werde mich zeitnah bei Ihnen melden.</p>
+        <p>Danke für deine Nachricht, ich werde mich zeitnah bei Ihnen melden.</p>
       </div>
     );
   }
@@ -33,7 +33,7 @@ const ContactForm = () => {
           required
         />
         { 'name' === state.field
-          ? <p className="text-sm text-red-500 mt-1">Bitte geben Sie Ihren Namen an</p> : null }
+          ? <p className="text-sm text-red-500 mt-1">Bitte gib deinen Namen an</p> : null }
       </label>
 
       <label className="block mb-8">
@@ -46,7 +46,7 @@ const ContactForm = () => {
           required
         />
         { 'email' === state.field
-          ? <p className="text-sm text-red-500 mt-1">Bitte geben Sie Ihre E-Mail-Adresse an</p> : null }
+          ? <p className="text-sm text-red-500 mt-1">Bitte gib deine E-Mail-Adresse an</p> : null }
       </label>
 
       <label className="block mb-8">
@@ -58,13 +58,13 @@ const ContactForm = () => {
           rows={4}
         />
         { 'message' === state.field
-          ? <p className="text-sm text-red-500 mt-1">Bitte schildern Sie Ihr Anliegen</p> : null }
+          ? <p className="text-sm text-red-500 mt-1">Bitte schildere dein Anliegen</p> : null }
       </label>
 
       <SubmitButton>Absenden</SubmitButton>
       { state.message }
       { 'form' === state.field
-          ? <p className="text-sm text-red-500 mt-1">Ihre Nachricht konnte nicht gesendet werden.</p> : null }
+          ? <p className="text-sm text-red-500 mt-1">Deine Nachricht konnte nicht gesendet werden</p> : null }
     </form>
   );
 };

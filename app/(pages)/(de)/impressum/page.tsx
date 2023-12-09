@@ -27,9 +27,9 @@ const ImprintPage = () => (
 
       <p>
         <strong>Online-Streitbeilegung:</strong> Die Europäische Kommission stellt eine Plattform
-        zur Online-Streitbeilegung (OS) bereit, die Sie unter <a
+        zur Online-Streitbeilegung (OS) bereit, die du unter <a
           href="https://ec.europa.eu/consumers/odr" target="_blank" className="inline-link"
-        >ec.europa.eu/consumers/odr</a> finden.
+        >ec.europa.eu/consumers/odr</a> findest.
         Verbraucher haben die Möglichkeit, diese Plattform für die Beilegung ihrer Streitigkeiten
         zu nutzen.<br />
         Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
@@ -66,8 +66,8 @@ const ImprintPage = () => (
         bzw. Rechteinhaber.</p>
 
       <p>
-        <strong>Hinweise auf Rechtsverstöße:</strong> Sollten Sie innerhalb meines
-        Internetauftritts Rechtsverstöße bemerken, bitte ich Sie mich auf diese hinzuweisen.
+        <strong>Hinweise auf Rechtsverstöße:</strong> Solltest du innerhalb meines
+        Internetauftritts Rechtsverstöße bemerken, bitte ich dich mich auf diese hinzuweisen.
         Ich werde rechtswidrige Inhalte und Links nach Kenntnisnahme unverzüglich entfernen.
       </p>
     </section>
