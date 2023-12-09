@@ -36,7 +36,6 @@ const ResumePage = () => (
           { [
             { slug: 'javascript', name: 'JavaScript' },
             { slug: 'typescript', name: 'TypeScript' },
-            { slug: 'nodejs', name: 'Node.js' },
             { slug: 'css', name: 'CSS/Sass' },
             { slug: 'sql', name: 'SQL' },
             { slug: 'php', name: 'PHP' },
@@ -52,10 +51,12 @@ const ResumePage = () => (
 
         <ul className="flex flex-wrap mt-3 gap-2">
           { [
+            { slug: 'nodejs', name: 'Node.js' },
             { slug: 'vue', name: 'Vue' },
-            { slug: 'react', name: 'React' },
-            { slug: 'quasar', name: 'Quasar' },
             { slug: 'pinia', name: 'Pinia' },
+            { slug: 'quasar', name: 'Quasar' },
+            { slug: 'react', name: 'React' },
+            { slug: 'nextjs', name: 'Next.js' },
             { slug: 'express', name: 'Express.js' },
             { slug: 'mqtt', name: 'MQTT' },
             { slug: 'mocha', name: 'Mocha' },

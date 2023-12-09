@@ -176,7 +176,7 @@ const PrivacyPage = () => (
 
       <p>
         Das Setzen von Cookies, die zur Ausübung elektronischer Kommunikationsvorgänge oder der
-        Bereitstellung bestimmter, von Ihnen erwünschter Funktionen (z.B. Warenkorb) notwendig
+        Bereitstellung bestimmter, von dir erwünschter Funktionen (z.B. Warenkorb) notwendig
         sind, erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Als Betreiber dieser Website
         habe ich ein berechtigtes Interesse an der Speicherung von Cookies zur technisch
         fehlerfreien und reibungslosen Bereitstellung meiner Dienste. Sofern die Setzung anderer

@@ -10,16 +10,16 @@ const Navigation = () => {
   const path = usePathname();
 
   return (
-    <nav className="flex overflow-x-visible lg:flex-col gap-4 lg:gap-2 py-2 border-b-2 border-b-primary-100 lg:border-b-0">
+    <nav className="flex lg:flex-col gap-4 lg:gap-2 py-2 border-b-2 border-b-primary-100 lg:border-b-0">
       <Link
         href="/#ueber-mich"
-        className={`hidden lg:block font-normal${'/' === path ? ' text-primary-500 dark:text-primary-500' : ''}`}
-      >
-        <span className="hidden lg:inline-block">Über mich</span>
-        <Home className="lg:hidden" />
-      </Link>
+        className={`font-normal${'/' === path ? ' text-primary-500 dark:text-primary-500' : ''}`}
+      >Über&nbsp;mich</Link>
       { [
-        { link: '/lebenslauf', label: 'Berufserfahrung' },
+        { link: '/lebenslauf', label: <>
+          <span className="hidden lg:inline">Berufserfahrung</span>
+          <span className="lg:hidden">Erfahrung</span>
+        </> },
         { link: '/projekte', label: 'Projekte' },
         { link: '/kontakt', label: 'Kontakt' },
       ].map((item) => (

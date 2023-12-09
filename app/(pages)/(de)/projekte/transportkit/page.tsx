@@ -1,15 +1,13 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import LinkButton from '@components/LinkButton';
+import DetailBlock from '@components/projects/DetailBlock';
+import ProjectLinks from '@components/projects/ProjectLinks';
 import ProjectMasterData from '@components/projects/ProjectMasterData';
-import { loadProjectBySlug } from '@/app/lib/contentful';
-import { ProjectPageProps } from '../[slug]/page';
+import { loadProjectBySlug } from '@lib/contentful';
 
-export async function generateMetadata(
-  { params }: ProjectPageProps,
-): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const metadata: Metadata = {
     title: 'Projektdetails',
   };
@@ -38,22 +36,9 @@ const TransportKitPage = async () => {
 
       <ProjectMasterData project={project} />
 
-      <section id="intro" className="pt-10">
-        <h3>Was ist Transportkit</h3>
-
-        <p className="mb-2">
-          Mit TransportKit können Icons von Linien vieler Großstädte einfach in Projekte
-          eingebunden werden.<br />
-          Die Linien sind für helle und dunklere Hintergründe angepasst und können so überall
-          eingesetzt werden.
-        </p>
-
-        <p>
-          Das Projekt ist Open Source und kann auf GitHub heruntergeladen werden. Viel Spaß bei
-          der Nutzung. Bitte beachte vorab mögliche Beschränkungen oder benötigte Lizenzen
-          durch die Rechteinhaber.
-        </p>
-      </section>
+      { project.details?.description
+        ? <DetailBlock id="beschreibung" title="Was ist TransportKit" content={project.details.description} />
+        : null }
 
       <section id="munich" className="pt-10">
         <h3>München</h3>
@@ -87,12 +72,7 @@ const TransportKitPage = async () => {
         )) }
       </section>
 
-      <section id="links" className="pt-10">
-        <h3>Links</h3>
-
-        <p>Den Code zum Projekt findest du auf <Link href="https://github.com/schaechinger/transportkit"
-          target="_blank" className="inline-link">GitHub</Link>.</p>
-      </section>
+      <ProjectLinks links={project.links} />
 
       <p className="mt-4">
         <LinkButton href="/projekte" label="Zur Projektliste" />

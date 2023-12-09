@@ -7,17 +7,21 @@ export interface ProjectLink {
   label: string;
 }
 
+export interface ProjectLinkData {
+  project?: ProjectLink;
+  code?: ProjectLink;
+  github?: string[];
+  package?: ProjectLink;
+  npm?: string;
+}
+
 export interface ProjectImage {
   src: string;
   label?: string;
 }
 
 export interface ProjectData extends CareerData {
-  links?: {
-    project?: ProjectLink;
-    code?: ProjectLink;
-    package?: ProjectLink;
-  };
+  links?: ProjectLinkData;
   type: ProjectType;
   highlight?: boolean;
   images?: ProjectImage[];

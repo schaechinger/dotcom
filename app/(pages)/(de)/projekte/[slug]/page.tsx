@@ -7,6 +7,7 @@ import DetailBlock from '@components/projects/DetailBlock';
 import ProjectImages from '@components/projects/ProjectImages';
 import ProjectMasterData from '@components/projects/ProjectMasterData';
 import { loadProjectBySlug } from '@lib/contentful';
+import ProjectLinks from '@/app/components/projects/ProjectLinks';
 
 export interface ProjectPageProps {
   params: {
@@ -64,29 +65,7 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
         ? <DetailBlock id="features" title="Features" content={project.details.features} />
         : null }
 
-      <section id="links" className="pt-10">
-        <h3>Links</h3>
-
-        { project.links?.project
-          ? <p>Das Projekt findest du auf <Link href={project.links.project.link}
-            target="_blank" className="inline-link">{ project.links.project.label }</Link>.</p>
-          : null
-        }
-        { project.links?.code
-          ? <p>Den Code zum Projekt findest du auf <Link href={project.links.code.link}
-            target="_blank" className="inline-link">{ project.links.code.label }</Link>.</p>
-          : null
-        }
-        { project.links?.package
-          ? <p>Du kannst das Paket mit <Link href={project.links.package.link}
-            target="_blank" className="inline-link">{ project.links.package.label }</Link> in dein Projekt einbinden.</p>
-          : null
-        }
-
-        { !project.links
-          ? <p>Das Projekt wird intern verwendet und ist daher nicht öffentlich zugänglich.</p>
-          : null }
-      </section>
+      <ProjectLinks links={project.links} />
 
       <p className="mt-4">
         <LinkButton href="/projekte" label="Zur Projektliste" />

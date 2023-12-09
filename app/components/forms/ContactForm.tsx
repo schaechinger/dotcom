@@ -16,7 +16,7 @@ const ContactForm = () => {
           <CircleCheck className="text-2xl text-primary-500 -mt-1 mr-2" />
           Deine Anfrage wurde versendet!
         </p>
-        <p>Danke für deine Nachricht, ich werde mich zeitnah bei Ihnen melden.</p>
+        <p>Danke für deine Nachricht, ich werde mich zeitnah bei dir melden.</p>
       </div>
     );
   }

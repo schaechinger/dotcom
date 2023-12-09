@@ -5,19 +5,6 @@ import { AvailabilityData } from '@models/availability';
 import { CareerData, sortCareerList } from '@models/career';
 import { ProjectData } from '@models/project';
 
-let instance: ContentfulClientApi<any> | null = null;
-
-const connect = () => {
-  if (!instance && process.env.CONTENTFUL_API_KEY) {
-    instance = createClient({
-      space: process.env.CONTENTFUL_SPACE!,
-      accessToken: process.env.CONTENTFUL_API_KEY,
-    });
-  }
-
-  return instance;
-}
-
 type AvailabilityEntrySkeleton = {
   contentTypeId: 'availability',
   fields: {
@@ -85,6 +72,19 @@ type ProjectEntrySkeleton = {
     details?: EntryFieldTypes.Object,
   },
 };
+
+let instance: ContentfulClientApi<any> | null = null;
+
+const connect = () => {
+  if (!instance && process.env.CONTENTFUL_API_KEY) {
+    instance = createClient({
+      space: process.env.CONTENTFUL_SPACE!,
+      accessToken: process.env.CONTENTFUL_API_KEY,
+    });
+  }
+
+  return instance;
+}
 
 const parseEntry = (entry: Entry) => {
   for (let key in entry.fields) {
