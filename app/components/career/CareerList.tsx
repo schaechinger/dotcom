@@ -1,6 +1,6 @@
 import LinkButton from '@components/LinkButton';
 import CareerItem from '@components/career/CareerItem';
-import { loadCareer } from '@/app/lib/contentful';
+import { loadCareer } from '@lib/contentful';
 
 const CareerList = async ({ latest }: { latest?: boolean }) => {
   let career = await loadCareer() || [];

@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 import KonamiCode from '@components/KonamiCode';
 import LinkButton from '@components/LinkButton';

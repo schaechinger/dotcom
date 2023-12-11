@@ -1,5 +1,5 @@
 import Clock from '@components/icons/Clock';
-import { loadAvailability } from '@/app/lib/contentful';
+import { loadAvailability } from '@lib/contentful';
 
 const AvailabilityIndicator = async () => {
   const availibility = await loadAvailability();

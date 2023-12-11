@@ -10,7 +10,7 @@ const Header = () => (
     <div className="flex items-center py-4 lg:py-10">
       <Link href="/">
         <Image
-          src="https://images.schaechinger.com/2/schaechinger.jpg"
+          src="/schaechinger.jpg"
           alt="Manuel Schächinger"
           width={200}
           height={200}
@@ -23,7 +23,7 @@ const Header = () => (
         <Logo />
       </div>
     </div>
-    <p className="hidden sm:block text-sm mb-4 lg:mb-10">Entwickler für skalierbare und<br
+    <p className="hidden sm:block text-sm mb-4 lg:mb-10">Senior Entwickler für skalierbare und<br
       className="hidden lg:inline" /> performance-kritische Softwaresysteme.</p>
 
     <Navigation />

@@ -1,13 +1,12 @@
-import { Metadata } from 'next';
-import Link from 'next/link';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import LinkButton from '@components/LinkButton';
 import DetailBlock from '@components/projects/DetailBlock';
 import ProjectImages from '@components/projects/ProjectImages';
+import ProjectLinks from '@components/projects/ProjectLinks';
 import ProjectMasterData from '@components/projects/ProjectMasterData';
 import { loadProjectBySlug } from '@lib/contentful';
-import ProjectLinks from '@/app/components/projects/ProjectLinks';
 
 export interface ProjectPageProps {
   params: {

@@ -1,6 +1,7 @@
-import LinkButton from '@/app/components/LinkButton';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+import LinkButton from '@components/LinkButton';
 
 export const metadata: Metadata = {
   title: 'Datenschutz',

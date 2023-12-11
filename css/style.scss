@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'fonts';
-
 @import 'footer';
 
 @import 'components/career';
@@ -48,8 +46,3 @@
 }
 
 @import 'layouts/medalmonday';
-
-html {
-  font-family: 'Clear Sans';
-  font-variant-ligatures: common-ligatures;
-}

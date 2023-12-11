@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -61,11 +61,12 @@ const config: Config = {
           xing: '#0698a0',
         }
       },
-    },
-    fontFamily: {
-      sans: ['ClearSans'],
+      fontFamily: {
+        sans: ['var(--font-clear-sans)'],
+      },
     },
   },
   plugins: [],
-}
-export default config
+};
+
+export default config;

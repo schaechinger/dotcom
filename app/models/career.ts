@@ -19,6 +19,9 @@ export interface CareerData {
   tech: TechData[];
   startDate: string;
   endDate?: string;
+
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 export const sortCareerList = <T extends CareerData>(list: T[]) => (
