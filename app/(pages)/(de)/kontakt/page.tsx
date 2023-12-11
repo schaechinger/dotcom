@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 
 import LinkButton from '@components/LinkButton';
 import ContactForm from '@components/forms/ContactForm';
+import AvailabilityIndicator from '@components/freelance/AvailabilityIndicator';
 
 export const metadata: Metadata = {
   title: 'Kontakt',
@@ -18,6 +19,10 @@ const ResumePage = () => (
       <p>
         Melde dich gerne und wir setzen dein Vorhaben so um, wie du es dir vorstellst!
       </p>
+
+      <h3 className="mt-10 mb-4">Meine Verfügbarkeit</h3>
+
+      <AvailabilityIndicator />
 
       <div className="flex flex-wrap mt-10 gap-y-10">
         <div className="flex-1">

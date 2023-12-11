@@ -7,7 +7,7 @@ import Header from '@components/layout/Header';
 import '@/css/style.scss';
 import Provider from './provider';
 
-export const revalidate = 600;
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: {
@@ -23,7 +23,7 @@ interface RootLayoutProps {
 
 const RootLayout = ({ children }: RootLayoutProps) => (
   <html className="light" style={{ colorScheme: 'light' }} lang={locale}>
-      <body className="dark:text-dark-200 dark:bg-dark-700">
+      <body className="dark:text-dark-200 dark:bg-dark-800">
       <Provider>
         <div className="lg:flex lg:gap-8 w-full max-w-screen-xl mx-auto">
           <Header />
