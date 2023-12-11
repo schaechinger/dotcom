@@ -3,14 +3,14 @@ import React from 'react';
 
 import ChevronRight from '@components/icons/ChevronRight';
 
-interface LinkButtonProps {
+interface Props {
   href: string;
   label?: string;
   target?: string;
   children?: React.ReactNode;
 }
 
-const LinkButton = (props: LinkButtonProps) => {
+const LinkButton = (props: Props) => {
   const target = (/^https?:\/\//.test(props.href)) ? '_blank' : props.target;
   const Component = target ? 'a' : Link;
 

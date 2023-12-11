@@ -39,12 +39,12 @@ export const metadata: Metadata = {
   description: 'Senior Fullstack JavaScript Engineer und Berater für komplexe und skalierbare Softwaresysteme aus München.',
 }
 
-interface RootLayoutProps {
+interface Props {
   children: React.ReactNode;
 }
 
-const RootLayout = ({ children }: RootLayoutProps) => (
-  <html className={`light ${clearSans.className}`} style={{ colorScheme: 'light' }} lang={locale}>
+const RootLayout = ({ children }: Props) => (
+  <html className={`${clearSans.className} light`} style={{ colorScheme: 'light' }} lang={locale}>
       <body className="dark:text-dark-200 dark:bg-dark-800">
       <Provider>
         <div className="lg:flex lg:gap-8 w-full max-w-screen-xl mx-auto">

@@ -5,7 +5,11 @@ import TimeSpan from '@components/career/TimeSpan';
 import ProjectType from '@components/projects/ProjectType';
 import { ProjectData } from '@models/project';
 
-const ProjectMasterData = ({ project }: { project: ProjectData }) => (
+interface Props {
+  project: ProjectData;
+}
+
+const ProjectMasterData = ({ project }: Props) => (
   <section id={project.slug}>
     <h2>{ project.title }</h2>
 
@@ -25,7 +29,11 @@ const ProjectMasterData = ({ project }: { project: ProjectData }) => (
 
     <ul className="flex flex-wrap mt-3 gap-2">
       { (project.tech || []).map((t) => (
-        <TechItem key={t.slug} item={t} color={'medalmonday' === project.slug ? project.slug : undefined} />
+        <TechItem
+          key={t.slug}
+          item={t}
+          color={project.slug}
+        />
       ))}
     </ul>
   </section>

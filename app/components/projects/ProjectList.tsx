@@ -2,7 +2,11 @@ import LinkButton from '@components/LinkButton';
 import ProjectItem from '@components/projects/ProjectItem';
 import { loadProjects } from '@lib/contentful';
 
-const ProjectList = async  ({ highlights }: { highlights?: boolean }) => {
+interface Props {
+  highlights?: boolean;
+}
+
+const ProjectList = async  ({ highlights }: Props) => {
   const projects = await loadProjects(highlights || false) || [];
 
   return (
@@ -13,8 +17,7 @@ const ProjectList = async  ({ highlights }: { highlights?: boolean }) => {
       { !projects.length
         ? <p className="py-4">Leider konnten die bisherigen Projekte nicht geladen werden.</p>
         : '' }
-      { (highlights && projects.length)
-        ? <LinkButton href="/projekte" label="Alle Projekte ansehen" /> : null}
+      { highlights ? <LinkButton href="/projekte" label="Alle Projekte ansehen" /> : null}
     </div>
   );
 };

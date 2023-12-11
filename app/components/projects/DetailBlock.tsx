@@ -1,10 +1,10 @@
-interface DetailBlockProps {
+interface Props {
   id: string;
   title: string;
   content: string[];
 }
 
-const DetailBlock = ({ id, title, content }: DetailBlockProps) => (
+const DetailBlock = ({ id, title, content }: Props) => (
   <section id={id} className="pt-10">
     <h3>{ title }</h3>
 

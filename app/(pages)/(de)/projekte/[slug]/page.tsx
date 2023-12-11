@@ -8,15 +8,11 @@ import ProjectLinks from '@components/projects/ProjectLinks';
 import ProjectMasterData from '@components/projects/ProjectMasterData';
 import { loadProjectBySlug } from '@lib/contentful';
 
-export interface ProjectPageProps {
-  params: {
-    slug: string;
-  }
+export interface Props {
+  params: { slug: string };
 }
 
-export async function generateMetadata(
-  { params }: ProjectPageProps,
-): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const metadata: Metadata = {
     title: 'Projektdetails',
   };
@@ -31,7 +27,7 @@ export async function generateMetadata(
   return metadata;
 };
 
-const ProjectPage = async ({ params }: ProjectPageProps) => {
+const ProjectPage = async ({ params }: Props) => {
   const project = await loadProjectBySlug(params.slug);
 
   if (!project) {

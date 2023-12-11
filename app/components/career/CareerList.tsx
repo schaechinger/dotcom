@@ -2,7 +2,11 @@ import LinkButton from '@components/LinkButton';
 import CareerItem from '@components/career/CareerItem';
 import { loadCareer } from '@lib/contentful';
 
-const CareerList = async ({ latest }: { latest?: boolean }) => {
+interface Props {
+  latest?: boolean;
+}
+
+const CareerList = async ({ latest }: Props) => {
   let career = await loadCareer() || [];
 
   if (latest) {

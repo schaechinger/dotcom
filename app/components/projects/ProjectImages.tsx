@@ -5,12 +5,12 @@ import Image from 'next/image';
 import { ProjectImage } from '@models/project';
 import { useState } from 'react';
 
-interface ProjectImagesProps {
+interface Props {
   slug: string;
   images: ProjectImage[];
 }
 
-const ProjectImages = ({ slug, images }: ProjectImagesProps) => {
+const ProjectImages = ({ slug, images }: Props) => {
   const [selected, setSelected] = useState(0);
 
   return (
@@ -27,7 +27,7 @@ const ProjectImages = ({ slug, images }: ProjectImagesProps) => {
         { 1 < images.length
           ? <div className="grid grid-cols-6 gap-x-2">
             { images.map((image, i) => (
-              <div key={image.src + i} className="cursor-pointer" onClick={() => setSelected(i)}>
+              <div key={image.src} className="cursor-pointer" onClick={() => setSelected(i)}>
                 <Image
                   src={`https://images.schaechinger.com/projects/${slug}/${image.src}`}
                   width={160}
