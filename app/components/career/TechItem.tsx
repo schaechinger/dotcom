@@ -1,9 +1,4 @@
-'use client';
-
-import Link from 'next/link';
-
 import { TechData } from '@models/career';
-import { useSearchParams } from 'next/navigation';
 
 interface Props {
   item: TechData;
@@ -11,8 +6,6 @@ interface Props {
 }
 
 const TechItem = ({ item, color }: Props) => {
-  const highlight = useSearchParams().get('tech');
-
   const colorClasses = {
     primary: 'text-primary-500 bg-primary-100 border-primary-100',
     primaryHighlight: 'text-dark-50 bg-primary-500 border-primary-100',
@@ -22,15 +15,13 @@ const TechItem = ({ item, color }: Props) => {
 
   const techColor = [
     (color && Object.keys(colorClasses).includes(color)) ? color : 'primary',
-    item.slug === highlight ? 'Highlight' : '',
+    // item.slug === highlight ? 'Highlight' : '',
   ].join('') as 'primary';
 
   return (
-    <Link href={item.slug !== highlight ? `?tech=${item.slug}` : '?'} rel="nofollow">
-      <li key={item.slug} className={`${colorClasses[techColor]} border rounded-full px-2`}>
-        <span>{ item.name }</span>
-      </li>
-    </Link>
+    <li key={item.slug} className={`${colorClasses[techColor]} border rounded-full px-2`}>
+      <span>{ item.name }</span>
+    </li>
   );
 };
 
