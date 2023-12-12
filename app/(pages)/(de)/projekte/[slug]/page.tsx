@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
+import { locale } from '@/app/utils';
 import LinkButton from '@components/LinkButton';
 import DetailBlock from '@components/projects/DetailBlock';
 import ProjectImages from '@components/projects/ProjectImages';
@@ -22,6 +23,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (project) {
     metadata.title = project.title;
     metadata.description = project.description;
+    metadata.alternates = {
+      canonical: `/projekte/${project.slug}`,
+      languages: {
+        'de': `/projekte/${project.slug}`,
+      },
+    };
+    metadata.openGraph = {
+      title: metadata.title,
+      description: metadata.description,
+      type: 'article',
+      locale,
+    };
   }
 
   return metadata;

@@ -5,6 +5,12 @@ import ProjectList from '@components/projects/ProjectList';
 export const metadata: Metadata = {
   title: 'Projekte',
   description: 'Erhalte hier einen Überblick über meine bisherigen Projekte.',
+  alternates: {
+    canonical: '/projekte',
+    languages: {
+      'de': '/projekte',
+    },
+  },
 }
 
 const ProjectsPage = () => (

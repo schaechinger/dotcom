@@ -36,8 +36,12 @@ export const metadata: Metadata = {
     template: '%s – Manuel Schächinger',
     default: 'Manuel Schächinger',
   },
-  description: 'Senior Fullstack JavaScript Engineer und Berater für komplexe und skalierbare Softwaresysteme aus München.',
-}
+  description: 'Senior Fullstack JavaScript Engineer und Berater für komplexe und skalierbare Softwaresysteme in München.',
+  metadataBase: new URL('https://www.schaechinger.com'),
+  openGraph: {
+    images: '/opengraph-image.jpg',
+  },
+};
 
 interface Props {
   children: React.ReactNode;

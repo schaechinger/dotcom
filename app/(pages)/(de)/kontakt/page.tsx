@@ -7,6 +7,12 @@ import AvailabilityIndicator from '@components/freelance/AvailabilityIndicator';
 export const metadata: Metadata = {
   title: 'Kontakt',
   description: 'Hier kannst du auf schnellem Weg mit mir in Kontakt treten.',
+  alternates: {
+    canonical: '/kontakt',
+    languages: {
+      'de': '/kontakt',
+    },
+  },
 };
 
 const ResumePage = () => (

@@ -1,9 +1,19 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import LinkButton from '@components/LinkButton';
 import CareerList from '@components/career/CareerList';
 import AvailabilityIndicator from '@components/freelance/AvailabilityIndicator';
 import ProjectList from '@components/projects/ProjectList';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+    languages: {
+      'de': '/',
+    },
+  },
+};
 
 const Home = () => (
   <div className="home-page lg:max-w-screen-sm">

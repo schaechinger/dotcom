@@ -5,6 +5,12 @@ import LinkButton from '@components/LinkButton';
 export const metadata: Metadata = {
   title: 'Meine Tätigkeit',
   description: 'Ein Einblick in meine Tätigkeitsfelder sowie meine technischen Fähigkeiten.',
+  alternates: {
+    canonical: '/taetigkeit',
+    languages: {
+      'de': '/taetigkeit',
+    },
+  },
 };
 
 const ResumePage = () => (

@@ -2,6 +2,12 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Impressum',
+  alternates: {
+    canonical: '/impressum',
+    languages: {
+      'de': '/impressum',
+    },
+  },
 };
 
 const ImprintPage = () => (

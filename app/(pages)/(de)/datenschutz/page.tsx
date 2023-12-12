@@ -5,6 +5,12 @@ import LinkButton from '@components/LinkButton';
 
 export const metadata: Metadata = {
   title: 'Datenschutz',
+  alternates: {
+    canonical: '/datenschutz',
+    languages: {
+      'de': '/datenschutz',
+    },
+  },
 };
 
 const PrivacyPage = () => (

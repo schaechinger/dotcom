@@ -17,6 +17,12 @@ export async function generateMetadata(): Promise<Metadata> {
   if (project) {
     metadata.title = project.title;
     metadata.description = project.description;
+    metadata.alternates = {
+      canonical: `/projekte/${project.slug}`,
+      languages: {
+        'de': `/projekte/${project.slug}`,
+      },
+    };
   }
 
   return metadata;

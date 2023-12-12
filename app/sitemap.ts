@@ -1,7 +1,6 @@
 import type { MetadataRoute } from 'next';
 
 import { loadProjects } from '@lib/contentful';
-import { ProjectData } from './models/project';
 
 const base = 'https://www.schaechinger.com';
 const modified = new Date();
@@ -32,12 +31,6 @@ const sitemap = async () => {
       lastModified: modified,
       priority: 0.7,
     },
-    {
-      url: `${base}/projekte/`,
-      changeFrequency: 'weekly',
-      lastModified: modified,
-      priority: 0.8,
-    },
 
     // legal
     {
@@ -55,14 +48,27 @@ const sitemap = async () => {
   ];
 
   const projects = await loadProjects();
+  let latestProject = modified;
 
   projects?.forEach((project) => {
+    const projectModified = new Date(project.endDate || project.startDate);
+    if (latestProject.getTime() < projectModified.getTime()) {
+      latestProject = projectModified;
+    }
+
     sitemap.push({
       url: `${base}/projekte/${project.slug}`,
       changeFrequency: 'monthly',
       priority: 0.8,
-      lastModified: new Date(project.endDate || project.startDate),
+      lastModified: projectModified,
     });
+  });
+
+  sitemap.push({
+    url: `${base}/projekte/`,
+    changeFrequency: 'weekly',
+    lastModified: latestProject,
+    priority: 0.8,
   });
 
   return sitemap;
