@@ -18,15 +18,14 @@ const CareerItem = ({ item }: Props) => (
     <div className="font-thin mb-2">
       <CompanyLink company={item.company} />
     </div>
-    { item.description ? <p>{ item.description }</p> : null }
-    { (!item.description && item.bullets?.length) ? (
+    { item.description && <p>{ item.description }</p> }
+    { (!item.description && item.bullets?.length) && (
       <ul className="bullet-list">{
         item.bullets.map((b, i) => (
           <li key={i}>{ b }</li>
         ))
         }</ul>
-      ) : null
-    }
+      ) }
     <ul className="flex flex-wrap mt-3 gap-2">
       { (item.tech || []).map((t) => (
         <TechItem key={t.slug} item={t} />

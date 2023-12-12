@@ -69,14 +69,13 @@ const KonamiCode = () => {
       </p>
 
       { 10 <= index
-        ? <p className="mt-4">
+        && <p className="mt-4">
           <LinkButton
             href={`mailto:manuel@schaechinger.com?subject=Projekt-Anfrage über Homepage [${
               code.map((c, i) => c[index - (i + 1)]).reverse().join('')}]`}
             label="Jetzt durchstarten"
           />
-        </p>
-        : null }
+        </p> }
     </>
   );
 };

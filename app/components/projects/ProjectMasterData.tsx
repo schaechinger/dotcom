@@ -24,8 +24,7 @@ const ProjectMasterData = ({ project }: Props) => (
     </p>
 
     { project.company
-      ? <p className="mb-2">Firma: <CompanyLink company={project.company} /></p>
-      : null }
+      && <p className="mb-2">Firma: <CompanyLink company={project.company} /></p> }
 
     <ul className="flex flex-wrap mt-3 gap-2">
       { (project.tech || []).map((t) => (

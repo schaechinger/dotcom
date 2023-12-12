@@ -2,7 +2,11 @@
 
 import { ThemeProvider } from 'next-themes';
 
-const Provider = ({ children }: { children: React.ReactNode }) => (
+interface Props {
+  children: React.ReactNode;
+}
+
+const Provider = ({ children }: Props) => (
   <ThemeProvider attribute="class">
     { children }
   </ThemeProvider>

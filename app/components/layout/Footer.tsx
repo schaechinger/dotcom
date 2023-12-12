@@ -1,22 +1,11 @@
 import Link from 'next/link';
 
 import HeartEmpty from '@components/icons/HeartEmpty';
-import SocialLinks from '@components/layout/SocialLinks';
-import ThemeToggle from '@components/layout/ThemeToggle';
 import SnesButtons from '@components/mario/SnesButtons';
 
 const Footer = () => (
   <footer className="footer mb-6 mt-10 sm:text-left text-sm">
-    
     <SnesButtons />
-
-    <div className="mt-6 lg:hidden">
-      <SocialLinks />
-    </div>
-
-    <div className="mt-6 lg:hidden">
-      <ThemeToggle />
-    </div>
 
     <ul className="flex justify-start gap-4 mt-6 mb-2">
       <li>

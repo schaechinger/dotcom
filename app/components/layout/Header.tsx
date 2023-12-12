@@ -3,11 +3,10 @@ import Link from 'next/link';
 
 import Logo from '@components/layout/Logo';
 import Navigation from '@components/layout/Navigation';
-import SocialLinks from '@components/layout/SocialLinks';
 
 const Header = () => (
-  <header className="lg:sticky lg:top-0 lg:h-screen lg:flex-none lg:w-80 px-4 sm:px-10 md:px-20 lg:px-4">
-    <div className="flex items-center py-4 lg:py-10">
+  <header className="sticky top-0 flex flex-wrap lg:flex-nowrap lg:flex-col justify-between lg:justify-start bg-dark-50/80 dark:bg-dark-800/80 backdrop-blur-sm z-30 lg:h-screen lg:flex-none lg:w-80 px-4 sm:px-10 md:px-20 lg:px-4 border-b-2 border-b-dark-300 dark:border-b-dark-700 lg:border-b-0">
+    <div className="flex flex-shrink-0 items-center py-4 lg:py-10">
       <Link href="/">
         <Image
           src="/schaechinger.jpg"
@@ -23,14 +22,11 @@ const Header = () => (
         <Logo />
       </div>
     </div>
-    <p className="hidden sm:block text-sm mb-4 lg:mb-10">Senior Entwickler für skalierbare und<br
+
+    <p className="hidden lg:block text-sm mb-4 lg:mb-10">Erfahrener Entwickler für skalierbare und<br
       className="hidden lg:inline" /> performance-kritische Softwaresysteme.</p>
 
     <Navigation />
-
-    <div className="hidden lg:block mt-4 lg:mt-10">
-      <SocialLinks />
-    </div>
   </header>
 );
 

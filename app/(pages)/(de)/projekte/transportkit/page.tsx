@@ -37,8 +37,7 @@ const TransportKitPage = async () => {
       <ProjectMasterData project={project} />
 
       { project.details?.description
-        ? <DetailBlock id="beschreibung" title="Was ist TransportKit" content={project.details.description} />
-        : null }
+        && <DetailBlock id="beschreibung" title="Was ist TransportKit" content={project.details.description} /> }
 
       <section id="munich" className="pt-10">
         <h3>München</h3>

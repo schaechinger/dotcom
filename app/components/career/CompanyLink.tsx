@@ -1,6 +1,10 @@
 import { Company } from '@models/career';
 
-const CompanyLink = ({ company }: { company?: Company }) => {
+interface Props {
+  company?: Company;
+}
+
+const CompanyLink = ({ company }: Props) => {
   const CompanyTag = company?.link ? 'a' : 'span';
 
   return (

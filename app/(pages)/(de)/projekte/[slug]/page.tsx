@@ -39,26 +39,21 @@ const ProjectPage = async ({ params }: Props) => {
       <ProjectMasterData project={project} />
 
       { project.details?.description
-        ? <DetailBlock id="beschreibung" title="Worum es geht" content={project.details.description} />
-        : null }
+        && <DetailBlock id="beschreibung" title="Worum es geht" content={project.details.description} /> }
 
-      { project.images ? <ProjectImages images={project.images} slug={params.slug} /> : null }
+      { project.images && <ProjectImages images={project.images} slug={params.slug} /> }
 
       { project.details?.requirements
-        ? <DetailBlock id="anforderungen" title="Anforderungen" content={project.details.requirements} />
-        : null }
+        && <DetailBlock id="anforderungen" title="Anforderungen" content={project.details.requirements} /> }
 
       { project.details?.goal
-        ? <DetailBlock id="ziel" title="Ziel des Projekts" content={project.details.goal} />
-        : null }
+        && <DetailBlock id="ziel" title="Ziel des Projekts" content={project.details.goal} /> }
 
       { project.details?.implementation
-        ? <DetailBlock id="umsetzung" title="Umsetzung des Projekts" content={project.details.implementation} />
-        : null }
+        && <DetailBlock id="umsetzung" title="Umsetzung des Projekts" content={project.details.implementation} /> }
 
       { project.details?.features
-        ? <DetailBlock id="features" title="Features" content={project.details.features} />
-        : null }
+        && <DetailBlock id="features" title="Features" content={project.details.features} /> }
 
       <ProjectLinks links={project.links} />
 

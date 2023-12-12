@@ -2,37 +2,56 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 
-import Home from '@components/icons/Home';
+import Menu from '@components/icons/Menu';
+import SocialLinks from '@components/layout/SocialLinks';
 import ThemeToggle from '@components/layout/ThemeToggle';
+import MenuClose from '../icons/MenuClose';
 
 const Navigation = () => {
   const path = usePathname();
+  const [isOpen, setOpen] = useState(false);
 
   return (
-    <nav className="flex lg:flex-col gap-4 lg:gap-2 py-2 border-b-2 border-b-primary-100 lg:border-b-0">
-      <Link
-        href="/#ueber-mich"
-        className={`font-normal${'/' === path ? ' text-primary-500 dark:text-primary-500' : ''}`}
-      >Über&nbsp;mich</Link>
-      { [
-        { link: '/lebenslauf', label: <>
-          <span className="hidden sm:inline">Berufserfahrung</span>
-          <span className="sm:hidden">Erfahrung</span>
-        </> },
-        { link: '/projekte', label: 'Projekte' },
-        { link: '/kontakt', label: 'Kontakt' },
-      ].map((item) => (
-        <Link
-          href={item.link}
-          key={item.link}
-          className={`font-normal${path.startsWith(item.link) ? ' text-primary-500 dark:text-primary-500' : ''}`}
-        >{ item.label }</Link>
-      )) }
-      <div className="hidden lg:block">
-        <ThemeToggle />
-      </div>
-    </nav>
+    <>
+      <button type="button" className="lg:hidden items-center p-2 rounded-full self-center"
+        aria-controls="navbar-default" aria-expanded="false"
+        onClick={() => setOpen((cur) => !cur)}
+      >
+        <span className="sr-only">{ isOpen ? 'Menü öffnen' : 'Menü schließen' }</span>
+        { isOpen ? <MenuClose className="text-xl" /> : <Menu className="text-xl" /> }
+      </button>
+      <nav className={`${!isOpen ? 'h-0' : 'h-auto'} -mx-1 px-1 w-full lg:h-auto transition-transform overflow-hidden`}>
+        <ul className="flex flex-col gap-4 lg:gap-2 py-2">
+          <li>
+            <Link
+              href="/"
+              className={`font-normal${'/' === path && ' text-primary-500 dark:text-primary-500'}`}
+              onClick={() => setOpen(false)}
+            >Über&nbsp;mich</Link>
+          </li>
+          { [
+            { link: '/lebenslauf', label: 'Berufserfahrung' },
+            { link: '/projekte', label: 'Projekte' },
+            { link: '/kontakt', label: 'Kontakt' },
+          ].map((item) => (
+            <li key={item.link}>
+              <Link
+                href={item.link}
+                className={`font-normal ${path.startsWith(item.link) && ' text-primary-500 dark:text-primary-500'}`}
+                onClick={() => setOpen(false)}
+              >{ item.label }</Link>
+            </li>
+          )) }
+          { 'development' === process.env.NODE_ENV && <li><ThemeToggle /></li> }
+
+          <li className="my-2 lg:mt-10 lg:mb-0">
+            <SocialLinks />
+          </li>
+        </ul>
+      </nav>
+    </>
   );
 };
 

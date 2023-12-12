@@ -33,7 +33,7 @@ const ContactForm = () => {
           required
         />
         { 'name' === state.field
-          ? <p className="text-sm text-red-500 mt-1">Bitte gib deinen Namen an</p> : null }
+          && <p className="text-sm text-red-500 mt-1">Bitte gib deinen Namen an</p> }
       </label>
 
       <label className="block mb-8">
@@ -46,7 +46,7 @@ const ContactForm = () => {
           required
         />
         { 'email' === state.field
-          ? <p className="text-sm text-red-500 mt-1">Bitte gib deine E-Mail-Adresse an</p> : null }
+          && <p className="text-sm text-red-500 mt-1">Bitte gib deine E-Mail-Adresse an</p> }
       </label>
 
       <label className="block mb-8">
@@ -58,13 +58,13 @@ const ContactForm = () => {
           rows={4}
         />
         { 'message' === state.field
-          ? <p className="text-sm text-red-500 mt-1">Bitte schildere dein Anliegen</p> : null }
+          && <p className="text-sm text-red-500 mt-1">Bitte schildere dein Anliegen</p> }
       </label>
 
       <SubmitButton>Absenden</SubmitButton>
       { state.message }
       { 'form' === state.field
-          ? <p className="text-sm text-red-500 mt-1">Deine Nachricht konnte nicht gesendet werden</p> : null }
+          && <p className="text-sm text-red-500 mt-1">Deine Nachricht konnte nicht gesendet werden</p> }
     </form>
   );
 };

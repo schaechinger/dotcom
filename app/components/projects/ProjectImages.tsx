@@ -25,7 +25,7 @@ const ProjectImages = ({ slug, images }: Props) => {
             />
         </div>
         { 1 < images.length
-          ? <div className="grid grid-cols-6 gap-x-2">
+          && <div className="grid grid-cols-6 gap-x-2">
             { images.map((image, i) => (
               <div key={image.src} className="cursor-pointer" onClick={() => setSelected(i)}>
                 <Image
@@ -37,7 +37,7 @@ const ProjectImages = ({ slug, images }: Props) => {
                 />
               </div>
             )) }
-        </div> : null }
+        </div> }
       </div>
   );
 };

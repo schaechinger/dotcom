@@ -1,6 +1,10 @@
 import { useFormStatus } from 'react-dom';
 
-export const SubmitButton = ({ children }: { children: React.ReactNode }) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+export const SubmitButton = ({ children }: Props) => {
   const { pending } = useFormStatus();
  
   return (

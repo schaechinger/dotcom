@@ -12,7 +12,12 @@ export const projectTypeLabels = {
   volunteer: 'Ehrenamtlich',
 };
 
-const ProjectType = ({ type, label }: { type: ProjectType; label?: boolean }) => {
+interface Props {
+  type: ProjectType;
+  label?: boolean;
+}
+
+const ProjectType = ({ type, label }: Props) => {
   const TypeIcon = {
     employee: BuildingsCity,
     founder: HeartEmpty,
@@ -27,7 +32,7 @@ const ProjectType = ({ type, label }: { type: ProjectType; label?: boolean }) =>
   return (
     <>
       <TypeIcon title={projectTypeLabels[type]} className="inline-block -mt-1 mr-2" />
-      { label ? projectTypeLabels[type] : null }
+      { label && projectTypeLabels[type] }
     </>
   );
 };

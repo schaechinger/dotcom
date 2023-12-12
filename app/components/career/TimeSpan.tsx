@@ -1,6 +1,11 @@
 import { formatDate } from '@app/utils';
 
-const TimeSpan = ({ startDate, endDate }: { startDate: string; endDate?: string }) => (
+interface Props {
+  startDate: string;
+  endDate?: string;
+}
+
+const TimeSpan = ({ startDate, endDate }: Props) => (
   <>
     { endDate
       ? `${formatDate(startDate)} bis ${formatDate(endDate)}`
