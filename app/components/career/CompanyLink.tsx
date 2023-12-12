@@ -1,6 +1,6 @@
 import { Company } from '@models/career';
 
-interface Props {
+type Props = {
   company?: Company;
 }
 

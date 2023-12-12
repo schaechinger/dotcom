@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { ProjectImage } from '@models/project';
 import { useState } from 'react';
 
-interface Props {
+type Props = {
   slug: string;
   images: ProjectImage[];
 }

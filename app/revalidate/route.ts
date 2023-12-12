@@ -1,10 +1,7 @@
 import { revalidatePath } from 'next/cache';
 
-export const GET = async (req: Request) => {
-  revalidatePath('/');
-  revalidatePath('/lebenslauf');
-  revalidatePath('/projekte');
-  revalidatePath('/kontakt');
+export const GET = () => {
+  revalidatePath('/', 'layout');
 
   return Response.json({ success: true });
 };

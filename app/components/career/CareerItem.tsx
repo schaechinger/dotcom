@@ -3,7 +3,7 @@ import { CareerData } from '@models/career';
 import CompanyLink from './CompanyLink';
 import TimeSpan from './TimeSpan';
 
-interface Props {
+type Props = {
   item: CareerData;
 }
 

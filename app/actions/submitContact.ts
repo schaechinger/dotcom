@@ -1,9 +1,10 @@
 'use server';
 
 import { ZodError, z } from 'zod';
-import { sendMessage } from '../lib/slack';
 
-export interface ContactFormState {
+import { sendMessage } from '@lib/slack';
+
+export type ContactFormState = {
   success: boolean;
   message?: string;
   field?: string;
@@ -15,7 +16,7 @@ const ContactMessage = z.object({
   message: z.string().min(5),
 });
 
-export const submitContact = async (state: Awaited<ContactFormState>, payload: FormData) => {
+export const submitContact = async (_state: Awaited<ContactFormState>, payload: FormData) => {
   try {
     const parsed = ContactMessage.parse({
       name: payload.get('name'),

@@ -23,7 +23,7 @@ const Header = () => (
       </div>
     </div>
 
-    <p className="hidden lg:block text-sm mb-4 lg:mb-10">Erfahrener Entwickler für skalierbare und<br
+    <p className="hidden lg:block text-sm mb-4 lg:mb-10">Senior Engineer für skalierbare und<br
       className="hidden lg:inline" /> performance-kritische Softwaresysteme.</p>
 
     <Navigation />

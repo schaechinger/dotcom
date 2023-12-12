@@ -1,6 +1,6 @@
 import { useFormStatus } from 'react-dom';
 
-interface Props {
+type Props = {
   children: React.ReactNode;
 }
 

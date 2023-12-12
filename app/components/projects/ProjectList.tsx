@@ -2,7 +2,7 @@ import LinkButton from '@components/LinkButton';
 import ProjectItem from '@components/projects/ProjectItem';
 import { loadProjects } from '@lib/contentful';
 
-interface Props {
+type Props = {
   highlights?: boolean;
 }
 

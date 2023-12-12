@@ -3,7 +3,7 @@ import React from 'react';
 
 import ChevronRight from '@components/icons/ChevronRight';
 
-interface Props {
+type Props = {
   href: string;
   label?: string;
   target?: string;

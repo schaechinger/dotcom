@@ -12,7 +12,7 @@ export const projectTypeLabels = {
   volunteer: 'Ehrenamtlich',
 };
 
-interface Props {
+type Props = {
   type: ProjectType;
   label?: boolean;
 }

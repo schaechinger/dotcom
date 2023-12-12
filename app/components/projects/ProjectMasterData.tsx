@@ -5,7 +5,7 @@ import TimeSpan from '@components/career/TimeSpan';
 import ProjectType from '@components/projects/ProjectType';
 import { ProjectData } from '@models/project';
 
-interface Props {
+type Props = {
   project: ProjectData;
 }
 

@@ -1,6 +1,6 @@
 import { TechData } from '@models/career';
 
-interface Props {
+type Props = {
   item: TechData;
   color?: string;
 }

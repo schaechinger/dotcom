@@ -24,6 +24,10 @@ const config: Config = {
           400: '#2d5e4d99',
           500: '#2d5e4d',
         },
+        flyby: {
+          500: '#d9fc1a',
+          900: '#001427',
+        },
         dark: {
           50: '#fff',
           200: '#ccc',
@@ -32,22 +36,10 @@ const config: Config = {
           900: '#181818',
           950: '#111',
         },
-        js: {
-          from: '#ffe70b',
-          to: '#ffe70b66',
-        },
-        node: {
-          from: '#026e00',
-          to: '#026e0066',
-        },
-        react: {
-          from: '#149eca',
-          to: '#149eca66',
-        },
-        vue: {
-          from: '#42d392',
-          to: '#42d39266',
-        },
+        js: '#ffe70b',
+        node: '#026e00',
+        react: '#149eca',
+        vue: '#42d392',
         snes: {
           a: '#e60012',
           b: '#ffe100',

@@ -29,7 +29,7 @@ const clearSans = localFont({
   variable: '--font-clear-sans',
 });
 
-export const revalidate = 600;
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
 };
 
-interface Props {
+type Props = {
   children: React.ReactNode;
 }
 

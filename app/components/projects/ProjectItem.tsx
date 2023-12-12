@@ -7,7 +7,7 @@ import ArrowRight from '@components/icons/ArrowRight';
 import ProjectType from '@components/projects/ProjectType';
 import { ProjectData } from '@models/project';
 
-interface Props {
+type Props = {
   item: ProjectData;
 }
 

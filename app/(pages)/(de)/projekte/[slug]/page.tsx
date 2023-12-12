@@ -9,7 +9,7 @@ import ProjectLinks from '@components/projects/ProjectLinks';
 import ProjectMasterData from '@components/projects/ProjectMasterData';
 import { loadProjectBySlug } from '@lib/contentful';
 
-export interface Props {
+export type Props = {
   params: { slug: string };
 }
 

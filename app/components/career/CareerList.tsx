@@ -2,7 +2,7 @@ import LinkButton from '@components/LinkButton';
 import CareerItem from '@components/career/CareerItem';
 import { loadCareer } from '@lib/contentful';
 
-interface Props {
+type Props = {
   latest?: boolean;
 }
 

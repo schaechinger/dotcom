@@ -2,6 +2,8 @@ import type { MetadataRoute } from 'next';
 
 import { loadProjects } from '@lib/contentful';
 
+export const dynamic = 'force-dynamic';
+
 const base = 'https://www.schaechinger.com';
 const modified = new Date();
 

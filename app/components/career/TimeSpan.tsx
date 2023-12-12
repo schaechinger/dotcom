@@ -1,6 +1,6 @@
 import { formatDate } from '@app/utils';
 
-interface Props {
+type Props = {
   startDate: string;
   endDate?: string;
 }

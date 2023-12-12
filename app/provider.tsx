@@ -2,7 +2,7 @@
 
 import { ThemeProvider } from 'next-themes';
 
-interface Props {
+type Props = {
   children: React.ReactNode;
 }
 
