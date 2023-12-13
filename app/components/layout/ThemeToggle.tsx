@@ -2,18 +2,21 @@
 
 import { useTheme } from 'next-themes';
 
-import Contrast from '@components/icons/Contrast';
+import Moon from '@components/icons/Moon';
+import Sun from '@components/icons/Sun';
 
 const ThemeToggle = () => {
   const { resolvedTheme, setTheme } = useTheme();
+
+  const ThemeIcon = 'dark' === resolvedTheme ? Moon : Sun;
 
   return (
     <button
       onClick={() => setTheme('dark' === resolvedTheme ? 'light' : 'dark')}
       className="group text-left text-dark-950 dark:text-dark-50 transition-colors hover:text-primary-500 hover:dark:text-primary-500"
     >
-      <Contrast className="text-xl -mt-1 mr-2" />
-      <span className="hidden opacity-0 transition-opacity group-hover:opacity-100">Theme ändern</span>
+      <ThemeIcon className="text-xl -mt-1 mr-2" />
+      <span className="sr-only">Theme ändern</span>
     </button>
   );
 };

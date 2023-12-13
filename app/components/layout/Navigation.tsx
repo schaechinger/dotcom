@@ -44,7 +44,9 @@ const Navigation = () => {
               >{ item.label }</Link>
             </li>
           )) }
-          { 'development' === process.env.NODE_ENV && <li><ThemeToggle /></li> }
+          <li>
+            <ThemeToggle />
+          </li>
 
           <li className="my-2 lg:mt-10 lg:mb-0">
             <SocialLinks />

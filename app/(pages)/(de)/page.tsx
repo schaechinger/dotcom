@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import LinkButton from '@components/LinkButton';
+import AboutSection from '@components/about/AboutSection';
 import CareerList from '@components/career/CareerList';
 import AvailabilityIndicator from '@components/freelance/AvailabilityIndicator';
 import ProjectList from '@components/projects/ProjectList';
@@ -17,34 +18,7 @@ export const metadata: Metadata = {
 
 const Home = () => (
   <div className="home-page lg:max-w-screen-sm">
-    <section id="ueber-mich" className="pt-4 lg:pt-10 mb-8">
-      <h2>Servus, ich bin Manuel.</h2>
-
-      <p className="mb-2">
-        Seit über 10 Jahren entwickle ich professionelle Anwendungen sowohl im Backend als auch
-        im Frontend. Ich habe mich auf <strong className="highlight-label"
-        >JavaScript</strong> spezialisiert, da diese Sprache ein fast grenzenloses Spektrum an
-        Möglichkeiten und Einsatzgebieten ermöglicht.
-      </p>
-
-      <p className="mb-2">
-        Meine Aufgabenbereiche erstrecken sich über komplexe APIs mit <strong
-          className="highlight-label">Node.js</strong>, performante Frontends mit <strong
-          className="highlight-label">Vue</strong> und <strong
-          className="highlight-label">React</strong>, Absicherung von Systemen sowie Deployment
-        und Übergabe an Kunden.
-      </p>
-
-      <p className="mb-4">
-        Abseits der Arbeit bin ich leidenschaftlicher Läufer. Mein großes Ziel ist die
-        Teilnahmen an den sechs großen Marathons der Welt, von denen ich bis auf Boston
-        schon fünf abschließen konnte.
-      </p>
-
-      <p>
-        <LinkButton href="/taetigkeit" label="Mehr zu meiner Tätigkeit" />
-      </p>
-    </section>
+    <AboutSection />
 
     <section id="verfuegbarkeit" className="pt-4 lg:pt-10 mb-8">
       <h2>Aktuelle Verfügbarkeit</h2>

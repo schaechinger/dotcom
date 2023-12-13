@@ -39,10 +39,6 @@
       @apply hover:underline hover:underline-offset-4;
     }
   }
-
-  strong.highlight-label {
-    @apply text-transparent bg-clip-text bg-gradient-to-br from-primary-500 to-primary-400;
-  }
 }
 
 @import 'layouts/medalmonday';
