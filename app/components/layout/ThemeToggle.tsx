@@ -10,7 +10,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={() => setTheme('light' === theme ? 'dark' : 'light')}
-      className="-ml-1 w-7 h-7 flow justify-center items-center rounded-full hover:bg-sky-600 hover:dark:bg-amber-400 hover:text-dark-50 hover:dark:text-dark-900"
+      className="-ml-1 w-7 h-7 flow justify-center items-center rounded-full transition-colors hover:bg-sky-600 hover:dark:bg-amber-400 hover:text-dark-50 hover:dark:text-dark-900"
     >
       <Contrast className="text-xl -mt-1" />
     </button>
