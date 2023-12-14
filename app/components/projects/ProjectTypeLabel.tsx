@@ -4,7 +4,7 @@ import HeartEmpty from '@components/icons/HeartEmpty';
 import Knight from '@components/icons/Knight';
 import { ProjectType } from '@models/project';
 
-export const projectTypeLabels = {
+export const labelMapper = {
   employee: 'Angestellter',
   founder: 'Gründer',
   freelance: 'Freiberuflich',
@@ -17,7 +17,7 @@ type Props = {
   label?: boolean;
 }
 
-const ProjectType = ({ type, label }: Props) => {
+const ProjectTypeLabel = ({ type, label }: Props) => {
   const TypeIcon = {
     employee: BuildingsCity,
     founder: HeartEmpty,
@@ -31,10 +31,10 @@ const ProjectType = ({ type, label }: Props) => {
 
   return (
     <>
-      <TypeIcon title={projectTypeLabels[type]} className="inline-block -mt-1 mr-2" />
-      { label && projectTypeLabels[type] }
+      <TypeIcon title={labelMapper[type]} className="inline-block -mt-1 mr-2" />
+      { label && labelMapper[type] }
     </>
   );
 };
 
-export default ProjectType;
+export default ProjectTypeLabel;

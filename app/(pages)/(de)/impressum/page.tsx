@@ -1,3 +1,4 @@
+import LinkButton from '@/app/components/LinkButton';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -27,8 +28,7 @@ const ImprintPage = () => (
       </p>
 
       <p className="mb-2">
-        <a href="mailto:manuel@schaechinger.com">E-Mail senden</a><br />
-        <a href="tel:+4916097506593">+49 160 97506593</a>
+          <LinkButton href="mailto:manuel@schaechinger.com" label="E-Mail senden" />
       </p>
 
       <p>
@@ -39,7 +39,7 @@ const ImprintPage = () => (
         Verbraucher haben die Möglichkeit, diese Plattform für die Beilegung ihrer Streitigkeiten
         zu nutzen.<br />
         Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
-        sind wir nicht verpflichtet und nicht bereit.
+        bin ich nicht verpflichtet und nicht bereit.
       </p>
     </section>
 

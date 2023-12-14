@@ -11,7 +11,7 @@ const SocialLinks = () => (
       className="w-7 h-7 flex items-center justify-center rounded-full hover:text-dark-50 hover:dark:text-dark-50 hover:bg-social-linkedin"
       title="LinkedIn"
     >
-      <LinkedIn className="" />
+      <LinkedIn />
     </a>
     <a
       href="https://xing.com/profile/Manuel_Schaechinger"

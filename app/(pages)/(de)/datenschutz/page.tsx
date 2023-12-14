@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import LinkButton from '@components/LinkButton';
+import BulletList from '@components/projects/BulletList';
 
 export const metadata: Metadata = {
   title: 'Datenschutz',
@@ -20,17 +21,17 @@ const PrivacyPage = () => (
 
       <h3>Inhaltsverzeichnis</h3>
 
-      <ul className="list-disc ml-5">
-        <li><Link href="#verantwortlicher">Verantwortlicher</Link></li>
-        <li><Link href="#widerruf">Widerruf deiner Einwilligung zur Datenverarbeitung</Link></li>
-        <li><Link href="#beschwerde">Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde</Link></li>
-        <li><Link href="#datenuebertragbarkeit">Recht auf Datenübertragbarkeit</Link></li>
-        <li><Link href="#auskunft">Recht auf Auskunft, Berichtigung, Sperrung und Löschung</Link></li>
-        <li><Link href="#ssl">SSL- bzw. TLS-Verschlüsselung</Link></li>
-        <li><Link href="#logs">Server-Log-Dateien</Link></li>
-        <li><Link href="#kontakt">Kontaktformular</Link></li>
-        <li><Link href="#cookies">Cookies</Link></li>
-      </ul>
+      <BulletList>
+        <Link href="#verantwortlicher">Verantwortlicher</Link>
+        <Link href="#widerruf">Widerruf deiner Einwilligung zur Datenverarbeitung</Link>
+        <Link href="#beschwerde">Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde</Link>
+        <Link href="#datenuebertragbarkeit">Recht auf Datenübertragbarkeit</Link>
+        <Link href="#auskunft">Recht auf Auskunft, Berichtigung, Sperrung und Löschung</Link>
+        <Link href="#ssl">SSL- bzw. TLS-Verschlüsselung</Link>
+        <Link href="#logs">Server-Log-Dateien</Link>
+        <Link href="#kontakt">Kontaktformular</Link>
+        <Link href="#cookies">Cookies</Link>
+      </BulletList>
     </section>
 
     <section id="verantwortlicher" className="pt-10">
@@ -116,17 +117,17 @@ const PrivacyPage = () => (
         Informationen, die dein Browser automatisch an mich übermittelt. Dies sind:
       </p>
 
-      <ul className="list-disc ml-5 mb-2">
-        <li>Besuchte Seite auf meiner Domain</li>
-        <li>Datum und Uhrzeit der Serveranfrage</li>
-        <li>Browsertyp und Browserversion</li>
-        <li>Verwendetes Betriebssystem</li>
-        <li>Referrer URL</li>
-        <li>Hostname des zugreifenden Rechners</li>
-        <li>IP-Adresse</li>
-      </ul>
+      <BulletList bullets={[
+        'Besuchte Seite auf meiner Domain',
+        'Datum und Uhrzeit der Serveranfrage',
+        'Browsertyp und Browserversion',
+        'Verwendetes Betriebssystem',
+        'Referrer URL',
+        'Hostname des zugreifenden Rechners',
+        'IP-Adresse',
+      ]} />
 
-      <p>
+      <p className="mt-2">
         Es findet keine Zusammenführung dieser Daten mit anderen Datenquellen statt. Grundlage
         der Datenverarbeitung bildet Art. 6 Abs. 1 lit. b DSGVO, der die Verarbeitung von Daten
         zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen gestattet.

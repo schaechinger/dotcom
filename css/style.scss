@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+// @import 'fonts';
 @import 'footer';
 
 @import 'components/career';
@@ -33,7 +34,7 @@
   }
 
   a {
-    @apply text-dark-950 dark:text-dark-50 font-bold hover:text-primary-500 dark:hover:text-primary-500 transition-colors;
+    @apply text-dark-950 dark:text-dark-50 font-bold hover:text-primary-500 hover:dark:text-primary-500 transition-colors;
 
     &.inline-link {
       @apply hover:underline hover:underline-offset-4;

@@ -1,33 +1,11 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
 
+import { clearSans } from '@app/font';
 import Provider from '@app/provider';
 import { locale } from '@app/utils';
 import Footer from '@components/layout/Footer';
 import Header from '@components/layout/Header';
 import '@/css/style.scss';
-
-const clearSans = localFont({
-  src: [
-    {
-      path: '../fonts/clear-sans-book.woff2',
-      style: 'normal',
-      weight: '400',
-    },
-    {
-      path: '../fonts/clear-sans-bold.woff2',
-      style: 'normal',
-      weight: '700',
-    },
-    {
-      path: '../fonts/clear-sans-extrathin.woff2',
-      style: 'normal',
-      weight: '100',
-    },
-  ],
-  display: 'swap',
-  variable: '--font-clear-sans',
-});
 
 export const revalidate = 3600;
 

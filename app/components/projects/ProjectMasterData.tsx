@@ -2,7 +2,7 @@
 import CompanyLink from '@components/career/CompanyLink';
 import TechItem from '@components/career/TechItem';
 import TimeSpan from '@components/career/TimeSpan';
-import ProjectType from '@components/projects/ProjectType';
+import ProjectTypeLabel from '@components/projects/ProjectTypeLabel';
 import { ProjectData } from '@models/project';
 
 type Props = {
@@ -20,7 +20,7 @@ const ProjectMasterData = ({ project }: Props) => (
     </p>
 
     <p className="mb-2">
-      Projektart: <ProjectType type={project.type} label />
+      Projektart: <ProjectTypeLabel type={project.type} label />
     </p>
 
     { project.company

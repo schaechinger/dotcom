@@ -4,7 +4,8 @@ import CompanyLink from '@components/career/CompanyLink';
 import TechItem from '@components/career/TechItem';
 import TimeSpan from '@components/career/TimeSpan';
 import ArrowRight from '@components/icons/ArrowRight';
-import ProjectType from '@components/projects/ProjectType';
+import BulletList from '@components/projects/BulletList';
+import ProjectTypeLabel from '@components/projects/ProjectTypeLabel';
 import { ProjectData } from '@models/project';
 
 type Props = {
@@ -25,17 +26,11 @@ const ProjectItem = ({ item }: Props) => (
       </h3>
     </header>
       <div className="font-thin mb-2">
-        <ProjectType type={item.type} label={!item.company} />
+        <ProjectTypeLabel type={item.type} label={!item.company} />
         { item.company && <CompanyLink company={item.company} /> }
       </div>
     { item.description && <p>{ item.description }</p> }
-    { (!item.description && item.bullets?.length) && (
-      <ul className="bullet-list">{
-        item.bullets.map((b, i) => (
-          <li key={i}>{ b }</li>
-        ))
-        }</ul>
-      ) }
+    { (!item.description && item.bullets?.length) && <BulletList bullets={item.bullets} /> }
     <ul className="flex flex-wrap mt-3 gap-2">
       { (item.tech || []).map((t) => (
         <TechItem key={t.slug} item={t} />

@@ -1,7 +1,8 @@
+import CompanyLink from '@components/career/CompanyLink';
 import TechItem from '@components/career/TechItem';
+import TimeSpan from '@components/career/TimeSpan';
+import BulletList from '@components/projects/BulletList';
 import { CareerData } from '@models/career';
-import CompanyLink from './CompanyLink';
-import TimeSpan from './TimeSpan';
 
 type Props = {
   item: CareerData;
@@ -19,13 +20,7 @@ const CareerItem = ({ item }: Props) => (
       <CompanyLink company={item.company} />
     </div>
     { item.description && <p>{ item.description }</p> }
-    { (!item.description && item.bullets?.length) && (
-      <ul className="bullet-list">{
-        item.bullets.map((b, i) => (
-          <li key={i}>{ b }</li>
-        ))
-        }</ul>
-      ) }
+    { (!item.description && item.bullets?.length) && <BulletList bullets={item.bullets} /> }
     <ul className="flex flex-wrap mt-3 gap-2">
       { (item.tech || []).map((t) => (
         <TechItem key={t.slug} item={t} />

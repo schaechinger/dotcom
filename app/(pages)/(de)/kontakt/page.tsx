@@ -32,13 +32,13 @@ const ResumePage = () => (
 
       <div className="flex flex-wrap mt-10 gap-y-10">
         <div className="flex-1">
-        <h3>Per Mail</h3>
-          <LinkButton href="mailto:manuel@schaechinger.com">E-Mail senden</LinkButton>
+          <h3>Per Mail</h3>
+          <LinkButton href="mailto:manuel@schaechinger.com" label="E-Mail senden" />
         </div>
 
         <div className="flex-1">
           <h3>Telefonisch</h3>
-          <LinkButton href="tel:+4916097506593">Jetzt anrufen</LinkButton>
+          <LinkButton href="tel:+4916097506593" label="Jetzt anrufen" />
         </div>
 
         <div className="flex-none w-full">
