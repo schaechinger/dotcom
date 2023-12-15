@@ -24,7 +24,7 @@ const CareerList = async ({ latest }: Props) => {
       <div>
         { latest
           ? <LinkButton
-            href="/lebenslauf"
+            href="/resume"
             label="Vollständigen Werdegang ansehen"
           />
           :  <LinkButton

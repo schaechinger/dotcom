@@ -20,31 +20,31 @@ const Home = () => (
   <div className="home-page lg:max-w-screen-sm">
     <AboutSection />
 
-    <section id="verfuegbarkeit" className="pt-4 lg:pt-10 mb-8">
+    <section id="availability" className="pt-4 lg:pt-10 mb-8">
       <h2>Aktuelle Verfügbarkeit</h2>
 
       <AvailabilityIndicator />
 
       <p className="mt-4">
-        Auch wenn meine Verfügbarkeit für die Bedürfnisse nicht ausreicht, <Link href="/kontakt"
+        Auch wenn meine Verfügbarkeit für die Bedürfnisse nicht ausreicht, <Link href="/contact"
           className="inline-link">kontaktiere</Link> mich gerne. Wir finden einen Weg, das
         Projekt umzusetzen.
       </p>
     </section>
 
-    <section id="erfahrungen" className="pt-4 lg:pt-10 mb-8">
+    <section id="experience" className="pt-4 lg:pt-10 mb-8">
       <h2>Berufliche Erfahrung</h2>
 
       <CareerList latest />
     </section>
 
-    <section id="projekte" className="pt-4 lg:pt-10 mb-8">
+    <section id="projects" className="pt-4 lg:pt-10 mb-8">
       <h2>Aktuelle Projekte</h2>
 
       <ProjectList highlights />
     </section>
 
-    <section id="kontakt" className="pt-4 lg:pt-10">
+    <section id="contact" className="pt-4 lg:pt-10">
       <h2>Kontakt</h2>
 
       <p className="mb-4">
@@ -52,7 +52,7 @@ const Home = () => (
         die Herausforderung zu meistern.
       </p>
 
-      <LinkButton href="/kontakt" label="Jetzt kontaktieren" />
+      <LinkButton href="/contact" label="Jetzt kontaktieren" />
     </section>
   </div>
 );

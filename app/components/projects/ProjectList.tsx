@@ -17,7 +17,7 @@ const ProjectList = async  ({ highlights }: Props) => {
       { !projects.length
         ? <p className="py-4">Leider konnten die bisherigen Projekte nicht geladen werden.</p>
         : '' }
-      { highlights && <LinkButton href="/projekte" label="Alle Projekte ansehen" /> }
+      { highlights && <LinkButton href="/projects" label="Alle Projekte ansehen" /> }
     </div>
   );
 };

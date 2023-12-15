@@ -19,7 +19,7 @@ const ProjectNotFoundPage = () => (
       </p>
 
       <LinkButton
-        href="/projekte"
+        href="/projects"
         label="Zur Projektliste"
       />
 

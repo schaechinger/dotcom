@@ -16,19 +16,19 @@ const sitemap = async () => {
       priority: 1,
     },
     {
-      url: `${base}/taetigkeit`,
-      changeFrequency: 'monthly',
-      lastModified: modified,
-      priority: 0.8,
-    },
-    {
-      url: `${base}/kontakt`,
+      url: `${base}/work`,
       changeFrequency: 'monthly',
       lastModified: modified,
       priority: 0.7,
     },
     {
-      url: `${base}/lebenslauf`,
+      url: `${base}/contact`,
+      changeFrequency: 'monthly',
+      lastModified: modified,
+      priority: 0.6,
+    },
+    {
+      url: `${base}/resume`,
       changeFrequency: 'monthly',
       lastModified: modified,
       priority: 0.7,
@@ -36,13 +36,13 @@ const sitemap = async () => {
 
     // legal
     {
-      url: `${base}/impressum`,
+      url: `${base}/imprint`,
       changeFrequency: 'weekly',
       lastModified: modified,
       priority: 0.3,
     },
     {
-      url: `${base}/datenschutz`,
+      url: `${base}/privacy`,
       changeFrequency: 'weekly',
       lastModified: modified,
       priority: 0.3,
@@ -59,7 +59,7 @@ const sitemap = async () => {
     }
 
     sitemap.push({
-      url: `${base}/projekte/${project.slug}`,
+      url: `${base}/projects/${project.slug}`,
       changeFrequency: 'monthly',
       priority: 0.8,
       lastModified: projectModified,
@@ -67,7 +67,7 @@ const sitemap = async () => {
   });
 
   sitemap.push({
-    url: `${base}/projekte/`,
+    url: `${base}/projects/`,
     changeFrequency: 'weekly',
     lastModified: latestProject,
     priority: 0.8,

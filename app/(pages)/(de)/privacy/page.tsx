@@ -7,34 +7,34 @@ import BulletList from '@components/projects/BulletList';
 export const metadata: Metadata = {
   title: 'Datenschutz',
   alternates: {
-    canonical: '/datenschutz',
+    canonical: '/privacy',
     languages: {
-      'de': '/datenschutz',
+      'de': '/privacy',
     },
   },
 };
 
 const PrivacyPage = () => (
   <div className="privacy-page pt-4 lg:pt-10">
-    <section id="datenschutz">
+    <section id="privacy">
       <h2>Datenschutz</h2>
 
       <h3>Inhaltsverzeichnis</h3>
 
       <BulletList>
-        <Link href="#verantwortlicher">Verantwortlicher</Link>
-        <Link href="#widerruf">Widerruf deiner Einwilligung zur Datenverarbeitung</Link>
-        <Link href="#beschwerde">Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde</Link>
-        <Link href="#datenuebertragbarkeit">Recht auf Datenübertragbarkeit</Link>
-        <Link href="#auskunft">Recht auf Auskunft, Berichtigung, Sperrung und Löschung</Link>
+        <Link href="#owner">Verantwortlicher</Link>
+        <Link href="#revocation">Widerruf deiner Einwilligung zur Datenverarbeitung</Link>
+        <Link href="#complaint">Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde</Link>
+        <Link href="#data-transfer">Recht auf Datenübertragbarkeit</Link>
+        <Link href="#information">Recht auf Auskunft, Berichtigung, Sperrung und Löschung</Link>
         <Link href="#ssl">SSL- bzw. TLS-Verschlüsselung</Link>
         <Link href="#logs">Server-Log-Dateien</Link>
-        <Link href="#kontakt">Kontaktformular</Link>
+        <Link href="#contact">Kontaktformular</Link>
         <Link href="#cookies">Cookies</Link>
       </BulletList>
     </section>
 
-    <section id="verantwortlicher" className="pt-10">
+    <section id="owner" className="pt-10">
       <h3>Verantwortlicher</h3>
 
       <p className="mb-4">
@@ -44,11 +44,11 @@ const PrivacyPage = () => (
       </p>
 
       <p>
-        <LinkButton href="/impressum" label="Impressum" />
+        <LinkButton href="/imprint" label="Impressum" />
       </p>
     </section>
 
-    <section id="widerruf" className="pt-10">
+    <section id="revocation" className="pt-10">
       <h3>Widerruf deiner Einwilligung zur Datenverarbeitung</h3>
 
       <p>
@@ -59,7 +59,7 @@ const PrivacyPage = () => (
       </p>
     </section>
 
-    <section id="beschwerde" className="pt-10">
+    <section id="complaint" className="pt-10">
       <h3>Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde</h3>
 
       <p>
@@ -72,7 +72,7 @@ const PrivacyPage = () => (
       </p>
     </section>
 
-    <section id="datenuebertragbarkeit" className="pt-10">
+    <section id="data-transfer" className="pt-10">
       <h3>Recht auf Datenübertragbarkeit</h3>
 
       <p>
@@ -84,7 +84,7 @@ const PrivacyPage = () => (
       </p>
     </section>
 
-    <section id="auskunft" className="pt-10">
+    <section id="information" className="pt-10">
       <h3>Recht auf Auskunft, Berichtigung, Sperrung und Löschung</h3>
 
       <p>
@@ -134,7 +134,7 @@ const PrivacyPage = () => (
       </p>
     </section>
 
-    <section id="kontakt" className="pt-10">
+    <section id="contact" className="pt-10">
       <h3>Kontaktformular</h3>
 
       <p className="mb-2">

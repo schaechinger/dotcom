@@ -6,16 +6,16 @@ export const metadata: Metadata = {
   title: 'Projekte',
   description: 'Erhalte hier einen Überblick über meine bisherigen Projekte.',
   alternates: {
-    canonical: '/projekte',
+    canonical: '/projects',
     languages: {
-      'de': '/projekte',
+      'de': '/projects',
     },
   },
 }
 
 const ProjectsPage = () => (
   <div className="projects-page pt-4 lg:pt-10 lg:max-w-screen-sm">
-    <section id="projekte">
+    <section id="projects">
       <h2>Projekte</h2>
 
       <ProjectList />

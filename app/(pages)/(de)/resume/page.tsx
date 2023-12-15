@@ -8,16 +8,16 @@ export const metadata: Metadata = {
   title: 'Berufserfahrung',
   description: 'Erfahre mehr über meinen beruflichen Werdegang.',
   alternates: {
-    canonical: '/lebenslauf',
+    canonical: '/resume',
     languages: {
-      'de': '/lebenslauf',
+      'de': '/resume',
     },
   },
 };
 
 const ResumePage = () => (
   <div className="resume-page pt-4 lg:pt-10 lg:max-w-screen-sm">
-    <section id="lebenslauf">
+    <section id="resume">
       <h2>Berufserfahrung</h2>
 
       <CareerList />

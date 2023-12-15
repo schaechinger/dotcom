@@ -6,16 +6,16 @@ export const metadata: Metadata = {
   title: 'Meine Tätigkeit',
   description: 'Ein Einblick in meine Tätigkeitsfelder sowie meine technischen Fähigkeiten.',
   alternates: {
-    canonical: '/taetigkeit',
+    canonical: '/work',
     languages: {
-      'de': '/taetigkeit',
+      'de': '/work',
     },
   },
 };
 
 const ResumePage = () => (
   <div className="resume-page pt-4 lg:pt-10 lg:max-w-screen-sm">
-    <section id="taetigkeit">
+    <section id="work">
       <h2>Meine Tätigkeit</h2>
 
       <p className="mb-2">
@@ -72,7 +72,7 @@ const ResumePage = () => (
       </div>
 
       <p className="mt-4">
-        <LinkButton href="/projekte">Meine bisherigen Projekte</LinkButton>
+        <LinkButton href="/projects">Meine bisherigen Projekte</LinkButton>
       </p>
     </section>
 

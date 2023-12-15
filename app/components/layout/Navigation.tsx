@@ -6,7 +6,6 @@ import { useState } from 'react';
 
 import Menu from '@components/icons/Menu';
 import SocialLinks from '@components/layout/SocialLinks';
-import ThemeToggle from '@components/layout/ThemeToggle';
 import MenuClose from '../icons/MenuClose';
 
 const Navigation = () => {
@@ -32,9 +31,9 @@ const Navigation = () => {
             >Über&nbsp;mich</Link>
           </li>
           { [
-            { link: '/lebenslauf', label: 'Berufserfahrung' },
-            { link: '/projekte', label: 'Projekte' },
-            { link: '/kontakt', label: 'Kontakt' },
+            { link: '/resume', label: 'Berufserfahrung' },
+            { link: '/projects', label: 'Projekte' },
+            { link: '/contact', label: 'Kontakt' },
           ].map((item) => (
             <li key={item.link}>
               <Link
@@ -44,9 +43,6 @@ const Navigation = () => {
               >{ item.label }</Link>
             </li>
           )) }
-          <li>
-            <ThemeToggle />
-          </li>
 
           <li className="my-2 lg:mt-10 lg:mb-0">
             <SocialLinks />

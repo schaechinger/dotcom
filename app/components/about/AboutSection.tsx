@@ -26,7 +26,7 @@ const AboutSection = () => (
     </p>
 
     <p>
-      <LinkButton href="/taetigkeit" label="Mehr zu meiner Tätigkeit" />
+      <LinkButton href="/work" label="Mehr zu meiner Tätigkeit" />
     </p>
   </section>
 );

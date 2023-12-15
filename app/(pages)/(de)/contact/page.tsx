@@ -8,16 +8,16 @@ export const metadata: Metadata = {
   title: 'Kontakt',
   description: 'Hier kannst du auf schnellem Weg mit mir in Kontakt treten.',
   alternates: {
-    canonical: '/kontakt',
+    canonical: '/contact',
     languages: {
-      'de': '/kontakt',
+      'de': '/contact',
     },
   },
 };
 
 const ResumePage = () => (
   <div className="resume-page pt-4 lg:pt-10 lg:max-w-screen-sm">
-    <section id="kontakt">
+    <section id="contact">
       <h2>Kontakt</h2>
 
       <p className="mb-2">Der erste Schritt liegt bei dir.</p>

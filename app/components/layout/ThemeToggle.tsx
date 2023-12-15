@@ -5,7 +5,7 @@ import { useTheme } from 'next-themes';
 import Contrast from '@components/icons/Contrast';
 
 const ThemeToggle = () => {
-  const { theme, systemTheme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   return (
     <button

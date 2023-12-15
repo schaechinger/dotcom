@@ -9,12 +9,12 @@ const Footer = () => (
 
     <ul className="flex justify-start gap-4 mt-6 mb-2">
       <li>
-        <Link href="/impressum" className="font-normal">
+        <Link href="/imprint" className="font-normal">
           Impressum
         </Link>
       </li>
       <li>
-        <Link href="/datenschutz" className="font-normal">
+        <Link href="/privacy" className="font-normal">
           Datenschutz
         </Link>
       </li>

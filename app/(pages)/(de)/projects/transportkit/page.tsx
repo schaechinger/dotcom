@@ -18,9 +18,9 @@ export async function generateMetadata(): Promise<Metadata> {
     metadata.title = project.title;
     metadata.description = project.description;
     metadata.alternates = {
-      canonical: `/projekte/${project.slug}`,
+      canonical: `/projects/${project.slug}`,
       languages: {
-        'de': `/projekte/${project.slug}`,
+        'de': `/projects/${project.slug}`,
       },
     };
   }
@@ -43,7 +43,7 @@ const TransportKitPage = async () => {
       <ProjectMasterData project={project} />
 
       { project.details?.description
-        && <DetailBlock id="beschreibung" title="Was ist TransportKit" content={project.details.description} /> }
+        && <DetailBlock id="description" title="Was ist TransportKit" content={project.details.description} /> }
 
       <section id="munich" className="pt-10">
         <h3>München</h3>
@@ -80,7 +80,7 @@ const TransportKitPage = async () => {
       <ProjectLinks links={project.links} />
 
       <p className="mt-4">
-        <LinkButton href="/projekte" label="Zur Projektliste" />
+        <LinkButton href="/projects" label="Zur Projektliste" />
       </p>
     </div>
   );

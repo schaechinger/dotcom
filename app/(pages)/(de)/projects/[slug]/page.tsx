@@ -24,9 +24,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     metadata.title = project.title;
     metadata.description = project.description;
     metadata.alternates = {
-      canonical: `/projekte/${project.slug}`,
+      canonical: `/projects/${project.slug}`,
       languages: {
-        'de': `/projekte/${project.slug}`,
+        'de': `/projects/${project.slug}`,
       },
     };
     metadata.openGraph = {
@@ -52,18 +52,18 @@ const ProjectPage = async ({ params }: Props) => {
       <ProjectMasterData project={project} />
 
       { project.details?.description
-        && <DetailBlock id="beschreibung" title="Worum es geht" content={project.details.description} /> }
+        && <DetailBlock id="description" title="Worum es geht" content={project.details.description} /> }
 
       { project.images && <ProjectImages images={project.images} slug={params.slug} /> }
 
       { project.details?.requirements
-        && <DetailBlock id="anforderungen" title="Anforderungen" content={project.details.requirements} /> }
+        && <DetailBlock id="requirements" title="Anforderungen" content={project.details.requirements} /> }
 
       { project.details?.goal
-        && <DetailBlock id="ziel" title="Ziel des Projekts" content={project.details.goal} /> }
+        && <DetailBlock id="goal" title="Ziel des Projekts" content={project.details.goal} /> }
 
       { project.details?.implementation
-        && <DetailBlock id="umsetzung" title="Umsetzung des Projekts" content={project.details.implementation} /> }
+        && <DetailBlock id="implementation" title="Umsetzung des Projekts" content={project.details.implementation} /> }
 
       { project.details?.features
         && <DetailBlock id="features" title="Features" content={project.details.features} /> }
@@ -71,7 +71,7 @@ const ProjectPage = async ({ params }: Props) => {
       <ProjectLinks links={project.links} />
 
       <p className="mt-4">
-        <LinkButton href="/projekte" label="Zur Projektliste" />
+        <LinkButton href="/projects" label="Zur Projektliste" />
       </p>
     </div>
   );

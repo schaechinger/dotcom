@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 
 import { clearSans } from '@app/font';
-import Provider from '@app/provider';
 import { locale } from '@app/utils';
 import Footer from '@components/layout/Footer';
 import Header from '@components/layout/Header';
@@ -26,9 +25,8 @@ type Props = {
 }
 
 const RootLayout = ({ children }: Props) => (
-  <html className={`${clearSans.className} light`} style={{ colorScheme: 'light' }} lang={locale}>
+  <html className={`${clearSans.className} dark`} style={{ colorScheme: 'dark' }} lang={locale}>
       <body className="dark:text-dark-200 dark:bg-dark-800">
-      <Provider>
         <div className="lg:flex lg:gap-8 w-full max-w-screen-xl mx-auto">
           <Header />
 
@@ -40,7 +38,6 @@ const RootLayout = ({ children }: Props) => (
             <Footer />
           </div>
         </div>
-      </Provider>
       </body>
   </html>
 );

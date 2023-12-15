@@ -4,16 +4,16 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Impressum',
   alternates: {
-    canonical: '/impressum',
+    canonical: '/imprint',
     languages: {
-      'de': '/impressum',
+      'de': '/imprint',
     },
   },
 };
 
 const ImprintPage = () => (
   <div className="imprint-page pt-4 lg:pt-10">
-    <section id="impressum">
+    <section id="imprint">
       <h2>Impressum</h2>
 
       <h3>Eigentümer gemäß § 5 TMG</h3>
@@ -43,7 +43,7 @@ const ImprintPage = () => (
       </p>
     </section>
 
-    <section id="haftungsausschluss" className="pt-10">
+    <section id="disclaimer" className="pt-10">
       <h3>Haftung für Inhalte</h3>
 
       <p className="mb-2">

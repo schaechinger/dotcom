@@ -2,7 +2,7 @@ export interface Company {
   name: string;
   location?: string;
   link?: string;
-};
+}
 
 export interface TechData {
   slug: string;
