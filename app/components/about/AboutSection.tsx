@@ -15,7 +15,7 @@ const AboutSection = () => (
     <p className="mb-2">
       Meine Aufgabenbereiche erstrecken sich über komplexe APIs mit <HighlightLabel
         >Node.js</HighlightLabel>, performante Frontends mit <HighlightLabel
-        >Vue</HighlightLabel> und <HighlightLabel>React</HighlightLabel>, Absicherung
+        >Vue.js</HighlightLabel> und <HighlightLabel>React</HighlightLabel>, Absicherung
         von Systemen sowie Deployment und Übergabe an Kunden.
     </p>
 
