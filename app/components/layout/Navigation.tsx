@@ -5,8 +5,9 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 import Menu from '@components/icons/Menu';
+import MenuClose from '@components/icons/MenuClose';
 import SocialLinks from '@components/layout/SocialLinks';
-import MenuClose from '../icons/MenuClose';
+import ThemeToggle from '@components/layout/ThemeToggle';
 
 const Navigation = () => {
   const path = usePathname();
@@ -43,6 +44,9 @@ const Navigation = () => {
               >{ item.label }</Link>
             </li>
           )) }
+          <li>
+            <ThemeToggle />
+          </li>
 
           <li className="my-2 lg:mt-10 lg:mb-0">
             <SocialLinks />
