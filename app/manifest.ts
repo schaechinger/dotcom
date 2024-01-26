@@ -6,8 +6,6 @@ const manifest = (): MetadataRoute.Manifest => ({
     description: 'Senior Fullstack JavaScript Engineer und Berater für komplexe und skalierbare Softwaresysteme in München.',
     start_url: '/',
     display: 'standalone',
-    theme_color: '#00a5db',
-    background_color: '#ffffff',
     icons: [
         {
             src: '/favicon.ico',
