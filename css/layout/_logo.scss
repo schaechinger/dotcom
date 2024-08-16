@@ -1,0 +1,23 @@
+.logo {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: left;
+
+  // dark
+  color: #fafafa;
+
+  &__first-name {
+    background-color: #fafafa;
+    color: #1b1818;
+    font-weight: 400;
+  }
+  &__last-name {
+    font-weight: 500;
+  }
+
+  &__profession {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+  }
+}

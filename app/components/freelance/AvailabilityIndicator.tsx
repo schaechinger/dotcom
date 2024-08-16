@@ -11,7 +11,7 @@ const AvailabilityIndicator = async () => {
             <Clock className="text-primary-300 -mt-1 mr-2 text-xl" />
             <span className="text-xl mr-1">{availibility.days}</span>d / Woche
           </span>
-        : 'Keine Kapazität' }
+        : 'Kleinprojekte' }
     </div>
   );
 };

@@ -1,5 +1,6 @@
 'use server';
 
+import { useReCaptcha } from 'next-recaptcha-v3';
 import { ZodError, z } from 'zod';
 
 import { sendMessage } from '@lib/slack';
@@ -17,6 +18,8 @@ const ContactMessage = z.object({
 });
 
 export const submitContact = async (_state: Awaited<ContactFormState>, payload: FormData) => {
+  const { executeRecaptcha } = useReCaptcha();
+  const token = executeRecaptcha('form_submit');
   try {
     const parsed = ContactMessage.parse({
       name: payload.get('name'),

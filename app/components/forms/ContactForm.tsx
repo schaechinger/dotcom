@@ -7,7 +7,7 @@ import { SubmitButton } from '@components/forms/SubmitButton';
 import CircleCheck from '../icons/CircleCheck';
 
 const ContactForm = () => {
-  const [state, submitAction] = useFormState(submitContact, { success: false })
+  const [state, submitAction] = useFormState(submitContact, { success: false });
 
   if (state.success) {
     return (
@@ -60,6 +60,8 @@ const ContactForm = () => {
         { 'message' === state.field
           && <p className="text-sm text-red-500 mt-1">Bitte schildere dein Anliegen</p> }
       </label>
+
+      <input value={token} />
 
       <SubmitButton>Absenden</SubmitButton>
       { state.message }

@@ -1,0 +1,29 @@
+@import 'footer';
+@import 'header';
+@import 'navigation';
+
+@import 'text';
+@import 'links';
+
+body.mono-layout {
+  .wrapper {
+    @apply lg:flex lg:justify-center lg:gap-10;
+  }
+
+  .content-container {
+    max-width: 80ch;
+    position: relative;
+
+    @apply min-h-screen;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+
+      @apply border-r border-r-dark-200;
+    }
+  }
+}

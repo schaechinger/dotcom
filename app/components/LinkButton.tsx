@@ -17,11 +17,12 @@ const LinkButton = (props: Props) => {
   return (
     <Component
       href={props.href}
-      className="group"
+      className="group hover:bg-primary-300 -m-[2px] p-[2px]"
       target={target}
     >
-      { props.label || props.children }
-      <ChevronRight className="inline-block -mt-0.5 ml-1 transition-all text-primary-300 group-hover:text-current group-hover:text-lg group-hover:-mt-0.5" />
+      <span className="font-normal text-primary-500">[</span>
+      <span className="font-medium dark:text-dark-50">{ props.label || props.children }</span>
+      <span className="font-normal text-primary-500">]</span>
     </Component>
   );
 };

@@ -1,0 +1,23 @@
+.logo {
+  @apply text-2xl text-left;
+
+  &__firstname {
+    @apply text-dark-50 bg-dark-800 dark:text-dark-800 dark:bg-dark-50 font-normal;
+  }
+
+  &__surname {
+    @apply text-dark-950 dark:text-dark-50 font-medium;
+  }
+
+  &__subline {
+    @apply text-sm text-dark-950 dark:text-dark-50 font-medium;
+  }
+
+  &:hover {
+    @apply bg-transparent dark:bg-transparent;
+
+    .logo__firstname {
+      @apply bg-primary-500 dark:bg-primary-500;
+    }
+  }
+}

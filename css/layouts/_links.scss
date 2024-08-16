@@ -1,0 +1,22 @@
+a {
+  // @apply text-dark-950 dark:text-dark-50 font-bold hover:text-primary-500 hover:dark:text-primary-500 transition-colors;
+  @apply text-dark-50 font-bold no-underline hover:text-dark-800 hover:bg-primary-500 transition-colors -m-1 p-1;
+
+  // &.inline-link {
+  //   @apply hover:underline hover:underline-offset-4;
+  // }
+
+  // &:not(.inline-link) {
+  //   position: relative;
+
+  //   @apply flex items-center;
+
+  //   &::before {
+  //     content: '>';
+  //     left: -1em;
+  //     position: absolute;
+  //     top: 0;
+
+  //   }
+  // }
+}

@@ -3,15 +3,17 @@ import { TechData } from '@models/career';
 type Props = {
   item: TechData;
   color?: string;
-}
+};
 
 const TechItem = ({ item, color }: Props) => {
   const colorClasses = {
-    primary: 'text-primary-500 bg-primary-100 border-primary-100',
-    primaryHighlight: 'text-dark-50 bg-primary-500 border-primary-100',
-    medalmonday: 'text-medalmonday-500 bg-medalmonday-100 border-medalmonday-100',
-    medalmondayHighlight: 'text-dark-50 bg-medalmonday-500 border-medalmonday-100',
-  }
+    primary: 'flex items-center text-primary-500',
+    medalmonday: 'flex items-center text-medalmonday-500',
+  };
+  const bracketClasses = {
+    primary: 'text-xl text-primary-300',
+    medalmonday: 'text-xl text-medalmonday-300',
+  };
 
   const techColor = [
     (color && Object.keys(colorClasses).includes(color)) ? color : 'primary',
@@ -19,8 +21,10 @@ const TechItem = ({ item, color }: Props) => {
   ].join('') as 'primary';
 
   return (
-    <li key={item.slug} className={`${colorClasses[techColor]} border rounded-full px-2`}>
-      <span>{ item.name }</span>
+    <li key={item.slug} className={colorClasses[techColor]}>
+      <span className={bracketClasses[techColor]}>[</span>
+      <span className="font-medium">{ item.name }</span>
+      <span className={bracketClasses[techColor]}>]</span>
     </li>
   );
 };

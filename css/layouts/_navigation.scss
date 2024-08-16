@@ -1,0 +1,24 @@
+.navigation {
+//   @apply -mx-1 px-1 w-full transition-transform overflow-x-auto;
+
+  &__list {
+//     @apply flex;
+
+    &-item {
+//       @apply border-t border-b-dark-50 border-t-transparent text-nowrap;
+
+//       > a {
+//         @apply inline-block px-4 py-1 text-dark-800 dark:text-dark-200 hover:text-dark-50 hover:dark:text-dark-50 hover:bg-transparent;
+//       }
+
+      &--active {
+        @apply text-primary-500;
+
+        > a {
+          @apply text-primary-500;
+        }
+      }
+    }
+  }
+}
+

@@ -35,15 +35,19 @@ const Navigation = () => {
             { link: '/resume', label: 'Berufserfahrung' },
             { link: '/projects', label: 'Projekte' },
             { link: '/contact', label: 'Kontakt' },
-          ].map((item) => (
-            <li key={item.link}>
-              <Link
-                href={item.link}
-                className={`font-normal ${path.startsWith(item.link) && ' text-primary-500 dark:text-primary-500'}`}
-                onClick={() => setOpen(false)}
-              >{ item.label }</Link>
-            </li>
-          )) }
+          ].map((item) => {
+            const isActive = '/' === item.link ? item.link === path : path.startsWith(item.link);
+
+            return (
+              <li key={item.link}>
+                <Link
+                  href={item.link}
+                  className={`font-normal ${isActive ? ' text-primary-500 dark:text-primary-500' : ''}`}
+                  onClick={() => setOpen(false)}
+                >{ item.label }</Link>
+              </li>
+            );
+          }) }
           <li>
             <ThemeToggle />
           </li>
