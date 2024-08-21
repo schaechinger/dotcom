@@ -1,5 +1,3 @@
-
-
 export type LanguageCode = 'de' | 'en';
 
 export const supportedLangs: LanguageCode[] = ['de', 'en'];

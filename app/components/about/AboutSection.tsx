@@ -1,33 +1,35 @@
-import type { ComponentProps } from '@app/interfaces';
+import { useLocale, useTranslations } from 'next-intl';
+
 import LinkButton from '@components/LinkButton';
 import HighlightLabel from '@components/HighlightLabel';
-import { _l, _t, loadTranslations } from '@lib/i18n';
+import { _l, LanguageCode } from '@lib/i18n';
 
-const AboutSection = async ({ lang }: ComponentProps) => {
-  const translations = await loadTranslations('pages.home.about', lang);
+const AboutSection = () => {
+  const t = useTranslations('pages.home.about');
+  const lang = useLocale() as LanguageCode;
   
   return (
     <section id="about" className="pt-4 lg:pt-10 mb-8">
-      <h1>{_t('title', translations, lang)}</h1>
+      <h1>{t('title')}</h1>
 
       <p className="mb-2">
-        {_t('text.0.0', translations, lang)}<HighlightLabel
-          label="JavaScript" />{_t('text.0.1', translations, lang)}
+        {t('text.0.0')}<HighlightLabel
+          label="JavaScript" />{t('text.0.1')}
       </p>
 
       <p className="mb-2">
-      {_t('text.1.0', translations, lang)}<HighlightLabel label="Node.js"
-        />{_t('text.1.1', translations, lang)}<HighlightLabel label="Vue.js"
-        />{_t('text.1.2', translations, lang)}<HighlightLabel label="React"
-        />{_t('text.1.3', translations, lang)}
+      {t('text.1.0')}<HighlightLabel label="Node.js"
+        />{t('text.1.1')}<HighlightLabel label="Vue.js"
+        />{t('text.1.2')}<HighlightLabel label="React"
+        />{t('text.1.3')}
       </p>
 
       <p className="mb-4">
-        {_t('text.2', translations, lang)}
+        {t('text.2')}
       </p>
 
       <p>
-        <LinkButton href={_l('work', lang)} label={_t('goto', translations, lang)} />
+        <LinkButton href={_l('work', lang)} label={t('goto')} />
       </p>
     </section>
   );

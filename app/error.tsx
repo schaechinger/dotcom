@@ -3,7 +3,7 @@
 import KonamiCode from '@components/KonamiCode';
 import LinkButton from '@components/LinkButton';
 
-const NotFound = () => (
+const ServerError = () => (
   <div className="not-found-page pt-4 lg:pt-10 lg:max-w-screen-sm">
     <section>
       <h1>Inhalt nicht verfügbar</h1>
@@ -22,4 +22,4 @@ const NotFound = () => (
   </div>
 );
 
-export default NotFound;
+export default ServerError;

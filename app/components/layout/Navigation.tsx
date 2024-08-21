@@ -19,6 +19,11 @@ const Navigation = ({ lang, translations }: Props) => {
   const path = usePathname();
   const [isOpen, setOpen] = useState(false);
 
+  const itemClasses = {
+    normal: 'font-normal',
+    active: 'font-bold text-primary-500 dark:text-primary-500',
+  };
+
   return (
     <>
       <button type="button" className="lg:hidden items-center p-2 rounded-full self-center"
@@ -33,7 +38,7 @@ const Navigation = ({ lang, translations }: Props) => {
           <li>
             <Link
               href={_l('/', lang)}
-              className={`font-normal ${`/${lang}` === path && 'text-primary-500 dark:text-primary-500'}`}
+              className={`/${lang}` === path ? itemClasses.active : itemClasses.normal}
               onClick={() => setOpen(false)}
             >{_t('about', translations, lang)}</Link>
           </li>
@@ -45,7 +50,7 @@ const Navigation = ({ lang, translations }: Props) => {
             <li key={item.link}>
               <Link
                 href={item.link}
-                className={`font-normal ${path.startsWith(item.link) && 'text-primary-500 dark:text-primary-500'}`}
+                className={path.startsWith(item.link) ? itemClasses.active : itemClasses.normal}
                 onClick={() => setOpen(false)}
               >{ item.label }</Link>
             </li>

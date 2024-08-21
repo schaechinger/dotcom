@@ -8,6 +8,7 @@ import projectList from './components/projectList';
 import themeToggle from './components/themeToggle';
 import timeSpan from './components/timeSpan';
 
+import errors from './errors';
 import homePage from './pages/home';
 import projectsPage from './pages/projects';
 import resumePage from './pages/resume';
@@ -32,7 +33,10 @@ const translations = {
     home: homePage,
     projects: projectsPage,
     resume: resumePage,
+
   },
+
+  errors,
 };
 
 export default translations;
