@@ -33,7 +33,7 @@ const home = {
     goto: 'Kontakt aufnehmen',
   },
   experience: {
-    title: 'Berufliche Erfahrungen',
+    title: 'Berufliche Erfahrung',
   },
   projects: {
     title: 'Aktuelle Projekte',
