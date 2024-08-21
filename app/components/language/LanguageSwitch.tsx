@@ -4,10 +4,10 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-import { LangComponentProps } from '@app/interfaces';
+import { ComponentProps } from '@app/interfaces';
 import { _t, LanguageCode } from '@lib/i18n';
 
-const LanguageSwitch = ({ lang }: LangComponentProps) => {
+const LanguageSwitch = ({ lang }: ComponentProps) => {
   const pathname = usePathname();
   const [switchLang, setSwitchLang] = useState({
     lang: 'de' === lang ? 'en' : 'de',

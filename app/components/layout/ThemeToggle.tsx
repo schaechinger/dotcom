@@ -2,12 +2,12 @@
 
 import { useTheme } from 'next-themes';
 
-import { LangComponentProps } from '@app/interfaces';
+import { ComponentProps } from '@app/interfaces';
 import Moon from '@components/icons/Moon';
 import Sun from '@components/icons/Sun';
 import { _t, loadTranslations } from '@lib/i18n';
 
-const ThemeToggle = ({ lang }: LangComponentProps) => {
+const ThemeToggle = ({ lang }: ComponentProps) => {
   let translations = {};
   void loadTranslations('components.themeToggle', lang).then((t) => translations = t);
   const { theme, setTheme } = useTheme();

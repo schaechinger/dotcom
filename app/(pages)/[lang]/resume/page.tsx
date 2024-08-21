@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 
-import type { LangPageProps } from '@app/interfaces';
+import type { PageProps } from '@app/interfaces';
 import CareerList from '@components/career/CareerList';
 import TechItem from '@components/career/TechItem';
 import CertificationList from '@components/certifications/CertificationList';
 import { _t, getPageAlternates, loadTranslations } from '@lib/i18n';
 
-export const generateMetadata = async ({ params: { lang } }: LangPageProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params: { lang } }: PageProps): Promise<Metadata> => {
   const translations = await loadTranslations('pages.resume', lang);
 
   return {
@@ -16,7 +16,7 @@ export const generateMetadata = async ({ params: { lang } }: LangPageProps): Pro
   };
 };
 
-const ResumePage = async ({ params: { lang } }: LangPageProps) => {
+const ResumePage = async ({ params: { lang } }: PageProps) => {
   const translations = await loadTranslations('pages.resume', lang);
 
   return (

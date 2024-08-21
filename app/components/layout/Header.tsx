@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import type { LangComponentProps } from '@app/interfaces';
+import type { ComponentProps } from '@app/interfaces';
 import Logo from '@components/layout/Logo';
 import Navigation from '@components/layout/Navigation';
 import { _l, _t, loadTranslations } from '@lib/i18n';
 
-const Header = async ({ lang }: LangComponentProps) => {
+const Header = async ({ lang }: ComponentProps) => {
   const translations = await loadTranslations('components.header', lang);
 
   return (

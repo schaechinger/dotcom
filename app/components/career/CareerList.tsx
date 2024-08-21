@@ -1,10 +1,10 @@
-import type { LangComponentProps } from '@app/interfaces';
+import type { ComponentProps } from '@app/interfaces';
 import LinkButton from '@components/LinkButton';
 import CareerItem from '@components/career/CareerItem';
 import { loadCareer } from '@lib/contentful';
 import { _l, _t, loadTranslations } from '@lib/i18n';
 
-interface Props extends LangComponentProps {
+interface Props extends ComponentProps {
   latest?: boolean;
 }
 

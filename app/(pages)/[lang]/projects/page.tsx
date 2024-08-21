@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 
-import type { LangPageProps } from '@app/interfaces';
+import type { PageProps } from '@app/interfaces';
 import ProjectList from '@components/projects/ProjectList';
 import { _t, getPageAlternates, loadTranslations } from '@lib/i18n';
 
-export const generateMetadata = async ({ params: { lang } }: LangPageProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params: { lang } }: PageProps): Promise<Metadata> => {
   const translations = await loadTranslations('pages.projects', lang);
 
   return {
@@ -14,7 +14,7 @@ export const generateMetadata = async ({ params: { lang } }: LangPageProps): Pro
   };
 };
 
-const ProjectsPage = async ({ params: { lang } }: LangPageProps) => {
+const ProjectsPage = async ({ params: { lang } }: PageProps) => {
   const translations = await loadTranslations('pages.projects', lang);
 
   return (

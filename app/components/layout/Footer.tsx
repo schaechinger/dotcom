@@ -1,13 +1,13 @@
 import Link from 'next/link';
 
-import type { LangComponentProps } from '@app/interfaces';
+import type { ComponentProps } from '@app/interfaces';
 import HeartEmpty from '@components/icons/HeartEmpty';
 import LanguageSelection from '@components/language/LanguageSelection';
 import SocialLinks from '@components/layout/SocialLinks';
 import SnesButtons from '@components/mario/SnesButtons';
 import { _l, _t, loadTranslations } from '@lib/i18n';
 
-const Footer = async ({ lang }: LangComponentProps) => {
+const Footer = async ({ lang }: ComponentProps) => {
   const translations = await loadTranslations('components.footer', lang);
 
   return (

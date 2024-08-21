@@ -1,11 +1,11 @@
-import type { LangComponentProps } from '@app/interfaces';
+import type { ComponentProps } from '@app/interfaces';
 import { formatDate } from '@app/utils';
 import TechItem from '@components/career/TechItem';
 import BulletList from '@components/projects/BulletList';
 import { CertificationData } from '@models/certification';
 import LinkButton from '../LinkButton';
 
-interface Props extends LangComponentProps {
+interface Props extends ComponentProps {
   item: CertificationData;
 }
 

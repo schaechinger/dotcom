@@ -1,8 +1,8 @@
-import type { LangComponentProps } from '@app/interfaces';
+import type { ComponentProps } from '@app/interfaces';
 import { formatDate } from '@app/utils';
 import { _t, loadTranslations } from '@lib/i18n';
 
-interface Props extends LangComponentProps {
+interface Props extends ComponentProps {
   startDate: string;
   endDate?: string;
 }

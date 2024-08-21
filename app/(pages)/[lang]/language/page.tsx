@@ -1,13 +1,9 @@
-import type { LangPageProps } from '@app/interfaces';
+import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/LinkButton';
 import translations from '@i18n/language';
 import { _l, _t, supportedLangs } from '@lib/i18n';
 
-interface Props extends LangPageProps {
-  searchParams: { [key: string]: string | string[] | undefined };
-}
-
-const LanguagePage = ({ searchParams: { lang } }: Props) => {
+const LanguagePage = ({ searchParams: { lang } }: PageProps) => {
   const soonTitle: Record<string, string> = {
     eo: 'La Esperanto-versio estas en laboro',
     es: 'La versión en español está en proceso',

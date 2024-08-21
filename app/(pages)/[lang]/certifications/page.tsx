@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import type { LangPageProps } from '@app/interfaces';
+import type { PageProps } from '@app/interfaces';
 import CertificationList from '@components/certifications/CertificationList';
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
 }
 
-const CertificationsPage = ({ params: { lang } }: LangPageProps) => (
+const CertificationsPage = ({ params: { lang } }: PageProps) => (
   <div className="certifications-page pt-4 lg:pt-10 lg:max-w-screen-sm">
     <section id="certifications">
       <h1>Zertifizierungen</h1>

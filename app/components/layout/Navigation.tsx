@@ -4,14 +4,14 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
-import type { LangComponentProps } from '@app/interfaces';
+import type { ComponentProps } from '@app/interfaces';
 import Menu from '@components/icons/Menu';
 import MenuClose from '@components/icons/MenuClose';
 import LanguageSwitch from '@components/language/LanguageSwitch';
 import ThemeToggle from '@components/layout/ThemeToggle';
 import { _l, _t } from '@lib/i18n';
 
-interface Props extends LangComponentProps {
+interface Props extends ComponentProps {
   translations: Record<string, unknown>;
 }
 

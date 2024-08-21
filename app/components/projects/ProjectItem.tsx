@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import type { LangComponentProps } from '@app/interfaces';
+import type { ComponentProps } from '@app/interfaces';
 import CompanyLink from '@components/career/CompanyLink';
 import TechItem from '@components/career/TechItem';
 import TimeSpan from '@components/career/TimeSpan';
@@ -10,7 +10,7 @@ import ProjectTypeLabel from '@components/projects/ProjectTypeLabel';
 import { ProjectData } from '@models/project';
 import { _l } from '@lib/i18n';
 
-interface Props extends LangComponentProps {
+interface Props extends ComponentProps {
   item: ProjectData;
 };
 

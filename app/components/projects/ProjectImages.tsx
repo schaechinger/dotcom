@@ -3,10 +3,10 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
-import { LangComponentProps } from '@app/interfaces';
+import { ComponentProps } from '@app/interfaces';
 import { ProjectImage } from '@models/project';
 
-interface Props extends LangComponentProps {
+interface Props extends ComponentProps {
   slug: string;
   images: ProjectImage[];
 }

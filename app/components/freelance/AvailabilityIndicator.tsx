@@ -1,9 +1,9 @@
-import type { LangComponentProps } from '@app/interfaces';
+import type { ComponentProps } from '@app/interfaces';
 import Clock from '@components/icons/Clock';
 import { loadAvailability } from '@lib/contentful';
 import { _t, loadTranslations } from '@lib/i18n';
 
-const AvailabilityIndicator = async ({ lang }: LangComponentProps) => {
+const AvailabilityIndicator = async ({ lang }: ComponentProps) => {
   const translations = await loadTranslations('components.availability', lang);
   const availibility = await loadAvailability();
 

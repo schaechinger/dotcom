@@ -1,10 +1,10 @@
-import type { LangComponentProps } from '@app/interfaces';
+import type { ComponentProps } from '@app/interfaces';
 import LinkButton from '@components/LinkButton';
 import ProjectItem from '@components/projects/ProjectItem';
 import { loadProjects } from '@lib/contentful';
 import { _l, _t, loadTranslations } from '@lib/i18n';
 
-interface Props extends LangComponentProps {
+interface Props extends ComponentProps {
   highlights?: boolean;
 }
 

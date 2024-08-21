@@ -15,7 +15,7 @@ const language = {
     goto: {
       de: 'Zur deutschen Seite',
       en: 'Visit English site',
-    }
+    },
   },
 };
 

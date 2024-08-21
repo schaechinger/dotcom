@@ -3,7 +3,7 @@
 import { match } from '@formatjs/intl-localematcher';
 import { useEffect, useState } from 'react';
 
-import type { LangComponentProps } from '@app/interfaces';
+import type { ComponentProps } from '@app/interfaces';
 import LinkButton from '@components/LinkButton';
 import MenuClose from '@components/icons/MenuClose';
 import translations from '@i18n/language';
@@ -12,7 +12,7 @@ import { isBrowser, useLocalStorage } from '@lib/utils';
 
 const LANGUAGE_SUGGESTION_OPT_OUT = 'ls-opt-out';
 
-const LanguageSuggestion = ({ lang }: LangComponentProps) => {
+const LanguageSuggestion = ({ lang }: ComponentProps) => {
   const [suggestion, setSuggestion] = useState(lang);
   const localStorage = useLocalStorage();
 

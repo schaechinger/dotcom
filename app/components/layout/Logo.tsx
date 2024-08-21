@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
-import { LangComponentProps } from '@app/interfaces';
+import { ComponentProps } from '@app/interfaces';
 import { _l, _t, loadTranslations } from '@lib/i18n';
 
-const Logo = async ({ lang }: LangComponentProps) => {
+const Logo = async ({ lang }: ComponentProps) => {
   const translations = await loadTranslations('components.header', lang);
 
   return (

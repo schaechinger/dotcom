@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import type { LangPageProps } from '@app/interfaces';
+import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/LinkButton';
 import DetailBlock from '@components/projects/DetailBlock';
 import ProjectLinks from '@components/projects/ProjectLinks';
@@ -9,7 +9,7 @@ import ProjectMasterData from '@components/projects/ProjectMasterData';
 import { loadProjectBySlug } from '@lib/contentful';
 import { getPageAlternates } from '@/app/lib/i18n';
 
-export async function generateMetadata({ params: { lang } }: LangPageProps): Promise<Metadata> {
+export async function generateMetadata({ params: { lang } }: PageProps): Promise<Metadata> {
   const metadata: Metadata = {
     title: 'Projektdetails',
   };
@@ -25,7 +25,7 @@ export async function generateMetadata({ params: { lang } }: LangPageProps): Pro
   return metadata;
 };
 
-const TransportKitPage = async ({ params: { lang } }: LangPageProps) => {
+const TransportKitPage = async ({ params: { lang } }: PageProps) => {
   const project = await loadProjectBySlug('transportkit');
 
   if (!project) {

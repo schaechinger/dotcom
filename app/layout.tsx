@@ -4,6 +4,8 @@ type Props = {
 
 import '@/css/style.scss';
 
+export const revalidate = 3600;
+
 const RootLayout = ({ children }: Props) => (
   <>{children}</>
 );

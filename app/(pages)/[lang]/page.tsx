@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import type { LangPageProps } from '@app/interfaces';
+import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/LinkButton';
 import AboutSection from '@components/about/AboutSection';
 import CareerList from '@components/career/CareerList';
@@ -10,11 +10,11 @@ import AvailabilityIndicator from '@components/freelance/AvailabilityIndicator';
 import ProjectList from '@components/projects/ProjectList';
 import { _l, _t, getPageAlternates, loadTranslations } from '@lib/i18n';
 
-export const generateMetadata = ({ params: { lang } }: LangPageProps): Metadata => ({
+export const generateMetadata = ({ params: { lang } }: PageProps): Metadata => ({
   alternates: getPageAlternates('/', lang),
 });
 
-const HomePage = async ({ params: { lang } }: LangPageProps) => {
+const HomePage = async ({ params: { lang } }: PageProps) => {
   const translations = await loadTranslations('pages.home', lang);
 
   return (

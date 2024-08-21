@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-import { LangComponentProps } from '@app/interfaces';
+import { ComponentProps } from '@app/interfaces';
 import { IconProps } from '@components/icons/Icon';
 import WorldEast from '@components/icons/WorldEast';
 import WorldWest from '@components/icons/WorldWest';
@@ -13,7 +13,7 @@ import { _l, _t, LanguageCode, supportedLangs } from '@lib/i18n';
 
 type IconComponent = (_p: IconProps) => JSX.Element;
 
-const LanguageSelection = ({ lang }: LangComponentProps) => {
+const LanguageSelection = ({ lang }: ComponentProps) => {
   const pathname = usePathname();
   const [path, setPath] = useState({
     lang,

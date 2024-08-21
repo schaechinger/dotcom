@@ -1,16 +1,14 @@
 import type { Metadata } from 'next';
 
 import { clearSans } from '@app/font';
-import type { LangPageProps } from '@app/interfaces';
+import type { LayoutProps } from '@app/interfaces';
 import Provider from '@app/provider';
 import LanguageSuggestion from '@components/language/LanguageSuggestion';
 import Footer from '@components/layout/Footer';
 import Header from '@components/layout/Header';
 import { _t, getPageAlternates, loadTranslations, supportedLangs } from '@lib/i18n';
 
-export const revalidate = 3600;
-
-export const generateMetadata = async ({ params: { lang } }: LangPageProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params: { lang } }: LayoutProps): Promise<Metadata> => {
   const translations = await loadTranslations('general', lang);
 
   return {
@@ -30,11 +28,7 @@ export const generateMetadata = async ({ params: { lang } }: LangPageProps): Pro
 
 export const generateStaticParams = () => supportedLangs.map((lang) => ({ lang }));
 
-interface Props extends LangPageProps {
-  children: React.ReactNode;
-}
-
-const RootLayout = ({ children, params: { lang } }: Props) => (
+const RootLayout = ({ children, params: { lang } }: LayoutProps) => (
   <html className={`${clearSans.className} dark`} style={{ colorScheme: 'dark' }} lang={lang}>
       <head>
         <link type="text/plain" rel="author" href="https://www.schaechinger.com/humans.txt" />

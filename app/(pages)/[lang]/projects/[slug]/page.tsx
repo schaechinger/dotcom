@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import type { LangPageProps } from '@app/interfaces';
+import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/LinkButton';
 import DetailBlock from '@components/projects/DetailBlock';
 import ProjectImages from '@components/projects/ProjectImages';
@@ -10,7 +10,7 @@ import ProjectMasterData from '@components/projects/ProjectMasterData';
 import { loadProjectBySlug } from '@lib/contentful';
 import { getPageAlternates, LanguageCode } from '@lib/i18n';
 
-interface Props extends LangPageProps {
+interface Props extends PageProps {
   params: {
     lang: LanguageCode;
     slug: string;

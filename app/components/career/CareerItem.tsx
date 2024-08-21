@@ -1,11 +1,11 @@
-import type { LangComponentProps } from '@app/interfaces';
+import type { ComponentProps } from '@app/interfaces';
 import CompanyLink from '@components/career/CompanyLink';
 import TechItem from '@components/career/TechItem';
 import TimeSpan from '@components/career/TimeSpan';
 import BulletList from '@components/projects/BulletList';
 import { CareerData } from '@models/career';
 
-interface Props extends LangComponentProps {
+interface Props extends ComponentProps {
   item: CareerData;
 }
 

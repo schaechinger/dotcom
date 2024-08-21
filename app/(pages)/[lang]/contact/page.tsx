@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import type { LangPageProps } from '@app/interfaces';
+import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/LinkButton';
 import ContactForm from '@components/forms/ContactForm';
 import AvailabilityIndicator from '@components/freelance/AvailabilityIndicator';
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
 };
 
-const ResumePage = ({ params: { lang } }: LangPageProps) => (
+const ResumePage = ({ params: { lang } }: PageProps) => (
   <div className="resume-page pt-4 lg:pt-10 lg:max-w-screen-sm">
     <section id="contact">
       <h1>Kontakt</h1>

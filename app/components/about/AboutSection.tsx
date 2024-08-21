@@ -1,9 +1,9 @@
-import type { LangComponentProps } from '@app/interfaces';
+import type { ComponentProps } from '@app/interfaces';
 import LinkButton from '@components/LinkButton';
 import HighlightLabel from '@components/HighlightLabel';
 import { _l, _t, loadTranslations } from '@lib/i18n';
 
-const AboutSection = async ({ lang }: LangComponentProps) => {
+const AboutSection = async ({ lang }: ComponentProps) => {
   const translations = await loadTranslations('pages.home.about', lang);
   
   return (
