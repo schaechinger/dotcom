@@ -1,19 +1,20 @@
-import type { ComponentProps } from '@app/interfaces';
 import CertificationItem from '@components/certifications/CertificationItem';
 import { loadCertifications } from '@lib/contentful';
-import { _t, loadTranslations } from '@lib/i18n';
+import { type LanguageCode } from '@lib/i18n';
+import { getLocale, getTranslations } from 'next-intl/server';
 
-const CertificationList = async ({ lang }: ComponentProps) => {
-  const translations = await loadTranslations('components.careerList', lang);
-  const certifications = await loadCertifications(lang) || [];
+const CertificationList = async () => {
+  const t = await getTranslations('careerList');
+  const locale = await getLocale() as LanguageCode;
+  const certifications = await loadCertifications(locale) || [];
 
   return (
     <div className="-mt-4">
       {certifications.map((c) => (
-        <CertificationItem key={c.slug} item={c} lang={lang} />
+        <CertificationItem key={c.slug} item={c} />
       ))}
       { (!certifications.length)
-        ? <p className="py-4">{_t('error', translations, lang)}</p>
+        ? <p className="py-4">{t('error')}</p>
         : '' }
     </div>
   );

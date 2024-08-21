@@ -5,16 +5,14 @@ import { loadAvailability } from '@lib/contentful';
 
 const AvailabilityIndicator = async () => {
   const t = await getTranslations('availability');
-  const availibility = await loadAvailability();
+  const availability = await loadAvailability();
+
+  const days = +(availability?.days || 0);
 
   return (
     <div className="text-primary-500 rounded-sm font-bold inline-block">
-      { availibility?.days
-        ? <>
-            <Clock className="text-primary-300 -mt-1 mr-2 text-xl" />
-            <span className="text-xl mr-1">{availibility.days}</span>{t('days')}
-          </>
-        : t('booked') }
+      { !!days && <Clock className="text-primary-300 -mt-1 mr-2 text-xl" />}
+      { !!days && <span className="text-xl mr-1">{days}</span>}{t('days', { days })}
     </div>
   );
 };

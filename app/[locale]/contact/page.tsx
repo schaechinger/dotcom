@@ -5,6 +5,7 @@ import LinkButton from '@components/LinkButton';
 import ContactForm from '@components/forms/ContactForm';
 import AvailabilityIndicator from '@components/freelance/AvailabilityIndicator';
 import { unstable_setRequestLocale } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 
 export const metadata: Metadata = {
   title: 'Kontakt',
@@ -19,35 +20,34 @@ export const metadata: Metadata = {
 
 const ResumePage = ({ params: { locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
+  const t = useTranslations('pages.contact');
 
   return (
     <div className="resume-page pt-4 lg:pt-10 lg:max-w-screen-sm">
       <section id="contact">
-        <h1>Kontakt</h1>
+        <h1>{t('title')}</h1>
 
-        <p className="mb-2">Der erste Schritt liegt bei dir.</p>
+        <p className="mb-2">{t('subtitle')}</p>
 
-        <p>
-          Melde dich gerne und wir setzen dein Vorhaben so um, wie du es dir vorstellst!
-        </p>
+        <p>{t('text')}</p>
 
-        <h3 className="mt-10 mb-4">Meine Verfügbarkeit</h3>
+        <h3 className="mt-10 mb-4">{t('availability')}</h3>
 
         <AvailabilityIndicator />
 
         <div className="flex flex-wrap mt-10 gap-y-10">
           <div className="flex-1">
-            <h3>Per Mail</h3>
-            <LinkButton href="mailto:manuel@schaechinger.com" label="E-Mail senden" />
+            <h3>{t('types.mail.title')}</h3>
+            <LinkButton href="mailto:manuel@schaechinger.com" label={t('types.mail.goto')} />
           </div>
 
           <div className="flex-1">
-            <h3>Telefonisch</h3>
-            <LinkButton href="tel:+4916097506593" label="Jetzt anrufen" />
+            <h3>{t('types.call.title')}</h3>
+            <LinkButton href="tel:+4916097506593" label={t('types.call.goto')} />
           </div>
 
           <div className="flex-none w-full">
-            <h3>Direkt schreiben</h3>
+            <h3>{t('types.write.title')}</h3>
 
             <ContactForm />
           </div>

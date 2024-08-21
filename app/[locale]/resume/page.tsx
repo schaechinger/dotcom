@@ -30,10 +30,10 @@ const ResumePage = async ({ params: { locale } }: PageProps) => {
       <section id="certifications" className="mt-10">
         <h3>{_t('certifications.title', translations, locale)}</h3>
 
-        <CertificationList lang={locale} />
+        <CertificationList />
       </section>
 
-      <section className="mt-10">
+      <section id="skills" className="mt-10">
         <h3>{_t('skills.title', translations, locale)}</h3>
 
         <div className="mt-4">

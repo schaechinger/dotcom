@@ -5,10 +5,11 @@ import HeartEmpty from '@components/icons/HeartEmpty';
 import LanguageSelection from '@components/language/LanguageSelection';
 import SocialLinks from '@components/layout/SocialLinks';
 import SnesButtons from '@components/mario/SnesButtons';
-import { _l, _t, loadTranslations } from '@lib/i18n';
+import { _l } from '@lib/i18n';
+import { useTranslations } from 'next-intl';
 
-const Footer = async ({ lang }: ComponentProps) => {
-  const translations = await loadTranslations('components.footer', lang);
+const Footer =({ lang }: ComponentProps) => {
+  const t = useTranslations('layout.footer');
 
   return (
     <footer className="footer mb-6 mt-10 sm:text-left text-sm">
@@ -23,23 +24,20 @@ const Footer = async ({ lang }: ComponentProps) => {
       </div>
 
       <ul className="flex justify-start gap-4 my-4">
-        <li>
-          <Link href={_l('imprint', lang)} className="font-normal">
-            {_t('imprint', translations, lang)}
-          </Link>
-        </li>
-        <li>
-          <Link href={_l('privacy', lang)} className="font-normal">
-            {_t('privacy', translations, lang)}
-          </Link>
-        </li>
+        {['imprint', 'privacy'].map((page) => (
+          <li key={page}>
+            <Link href={_l(page, lang)} className="font-normal">{t(page)}</Link>
+          </li>
+        ))}
       </ul>
       <p className="footer__copyright mb-2">
-        &copy; { new Date().getFullYear() } Manuel Schächinger. {_t('rights', translations, lang)}
+        {t('copyright', { year: new Date().getFullYear() })}
       </p>
-      <p className="footer__love">{_t('dev.0', translations, lang)}<HeartEmpty
-        className="text-lg -mt-1 mx-1 text-snes-a"
-      />{_t('dev.1', translations, lang)}</p>
+      <p className="footer__love">
+        {t.rich('dev', {
+          love: (_chunk: React.ReactNode) => <HeartEmpty className="text-lg -mt-1 mx-1 text-snes-a" />,
+        })}
+      </p>
     </footer>
   );
 };

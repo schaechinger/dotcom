@@ -13,19 +13,21 @@ const AboutSection = () => {
       <h1>{t('title')}</h1>
 
       <p className="mb-2">
-        {t('text.0.0')}<HighlightLabel
-          label="JavaScript" />{t('text.0.1')}
+        {t.rich('text.0', {
+          highlight: (label: React.ReactNode) => <HighlightLabel>{label}</HighlightLabel>,
+        })}
       </p>
 
       <p className="mb-2">
-      {t('text.1.0')}<HighlightLabel label="Node.js"
-        />{t('text.1.1')}<HighlightLabel label="Vue.js"
-        />{t('text.1.2')}<HighlightLabel label="React"
-        />{t('text.1.3')}
+        {t.rich('text.1', {
+          highlight: (label: React.ReactNode) => <HighlightLabel>{label}</HighlightLabel>,
+        })}
       </p>
 
       <p className="mb-4">
-        {t('text.2')}
+        {t.rich('text.2', {
+          highlight: (label: React.ReactNode) => <HighlightLabel>{label}</HighlightLabel>,
+        })}
       </p>
 
       <p>

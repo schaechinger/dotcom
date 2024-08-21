@@ -34,7 +34,7 @@ const Navigation = ({ lang, translations }: Props) => {
         { isOpen ? <MenuClose className="text-xl" /> : <Menu className="text-xl" /> }
       </button>
       <nav className={`${!isOpen ? 'h-0' : 'h-auto'} -mx-1 px-1 w-full lg:h-auto transition-transform overflow-hidden`}>
-        <ul className="flex flex-col gap-4 lg:gap-2 py-2">
+        <ul className="flex flex-col gap-4 lg:gap-2 pb-2 pt-8 lg:pt-0">
           <li>
             <Link
               href={_l('/', lang)}

@@ -20,51 +20,67 @@ const HomePage = ({ params: { locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
   const t = useTranslations('pages.home');
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    mainEntity: {
+      '@type': 'Person',
+      'name': 'Manuel Schächinger',
+      alternateName: 'schaechinger',
+    },
+  };
+
   return (
-  <div className="home-page lg:max-w-screen-sm">
-    <AboutSection />
+    <>
+      <div className="home-page lg:max-w-screen-sm">
+        <AboutSection />
 
-    <section id="availability" className="pt-4 lg:pt-10 mb-8">
-      <h2>{t('availability.title')}</h2>
+        <section id="availability" className="pt-4 lg:pt-10 mb-8">
+          <h2>{t("availability.title")}</h2>
 
-      <AvailabilityIndicator />
+          <AvailabilityIndicator />
 
-      <p className="mt-4">
-        {t('availability.text.0')}<Link href={_l('contact', locale)}
-          className="inline-link">{t('availability.goto')}</Link>{
-          t('availability.text.1')}
-      </p>
-    </section>
+          <p className="mt-4">
+            {t("availability.text.0")}<Link href={_l('contact', locale)}
+              className="inline-link">{t("availability.goto")}</Link>{
+              t("availability.text.1")}
+          </p>
+        </section>
 
-    <section id="experience" className="pt-4 lg:pt-10 mb-8">
-      <h2>{t('experience.title')}</h2>
+        <section id="experience" className="pt-4 lg:pt-10 mb-8">
+          <h2>{t("experience.title")}</h2>
 
-      <CareerList lang={locale} latest />
-    </section>
+          <CareerList lang={locale} latest />
+        </section>
 
-    <section id="certifications" className="pt-4 lg:pt-10 mb-8">
-      <h2>{t('certifications.title')}</h2>
+        <section id="certifications" className="pt-4 lg:pt-10 mb-8">
+          <h2>{t("certifications.title")}</h2>
 
-      <CertificationList lang={locale} />
-    </section>
+          <CertificationList />
+        </section>
 
-    <section id="projects" className="pt-4 lg:pt-10 mb-8">
-      <h2>{t('projects.title')}</h2>
+        <section id="projects" className="pt-4 lg:pt-10 mb-8">
+          <h2>{t("projects.title")}</h2>
 
-      <ProjectList lang={locale} highlights />
-    </section>
+          <ProjectList lang={locale} highlights />
+        </section>
 
-    <section id="contact" className="pt-4 lg:pt-10">
-      <h2>{t('contact.title')}</h2>
+        <section id="contact" className="pt-4 lg:pt-10">
+          <h2>{t("contact.title")}</h2>
 
-      <p className="mb-4">
-        {t('contact.text')}
-      </p>
+          <p className="mb-4">
+            {t("contact.text")}
+          </p>
 
-      <LinkButton href={_l('contact', locale)} label={t('contact.goto')} />
-    </section>
-  </div>
-);
+          <LinkButton href={_l('contact', locale)} label={t('contact.goto')} />
+        </section>
+      </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+    </>
+  );
 };
 
 export default HomePage;
