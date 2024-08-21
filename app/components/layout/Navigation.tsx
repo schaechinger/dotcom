@@ -12,7 +12,7 @@ import ThemeToggle from '@components/layout/ThemeToggle';
 import { _l, _t } from '@lib/i18n';
 
 interface Props extends ComponentProps {
-  translations: Record<string, unknown>;
+  translations: Record<string, string>;
 }
 
 const Navigation = ({ lang, translations }: Props) => {
@@ -43,16 +43,16 @@ const Navigation = ({ lang, translations }: Props) => {
             >{_t('about', translations, lang)}</Link>
           </li>
           { [
-            { link: _l('resume', lang), label: _t('experience', translations, lang) },
-            { link: _l('projects', lang), label: _t('projects', translations, lang) },
-            { link: _l('contact', lang), label: _t('contact', translations, lang) },
-          ].map((item) => (
-            <li key={item.link}>
+            'resume',
+            'projects',
+            'contact',
+          ].map((page) => (
+            <li key={page}>
               <Link
-                href={item.link}
-                className={path.startsWith(item.link) ? itemClasses.active : itemClasses.normal}
+                href={_l(page, lang)}
+                className={path.startsWith(`/${lang}/${page}`) ? itemClasses.active : itemClasses.normal}
                 onClick={() => setOpen(false)}
-              >{ item.label }</Link>
+              >{ translations[page] }</Link>
             </li>
           )) }
 

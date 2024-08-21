@@ -6,35 +6,35 @@ import TechItem from '@components/career/TechItem';
 import CertificationList from '@components/certifications/CertificationList';
 import { _t, getPageAlternates, loadTranslations } from '@lib/i18n';
 
-export const generateMetadata = async ({ params: { lang } }: PageProps): Promise<Metadata> => {
-  const translations = await loadTranslations('pages.resume', lang);
+export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
+  const translations = await loadTranslations('pages.resume', locale);
 
   return {
-    title: _t('title', translations, lang),
-    description: _t('description', translations, lang),
-    alternates: getPageAlternates('/resume', lang),
+    title: _t('title', translations, locale),
+    description: _t('description', translations, locale),
+    alternates: getPageAlternates('/resume', locale),
   };
 };
 
-const ResumePage = async ({ params: { lang } }: PageProps) => {
-  const translations = await loadTranslations('pages.resume', lang);
+const ResumePage = async ({ params: { locale } }: PageProps) => {
+  const translations = await loadTranslations('pages.resume', locale);
 
   return (
     <div className="resume-page pt-4 lg:pt-10 lg:max-w-screen-sm">
       <section id="career">
-        <h1>{_t('title', translations, lang)}</h1>
+        <h1>{_t('title', translations, locale)}</h1>
 
-        <CareerList lang={lang} />
+        <CareerList lang={locale} />
       </section>
 
       <section id="certifications" className="mt-10">
-        <h3>{_t('certifications.title', translations, lang)}</h3>
+        <h3>{_t('certifications.title', translations, locale)}</h3>
 
-        <CertificationList lang={lang} />
+        <CertificationList lang={locale} />
       </section>
 
       <section className="mt-10">
-        <h3>{_t('skills.title', translations, lang)}</h3>
+        <h3>{_t('skills.title', translations, locale)}</h3>
 
         <div className="mt-4">
           <h4>Programmiersprachen</h4>

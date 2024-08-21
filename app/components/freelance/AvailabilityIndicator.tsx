@@ -1,10 +1,10 @@
-import type { ComponentProps } from '@app/interfaces';
+import { getTranslations } from 'next-intl/server';
+
 import Clock from '@components/icons/Clock';
 import { loadAvailability } from '@lib/contentful';
-import { _t, loadTranslations } from '@lib/i18n';
 
-const AvailabilityIndicator = async ({ lang }: ComponentProps) => {
-  const translations = await loadTranslations('components.availability', lang);
+const AvailabilityIndicator = async () => {
+  const t = await getTranslations('availability');
   const availibility = await loadAvailability();
 
   return (
@@ -12,9 +12,9 @@ const AvailabilityIndicator = async ({ lang }: ComponentProps) => {
       { availibility?.days
         ? <>
             <Clock className="text-primary-300 -mt-1 mr-2 text-xl" />
-            <span className="text-xl mr-1">{availibility.days}</span>{_t('days', translations, lang)}
+            <span className="text-xl mr-1">{availibility.days}</span>{t('days')}
           </>
-        : _t('booked', translations, lang) }
+        : t('booked') }
     </div>
   );
 };

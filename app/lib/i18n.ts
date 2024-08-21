@@ -2,8 +2,8 @@ export type LanguageCode = 'de' | 'en';
 
 export const supportedLangs: LanguageCode[] = ['de', 'en'];
 
-export const _l = (identifier: string, lang?: LanguageCode) => {
-  const link = `/${[lang || 'de', ...identifier.split(/[\/\.]/g)]
+export const _l = (identifier: string, lang: LanguageCode) => {
+  const link = `/${[lang, ...identifier.split(/[\/\.]/g)]
     .filter((p) => !!p)
     .join('/')}`;
 

@@ -1,0 +1,39 @@
+import type { Metadata } from 'next';
+import { useLocale, useTranslations } from 'next-intl';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+
+import type { PageProps } from '@app/interfaces';
+import KonamiCode from '@components/KonamiCode';
+import LinkButton from '@components/LinkButton';
+import { _l, LanguageCode } from '@lib/i18n';
+
+export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
+  unstable_setRequestLocale(locale);
+  const t = await getTranslations('errors.projectNotFound');
+
+  return {
+    title: t('title'),
+  };
+};
+
+const ProjectNotFound = ({ params: { locale } }: PageProps) => {
+  unstable_setRequestLocale(locale);
+  const t = useTranslations('errors.projectNotFound');
+  const lang = useLocale() as LanguageCode || 'en';
+
+  return (
+    <div className="not-found-page page--error pt-4 lg:pt-10 lg:max-w-screen-sm">
+      <section id="not-found">
+        <h1>{t('title')}</h1>
+
+        <p className="mb-4">{t('text')}</p>
+
+        <LinkButton href={_l('/projects', lang)} label={t('goto')} />
+
+        <KonamiCode />
+      </section>
+    </div>
+  );
+};
+
+export default ProjectNotFound;

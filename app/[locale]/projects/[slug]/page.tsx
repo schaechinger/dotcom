@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/LinkButton';
@@ -12,12 +13,13 @@ import { getPageAlternates, LanguageCode } from '@lib/i18n';
 
 interface Props extends PageProps {
   params: {
-    lang: LanguageCode;
+    locale: LanguageCode;
     slug: string;
   };
 }
 
-export async function generateMetadata({ params: { slug, lang } }: Props): Promise<Metadata> {
+export async function generateMetadata({ params: { locale, slug } }: Props): Promise<Metadata> {
+  unstable_setRequestLocale(locale);
   const metadata: Metadata = {
     title: 'Projektdetails',
   };
@@ -27,12 +29,12 @@ export async function generateMetadata({ params: { slug, lang } }: Props): Promi
   if (project) {
     metadata.title = project.title;
     metadata.description = project.description;
-    metadata.alternates = getPageAlternates(`/projects/${project.slug}`, lang);
+    metadata.alternates = getPageAlternates(`/projects/${project.slug}`, locale);
     metadata.openGraph = {
       title: metadata.title,
       description: metadata.description,
       type: 'article',
-      locale: lang,
+      locale,
       images: project.images?.length ? `https://images.schaechinger.com/projects/${slug}/${project.images[0].src}` : undefined,
     };
   }
@@ -40,7 +42,8 @@ export async function generateMetadata({ params: { slug, lang } }: Props): Promi
   return metadata;
 };
 
-const ProjectPage = async ({ params: { lang, slug} }: Props) => {
+const ProjectPage = async ({ params: { locale, slug} }: Props) => {
+  unstable_setRequestLocale(locale);
   const project = await loadProjectBySlug(slug);
 
   if (!project) {
@@ -49,12 +52,12 @@ const ProjectPage = async ({ params: { lang, slug} }: Props) => {
 
   return (
     <div className={`project-page page--${project.slug} pt-4 lg:pt-10`}>
-      <ProjectMasterData project={project} lang={lang} />
+      <ProjectMasterData project={project} lang={locale} />
 
       { project.details?.description
         && <DetailBlock id="description" title="Worum es geht" content={project.details.description} /> }
 
-      { project.images && <ProjectImages images={project.images} slug={slug} lang={lang} /> }
+      { project.images && <ProjectImages images={project.images} slug={slug} lang={locale} /> }
 
       { project.details?.requirements
         && <DetailBlock id="requirements" title="Anforderungen" content={project.details.requirements} /> }

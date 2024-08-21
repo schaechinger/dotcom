@@ -6,7 +6,7 @@ const header = {
   ],
   navigation: {
     about: 'Über mich',
-    experience: 'Berufserfahrung',
+    resume: 'Berufserfahrung',
     projects: 'Projekte',
     contact: 'Kontakt',
 

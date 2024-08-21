@@ -1,0 +1,71 @@
+import type { Metadata } from 'next';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages, getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+
+import { clearSans } from '@app/font';
+import type { LayoutProps } from '@app/interfaces';
+import Provider from '@app/provider';
+import LanguageSuggestion from '@components/language/LanguageSuggestion';
+import Footer from '@components/layout/Footer';
+import Header from '@components/layout/Header';
+import { supportedLangs } from '@lib/i18n';
+
+import '@/css/style.scss';
+
+export const revalidate = 3600;
+
+export const generateStaticParams = () => (
+  supportedLangs.map((locale) => ({ locale }))
+);
+
+export const generateMetadata = async ({ params: { locale } }: LayoutProps): Promise<Metadata> => {
+  unstable_setRequestLocale(locale);
+  const t = await getTranslations('general');
+
+  return {
+    title: {
+      template: '%s – Manuel Schächinger',
+      default: 'Manuel Schächinger',
+    },
+    description: t('meta.description'),
+    metadataBase: new URL('https://www.schaechinger.com'),
+    openGraph: {
+      images: '/images/opengraph-schaechinger.jpg',
+      type: 'website',
+    },
+  };
+};
+
+const RootLayout = async ({ children, params: { locale } }: LayoutProps) => {
+  unstable_setRequestLocale(locale);
+
+  const messages = await getMessages();
+
+  return (
+    <html className={`${clearSans.className} dark`} style={{ colorScheme: 'dark' }} lang={locale}>
+      <head>
+        <link type="text/plain" rel="author" href="https://www.schaechinger.com/humans.txt" />
+      </head>
+      <body className="dark:text-dark-200 dark:bg-dark-800">
+        <NextIntlClientProvider messages={messages}>
+          <Provider>
+            <div className="lg:flex lg:gap-8 w-full max-w-screen-xl mx-auto">
+              <Header />
+
+              <div className="lg:flex-auto lg:w-3/4 px-4 sm:px-10 md:px-20 lg:px-4">
+                <main className="min-h-screen">
+                  <LanguageSuggestion lang={locale} />
+                  {children}
+                </main>
+
+                <Footer lang={locale} />
+              </div>
+            </div>
+          </Provider>
+        </NextIntlClientProvider>
+      </body>
+    </html>
+  );
+};
+
+export default RootLayout;

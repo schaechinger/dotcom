@@ -10,7 +10,9 @@
 
 @layer base {
   h1,
-  h2 {
+  .text-h1,
+  h2,
+  .text-h2 {
     position: relative;
 
     @apply text-3xl text-dark-950 dark:text-dark-50 mb-7 font-normal;
@@ -27,10 +29,12 @@
     }
   }
 
-  h3 {
+  h3,
+  .text-h3 {
     @apply text-2xl text-dark-950 dark:text-dark-50 mb-2 font-normal;
   }
-  h4 {
+  h4,
+  .text-h4 {
     @apply text-lg text-dark-950 dark:text-dark-50 mb-2 font-normal;
   }
 

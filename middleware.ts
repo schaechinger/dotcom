@@ -1,17 +1,17 @@
-import { match } from '@formatjs/intl-localematcher'
-import Negotiator from 'negotiator'
-import { NextRequest } from 'next/server';
+// import { match } from '@formatjs/intl-localematcher'
+// import Negotiator from 'negotiator'
+// import { NextRequest } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
 
-import { type LanguageCode, supportedLangs } from '@lib/i18n';
+import { supportedLangs } from '@lib/i18n';
 
-const getLocale = (req: NextRequest) => {
-  const headers = { 'accept-language': req.headers.get('accept-language') || '' };
-  const languages = new Negotiator({ headers }).languages();
-  const genLocale = match(languages, supportedLangs, 'de');
+// const getLocale = (req: NextRequest) => {
+//   const headers = { 'accept-language': req.headers.get('accept-language') || '' };
+//   const languages = new Negotiator({ headers }).languages();
+//   const genLocale = match(languages, supportedLangs, 'de');
 
-  return genLocale as LanguageCode;
-};
+//   return genLocale as LanguageCode;
+// };
 
 export default createMiddleware({
   locales: supportedLangs,

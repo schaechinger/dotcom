@@ -20,12 +20,17 @@ const translations = {
     },
   },
 
+  layout: {
+    footer,
+    header,
+  },
+
+  // TODO: check if needed
+  language,
+
   // components
   availability,
   careerList,
-  footer,
-  header,
-  language,
   projectList,
   themeToggle,
   timeSpan,

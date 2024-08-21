@@ -1,17 +1,20 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import type { ComponentProps } from '@app/interfaces';
 import Logo from '@components/layout/Logo';
 import Navigation from '@components/layout/Navigation';
-import { _l, _t, loadTranslations } from '@lib/i18n';
+import { _l, type LanguageCode } from '@lib/i18n';
+import { useLocale, useMessages, useTranslations } from 'next-intl';
 
-const Header = async ({ lang }: ComponentProps) => {
-  const translations = await loadTranslations('components.header', lang);
+const Header = () => {
+  const t = useTranslations('layout.header');
+  const { layout: { header: { navigation } } } = useMessages() as any;
+  const lang = useLocale() as LanguageCode;
 
   return (
-    <header className="sticky top-0 flex flex-wrap lg:flex-nowrap lg:flex-col gap-4 lg:gap-10 justify-between lg:justify-start bg-dark-50/80 dark:bg-dark-800/80 backdrop-blur-sm z-30 lg:h-screen lg:flex-none lg:w-80 px-4 sm:px-10 md:px-20 lg:px-4 border-b-2 border-b-dark-300 dark:border-b-dark-700 lg:border-b-0">
-      <div className="flex flex-shrink-0 items-center pt-4 lg:pt-10">
+    // <div className="sticky top-0 flex flex-wrap lg:flex-nowrap lg:flex-col justify-between lg:justify-start bg-dark-50/80 dark:bg-dark-800/80 backdrop-blur-sm z-30 lg:h-screen lg:flex-none lg:w-80 px-4 sm:px-10 md:px-20 lg:px-4 border-b-2 border-b-dark-300 dark:border-b-dark-700 lg:border-b-0" />
+    <header className="sticky top-0 flex flex-wrap lg:flex-nowrap lg:flex-col lg:gap-10 justify-between lg:justify-start bg-dark-50/80 dark:bg-dark-800/80 backdrop-blur-sm z-30 lg:h-screen lg:flex-none lg:w-80 px-4 py-4 sm:px-10 md:px-20 lg:px-4 lg:py-0 border-b-2 border-b-dark-300 dark:border-b-dark-700 lg:border-b-0">
+      <div className="flex flex-shrink-0 items-center lg:pt-10">
         <Link href={_l('/', lang)}>
           <Image
             src="/images/schaechinger.jpg"
@@ -28,10 +31,10 @@ const Header = async ({ lang }: ComponentProps) => {
         </div>
       </div>
 
-      <p className="hidden lg:block text-sm">{_t('text.0', translations, lang)}<br
-        className="hidden lg:inline" /> {_t('text.1', translations, lang)}</p>
+      <p className="hidden lg:block text-sm">{t('text.0')}<br
+        className="hidden lg:inline" /> {t('text.1')}</p>
 
-      <Navigation lang={lang} translations={(translations.navigation || {}) as Record<string, unknown>} />
+      <Navigation lang={lang} translations={navigation} />
     </header>
   );
 };

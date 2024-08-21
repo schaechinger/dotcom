@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import { ComponentProps } from '@app/interfaces';
-import { _t, LanguageCode } from '@lib/i18n';
+import { type LanguageCode } from '@lib/i18n';
 
 const LanguageSwitch = ({ lang }: ComponentProps) => {
   const pathname = usePathname();

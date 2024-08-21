@@ -14,12 +14,12 @@ export const metadata: Metadata = {
   },
 }
 
-const CertificationsPage = ({ params: { lang } }: PageProps) => (
+const CertificationsPage = ({ params: { locale } }: PageProps) => (
   <div className="certifications-page pt-4 lg:pt-10 lg:max-w-screen-sm">
     <section id="certifications">
       <h1>Zertifizierungen</h1>
 
-      <CertificationList lang={lang} />
+      <CertificationList lang={locale} />
     </section>
   </div>
 );

@@ -3,7 +3,7 @@ import LinkButton from '@components/LinkButton';
 import translations from '@i18n/language';
 import { _l, _t, supportedLangs } from '@lib/i18n';
 
-const LanguagePage = ({ searchParams: { lang } }: PageProps) => {
+const LanguagePage = ({ searchParams: { locale } }: PageProps) => {
   const soonTitle: Record<string, string> = {
     eo: 'La Esperanto-versio estas en laboro',
     es: 'La versión en español está en proceso',
@@ -13,7 +13,7 @@ const LanguagePage = ({ searchParams: { lang } }: PageProps) => {
   return (
     <div className="language-page pt-4 lg:pt-10">
       <section id="unsupported">
-        <h1>{soonTitle[lang as string || 'en'] || 'Unsupported Language'}</h1>
+        <h1>{soonTitle[locale as string || 'en'] || 'Unsupported Language'}</h1>
 
         <p>
           The language you selected is not available.<br />
