@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import { ComponentProps } from '@app/interfaces';
-import { IconProps } from '@components/icons/Icon';
+import { type IconProps } from '@components/icons/Icon';
 import WorldEast from '@components/icons/WorldEast';
 import WorldWest from '@components/icons/WorldWest';
 import languageTranslations from '@i18n/language';
@@ -44,7 +44,12 @@ const LanguageSelection = ({ lang }: ComponentProps) => {
       </li>
       {supportedLangs.map((lang) => (
         <li key={lang}>
-          <Link href={_l(path.page, lang)} lang={lang} dir="ltr" className="font-normal">
+          <Link
+            href={_l(path.page, lang)}
+            lang={lang}
+            dir="ltr"
+            className="font-normal"
+          >
             {_t('name', languageTranslations, lang)}
           </Link>
         </li>

@@ -1,8 +1,8 @@
 import { supportedLangs } from '@/app/lib/i18n';
 import { revalidatePath } from 'next/cache';
-import { NextResponse, type NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
 
-export const GET = (request: NextRequest) => {
+export const GET = () => {
   revalidatePath('/', 'layout');
 
   return NextResponse.json({

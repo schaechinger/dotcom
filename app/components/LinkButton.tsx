@@ -8,6 +8,7 @@ type Props = {
   label?: string;
   target?: string;
   children?: React.ReactNode;
+  replace?: boolean;
 }
 
 const LinkButton = (props: Props) => {
@@ -19,6 +20,7 @@ const LinkButton = (props: Props) => {
       href={props.href}
       className="group"
       target={target}
+      replace={props.replace}
     >
       { props.label || props.children }
       <ChevronRight className="inline-block -mt-0.5 ml-1 transition-all text-primary-300 group-hover:text-current group-hover:text-lg group-hover:-mt-0.5" />

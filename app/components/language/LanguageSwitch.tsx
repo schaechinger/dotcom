@@ -29,9 +29,11 @@ const LanguageSwitch = ({ lang }: ComponentProps) => {
   return (
     <Link
       href={switchLang.path}
+      lang={lang}
+      dir="ltr"
       className="-ml-1 w-8 h-8 relative flex justify-center items-center rounded-full transition-colors hover:bg-primary-500 dark:white-black hover:text-white hover:dark:text-dark-800"
     >
-      <div>{switchLang.lang}</div>
+      {switchLang.lang}
     </Link>
   );
 };

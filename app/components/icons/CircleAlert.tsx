@@ -1,4 +1,4 @@
-import Icon, { IconProps } from './Icon';
+import Icon, { type IconProps } from './Icon';
 
 const CircleAlert = (props: IconProps) => (
   <Icon { ...props }>

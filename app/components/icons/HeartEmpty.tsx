@@ -1,4 +1,4 @@
-import Icon, { IconProps } from './Icon';
+import Icon, { type IconProps } from './Icon';
 
 const HeartEmpty = (props: IconProps) => (
   <Icon { ...props }>

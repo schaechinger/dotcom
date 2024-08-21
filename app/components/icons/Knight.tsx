@@ -1,4 +1,4 @@
-import Icon, { IconProps } from './Icon';
+import Icon, { type IconProps } from './Icon';
 
 const Knight = (props: IconProps) => (
   <Icon { ...props }>
