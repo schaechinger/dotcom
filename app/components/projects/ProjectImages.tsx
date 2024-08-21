@@ -18,7 +18,7 @@ const ProjectImages = ({ slug, images, lang }: Props) => {
     <div className="grid gap-4 mt-10">
         <div>
             <Image
-              src={`https://images.schaechinger.com/${lang}/projects/${slug}/${images[selected].src}`}
+              src={`https://images.schaechinger.com/projects/${slug}/${images[selected].src}`}
               width={1024}
               height={576}
               alt={images[selected].label || ''}
@@ -30,10 +30,10 @@ const ProjectImages = ({ slug, images, lang }: Props) => {
             { images.map((image, i) => (
               <div key={image.src} className="cursor-pointer" onClick={() => setSelected(i)}>
                 <Image
-                  src={`https://images.schaechinger.com/${lang}/projects/${slug}/${image.src}`}
+                  src={`https://images.schaechinger.com/projects/${slug}/${image.src}`}
                   width={160}
                   height={90}
-                  alt={image.label || ''}
+                  alt={image[lang]?.label || image.label || ''}
                   className={`h-auto max-w-full rounded-lg${i === selected ? ' border-2' : ''} border-slate-300`}
                 />
               </div>

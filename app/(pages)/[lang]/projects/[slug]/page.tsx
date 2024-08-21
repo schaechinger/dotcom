@@ -33,7 +33,7 @@ export async function generateMetadata({ params: { slug, lang } }: Props): Promi
       description: metadata.description,
       type: 'article',
       locale: lang,
-      images: project.images?.length ? `https://images.schaechinger.com/${lang}/projects/${slug}/${project.images[0].src}` : undefined,
+      images: project.images?.length ? `https://images.schaechinger.com/projects/${slug}/${project.images[0].src}` : undefined,
     };
   }
 

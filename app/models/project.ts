@@ -1,3 +1,4 @@
+import { LanguageCode } from '../lib/i18n';
 import { CareerData } from './career';
 
 export type ProjectType = 'freelance' | 'employee' | 'private' | 'founder';
@@ -18,6 +19,13 @@ export type ProjectLinkData = {
 export type ProjectImage = {
   src: string;
   label?: string;
+  lang?: LanguageCode;
+  de?: {
+    label?: string;
+  };
+  en?: {
+    label?: string;
+  };
 };
 
 export interface ProjectData extends CareerData {

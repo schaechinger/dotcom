@@ -239,7 +239,17 @@ export const loadProjectBySlug = async (slug: string, locale?: LanguageCode) => 
       locale,
     })
       .then(getEntryFields<ProjectData>)
-      .then((projects) => projects[0])
+      .then((projects) => {
+        const [project] = projects;
+
+        if (project.images) {
+          project.images = project.images.filter((image) => (
+            !image.lang || image.lang === locale
+          ));
+        }
+
+        return project;
+      })
       .catch((e) => {
         console.log('error loading project data', e);
 
