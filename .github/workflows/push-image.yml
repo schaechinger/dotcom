@@ -2,7 +2,7 @@ name: Docker Image for dotcom
 
 on:
   push:
-    branches: ['next']
+    branches: ['dev', 'main']
 
 env:
   REGISTRY: ghcr.io

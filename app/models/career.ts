@@ -1,16 +1,16 @@
-export interface Company {
+export type Company = {
   name: string;
   location?: string;
   link?: string;
-}
+};
 
-export interface TechData {
+export type TechData = {
   slug: string;
   name: string;
   type?: string;
-}
+};
 
-export interface CareerData {
+export type CareerData = {
   title: string;
   slug: string;
   company?: Company;
@@ -22,7 +22,7 @@ export interface CareerData {
 
   createdAt?: Date;
   updatedAt?: Date;
-}
+};
 
 export const sortCareerList = <T extends CareerData>(list: T[]) => (
   list.sort((a: CareerData, b: CareerData) => {

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 import { loadProjects } from '@lib/contentful';
+import { getPageAlternates, supportedLangs } from './lib/i18n';
 
 export const dynamic = 'force-dynamic';
 
@@ -8,46 +9,32 @@ const base = 'https://www.schaechinger.com';
 const modified = new Date();
 
 const sitemap = async () => {
-  const sitemap: MetadataRoute.Sitemap = [
-    {
-      url: base,
-      changeFrequency: 'weekly',
-      lastModified: modified,
-      priority: 1,
-    },
-    {
-      url: `${base}/work`,
-      changeFrequency: 'monthly',
-      lastModified: modified,
-      priority: 0.7,
-    },
-    {
-      url: `${base}/contact`,
-      changeFrequency: 'monthly',
-      lastModified: modified,
-      priority: 0.6,
-    },
-    {
-      url: `${base}/resume`,
-      changeFrequency: 'monthly',
-      lastModified: modified,
-      priority: 0.7,
-    },
+  const sitemap: MetadataRoute.Sitemap = [];
 
+  ([
+    { page: '', freq: 'weekly', priority: 1 },
+    { page: '/resume', freq: 'monthly', priority: 0.9 },
+    { page: '/work', freq: 'monthly', priority: 0.8 },
+    { page: '/projects', freq: 'weekly', priority: 0.8 },
+    { page: '/contact', freq: 'monthly', priority: 0.6 },
+    { page: '/certifications', freq: 'monthly', priority: 0.6 },
     // legal
-    {
-      url: `${base}/imprint`,
-      changeFrequency: 'weekly',
-      lastModified: modified,
-      priority: 0.3,
-    },
-    {
-      url: `${base}/privacy`,
-      changeFrequency: 'weekly',
-      lastModified: modified,
-      priority: 0.3,
-    },
-  ];
+    { page: '/imprint', freq: 'weekly', priority: 0.3 },
+    { page: '/privacy', freq: 'weekly', priority: 0.3 },
+  ] as { page: string; freq: 'weekly' | 'monthly', priority: number }[])
+    .forEach(({ page, freq, priority }) => {
+      supportedLangs.forEach((lang) => {
+        const alternates = getPageAlternates(page, lang, base);
+
+        sitemap.push({
+          url: `${base}/${lang}${page}`,
+          lastModified: modified,
+          changeFrequency: freq,
+          priority,
+          alternates: { languages: alternates.languages },
+        });
+      });
+    });
 
   const projects = await loadProjects();
   let latestProject = modified;
@@ -58,19 +45,18 @@ const sitemap = async () => {
       latestProject = projectModified;
     }
 
-    sitemap.push({
-      url: `${base}/projects/${project.slug}`,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-      lastModified: projectModified,
-    });
-  });
+    supportedLangs.forEach((lang) => {
+      const page = `/projects/${project.slug}`;
+      const alternates = getPageAlternates(page, lang, base);
 
-  sitemap.push({
-    url: `${base}/projects/`,
-    changeFrequency: 'weekly',
-    lastModified: latestProject,
-    priority: 0.8,
+      sitemap.push({
+        url: `${base}/${lang}${page}`,
+        lastModified: projectModified,
+        changeFrequency: 'monthly',
+        priority: 0.7,
+        alternates: { languages: alternates.languages },
+      });
+    });
   });
 
   return sitemap;

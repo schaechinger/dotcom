@@ -6,7 +6,7 @@ import LinkButton from '@components/LinkButton';
 const NotFound = () => (
   <div className="not-found-page pt-4 lg:pt-10 lg:max-w-screen-sm">
     <section>
-      <h2>Inhalt nicht verfügbar</h2>
+      <h1>Inhalt nicht verfügbar</h1>
 
       <p className="mb-4">
         Aktuell gibt es ein Problem mit der Anzeige des Inhalts. Versuche es bitte später

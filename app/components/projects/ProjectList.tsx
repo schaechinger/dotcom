@@ -1,23 +1,26 @@
+import type { LangComponentProps } from '@app/interfaces';
 import LinkButton from '@components/LinkButton';
 import ProjectItem from '@components/projects/ProjectItem';
 import { loadProjects } from '@lib/contentful';
+import { _l, _t, loadTranslations } from '@lib/i18n';
 
-type Props = {
+interface Props extends LangComponentProps {
   highlights?: boolean;
 }
 
-const ProjectList = async  ({ highlights }: Props) => {
-  const projects = await loadProjects(highlights || false) || [];
+const ProjectList = async  ({ highlights, lang }: Props) => {
+  const translations = await loadTranslations('components.projectList', lang);
+  const projects = await loadProjects(lang, highlights || false) || [];
 
   return (
     <div className="-mt-4">
       {projects.map((p) => (
-        <ProjectItem key={p.slug} item={p} />
+        <ProjectItem key={p.slug} item={p} lang={lang} />
       ))}
       { !projects.length
-        ? <p className="py-4">Leider konnten die bisherigen Projekte nicht geladen werden.</p>
+        ? <p className="py-4">{_t('error', translations, lang)}</p>
         : '' }
-      { highlights && <LinkButton href="/projects" label="Alle Projekte ansehen" /> }
+      { highlights && <LinkButton href={_l('projects', lang)} label={_t('goto', translations, lang)} /> }
     </div>
   );
 };

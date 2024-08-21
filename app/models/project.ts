@@ -2,23 +2,23 @@ import { CareerData } from './career';
 
 export type ProjectType = 'freelance' | 'employee' | 'private' | 'founder';
 
-export interface ProjectLink {
+export type ProjectLink = {
   link: string;
   label: string;
-}
+};
 
-export interface ProjectLinkData {
+export type ProjectLinkData = {
   project?: ProjectLink;
   code?: ProjectLink;
   github?: string[];
   package?: ProjectLink;
   npm?: string;
-}
+};
 
-export interface ProjectImage {
+export type ProjectImage = {
   src: string;
   label?: string;
-}
+};
 
 export interface ProjectData extends CareerData {
   links?: ProjectLinkData;

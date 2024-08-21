@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import type { LangComponentProps } from '@app/interfaces';
 import CompanyLink from '@components/career/CompanyLink';
 import TechItem from '@components/career/TechItem';
 import TimeSpan from '@components/career/TimeSpan';
@@ -7,19 +8,20 @@ import ArrowRight from '@components/icons/ArrowRight';
 import BulletList from '@components/projects/BulletList';
 import ProjectTypeLabel from '@components/projects/ProjectTypeLabel';
 import { ProjectData } from '@models/project';
+import { _l } from '@lib/i18n';
 
-type Props = {
+interface Props extends LangComponentProps {
   item: ProjectData;
-}
+};
 
-const ProjectItem = ({ item }: Props) => (
+const ProjectItem = ({ item, lang }: Props) => (
   <article className="career-item max-w-screen-sm hover:bg-primary-100 transition-colors sm:rounded-md my-4 -mx-4 px-4 py-3">
     <header className="career-item__headline sm:flex items-center">
       <div className="career-item__dates text-sm font-normal sm:order-2">
-        <TimeSpan startDate={item.startDate} endDate={item.endDate} />
+        <TimeSpan startDate={item.startDate} endDate={item.endDate} lang={lang} />
       </div>
       <h3 className="text-lg text-dark-950 dark:text-dark-50 font-bold mb-0 sm:order-1">
-        <Link href={`/projects/${item.slug}`} className="group">
+        <Link href={_l(`projects.${item.slug}`, lang)} className="group">
           { item.title }
           <ArrowRight className="inline-block -mt-0.5 mx-1 text-primary-300 -rotate-45 transition-colors group-hover:text-primary-500 group-hover:text-xl group-hover:-mt-0.5 group-hover:mr-0.5" />
         </Link>

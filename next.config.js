@@ -10,6 +10,7 @@ const nextConfig = {
       },
     ],
   },
+  // skipTrailingSlashRedirect: true,
   output: 'standalone',
 };
 

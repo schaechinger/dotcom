@@ -1,22 +1,23 @@
 
+import type { LangComponentProps } from '@app/interfaces';
 import CompanyLink from '@components/career/CompanyLink';
 import TechItem from '@components/career/TechItem';
 import TimeSpan from '@components/career/TimeSpan';
 import ProjectTypeLabel from '@components/projects/ProjectTypeLabel';
 import { ProjectData } from '@models/project';
 
-type Props = {
+interface Props extends LangComponentProps {
   project: ProjectData;
 }
 
-const ProjectMasterData = ({ project }: Props) => (
+const ProjectMasterData = ({ project, lang }: Props) => (
   <section id={project.slug}>
-    <h2>{ project.title }</h2>
+    <h1>{ project.title }</h1>
 
     <p className="mb-2">{ project.description }</p>
 
     <p className="mb-2">
-      Zeitspanne: <TimeSpan startDate={project.startDate} endDate={project.endDate} />
+      Zeitspanne: <TimeSpan startDate={project.startDate} endDate={project.endDate} lang={lang} />
     </p>
 
     <p className="mb-2">
