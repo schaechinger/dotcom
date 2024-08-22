@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import type { PageProps } from '@app/interfaces';
@@ -7,25 +6,14 @@ import DetailBlock from '@components/projects/DetailBlock';
 import ProjectLinks from '@components/projects/ProjectLinks';
 import ProjectMasterData from '@components/projects/ProjectMasterData';
 import { loadProjectBySlug } from '@lib/contentful';
-import { getPageAlternates } from '@/app/lib/i18n';
 
-export async function generateMetadata({ params: { locale } }: PageProps): Promise<Metadata> {
-  const metadata: Metadata = {
-    title: 'Projektdetails',
-  };
+import { generateProjectMetadata } from '../[slug]/page';
 
-  const project = await loadProjectBySlug('transportkit');
+export const generateMetadata = async ({ params: { locale } }: PageProps) => (
+  generateProjectMetadata('transportkit', locale)
+);
 
-  if (project) {
-    metadata.title = project.title;
-    metadata.description = project.description;
-    metadata.alternates = getPageAlternates(`/projects/${project.slug}`, locale);
-  }
-
-  return metadata;
-};
-
-const TransportKitPage = async ({ params: { locale } }: PageProps) => {
+const TransportKitPage = async () => {
   const project = await loadProjectBySlug('transportkit');
 
   if (!project) {
@@ -37,7 +25,7 @@ const TransportKitPage = async ({ params: { locale } }: PageProps) => {
       <link rel="stylesheet"
         href="https://static.schaechinger.com/projects/transportkit/latest/transportkit.min.css?gc=v4" />
 
-      <ProjectMasterData project={project} lang={locale} />
+      <ProjectMasterData project={project} />
 
       { project.details?.description
         && <DetailBlock id="description" title="Was ist TransportKit" content={project.details.description} /> }

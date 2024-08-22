@@ -1,18 +1,17 @@
 
 import { useTranslations } from 'next-intl';
 
-import type { ComponentProps } from '@app/interfaces';
 import CompanyLink from '@components/career/CompanyLink';
 import TechItem from '@components/career/TechItem';
 import TimeSpan from '@components/career/TimeSpan';
 import ProjectTypeLabel from '@components/projects/ProjectTypeLabel';
 import { type ProjectData } from '@models/project';
 
-interface Props extends ComponentProps {
+type Props = {
   project: ProjectData;
-}
+};
 
-const ProjectMasterData = ({ project, lang }: Props) => {
+const ProjectMasterData = ({ project }: Props) => {
   const t = useTranslations('pages.projects.details');
 
   return (
@@ -22,7 +21,7 @@ const ProjectMasterData = ({ project, lang }: Props) => {
       <p className="mb-2">{ project.description }</p>
 
       <p className="mb-2">
-        {t('timeSpan')}: <TimeSpan startDate={project.startDate} endDate={project.endDate} lang={lang} />
+        {t('timeSpan')}: <TimeSpan startDate={project.startDate} endDate={project.endDate} />
       </p>
 
       <p className="mb-2">

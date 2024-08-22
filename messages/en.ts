@@ -184,6 +184,9 @@ const translations = {
       download: 'Download resume',
     },
   },
+  certificationList: {
+    error: 'There was an error loading the certifications.',
+  },
   projectList: {
     error: 'There was an error loading the project list.',
     goto: 'List all projects',

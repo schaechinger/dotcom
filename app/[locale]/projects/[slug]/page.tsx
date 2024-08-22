@@ -18,7 +18,7 @@ interface Props extends PageProps {
   };
 }
 
-export const generateMetadata = async ({ params: { locale, slug } }: Props): Promise<Metadata> => {
+export const generateProjectMetadata = async (slug: string, locale: LanguageCode) => {
   const t = await getTranslations('pages.projects.details');
   const project = await loadProjectBySlug(slug, locale);
 
@@ -42,6 +42,10 @@ export const generateMetadata = async ({ params: { locale, slug } }: Props): Pro
   return metadata;
 };
 
+export const generateMetadata = async ({ params: { locale, slug } }: Props) => (
+  generateProjectMetadata(slug, locale)
+);
+
 const ProjectPage = async ({ params: { locale, slug} }: Props) => {
   unstable_setRequestLocale(locale);
   const project = await loadProjectBySlug(slug, locale);
@@ -52,7 +56,7 @@ const ProjectPage = async ({ params: { locale, slug} }: Props) => {
 
   return (
     <div className={`project-page page--${project.slug} pt-4 lg:pt-10`}>
-      <ProjectMasterData project={project} lang={locale} />
+      <ProjectMasterData project={project} />
 
       { project.details?.description
         && <DetailBlock id="description" title="Worum es geht" content={project.details.description} /> }

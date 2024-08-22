@@ -248,7 +248,7 @@ export const loadProjectBySlug = async (slug: string, locale?: LanguageCode) => 
       .then((projects) => {
         const [project] = projects;
 
-        if (project.images) {
+        if (project?.images) {
           project.images = project.images.filter((image) => (
             !image.lang || image.lang === locale
           ));

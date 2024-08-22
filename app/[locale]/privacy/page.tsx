@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/LinkButton';
 import Address from '@components/imprint/Address';
 import BulletList from '@components/projects/BulletList';
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
-import { getPageAlternates } from '@/app/lib/i18n';
+import { getPageAlternates } from '@lib/i18n';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.privacy');
@@ -20,11 +21,12 @@ export const generateMetadata = async ({ params: { locale } }: PageProps): Promi
 
 const PrivacyPage = ({ params: { locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
+  const t = useTranslations('pages.privacy');
 
   return (
     <div className="privacy-page pt-4 lg:pt-10">
       <section id="privacy">
-        <h1>Datenschutz</h1>
+        <h1>{t('title')}</h1>
 
         <h3>Inhaltsverzeichnis</h3>
 

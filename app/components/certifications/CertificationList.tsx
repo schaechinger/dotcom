@@ -4,7 +4,7 @@ import { type LanguageCode } from '@lib/i18n';
 import { getLocale, getTranslations } from 'next-intl/server';
 
 const CertificationList = async () => {
-  const t = await getTranslations('careerList');
+  const t = await getTranslations('certificationList');
   const locale = await getLocale() as LanguageCode;
   const certifications = await loadCertifications(locale) || [];
 

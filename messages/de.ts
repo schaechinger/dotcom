@@ -183,6 +183,9 @@ const translations = {
       download: 'Lebenslauf herunterladen',
     },
   },
+  certificationList: {
+    error: 'Leider konnten die bisherigen Projekte nicht geladen werden.',
+  },
   projectList: {
     error: 'Leider konnten die bisherigen Projekte nicht geladen werden.',
     goto: 'Alle Projekte ansehen',
