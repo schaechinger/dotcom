@@ -3,6 +3,7 @@ import type { MetadataRoute } from 'next'
 import { WEB_HOST } from '@app/config';
 
 export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 const robots = (): MetadataRoute.Robots => {
   let allow: string | undefined = '/';
