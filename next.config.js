@@ -14,7 +14,7 @@ const nextConfig = {
       },
     ],
   },
-  skipTrailingSlashRedirect: true,
+  skipTrailingSlashRedirect: false,
   output: 'standalone',
 };
 

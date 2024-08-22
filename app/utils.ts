@@ -8,5 +8,5 @@ import { type LanguageCode } from '@lib/i18n';
 export const formatDate = (date: string, lang?: LanguageCode) => {
   const dateObj = new Date(date);
 
-  return dateObj.toLocaleDateString(lang || 'de', { year: 'numeric', month: '2-digit' });
+  return dateObj.toLocaleDateString(lang || 'en', { year: 'numeric', month: '2-digit' });
 };

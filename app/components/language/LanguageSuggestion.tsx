@@ -25,8 +25,7 @@ const LanguageSuggestion = ({ lang }: ComponentProps) => {
   useEffect(() => {
     if (isBrowser()) {
       if (!+localStorage.getItem(LANGUAGE_SUGGESTION_OPT_OUT)) {
-        localStorage.setItem(LANGUAGE_SUGGESTION_OPT_OUT, '0');
-        const defaultLang = match(window.navigator.languages, supportedLangs, 'de') as LanguageCode;
+        const defaultLang = match(window.navigator.languages, supportedLangs, 'en') as LanguageCode;
 
         setSuggestion(defaultLang !== lang ? defaultLang : lang);
       }
