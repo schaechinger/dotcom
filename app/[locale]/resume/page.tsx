@@ -1,40 +1,43 @@
 import type { Metadata } from 'next';
+import { useTranslations } from 'next-intl';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import type { PageProps } from '@app/interfaces';
 import CareerList from '@components/career/CareerList';
 import TechItem from '@components/career/TechItem';
 import CertificationList from '@components/certifications/CertificationList';
-import { _t, getPageAlternates, loadTranslations } from '@lib/i18n';
+import { getPageAlternates } from '@lib/i18n';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
-  const translations = await loadTranslations('pages.resume', locale);
+  const t = await getTranslations('pages.resume');
 
   return {
-    title: _t('title', translations, locale),
-    description: _t('description', translations, locale),
+    title: t('title'),
+    description: t('description'),
     alternates: getPageAlternates('/resume', locale),
   };
 };
 
-const ResumePage = async ({ params: { locale } }: PageProps) => {
-  const translations = await loadTranslations('pages.resume', locale);
+const ResumePage = ({ params: { locale } }: PageProps) => {
+  unstable_setRequestLocale(locale);
+  const t = useTranslations('pages.resume');
 
   return (
     <div className="resume-page pt-4 lg:pt-10 lg:max-w-screen-sm">
       <section id="career">
-        <h1>{_t('title', translations, locale)}</h1>
+        <h1>{t('title')}</h1>
 
-        <CareerList lang={locale} />
+        <CareerList />
       </section>
 
       <section id="certifications" className="mt-10">
-        <h3>{_t('certifications.title', translations, locale)}</h3>
+        <h3>{t('certifications.title')}</h3>
 
         <CertificationList />
       </section>
 
       <section id="skills" className="mt-10">
-        <h3>{_t('skills.title', translations, locale)}</h3>
+        <h3>{t('skills.title')}</h3>
 
         <div className="mt-4">
           <h4>Programmiersprachen</h4>

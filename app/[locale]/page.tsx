@@ -41,16 +41,17 @@ const HomePage = ({ params: { locale } }: PageProps) => {
           <AvailabilityIndicator />
 
           <p className="mt-4">
-            {t("availability.text.0")}<Link href={_l('contact', locale)}
-              className="inline-link">{t("availability.goto")}</Link>{
-              t("availability.text.1")}
+            {t.rich('availability.text', {
+              contact: (label: React.ReactNode) => <Link href={_l('contact', locale)}
+              className="inline-link">{label}</Link>,
+            })}
           </p>
         </section>
 
         <section id="experience" className="pt-4 lg:pt-10 mb-8">
           <h2>{t("experience.title")}</h2>
 
-          <CareerList lang={locale} latest />
+          <CareerList latest />
         </section>
 
         <section id="certifications" className="pt-4 lg:pt-10 mb-8">
@@ -62,7 +63,7 @@ const HomePage = ({ params: { locale } }: PageProps) => {
         <section id="projects" className="pt-4 lg:pt-10 mb-8">
           <h2>{t("projects.title")}</h2>
 
-          <ProjectList lang={locale} highlights />
+          <ProjectList highlights />
         </section>
 
         <section id="contact" className="pt-4 lg:pt-10">

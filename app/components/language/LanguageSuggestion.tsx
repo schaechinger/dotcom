@@ -1,6 +1,7 @@
 'use client';
 
 import { match } from '@formatjs/intl-localematcher';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import type { ComponentProps } from '@app/interfaces';
@@ -13,6 +14,11 @@ import { isBrowser, useLocalStorage } from '@lib/utils';
 const LANGUAGE_SUGGESTION_OPT_OUT = 'ls-opt-out';
 
 const LanguageSuggestion = ({ lang }: ComponentProps) => {
+  const pathname = usePathname();
+  const parts = pathname.split('/');
+  parts.splice(1, 1);
+  const page = parts.join('/');
+
   const [suggestion, setSuggestion] = useState(lang);
   const localStorage = useLocalStorage();
 
@@ -47,7 +53,7 @@ const LanguageSuggestion = ({ lang }: ComponentProps) => {
         </p>
         <p className="mt-2">
           <LinkButton
-            href={_l('/', suggestion)}
+            href={_l(page, suggestion)}
             label={_t('suggestion.goto', translations, suggestion)}
           />
         </p>

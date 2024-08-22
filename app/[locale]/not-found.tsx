@@ -25,7 +25,7 @@ const LocalizedNotFoundPage = () => {
 
         <p className="mb-4">{t('text')}</p>
 
-        <LinkButton href={_l('/projects', lang)} label={t('goto')} />
+        <LinkButton href={_l('/', lang)} label={t('goto')} />
 
         <KonamiCode />
       </section>

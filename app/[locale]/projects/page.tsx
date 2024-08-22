@@ -7,7 +7,6 @@ import ProjectList from '@components/projects/ProjectList';
 import { getPageAlternates } from '@lib/i18n';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
-  unstable_setRequestLocale(locale);
   const t = await getTranslations('pages.projects');
 
   return {
@@ -26,7 +25,7 @@ const ProjectsPage = ({ params: { locale } }: PageProps) => {
       <section id="projects">
         <h1>{t('title')}</h1>
 
-        <ProjectList lang={locale} />
+        <ProjectList />
       </section>
     </div>
   );

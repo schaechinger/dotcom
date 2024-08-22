@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/LinkButton';
@@ -18,13 +18,13 @@ interface Props extends PageProps {
   };
 }
 
-export async function generateMetadata({ params: { locale, slug } }: Props): Promise<Metadata> {
-  unstable_setRequestLocale(locale);
-  const metadata: Metadata = {
-    title: 'Projektdetails',
-  };
+export const generateMetadata = async ({ params: { locale, slug } }: Props): Promise<Metadata> => {
+  const t = await getTranslations('pages.projects.details');
+  const project = await loadProjectBySlug(slug, locale);
 
-  const project = await loadProjectBySlug(slug);
+  const metadata: Metadata = {
+    title: t('title'),
+  };
 
   if (project) {
     metadata.title = project.title;
@@ -44,7 +44,7 @@ export async function generateMetadata({ params: { locale, slug } }: Props): Pro
 
 const ProjectPage = async ({ params: { locale, slug} }: Props) => {
   unstable_setRequestLocale(locale);
-  const project = await loadProjectBySlug(slug);
+  const project = await loadProjectBySlug(slug, locale);
 
   if (!project) {
     return notFound();

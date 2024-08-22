@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import LinkButton from '@components/LinkButton';
+import Address from '@components/imprint/Address';
 import BulletList from '@components/projects/BulletList';
 
 export const metadata: Metadata = {
@@ -38,9 +39,7 @@ const PrivacyPage = () => (
       <h3>Verantwortlicher</h3>
 
       <p className="mb-4">
-        Manuel Schächinger<br />
-        An der Ottosäule 16<br />
-        85521 Ottobrunn
+        <Address />
       </p>
 
       <p>

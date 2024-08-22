@@ -1,24 +1,24 @@
 import type { Metadata } from 'next';
+import { useTranslations } from 'next-intl';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/LinkButton';
 import ContactForm from '@components/forms/ContactForm';
 import AvailabilityIndicator from '@components/freelance/AvailabilityIndicator';
-import { unstable_setRequestLocale } from 'next-intl/server';
-import { useTranslations } from 'next-intl';
+import { getPageAlternates } from '@lib/i18n';
 
-export const metadata: Metadata = {
-  title: 'Kontakt',
-  description: 'Hier kannst du auf schnellem Weg mit mir in Kontakt treten.',
-  alternates: {
-    canonical: '/contact',
-    languages: {
-      'de': '/contact',
-    },
-  },
+export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
+  const t = await getTranslations('pages.contact');
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates: getPageAlternates('/contact', locale),
+  };
 };
 
-const ResumePage = ({ params: { locale } }: PageProps) => {
+const ContactPage = ({ params: { locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
   const t = useTranslations('pages.contact');
 
@@ -57,4 +57,4 @@ const ResumePage = ({ params: { locale } }: PageProps) => {
   );
 };
 
-export default ResumePage;
+export default ContactPage;

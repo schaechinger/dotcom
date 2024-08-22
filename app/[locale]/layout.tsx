@@ -18,8 +18,7 @@ export const generateStaticParams = () => (
   supportedLangs.map((locale) => ({ locale }))
 );
 
-export const generateMetadata = async ({ params: { locale } }: LayoutProps): Promise<Metadata> => {
-  unstable_setRequestLocale(locale);
+export const generateMetadata = async (): Promise<Metadata> => {
   const t = await getTranslations('general');
 
   return {
@@ -42,7 +41,7 @@ const RootLayout = async ({ children, params: { locale } }: LayoutProps) => {
   const messages = await getMessages();
 
   return (
-    <html className={`${clearSans.className} dark`} style={{ colorScheme: 'dark' }} lang={locale}>
+    <html className={`${clearSans.className} dark`} style={{ colorScheme: 'dark' }} lang={locale} dir="ltr">
       <head>
         <link type="text/plain" rel="author" href="https://www.schaechinger.com/humans.txt" />
       </head>

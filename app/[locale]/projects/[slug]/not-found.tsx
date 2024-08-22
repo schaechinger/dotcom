@@ -1,14 +1,13 @@
 import type { Metadata } from 'next';
 import { useLocale, useTranslations } from 'next-intl';
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
 import type { PageProps } from '@app/interfaces';
 import KonamiCode from '@components/KonamiCode';
 import LinkButton from '@components/LinkButton';
 import { _l, LanguageCode } from '@lib/i18n';
 
-export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
-  unstable_setRequestLocale(locale);
+export const generateMetadata = async (): Promise<Metadata> => {
   const t = await getTranslations('errors.projectNotFound');
 
   return {
@@ -16,8 +15,7 @@ export const generateMetadata = async ({ params: { locale } }: PageProps): Promi
   };
 };
 
-const ProjectNotFound = ({ params: { locale } }: PageProps) => {
-  unstable_setRequestLocale(locale);
+const ProjectNotFound = () => {
   const t = useTranslations('errors.projectNotFound');
   const lang = useLocale() as LanguageCode || 'en';
 

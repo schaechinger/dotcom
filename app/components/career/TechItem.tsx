@@ -3,7 +3,7 @@ import { TechData } from '@models/career';
 type Props = {
   item: TechData;
   color?: string;
-}
+};
 
 const TechItem = ({ item, color }: Props) => {
   const colorClasses = {

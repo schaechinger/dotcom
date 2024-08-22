@@ -1,43 +1,40 @@
-import type { ComponentProps } from '@app/interfaces';
+import { getLocale, getTranslations } from 'next-intl/server';
+
 import LinkButton from '@components/LinkButton';
 import CareerItem from '@components/career/CareerItem';
 import { loadCareer } from '@lib/contentful';
-import { _l, _t, loadTranslations } from '@lib/i18n';
+import { _l, type LanguageCode } from '@lib/i18n';
 
-interface Props extends ComponentProps {
+type Props = {
   latest?: boolean;
-}
+};
 
-const CareerList = async ({ latest, lang }: Props) => {
-  const translations = await loadTranslations('components.careerList', lang);
-
-  let career = await loadCareer(lang) || [];
+const CareerList = async ({ latest }: Props) => {
+  const t = await getTranslations('careerList');
+  const locale = await getLocale() as LanguageCode;
+  let career = await loadCareer(locale) || [];
 
   if (latest) {
     career = career.slice(0, 3);
   }
 
-  const resumeLink = `https://static.schaechinger.com/${lang}/${
-    'de' === lang ? 'lebenslauf' : 'resume'}-manuel-schaechinger.pdf`
+  const resumeLink = 'de' === locale
+    ? 'https://static.schaechinger.com/de/lebenslauf-manuel-schaechinger.pdf'
+    : 'https://static.schaechinger.com/en/resume-manuel-schaechinger.pdf';
 
   return (
     <div className="-mt-4">
       {career.map((c) => (
-        <CareerItem key={c.slug} item={c} lang={lang} />
+        <CareerItem key={c.slug} item={c} />
       ))}
       { (!career.length)
-        ? <p className="py-4">{_t('error', translations, lang)}</p>
+        ? <p className="py-4">{t('error')}</p>
         : '' }
       <div>
-        { latest
-          ? <LinkButton
-            href={_l('resume', lang)}
-            label={_t('goto.resume', translations, lang)}
-          />
-          :  <LinkButton
-            href={resumeLink}
-            label={_t('goto.download', translations, lang)}
-          /> }
+      <LinkButton
+        href={latest ? _l('resume', locale) : resumeLink}
+        label={t(`goto.${latest ? 'resume' : 'download'}`)}
+      />
       </div>
     </div>
   );

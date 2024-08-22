@@ -1,4 +1,6 @@
 
+import { useTranslations } from 'next-intl';
+
 import type { ComponentProps } from '@app/interfaces';
 import CompanyLink from '@components/career/CompanyLink';
 import TechItem from '@components/career/TechItem';
@@ -10,33 +12,37 @@ interface Props extends ComponentProps {
   project: ProjectData;
 }
 
-const ProjectMasterData = ({ project, lang }: Props) => (
-  <section id={project.slug}>
-    <h1>{ project.title }</h1>
+const ProjectMasterData = ({ project, lang }: Props) => {
+  const t = useTranslations('pages.projects.details');
 
-    <p className="mb-2">{ project.description }</p>
+  return (
+    <section id={project.slug}>
+      <h1>{ project.title }</h1>
 
-    <p className="mb-2">
-      Zeitspanne: <TimeSpan startDate={project.startDate} endDate={project.endDate} lang={lang} />
-    </p>
+      <p className="mb-2">{ project.description }</p>
 
-    <p className="mb-2">
-      Projektart: <ProjectTypeLabel type={project.type} label />
-    </p>
+      <p className="mb-2">
+        {t('timeSpan')}: <TimeSpan startDate={project.startDate} endDate={project.endDate} lang={lang} />
+      </p>
 
-    { project.company
-      && <p className="mb-2">Firma: <CompanyLink company={project.company} /></p> }
+      <p className="mb-2">
+        {t('type')}: <ProjectTypeLabel type={project.type} label />
+      </p>
 
-    <ul className="flex flex-wrap mt-3 gap-2">
-      { (project.tech || []).map((t) => (
-        <TechItem
-          key={t.slug}
-          item={t}
-          color={project.slug}
-        />
-      ))}
-    </ul>
-  </section>
-);
+      { project.company
+        && <p className="mb-2">{t('company')}: <CompanyLink company={project.company} /></p> }
+
+      <ul className="flex flex-wrap mt-3 gap-2">
+        { (project.tech || []).map((t) => (
+          <TechItem
+            key={t.slug}
+            item={t}
+            color={project.slug}
+          />
+        ))}
+      </ul>
+    </section>
+  );
+};
 
 export default ProjectMasterData;
