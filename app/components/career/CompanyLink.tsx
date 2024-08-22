@@ -12,7 +12,7 @@ const CompanyLink = ({ company }: Props) => {
       <CompanyTag
         href={company?.link}
         target="_blank"
-        className={`font-thin${company?.link ? ' hover:text-primary-500' : ''}`}
+        className={company?.link ? 'font-normal hover:text-primary-500' : 'font-thin'}
       >{ company?.name }</CompanyTag>{company?.location ? `, ${company.location}` : '' }
     </>
   );

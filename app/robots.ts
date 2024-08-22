@@ -2,6 +2,8 @@ import type { MetadataRoute } from 'next'
 
 import { WEB_HOST } from '@app/config';
 
+export const dynamic = 'force-dynamic';
+
 const robots = (): MetadataRoute.Robots => {
   return {
     rules: {

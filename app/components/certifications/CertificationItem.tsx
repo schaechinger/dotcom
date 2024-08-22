@@ -20,7 +20,9 @@ const CertificationItem = ({ item }: Props) => {
         <div className="career-item__dates text-sm font-normal sm:order-2">
           {formatDate(item.date, locale)}
         </div>
-        <h3 className="text-lg text-dark-950 dark:text-dark-50 font-bold mb-0 sm:order-1">{ item.title }</h3>
+        <div className="text-h3 text-lg text-dark-950 dark:text-dark-50 font-bold mb-0 sm:order-1">
+          { item.title }
+        </div>
       </header>
       { item.description && <p className="mt-2">{ item.description }</p> }
       { (!item.description && item.bullets?.length) && <BulletList bullets={item.bullets} /> }

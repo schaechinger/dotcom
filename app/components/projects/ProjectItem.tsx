@@ -23,12 +23,12 @@ const ProjectItem = ({ item }: Props) => {
         <div className="career-item__dates text-sm font-normal sm:order-2">
           <TimeSpan startDate={item.startDate} endDate={item.endDate} />
         </div>
-        <h3 className="text-lg text-dark-950 dark:text-dark-50 font-bold mb-0 sm:order-1">
+        <div className="text-h3 text-lg text-dark-950 dark:text-dark-50 font-bold mb-0 sm:order-1">
           <Link href={_l(`projects.${item.slug}`, locale)} className="group">
             { item.title }
             <ArrowRight className="inline-block -mt-0.5 mx-1 text-primary-300 -rotate-45 transition-colors group-hover:text-primary-500 group-hover:text-xl group-hover:-mt-0.5 group-hover:mr-0.5" />
           </Link>
-        </h3>
+        </div>
       </header>
         <div className="font-thin mb-2">
           <ProjectTypeLabel type={item.type} label={!item.company} />

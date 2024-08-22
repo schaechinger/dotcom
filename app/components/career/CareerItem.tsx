@@ -14,7 +14,9 @@ const CareerItem = ({ item }: Props) => (
       <div className="career-item__dates text-sm font-normal sm:order-2">
         <TimeSpan startDate={item.startDate} endDate={item.endDate} />
       </div>
-      <h3 className="text-lg text-dark-950 dark:text-dark-50 font-bold mb-0 sm:order-1">{ item.title }</h3>
+      <div className="text-h3 text-lg text-dark-950 dark:text-dark-50 font-bold mb-0 sm:order-1">
+        { item.title }
+      </div>
     </header>
     <div className="font-thin mb-2">
       <CompanyLink company={item.company} />
