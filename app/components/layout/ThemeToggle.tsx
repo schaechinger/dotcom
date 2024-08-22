@@ -15,7 +15,7 @@ const ThemeToggle = ({ translations }: Props) => {
   const title = useMemo(() => (translations[{
     light: 'dark',
     dark: 'light',
-  }[theme as 'dark'] || 'toggle']), [theme]);
+  }[theme as 'dark'] || 'toggle']), [theme, translations]);
 
   return (
     <button

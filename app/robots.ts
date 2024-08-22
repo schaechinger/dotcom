@@ -5,11 +5,19 @@ import { WEB_HOST } from '@app/config';
 export const dynamic = 'force-dynamic';
 
 const robots = (): MetadataRoute.Robots => {
+  let allow: string | undefined = '/';
+  let disallow = '/downloads/';
+
+  if ('https://www.schaechinger.com' !== WEB_HOST) {
+    allow = undefined;
+    disallow = '/';
+  }
+
   return {
     rules: {
       userAgent: '*',
-      ['production' === process.env.NODE_ENV ? 'allow' : 'disallow']: '/',
-      disallow: '/downloads/',
+      allow,
+      disallow,
     },
     sitemap: `${WEB_HOST}/sitemap.xml`,
   };
