@@ -3,9 +3,9 @@ import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import { PageProps } from '@app/interfaces';
-import LinkButton from '@components/LinkButton';
-import Address from '@components/imprint/Address';
-import { getPageAlternates } from '@lib/i18n';
+import LinkButton from '@components/atoms/LinkButton';
+import Address from '@components/atoms/Address';
+import { getPageAlternates } from '@/i18n';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.imprint');
@@ -24,9 +24,9 @@ const ImprintPage = ({ params: { locale } }: PageProps) => {
   return (
     <div className="imprint-page pt-4 lg:pt-10">
       <section id="imprint">
-        <h1>{t('title')}</h1>
+        <h1 className="text-h1">{t('title')}</h1>
 
-        <h3>{t('owner.title')}</h3>
+        <h2 className="text-h2">{t('owner.title')}</h2>
 
         <p className="mb-4">
           <Address />
@@ -49,7 +49,7 @@ const ImprintPage = ({ params: { locale } }: PageProps) => {
       </section>
 
       <section id="disclaimer" className="pt-10">
-        <h3>{t('liability')}</h3>
+        <h2 className="text-h2">{t('liability')}</h2>
 
         <p className="mb-2">
           <strong>{t('disclaimer.title')}:</strong>&nbsp;

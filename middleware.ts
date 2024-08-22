@@ -2,7 +2,7 @@ import { match } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
 import { NextRequest, NextResponse } from 'next/server';
 
-import { type LanguageCode, supportedLangs } from '@lib/i18n';
+import { type LanguageCode, supportedLangs } from '@/i18n';
 
 const getLocale = (req: NextRequest) => {
   const headers = { 'accept-language': req.headers.get('accept-language') || '' };
@@ -17,8 +17,7 @@ export function middleware(request: NextRequest) {
   // Check for supported language code in path
   const { pathname } = request.nextUrl;
   const pageLang = pathname.split('/')[1].toLowerCase() || '';
-  const foundLang = supportedLangs.find((l) => pageLang === l);
-  request.headers.set('page-lang', pageLang);
+  const foundLang = supportedLangs.find((lang) => pageLang === lang);
 
   const locale = getLocale(request);
 

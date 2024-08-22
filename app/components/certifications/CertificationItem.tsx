@@ -1,10 +1,10 @@
 import { useLocale } from 'next-intl';
 
 import { formatDate } from '@app/utils';
-import LinkButton from '@components/LinkButton';
-import TechItem from '@components/career/TechItem';
-import BulletList from '@components/projects/BulletList';
-import { type LanguageCode } from '@lib/i18n';
+import LinkButton from '@components/atoms/LinkButton';
+import TechItem from '@components/atoms/TechItem';
+import BulletList from '@/app/components/atoms/BulletList';
+import { type LanguageCode } from '@/i18n';
 import { type CertificationData } from '@models/certification';
 
 type Props = {

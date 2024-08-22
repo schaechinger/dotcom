@@ -1,12 +1,12 @@
 'use client';
 
 import KonamiCode from '@components/KonamiCode';
-import LinkButton from '@components/LinkButton';
+import LinkButton from '@components/atoms/LinkButton';
 
 const ServerError = () => (
   <div className="not-found-page pt-4 lg:pt-10 lg:max-w-screen-sm">
     <section>
-      <h1>Inhalt nicht verfügbar</h1>
+      <h1 className="text-h1">Inhalt nicht verfügbar</h1>
 
       <p className="mb-4">
         Aktuell gibt es ein Problem mit der Anzeige des Inhalts. Versuche es bitte später

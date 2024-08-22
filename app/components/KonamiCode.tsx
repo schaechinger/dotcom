@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-import LinkButton from '@components/LinkButton';
+import LinkButton from '@components/atoms/LinkButton';
 import ArrowRight from '@components/icons/ArrowRight';
 
 const code = ['arrowup', 'arrowup', 'arrowdown', 'arrowdown', 'arrowleft', 'arrowright', 'arrowleft', 'arrowright', 'b', 'a'];

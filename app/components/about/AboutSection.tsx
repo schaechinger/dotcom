@@ -1,8 +1,8 @@
 import { useLocale, useTranslations } from 'next-intl';
 
-import LinkButton from '@components/LinkButton';
-import HighlightLabel from '@components/HighlightLabel';
-import { _l, type LanguageCode } from '@lib/i18n';
+import LinkButton from '@components/atoms/LinkButton';
+import HighlightLabel from '@components/atoms/HighlightLabel';
+import { l, type LanguageCode } from '@/i18n';
 
 const AboutSection = () => {
   const t = useTranslations('pages.home.about');
@@ -10,7 +10,7 @@ const AboutSection = () => {
   
   return (
     <section id="about" className="pt-4 lg:pt-10 mb-8">
-      <h1>{t('title')}</h1>
+      <h1 className="text-h1">{t('title')}</h1>
 
       <p className="mb-2">
         {t.rich('text.0', {
@@ -31,7 +31,7 @@ const AboutSection = () => {
       </p>
 
       <p>
-        <LinkButton href={_l('work', lang)} label={t('goto')} />
+        <LinkButton href={l('work', lang)} label={t('goto')} />
       </p>
     </section>
   );

@@ -8,8 +8,8 @@ import { ComponentProps } from '@app/interfaces';
 import { type IconProps } from '@components/icons/Icon';
 import WorldEast from '@components/icons/WorldEast';
 import WorldWest from '@components/icons/WorldWest';
-import languageTranslations from '@i18n/language';
-import { _l, _t, LanguageCode, supportedLangs } from '@lib/i18n';
+import languageTranslations from '@/messages/language';
+import { l, LanguageCode, supportedLangs } from '@/i18n';
 
 type IconComponent = (_p: IconProps) => JSX.Element;
 
@@ -45,12 +45,12 @@ const LanguageSelection = ({ lang }: ComponentProps) => {
       {supportedLangs.map((lang) => (
         <li key={lang}>
           <Link
-            href={_l(path.page, lang)}
+            href={l(path.page, lang)}
             lang={lang}
             dir="ltr"
             className="font-normal"
           >
-            {_t('name', languageTranslations, lang)}
+            {languageTranslations.name[lang]}
           </Link>
         </li>
       ))}

@@ -5,7 +5,7 @@ import HeartEmpty from '@components/icons/HeartEmpty';
 import LanguageSelection from '@components/language/LanguageSelection';
 import SocialLinks from '@components/layout/SocialLinks';
 import SnesButtons from '@components/mario/SnesButtons';
-import { _l } from '@lib/i18n';
+import { l } from '@/i18n';
 import { useTranslations } from 'next-intl';
 
 const Footer =({ lang }: ComponentProps) => {
@@ -26,7 +26,7 @@ const Footer =({ lang }: ComponentProps) => {
       <ul className="flex justify-start gap-4 my-4">
         {['imprint', 'privacy'].map((page) => (
           <li key={page}>
-            <Link href={_l(page, lang)} className="font-normal">{t(page)}</Link>
+            <Link href={l(page, lang)} className="font-normal">{t(page)}</Link>
           </li>
         ))}
       </ul>

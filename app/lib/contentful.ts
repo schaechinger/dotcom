@@ -7,12 +7,12 @@ import {
 } from 'contentful';
 import { cache } from 'react';
 
+import { type LanguageCode } from '@/i18n';
 import { type AvailabilityData } from '@models/availability';
 import { type CareerData, sortCareerList } from '@models/career';
 import { type CertificationData, sortCertificationList } from '@models/certification';
 import { type ProjectData } from '@models/project';
 
-import { type LanguageCode } from './i18n';
 
 type AvailabilityEntrySkeleton = {
   contentTypeId: 'availability',

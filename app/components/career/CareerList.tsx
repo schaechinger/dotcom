@@ -1,16 +1,17 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 
 import { STATIC_HOST } from '@app/config';
-import LinkButton from '@components/LinkButton';
+import LinkButton from '@components/atoms/LinkButton';
 import CareerItem from '@components/career/CareerItem';
 import { loadCareer } from '@lib/contentful';
-import { _l, type LanguageCode } from '@lib/i18n';
+import { l, type LanguageCode } from '@/i18n';
 
 type Props = {
+  heading?: string;
   latest?: boolean;
 };
 
-const CareerList = async ({ latest }: Props) => {
+const CareerList = async ({ heading, latest }: Props) => {
   const t = await getTranslations('careerList');
   const locale = await getLocale() as LanguageCode;
   let career = await loadCareer(locale) || [];
@@ -26,14 +27,14 @@ const CareerList = async ({ latest }: Props) => {
   return (
     <div className="-mt-4">
       {career.map((c) => (
-        <CareerItem key={c.slug} item={c} />
+        <CareerItem key={c.slug} item={c} heading={heading} />
       ))}
       { (!career.length)
         ? <p className="py-4">{t('error')}</p>
         : '' }
       <div>
       <LinkButton
-        href={latest ? _l('resume', locale) : resumeLink}
+        href={latest ? l('resume', locale) : resumeLink}
         label={t(`goto.${latest ? 'resume' : 'download'}`)}
       />
       </div>

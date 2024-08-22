@@ -1,6 +1,6 @@
 import CertificationItem from '@components/certifications/CertificationItem';
 import { loadCertifications } from '@lib/contentful';
-import { type LanguageCode } from '@lib/i18n';
+import { type LanguageCode } from '@/i18n';
 import { getLocale, getTranslations } from 'next-intl/server';
 
 const CertificationList = async () => {

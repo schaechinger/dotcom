@@ -1,21 +1,23 @@
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
 
-import CompanyLink from '@components/career/CompanyLink';
-import TechItem from '@components/career/TechItem';
-import TimeSpan from '@components/career/TimeSpan';
+import CompanyLink from '@components/atoms/CompanyLink';
+import TechItem from '@components/atoms/TechItem';
+import TimeSpan from '@components/atoms/TimeSpan';
 import ArrowRight from '@components/icons/ArrowRight';
-import BulletList from '@components/projects/BulletList';
+import BulletList from '@/app/components/atoms/BulletList';
 import ProjectTypeLabel from '@components/projects/ProjectTypeLabel';
 import { type ProjectData } from '@models/project';
-import { _l, type LanguageCode } from '@lib/i18n';
+import { l, type LanguageCode } from '@/i18n';
 
 type Props = {
   item: ProjectData;
+  heading?: string;
 };
 
-const ProjectItem = ({ item }: Props) => {
+const ProjectItem = ({ item, heading }: Props) => {
   const locale = useLocale() as LanguageCode;
+  const Heading = (heading || 'h3') as React.ElementType;
 
   return (
     <article className="career-item max-w-screen-sm hover:bg-primary-100 transition-colors sm:rounded-md my-4 -mx-4 px-4 py-3">
@@ -23,12 +25,12 @@ const ProjectItem = ({ item }: Props) => {
         <div className="career-item__dates text-sm font-normal sm:order-2">
           <TimeSpan startDate={item.startDate} endDate={item.endDate} />
         </div>
-        <div className="text-h3 text-lg text-dark-950 dark:text-dark-50 font-bold mb-0 sm:order-1">
-          <Link href={_l(`projects.${item.slug}`, locale)} className="group">
+        <Heading className="text-h3 text-dark-950 dark:text-dark-50 font-bold mb-0 sm:order-1">
+          <Link href={l(`projects.${item.slug}`, locale)} className="group">
             { item.title }
-            <ArrowRight className="inline-block -mt-0.5 mx-1 text-primary-300 -rotate-45 transition-colors group-hover:text-primary-500 group-hover:text-xl group-hover:-mt-0.5 group-hover:mr-0.5" />
+            <ArrowRight className="inline-block -mt-0.5 ml-1 text-primary-300 -rotate-45 transition-colors group-hover:text-primary-500 group-hover:text-xl group-hover:-mt-0.5 group-hover:ml-0.5" />
           </Link>
-        </div>
+        </Heading>
       </header>
         <div className="font-thin mb-2">
           <ProjectTypeLabel type={item.type} label={!item.company} />

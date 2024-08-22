@@ -4,10 +4,10 @@ import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import type { PageProps } from '@app/interfaces';
-import LinkButton from '@components/LinkButton';
-import Address from '@components/imprint/Address';
-import BulletList from '@components/projects/BulletList';
-import { getPageAlternates } from '@lib/i18n';
+import LinkButton from '@components/atoms/LinkButton';
+import Address from '@components/atoms/Address';
+import BulletList from '@/app/components/atoms/BulletList';
+import { getPageAlternates, l } from '@/i18n';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.privacy');
@@ -26,9 +26,9 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
   return (
     <div className="privacy-page pt-4 lg:pt-10">
       <section id="privacy">
-        <h1>{t('title')}</h1>
+        <h1 className="text-h1">{t('title')}</h1>
 
-        <h3>Inhaltsverzeichnis</h3>
+        <h2 className="text-h2">Inhaltsverzeichnis</h2>
 
         <BulletList>
           <Link href="#owner">Verantwortlicher</Link>
@@ -44,19 +44,19 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
       </section>
 
       <section id="owner" className="pt-10">
-        <h3>Verantwortlicher</h3>
+        <h2 className="text-h2">Verantwortlicher</h2>
 
         <p className="mb-4">
           <Address />
         </p>
 
         <p>
-          <LinkButton href="/imprint" label="Impressum" />
+          <LinkButton href={l('/imprint', locale)} label={t('imprint')} />
         </p>
       </section>
 
       <section id="revocation" className="pt-10">
-        <h3>Widerruf deiner Einwilligung zur Datenverarbeitung</h3>
+        <h2 className="text-h2">Widerruf deiner Einwilligung zur Datenverarbeitung</h2>
 
         <p>
           Nur mit deiner ausdrücklichen Einwilligung sind einige Vorgänge der Datenverarbeitung
@@ -67,7 +67,7 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
       </section>
 
       <section id="complaint" className="pt-10">
-        <h3>Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde</h3>
+        <h2 className="text-h2">Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde</h2>
 
         <p>
           Als Betroffener steht dir im Falle eines datenschutzrechtlichen Verstoßes ein
@@ -80,7 +80,7 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
       </section>
 
       <section id="data-transfer" className="pt-10">
-        <h3>Recht auf Datenübertragbarkeit</h3>
+        <h2 className="text-h2">Recht auf Datenübertragbarkeit</h2>
 
         <p>
           Dir steht das Recht zu, Daten, die ich auf Grundlage deiner Einwilligung oder in
@@ -92,7 +92,7 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
       </section>
 
       <section id="information" className="pt-10">
-        <h3>Recht auf Auskunft, Berichtigung, Sperrung und Löschung</h3>
+        <h2 className="text-h2">Recht auf Auskunft, Berichtigung, Sperrung und Löschung</h2>
 
         <p>
           Du hast jederzeit im Rahmen der geltenden gesetzlichen Bestimmungen das Recht auf
@@ -105,7 +105,7 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
       </section>
 
       <section id="ssl" className="pt-10">
-        <h3>SSL- bzw. TLS-Verschlüsselung</h3>
+        <h2 className="text-h2">SSL- bzw. TLS-Verschlüsselung</h2>
 
         <p>
           Aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, die du an
@@ -117,7 +117,7 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
       </section>
 
       <section id="logs" className="pt-10">
-        <h3>Server-Log-Dateien</h3>
+        <h2 className="text-h2">Server-Log-Dateien</h2>
 
         <p className="mb-2">
           In Server-Log-Dateien erhebt und speichert der Provider der Website automatisch
@@ -142,7 +142,7 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
       </section>
 
       <section id="contact" className="pt-10">
-        <h3>Kontaktformular</h3>
+        <h2 className="text-h2">Kontaktformular</h2>
 
         <p className="mb-2">
           Per Kontaktformular übermittelte Daten werden einschließlich deine Kontaktdaten
@@ -167,7 +167,7 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
       </section>
 
       <section id="cookies" className="pt-10">
-        <h3>Cookies</h3>
+        <h2 className="text-h2">Cookies</h2>
 
         <p className="mb-2">
           Meine Website verwendet Cookies. Das sind kleine Textdateien, die dein Webbrowser auf

@@ -4,9 +4,9 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import type { PageProps } from '@app/interfaces';
 import CareerList from '@components/career/CareerList';
-import TechItem from '@components/career/TechItem';
+import TechItem from '@components/atoms/TechItem';
 import CertificationList from '@components/certifications/CertificationList';
-import { getPageAlternates } from '@lib/i18n';
+import { getPageAlternates } from '@/i18n';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.resume');
@@ -25,22 +25,22 @@ const ResumePage = ({ params: { locale } }: PageProps) => {
   return (
     <div className="resume-page pt-4 lg:pt-10 lg:max-w-screen-sm">
       <section id="career">
-        <h1>{t('title')}</h1>
+        <h1 className="text-h1">{t('title')}</h1>
 
-        <CareerList />
+        <CareerList heading="h2" />
       </section>
 
       <section id="certifications" className="mt-10">
-        <h3>{t('certifications.title')}</h3>
+        <h2 className="text-h2">{t('certifications.title')}</h2>
 
         <CertificationList />
       </section>
 
       <section id="skills" className="mt-10">
-        <h3>{t('skills.title')}</h3>
+        <h2 className="text-h2">{t('skills.title')}</h2>
 
         <div className="mt-4">
-          <h4>Programmiersprachen</h4>
+          <h3 className="text-h3">{t('skills.languages')}</h3>
 
           <ul className="flex flex-wrap mt-3 gap-2">
             { [
@@ -57,12 +57,12 @@ const ResumePage = ({ params: { locale } }: PageProps) => {
         </div>
 
         <div className="mt-6">
-          <h4>Frameworks & Librarys</h4>
+          <h3 className="text-h3">{t('skills.frameworks')}</h3>
 
           <ul className="flex flex-wrap mt-3 gap-2">
             { [
               { slug: 'nodejs', name: 'Node.js' },
-              { slug: 'vue', name: 'Vue' },
+              { slug: 'vue', name: 'Vue.js' },
               { slug: 'pinia', name: 'Pinia' },
               { slug: 'quasar', name: 'Quasar' },
               { slug: 'react', name: 'React' },
@@ -78,7 +78,7 @@ const ResumePage = ({ params: { locale } }: PageProps) => {
         </div>
 
         <div className="mt-6">
-          <h4>Datenbanken</h4>
+          <h3 className="text-h3">{t('skills.databases')}</h3>
 
           <ul className="flex flex-wrap mt-3 gap-2">
             { [
@@ -92,7 +92,7 @@ const ResumePage = ({ params: { locale } }: PageProps) => {
         </div>
 
         <div className="mt-6">
-          <h4>Tools & Sonstiges</h4>
+          <h3 className="text-h3">{t('skills.tools')}</h3>
 
           <ul className="flex flex-wrap mt-3 gap-2">
             { [

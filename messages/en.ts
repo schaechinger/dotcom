@@ -1,6 +1,3 @@
-// TODO: different structore or general
-import language from '@i18n/en/components/language';
-
 const pages = {
   about: {
     title: 'About Me',
@@ -43,7 +40,7 @@ const pages = {
       title: 'Hi, I\'m Manuel.',
       text: [
         'For more than 10 years I am developing professional applications in both backend and frontend. I focus on <highlight>JavaScript</highlight> as this language offers a wide variety of opportunities and fields of application.',
-        'My responsibilities include complex APIs in <highlight>Node.js</highlight>, high performance frontends in <highlight>Vue.js</highlight> and <highlight>React</highlight>, protection of systems as well as deployment and handover to the customer.',
+        'My responsibilities include complex APIs in <highlight>Node.js</highlight>, high performance frontends in <highlight>React</highlight> and <highlight>Vue.js</highlight>, protection of systems as well as deployment and handover to the customer.',
         'Besides working I am a passionate runner. My ultimate goal is to take part in all of the six World Major Marathons, of which I already participated in five except for Boston.',
       ],
       goto: 'More about my work',
@@ -104,6 +101,7 @@ const pages = {
   privacy: {
     title: 'Data Privacy',
     description: 'Your data is important. Please have a look at how I handle the data.',
+    imprint: 'Imprint',
   },
   projects: {
     title: 'Projects',
@@ -147,6 +145,49 @@ const pages = {
     },
     skills: {
       title: 'Skills',
+      languages: 'Programming Languages',
+      frameworks: 'Frameworks & Libraries',
+      databases: 'Databases',
+      tools: 'Tools & Others',
+    },
+  },
+  work: {
+    title: 'My Work',
+    text: [
+      'In numerous projects, I was able to participate in the complete project cycle from the idea to the finished product and worked both as consultant as well as developer',
+      'As part of my freelance work, I can work on an hourly or, if desired, on a package basis. My service includes a variety of areas:',
+    ],
+    implementation: {
+      title: 'Implementation',
+      text: [
+        'I actively support in the implementation of a product and use my skills to craft the best possible piece of software.',
+        'Within the JavaScript ecosystem I work both in backend with Node.js and TypeScript and in the frontend with React, Vue.js and SASS',
+      ],
+    },
+    concept: {
+      title: 'Conception & Architecture',
+      text: [
+        'Just before the first line of code is written, the project must already serve a strong foundation in architecture and design.',
+        'I can help with the design of a powerful and long-lasting software architecture and a coherent global concept.',
+      ],
+    },
+    consulting: {
+      title: 'Consulting',
+      text: [
+        'This is all about solving problems, migrating systems or any other challenge that should be mastered.',
+        'Please get in touch with me with your specific request so that we can find a solution for your situation.',
+      ],
+    },
+    goto: {
+      projects: 'Browse my projects',
+    },
+    stack: {
+      title: 'My Stack',
+      frontend: 'Frontend',
+      backend: 'Backend',
+      databases: 'Databases',
+      deployment: 'CI & CD',
+      base: 'Foundation',
     },
   },
 };
@@ -157,6 +198,8 @@ const translations = {
       description: 'Senior Fullstack JavaScript Engineer und Berater für komplexe und skalierbare Softwaresysteme in München.',
     },
   },
+
+  pages,
 
   // layout
 
@@ -190,10 +233,6 @@ const translations = {
       },
     },
   },
-
-  // TODO: check if needed
-  language,
-  pages,
 
   // components
 

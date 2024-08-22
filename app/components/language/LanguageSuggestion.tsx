@@ -4,12 +4,12 @@ import { match } from '@formatjs/intl-localematcher';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
+import { l, type LanguageCode, supportedLangs } from '@/i18n';
+import { isBrowser, useLocalStorage } from '@app/utils';
 import type { ComponentProps } from '@app/interfaces';
-import LinkButton from '@components/LinkButton';
+import LinkButton from '@components/atoms/LinkButton';
 import MenuClose from '@components/icons/MenuClose';
-import translations from '@i18n/language';
-import { _l, _t, type LanguageCode, supportedLangs } from '@lib/i18n';
-import { isBrowser, useLocalStorage } from '@lib/utils';
+import translations from '@/messages/language';
 
 const LANGUAGE_SUGGESTION_OPT_OUT = 'ls-opt-out';
 
@@ -48,12 +48,12 @@ const LanguageSuggestion = ({ lang }: ComponentProps) => {
           <MenuClose />
         </button>
         <p className="pr-6">
-          {_t('suggestion.text', translations, suggestion)}
+          {translations.suggestion.text[suggestion]}
         </p>
         <p className="mt-2">
           <LinkButton
-            href={_l(page, suggestion)}
-            label={_t('suggestion.goto', translations, suggestion)}
+            href={l(page, suggestion)}
+            label={translations.suggestion.goto[suggestion]}
           />
         </p>
       </section>

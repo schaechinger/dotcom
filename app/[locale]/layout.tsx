@@ -9,7 +9,7 @@ import Provider from '@app/provider';
 import LanguageSuggestion from '@components/language/LanguageSuggestion';
 import Footer from '@components/layout/Footer';
 import Header from '@components/layout/Header';
-import { supportedLangs } from '@lib/i18n';
+import { supportedLangs } from '@/i18n';
 
 import '@/css/style.scss';
 

@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
 import type { PageProps } from '@app/interfaces';
-import LinkButton from '@components/LinkButton';
-import { _l } from '@lib/i18n';
+import LinkButton from '@components/atoms/LinkButton';
+import { l } from '@/i18n';
+import { useTranslations } from 'next-intl';
 
 export const metadata: Metadata = {
   title: 'Meine Tätigkeit',
@@ -18,75 +19,51 @@ export const metadata: Metadata = {
 
 const WorkPage = ({ params: { locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
+  const t = useTranslations('pages.work');
 
   return (
-    <div className="resume-page pt-4 lg:pt-10 lg:max-w-screen-sm">
+    <div className="work-page pt-4 lg:pt-10 lg:max-w-screen-sm">
       <section id="work">
-        <h1>Meine Tätigkeit</h1>
+        <h1 className="text-h1">{t('title')}</h1>
 
-        <p className="mb-2">
-          In zahlreichen Projekten konnte ich erfolgreich den gesamten Projektzyklus von der Idee
-          bis hin zum fertigen Produkt begleiten und war sowohl beratend als auch als Entwickler
-          tätig.
-        </p>
+        <p className="mb-2">{t('text.0')}</p>
 
-        <p>
-          Im Rahmen meiner freiberuflichen Tätigkeit kann ich entweder auf Stundenbasis oder auf
-          Wunsch auf Paketbasis arbeiten. Dabei biete ich verschiedene Leistungen an:
-        </p>
+        <p>{t('text.1')}</p>
 
         <div className="mt-6">
-          <h3>Umsetzung</h3>
+          <h2 className="text-h2">{t('implementation.title')}</h2>
 
-          <p className="mb-2">
-            Ich unterstütze aktiv die Implementierung des Projekts und nutze meine Fähigkeiten,
-            um das bestmögliche Produkt zu erhalten.
-          </p>
+          <p className="mb-2">{t('implementation.text.0')}</p>
 
-          <p>
-            Meist im JavaScript-Umfeld, sowohl im Backend mit Node.js und TypeScript als auch
-            im Frontend mit React und SASS.
-          </p>
+          <p>{t('implementation.text.1')}</p>
         </div>
 
         <div className="mt-6">
-          <h3>Konzeption & Architektur</h3>
+          <h2 className="text-h2">{t('concept.title')}</h2>
 
-          <p className="mb-2">
-            Noch vor der ersten Zeile Code steht die durchdachte Konzeption der Projektbasis und
-            die Planung der Architektur an.
-          </p>
+          <p className="mb-2">{t('concept.text.0')}</p>
 
-          <p>
-            Hier helfe ich beim Entwurf einer leistungsfähigen und langlebigen Software
-            Architektur und einem stimmigen Gesamtkonzept.
-          </p>
+          <p>{t('concept.text.1')}</p>
         </div>
 
         <div className="mt-6">
-          <h3>Beratung</h3>
+          <h2 className="text-h2">{t('consulting.title')}</h2>
 
-          <p className="mb-2">
-            Hier geht es um die Überwindung von aufgetretenen Problemen, der Migration von
-            Systemen oder einer beliebigen anderen Herausforderung.
-          </p>
+          <p className="mb-2">{t('consulting.text.0')}</p>
 
-          <p>
-            Kontaktiere mich gerne mit deinem spezifischen Anliegen, um gemeinsam eine
-            Lösung dafür zu finden.
-          </p>
+          <p>{t('consulting.text.1')}</p>
         </div>
 
         <p className="mt-4">
-          <LinkButton href={_l('/projects', locale)}>Meine bisherigen Projekte</LinkButton>
+          <LinkButton href={l('/projects', locale)} label={t('goto.projects')} />
         </p>
       </section>
 
       <section id="stack" className="mt-10">
-        <h2>Meine Basisstack</h2>
+        <h2 className="text-h1">{t('stack.title')}</h2>
 
         <div>
-          <h3>Frontend</h3>
+          <h3 className="text-h2">{t('stack.frontend')}</h3>
           <div className="border-b border-b-primary-200 pb-1 mb-1">
             Vue, Quasar, Pinia, Sass, ...
           </div>
@@ -96,7 +73,7 @@ const WorkPage = ({ params: { locale } }: PageProps) => {
         </div>
 
         <div className="mt-6">
-          <h3>Backend</h3>
+          <h3 className="text-h2">{t('stack.backend')}</h3>
           <div className="border-b border-b-primary-200 pb-1 mb-1">
             Node.js, Express, MQTT, ...
           </div>
@@ -106,21 +83,21 @@ const WorkPage = ({ params: { locale } }: PageProps) => {
         </div>
 
         <div className="mt-6">
-          <h3>Datenbanken</h3>
+          <h3 className="text-h2">{t('stack.databases')}</h3>
           <div>
             PostgreSQL, DynamoDB, MongoDB, Neo4j, ...
           </div>
         </div>
 
         <div className="mt-6">
-          <h3>CI & CD</h3>
+          <h3 className="text-h2">{t('stack.deployment')}</h3>
           <div>
-            Docker, GitHub Actions, Mocha, ...
+            Docker, GitHub Actions, Jest, Mocha, ...
           </div>
         </div>
 
         <div className="mt-6">
-          <h3>Basis</h3>
+          <h3 className="text-h2">{t('stack.base')}</h3>
           <div>
             Linux, AWS, Traefik, Git, REST, Elasticsearch, Auth0, Jira, Confluence, ...
           </div>

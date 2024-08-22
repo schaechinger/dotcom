@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLocale } from 'next-intl';
 
-import language from '@i18n/language';
-import { _l, type LanguageCode } from '@lib/i18n';
+import language from '@/messages/language';
+import { l, type LanguageCode } from '@/i18n';
 
 const LanguageSwitch = () => {
   const pathname = usePathname();
@@ -18,7 +18,7 @@ const LanguageSwitch = () => {
 
   return (
     <Link
-      href={_l(page, switchLocale)}
+      href={l(page, switchLocale)}
       lang={locale}
       dir="ltr"
       title={language.name[switchLocale]}

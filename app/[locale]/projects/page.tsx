@@ -4,7 +4,7 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import type { PageProps } from '@app/interfaces';
 import ProjectList from '@components/projects/ProjectList';
-import { getPageAlternates } from '@lib/i18n';
+import { getPageAlternates } from '@/i18n';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.projects');
@@ -23,9 +23,9 @@ const ProjectsPage = ({ params: { locale } }: PageProps) => {
   return (
     <div className="projects-page pt-4 lg:pt-10 lg:max-w-screen-sm">
       <section id="projects">
-        <h1>{t('title')}</h1>
+        <h1 className="text-h1">{t('title')}</h1>
 
-        <ProjectList />
+        <ProjectList heading="h2" />
       </section>
     </div>
   );

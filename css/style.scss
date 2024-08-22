@@ -9,10 +9,7 @@
 @import 'components/lists';
 
 @layer base {
-  h1,
-  .text-h1,
-  h2,
-  .text-h2 {
+  .text-h1 {
     position: relative;
 
     @apply text-3xl text-dark-950 dark:text-dark-50 mb-7 font-normal;
@@ -29,12 +26,10 @@
     }
   }
 
-  h3,
-  .text-h3 {
+  .text-h2 {
     @apply text-2xl text-dark-950 dark:text-dark-50 mb-2 font-normal;
   }
-  h4,
-  .text-h4 {
+  .text-h3 {
     @apply text-lg text-dark-950 dark:text-dark-50 mb-2 font-normal;
   }
 

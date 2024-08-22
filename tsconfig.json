@@ -23,7 +23,6 @@
       "@actions/*": ["./app/actions/*"],
       "@app/*": ["./app/*"],
       "@components/*": ["./app/components/*"],
-      "@i18n/*": ["./app/i18n/*"],
       "@lib/*": ["./app/lib/*"],
       "@models/*": ["./app/models/*"],
     }

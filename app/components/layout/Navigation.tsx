@@ -9,7 +9,7 @@ import Menu from '@components/icons/Menu';
 import MenuClose from '@components/icons/MenuClose';
 import LanguageSwitch from '@components/language/LanguageSwitch';
 import ThemeToggle from '@components/layout/ThemeToggle';
-import { _l, type LanguageCode } from '@lib/i18n';
+import { l, type LanguageCode } from '@/i18n';
 
 type Props = {
   themeTranslations: Record<string, string>;
@@ -22,8 +22,8 @@ const Navigation = ({ translations, themeTranslations }: Props) => {
   const locale = useLocale() as LanguageCode;
 
   const itemClasses = {
-    normal: 'font-normal',
-    active: 'font-bold text-primary-500 dark:text-primary-500',
+    normal: 'font-normal py-1 inline-block',
+    active: 'font-bold py-1 inline-block text-primary-500 dark:text-primary-500',
   };
 
   return (
@@ -36,29 +36,29 @@ const Navigation = ({ translations, themeTranslations }: Props) => {
         { isOpen ? <MenuClose className="text-xl" /> : <Menu className="text-xl" /> }
       </button>
       <nav className={`${!isOpen ? 'h-0' : 'h-auto'} -mx-1 px-1 w-full lg:h-auto transition-transform overflow-hidden`}>
-        <ul className="flex flex-col gap-4 lg:gap-2 pb-2 pt-8 lg:pt-0">
+        <ul className="flex flex-col gap-2 pt-8 lg:pt-0">
           <li>
             <Link
-              href={_l('/', locale)}
+              href={l('/', locale)}
               className={`/${locale}` === path ? itemClasses.active : itemClasses.normal}
               onClick={() => setOpen(false)}
             >{translations.about}</Link>
           </li>
-          { [
+          {[
             'resume',
             'projects',
             'contact',
           ].map((page) => (
             <li key={page}>
               <Link
-                href={_l(page, locale)}
+                href={l(page, locale)}
                 className={path.startsWith(`/${locale}/${page}`) ? itemClasses.active : itemClasses.normal}
                 onClick={() => setOpen(false)}
               >{ translations[page] }</Link>
             </li>
-          )) }
+          ))}
 
-          <li className="mt-4 lg:mt-10 flex gap-6">
+          <li className="mt-5 lg:mt-7 flex gap-6">
             <ThemeToggle translations={themeTranslations} />
             <LanguageSwitch />
           </li>

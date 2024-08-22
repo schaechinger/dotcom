@@ -1,9 +1,9 @@
 
 import { useTranslations } from 'next-intl';
 
-import CompanyLink from '@components/career/CompanyLink';
-import TechItem from '@components/career/TechItem';
-import TimeSpan from '@components/career/TimeSpan';
+import CompanyLink from '@components/atoms/CompanyLink';
+import TechItem from '@components/atoms/TechItem';
+import TimeSpan from '@components/atoms/TimeSpan';
 import ProjectTypeLabel from '@components/projects/ProjectTypeLabel';
 import { type ProjectData } from '@models/project';
 
@@ -16,7 +16,7 @@ const ProjectMasterData = ({ project }: Props) => {
 
   return (
     <section id={project.slug}>
-      <h1>{ project.title }</h1>
+      <h1 className="text-h1">{ project.title }</h1>
 
       <p className="mb-2">{ project.description }</p>
 

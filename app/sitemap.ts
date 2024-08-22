@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 import { WEB_HOST } from '@app/config';
 import { loadProjects } from '@lib/contentful';
-import { getPageAlternates, supportedLangs } from '@lib/i18n';
+import { getPageAlternates, supportedLangs } from '@/i18n';
 
 export const dynamic = 'force-dynamic';
 

@@ -11,7 +11,7 @@ const DetailBlock = ({ id, title, content }: Props) => {
 
   return (
     <section id={id} className="pt-10">
-      <h3>{title || t(id)}</h3>
+      <h2 className="text-h2">{title || t(id)}</h2>
 
       {(content || []).map((p, i) => (
         <p className={i < ((content.length || 0) - 1) ? 'mb-2' : ''}

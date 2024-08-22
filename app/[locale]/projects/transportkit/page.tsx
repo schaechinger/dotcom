@@ -1,8 +1,10 @@
 import { notFound } from 'next/navigation';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
+import { l } from '@/i18n';
 import { STATIC_HOST } from '@app/config';
 import type { PageProps } from '@app/interfaces';
-import LinkButton from '@components/LinkButton';
+import LinkButton from '@components/atoms/LinkButton';
 import DetailBlock from '@components/projects/DetailBlock';
 import ProjectLinks from '@components/projects/ProjectLinks';
 import ProjectMasterData from '@components/projects/ProjectMasterData';
@@ -14,8 +16,10 @@ export const generateMetadata = async ({ params: { locale } }: PageProps) => (
   generateProjectMetadata('transportkit', locale)
 );
 
-const TransportKitPage = async () => {
-  const project = await loadProjectBySlug('transportkit');
+const TransportKitPage = async ({ params: { locale } }: PageProps) => {
+  unstable_setRequestLocale(locale);
+  const t = await getTranslations('pages.projects.details');
+  const project = await loadProjectBySlug('transportkit', locale);
 
   if (!project) {
     return notFound();
@@ -25,33 +29,32 @@ const TransportKitPage = async () => {
     <div className="project-page pt-4 lg:pt-10">
       <link rel="stylesheet"
         href={`${STATIC_HOST}/projects/transportkit/latest/transportkit.min.css?gc=v4`} />
-
       <ProjectMasterData project={project} />
 
       { project.details?.description
-        && <DetailBlock id="description" title="Was ist TransportKit" content={project.details.description} /> }
+        && <DetailBlock id="description" content={project.details.description} /> }
 
       <section id="munich" className="pt-10">
-        <h3>München</h3>
+        <h2 className="text-h2">München</h2>
 
-        <h4>U-Bahn</h4>
+        <h3 className="text-h3">U-Bahn</h3>
         { ['u1', 'u2', 'u3', 'u4', 'u5', 'u6', 'u7', 'u8'].map((line) => (
           <span key={line} className={`transportkit-munich transportkit-munich--${line} transportkit-munich--contrast`}>{ line }</span>
         )) }
 
-        <h4 className="mt-2">S-Bahn</h4>
+        <h3 className="text-h3 mt-2">S-Bahn</h3>
         { ['s1', 's2', 's3', 's4', 's6', 's7', 's8', 's20'].map((line) => (
           <span key={line} className={`transportkit-munich transportkit-munich--${line} transportkit-munich--contrast`}>{ line }</span>
         )) }
 
-        <h4 className="mt-2">Bus</h4>
+        <h3 className="text-h3 mt-2">Bus</h3>
         { [['b', '132', '210'], ['bx', 'X30', 'X200'], ['bm', '53'], ['bn', 'N41'],['bnw', 'N80']].map(([type, ...lines]) => (
           lines.map((line) => (
             <span key={`${type}-${line}`} className={`transportkit-munich transportkit-munich--${type} transportkit-munich--contrast`}>{ line }</span>
           ))
         )) }
 
-        <h4 className="mt-2">Tram</h4>
+        <h3 className="text-h3 mt-2">Tram</h3>
         { [['t', '17', 'N20'], ['tp', '22']].map(([type, ...lines]) => (
           lines.map((line) => (
             <span key={`${type}-${line}`} className={`transportkit-munich transportkit-munich--${type} transportkit-munich--contrast`}>{ line }</span>
@@ -66,7 +69,7 @@ const TransportKitPage = async () => {
       <ProjectLinks links={project.links} />
 
       <p className="mt-4">
-        <LinkButton href="/projects" label="Zur Projektliste" />
+        <LinkButton href={l('/projects', locale)} label={t('goto.projects')} back />
       </p>
     </div>
   );

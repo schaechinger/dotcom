@@ -1,6 +1,3 @@
-// TODO: different structore or general
-import language from '@i18n/de/components/language';
-
 const pages = {
   about: {
     title: 'Über mich',
@@ -43,7 +40,7 @@ const pages = {
       title: 'Servus, ich bin Manuel.',
       text: [
         'Seit über zehn Jahren entwickle ich professionelle Anwendungen sowohl im Backend als auch im Frontend. Ich habe mich auf <highlight>JavaScript</highlight> spezialisiert, da diese Sprache ein fast grenzenloses Spektrum an Möglichkeiten und Einsatzgebieten bietet.',
-        'Meine Aufgabenbereiche erstrecken sich über komplexe APIs mit <highlight>Node.js</highlight>, performante Frontends mit <highlight>Vue.js</highlight> und <highlight>React</highlight>, Absicherung von Systemen sowie Deployment und Übergabe an Kunden.',
+        'Meine Aufgabenbereiche erstrecken sich über komplexe APIs mit <highlight>Node.js</highlight>, performante Frontends mit <highlight>React</highlight> und <highlight>Vue.js</highlight>, Absicherung von Systemen sowie Deployment und Übergabe an Kunden.',
         'Abseits der Arbeit bin ich leidenschaftlicher Läufer. Mein großes Ziel ist die Teilnahmen an den sechs Major Marathons, von denen ich bis auf Boston schon fünf abschließen konnte.',
       ],
       goto: 'Mehr zu meiner Tätigkeit',
@@ -104,6 +101,7 @@ const pages = {
   privacy: {
     title: 'Datenschutz',
     description: 'Deine Daten sind wichtig, lies dir daher durch wie ich mit Daten umgehe.',
+    imprint: 'Impressum',
   },
   projects: {
     title: 'Projekte',
@@ -147,6 +145,49 @@ const pages = {
     },
     skills: {
       title: 'Fähigkeiten',
+      languages: 'Programmiersprachen',
+      frameworks: 'Frameworks & Librarys',
+      databases: 'Datenbanken',
+      tools: 'Tools & Sonstiges',
+    },
+  },
+  work: {
+    title: 'Meine Tätigkeit',
+    text: [
+      'In zahlreichen Projekten konnte ich erfolgreich den gesamten Projektzyklus von der Idee bis hin zum fertigen Produkt begleiten und war sowohl beratend als auch als Entwickler tätig.',
+      'Im Rahmen meiner freiberuflichen Tätigkeit kann ich entweder auf Stundenbasis oder auf Wunsch auf Paketbasis arbeiten. Dabei biete ich verschiedene Leistungen an:',
+    ],
+    implementation: {
+      title: 'Umsetzung',
+      text: [
+        'Ich unterstütze aktiv die Implementierung des Projekts und nutze meine Fähigkeiten, um das bestmögliche Produkt zu erhalten.',
+        'Meist im JavaScript-Umfeld, sowohl im Backend mit Node.js und TypeScript als auch im Frontend mit React, Vue.js und SASS.',
+      ],
+    },
+    concept: {
+      title: 'Konzeption & Architektur',
+      text: [
+        'Noch vor der ersten Zeile Code steht die durchdachte Konzeption der Projektbasis und die Planung der Architektur an.',
+        'Hier helfe ich beim Entwurf einer leistungsfähigen und langlebigen Software Architektur und einem stimmigen Gesamtkonzept.',
+      ],
+    },
+    consulting: {
+      title: 'Beratung',
+      text: [
+        'Hier geht es um die Überwindung von aufgetretenen Problemen, der Migration von Systemen oder einer beliebigen anderen Herausforderung.',
+        'Kontaktiere mich gerne mit deinem spezifischen Anliegen, um gemeinsam eine Lösung dafür zu finden.',
+      ],
+    },
+    goto: {
+      projects: 'Meine bisherigen Projekte',
+    },
+    stack: {
+      title: 'Meine Basisstack',
+      frontend: 'Frontend',
+      backend: 'Backend',
+      databases: 'Datenbanken',
+      deployment: 'CI & CD',
+      base: 'Basis',
     },
   },
 };
@@ -157,6 +198,8 @@ const translations = {
       description: 'Senior Fullstack JavaScript Engineer und Berater für komplexe und skalierbare Softwaresysteme in München.',
     },
   },
+
+  pages,
 
   // layout
 
@@ -190,9 +233,6 @@ const translations = {
       },
     },
   },
-
-  language,
-  pages,
 
   // components
 
