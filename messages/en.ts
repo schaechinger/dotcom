@@ -103,15 +103,23 @@ const pages = {
   },
   privacy: {
     title: 'Data Privacy',
+    description: 'Your data is important. Please have a look at how I handle the data.',
   },
   projects: {
     title: 'Projects',
     description: 'Get an overview of my completed and ongoing projects.',
     details: {
       title: 'Project Details',
+      company: 'Company',
       timeSpan: 'Time span',
       type: 'Project type',
-      company: 'Company',
+    },
+    types: {
+      employee: 'Employee',
+      founder: 'Founder',
+      freelance: 'Freelance',
+      private: 'Private',
+      volunteer: 'Volunteer',
     },
   },
   resume: {

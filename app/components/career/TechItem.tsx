@@ -1,4 +1,4 @@
-import { TechData } from '@models/career';
+import { type TechData } from '@models/career';
 
 type Props = {
   item: TechData;

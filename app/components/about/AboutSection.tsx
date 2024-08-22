@@ -2,7 +2,7 @@ import { useLocale, useTranslations } from 'next-intl';
 
 import LinkButton from '@components/LinkButton';
 import HighlightLabel from '@components/HighlightLabel';
-import { _l, LanguageCode } from '@lib/i18n';
+import { _l, type LanguageCode } from '@lib/i18n';
 
 const AboutSection = () => {
   const t = useTranslations('pages.home.about');

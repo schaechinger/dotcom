@@ -1,4 +1,4 @@
-import { Company } from '@models/career';
+import { type Company } from '@models/career';
 
 type Props = {
   company?: Company;

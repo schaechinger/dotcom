@@ -1,4 +1,4 @@
-import { LanguageCode } from '@lib/i18n';
+import { type LanguageCode } from '@lib/i18n';
 
 /**
  * Format the date in mm.yyyy format.

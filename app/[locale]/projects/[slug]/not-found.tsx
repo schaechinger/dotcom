@@ -2,10 +2,9 @@ import type { Metadata } from 'next';
 import { useLocale, useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
-import type { PageProps } from '@app/interfaces';
 import KonamiCode from '@components/KonamiCode';
 import LinkButton from '@components/LinkButton';
-import { _l, LanguageCode } from '@lib/i18n';
+import { _l, type LanguageCode } from '@lib/i18n';
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const t = await getTranslations('errors.projectNotFound');

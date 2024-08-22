@@ -103,15 +103,23 @@ const pages = {
   },
   privacy: {
     title: 'Datenschutz',
+    description: 'Deine Daten sind wichtig, lies dir daher durch wie ich mit Daten umgehe.',
   },
   projects: {
     title: 'Projekte',
     description: 'Erhalte hier einen Überblick über meine bisherigen Projekte.',
     details: {
       title: 'Projektdetails',
+      company: 'Firma',
       timeSpan: 'Zeitspanne',
       type: 'Projektart',
-      company: 'Firma',
+    },
+    types: {
+      employee: 'Angestellter',
+      founder: 'Gründer',
+      freelance: 'Freiberuflich',
+      private: 'Privat',
+      volunteer: 'Ehrenamtlich',
     },
   },
   resume: {

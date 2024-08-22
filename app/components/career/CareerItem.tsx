@@ -5,7 +5,7 @@ import TechItem from '@components/career/TechItem';
 import TimeSpan from '@components/career/TimeSpan';
 import BulletList from '@components/projects/BulletList';
 import { type LanguageCode } from '@lib/i18n';
-import { CareerData } from '@models/career';
+import { type CareerData } from '@models/career';
 
 type Props = {
   item: CareerData;

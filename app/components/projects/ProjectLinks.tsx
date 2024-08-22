@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { ProjectLinkData } from '@models/project';
+import { type ProjectLinkData } from '@models/project';
 
 type Props = {
   links?: ProjectLinkData;

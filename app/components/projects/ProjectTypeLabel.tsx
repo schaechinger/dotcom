@@ -2,15 +2,9 @@ import Banknotes from '@components/icons/Banknotes';
 import BuildingsCity from '@components/icons/BuildingsCity';
 import HeartEmpty from '@components/icons/HeartEmpty';
 import Knight from '@components/icons/Knight';
-import { ProjectType } from '@models/project';
+import { type ProjectType } from '@models/project';
+import { useTranslations } from 'next-intl';
 
-export const labelMapper = {
-  employee: 'Angestellter',
-  founder: 'Gründer',
-  freelance: 'Freiberuflich',
-  private: 'Privat',
-  volunteer: 'Ehrenamtlich',
-};
 
 type Props = {
   type: ProjectType;
@@ -18,6 +12,7 @@ type Props = {
 }
 
 const ProjectTypeLabel = ({ type, label }: Props) => {
+  const t = useTranslations('pages.projects.types')
   const TypeIcon = {
     employee: BuildingsCity,
     founder: HeartEmpty,
@@ -31,8 +26,8 @@ const ProjectTypeLabel = ({ type, label }: Props) => {
 
   return (
     <>
-      <TypeIcon title={labelMapper[type]} className="inline-block -mt-1 mr-2" />
-      { label && labelMapper[type] }
+      <TypeIcon title={t(type)} className="inline-block -mt-1 mr-2" />
+      { label && t(type) }
     </>
   );
 };

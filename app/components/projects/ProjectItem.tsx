@@ -7,7 +7,7 @@ import TimeSpan from '@components/career/TimeSpan';
 import ArrowRight from '@components/icons/ArrowRight';
 import BulletList from '@components/projects/BulletList';
 import ProjectTypeLabel from '@components/projects/ProjectTypeLabel';
-import { ProjectData } from '@models/project';
+import { type ProjectData } from '@models/project';
 import { _l, type LanguageCode } from '@lib/i18n';
 
 type Props = {

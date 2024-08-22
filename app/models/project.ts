@@ -1,5 +1,5 @@
-import { LanguageCode } from '../lib/i18n';
-import { CareerData } from './career';
+import { type LanguageCode } from '@lib/i18n';
+import { type CareerData } from './career';
 
 export type ProjectType = 'freelance' | 'employee' | 'private' | 'founder';
 

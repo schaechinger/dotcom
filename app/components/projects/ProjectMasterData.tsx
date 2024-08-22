@@ -6,7 +6,7 @@ import CompanyLink from '@components/career/CompanyLink';
 import TechItem from '@components/career/TechItem';
 import TimeSpan from '@components/career/TimeSpan';
 import ProjectTypeLabel from '@components/projects/ProjectTypeLabel';
-import { ProjectData } from '@models/project';
+import { type ProjectData } from '@models/project';
 
 interface Props extends ComponentProps {
   project: ProjectData;

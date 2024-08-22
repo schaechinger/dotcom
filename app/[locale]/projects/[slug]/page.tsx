@@ -9,7 +9,7 @@ import ProjectImages from '@components/projects/ProjectImages';
 import ProjectLinks from '@components/projects/ProjectLinks';
 import ProjectMasterData from '@components/projects/ProjectMasterData';
 import { loadProjectBySlug } from '@lib/contentful';
-import { getPageAlternates, LanguageCode } from '@lib/i18n';
+import { getPageAlternates, type LanguageCode } from '@lib/i18n';
 
 interface Props extends PageProps {
   params: {

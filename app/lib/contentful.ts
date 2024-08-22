@@ -1,12 +1,18 @@
-import { ContentfulClientApi, Entry, EntryCollection, EntryFieldTypes, createClient } from 'contentful';
+import {
+  ContentfulClientApi,
+  Entry,
+  EntryCollection,
+  EntryFieldTypes,
+  createClient,
+} from 'contentful';
 import { cache } from 'react';
 
-import { AvailabilityData } from '@models/availability';
-import { CareerData, sortCareerList } from '@models/career';
-import { CertificationData, sortCertificationList } from '@models/certification';
-import { ProjectData } from '@models/project';
+import { type AvailabilityData } from '@models/availability';
+import { type CareerData, sortCareerList } from '@models/career';
+import { type CertificationData, sortCertificationList } from '@models/certification';
+import { type ProjectData } from '@models/project';
 
-import { LanguageCode } from './i18n';
+import { type LanguageCode } from './i18n';
 
 type AvailabilityEntrySkeleton = {
   contentTypeId: 'availability',

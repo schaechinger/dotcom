@@ -3,8 +3,8 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
-import { ComponentProps } from '@app/interfaces';
-import { ProjectImage } from '@models/project';
+import type { ComponentProps } from '@app/interfaces';
+import { type ProjectImage } from '@models/project';
 
 interface Props extends ComponentProps {
   slug: string;
