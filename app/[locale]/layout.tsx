@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
+import { WEB_HOST } from '@app/config';
 import { clearSans } from '@app/font';
 import type { LayoutProps } from '@app/interfaces';
 import Provider from '@app/provider';
@@ -27,7 +28,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
       default: 'Manuel Schächinger',
     },
     description: t('meta.description'),
-    metadataBase: new URL('https://www.schaechinger.com'),
+    metadataBase: new URL(WEB_HOST),
     openGraph: {
       images: '/images/opengraph-schaechinger.jpg',
       type: 'website',
@@ -43,7 +44,7 @@ const RootLayout = async ({ children, params: { locale } }: LayoutProps) => {
   return (
     <html className={`${clearSans.className} dark`} style={{ colorScheme: 'dark' }} lang={locale} dir="ltr">
       <head>
-        <link type="text/plain" rel="author" href="https://www.schaechinger.com/humans.txt" />
+        <link type="text/plain" rel="author" href={`${WEB_HOST}/humans.txt`} />
       </head>
       <body className="dark:text-dark-200 dark:bg-dark-800">
         <NextIntlClientProvider messages={messages}>

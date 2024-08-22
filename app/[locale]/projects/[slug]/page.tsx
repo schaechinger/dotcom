@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
+import { IMAGE_HOST } from '@app/config';
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/LinkButton';
 import DetailBlock from '@components/projects/DetailBlock';
@@ -35,7 +36,7 @@ export const generateProjectMetadata = async (slug: string, locale: LanguageCode
       description: metadata.description,
       type: 'article',
       locale,
-      images: project.images?.length ? `https://images.schaechinger.com/projects/${slug}/${project.images[0].src}` : undefined,
+      images: project.images?.length ? `${IMAGE_HOST}/projects/${slug}/${project.images[0].src}` : undefined,
     };
   }
 

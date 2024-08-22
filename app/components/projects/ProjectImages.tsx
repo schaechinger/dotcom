@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
+import { IMAGE_HOST } from '@app/config';
 import type { ComponentProps } from '@app/interfaces';
 import { type ProjectImage } from '@models/project';
 
@@ -18,7 +19,7 @@ const ProjectImages = ({ slug, images, lang }: Props) => {
     <div className="grid gap-4 mt-10">
         <div>
             <Image
-              src={`https://images.schaechinger.com/projects/${slug}/${images[selected].src}`}
+              src={`${IMAGE_HOST}/projects/${slug}/${images[selected].src}`}
               width={1024}
               height={576}
               alt={images[selected].label || ''}
@@ -30,7 +31,7 @@ const ProjectImages = ({ slug, images, lang }: Props) => {
             { images.map((image, i) => (
               <div key={image.src} className="cursor-pointer" onClick={() => setSelected(i)}>
                 <Image
-                  src={`https://images.schaechinger.com/projects/${slug}/${image.src}`}
+                  src={`${IMAGE_HOST}/projects/${slug}/${image.src}`}
                   width={160}
                   height={90}
                   alt={image[lang]?.label || image.label || ''}

@@ -1,5 +1,6 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 
+import { STATIC_HOST } from '@app/config';
 import LinkButton from '@components/LinkButton';
 import CareerItem from '@components/career/CareerItem';
 import { loadCareer } from '@lib/contentful';
@@ -19,8 +20,8 @@ const CareerList = async ({ latest }: Props) => {
   }
 
   const resumeLink = 'de' === locale
-    ? 'https://static.schaechinger.com/de/lebenslauf-manuel-schaechinger.pdf'
-    : 'https://static.schaechinger.com/en/resume-manuel-schaechinger.pdf';
+    ? `${STATIC_HOST}/de/lebenslauf-manuel-schaechinger.pdf`
+    : `${STATIC_HOST}/en/resume-manuel-schaechinger.pdf`;
 
   return (
     <div className="-mt-4">

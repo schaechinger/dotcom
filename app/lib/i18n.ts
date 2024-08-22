@@ -1,3 +1,5 @@
+import { WEB_HOST } from '@app/config';
+
 export type LanguageCode = 'de' | 'en';
 
 export const supportedLangs: LanguageCode[] = ['de', 'en'];
@@ -10,10 +12,10 @@ export const _l = (identifier: string, lang: LanguageCode) => {
   return link.replace(/\/+$/, '') || '/';
 };
 
-export const getPageAlternates = (identifier: string, lang: LanguageCode, baseHost?: string) => {
+export const getPageAlternates = (identifier: string, lang: LanguageCode) => {
   const languages: Record<string, string> = {};
   supportedLangs.forEach((l) => {
-    languages[l] = `${baseHost || ''}${_l(identifier, l)}`;
+    languages[l] = `${WEB_HOST}${_l(identifier, l)}`;
   });
 
   return {

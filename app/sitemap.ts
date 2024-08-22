@@ -1,11 +1,11 @@
 import type { MetadataRoute } from 'next';
 
+import { WEB_HOST } from '@app/config';
 import { loadProjects } from '@lib/contentful';
-import { getPageAlternates, supportedLangs } from './lib/i18n';
+import { getPageAlternates, supportedLangs } from '@lib/i18n';
 
 export const dynamic = 'force-dynamic';
 
-const base = 'https://www.schaechinger.com';
 const modified = new Date();
 
 const sitemap = async () => {
@@ -24,10 +24,10 @@ const sitemap = async () => {
   ] as { page: string; freq: 'weekly' | 'monthly', priority: number }[])
     .forEach(({ page, freq, priority }) => {
       supportedLangs.forEach((lang) => {
-        const alternates = getPageAlternates(page, lang, base);
+        const alternates = getPageAlternates(page, lang);
 
         sitemap.push({
-          url: `${base}/${lang}${page}`,
+          url: `${WEB_HOST}/${lang}${page}`,
           lastModified: modified,
           changeFrequency: freq,
           priority,
@@ -47,10 +47,10 @@ const sitemap = async () => {
 
     supportedLangs.forEach((lang) => {
       const page = `/projects/${project.slug}`;
-      const alternates = getPageAlternates(page, lang, base);
+      const alternates = getPageAlternates(page, lang);
 
       sitemap.push({
-        url: `${base}/${lang}${page}`,
+        url: `${WEB_HOST}/${lang}${page}`,
         lastModified: projectModified,
         changeFrequency: 'monthly',
         priority: 0.7,

@@ -1,5 +1,0 @@
-User-Agent: *
-Allow: /
-Disallow: /downloads/
-
-Sitemap: https://www.schaechinger.com/sitemap.xml

@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 
+import { STATIC_HOST } from '@app/config';
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/LinkButton';
 import DetailBlock from '@components/projects/DetailBlock';
@@ -23,7 +24,7 @@ const TransportKitPage = async () => {
   return (
     <div className="project-page pt-4 lg:pt-10">
       <link rel="stylesheet"
-        href="https://static.schaechinger.com/projects/transportkit/latest/transportkit.min.css?gc=v4" />
+        href={`${STATIC_HOST}/projects/transportkit/latest/transportkit.min.css?gc=v4`} />
 
       <ProjectMasterData project={project} />
 
