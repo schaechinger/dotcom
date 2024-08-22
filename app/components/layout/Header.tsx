@@ -29,8 +29,11 @@ const Header = () => {
         </div>
       </div>
 
-      <p className="hidden lg:block text-sm">{t('text.0')}<br
-        className="hidden lg:inline" /> {t('text.1')}</p>
+      <p className="hidden lg:block text-sm">
+        {t('text.0')}
+        <br className="hidden lg:inline" />
+        {t('text.1')}
+      </p>
 
       <Navigation translations={navigation} themeTranslations={themeToggle} />
     </header>

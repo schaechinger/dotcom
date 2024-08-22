@@ -166,7 +166,7 @@ const translations = {
         open: 'Menü öffnen',
       },
       themeToggle: {
-        dark: 'Dunkels Design',
+        dark: 'Dunkles Design',
         light: 'Helles Design',
         system: 'automatisch',
         toggle: 'Farbschema wechseln',
