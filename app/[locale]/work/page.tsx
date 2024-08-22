@@ -3,6 +3,7 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/LinkButton';
+import { _l } from '@lib/i18n';
 
 export const metadata: Metadata = {
   title: 'Meine Tätigkeit',
@@ -77,7 +78,7 @@ const WorkPage = ({ params: { locale } }: PageProps) => {
         </div>
 
         <p className="mt-4">
-          <LinkButton href="/projects">Meine bisherigen Projekte</LinkButton>
+          <LinkButton href={_l('/projects', locale)}>Meine bisherigen Projekte</LinkButton>
         </p>
       </section>
 

@@ -113,6 +113,23 @@ const pages = {
       company: 'Firma',
       timeSpan: 'Zeitspanne',
       type: 'Projektart',
+
+      goto: {
+        projects: 'Zur Projektliste',
+      },
+
+      description: 'Worum es geht',
+      requirements: 'Anforderungen',
+      goal: 'Ziel des Projekts',
+      implementation: 'Umsetzung des Projekts',
+      features: 'Features',
+    },
+    links: {
+      title: 'Links',
+      internal: 'Das Projekt wird intern verwendet und ist daher nicht öffentlich zugänglich.',
+      project: 'Das Projekt findest du auf <link></link>.',
+      code: 'Den Code zum Projekt findest du auf <link></link>.',
+      package: 'Du kannst das Package mit <link></link> in dein Projekt einbinden.'
     },
     types: {
       employee: 'Angestellter',

@@ -113,6 +113,23 @@ const pages = {
       company: 'Company',
       timeSpan: 'Time span',
       type: 'Project type',
+
+      goto: {
+        projects: 'Go to projects',
+      },
+
+      description: 'What it is About',
+      requirements: 'Requirements',
+      goal: 'Project Goal',
+      implementation: 'Project Implementation',
+      features: 'Features',
+    },
+    links: {
+      title: 'Links',
+      internal: 'The project is used internal and can therefore not be linked.',
+      project: 'The project can be found at <link></link>.',
+      code: 'The source code of the project an be found at <link></link>.',
+      package: 'You can integrate the package using <link></link> into your project.'
     },
     types: {
       employee: 'Employee',
