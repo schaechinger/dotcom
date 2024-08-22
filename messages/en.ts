@@ -165,6 +165,12 @@ const translations = {
         close: 'Close navigation',
         open: 'Open navigation',
       },
+      themeToggle: {
+        dark: 'Dark theme',
+        light: 'Light theme',
+        system: 'auto',
+        toggle: 'Toggle theme',
+      },
     },
   },
 
@@ -190,14 +196,6 @@ const translations = {
   projectList: {
     error: 'There was an error loading the project list.',
     goto: 'List all projects',
-  },
-  themeToggle: {
-    mode: {
-      dark: 'dark',
-      light: 'light',
-      system: 'auto',
-    },
-    toggle: 'Toggle theme',
   },
   timeSpan: {
     span: 'to',

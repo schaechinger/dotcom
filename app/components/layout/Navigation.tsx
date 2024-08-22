@@ -12,10 +12,11 @@ import ThemeToggle from '@components/layout/ThemeToggle';
 import { _l, type LanguageCode } from '@lib/i18n';
 
 type Props = {
+  themeTranslations: Record<string, string>;
   translations: Record<string, string>;
 };
 
-const Navigation = ({ translations }: Props) => {
+const Navigation = ({ translations, themeTranslations }: Props) => {
   const path = usePathname();
   const [isOpen, setOpen] = useState(false);
   const locale = useLocale() as LanguageCode;
@@ -58,7 +59,7 @@ const Navigation = ({ translations }: Props) => {
           )) }
 
           <li className="mt-4 lg:mt-10 flex gap-6">
-            <ThemeToggle />
+            <ThemeToggle translations={themeTranslations} />
             <LanguageSwitch />
           </li>
         </ul>

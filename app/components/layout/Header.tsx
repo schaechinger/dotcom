@@ -9,7 +9,7 @@ import { _l, type LanguageCode } from '@lib/i18n';
 
 const Header = () => {
   const t = useTranslations('layout.header');
-  const { layout: { header: { navigation } } } = useMessages() as any;
+  const { layout: { header: { navigation, themeToggle } } } = useMessages() as any;
   const locale = useLocale() as LanguageCode;
 
   return (
@@ -32,7 +32,7 @@ const Header = () => {
       <p className="hidden lg:block text-sm">{t('text.0')}<br
         className="hidden lg:inline" /> {t('text.1')}</p>
 
-      <Navigation translations={navigation} />
+      <Navigation translations={navigation} themeTranslations={themeToggle} />
     </header>
   );
 };

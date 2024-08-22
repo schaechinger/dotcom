@@ -165,6 +165,12 @@ const translations = {
         close: 'Menü schließen',
         open: 'Menü öffnen',
       },
+      themeToggle: {
+        dark: 'Dunkels Design',
+        light: 'Helles Design',
+        system: 'automatisch',
+        toggle: 'Farbschema wechseln',
+      },
     },
   },
 
@@ -177,26 +183,18 @@ const translations = {
     days: '{days, plural, =0 {Nur Kleinprojekte} other {d / Woche}}',
   },
   careerList: {
-    error: 'Leider konnten die bisherigen Positionen nicht geladen werden.',
+    error: 'Leider können die bisherigen Positionen nicht geladen werden.',
     goto: {
       resume: 'Vollständigen Werdegang ansehen',
       download: 'Lebenslauf herunterladen',
     },
   },
   certificationList: {
-    error: 'Leider konnten die bisherigen Projekte nicht geladen werden.',
+    error: 'Leider können meine Zertifizierungen nicht geladen werden.',
   },
   projectList: {
-    error: 'Leider konnten die bisherigen Projekte nicht geladen werden.',
+    error: 'Leider können die bisherigen Projekte nicht geladen werden.',
     goto: 'Alle Projekte ansehen',
-  },
-  themeToggle: {
-    mode: {
-      dark: 'dunkel',
-      light: 'hell',
-      system: 'automatisch',
-    },
-    toggle: 'Farbschema wechseln',
   },
   timeSpan: {
     span: 'bis',
