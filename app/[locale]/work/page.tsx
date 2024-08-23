@@ -1,20 +1,21 @@
 import type { Metadata } from 'next';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
+import { getPageAlternates, l } from '@/i18n';
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/atoms/LinkButton';
-import { l } from '@/i18n';
-import { useTranslations } from 'next-intl';
+import Separator from '@components/atoms/Separator';
+import PageContainer from '@/app/components/organisms/PageContainer';
 
-export const metadata: Metadata = {
-  title: 'Meine Tätigkeit',
-  description: 'Ein Einblick in meine Tätigkeitsfelder sowie meine technischen Fähigkeiten.',
-  alternates: {
-    canonical: '/work',
-    languages: {
-      'de': '/work',
-    },
-  },
+export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
+  const t = await getTranslations('pages.work');
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates: getPageAlternates('/work', locale),
+  };
 };
 
 const WorkPage = ({ params: { locale } }: PageProps) => {
@@ -22,19 +23,17 @@ const WorkPage = ({ params: { locale } }: PageProps) => {
   const t = useTranslations('pages.work');
 
   return (
-    <div className="work-page pt-4 lg:pt-10 lg:max-w-screen-sm">
+    <PageContainer name="work" narrow>
       <section id="work">
         <h1 className="text-h1">{t('title')}</h1>
 
         <p className="mb-2">{t('text.0')}</p>
-
         <p>{t('text.1')}</p>
 
         <div className="mt-6">
           <h2 className="text-h2">{t('implementation.title')}</h2>
 
           <p className="mb-2">{t('implementation.text.0')}</p>
-
           <p>{t('implementation.text.1')}</p>
         </div>
 
@@ -42,7 +41,6 @@ const WorkPage = ({ params: { locale } }: PageProps) => {
           <h2 className="text-h2">{t('concept.title')}</h2>
 
           <p className="mb-2">{t('concept.text.0')}</p>
-
           <p>{t('concept.text.1')}</p>
         </div>
 
@@ -50,7 +48,6 @@ const WorkPage = ({ params: { locale } }: PageProps) => {
           <h2 className="text-h2">{t('consulting.title')}</h2>
 
           <p className="mb-2">{t('consulting.text.0')}</p>
-
           <p>{t('consulting.text.1')}</p>
         </div>
 
@@ -64,46 +61,34 @@ const WorkPage = ({ params: { locale } }: PageProps) => {
 
         <div>
           <h3 className="text-h2">{t('stack.frontend')}</h3>
-          <div className="border-b border-b-primary-200 pb-1 mb-1">
-            Vue, Quasar, Pinia, Sass, ...
-          </div>
-          <div>
-            React, Next.js, Sass, ...
-          </div>
+          <div>React, Next.js, Sass, ...</div>
+          <Separator />
+          <div>Vue, Quasar, Pinia, Sass, ...</div>
         </div>
 
         <div className="mt-6">
           <h3 className="text-h2">{t('stack.backend')}</h3>
-          <div className="border-b border-b-primary-200 pb-1 mb-1">
-            Node.js, Express, MQTT, ...
-          </div>
-          <div>
-            Strapi, Contentful, ...
-          </div>
+          <div>Node.js, Express, MQTT, ...</div>
+          <Separator />
+          <div>Strapi, Contentful, ...</div>
         </div>
 
         <div className="mt-6">
           <h3 className="text-h2">{t('stack.databases')}</h3>
-          <div>
-            PostgreSQL, DynamoDB, MongoDB, Neo4j, ...
-          </div>
+          <div>PostgreSQL, DynamoDB, MongoDB, Neo4j, ...</div>
         </div>
 
         <div className="mt-6">
           <h3 className="text-h2">{t('stack.deployment')}</h3>
-          <div>
-            Docker, GitHub Actions, Jest, Mocha, ...
-          </div>
+          <div>Docker, GitHub Actions, Jest, Mocha, ...</div>
         </div>
 
         <div className="mt-6">
           <h3 className="text-h2">{t('stack.base')}</h3>
-          <div>
-            Linux, AWS, Traefik, Git, REST, Elasticsearch, Auth0, Jira, Confluence, ...
-          </div>
+          <div>Linux, AWS, Traefik, Git, REST, Elasticsearch, Auth0, Jira, Confluence, ...</div>
         </div>
       </section>
-    </div>
+    </PageContainer>
   );
 };
 

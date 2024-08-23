@@ -26,7 +26,7 @@ const ProjectItem = ({ item, heading }: Props) => {
           <TimeSpan startDate={item.startDate} endDate={item.endDate} />
         </div>
         <Heading className="text-h3 text-dark-950 dark:text-dark-50 font-bold mb-0 sm:order-1">
-          <Link href={l(`projects.${item.slug}`, locale)} className="group">
+          <Link href={l(`/projects.${item.slug}`, locale)} className="group">
             { item.title }
             <ArrowRight className="inline-block -mt-0.5 ml-1 text-primary-300 -rotate-45 transition-colors group-hover:text-primary-500 group-hover:text-xl group-hover:-mt-0.5 group-hover:ml-0.5" />
           </Link>

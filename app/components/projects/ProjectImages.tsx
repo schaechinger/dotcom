@@ -1,5 +1,6 @@
 'use client';
 
+import clsx from 'clsx';
 import Image from 'next/image';
 import { useLocale } from 'next-intl';
 import { useState } from 'react';
@@ -41,7 +42,7 @@ const ProjectImages = ({ slug, images }: Props) => {
                   width={160}
                   height={90}
                   alt={getImageLabel(image)}
-                  className={`h-auto max-w-full rounded-lg${i === selected ? ' border-2' : ''} border-slate-300`}
+                  className={clsx('h-auto max-w-full rounded-lg border-slate-300', i === selected && 'border-2')}
                 />
               </div>
             )) }

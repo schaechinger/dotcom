@@ -6,11 +6,12 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { l, getPageAlternates } from '@/i18n';
 import type { PageProps } from '@app/interfaces';
-import AboutSection from '@components/about/AboutSection';
 import AvailabilityIndicator from '@components/atoms/AvailabilityIndicator';
 import LinkButton from '@components/atoms/LinkButton';
 import CareerList from '@components/career/CareerList';
 import CertificationList from '@components/certifications/CertificationList';
+import AboutSection from '@components/molecules/AboutSection';
+import PageContainer from '@components/organisms/PageContainer';
 import ProjectList from '@components/projects/ProjectList';
 
 export const generateMetadata = ({ params: { locale } }: PageProps): Metadata => ({
@@ -33,7 +34,7 @@ const HomePage = ({ params: { locale } }: PageProps) => {
 
   return (
     <>
-      <div className="home-page lg:max-w-screen-sm">
+      <PageContainer name="home" narrow>
         <AboutSection />
 
         <section id="availability" className="pt-4 lg:pt-10 mb-8">
@@ -43,7 +44,7 @@ const HomePage = ({ params: { locale } }: PageProps) => {
 
           <p className="mt-4">
             {t.rich('availability.text', {
-              contact: (label: React.ReactNode) => <Link href={l('contact', locale)}
+              contact: (label: React.ReactNode) => <Link href={l('/contact', locale)}
               className="inline-link">{label}</Link>,
             })}
           </p>
@@ -74,9 +75,9 @@ const HomePage = ({ params: { locale } }: PageProps) => {
             {t("contact.text")}
           </p>
 
-          <LinkButton href={l('contact', locale)} label={t('contact.goto')} />
+          <LinkButton href={l('/contact', locale)} label={t('contact.goto')} />
         </section>
-      </div>
+      </PageContainer>
       <Script type="application/ld+json" id="jsonld">{JSON.stringify(jsonLd)}</Script>
     </>
   );

@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 import { type TechData } from '@models/career';
 
 type Props = {
@@ -19,7 +21,7 @@ const TechItem = ({ item, color }: Props) => {
   ].join('') as 'primary';
 
   return (
-    <li key={item.slug} className={`${colorClasses[techColor]} border rounded-full px-2`}>
+    <li key={item.slug} className={clsx(colorClasses[techColor], 'border rounded-full px-2')}>
       <span>{ item.name }</span>
     </li>
   );

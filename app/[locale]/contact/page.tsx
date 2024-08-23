@@ -2,11 +2,12 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
+import { getPageAlternates } from '@/i18n';
 import type { PageProps } from '@app/interfaces';
+import AvailabilityIndicator from '@components/atoms/AvailabilityIndicator';
 import LinkButton from '@components/atoms/LinkButton';
 import ContactForm from '@components/forms/ContactForm';
-import AvailabilityIndicator from '@components/atoms/AvailabilityIndicator';
-import { getPageAlternates } from '@/i18n';
+import PageContainer from '@components/organisms/PageContainer';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.contact');
@@ -23,7 +24,7 @@ const ContactPage = ({ params: { locale } }: PageProps) => {
   const t = useTranslations('pages.contact');
 
   return (
-    <div className="resume-page pt-4 lg:pt-10 lg:max-w-screen-sm">
+    <PageContainer name="contact" narrow>
       <section id="contact">
         <h1 className="text-h1">{t('title')}</h1>
 
@@ -55,7 +56,7 @@ const ContactPage = ({ params: { locale } }: PageProps) => {
           </div>
         </div>
       </section>
-    </div>
+    </PageContainer>
   );
 };
 

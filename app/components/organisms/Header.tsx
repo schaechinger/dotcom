@@ -4,8 +4,8 @@ import { useLocale, useMessages, useTranslations } from 'next-intl';
 
 import { l, type LanguageCode } from '@/i18n';
 import image from '@/public/images/schaechinger.jpg';
-import Logo from '@components/layout/Logo';
-import Navigation from '@components/layout/Navigation';
+import Logo from '@/app/components/molecules/Logo';
+import Navigation from '@/app/components/molecules/Navigation';
 
 const Header = () => {
   const t = useTranslations('layout.header');

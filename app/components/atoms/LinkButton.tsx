@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import Link from 'next/link';
 import React from 'react';
 
@@ -24,9 +25,9 @@ const LinkButton = (props: Props) => {
       target={target}
       replace={props.replace}
     >
-      {props.back && <ChevronRight className={`rotate-180 mr-1 group-hover:mr-0.5 -mt-1 ${iconClasses}`} />}
+      {props.back && <ChevronRight className={clsx('rotate-180 mr-1 group-hover:mr-0.5 -mt-1', iconClasses)} />}
       {props.label || props.children}
-      {!props.back && <ChevronRight className={`ml-1 group-hover:ml-0.5 -mt-0.5 ${iconClasses}`} />}
+      {!props.back && <ChevronRight className={clsx('ml-1 group-hover:ml-0.5 -mt-0.5', iconClasses)} />}
     </Component>
   );
 };

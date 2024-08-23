@@ -2,10 +2,11 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import { PageProps } from '@app/interfaces';
-import LinkButton from '@components/atoms/LinkButton';
-import Address from '@components/atoms/Address';
 import { getPageAlternates } from '@/i18n';
+import { PageProps } from '@app/interfaces';
+import Address from '@components/atoms/Address';
+import LinkButton from '@components/atoms/LinkButton';
+import PageContainer from '@components/organisms/PageContainer';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.imprint');
@@ -22,7 +23,7 @@ const ImprintPage = ({ params: { locale } }: PageProps) => {
   const t = useTranslations('pages.imprint');
 
   return (
-    <div className="imprint-page pt-4 lg:pt-10">
+    <PageContainer name="imprint">
       <section id="imprint">
         <h1 className="text-h1">{t('title')}</h1>
 
@@ -71,7 +72,7 @@ const ImprintPage = ({ params: { locale } }: PageProps) => {
           {t('violations.text')}
         </p>
       </section>
-    </div>
+    </PageContainer>
   );
 };
 

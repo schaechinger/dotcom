@@ -3,11 +3,12 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
+import { getPageAlternates, l } from '@/i18n';
 import type { PageProps } from '@app/interfaces';
-import LinkButton from '@components/atoms/LinkButton';
 import Address from '@components/atoms/Address';
 import BulletList from '@/app/components/atoms/BulletList';
-import { getPageAlternates, l } from '@/i18n';
+import LinkButton from '@components/atoms/LinkButton';
+import PageContainer from '@components/organisms/PageContainer';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.privacy');
@@ -24,7 +25,7 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
   const t = useTranslations('pages.privacy');
 
   return (
-    <div className="privacy-page pt-4 lg:pt-10">
+    <PageContainer name="privacy">
       <section id="privacy">
         <h1 className="text-h1">{t('title')}</h1>
 
@@ -199,7 +200,7 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
           separat behandelt.
         </p>
       </section>
-    </div>
+    </PageContainer>
   );
 };
 

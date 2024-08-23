@@ -1,4 +1,5 @@
-import { useTranslations } from "next-intl";
+import clsx from 'clsx';
+import { useTranslations } from 'next-intl';
 
 type Props = {
   id: string;
@@ -14,7 +15,7 @@ const DetailBlock = ({ id, title, content }: Props) => {
       <h2 className="text-h2">{title || t(id)}</h2>
 
       {(content || []).map((p, i) => (
-        <p className={i < ((content.length || 0) - 1) ? 'mb-2' : ''}
+        <p className={clsx(i < ((content.length || 0) - 1) && 'mb-2')}
           key={i}>{p}</p>
       ))}
     </section>

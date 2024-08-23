@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, unstable_setRequestLocale } from 'next-intl/server';
@@ -8,8 +9,8 @@ import { clearSans } from '@app/font';
 import type { LayoutProps } from '@app/interfaces';
 import Provider from '@app/provider';
 import LanguageSuggestion from '@components/language/LanguageSuggestion';
-import Footer from '@components/layout/Footer';
-import Header from '@components/layout/Header';
+import Footer from '@/app/components/organisms/Footer';
+import Header from '@/app/components/organisms/Header';
 
 import '@/css/style.scss';
 
@@ -42,7 +43,7 @@ const RootLayout = async ({ children, params: { locale } }: LayoutProps) => {
   const messages = await getMessages();
 
   return (
-    <html className={`${clearSans.className} dark`} style={{ colorScheme: 'dark' }} lang={locale} dir="ltr">
+    <html className={clsx(clearSans.className, 'dark')} style={{ colorScheme: 'dark' }} lang={locale} dir="ltr">
       <head>
         <link type="text/plain" rel="author" href={`${WEB_HOST}/humans.txt`} />
       </head>

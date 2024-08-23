@@ -1,19 +1,16 @@
-import { match } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
 import { NextRequest, NextResponse } from 'next/server';
 
-import { type LanguageCode, splitPath, supportedLangs } from '@/i18n';
+import { matchLocale, splitPath, supportedLangs } from '@/i18n';
 
 const getLocale = (req: NextRequest) => {
   const headers = { 'accept-language': req.headers.get('accept-language') || '' };
   const languages = new Negotiator({ headers }).languages();
-  const genLocale = match(languages, supportedLangs, 'en');
 
-  return genLocale as LanguageCode;
+  return matchLocale(languages);
 };
 
 export function middleware(request: NextRequest) {
-
   // Check for supported language code in path
   const { pathname } = request.nextUrl;
   const path = splitPath(pathname);

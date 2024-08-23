@@ -34,7 +34,7 @@ const CareerList = async ({ heading, latest }: Props) => {
         : '' }
       <div>
       <LinkButton
-        href={latest ? l('resume', locale) : resumeLink}
+        href={latest ? l('/resume', locale) : resumeLink}
         label={t(`goto.${latest ? 'resume' : 'download'}`)}
       />
       </div>

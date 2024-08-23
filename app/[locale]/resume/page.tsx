@@ -2,11 +2,12 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import type { PageProps } from '@app/interfaces';
-import CareerList from '@components/career/CareerList';
-import TechItem from '@components/atoms/TechItem';
-import CertificationList from '@components/certifications/CertificationList';
 import { getPageAlternates } from '@/i18n';
+import type { PageProps } from '@app/interfaces';
+import TechItem from '@components/atoms/TechItem';
+import CareerList from '@components/career/CareerList';
+import CertificationList from '@components/certifications/CertificationList';
+import PageContainer from '@components/organisms/PageContainer';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.resume');
@@ -23,7 +24,7 @@ const ResumePage = ({ params: { locale } }: PageProps) => {
   const t = useTranslations('pages.resume');
 
   return (
-    <div className="resume-page pt-4 lg:pt-10 lg:max-w-screen-sm">
+    <PageContainer name="resume" narrow>
       <section id="career">
         <h1 className="text-h1">{t('title')}</h1>
 
@@ -111,7 +112,7 @@ const ResumePage = ({ params: { locale } }: PageProps) => {
           </ul>
         </div>
       </section>
-    </div>
+    </PageContainer>
   );
 };
 

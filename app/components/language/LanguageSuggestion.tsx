@@ -1,17 +1,15 @@
 'use client';
 
-import { match } from '@formatjs/intl-localematcher';
 import { usePathname } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import { useEffect, useState } from 'react';
 
-import { splitPath, l, type LanguageCode, supportedLangs } from '@/i18n';
+import { splitPath, l, type LanguageCode, matchLocale } from '@/i18n';
+import { LANGUAGE_SUGGESTION_OPT_OUT } from '@app/config';
 import { isBrowser, useLocalStorage } from '@app/utils';
 import LinkButton from '@components/atoms/LinkButton';
 import MenuClose from '@components/icons/MenuClose';
 import translations from '@/messages/language';
-
-const LANGUAGE_SUGGESTION_OPT_OUT = 'ls-opt-out';
 
 const LanguageSuggestion = () => {
   const pathname = usePathname();
@@ -24,12 +22,12 @@ const LanguageSuggestion = () => {
   useEffect(() => {
     if (isBrowser()) {
       if (!+localStorage.getItem(LANGUAGE_SUGGESTION_OPT_OUT)) {
-        const defaultLang = match(window.navigator.languages, supportedLangs, 'en') as LanguageCode;
+        const defaultLang = matchLocale(window.navigator.languages);
 
         setSuggestion(defaultLang !== locale ? defaultLang : locale);
       }
     }
-  }, []);
+  }, [localStorage, locale]);
 
   const hide = () => {
     localStorage.setItem(LANGUAGE_SUGGESTION_OPT_OUT, '1');

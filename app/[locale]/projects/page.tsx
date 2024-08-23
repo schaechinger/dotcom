@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import type { PageProps } from '@app/interfaces';
-import ProjectList from '@components/projects/ProjectList';
 import { getPageAlternates } from '@/i18n';
+import type { PageProps } from '@app/interfaces';
+import PageContainer from '@components/organisms/PageContainer';
+import ProjectList from '@components/projects/ProjectList';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.projects');
@@ -21,13 +22,13 @@ const ProjectsPage = ({ params: { locale } }: PageProps) => {
   const t = useTranslations('pages.projects');
 
   return (
-    <div className="projects-page pt-4 lg:pt-10 lg:max-w-screen-sm">
+    <PageContainer name="projects" narrow>
       <section id="projects">
         <h1 className="text-h1">{t('title')}</h1>
 
         <ProjectList heading="h2" />
       </section>
-    </div>
+    </PageContainer>
   );
 };
 

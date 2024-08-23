@@ -1,3 +1,4 @@
+import { match } from '@formatjs/intl-localematcher'
 import { notFound } from 'next/navigation';
 import { getRequestConfig } from 'next-intl/server';
 
@@ -14,6 +15,10 @@ export const l = (identifier: string, lang: LanguageCode) => {
 
   return link.replace(/\/+$/, '') || '/';
 };
+
+export const matchLocale = (languages: readonly string[]) => (
+  match(languages, supportedLangs, 'en') as LanguageCode
+);
 
 export const getPageAlternates = (identifier: string, lang: LanguageCode) => {
   const languages: Record<string, string> = {};

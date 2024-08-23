@@ -23,7 +23,7 @@ const ProjectList = async ({ heading, highlights }: Props) => {
       { !projects.length
         ? <p className="py-4">{t('error')}</p>
         : '' }
-      { highlights && <LinkButton href={l('projects', locale)} label={t('goto')} /> }
+      { highlights && <LinkButton href={l('/projects', locale)} label={t('goto')} /> }
     </div>
   );
 };

@@ -5,6 +5,7 @@ import { l } from '@/i18n';
 import { STATIC_HOST } from '@app/config';
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/atoms/LinkButton';
+import PageContainer from '@components/organisms/PageContainer';
 import DetailBlock from '@components/projects/DetailBlock';
 import ProjectLinks from '@components/projects/ProjectLinks';
 import ProjectMasterData from '@components/projects/ProjectMasterData';
@@ -12,21 +13,23 @@ import { loadProjectBySlug } from '@lib/contentful';
 
 import { generateProjectMetadata } from '../[slug]/page';
 
+const slug = 'transportkit';
+
 export const generateMetadata = async ({ params: { locale } }: PageProps) => (
-  generateProjectMetadata('transportkit', locale)
+  generateProjectMetadata(slug, locale)
 );
 
 const TransportKitPage = async ({ params: { locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
   const t = await getTranslations('pages.projects.details');
-  const project = await loadProjectBySlug('transportkit', locale);
+  const project = await loadProjectBySlug(slug, locale);
 
   if (!project) {
     return notFound();
   }
 
   return (
-    <div className="project-page pt-4 lg:pt-10">
+    <PageContainer name={`${slug}-project-page`}>
       <link rel="stylesheet"
         href={`${STATIC_HOST}/projects/transportkit/latest/transportkit.min.css?gc=v4`} />
       <ProjectMasterData project={project} />
@@ -71,7 +74,7 @@ const TransportKitPage = async ({ params: { locale } }: PageProps) => {
       <p className="mt-4">
         <LinkButton href={l('/projects', locale)} label={t('goto.projects')} back />
       </p>
-    </div>
+    </PageContainer>
   );
 };
 

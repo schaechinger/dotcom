@@ -6,6 +6,7 @@ import { l, getPageAlternates, type LanguageCode } from '@/i18n';
 import { IMAGE_HOST } from '@app/config';
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/atoms/LinkButton';
+import PageContainer from '@components/organisms/PageContainer';
 import DetailBlock from '@components/projects/DetailBlock';
 import ProjectImages from '@components/projects/ProjectImages';
 import ProjectLinks from '@components/projects/ProjectLinks';
@@ -57,7 +58,7 @@ const ProjectPage = async ({ params: { locale, slug} }: Props) => {
   }
 
   return (
-    <div className={`project-page page--${project.slug} pt-4 lg:pt-10`}>
+    <PageContainer name={`${project.slug}-project`}>
       <ProjectMasterData project={project} />
 
       { project.details?.description
@@ -82,7 +83,7 @@ const ProjectPage = async ({ params: { locale, slug} }: Props) => {
       <p className="mt-4">
         <LinkButton href={l('/projects', locale)} label={t('goto.projects')} back />
       </p>
-    </div>
+    </PageContainer>
   );
 };
 

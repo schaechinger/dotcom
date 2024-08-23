@@ -2,24 +2,24 @@
 
 import KonamiCode from '@components/KonamiCode';
 import LinkButton from '@components/atoms/LinkButton';
+import PageContainer from '@components/organisms/PageContainer';
 
 const ServerError = () => (
-  <div className="not-found-page pt-4 lg:pt-10 lg:max-w-screen-sm">
-    <section>
-      <h1 className="text-h1">Inhalt nicht verfügbar</h1>
+  <PageContainer name="error" narrow>
+    <section id="error">
+      <h1 className="text-h1">Content not Available</h1>
 
       <p className="mb-4">
-        Aktuell gibt es ein Problem mit der Anzeige des Inhalts. Versuche es bitte später
-        noch einmal.
+        It looks like the content cannot be shown. Please try again in a moment.
       </p>
 
       <p>
-        <LinkButton href="/" label="Zur Startseite" />
+        <LinkButton href="/" label="Go back home" />
       </p>
 
       <KonamiCode />
     </section>
-  </div>
+  </PageContainer>
 );
 
 export default ServerError;

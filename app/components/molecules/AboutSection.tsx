@@ -9,7 +9,7 @@ const AboutSection = () => {
   const lang = useLocale() as LanguageCode;
   
   return (
-    <section id="about" className="pt-4 lg:pt-10 mb-8">
+    <section id="about" className="mb-8">
       <h1 className="text-h1">{t('title')}</h1>
 
       <p className="mb-2">
@@ -31,7 +31,7 @@ const AboutSection = () => {
       </p>
 
       <p>
-        <LinkButton href={l('work', lang)} label={t('goto')} />
+        <LinkButton href={l('/work', lang)} label={t('goto')} />
       </p>
     </section>
   );

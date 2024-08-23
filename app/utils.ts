@@ -33,6 +33,15 @@ export const useLocalStorage = () => ({
 
     return '';
   },
+  removeItem: (key: string) => {
+    const accessable = isBrowser();
+
+    if (accessable) {
+      window.localStorage.removeItem(key);
+    }
+
+    return accessable;
+  },
   setItem: (key: string, value: string) => {
     const accessable = isBrowser();
 

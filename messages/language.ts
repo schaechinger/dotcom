@@ -1,3 +1,7 @@
+/**
+ * Multilingual language file for language selection and switching.
+ */
+
 const language = {
   name: {
     de: 'Deutsch',

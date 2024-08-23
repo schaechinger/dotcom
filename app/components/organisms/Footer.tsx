@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { l, type LanguageCode } from '@/i18n';
 import HeartEmpty from '@components/icons/HeartEmpty';
 import LanguageSelection from '@components/language/LanguageSelection';
-import SocialLinks from '@components/layout/SocialLinks';
+import SocialLinks from '@/app/components/molecules/SocialLinks';
 import SnesButtons from '@components/mario/SnesButtons';
 
 const Footer = () => {
