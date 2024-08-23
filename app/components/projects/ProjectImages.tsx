@@ -1,18 +1,20 @@
 'use client';
 
 import Image from 'next/image';
+import { useLocale } from 'next-intl';
 import { useState } from 'react';
 
+import { type LanguageCode } from '@/i18n';
 import { IMAGE_HOST } from '@app/config';
-import type { ComponentProps } from '@app/interfaces';
 import { type ProjectImage } from '@models/project';
 
-interface Props extends ComponentProps {
+type Props = {
   slug: string;
   images: ProjectImage[];
-}
+};
 
-const ProjectImages = ({ slug, images, lang }: Props) => {
+const ProjectImages = ({ slug, images }: Props) => {
+  const locale = useLocale() as LanguageCode;
   const [selected, setSelected] = useState(0);
 
   return (
@@ -34,7 +36,7 @@ const ProjectImages = ({ slug, images, lang }: Props) => {
                   src={`${IMAGE_HOST}/projects/${slug}/${image.src}`}
                   width={160}
                   height={90}
-                  alt={image[lang]?.label || image.label || ''}
+                  alt={image[locale]?.label || image.label || ''}
                   className={`h-auto max-w-full rounded-lg${i === selected ? ' border-2' : ''} border-slate-300`}
                 />
               </div>

@@ -54,11 +54,11 @@ const RootLayout = async ({ children, params: { locale } }: LayoutProps) => {
 
               <div className="lg:flex-auto lg:w-3/4 px-4 sm:px-10 md:px-20 lg:px-4">
                 <main className="min-h-screen">
-                  <LanguageSuggestion lang={locale} />
+                  <LanguageSuggestion />
                   {children}
                 </main>
 
-                <Footer lang={locale} />
+                <Footer />
               </div>
             </div>
           </Provider>

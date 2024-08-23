@@ -27,6 +27,16 @@ export const getPageAlternates = (identifier: string, lang: LanguageCode) => {
   };
 };
 
+export const splitPath = (pathname: string) => {
+  const parts = pathname.split('/');
+  const [locale] = parts.splice(1, 1);
+
+  return {
+    page: parts.join('/'),
+    locale: locale.toLowerCase() as LanguageCode,
+  };
+};
+
 export default getRequestConfig(async ({ locale }) => {
   if (!supportedLangs.includes(locale as any)) {
     notFound();

@@ -13,7 +13,3 @@ export type PageProps = {
   };
   searchParams: { [key: string]: string | string[] | undefined };
 };
-
-export type ComponentProps = {
-  lang: LanguageCode;
-};

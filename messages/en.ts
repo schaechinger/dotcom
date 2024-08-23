@@ -161,7 +161,7 @@ const pages = {
       title: 'Implementation',
       text: [
         'I actively support in the implementation of a product and use my skills to craft the best possible piece of software.',
-        'Within the JavaScript ecosystem I work both in backend with Node.js and TypeScript and in the frontend with React, Vue.js and SASS',
+        'Within the JavaScript ecosystem I work both in backend with Node.js and TypeScript and in the frontend with React, Vue.js and SASS.',
       ],
     },
     concept: {

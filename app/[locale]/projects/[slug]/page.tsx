@@ -63,7 +63,7 @@ const ProjectPage = async ({ params: { locale, slug} }: Props) => {
       { project.details?.description
         && <DetailBlock id="description" content={project.details.description} /> }
 
-      { project.images && <ProjectImages images={project.images} slug={slug} lang={locale} /> }
+      { project.images && <ProjectImages images={project.images} slug={slug} /> }
 
       { project.details?.requirements
         && <DetailBlock id="requirements" content={project.details.requirements} /> }

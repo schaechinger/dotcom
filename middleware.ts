@@ -2,7 +2,7 @@ import { match } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
 import { NextRequest, NextResponse } from 'next/server';
 
-import { type LanguageCode, supportedLangs } from '@/i18n';
+import { type LanguageCode, splitPath, supportedLangs } from '@/i18n';
 
 const getLocale = (req: NextRequest) => {
   const headers = { 'accept-language': req.headers.get('accept-language') || '' };
@@ -16,8 +16,8 @@ export function middleware(request: NextRequest) {
 
   // Check for supported language code in path
   const { pathname } = request.nextUrl;
-  const pageLang = pathname.split('/')[1].toLowerCase() || '';
-  const foundLang = supportedLangs.find((lang) => pageLang === lang);
+  const path = splitPath(pathname);
+  const foundLang = supportedLangs.find((lang) => path.locale === lang);
 
   const locale = getLocale(request);
 
@@ -26,10 +26,10 @@ export function middleware(request: NextRequest) {
   }
 
   // Detect unknown language code
-  if (/^[a-z]{2}$/.test(pageLang)) {
+  if (/^[a-z]{2}$/.test(path.locale)) {
     // request.nextUrl.pathname = '/en/language';
     // request.nextUrl.search = `?lang=${pageLang}`;
-    request.nextUrl.pathname = `/${locale}/${pathname.split('/').slice(2).join('/')}`;
+    request.nextUrl.pathname = `/${locale}${path.page}`;
   } else {
     request.nextUrl.pathname = `/${locale}${pathname}`;
   }

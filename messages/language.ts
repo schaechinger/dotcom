@@ -12,6 +12,14 @@ const language = {
       de: 'Dein Browser ist auf Deutsch eingestellt. Möchtest du die Sprache dieser Seite ändern?',
       en: 'Your browser is set to English. Would you like to switch the language of this page?',
     },
+    cancel: {
+      de: 'Schließen',
+      en: 'Close',
+    },
+    stay: {
+      de: 'Die aktuelle Sprache beibehalten',
+      en: 'Stick with the current language',
+    },
     goto: {
       de: 'Zur deutschen Seite',
       en: 'Visit English site',

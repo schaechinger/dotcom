@@ -4,37 +4,26 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-import { ComponentProps } from '@app/interfaces';
+import { splitPath, l, type LanguageCode, supportedLangs } from '@/i18n';
 import { type IconProps } from '@components/icons/Icon';
 import WorldEast from '@components/icons/WorldEast';
 import WorldWest from '@components/icons/WorldWest';
 import languageTranslations from '@/messages/language';
-import { l, LanguageCode, supportedLangs } from '@/i18n';
 
 type IconComponent = (_p: IconProps) => JSX.Element;
 
-const LanguageSelection = ({ lang }: ComponentProps) => {
+const LanguageSelection = () => {
   const pathname = usePathname();
-  const [path, setPath] = useState({
-    lang,
-    page: '',
-  });
+  const [path, setPath] = useState(splitPath(pathname));
 
   const IconMapper: Record<LanguageCode, IconComponent> = {
     de: WorldEast,
     en: WorldWest,
   };
-  const Icon = IconMapper[path.lang] || WorldEast;
+  const Icon = IconMapper[path.locale] || WorldEast;
 
   useEffect(() => {
-    const parts = pathname.split('/');
-    const currentLang = (parts[1] || 'de').toLowerCase() as LanguageCode;
-    parts.splice(1, 1);
-
-    setPath({
-      lang: currentLang,
-      page: parts.join('/'),
-    });
+    setPath(splitPath(pathname));
   }, [pathname]);
 
   return (

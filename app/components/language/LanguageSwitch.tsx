@@ -5,13 +5,11 @@ import { usePathname } from 'next/navigation';
 import { useLocale } from 'next-intl';
 
 import language from '@/messages/language';
-import { l, type LanguageCode } from '@/i18n';
+import { l, splitPath, type LanguageCode } from '@/i18n';
 
 const LanguageSwitch = () => {
   const pathname = usePathname();
-  const parts = pathname.split('/');
-  parts.splice(1, 1);
-  const page = parts.join('/');
+  const { page } = splitPath(pathname);
 
   const locale = useLocale();
   const switchLocale: LanguageCode = 'de' === locale ? 'en' : 'de';

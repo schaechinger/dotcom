@@ -1,15 +1,15 @@
 import Link from 'next/link';
+import { useLocale, useTranslations } from 'next-intl';
 
-import type { ComponentProps } from '@app/interfaces';
+import { l, type LanguageCode } from '@/i18n';
 import HeartEmpty from '@components/icons/HeartEmpty';
 import LanguageSelection from '@components/language/LanguageSelection';
 import SocialLinks from '@components/layout/SocialLinks';
 import SnesButtons from '@components/mario/SnesButtons';
-import { l } from '@/i18n';
-import { useTranslations } from 'next-intl';
 
-const Footer =({ lang }: ComponentProps) => {
+const Footer = () => {
   const t = useTranslations('layout.footer');
+  const locale = useLocale() as LanguageCode;
 
   return (
     <footer className="footer mb-6 mt-10 sm:text-left text-sm">
@@ -20,13 +20,13 @@ const Footer =({ lang }: ComponentProps) => {
       </div>
 
       <div className="my-4">
-        <LanguageSelection lang={lang} />
+        <LanguageSelection />
       </div>
 
       <ul className="flex justify-start gap-4 my-4">
         {['imprint', 'privacy'].map((page) => (
           <li key={page}>
-            <Link href={l(page, lang)} className="font-normal">{t(page)}</Link>
+            <Link href={l(page, locale)} className="font-normal">{t(page)}</Link>
           </li>
         ))}
       </ul>

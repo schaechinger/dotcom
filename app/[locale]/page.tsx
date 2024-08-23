@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
+import { l, getPageAlternates } from '@/i18n';
 import type { PageProps } from '@app/interfaces';
-import LinkButton from '@components/atoms/LinkButton';
 import AboutSection from '@components/about/AboutSection';
+import AvailabilityIndicator from '@components/atoms/AvailabilityIndicator';
+import LinkButton from '@components/atoms/LinkButton';
 import CareerList from '@components/career/CareerList';
 import CertificationList from '@components/certifications/CertificationList';
-import AvailabilityIndicator from '@components/atoms/AvailabilityIndicator';
 import ProjectList from '@components/projects/ProjectList';
-import { l, getPageAlternates } from '@/i18n';
 
 export const generateMetadata = ({ params: { locale } }: PageProps): Metadata => ({
   alternates: getPageAlternates('/', locale),
