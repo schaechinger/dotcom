@@ -17,6 +17,10 @@ const ProjectImages = ({ slug, images }: Props) => {
   const locale = useLocale() as LanguageCode;
   const [selected, setSelected] = useState(0);
 
+  const getImageLabel = (image: ProjectImage) => (
+    image[locale]?.label || image.label || ''
+  );
+
   return (
     <div className="grid gap-4 mt-10">
         <div>
@@ -24,7 +28,7 @@ const ProjectImages = ({ slug, images }: Props) => {
               src={`${IMAGE_HOST}/projects/${slug}/${images[selected].src}`}
               width={1024}
               height={576}
-              alt={images[selected].label || ''}
+              alt={getImageLabel(images[selected])}
               className="h-auto max-w-full rounded-lg"
             />
         </div>
@@ -36,7 +40,7 @@ const ProjectImages = ({ slug, images }: Props) => {
                   src={`${IMAGE_HOST}/projects/${slug}/${image.src}`}
                   width={160}
                   height={90}
-                  alt={image[locale]?.label || image.label || ''}
+                  alt={getImageLabel(image)}
                   className={`h-auto max-w-full rounded-lg${i === selected ? ' border-2' : ''} border-slate-300`}
                 />
               </div>
