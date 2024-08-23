@@ -4,11 +4,11 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
+import translations from '@/messages/language';
 import { splitPath, l, type LanguageCode, supportedLangs } from '@/i18n';
 import { type IconProps } from '@components/icons/Icon';
 import WorldEast from '@components/icons/WorldEast';
 import WorldWest from '@components/icons/WorldWest';
-import languageTranslations from '@/messages/language';
 
 type IconComponent = (_p: IconProps) => JSX.Element;
 
@@ -39,7 +39,7 @@ const LanguageSelection = () => {
             dir="ltr"
             className="font-normal"
           >
-            {languageTranslations.name[lang]}
+            {translations.name[lang]}
           </Link>
         </li>
       ))}

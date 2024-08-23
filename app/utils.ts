@@ -1,4 +1,5 @@
 import { type LanguageCode } from '@/i18n';
+import { PROD_HOST, WEB_HOST } from '@app/config';
 
 /**
  * Format the date in mm.yyyy format.
@@ -11,8 +12,19 @@ export const formatDate = (date: string, lang?: LanguageCode) => {
   return dateObj.toLocaleDateString(lang || 'en', { year: 'numeric', month: '2-digit' });
 };
 
+/**
+ * Verify whether the code is executed on client side.
+ */
 export const isBrowser = () => 'undefined' !== typeof window;
 
+/**
+ * Verify the app runs in production mode.
+ */
+export const isProd = () => PROD_HOST === WEB_HOST;
+
+/**
+ * Wraps local storage functions.
+ */
 export const useLocalStorage = () => ({
   getItem: (key: string) => {
     if (isBrowser()) {
@@ -22,12 +34,12 @@ export const useLocalStorage = () => ({
     return '';
   },
   setItem: (key: string, value: string) => {
-    if (isBrowser()) {
-      window.localStorage.setItem(key, value);
+    const accessable = isBrowser();
 
-      return true;
+    if (accessable) {
+      window.localStorage.setItem(key, value);
     }
 
-    return false;
+    return accessable;
   },
 });

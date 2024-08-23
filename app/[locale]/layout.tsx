@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
+import { supportedLangs } from '@/i18n';
 import { WEB_HOST } from '@app/config';
 import { clearSans } from '@app/font';
 import type { LayoutProps } from '@app/interfaces';
@@ -9,7 +10,6 @@ import Provider from '@app/provider';
 import LanguageSuggestion from '@components/language/LanguageSuggestion';
 import Footer from '@components/layout/Footer';
 import Header from '@components/layout/Header';
-import { supportedLangs } from '@/i18n';
 
 import '@/css/style.scss';
 

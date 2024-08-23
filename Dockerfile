@@ -6,6 +6,9 @@ FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
+ARG BUILD_HASH
+ENV BUILD_HASH=$BUILD_HASH
+
 COPY package*.json ./
 RUN npm ci
 

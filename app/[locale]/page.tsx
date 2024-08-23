@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Script from 'next/script';
 import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
@@ -76,10 +77,7 @@ const HomePage = ({ params: { locale } }: PageProps) => {
           <LinkButton href={l('contact', locale)} label={t('contact.goto')} />
         </section>
       </div>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <Script type="application/ld+json" key="jsonld">{JSON.stringify(jsonLd)}</Script>
     </>
   );
 };

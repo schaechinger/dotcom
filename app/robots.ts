@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 
 import { WEB_HOST } from '@app/config';
+import { isProd } from '@app/utils';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -9,7 +10,7 @@ const robots = (): MetadataRoute.Robots => {
   let allow: string | undefined = '/';
   let disallow = '/downloads/';
 
-  if ('https://www.schaechinger.com' !== WEB_HOST) {
+  if (!isProd()) {
     allow = undefined;
     disallow = '/';
   }

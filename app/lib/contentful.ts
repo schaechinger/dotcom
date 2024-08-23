@@ -141,11 +141,7 @@ export const loadAvailability = async () => {
     })
       .then(getEntryFields<AvailabilityData>)
       .then((availabilities) => availabilities[0])
-      .catch((e) => {
-        console.log('error loading availability data', e);
-
-        return null;
-      })
+      .catch((e) => null)
   ))();
 };
 
@@ -163,11 +159,7 @@ export const loadCareer = async (locale?: LanguageCode) => {
     })
       .then(getEntryFields<CareerData>)
       .then(sortCareerList)
-      .catch((e) => {
-        console.log('error loading career data', e);
-
-        return null;
-      })
+      .catch((e) => null)
   ))();
 };
 
@@ -185,11 +177,7 @@ export const loadCertifications = async (locale?: LanguageCode) => {
     })
       .then(getEntryFields<CertificationData>)
       .then(sortCertificationList)
-      .catch((e) => {
-        console.log('error loading certification data', e);
-
-        return null;
-      })
+      .catch((e) => null)
   ))();
 };
 
@@ -223,11 +211,7 @@ export const loadProjects = async (locale?: LanguageCode, highlights = false) =>
           highlight: p.highlight,
         }))
       ))
-      .catch((e) => {
-        console.log('error loading projects data', e);
-
-        return null;
-      })
+      .catch((e) => null)
   ))();
 };
 
@@ -256,10 +240,6 @@ export const loadProjectBySlug = async (slug: string, locale?: LanguageCode) => 
 
         return project;
       })
-      .catch((e) => {
-        console.log('error loading project data', e);
-
-        return null;
-      })
+      .catch((e) => null)
   ))();
 };
