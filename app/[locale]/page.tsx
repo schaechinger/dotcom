@@ -77,7 +77,7 @@ const HomePage = ({ params: { locale } }: PageProps) => {
           <LinkButton href={l('contact', locale)} label={t('contact.goto')} />
         </section>
       </div>
-      <Script type="application/ld+json" key="jsonld">{JSON.stringify(jsonLd)}</Script>
+      <Script type="application/ld+json" id="jsonld">{JSON.stringify(jsonLd)}</Script>
     </>
   );
 };

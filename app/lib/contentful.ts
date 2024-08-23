@@ -141,7 +141,7 @@ export const loadAvailability = async () => {
     })
       .then(getEntryFields<AvailabilityData>)
       .then((availabilities) => availabilities[0])
-      .catch((e) => null)
+      .catch(() => null)
   ))();
 };
 
@@ -159,7 +159,7 @@ export const loadCareer = async (locale?: LanguageCode) => {
     })
       .then(getEntryFields<CareerData>)
       .then(sortCareerList)
-      .catch((e) => null)
+      .catch(() => null)
   ))();
 };
 
@@ -177,7 +177,7 @@ export const loadCertifications = async (locale?: LanguageCode) => {
     })
       .then(getEntryFields<CertificationData>)
       .then(sortCertificationList)
-      .catch((e) => null)
+      .catch(() => null)
   ))();
 };
 
@@ -211,7 +211,7 @@ export const loadProjects = async (locale?: LanguageCode, highlights = false) =>
           highlight: p.highlight,
         }))
       ))
-      .catch((e) => null)
+      .catch(() => null)
   ))();
 };
 
@@ -240,6 +240,6 @@ export const loadProjectBySlug = async (slug: string, locale?: LanguageCode) => 
 
         return project;
       })
-      .catch((e) => null)
+      .catch(() => null)
   ))();
 };
