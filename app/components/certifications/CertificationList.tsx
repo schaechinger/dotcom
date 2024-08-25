@@ -1,7 +1,9 @@
-import CertificationItem from '@components/certifications/CertificationItem';
-import { loadCertifications } from '@lib/contentful';
-import { type LanguageCode } from '@/i18n';
 import { getLocale, getTranslations } from 'next-intl/server';
+
+import { type LanguageCode } from '@/i18n';
+import CertificationItem from '@components/certifications/CertificationItem';
+import HistoryItemList from '@components/organisms/HistoryItemList';
+import { loadCertifications } from '@lib/contentful';
 
 const CertificationList = async () => {
   const t = await getTranslations('certificationList');
@@ -9,14 +11,12 @@ const CertificationList = async () => {
   const certifications = await loadCertifications(locale) || [];
 
   return (
-    <div className="-mt-2">
-      {certifications.map((c) => (
+    <HistoryItemList
+      items={certifications.map((c) => (
         <CertificationItem key={c.slug} item={c} />
       ))}
-      { (!certifications.length)
-        ? <p className="py-4">{t('error')}</p>
-        : '' }
-    </div>
+      error={t('error')}
+    />
   );
 };
 

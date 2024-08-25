@@ -4,6 +4,7 @@ import { l, type LanguageCode } from '@/i18n';
 import { STATIC_HOST } from '@app/config';
 import LinkButton from '@components/atoms/LinkButton';
 import CareerItem from '@components/career/CareerItem';
+import HistoryItemList from '@components/organisms/HistoryItemList';
 import { loadCareer } from '@lib/contentful';
 
 type Props = {
@@ -21,20 +22,16 @@ const CareerList = async ({ heading, latest }: Props) => {
     : `${STATIC_HOST}/en/resume-manuel-schaechinger.pdf`;
 
   return (
-    <div className="-mt-2">
-      {career.map((c) => (
+    <HistoryItemList
+      items={career.map((c) => (
         <CareerItem key={c.slug} item={c} heading={heading} />
       ))}
-      { (!career.length)
-        ? <p className="py-4">{t('error')}</p>
-        : '' }
-      <div>
-      <LinkButton
+      link={<LinkButton
         href={latest ? l('/resume', locale) : resumeLink}
         label={t(`goto.${latest ? 'resume' : 'download'}`)}
-      />
-      </div>
-    </div>
+      />}
+      error={t('error')}
+    />
   );
 };
 

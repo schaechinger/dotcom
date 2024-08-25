@@ -7,7 +7,7 @@ type Props = {
 }
 
 const Provider = ({ children }: Props) => (
-  <ThemeProvider attribute="class">
+  <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
     { children }
   </ThemeProvider>
 );

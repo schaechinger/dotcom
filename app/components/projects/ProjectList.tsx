@@ -1,9 +1,10 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 
+import { l, type LanguageCode } from '@/i18n';
 import LinkButton from '@components/atoms/LinkButton';
+import HistoryItemList from '@components/organisms/HistoryItemList';
 import ProjectItem from '@components/projects/ProjectItem';
 import { loadProjects } from '@lib/contentful';
-import { l, type LanguageCode } from '@/i18n';
 
 type Props = {
   heading?: string;
@@ -16,15 +17,13 @@ const ProjectList = async ({ heading, highlights }: Props) => {
   const projects = await loadProjects(locale, highlights || false) || [];
 
   return (
-    <div className="-mt-2">
-      {projects.map((p) => (
+    <HistoryItemList
+      items={projects.map((p) => (
         <ProjectItem key={p.slug} item={p} heading={heading} />
       ))}
-      { !projects.length
-        ? <p className="py-4">{t('error')}</p>
-        : '' }
-      { highlights && <LinkButton href={l('/projects', locale)} label={t('goto')} /> }
-    </div>
+      link={highlights && <LinkButton href={l('/projects', locale)} label={t('goto')} />}
+      error={t('error')}
+    />
   );
 };
 

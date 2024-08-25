@@ -13,6 +13,10 @@ const general = {
 
 // pages
 
+const about = {
+  title: 'Pri mi',
+};
+
 const home = {
   about: {
     title: 'Saluton, mi estas Manuel.',
@@ -23,8 +27,13 @@ const translations = {
   general,
 
   pages: {
+    about,
     home,
   },
+
+  // layout
+
+  layout: {},
 
   // components
 };

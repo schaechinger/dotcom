@@ -9,9 +9,9 @@ type Props = {
 };
 
 const HistoryItemCompany = ({ company, type }: Props) => (
-  company && <div className="font-thin">
+  (company || type) && <div className="font-thin">
     {type && <ProjectTypeLabel type={type} label={!company} />}
-    <CompanyLink company={company} />
+    {company && <CompanyLink company={company} />}
   </div>
 );
 
