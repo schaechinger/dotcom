@@ -9,8 +9,8 @@ import { clearSans } from '@app/font';
 import type { LayoutProps } from '@app/interfaces';
 import Provider from '@app/provider';
 import LanguageSuggestion from '@components/language/LanguageSuggestion';
-import Footer from '@/app/components/organisms/Footer';
-import Header from '@/app/components/organisms/Header';
+import Footer from '@components/organisms/Footer';
+import Header from '@components/organisms/Header';
 
 import '@/css/style.scss';
 

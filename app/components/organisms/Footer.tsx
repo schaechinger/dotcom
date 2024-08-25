@@ -4,8 +4,8 @@ import { useLocale, useTranslations } from 'next-intl';
 import { l, type LanguageCode } from '@/i18n';
 import HeartEmpty from '@components/icons/HeartEmpty';
 import LanguageSelection from '@components/language/LanguageSelection';
-import SocialLinks from '@/app/components/molecules/SocialLinks';
 import SnesButtons from '@components/mario/SnesButtons';
+import SocialLinks from '@components/molecules/SocialLinks';
 
 const Footer = () => {
   const t = useTranslations('layout.footer');

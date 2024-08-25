@@ -16,7 +16,7 @@ const ProjectList = async ({ heading, highlights }: Props) => {
   const projects = await loadProjects(locale, highlights || false) || [];
 
   return (
-    <div className="-mt-4">
+    <div className="-mt-2">
       {projects.map((p) => (
         <ProjectItem key={p.slug} item={p} heading={heading} />
       ))}

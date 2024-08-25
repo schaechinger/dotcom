@@ -3,10 +3,11 @@
 import KonamiCode from '@components/KonamiCode';
 import LinkButton from '@components/atoms/LinkButton';
 import PageContainer from '@components/organisms/PageContainer';
+import PageSection from '@components/organisms/PageSection';
 
 const ServerError = () => (
   <PageContainer name="error" narrow>
-    <section id="error">
+    <PageSection id="error" first>
       <h1 className="text-h1">Content not Available</h1>
 
       <p className="mb-4">
@@ -18,7 +19,7 @@ const ServerError = () => (
       </p>
 
       <KonamiCode />
-    </section>
+    </PageSection>
   </PageContainer>
 );
 

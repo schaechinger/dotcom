@@ -1,19 +1,22 @@
 import { type LanguageCode } from '@/i18n';
-import { type CareerData } from './career';
+import type { HistoryData, LinkData } from './history';
 
 export type ProjectType = 'freelance' | 'employee' | 'private' | 'founder';
 
-export type ProjectLink = {
-  link: string;
-  label: string;
+export type ProjectLinkData = {
+  project?: LinkData;
+  code?: LinkData;
+  github?: string[];
+  package?: LinkData;
+  npm?: string;
 };
 
-export type ProjectLinkData = {
-  project?: ProjectLink;
-  code?: ProjectLink;
-  github?: string[];
-  package?: ProjectLink;
-  npm?: string;
+export type ProjectDetailData = {
+  description?: string[];
+  goal?: string[];
+  requirements?: string[];
+  implementation?: string[];
+  features?: string[];
 };
 
 export type ProjectImage = {
@@ -26,18 +29,18 @@ export type ProjectImage = {
   en?: {
     label?: string;
   };
+  eo?: {
+    label?: string;
+  };
 };
 
-export interface ProjectData extends CareerData {
+export interface ProjectData extends HistoryData {
   links?: ProjectLinkData;
   type: ProjectType;
   highlight?: boolean;
   images?: ProjectImage[];
-  details?: {
-    description?: string[];
-    goal?: string[];
-    requirements?: string[];
-    implementation?: string[];
-    features?: string[];
-  };
+  details?: ProjectDetailData;
+
+  startDate: string;
+  endDate?: string;
 }

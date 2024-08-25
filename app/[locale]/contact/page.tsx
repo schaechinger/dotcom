@@ -8,6 +8,7 @@ import AvailabilityIndicator from '@components/atoms/AvailabilityIndicator';
 import LinkButton from '@components/atoms/LinkButton';
 import ContactForm from '@components/forms/ContactForm';
 import PageContainer from '@components/organisms/PageContainer';
+import PageSection from '@components/organisms/PageSection';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.contact');
@@ -25,7 +26,7 @@ const ContactPage = ({ params: { locale } }: PageProps) => {
 
   return (
     <PageContainer name="contact" narrow>
-      <section id="contact">
+      <PageSection id="contact" first>
         <h1 className="text-h1">{t('title')}</h1>
 
         <p className="mb-2">{t('subtitle')}</p>
@@ -55,7 +56,7 @@ const ContactPage = ({ params: { locale } }: PageProps) => {
             <ContactForm />
           </div>
         </div>
-      </section>
+      </PageSection>
     </PageContainer>
   );
 };

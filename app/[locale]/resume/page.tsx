@@ -3,11 +3,12 @@ import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import { getPageAlternates } from '@/i18n';
-import type { PageProps } from '@app/interfaces';
-import TechItem from '@components/atoms/TechItem';
+import type { PageProps } from '@app/interfaces';;
+import HistoryItemTechList from '@components/atoms/HistoryItemTechList';
 import CareerList from '@components/career/CareerList';
 import CertificationList from '@components/certifications/CertificationList';
 import PageContainer from '@components/organisms/PageContainer';
+import PageSection from '@components/organisms/PageSection';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.resume');
@@ -25,93 +26,77 @@ const ResumePage = ({ params: { locale } }: PageProps) => {
 
   return (
     <PageContainer name="resume" narrow>
-      <section id="career">
+      <PageSection id="experience" first>
         <h1 className="text-h1">{t('title')}</h1>
 
         <CareerList heading="h2" />
-      </section>
+      </PageSection>
 
-      <section id="certifications" className="mt-10">
+      <PageSection id="certifications">
         <h2 className="text-h2">{t('certifications.title')}</h2>
 
         <CertificationList />
-      </section>
+      </PageSection>
 
-      <section id="skills" className="mt-10">
+      <PageSection id="skills">
         <h2 className="text-h2">{t('skills.title')}</h2>
 
         <div className="mt-4">
           <h3 className="text-h3">{t('skills.languages')}</h3>
 
-          <ul className="flex flex-wrap mt-3 gap-2">
-            { [
-              { slug: 'javascript', name: 'JavaScript' },
-              { slug: 'typescript', name: 'TypeScript' },
-              { slug: 'css', name: 'CSS/Sass' },
-              { slug: 'sql', name: 'SQL' },
-              { slug: 'php', name: 'PHP' },
-              { slug: 'python', name: 'Python' },
-            ].map((tech) => (
-              <TechItem key={tech.slug} item={tech} />
-            )) }
-          </ul>
+          <HistoryItemTechList tech={[
+            { slug: 'javascript', name: 'JavaScript' },
+            { slug: 'typescript', name: 'TypeScript' },
+            { slug: 'css', name: 'CSS/Sass' },
+            { slug: 'sql', name: 'SQL' },
+            { slug: 'php', name: 'PHP' },
+            { slug: 'python', name: 'Python' },
+          ]} />
         </div>
 
         <div className="mt-6">
           <h3 className="text-h3">{t('skills.frameworks')}</h3>
 
-          <ul className="flex flex-wrap mt-3 gap-2">
-            { [
-              { slug: 'nodejs', name: 'Node.js' },
-              { slug: 'vue', name: 'Vue.js' },
-              { slug: 'pinia', name: 'Pinia' },
-              { slug: 'quasar', name: 'Quasar' },
-              { slug: 'react', name: 'React' },
-              { slug: 'nextjs', name: 'Next.js' },
-              { slug: 'express', name: 'Express.js' },
-              { slug: 'mqtt', name: 'MQTT' },
-              { slug: 'mocha', name: 'Mocha' },
-              { slug: 'graphql', name: 'GraphQL' },
-            ].map((tech) => (
-              <TechItem key={tech.slug} item={tech} />
-            )) }
-            </ul>
+          <HistoryItemTechList tech={[
+            { slug: 'nodejs', name: 'Node.js' },
+            { slug: 'vue', name: 'Vue.js' },
+            { slug: 'pinia', name: 'Pinia' },
+            { slug: 'quasar', name: 'Quasar' },
+            { slug: 'react', name: 'React' },
+            { slug: 'nextjs', name: 'Next.js' },
+            { slug: 'express', name: 'Express.js' },
+            { slug: 'mqtt', name: 'MQTT' },
+            { slug: 'mocha', name: 'Mocha' },
+            { slug: 'graphql', name: 'GraphQL' },
+          ]} />
         </div>
 
         <div className="mt-6">
           <h3 className="text-h3">{t('skills.databases')}</h3>
 
-          <ul className="flex flex-wrap mt-3 gap-2">
-            { [
-              { slug: 'postgresql', name: 'PostgreSQL' },
-              { slug: 'dynamodb', name: 'DynamoDB' },
-              { slug: 'elasticsearch', name: 'Elasticsearch' },
-            ].map((tech) => (
-              <TechItem key={tech.slug} item={tech} />
-            )) }
-          </ul>
+          <HistoryItemTechList tech={[
+            { slug: 'postgresql', name: 'PostgreSQL' },
+            { slug: 'dynamodb', name: 'DynamoDB' },
+            { slug: 'elasticsearch', name: 'Elasticsearch' },
+          ]} />
         </div>
 
         <div className="mt-6">
           <h3 className="text-h3">{t('skills.tools')}</h3>
 
-          <ul className="flex flex-wrap mt-3 gap-2">
-            { [
-              { slug: 'linux', name: 'Linux' },
-              { slug: 'aws', name: 'AWS' },
-              { slug: 'docker', name: 'Docker' },
-              { slug: 'nginx', name: 'nginx' },
-              { slug: 'git', name: 'Git' },
-              { slug: 'rest', name: 'REST' },
-              { slug: 'responsivedesign', name: 'Reponsive Design' },
-              { slug: 'ui', name: 'Reponsive UI/UX' },
-              { slug: 'auth', name: 'Authentifizierung' },
-            ].map((tech) => (
-              <TechItem key={tech.slug} item={tech} />
-            )) }
-          </ul>
+          <HistoryItemTechList tech={[
+            { slug: 'linux', name: 'Linux' },
+            { slug: 'aws', name: 'AWS' },
+            { slug: 'docker', name: 'Docker' },
+            { slug: 'nginx', name: 'nginx' },
+            { slug: 'git', name: 'Git' },
+            { slug: 'rest', name: 'REST' },
+            { slug: 'responsivedesign', name: 'Reponsive Design' },
+            { slug: 'ui', name: 'Reponsive UI/UX' },
+            { slug: 'auth', name: 'Authentifizierung' },
+          ]} />
         </div>
-      </section>
+      </PageSection>
     </PageContainer>
   );
 };

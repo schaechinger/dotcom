@@ -7,6 +7,7 @@ import { PageProps } from '@app/interfaces';
 import Address from '@components/atoms/Address';
 import LinkButton from '@components/atoms/LinkButton';
 import PageContainer from '@components/organisms/PageContainer';
+import PageSection from '@components/organisms/PageSection';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.imprint');
@@ -24,7 +25,7 @@ const ImprintPage = ({ params: { locale } }: PageProps) => {
 
   return (
     <PageContainer name="imprint">
-      <section id="imprint">
+      <PageSection id="imprint" first dense>
         <h1 className="text-h1">{t('title')}</h1>
 
         <h2 className="text-h2">{t('owner.title')}</h2>
@@ -47,9 +48,9 @@ const ImprintPage = ({ params: { locale } }: PageProps) => {
             br: () => <br />,
           })}
         </p>
-      </section>
+      </PageSection>
 
-      <section id="disclaimer" className="pt-10">
+      <PageSection id="disclaimer" dense>
         <h2 className="text-h2">{t('liability')}</h2>
 
         <p className="mb-2">
@@ -71,7 +72,7 @@ const ImprintPage = ({ params: { locale } }: PageProps) => {
           <strong>{t('violations.title')}:</strong>&nbsp;
           {t('violations.text')}
         </p>
-      </section>
+      </PageSection>
     </PageContainer>
   );
 };

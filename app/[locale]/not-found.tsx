@@ -6,6 +6,7 @@ import { l, type LanguageCode } from '@/i18n';
 import KonamiCode from '@components/KonamiCode';
 import LinkButton from '@components/atoms/LinkButton';
 import PageContainer from '@components/organisms/PageContainer';
+import PageSection from '@components/organisms/PageSection';
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const t = await getTranslations('errors.notFound');
@@ -21,7 +22,7 @@ const LocalizedNotFoundPage = () => {
 
   return (
     <PageContainer name="not-found" narrow>
-      <section id="not-found">
+      <PageSection id="not-found" first>
         <h1 className="text-h1">{t('title')}</h1>
 
         <p className="mb-4">{t('text')}</p>
@@ -29,7 +30,7 @@ const LocalizedNotFoundPage = () => {
         <LinkButton href={l('/', lang)} label={t('goto')} />
 
         <KonamiCode />
-      </section>
+      </PageSection>
     </PageContainer>
   );
 };

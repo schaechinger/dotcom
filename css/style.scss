@@ -2,10 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-// @import 'fonts';
 @import 'footer';
-
-@import 'components/career';
+@import 'components/history-item';
 @import 'components/lists';
 
 @layer base {
@@ -41,5 +39,3 @@
     }
   }
 }
-
-@import 'layouts/medalmonday';

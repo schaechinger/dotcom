@@ -5,7 +5,7 @@ type Props = {
   id: string;
   title?: string;
   content: string[];
-}
+};
 
 const DetailBlock = ({ id, title, content }: Props) => {
   const t = useTranslations('pages.projects.details');
@@ -16,7 +16,7 @@ const DetailBlock = ({ id, title, content }: Props) => {
 
       {(content || []).map((p, i) => (
         <p className={clsx(i < ((content.length || 0) - 1) && 'mb-2')}
-          key={i}>{p}</p>
+          key={`${id}-${i}`}>{p}</p>
       ))}
     </section>
   );

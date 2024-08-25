@@ -6,6 +6,7 @@ import { getPageAlternates } from '@/i18n';
 import { PageProps } from '@app/interfaces';
 import CertificationList from '@components/certifications/CertificationList';
 import PageContainer from '@components/organisms/PageContainer';
+import PageSection from '@components/organisms/PageSection';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.certifications');
@@ -23,11 +24,11 @@ const CertificationsPage = ({ params: { locale } }: PageProps) => {
 
   return (
     <PageContainer name="certifications" narrow>
-      <section id="certifications">
+      <PageSection id="certifications" first>
         <h1 className="text-h1">{t('title')}</h1>
 
         <CertificationList />
-      </section>
+      </PageSection>
     </PageContainer>
   );
 };

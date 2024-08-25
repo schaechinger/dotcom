@@ -6,7 +6,8 @@ import { getPageAlternates, l } from '@/i18n';
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/atoms/LinkButton';
 import Separator from '@components/atoms/Separator';
-import PageContainer from '@/app/components/organisms/PageContainer';
+import PageContainer from '@components/organisms/PageContainer';
+import PageSection from '@components/organisms/PageSection';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.work');
@@ -24,7 +25,7 @@ const WorkPage = ({ params: { locale } }: PageProps) => {
 
   return (
     <PageContainer name="work" narrow>
-      <section id="work">
+      <PageSection id="work" first>
         <h1 className="text-h1">{t('title')}</h1>
 
         <p className="mb-2">{t('text.0')}</p>
@@ -54,9 +55,9 @@ const WorkPage = ({ params: { locale } }: PageProps) => {
         <p className="mt-4">
           <LinkButton href={l('/projects', locale)} label={t('goto.projects')} />
         </p>
-      </section>
+      </PageSection>
 
-      <section id="stack" className="mt-10">
+      <PageSection id="stack">
         <h2 className="text-h1">{t('stack.title')}</h2>
 
         <div>
@@ -87,7 +88,7 @@ const WorkPage = ({ params: { locale } }: PageProps) => {
           <h3 className="text-h2">{t('stack.base')}</h3>
           <div>Linux, AWS, Traefik, Git, REST, Elasticsearch, Auth0, Jira, Confluence, ...</div>
         </div>
-      </section>
+      </PageSection>
     </PageContainer>
   );
 };

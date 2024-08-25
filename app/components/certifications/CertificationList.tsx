@@ -9,7 +9,7 @@ const CertificationList = async () => {
   const certifications = await loadCertifications(locale) || [];
 
   return (
-    <div className="-mt-4">
+    <div className="-mt-2">
       {certifications.map((c) => (
         <CertificationItem key={c.slug} item={c} />
       ))}

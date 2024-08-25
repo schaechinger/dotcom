@@ -4,9 +4,8 @@ import { WEB_HOST } from '@app/config';
 import { isProd } from '@app/utils';
 
 export const dynamic = 'force-dynamic';
-export const revalidate = 0;
 
-const robots = (): MetadataRoute.Robots => {
+const robots = async (): Promise<MetadataRoute.Robots> => {
   let allow: string | undefined = '/';
   let disallow = '/downloads/';
 

@@ -1,34 +1,13 @@
-export type Company = {
-  name: string;
-  location?: string;
-  link?: string;
-};
+import { HistoryData, LinkData } from './history';
 
-export type TechData = {
-  slug: string;
-  name: string;
-  type?: string;
-};
-
-export type CertificationData = {
-  title: string;
-  slug: string;
-  description?: string;
-  bullets?: string[];
-  tech: TechData[];
+export interface CertificationData extends HistoryData {
   date: string;
-  link?: {
-    href: string;
-    label: string;
-  };
-
-  createdAt?: Date;
-  updatedAt?: Date;
+  link?: LinkData;
 };
 
 export const sortCertificationList = <T extends CertificationData>(list: T[]) => (
-  list.sort((a: CertificationData, b: CertificationData) => {
-    if (a.date === a.date) {
+  list.toSorted((a: CertificationData, b: CertificationData) => {
+    if (a.date === b.date) {
       return a.title < b.title ? -1 : 1;
     }
 

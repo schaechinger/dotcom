@@ -2,9 +2,10 @@
 import { useTranslations } from 'next-intl';
 
 import CompanyLink from '@components/atoms/CompanyLink';
+import ProjectTypeLabel from '@components/atoms/ProjectTypeLabel';
 import TechItem from '@components/atoms/TechItem';
 import TimeSpan from '@components/atoms/TimeSpan';
-import ProjectTypeLabel from '@components/projects/ProjectTypeLabel';
+import PageSection from '@components/organisms/PageSection';
 import { type ProjectData } from '@models/project';
 
 type Props = {
@@ -15,7 +16,7 @@ const ProjectMasterData = ({ project }: Props) => {
   const t = useTranslations('pages.projects.details');
 
   return (
-    <section id={project.slug}>
+    <PageSection id={project.slug} first dense>
       <h1 className="text-h1">{ project.title }</h1>
 
       <p className="mb-2">{ project.description }</p>
@@ -33,14 +34,10 @@ const ProjectMasterData = ({ project }: Props) => {
 
       <ul className="flex flex-wrap mt-3 gap-2">
         { (project.tech || []).map((t) => (
-          <TechItem
-            key={t.slug}
-            item={t}
-            color={project.slug}
-          />
+          <TechItem key={t.slug} item={t} />
         ))}
       </ul>
-    </section>
+    </PageSection>
   );
 };
 

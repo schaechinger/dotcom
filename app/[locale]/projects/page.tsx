@@ -5,6 +5,7 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { getPageAlternates } from '@/i18n';
 import type { PageProps } from '@app/interfaces';
 import PageContainer from '@components/organisms/PageContainer';
+import PageSection from '@components/organisms/PageSection';
 import ProjectList from '@components/projects/ProjectList';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
@@ -23,11 +24,11 @@ const ProjectsPage = ({ params: { locale } }: PageProps) => {
 
   return (
     <PageContainer name="projects" narrow>
-      <section id="projects">
+      <PageSection id="projects" first>
         <h1 className="text-h1">{t('title')}</h1>
 
         <ProjectList heading="h2" />
-      </section>
+      </PageSection>
     </PageContainer>
   );
 };

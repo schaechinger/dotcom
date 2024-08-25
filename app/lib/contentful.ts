@@ -145,6 +145,8 @@ export const loadAvailability = async () => {
   ))();
 };
 
+const getLocale = (locale: LanguageCode) => locale.startsWith('de') ? 'de' : 'en';
+
 export const loadCareer = async (locale?: LanguageCode) => {
   const client = connect();
   if (!client) {
@@ -155,7 +157,7 @@ export const loadCareer = async (locale?: LanguageCode) => {
     await client.getEntries<CareerEntrySkeleton>({
       content_type: 'career',
       // @ts-ignore
-      locale,
+      locale: getLocale(locale),
     })
       .then(getEntryFields<CareerData>)
       .then(sortCareerList)
@@ -173,7 +175,7 @@ export const loadCertifications = async (locale?: LanguageCode) => {
     await client.getEntries<CertificationEntrySkeleton>({
       content_type: 'certification',
       // @ts-ignore
-      locale,
+      locale: getLocale(locale),
     })
       .then(getEntryFields<CertificationData>)
       .then(sortCertificationList)
@@ -192,7 +194,7 @@ export const loadProjects = async (locale?: LanguageCode, highlights = false) =>
       content_type: 'project',
       'fields.highlight': highlights || undefined,
       // @ts-ignore
-      locale,
+      locale: getLocale(locale),
     })
       .then(getEntryFields<ProjectData>)
       .then(sortCareerList)
@@ -215,18 +217,20 @@ export const loadProjects = async (locale?: LanguageCode, highlights = false) =>
   ))();
 };
 
-export const loadProjectBySlug = async (slug: string, locale?: LanguageCode) => {
+export const loadProjectBySlug = async (slug: string, locale: LanguageCode) => {
   const client = connect();
   if (!client) {
     return null;
   }
+
+  const contentfulLocale = getLocale(locale);
 
   return cache(async () => (
     client.getEntries<ProjectEntrySkeleton>({
       content_type: 'project',
       'fields.slug': slug,
       // @ts-ignore
-      locale,
+      locale: contentfulLocale,
     })
       .then(getEntryFields<ProjectData>)
       .then((projects) => {
@@ -234,7 +238,7 @@ export const loadProjectBySlug = async (slug: string, locale?: LanguageCode) => 
 
         if (project?.images) {
           project.images = project.images.filter((image) => (
-            !image.lang || image.lang === locale
+            !image.lang || image.lang === contentfulLocale
           ));
         }
 

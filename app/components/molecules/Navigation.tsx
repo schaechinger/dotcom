@@ -1,16 +1,16 @@
 'use client';
 
+import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import { useState } from 'react';
 
+import { l, type LanguageCode } from '@/i18n';
 import Menu from '@components/icons/Menu';
 import MenuClose from '@components/icons/MenuClose';
 import LanguageSwitch from '@components/language/LanguageSwitch';
-import ThemeToggle from '@/app/components/molecules/ThemeToggle';
-import { l, type LanguageCode } from '@/i18n';
-import clsx from 'clsx';
+import ThemeToggle from '@components/molecules/ThemeToggle';
 
 type Props = {
   themeTranslations: Record<string, string>;

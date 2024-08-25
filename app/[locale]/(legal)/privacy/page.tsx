@@ -6,9 +6,10 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { getPageAlternates, l } from '@/i18n';
 import type { PageProps } from '@app/interfaces';
 import Address from '@components/atoms/Address';
-import BulletList from '@/app/components/atoms/BulletList';
+import BulletList from '@components/atoms/BulletList';
 import LinkButton from '@components/atoms/LinkButton';
 import PageContainer from '@components/organisms/PageContainer';
+import PageSection from '@components/organisms/PageSection';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.privacy');
@@ -26,7 +27,7 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
 
   return (
     <PageContainer name="privacy">
-      <section id="privacy">
+      <PageSection id="privacy" first dense>
         <h1 className="text-h1">{t('title')}</h1>
 
         <h2 className="text-h2">Inhaltsverzeichnis</h2>
@@ -42,9 +43,9 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
           <Link href="#contact">Kontaktformular</Link>
           <Link href="#cookies">Cookies</Link>
         </BulletList>
-      </section>
+      </PageSection>
 
-      <section id="owner" className="pt-10">
+      <PageSection id="owner" dense>
         <h2 className="text-h2">Verantwortlicher</h2>
 
         <p className="mb-4">
@@ -54,9 +55,9 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
         <p>
           <LinkButton href={l('/imprint', locale)} label={t('imprint')} />
         </p>
-      </section>
+      </PageSection>
 
-      <section id="revocation" className="pt-10">
+      <PageSection id="revokation" dense>
         <h2 className="text-h2">Widerruf deiner Einwilligung zur Datenverarbeitung</h2>
 
         <p>
@@ -65,9 +66,9 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
           Für den Widerruf genügt eine formlose Mitteilung per E-Mail. Die Rechtmäßigkeit der bis
           zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.
         </p>
-      </section>
+      </PageSection>
 
-      <section id="complaint" className="pt-10">
+      <PageSection id="complaint" dense>
         <h2 className="text-h2">Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde</h2>
 
         <p>
@@ -78,9 +79,9 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
           stellt eine Liste der Datenschutzbeauftragten sowie deren Kontaktdaten bereit: <a
             href="https://www.bfdi.bund.de" target="_blank">www.bfdi.bund.de</a>
         </p>
-      </section>
+      </PageSection>
 
-      <section id="data-transfer" className="pt-10">
+      <PageSection id="data-transfer" dense>
         <h2 className="text-h2">Recht auf Datenübertragbarkeit</h2>
 
         <p>
@@ -90,9 +91,9 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
           direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies
           nur, soweit es technisch machbar ist.
         </p>
-      </section>
+      </PageSection>
 
-      <section id="information" className="pt-10">
+      <PageSection id="information" dense>
         <h2 className="text-h2">Recht auf Auskunft, Berichtigung, Sperrung und Löschung</h2>
 
         <p>
@@ -103,9 +104,9 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
           Fragen zum Thema personenbezogene Daten kannst du dir jederzeit über die im Impressum
           aufgeführten Kontaktmöglichkeiten an mich wenden.
         </p>
-      </section>
+      </PageSection>
 
-      <section id="ssl" className="pt-10">
+      <PageSection id="ssl" dense>
         <h2 className="text-h2">SSL- bzw. TLS-Verschlüsselung</h2>
 
         <p>
@@ -115,9 +116,9 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
           Du erkennst eine verschlüsselte Verbindung an der „https://“ Adresszeile deines Browsers
           und am Schloss-Symbol in der Browserzeile.
         </p>
-      </section>
+      </PageSection>
 
-      <section id="logs" className="pt-10">
+      <PageSection id="logs" dense>
         <h2 className="text-h2">Server-Log-Dateien</h2>
 
         <p className="mb-2">
@@ -140,9 +141,9 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
           der Datenverarbeitung bildet Art. 6 Abs. 1 lit. b DSGVO, der die Verarbeitung von Daten
           zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen gestattet.
         </p>
-      </section>
+      </PageSection>
 
-      <section id="contact" className="pt-10">
+      <PageSection id="contact" dense>
         <h2 className="text-h2">Kontaktformular</h2>
 
         <p className="mb-2">
@@ -165,7 +166,7 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
           Datenspeicherung mehr besteht. Zwingende gesetzliche Bestimmungen – insbesondere
           Aufbewahrungsfristen – bleiben unberührt.
         </p>
-      </section>
+      </PageSection>
 
       <section id="cookies" className="pt-10">
         <h2 className="text-h2">Cookies</h2>
