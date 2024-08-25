@@ -14,8 +14,6 @@ import Header from '@components/organisms/Header';
 
 import '@/css/style.scss';
 
-export const revalidate = 3600;
-
 export const generateStaticParams = () => (
   supportedLangs.map((locale) => ({ locale }))
 );
