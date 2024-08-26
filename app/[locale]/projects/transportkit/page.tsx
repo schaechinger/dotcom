@@ -6,6 +6,7 @@ import { STATIC_HOST } from '@app/config';
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/atoms/LinkButton';
 import PageContainer from '@components/organisms/PageContainer';
+import PageSection from '@components/organisms/PageSection';
 import DetailBlock from '@components/projects/DetailBlock';
 import ProjectLinks from '@components/projects/ProjectLinks';
 import ProjectMasterData from '@components/projects/ProjectMasterData';
@@ -37,8 +38,8 @@ const TransportKitPage = async ({ params: { locale } }: PageProps) => {
       { project.details?.description
         && <DetailBlock id="description" content={project.details.description} /> }
 
-      <section id="munich" className="pt-10">
-        <h2 className="text-h2">München</h2>
+      <PageSection id="munich" dense>
+        <h2 className="text-h2">{t('slug.transportkit.munich')}</h2>
 
         <h3 className="text-h3">U-Bahn</h3>
         { ['u1', 'u2', 'u3', 'u4', 'u5', 'u6', 'u7', 'u8'].map((line) => (
@@ -67,7 +68,7 @@ const TransportKitPage = async ({ params: { locale } }: PageProps) => {
         { ['12', '15', '16', '17', '18', '19', '20', '21', '22', '23', '25', '27', '28'].map((line) => (
           <span key={line} className={`transportkit-munich transportkit-munich--t${line} transportkit-munich--contrast`}>{ line }</span>
         )) }
-      </section>
+      </PageSection>
 
       <ProjectLinks links={project.links} />
 

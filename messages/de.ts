@@ -210,6 +210,12 @@ const projects = {
     goal: 'Ziel des Projekts',
     implementation: 'Umsetzung des Projekts',
     features: 'Features',
+
+    slug: {
+      transportkit: {
+        munich: 'München',
+      }
+    },
   },
   links: {
     title: 'Links',
