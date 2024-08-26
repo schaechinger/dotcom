@@ -182,6 +182,28 @@ const resume = {
   },
 };
 
+const sports = {
+  title: 'Meine sportlichen Erfolge',
+  description: 'Meine persönlichen Marathon- und Ausdauersporterfolge.',
+  text: 'Durch meine Leidenschaft zum Ausdauersport ist auch das Projekt Medal Monday entspanden, das ich seit 2022 zusammen mit Maik Paulus vorantreibe um allen Sportlern ein digitales Zuhause für ihre Wettkämpfe bereitzustellen.',
+  goto: {
+    medalmonday: 'Zu Medal Monday',
+  },
+  marathons: {
+    title: 'Marathons',
+    text: [
+      'Seit 2017 trete ich regelmäßig bei Marathons rund um die Welt an. Mich reizt an dieser Distanz die lange Vorbereitung auf einen einzigen Tag und die mentalte Herausforderung, das letzte Viertel durchzuhalen und sich zu neuen Bestleistungen zu bringen.',
+      'Für mein großes Ziel, die sechs Major Marathons in Tokio, Boston, London, Berlin, Chicago und New York City zu laufen fehlt mir nur noch ein Start in Boston.',
+    ],
+  },
+  rank: 'Platz',
+  speed: {
+    pace: 'Pace',
+    perHour: 'Geschw.',
+  },
+  time: 'Zeit',
+};
+
 const work = {
   title: 'Meine Tätigkeit',
   description: 'Ein Einblick in meine Tätigkeitsfelder sowie meine technischen Fähigkeiten.',
@@ -235,6 +257,7 @@ const translations = {
     privacy,
     projects,
     resume,
+    sports,
     work,
   },
 

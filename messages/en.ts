@@ -182,6 +182,29 @@ const resume = {
   },
 };
 
+
+const sports = {
+  title: 'My Sports Achievements',
+  description: 'My personal marathons and endurance sports achivements.',
+  text: 'My passion for endurance sport was the reason to kick off the project Medal Monday that I founded in 2022 together with Maik Paulus to provide all athletes a digital home for their event contests.',
+  goto: {
+    medalmonday: 'Visit Medal Monday',
+  },
+  marathons: {
+    title: 'Marathons',
+    text: [
+      'Since 2017 I participate in Marathons around the globe. I like this distance because of the long preparation towards a single day and the mental challene of getting through the last quarter of the race and achieving new personal bests.',
+      'To achieve my big goal of running the six Major Marathons in Tokyo, Boston, London, Berlin, Chicago and New York City I am only missing Boston.',
+    ],
+  },
+  rank: 'Rank',
+  speed: {
+    pace: 'Pace',
+    perHour: 'Speed',
+  },
+  time: 'Time',
+};
+
 const work = {
   title: 'My Work',
   description: 'An overview of my work areas and technical skills.',
@@ -235,6 +258,7 @@ const translations = {
     privacy,
     projects,
     resume,
+    sports,
     work,
   },
 
