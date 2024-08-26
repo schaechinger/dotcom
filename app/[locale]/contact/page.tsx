@@ -22,6 +22,8 @@ export const generateMetadata = async ({ params: { locale } }: PageProps): Promi
   };
 };
 
+export const dynamic = 'force-dynamic';
+
 const ContactPage = ({ params: { locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
   const t = useTranslations('pages.contact');
