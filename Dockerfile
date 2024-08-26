@@ -6,11 +6,6 @@ FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-ARG BUILD_HASH
-ENV BUILD_HASH=$BUILD_HASH
-ARG NEXT_PUBLIC_WEB_HOST
-ENV NEXT_PUBLIC_WEB_HOST=$NEXT_PUBLIC_WEB_HOST
-
 COPY package*.json ./
 RUN npm ci
 
@@ -18,6 +13,11 @@ FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+
+ARG BUILD_HASH
+ENV BUILD_HASH=$BUILD_HASH
+ARG NEXT_PUBLIC_WEB_HOST
+ENV NEXT_PUBLIC_WEB_HOST=$NEXT_PUBLIC_WEB_HOST
 
 RUN npm run build
 
