@@ -123,7 +123,7 @@ const ContactForm = ({ translations }: Props) => {
           && <p className="text-sm text-red-500 mt-1">{translations.messageError}</p> }
       </label>
 
-      <SubmitButton>{translations.submit}</SubmitButton>
+      <SubmitButton disabled={state.loading}>{translations.submit}</SubmitButton>
       { 'form' === state.field
           && <p className="text-sm text-red-500 mt-2">{translations.submitError}</p> }
     </form>

@@ -54,3 +54,4 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             BUILD_HASH=${{ env.GIT_SHA }}
+            NEXT_PUBLIC_WEB_HOST=${{ vars.NEXT_PUBLIC_WEB_HOST }}
