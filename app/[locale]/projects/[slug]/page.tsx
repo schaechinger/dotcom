@@ -11,7 +11,7 @@ import DetailBlock from '@components/projects/DetailBlock';
 import ProjectImages from '@components/projects/ProjectImages';
 import ProjectLinks from '@components/projects/ProjectLinks';
 import ProjectMasterData from '@components/projects/ProjectMasterData';
-import { loadProjectBySlug } from '@lib/contentful';
+import { loadProjectBySlug, loadProjects } from '@lib/contentful';
 
 interface Props extends PageProps {
   params: {
@@ -19,6 +19,12 @@ interface Props extends PageProps {
     slug: string;
   };
 }
+
+export const generateStaticParams = async ({ params: { locale } }: Props) => {
+  const projects = await loadProjects(locale);
+
+  return (projects || []).map((project) => ({ locale, slug: project.slug }));
+};
 
 export const generateProjectMetadata = async (slug: string, locale: LanguageCode) => {
   const t = await getTranslations('pages.projects.details');
@@ -48,7 +54,7 @@ export const generateMetadata = async ({ params: { locale, slug } }: Props) => (
   generateProjectMetadata(slug, locale)
 );
 
-const ProjectPage = async ({ params: { locale, slug} }: Props) => {
+const ProjectPage = async ({ params: { locale, slug } }: Props) => {
   unstable_setRequestLocale(locale);
   const t = await getTranslations('pages.projects.details');
   const project = await loadProjectBySlug(slug, locale);

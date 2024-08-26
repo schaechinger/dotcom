@@ -32,9 +32,15 @@ const contact = {
 
   form: {
     name: 'Name',
-    mail: 'Mail Address',
+    nameError: 'Please enter your name.',
+    email: 'Mail Address',
+    emailError: 'Please enter your mail address.',
     message: 'Message',
+    messageError: 'Please provide some details.',
     submit: 'Send',
+    submitError: 'Your message could not be sent.',
+    successTitle: 'Your inquiry has been sent!',
+    successText: 'Thank you for your message, I will come back to you shortly.',
   },
 
   types: {

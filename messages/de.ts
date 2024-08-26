@@ -32,9 +32,15 @@ const contact = {
 
   form: {
     name: 'Name',
-    mail: 'E-Mail-Adresse',
+    nameError: 'Bitte gib deinen Namen an.',
+    email: 'E-Mail-Adresse',
+    emailError: 'Bitte gib deine E-Mail-Adresse an.',
     message: 'Nachricht',
+    messageError: 'Bitte schildere dein Anliegen.',
     submit: 'Absenden',
+    submitError: 'Deine Nachricht konnte nicht gesendet werden.',
+    successTitle: 'Deine Anfrage wurde versendet!',
+    successText: 'Danke für deine Nachricht, ich werde mich zeitnah bei dir melden.',
   },
 
   types: {
@@ -52,7 +58,7 @@ const contact = {
   },
 };
 
-const home =  {
+const home = {
   about: {
     title: 'Servus, ich bin Manuel.',
     text: [

@@ -1,30 +1,92 @@
 'use client';
 
-import { useFormState } from 'react-dom'
+import { useReCaptcha } from 'next-recaptcha-v3';
 
-import { submitContact } from '@actions/submitContact';
 import { SubmitButton } from '@components/forms/SubmitButton';
-import CircleCheck from '../icons/CircleCheck';
+import CircleCheck from '@components/icons/CircleCheck';
+import { useState } from 'react';
 
-const ContactForm = () => {
-  const [state, submitAction] = useFormState(submitContact, { success: false })
+type Props = {
+  translations: Record<string, string>;
+};
+
+const ContactForm = ({ translations }: Props) => {
+  const { executeRecaptcha } = useReCaptcha();
+  const [state, setState] = useState({
+    success: false,
+    loading: false,
+    field: '',
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    setState({
+      ...state,
+      loading: true,
+    });
+
+    if (!executeRecaptcha) {
+      setState({
+        ...state,
+        field: 'form',
+        loading: false,
+      });
+
+      return;
+    }
+
+    const token = await executeRecaptcha('contactForm');
+    const form = e.target as unknown as {
+      name: { value: string };
+      email: { value: string };
+      message: { value: string };
+    };
+
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value,
+        token,
+      }),
+    }).then((res) => res.json());
+
+    if (response?.success) {
+      setState({
+        ...state,
+        field: '',
+        loading: false,
+        success: true,
+      });
+    } else {
+      setState({
+        ...state,
+        field: response.field,
+        loading: false,
+        success: false,
+      });
+    }
+  };
 
   if (state.success) {
     return (
       <div>
         <p className="text-lg mb-2">
           <CircleCheck className="text-2xl text-primary-500 -mt-1 mr-2" />
-          Deine Anfrage wurde versendet!
+          {translations.successTitle}
         </p>
-        <p>Danke für deine Nachricht, ich werde mich zeitnah bei dir melden.</p>
+        <p>{translations.successText}</p>
       </div>
     );
   }
 
   return (
-    <form action={submitAction}>
+    <form onSubmit={handleSubmit}>
       <label className="block mb-8">
-        <span className="text-sm text-dark-900 dark:text-slate-200">Name</span>
+        <span className="text-sm text-dark-900 dark:text-slate-200">{translations.name}</span>
         <input
           type="text"
           name="name"
@@ -33,11 +95,11 @@ const ContactForm = () => {
           required
         />
         { 'name' === state.field
-          && <p className="text-sm text-red-500 mt-1">Bitte gib deinen Namen an</p> }
+          && <p className="text-sm text-red-500 mt-1">{translations.nameError}</p> }
       </label>
 
       <label className="block mb-8">
-        <span className="text-sm text-dark-900 dark:text-slate-200">E-Mail-Adresse</span>
+        <span className="text-sm text-dark-900 dark:text-slate-200">{translations.email}</span>
         <input
           type="email"
           name="email"
@@ -46,11 +108,11 @@ const ContactForm = () => {
           required
         />
         { 'email' === state.field
-          && <p className="text-sm text-red-500 mt-1">Bitte gib deine E-Mail-Adresse an</p> }
+          && <p className="text-sm text-red-500 mt-1">{translations.emailError}</p> }
       </label>
 
       <label className="block mb-8">
-        <span className="text-sm text-dark-900 dark:text-slate-200">Nachricht</span>
+        <span className="text-sm text-dark-900 dark:text-slate-200">{translations.message}</span>
         <textarea
           name="message"
           className="mt-0 block bg-transparent w-full px-0 border-0 border-b-2 border-slate-200 dark:border-slate-600 focus:ring-0 focus:border-primary-500 focus:dark:border-primary-500 focus:outline-none"
@@ -58,13 +120,12 @@ const ContactForm = () => {
           rows={4}
         />
         { 'message' === state.field
-          && <p className="text-sm text-red-500 mt-1">Bitte schildere dein Anliegen</p> }
+          && <p className="text-sm text-red-500 mt-1">{translations.messageError}</p> }
       </label>
 
-      <SubmitButton>Absenden</SubmitButton>
-      { state.message }
+      <SubmitButton>{translations.submit}</SubmitButton>
       { 'form' === state.field
-          && <p className="text-sm text-red-500 mt-1">Deine Nachricht konnte nicht gesendet werden</p> }
+          && <p className="text-sm text-red-500 mt-2">{translations.submitError}</p> }
     </form>
   );
 };

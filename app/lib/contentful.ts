@@ -145,7 +145,7 @@ export const loadAvailability = async () => {
   ))();
 };
 
-const getLocale = (locale: LanguageCode) => locale.startsWith('de') ? 'de' : 'en';
+const getLocale = (locale?: LanguageCode) => (locale || 'en').startsWith('de') ? 'de' : 'en';
 
 export const loadCareer = async (locale?: LanguageCode) => {
   const client = connect();

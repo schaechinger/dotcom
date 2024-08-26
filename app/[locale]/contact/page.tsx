@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
+import { useMessages, useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { ReCaptchaProvider } from 'next-recaptcha-v3';
 
 import { getPageAlternates } from '@/i18n';
+import { RECAPTCHA_SITE_KEY } from '@app/config';
 import type { PageProps } from '@app/interfaces';
 import AvailabilityIndicator from '@components/atoms/AvailabilityIndicator';
 import LinkButton from '@components/atoms/LinkButton';
@@ -23,6 +25,7 @@ export const generateMetadata = async ({ params: { locale } }: PageProps): Promi
 const ContactPage = ({ params: { locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
   const t = useTranslations('pages.contact');
+  const { pages: { contact: { form: translations } } } = useMessages() as any;
 
   return (
     <PageContainer name="contact" narrow>
@@ -53,7 +56,9 @@ const ContactPage = ({ params: { locale } }: PageProps) => {
           <div className="flex-none w-full">
             <h2  className="text-h2">{t('types.write.title')}</h2>
 
-            <ContactForm />
+            <ReCaptchaProvider reCaptchaKey={RECAPTCHA_SITE_KEY} language={locale}>
+              <ContactForm translations={translations} />
+            </ReCaptchaProvider>
           </div>
         </div>
       </PageSection>
