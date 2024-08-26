@@ -1,7 +1,8 @@
 import Link from 'next/link';
-
-import { type ProjectLinkData } from '@models/project';
 import { useTranslations } from 'next-intl';
+
+import PageSection from '@components/organisms/PageSection';
+import { type ProjectLinkData } from '@models/project';
 
 type Props = {
   links?: ProjectLinkData;
@@ -11,7 +12,7 @@ const ProjectLinks = ({ links }: Props) => {
   const t = useTranslations('pages.projects.links');
 
   return (
-    <section id="links" className="pt-10">
+    <PageSection id="links" dense>
       <h2 className="text-h2">{t('title')}</h2>
 
       {!links && <p>{t('internal')}</p>}
@@ -50,7 +51,7 @@ const ProjectLinks = ({ links }: Props) => {
             className="inline-link"
           >npm</Link>
       })}</p>}
-    </section>
+    </PageSection>
   );
 };
 

@@ -9,6 +9,9 @@ const general = {
   meta: {
     description: 'Senior Fullstack JavaScript Engineer and consultant for complex and scalable software systems in Munich.',
   },
+  address: {
+    germany: 'Germany',
+  },
 };
 
 // pages
@@ -126,7 +129,67 @@ const imprint = {
 const privacy = {
   title: 'Data Privacy',
   description: 'Your data is important. Please have a look at how I handle the data.',
-  imprint: imprint.title,
+
+  overview: 'Table of Contents',
+  responsible: {
+    title: 'Responsible',
+    goto: {
+      imprint: imprint.title,
+    },
+  },
+  revokation: {
+    title: 'Revocation of Your Consent to Data Processing',
+    text: 'Data processing operations are only possible with your explicit consent. You can revoke your previously given consent at any time. A simple, informal notification via email is sufficient for the revocation. The legality of the data processing carried out before the revocation remains unaffected by the revocation.',
+  },
+  complaint: {
+    title: 'Right to Complain to the Responsible Supervisory Authority',
+    text: 'As the person affected, you have the right to complain to the responsible supervisory authority in the event of a data protection violation. The responsible supervisory authority for data protection issues is the state data protection officer of the federal state in which my company is based. The following link provides a list of data protection officers and their contact details: www.bfdi.bund.de <link>https://www.bfdi.bund.de/EN/</link>',
+  },
+  dataTransfer: {
+    title: 'Right to Data Portability',
+    text: 'You have the right to have data that I process automatically based on your consent or in fulfillment of a contract handed over to you or to third parties. The data will be provided in a machine-readable format. If you request that the data be transferred directly to another responsible party, this will only be done if it is technically feasible.',
+  },
+  information: {
+    title: 'Right to Information, Correction, Blocking and Deletion',
+    text: 'You have the right at any time, within the framework of the applicable legal provisions, to free information about your stored personal data, the origin of the data, its recipients and the purpose of the data processing and, if applicable, a right to correction, blocking or deletion of this data. In this regard and for other questions on the subject of personal data, you can contact me at any time using the contact options listed in the imprint.',
+  },
+  ssl: {
+    title: 'SSL or TLS Encryption',
+    text: 'For security reasons and to protect the transmission of confidential content that you send to me as the website operator, my website uses SSL or TLS encryption. This means that data that you transmit via this website cannot be read by third parties. You can recognize an encrypted connection by the "https://" address line in your browser and the lock symbol in the browser line.',
+  },
+  logs: {
+    title: 'Server-Log-Dateien',
+    text: [
+      'The website provider automatically collects and stores information in server log files that your browser automatically transmits to me. This is:',
+      'This data is not merged with other data sources. The basis for data processing is Art. 6 Para. 1 lit. b GDPR, which permits the processing of data to fulfill a contract or pre-contractual measures.',
+    ],
+    bullets: [
+      'Page visited on my domain',
+      'Date and time of the server request',
+      'Browser type and browser version',
+      'Operating system used',
+      'Referrer URL',
+      'Host name of the accessing computer',
+      'IP address',
+    ],
+  },
+  contact: {
+    title: 'Contact Form',
+    text: [
+      'Data transmitted via the contact form, including your contact details, are stored in order to process your request or to be available for follow-up questions. This data will not be passed on without your consent.',
+      'The data entered in the contact form is processed exclusively on the basis of your consent (Art. 6 Para. 1 lit. a GDPR). You can revoke your consent at any time. An informal notification by email is sufficient for the revocation. The legality of the data processing operations carried out up to the revocation remains unaffected by the revocation.',
+      'Data transmitted via the contact form will remain with me until you request me to delete it, revoke your consent to storage or there is no longer any need to store the data. Mandatory legal provisions - in particular retention periods - remain unaffected.',
+    ],
+  },
+  cookies: {
+    title: 'Cookies',
+    text: [
+      'My website uses cookies. These are small text files that your web browser stores on your device. Cookies help me to make my service more user-friendly, effective and secure.',
+      'Some cookies are “session cookies.” Such cookies are automatically deleted at the end of your browser session. Other cookies, however, remain on your device until you delete them yourself. Such cookies help me to recognize you when you return to my website.',
+      'With a modern web browser, you can monitor, restrict or prevent the setting of cookies. Many web browsers can be configured so that cookies are automatically deleted when the program is closed. Deactivating cookies can result in limited functionality on my website.',
+      'The setting of cookies that are necessary for carrying out electronic communication processes or for providing certain functions you require (e.g. shopping cart) is based on Art. 6 Para. 1 lit. f GDPR. As the operator of this website, I have a legitimate interest in storing cookies to ensure that my services are technically error-free and run smoothly. If other cookies are set (e.g. for analysis functions), these will be dealt with separately in this privacy policy.',
+    ],
+  },
 };
 
 const projects = {

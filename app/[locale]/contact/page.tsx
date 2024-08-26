@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { useMessages, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { ReCaptchaProvider } from 'next-recaptcha-v3';
 
@@ -27,7 +27,6 @@ export const dynamic = 'force-dynamic';
 const ContactPage = ({ params: { locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
   const t = useTranslations('pages.contact');
-  const { pages: { contact: { form: translations } } } = useMessages() as any;
 
   return (
     <PageContainer name="contact" narrow>
@@ -59,7 +58,7 @@ const ContactPage = ({ params: { locale } }: PageProps) => {
             <h2  className="text-h2">{t('types.write.title')}</h2>
 
             <ReCaptchaProvider reCaptchaKey={RECAPTCHA_SITE_KEY} language={locale}>
-              <ContactForm translations={translations} />
+              <ContactForm translations={t.raw('form')} />
             </ReCaptchaProvider>
           </div>
         </div>

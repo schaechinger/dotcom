@@ -37,7 +37,6 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
 const RootLayout = async ({ children, params: { locale } }: LayoutProps) => {
   unstable_setRequestLocale(locale);
-
   const messages = await getMessages();
 
   return (

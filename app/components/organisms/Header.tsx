@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useLocale, useMessages, useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 import { l, type LanguageCode } from '@/i18n';
 import image from '@/public/images/schaechinger.jpg';
@@ -9,7 +9,6 @@ import Navigation from '@components/molecules/Navigation';
 
 const Header = () => {
   const t = useTranslations('layout.header');
-  const { layout: { header: { navigation, themeToggle } } } = useMessages() as any;
   const locale = useLocale() as LanguageCode;
 
   return (
@@ -35,7 +34,7 @@ const Header = () => {
         {t('text.1')}
       </p>
 
-      <Navigation translations={navigation} themeTranslations={themeToggle} />
+      <Navigation translations={t.raw('navigation')} themeTranslations={t.raw('themeToggle')} />
     </header>
   );
 };

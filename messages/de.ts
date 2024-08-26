@@ -9,6 +9,9 @@ const general = {
   meta: {
     description: 'Senior Fullstack JavaScript Engineer und Berater für komplexe und skalierbare Softwaresysteme in München.',
   },
+  address: {
+    germany: 'Deutschland',
+  },
 };
 
 // pages
@@ -126,7 +129,67 @@ const imprint = {
 const privacy = {
   title: 'Datenschutz',
   description: 'Deine Daten sind wichtig, lies dir daher durch wie ich mit Daten umgehe.',
-  imprint: imprint.title,
+
+  overview: 'Inhaltsverzeichnis',
+  responsible: {
+    title: 'Verantwortlicher',
+    goto: {
+      imprint: imprint.title,
+    },
+  },
+  revokation: {
+    title: 'Widerruf deiner Einwilligung zur Datenverarbeitung',
+    text: 'Nur mit deiner ausdrücklichen Einwilligung sind einige Vorgänge der Datenverarbeitung möglich. Ein Widerruf deiner bereits erteilten Einwilligung ist jederzeit möglich. Für den Widerruf genügt eine formlose Mitteilung per E-Mail. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.',
+  },
+  complaint: {
+    title: 'Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde',
+    text: 'Als Betroffener steht dir im Falle eines datenschutzrechtlichen Verstoßes ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu. Zuständige Aufsichtsbehörde bezüglich datenschutzrechtlicher Fragen ist der Landesdatenschutzbeauftragte des Bundeslandes, in dem sich der Sitz meines Unternehmens befindet. Der folgende Link stellt eine Liste der Datenschutzbeauftragten sowie deren Kontaktdaten bereit: <link>https://www.bfdi.bund.de</link>',
+  },
+  dataTransfer: {
+    title: 'Recht auf Datenübertragbarkeit',
+    text: 'Dir steht das Recht zu, Daten, die ich auf Grundlage deiner Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeite, an dich oder an Dritte aushändigen zu lassen. Die Bereitstellung erfolgt in einem maschinenlesbaren Format. Sofern du die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.',
+  },
+  information: {
+    title: 'Recht auf Auskunft, Berichtigung, Sperrung und Löschung',
+    text: 'Du hast jederzeit im Rahmen der geltenden gesetzlichen Bestimmungen das Recht auf unentgeltliche Auskunft über deine gespeicherten personenbezogenen Daten, Herkunft der Daten, deren Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Diesbezüglich und auch zu weiteren Fragen zum Thema personenbezogene Daten kannst du dir jederzeit über die im Impressum aufgeführten Kontaktmöglichkeiten an mich wenden.',
+  },
+  ssl: {
+    title: 'SSL- bzw. TLS-Verschlüsselung',
+    text: 'Aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, die du an mich als Seitenbetreiber senden, nutzt meine Website eine SSL- bzw. TLS-Verschlüsselung. Damit sind Daten, die du über diese Website übermitteln, für Dritte nicht mitlesbar. Du erkennst eine verschlüsselte Verbindung an der „https://“ Adresszeile deines Browsers und am Schloss-Symbol in der Browserzeile.',
+  },
+  logs: {
+    title: 'Server-Log-Dateien',
+    text: [
+      'In Server-Log-Dateien erhebt und speichert der Provider der Website automatisch Informationen, die dein Browser automatisch an mich übermittelt. Dies sind:',
+      'Es findet keine Zusammenführung dieser Daten mit anderen Datenquellen statt. Grundlage der Datenverarbeitung bildet Art. 6 Abs. 1 lit. b DSGVO, der die Verarbeitung von Daten zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen gestattet.',
+    ],
+    bullets: [
+      'Besuchte Seite auf meiner Domain',
+      'Datum und Uhrzeit der Serveranfrage',
+      'Browsertyp und Browserversion',
+      'Verwendetes Betriebssystem',
+      'Referrer URL',
+      'Hostname des zugreifenden Rechners',
+      'IP-Adresse',
+    ],
+  },
+  contact: {
+    title: 'Kontaktformular',
+    text: [
+      'Per Kontaktformular übermittelte Daten werden einschließlich deine Kontaktdaten gespeichert, um dein Anfrage bearbeiten zu können oder um für Anschlussfragen bereitzustehen. Eine Weitergabe dieser Daten findet ohne deine Einwilligung nicht statt.',
+      'Die Verarbeitung der in das Kontaktformular eingegebenen Daten erfolgt ausschließlich auf Grundlage deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Ein Widerruf deiner bereits erteilten Einwilligung ist jederzeit möglich. Für den Widerruf genügt eine formlose Mitteilung per E-Mail. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitungsvorgänge bleibt vom Widerruf unberührt.',
+      'Über das Kontaktformular übermittelte Daten verbleiben bei mir, bis du mich zur Löschung aufforderst, deine Einwilligung zur Speicherung widerrufst oder keine Notwendigkeit der Datenspeicherung mehr besteht. Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.',
+    ],
+  },
+  cookies: {
+    title: 'Cookies',
+    text: [
+      'Meine Website verwendet Cookies. Das sind kleine Textdateien, die dein Webbrowser auf deinem Endgerät speichert. Cookies helfen mir dabei, mein Angebot nutzerfreundlicher, effektiver und sicherer zu machen.',
+      'Einige Cookies sind “Session-Cookies.” Solche Cookies werden nach Ende deiner Browser-Sitzung von selbst gelöscht. Hingegen bleiben andere Cookies auf deinem Endgerät bestehen, bis du diese selbst löschen. Solche Cookies helfen mir, dich bei Rückkehr auf meine Website wiederzuerkennen.',
+      'Mit einem modernen Webbrowser kannst du das Setzen von Cookies überwachen, einschränken oder unterbinden. Viele Webbrowser lassen sich so konfigurieren, dass Cookies mit dem Schließen des Programms von selbst gelöscht werden. Die Deaktivierung von Cookies kann eine eingeschränkte Funktionalität meiner Website zur Folge haben.',
+      'Das Setzen von Cookies, die zur Ausübung elektronischer Kommunikationsvorgänge oder der Bereitstellung bestimmter, von dir erwünschter Funktionen (z.B. Warenkorb) notwendig sind, erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Als Betreiber dieser Website habe ich ein berechtigtes Interesse an der Speicherung von Cookies zur technisch fehlerfreien und reibungslosen Bereitstellung meiner Dienste. Sofern die Setzung anderer Cookies (z.B. für Analyse-Funktionen) erfolgt, werden diese in dieser Datenschutzerklärung separat behandelt.',
+    ],
+  },
 };
 
 const projects = {
