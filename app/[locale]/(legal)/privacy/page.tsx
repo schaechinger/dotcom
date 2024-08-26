@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import { getPageAlternates, l } from '@/i18n';
+import { generatePageMeta, l } from '@/i18n';
 import type { PageProps } from '@app/interfaces';
 import Address from '@components/atoms/Address';
 import BulletList from '@components/atoms/BulletList';
@@ -15,9 +15,9 @@ export const generateMetadata = async ({ params: { locale } }: PageProps): Promi
   const t = await getTranslations('pages.privacy');
 
   return {
+    ...generatePageMeta('/privacy', locale),
     title: t('title'),
     description: t('description'),
-    alternates: getPageAlternates('/privacy', locale),
   };
 };
 

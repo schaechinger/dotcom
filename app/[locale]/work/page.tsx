@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import { getPageAlternates, l } from '@/i18n';
+import { generatePageMeta, l } from '@/i18n';
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/atoms/LinkButton';
 import Separator from '@components/atoms/Separator';
@@ -13,9 +13,9 @@ export const generateMetadata = async ({ params: { locale } }: PageProps): Promi
   const t = await getTranslations('pages.work');
 
   return {
+    ...generatePageMeta('/work', locale),
     title: t('title'),
     description: t('description'),
-    alternates: getPageAlternates('/work', locale),
   };
 };
 

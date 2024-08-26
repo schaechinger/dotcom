@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import { getPageAlternates } from '@/i18n';
+import { generatePageMeta } from '@/i18n';
 import { PageProps } from '@app/interfaces';
 import Address from '@components/atoms/Address';
 import LinkButton from '@components/atoms/LinkButton';
@@ -13,9 +13,9 @@ export const generateMetadata = async ({ params: { locale } }: PageProps): Promi
   const t = await getTranslations('pages.imprint');
 
   return {
+    ...generatePageMeta('/imprint', locale),
     title: t('title'),
     description: t('description'),
-    alternates: getPageAlternates('/imprint', locale),
   };
 };
 

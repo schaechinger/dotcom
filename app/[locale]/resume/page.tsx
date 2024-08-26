@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import { getPageAlternates } from '@/i18n';
+import { generatePageMeta } from '@/i18n';
 import type { PageProps } from '@app/interfaces';;
 import HistoryItemTechList from '@components/atoms/HistoryItemTechList';
 import CareerList from '@components/career/CareerList';
@@ -14,9 +14,9 @@ export const generateMetadata = async ({ params: { locale } }: PageProps): Promi
   const t = await getTranslations('pages.resume');
 
   return {
+    ...generatePageMeta('/resume', locale),
     title: t('title'),
     description: t('description'),
-    alternates: getPageAlternates('/resume', locale),
   };
 };
 

@@ -28,7 +28,7 @@ const ResetPage = () => {
       <PageSection id="reset" first>
         <h1 className="text-h1">Reset Settings</h1>
 
-        <p>{success ? 'Reset finished' : 'Reset in progress'}</p>
+        <p>{success ? 'Reset complete' : 'Reset in progress'}</p>
       </PageSection>
     </PageContainer>
   );

@@ -4,7 +4,7 @@ import Script from 'next/script';
 import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
-import { l, getPageAlternates } from '@/i18n';
+import { generatePageMeta, l } from '@/i18n';
 import type { PageProps } from '@app/interfaces';
 import AvailabilityIndicator from '@components/atoms/AvailabilityIndicator';
 import HighlightLabel from '@components/atoms/HighlightLabel';
@@ -15,9 +15,7 @@ import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import ProjectList from '@components/projects/ProjectList';
 
-export const generateMetadata = ({ params: { locale } }: PageProps): Metadata => ({
-  alternates: getPageAlternates('/', locale),
-});
+export const generateMetadata = ({ params: { locale } }: PageProps): Metadata => generatePageMeta('/', locale);
 
 const HomePage = ({ params: { locale } }: PageProps) => {
   unstable_setRequestLocale(locale);

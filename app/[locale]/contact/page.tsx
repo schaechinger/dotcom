@@ -3,7 +3,7 @@ import { useMessages, useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { ReCaptchaProvider } from 'next-recaptcha-v3';
 
-import { getPageAlternates } from '@/i18n';
+import { generatePageMeta } from '@/i18n';
 import { RECAPTCHA_SITE_KEY } from '@app/config';
 import type { PageProps } from '@app/interfaces';
 import AvailabilityIndicator from '@components/atoms/AvailabilityIndicator';
@@ -16,9 +16,9 @@ export const generateMetadata = async ({ params: { locale } }: PageProps): Promi
   const t = await getTranslations('pages.contact');
 
   return {
+    ...generatePageMeta('/contact', locale),
     title: t('title'),
     description: t('description'),
-    alternates: getPageAlternates('/contact', locale),
   };
 };
 

@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { getRequestConfig } from 'next-intl/server';
 
 import { WEB_HOST } from '@app/config';
+import { isProd } from './app/utils';
 
 export type LanguageCode = 'de' | 'en';
 
@@ -20,15 +21,20 @@ export const matchLocale = (languages: readonly string[]) => (
   match(languages, supportedLangs, 'en') as LanguageCode
 );
 
-export const getPageAlternates = (identifier: string, lang: LanguageCode) => {
+export const generatePageMeta = (identifier: string, locale: LanguageCode) => {
   const languages: Record<string, string> = {};
   supportedLangs.forEach((lang) => {
     languages[lang] = `${WEB_HOST}${l(identifier, lang)}`;
   });
 
   return {
-    canonical: languages[lang],
-    languages,
+    alternates: {
+      canonical: languages[locale],
+      languages,
+    },
+    robots: {
+      index: isProd(),
+    },
   };
 };
 

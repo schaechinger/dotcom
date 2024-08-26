@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 import { WEB_HOST } from '@app/config';
 import { loadProjects } from '@lib/contentful';
-import { getPageAlternates, supportedLangs } from '@/i18n';
+import { generatePageMeta, supportedLangs } from '@/i18n';
 
 export const dynamic = 'force-dynamic';
 
@@ -23,11 +23,11 @@ const sitemap = async () => {
     { page: '/privacy', freq: 'weekly', priority: 0.3 },
   ] as { page: string; freq: 'weekly' | 'monthly', priority: number }[])
     .forEach(({ page, freq, priority }) => {
-      supportedLangs.forEach((lang) => {
-        const alternates = getPageAlternates(page, lang);
+      supportedLangs.forEach((locale) => {
+        const { alternates } = generatePageMeta(page, locale);
 
         sitemap.push({
-          url: `${WEB_HOST}/${lang}${page}`,
+          url: `${WEB_HOST}/${locale}${page}`,
           lastModified: modified,
           changeFrequency: freq,
           priority,
@@ -45,12 +45,12 @@ const sitemap = async () => {
       latestProject = projectModified;
     }
 
-    supportedLangs.forEach((lang) => {
+    supportedLangs.forEach((locale) => {
       const page = `/projects/${project.slug}`;
-      const alternates = getPageAlternates(page, lang);
+      const { alternates } = generatePageMeta(page, locale);
 
       sitemap.push({
-        url: `${WEB_HOST}/${lang}${page}`,
+        url: `${WEB_HOST}/${locale}${page}`,
         lastModified: projectModified,
         changeFrequency: 'monthly',
         priority: 0.7,

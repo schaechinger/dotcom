@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import { l, getPageAlternates, type LanguageCode } from '@/i18n';
+import { type LanguageCode, generatePageMeta, l } from '@/i18n';
 import { IMAGE_HOST } from '@app/config';
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/atoms/LinkButton';
@@ -30,14 +30,14 @@ export const generateProjectMetadata = async (slug: string, locale: LanguageCode
   const t = await getTranslations('pages.projects.details');
   const project = await loadProjectBySlug(slug, locale);
 
-  const metadata: Metadata = {
+  let metadata: Metadata = {
     title: t('title'),
   };
 
   if (project) {
+    metadata = generatePageMeta(`/projects/${project.slug}`, locale);
     metadata.title = project.title;
     metadata.description = project.description;
-    metadata.alternates = getPageAlternates(`/projects/${project.slug}`, locale);
     metadata.openGraph = {
       title: metadata.title,
       description: metadata.description,

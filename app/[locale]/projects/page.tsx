@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import { getPageAlternates } from '@/i18n';
+import { generatePageMeta } from '@/i18n';
 import type { PageProps } from '@app/interfaces';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
@@ -12,9 +12,9 @@ export const generateMetadata = async ({ params: { locale } }: PageProps): Promi
   const t = await getTranslations('pages.projects');
 
   return {
+    ...generatePageMeta('/projects', locale),
     title: t('title'),
     description: t('description'),
-    alternates: getPageAlternates('/projects', locale),
   };
 };
 
