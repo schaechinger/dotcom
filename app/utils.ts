@@ -6,10 +6,14 @@ import { PROD_HOST, WEB_HOST } from '@app/config';
  *
  * @param date The date in string format.
  */
-export const formatDate = (date: string, lang?: LanguageCode) => {
+export const formatDate = (date: string, lang?: LanguageCode, day = false) => {
   const dateObj = new Date(date);
 
-  return dateObj.toLocaleDateString(lang || 'en', { year: 'numeric', month: '2-digit' });
+  return dateObj.toLocaleDateString(lang || 'en', {
+    year: 'numeric',
+    month: '2-digit',
+    day: day ? '2-digit' : undefined,
+  });
 };
 
 /**

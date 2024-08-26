@@ -66,7 +66,10 @@ const home = {
       'Meine Aufgabenbereiche erstrecken sich über komplexe APIs mit <highlight>Node.js</highlight>, performante Frontends mit <highlight>React</highlight> und <highlight>Vue.js</highlight>, Absicherung von Systemen sowie Deployment und Übergabe an Kunden.',
       'Abseits der Arbeit bin ich leidenschaftlicher Läufer. Mein großes Ziel ist die Teilnahmen an den sechs Major Marathons, von denen ich bis auf Boston schon fünf abschließen konnte.',
     ],
-    goto: 'Mehr zu meiner Tätigkeit',
+    goto: {
+      marathons: 'Meine sportlichen Erfolge',
+      work: 'Mehr zu meiner Tätigkeit',
+    },
   },
   availability: {
     title: 'Aktuelle Verfügbarkeit',

@@ -66,7 +66,10 @@ const home = {
       'My responsibilities include complex APIs in <highlight>Node.js</highlight>, high performance frontends in <highlight>React</highlight> and <highlight>Vue.js</highlight>, protection of systems as well as deployment and handover to the customer.',
       'Besides work I am a passionate runner. My ultimate goal is to take part in all of the six World Major Marathons, of which I already participated in five except for Boston.',
     ],
-    goto: 'More about my work',
+    goto: {
+      marathons: 'My sports achievements',
+      work: 'More about my work',
+    },
   },
   availability: {
     title: 'Current Availability',
