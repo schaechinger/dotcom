@@ -12,6 +12,7 @@ import { type AvailabilityData } from '@models/availability';
 import { type CareerData, sortCareerList } from '@models/career';
 import { type CertificationData, sortCertificationList } from '@models/certification';
 import { type ProjectData } from '@models/project';
+import { ParticipationData, sortParticipationList } from '../models/participation';
 
 
 type AvailabilityEntrySkeleton = {
@@ -93,6 +94,20 @@ type ProjectEntrySkeleton = {
     links?: EntryFieldTypes.Object,
     roles?: EntryFieldTypes.EntryLink<RoleEntrySkeleton>[],
     details?: EntryFieldTypes.Object,
+  },
+};
+
+type ParticipationEntrySkeleton = {
+  contentTypeId: 'participation',
+  fields: {
+    event: EntryFieldTypes.Text,
+    contest: EntryFieldTypes.Text,
+    slug: EntryFieldTypes.Text,
+    date: EntryFieldTypes.Date,
+    sport: EntryFieldTypes.Text,
+    sections: EntryFieldTypes.Object,
+    time: EntryFieldTypes.Text,
+    rank: EntryFieldTypes.Number,
   },
 };
 
@@ -213,6 +228,25 @@ export const loadProjects = async (locale?: LanguageCode, highlights = false) =>
           highlight: p.highlight,
         }))
       ))
+      .catch(() => null)
+  ))();
+};
+
+export const loadParticipationsByContest = async (contest: string, locale?: LanguageCode) => {
+  const client = connect();
+  if (!client) {
+    return null;
+  }
+
+  return cache(async () => (
+    await client.getEntries<ParticipationEntrySkeleton>({
+      content_type: 'participation',
+      'fields.contest': contest,
+      // @ts-ignore
+      locale: getLocale(locale),
+    })
+      .then(getEntryFields<ParticipationData>)
+      .then(sortParticipationList)
       .catch(() => null)
   ))();
 };

@@ -41,11 +41,13 @@ const HomePage = ({ params: { locale } }: PageProps) => {
       <PageSection id="about" first>
         <h1 className="text-h1">{t('about.title')}</h1>
 
-        <p className="mb-2">{t.rich('about.text.0', aboutTextOptions)}</p>
-        <p className="mb-2">{t.rich('about.text.1', aboutTextOptions)}</p>
-        <p className="mb-4">{t.rich('about.text.2', aboutTextOptions)}</p>
+        <p>{t.rich('about.text.0', aboutTextOptions)}</p>
+        <p className="mt-2">{t.rich('about.text.1', aboutTextOptions)}</p>
+        <p className="my-4"><LinkButton href={l('/work', locale)} label={t('about.goto.work')} /></p>
 
-        <p><LinkButton href={l('/work', locale)} label={t('about.goto')} /></p>
+        <p>{t.rich('about.text.2', aboutTextOptions)}</p>
+        <p className="mt-4"><LinkButton href={l('/sports', locale)} label={t('about.goto.marathons')} /></p>
+
       </PageSection>
 
         <PageSection id="availability">
