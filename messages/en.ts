@@ -48,15 +48,15 @@ const contact = {
 
   types: {
     call: {
-      title: 'Via phone',
+      title: 'Phone',
       goto: 'Give me a call',
     },
     mail: {
-      title: 'Via mail',
+      title: 'Email',
       goto: 'Drop me a mail',
     },
     write: {
-      title: 'Write directly',
+      title: 'Message Me',
     },
   },
 };
@@ -345,7 +345,7 @@ const translations = {
   careerList: {
     error: 'There was an error loading the career entries.',
     goto: {
-      resume: 'Browse complete career',
+      resume: 'Browse my career',
       download: 'Download resume',
     },
   },

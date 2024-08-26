@@ -8,7 +8,7 @@ const SocialLinks = () => (
   <div className="text-2xl flex gap-6 -mx-1">
     <SocialLink
       href="https://linkedin.com/in/schaechinger"
-      className="hover:dark:text-dark-50 hover:bg-social-linkedin"
+      className="hover:text-dark-50 hover:dark:text-dark-50 hover:bg-social-linkedin"
       title="LinkedIn"
       icon={<LinkedIn />}
     />
