@@ -1,10 +1,8 @@
 'use client';
 
-import KonamiCode from '@components/KonamiCode';
 import LinkButton from '@components/atoms/LinkButton';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
-import { unstable_setRequestLocale } from 'next-intl/server';
 
 const ServerError = () => (
   <PageContainer name="error" narrow>
@@ -16,7 +14,7 @@ const ServerError = () => (
       </p>
 
       <p>
-        <LinkButton href="/" label="Go back home" />
+        <LinkButton href="/" label="Go to homepage" />
       </p>
     </PageSection>
   </PageContainer>
