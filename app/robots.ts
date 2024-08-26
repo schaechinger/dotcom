@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import { headers } from 'next/headers';
 
 import { WEB_HOST } from '@app/config';
 import { isProd } from '@app/utils';
@@ -6,6 +7,9 @@ import { isProd } from '@app/utils';
 export const dynamic = 'force-dynamic';
 
 const robots = async (): Promise<MetadataRoute.Robots> => {
+  // force dynamic to get correct web host
+  headers();
+
   let allow: string | undefined = '/';
   let disallow = '/downloads/';
 
