@@ -37,7 +37,7 @@ const LanguageSuggestion = () => {
 
   return suggestion !== locale && (
     <aside lang={suggestion} dir="ltr" className="language-suggestion pt-4 lg:pt-10 lg:max-w-screen-sm">
-      <section className="border-y sm:border-x border-primary-200 bg-primary-100 -mx-4 sm:rounded-md px-4 py-2 relative">
+      <section className="border-y sm:border-x border-primary-300 bg-primary-100 -mx-4 sm:rounded-md px-4 py-2 relative">
         <button
           onClick={hide}
           className="absolute right-3 top-1"

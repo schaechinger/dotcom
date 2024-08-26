@@ -4,6 +4,7 @@ import KonamiCode from '@components/KonamiCode';
 import LinkButton from '@components/atoms/LinkButton';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
 const ServerError = () => (
   <PageContainer name="error" narrow>
@@ -17,8 +18,6 @@ const ServerError = () => (
       <p>
         <LinkButton href="/" label="Go back home" />
       </p>
-
-      <KonamiCode />
     </PageSection>
   </PageContainer>
 );

@@ -17,19 +17,19 @@ export const generateMetadata = async (): Promise<Metadata> => {
 };
 
 const LocalizedNotFoundPage = () => {
-  const t = useTranslations('errors.notFound');
+  const t = useTranslations('errors');
   const lang = useLocale() as LanguageCode || 'en';
 
   return (
     <PageContainer name="not-found" narrow>
       <PageSection id="not-found" first>
-        <h1 className="text-h1">{t('title')}</h1>
+        <h1 className="text-h1">{t('notFound.title')}</h1>
 
-        <p className="mb-4">{t('text')}</p>
+        <p className="mb-4">{t('notFound.text')}</p>
 
-        <LinkButton href={l('/', lang)} label={t('goto')} />
+        <LinkButton href={l('/', lang)} label={t('notFound.goto')} />
 
-        <KonamiCode />
+        <KonamiCode translations={t.raw('konamiCode')} />
       </PageSection>
     </PageContainer>
   );

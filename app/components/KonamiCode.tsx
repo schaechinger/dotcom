@@ -4,10 +4,15 @@ import { useEffect, useState } from 'react';
 
 import LinkButton from '@components/atoms/LinkButton';
 import ArrowRight from '@components/icons/ArrowRight';
+import PageSection from './organisms/PageSection';
 
 const code = ['arrowup', 'arrowup', 'arrowdown', 'arrowdown', 'arrowleft', 'arrowright', 'arrowleft', 'arrowright', 'b', 'a'];
 
-const KonamiCode = () => {
+type Props = {
+  translations: Record<string, string>;
+};
+
+const KonamiCode = ({ translations }: Props) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -21,7 +26,7 @@ const KonamiCode = () => {
 
         e.preventDefault();
         e.stopImmediatePropagation();
-      } else {
+      } else if (10 > index) {
         setIndex(0);
       }
     };
@@ -34,8 +39,8 @@ const KonamiCode = () => {
   }, [index]);
 
   return (
-    <>
-      <p className="mt-10 flex gap-2">
+    <PageSection id="konami" dense>
+      <p className="flex gap-2">
         { 1 > index
           ? <ArrowRight className="mt-0.5 -rotate-90 text-dark-200 dark:text-dark-700" />
           : <span>&#x30b3;</span> }
@@ -71,12 +76,12 @@ const KonamiCode = () => {
       { 10 <= index
         && <p className="mt-4">
           <LinkButton
-            href={`mailto:manuel@schaechinger.com?subject=Projekt-Anfrage über Homepage [${
+            href={`mailto:manuel@schaechinger.com?subject=${translations.subject} [${
               code.map((c, i) => c[index - (i + 1)]).reverse().join('')}]`}
-            label="Jetzt durchstarten"
+            label={translations.goto}
           />
         </p> }
-    </>
+    </PageSection>
   );
 };
 

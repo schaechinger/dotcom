@@ -365,12 +365,16 @@ const translations = {
     notFound: {
       title: 'Page not found',
       text: 'Hier geht es nicht weiter, bitte geh zur Startseite oder wähle einen passenden Punkt aus dem Menü aus.',
-      goto: 'Go back home',
+      goto: 'Go to homepage',
     },
     projectNotFound: {
       title: 'Project not found',
       text: 'The project does not exist or is no longer available. Please have a look at my other projects and find a matching one.',
       goto: 'Go to project list',
+    },
+    konamiCode: {
+      goto: 'Get in touch now',
+      subject: 'Project inquiry from website'
     },
   },
 };

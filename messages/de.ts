@@ -5,6 +5,8 @@
  * Name: Deutsch
  */
 
+import KonamiCode from "@/app/components/KonamiCode";
+
 const general = {
   meta: {
     description: 'Senior Fullstack JavaScript Engineer und Berater für komplexe und skalierbare Softwaresysteme in München.',
@@ -371,6 +373,10 @@ const translations = {
       title: 'Projekt nicht gefunden',
       text: 'Dieses Projekt existiert nicht oder ist nicht mehr verfgbar. Sieh dir gerne meine anderen Projekte an und finde das für dich passende.',
       goto: 'Zur Projektliste',
+    },
+    konamiCode: {
+      goto: 'Jetzt durchstarten',
+      subject: 'Projekt-Anfrage über Homepage',
     },
   },
 };
