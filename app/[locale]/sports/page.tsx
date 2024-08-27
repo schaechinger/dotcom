@@ -28,7 +28,7 @@ const SportsPage = async ({ params: { locale } }: PageProps) => {
   return (
     <PageContainer name="sports">
       <PageSection id="sports" first>
-        <h1 className="text-h1">{t('title')}</h1>
+        <h1 className="text-h1">{t('pageTitle')}</h1>
 
         <p>{t('text')}</p>
 

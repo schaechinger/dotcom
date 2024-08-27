@@ -254,7 +254,8 @@ const resume = {
 };
 
 const sports = {
-  title: 'Meine sportlichen Erfolge',
+  title: 'Sportliche Erfolge',
+  pageTitle: 'Meine sportlichen Erfolge',
   description: 'Meine persönlichen Marathon- und Ausdauersporterfolge.',
   text: 'Durch meine Leidenschaft zum Ausdauersport ist auch das Projekt Medal Monday entspanden, das ich seit 2022 zusammen mit Maik Paulus vorantreibe um allen Sportlern ein digitales Zuhause für ihre Wettkämpfe bereitzustellen.',
   goto: {

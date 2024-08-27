@@ -253,7 +253,8 @@ const resume = {
 
 
 const sports = {
-  title: 'My Sports Achievements',
+  title: 'Sports Achievements',
+  pageTitle: 'My Sports Achievements',
   description: 'My personal marathons and endurance sports achivements.',
   text: 'My passion for endurance sport was the reason to kick off the project Medal Monday that I founded in 2022 together with Maik Paulus to provide all athletes a digital home for their event contests.',
   goto: {
