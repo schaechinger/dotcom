@@ -18,7 +18,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
 const ProjectNotFound = () => {
   const t = useTranslations('errors');
-  const lang = useLocale() as LanguageCode || 'en';
+  const locale = useLocale() as LanguageCode || 'en';
 
   return (
     <PageContainer name="not-found" narrow>
@@ -27,9 +27,9 @@ const ProjectNotFound = () => {
 
         <p className="mb-4">{t('projectNotFound.text')}</p>
 
-        <LinkButton href={l('/projects', lang)} label={t('projectNotFound.goto')} back />
+        <LinkButton href={l('/projects', locale)} label={t('projectNotFound.goto')} back />
 
-        <KonamiCode translations={t.raw('konamitCode')} />
+        <KonamiCode translations={t.raw('konamiCode')} />
       </PageSection>
     </PageContainer>
   );

@@ -1,7 +1,6 @@
 ul.bullet-list {
   li {
-    margin-left: 1.25rem;
-    position: relative;
+    @apply relative ml-5;
 
     &::before {
       content: '';

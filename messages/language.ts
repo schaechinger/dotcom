@@ -13,8 +13,8 @@ const language = {
   },
   suggestion: {
     text: {
-      de: 'Dein Browser ist auf Deutsch eingestellt. Möchtest du die Sprache dieser Seite ändern?',
-      en: 'Your browser is set to English. Would you like to switch the language of this page?',
+      de: 'Diese Seite ist auch auf Deutsch verfügbar.',
+      en: 'This page is also available in English.',
     },
     cancel: {
       de: 'Schließen',
@@ -25,8 +25,8 @@ const language = {
       en: 'Stick with the current language',
     },
     goto: {
-      de: 'Zur deutschen Seite',
-      en: 'Visit English site',
+      de: 'Sprache wechseln',
+      en: 'Change language',
     },
   },
 };
