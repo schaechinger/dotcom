@@ -12,7 +12,7 @@ const sitemap = async () => {
   const sitemap: MetadataRoute.Sitemap = [];
 
   ([
-    { page: '/', freq: 'weekly', priority: 1 },
+    { page: '', freq: 'weekly', priority: 1 },
     { page: '/resume', freq: 'monthly', priority: 0.9 },
     { page: '/work', freq: 'monthly', priority: 0.8 },
     { page: '/projects', freq: 'weekly', priority: 0.8 },
