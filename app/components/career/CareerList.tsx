@@ -1,11 +1,11 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 
-import { l, type LanguageCode } from '@/i18n';
 import { STATIC_HOST } from '@app/config';
 import LinkButton from '@components/atoms/LinkButton';
 import CareerItem from '@components/career/CareerItem';
 import HistoryItemList from '@components/organisms/HistoryItemList';
 import { loadCareer } from '@lib/contentful';
+import { l, type LocaleCode } from '@lib/router';
 
 type Props = {
   heading?: string;
@@ -14,7 +14,7 @@ type Props = {
 
 const CareerList = async ({ heading, latest }: Props) => {
   const t = await getTranslations('careerList');
-  const locale = await getLocale() as LanguageCode;
+  const locale = await getLocale() as LocaleCode;
   const career = (await loadCareer(locale) || []).slice(0, latest ? 3 : undefined);
 
   const resumeLink = 'de' === locale

@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import { generatePageMeta } from '@/i18n';
 import { PageProps } from '@app/interfaces';
 import CertificationList from '@components/certifications/CertificationList';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
+import { generatePageMeta } from '@lib/seo';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.certifications');

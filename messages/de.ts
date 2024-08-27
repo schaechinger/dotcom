@@ -7,7 +7,7 @@
 
 const general = {
   meta: {
-    title: 'Fullstack JavaScript Engineer & Consultant',
+    title: 'Manuel Schächinger – Fullstack JavaScript Engineer & Consultant',
     description: 'Senior Fullstack JavaScript Engineer und Berater für komplexe und skalierbare Softwaresysteme in München.',
   },
   address: {
@@ -19,6 +19,29 @@ const general = {
 
 const about = {
   title: 'Über mich',
+  pageTitle: 'Servus, ich bin Manuel.',
+  description: '',
+
+  profile: {
+    title: 'Kurz zu mir:',
+    imageAlt: 'Ich vor dem Wall der Burg Osaka, Japan.',
+    bullets: {
+      age: 'Ich bin zur Zeit {age} Jahre alt.',
+      location: 'Ich lebe im schönen Ottobrunn direkt neben München.',
+      coffee: 'Ich liebe Kaffee.',
+      work: 'Ich bin seit über {years} Jahren Softwareentwickler.',
+      stack: 'Mein Fokus liegt auf <link>JavaScript</link>.',
+      education: 'Ich habe einen Bachelor in <link>Informatik</link>.',
+      sports: 'Ich bin leidenschaftlicher <link>Marathonläufer</link>.',
+      medalmonday: 'Ich bin Mitgründer von <link>Medal Monday</link>.',
+    },
+
+    text: 'Das sollten die wichtigsten Eckpunkte sein. Wenn du mehr erfahren möchtest, sie dir bitte die anderen Seiten an:',
+    goto: {
+      resume: 'Mehr über meine Erfahrung',
+      projects: 'Meine Projektliste',
+    },
+  },
 };
 
 const certifications = {
@@ -64,9 +87,9 @@ const contact = {
 
 const home = {
   about: {
-    title: 'Servus, ich bin Manuel.',
+    title: about.pageTitle,
     text: [
-      'Seit über zehn Jahren entwickle ich professionelle Anwendungen sowohl im Backend als auch im Frontend. Ich habe mich auf <highlight>JavaScript</highlight> spezialisiert, da diese Sprache ein fast grenzenloses Spektrum an Möglichkeiten und Einsatzgebieten bietet.',
+      'Seit über {years} Jahren entwickle ich professionelle Software-Anwendungen sowohl im Backend als auch im Frontend. Ich habe mich auf <highlight>JavaScript</highlight> spezialisiert, da diese Sprache ein fast grenzenloses Spektrum an Möglichkeiten und Einsatzgebieten bietet.',
       'Meine Aufgabenbereiche erstrecken sich über komplexe APIs mit <highlight>Node.js</highlight>, performante Frontends mit <highlight>React</highlight> und <highlight>Vue.js</highlight>, Absicherung von Systemen sowie Deployment und Übergabe an Kunden.',
       'Abseits der Arbeit bin ich leidenschaftlicher Läufer. Mein großes Ziel ist die Teilnahmen an den sechs Major Marathons, von denen ich bis auf Boston schon fünf abschließen konnte.',
     ],
@@ -348,6 +371,7 @@ const translations = {
         'performance-kritische Softwaresysteme.',
       ],
       navigation: {
+        home: 'Startseite',
         about: about.title,
         resume: resume.title,
         projects: projects.title,
@@ -401,7 +425,7 @@ const translations = {
       goto: 'Zur Projektliste',
     },
     konamiCode: {
-      goto: 'Jetzt durchstarten',
+      goto: 'Ich möchte einen Kaffee',
       subject: 'Projekt-Anfrage über Homepage',
     },
   },

@@ -3,7 +3,6 @@ import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { ReCaptchaProvider } from 'next-recaptcha-v3';
 
-import { generatePageMeta } from '@/i18n';
 import { RECAPTCHA_SITE_KEY } from '@app/config';
 import type { PageProps } from '@app/interfaces';
 import AvailabilityIndicator from '@components/atoms/AvailabilityIndicator';
@@ -11,6 +10,7 @@ import LinkButton from '@components/atoms/LinkButton';
 import ContactForm from '@components/forms/ContactForm';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
+import { generatePageMeta } from '@lib/seo';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.contact');

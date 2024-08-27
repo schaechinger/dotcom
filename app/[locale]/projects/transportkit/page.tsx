@@ -2,7 +2,6 @@ import Script from 'next/script';
 import { notFound } from 'next/navigation';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import { l } from '@/i18n';
 import { STATIC_HOST } from '@app/config';
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/atoms/LinkButton';
@@ -12,6 +11,7 @@ import DetailBlock from '@components/projects/DetailBlock';
 import ProjectLinks from '@components/projects/ProjectLinks';
 import ProjectMasterData from '@components/projects/ProjectMasterData';
 import { loadProjectBySlug } from '@lib/contentful';
+import { l } from '@lib/router';
 import { generateBreadcrumbJson } from '@lib/seo';
 
 import { generateProjectMetadata } from '../[slug]/page';
@@ -43,8 +43,8 @@ const TransportKitPage = async ({ params: { locale } }: PageProps) => {
           href={`${STATIC_HOST}/projects/transportkit/latest/transportkit.min.css?gc=v4`} />
         <ProjectMasterData project={project} />
 
-        { project.details?.description
-          && <DetailBlock id="description" content={project.details.description} /> }
+        {project.details?.description
+          && <DetailBlock id="description" content={project.details.description} />}
 
         <PageSection id="munich" dense>
           <h2 className="text-h2">{t('slug.transportkit.munich')}</h2>

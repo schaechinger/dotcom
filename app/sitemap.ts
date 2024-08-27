@@ -1,8 +1,8 @@
 import type { MetadataRoute } from 'next';
 
-import { WEB_HOST } from '@app/config';
+import { supportedLangs, WEB_HOST } from '@app/config';
 import { loadProjects } from '@lib/contentful';
-import { generatePageMeta, supportedLangs } from '@/i18n';
+import { generatePageMeta } from '@lib/seo';
 
 export const dynamic = 'force-dynamic';
 
@@ -16,11 +16,13 @@ const sitemap = async () => {
     { page: '/resume', freq: 'monthly', priority: 0.9 },
     { page: '/work', freq: 'monthly', priority: 0.8 },
     { page: '/projects', freq: 'weekly', priority: 0.8 },
+    { page: '/about', freq: 'monthly', priority: 0.7 },
     { page: '/contact', freq: 'monthly', priority: 0.6 },
     { page: '/certifications', freq: 'monthly', priority: 0.6 },
+    { page: '/sports', freq: 'monthly', priority: 0.7 },
     // legal
-    { page: '/imprint', freq: 'weekly', priority: 0.3 },
-    { page: '/privacy', freq: 'weekly', priority: 0.3 },
+    { page: '/imprint', freq: 'monthly', priority: 0.3 },
+    { page: '/privacy', freq: 'monthly', priority: 0.3 },
   ] as { page: string; freq: 'weekly' | 'monthly', priority: number }[])
     .forEach(({ page, freq, priority }) => {
       supportedLangs.forEach((locale) => {

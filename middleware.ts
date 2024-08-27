@@ -1,7 +1,8 @@
 import Negotiator from 'negotiator'
-import { NextRequest, NextResponse } from 'next/server';
+import { type NextRequest, NextResponse } from 'next/server';
 
-import { matchLocale, splitPath, supportedLangs } from '@/i18n';
+import { supportedLangs } from '@app/config';
+import { matchLocale, splitPath } from '@lib/router';
 
 const getLocale = (req: NextRequest) => {
   const headers = { 'accept-language': req.headers.get('accept-language') || '' };
@@ -36,6 +37,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/((?!_next/images|_next/static|images/|api/|revalidate|favicon.ico|apple-icon.png|robots.txt|humans.txt|sitemap.xml|manifest.webmanifest).*)',
+    '/((?!_next/images/|_next/static/|images/|api/|revalidate|favicon.ico|apple-icon.png|robots.txt|humans.txt|sitemap.xml|manifest.webmanifest).*)',
   ],
 };

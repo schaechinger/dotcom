@@ -7,12 +7,12 @@ import {
 } from 'contentful';
 import { cache } from 'react';
 
-import { type LanguageCode } from '@/i18n';
+import { type LocaleCode } from '@lib/router';
 import { type AvailabilityData } from '@models/availability';
 import { type CareerData, sortCareerList } from '@models/career';
 import { type CertificationData, sortCertificationList } from '@models/certification';
+import { type ParticipationData, sortParticipationList } from '@models/participation';
 import { type ProjectData } from '@models/project';
-import { ParticipationData, sortParticipationList } from '../models/participation';
 
 
 type AvailabilityEntrySkeleton = {
@@ -160,9 +160,9 @@ export const loadAvailability = async () => {
   ))();
 };
 
-const getLocale = (locale?: LanguageCode) => (locale || 'en').startsWith('de') ? 'de' : 'en';
+const getLocale = (locale?: LocaleCode) => (locale || 'en').startsWith('de') ? 'de' : 'en';
 
-export const loadCareer = async (locale?: LanguageCode) => {
+export const loadCareer = async (locale?: LocaleCode) => {
   const client = connect();
   if (!client) {
     return null;
@@ -180,7 +180,7 @@ export const loadCareer = async (locale?: LanguageCode) => {
   ))();
 };
 
-export const loadCertifications = async (locale?: LanguageCode) => {
+export const loadCertifications = async (locale?: LocaleCode) => {
   const client = connect();
   if (!client) {
     return null;
@@ -198,7 +198,7 @@ export const loadCertifications = async (locale?: LanguageCode) => {
   ))();
 };
 
-export const loadProjects = async (locale?: LanguageCode, highlights = false) => {
+export const loadProjects = async (locale?: LocaleCode, highlights = false) => {
   const client = connect();
   if (!client) {
     return null;
@@ -232,7 +232,7 @@ export const loadProjects = async (locale?: LanguageCode, highlights = false) =>
   ))();
 };
 
-export const loadParticipationsByContest = async (contest: string, locale?: LanguageCode) => {
+export const loadParticipationsByContest = async (contest: string, locale?: LocaleCode) => {
   const client = connect();
   if (!client) {
     return null;
@@ -251,7 +251,7 @@ export const loadParticipationsByContest = async (contest: string, locale?: Lang
   ))();
 };
 
-export const loadProjectBySlug = async (slug: string, locale: LanguageCode) => {
+export const loadProjectBySlug = async (slug: string, locale: LocaleCode) => {
   const client = connect();
   if (!client) {
     return null;

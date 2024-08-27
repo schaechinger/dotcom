@@ -1,6 +1,5 @@
 import { useLocale } from 'next-intl';
 
-import { type LanguageCode } from '@/i18n';
 import { formatDate } from '@app/utils';
 import HistoryItemDescription from '@components/atoms/HistoryItemDescription';
 import HistoryItemTechList from '@components/atoms/HistoryItemTechList';
@@ -9,6 +8,7 @@ import HistoryItemCompany from '@components/molecules/HistoryItemCompany';
 import HistoryItemHeader from '@components/molecules/HistoryItemHeader';
 import HistoryItemContainer from '@components/organisms/HistoryItemContainer';
 import { type CertificationData } from '@models/certification';
+import { type LocaleCode } from '@lib/router';
 
 type Props = {
   heading?: string;
@@ -16,7 +16,7 @@ type Props = {
 };
 
 const CertificationItem = ({ heading, item }: Props) => {
-  const locale = useLocale() as LanguageCode;
+  const locale = useLocale() as LocaleCode;
 
   return (
     <HistoryItemContainer>

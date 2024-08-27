@@ -12,7 +12,7 @@ type Props = {
 };
 
 const CareerItem = ({ heading, item }: Props) => (
-  <HistoryItemContainer>
+  <HistoryItemContainer id={item.slug}>
     <HistoryItemHeader
       date={<TimeSpan startDate={item.startDate} endDate={item.endDate} />}
       heading={heading}

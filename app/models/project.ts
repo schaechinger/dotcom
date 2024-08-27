@@ -1,4 +1,5 @@
-import { type LanguageCode } from '@/i18n';
+import { type LocaleCode } from '@lib/router';
+
 import type { HistoryData, LinkData } from './history';
 
 export type ProjectType = 'freelance' | 'employee' | 'private' | 'founder';
@@ -22,7 +23,7 @@ export type ProjectDetailData = {
 export type ProjectImage = {
   src: string;
   label?: string;
-  lang?: LanguageCode;
+  lang?: LocaleCode;
   de?: {
     label?: string;
   };

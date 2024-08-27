@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { useLocale } from 'next-intl';
 import { useState } from 'react';
 
-import { type LanguageCode } from '@/i18n';
 import { IMAGE_HOST } from '@app/config';
+import { type LocaleCode } from '@lib/router';
 import { type ProjectImage } from '@models/project';
 
 type Props = {
@@ -15,7 +15,7 @@ type Props = {
 };
 
 const ProjectImages = ({ slug, images }: Props) => {
-  const locale = useLocale() as LanguageCode;
+  const locale = useLocale() as LocaleCode;
   const [selected, setSelected] = useState(0);
 
   const getImageLabel = (image: ProjectImage) => (

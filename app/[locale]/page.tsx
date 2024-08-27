@@ -4,8 +4,8 @@ import Script from 'next/script';
 import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
-import { generatePageMeta, l } from '@/i18n';
 import type { PageProps } from '@app/interfaces';
+import { getYearSpan } from '@app/utils';
 import AvailabilityIndicator from '@components/atoms/AvailabilityIndicator';
 import HighlightLabel from '@components/atoms/HighlightLabel';
 import LinkButton from '@components/atoms/LinkButton';
@@ -14,7 +14,8 @@ import CertificationList from '@components/certifications/CertificationList';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import ProjectList from '@components/projects/ProjectList';
-import { generateProfileJson } from '@lib/seo';
+import { l } from '@lib/router';
+import { generatePageMeta, generateProfileJson } from '@lib/seo';
 
 export const generateMetadata = ({ params: { locale } }: PageProps): Metadata => generatePageMeta('/', locale);
 
@@ -24,6 +25,7 @@ const HomePage = ({ params: { locale } }: PageProps) => {
 
   const aboutTextOptions = {
     highlight: (label: React.ReactNode) => <HighlightLabel>{label}</HighlightLabel>,
+    years: getYearSpan('2014-02-01'),
   };
 
   const jsonLd = generateProfileJson();

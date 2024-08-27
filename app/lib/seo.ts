@@ -1,5 +1,6 @@
-import { l, LanguageCode } from '@/i18n';
-import { WEB_HOST } from '@app/config';
+import { supportedLangs, WEB_HOST } from '@app/config';
+import { isProd } from '@app/utils';
+import { l, type LocaleCode } from '@lib/router';
 
 const wrapJson = (type: string, json: any) => ({
   '@context': 'https://schema.org',
@@ -12,7 +13,7 @@ type BreadcrumbData = {
   title: string;
 };
 
-export const generateBreadcrumbJson = (breadcrumbs: BreadcrumbData[], locale: LanguageCode) => wrapJson(
+export const generateBreadcrumbJson = (breadcrumbs: BreadcrumbData[], locale: LocaleCode) => wrapJson(
   'BreadcrumbList',
   {
     itemListElement: breadcrumbs.map((data, i) => ({
@@ -45,3 +46,21 @@ export const generateProfileJson = () => wrapJson(
     },
   },
 );
+
+export const generatePageMeta = (identifier: string, locale: LocaleCode) => {
+  const languages: Record<string, string> = {};
+  supportedLangs.forEach((lang) => {
+    languages[lang] = `${WEB_HOST}${l(identifier, lang)}`;
+  });
+
+  return {
+    alternates: {
+      canonical: languages[locale],
+      languages,
+    },
+    robots: {
+      index: isProd(),
+    },
+  };
+};
+

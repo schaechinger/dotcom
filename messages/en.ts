@@ -7,7 +7,7 @@
 
 const general = {
   meta: {
-    title: 'Fullstack JavaScript Engineer & Consultant',
+    title: 'Manuel Schächinger – Fullstack JavaScript Engineer & Consultant',
     description: 'Senior Fullstack JavaScript Engineer and consultant for complex and scalable software systems in Munich.',
   },
   address: {
@@ -19,6 +19,29 @@ const general = {
 
 const about = {
   title: 'About Me',
+  pageTitle: 'Hi, I\'m Manuel.',
+  description: '',
+
+  profile: {
+    title: 'My Profile:',
+    imageAlt: 'Me in front of the wall of Osaka Castle, Japan.',
+    bullets: {
+      age: 'I am currently {age} years old.',
+      location: 'I live in Ottobrunn next to Munich.',
+      coffee: 'I love coffee.',
+      work: 'I am a software engineer for more than {years} years.',
+      stack: 'I focus on <link>JavaScript</link>.',
+      education: 'I have a Bachelor\'s degree in <link>Computer Science</link>.',
+      sports: 'I\'m a passionate <link>marathon runner</link>.',
+      medalmonday: 'I am co-founder of <link>Medal Monday</link>.',
+    },
+
+    text: 'That should cover the key points. For more, please have a look at the other pages:',
+    goto: {
+      resume: 'Check out my experience',
+      projects: 'Browse my project list',
+    },
+  },
 };
 
 const certifications = {
@@ -64,9 +87,9 @@ const contact = {
 
 const home = {
   about: {
-    title: 'Hi, I\'m Manuel.',
+    title: about.pageTitle,
     text: [
-      'For more than 10 years I am developing professional applications in both backend and frontend. I focus on <highlight>JavaScript</highlight> as this language offers a wide variety of opportunities and fields of application.',
+      'For more than {years} years, I have been developing professional software applications in both backend and frontend. I focus on <highlight>JavaScript</highlight> as this language offers a wide variety of opportunities and fields of application.',
       'My responsibilities include complex APIs in <highlight>Node.js</highlight>, high performance frontends in <highlight>React</highlight> and <highlight>Vue.js</highlight>, protection of systems as well as deployment and handover to the customer.',
       'Besides work I am a passionate runner. My ultimate goal is to take part in all of the six World Major Marathons, of which I already participated in five except for Boston.',
     ],
@@ -349,6 +372,7 @@ const translations = {
         'performance critical software systems.'
       ],
       navigation: {
+        home: 'Homepage',
         about: about.title,
         resume: resume.title,
         projects: projects.title,
@@ -402,7 +426,7 @@ const translations = {
       goto: 'Go to project list',
     },
     konamiCode: {
-      goto: 'Get in touch now',
+      goto: 'Get a free coffee',
       subject: 'Project inquiry from website'
     },
   },

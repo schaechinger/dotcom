@@ -1,9 +1,9 @@
 import { useLocale, useTranslations } from 'next-intl';
 
-import { LanguageCode } from '@/i18n';
 import { formatDate } from '@app/utils';
 import LabeledContent from '@components/atoms/LabeledContent';
 import { getSpeed, type ParticipationData } from '@models/participation';
+import { type LocaleCode } from '@lib/router';
 
 export type SportType = 'running' | 'cycling' | 'multisport';
 
@@ -12,7 +12,7 @@ type Props = {
 };
 
 const ContestParticipation = ({ participation }: Props) => {
-  const locale = useLocale() as LanguageCode;
+  const locale = useLocale() as LocaleCode;
   const t = useTranslations('pages.sports');
 
   const { time } = participation;

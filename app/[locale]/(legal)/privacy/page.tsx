@@ -3,13 +3,14 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import { generatePageMeta, l } from '@/i18n';
 import type { PageProps } from '@app/interfaces';
 import Address from '@components/atoms/Address';
 import BulletList from '@components/atoms/BulletList';
 import LinkButton from '@components/atoms/LinkButton';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
+import { l } from '@lib/router';
+import { generatePageMeta } from '@lib/seo';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.privacy');

@@ -1,12 +1,12 @@
-import { type LanguageCode } from '@/i18n';
 import { PROD_HOST, WEB_HOST } from '@app/config';
+import { type LocaleCode } from '@lib/router';
 
 /**
  * Format the date in mm.yyyy format.
  *
  * @param date The date in string format.
  */
-export const formatDate = (date: string, lang?: LanguageCode, day = false) => {
+export const formatDate = (date: string, lang?: LocaleCode, day = false) => {
   const dateObj = new Date(date);
 
   return dateObj.toLocaleDateString(lang || 'en', {
@@ -56,3 +56,15 @@ export const useLocalStorage = () => ({
     return accessable;
   },
 });
+
+export const getYearSpan = (start: string) => {
+  const date = new Date(start);
+  const now = new Date();
+  let age = now.getFullYear() - date.getFullYear();
+
+  if (now.getMonth() < date.getMonth() || (now.getMonth() === date.getMonth() && date.getDate() > now.getDate())) {
+    age -= 1;
+  }
+
+  return age;
+};

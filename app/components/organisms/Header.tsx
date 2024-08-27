@@ -2,14 +2,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 
-import { l, type LanguageCode } from '@/i18n';
 import image from '@/public/images/schaechinger.jpg';
 import Logo from '@components/atoms/Logo';
 import Navigation from '@components/molecules/Navigation';
+import { l, type LocaleCode } from '@lib/router';
 
 const Header = () => {
   const t = useTranslations('layout.header');
-  const locale = useLocale() as LanguageCode;
+  const locale = useLocale() as LocaleCode;
 
   return (
     <header className="sticky top-0 flex flex-wrap lg:flex-nowrap lg:flex-col lg:gap-10 justify-between lg:justify-start bg-dark-50/80 dark:bg-dark-800/80 backdrop-blur-sm z-30 lg:h-screen lg:flex-none lg:w-80 px-4 py-4 sm:px-10 md:px-20 lg:px-4 lg:py-0 border-b-2 border-b-dark-300 dark:border-b-dark-700 lg:border-b-0">

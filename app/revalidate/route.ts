@@ -1,7 +1,7 @@
 import { revalidatePath } from 'next/cache';
 import { NextResponse } from 'next/server';
 
-import { supportedLangs } from '@/i18n';
+import { supportedLangs } from '@app/config';
 
 export const GET = () => {
   revalidatePath('/', 'layout');

@@ -1,13 +1,13 @@
 import { type Metadata } from 'next';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import { generatePageMeta } from '@/i18n';
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/atoms/LinkButton';
 import ContestParticipation from '@components/molecules/ContestParticipation';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import { loadParticipationsByContest } from '@lib/contentful';
+import { generatePageMeta } from '@lib/seo';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.sports');

@@ -4,17 +4,17 @@ import { usePathname } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import { useEffect, useState } from 'react';
 
-import { splitPath, l, type LanguageCode, matchLocale } from '@/i18n';
+import translations from '@/messages/language';
 import { LANGUAGE_SUGGESTION_OPT_OUT } from '@app/config';
 import { isBrowser, useLocalStorage } from '@app/utils';
 import LinkButton from '@components/atoms/LinkButton';
 import MenuClose from '@components/icons/MenuClose';
-import translations from '@/messages/language';
+import { splitPath, l, type LocaleCode, matchLocale } from '@lib/router';
 
 const LanguageSuggestion = () => {
   const pathname = usePathname();
   const { page } = splitPath(pathname);
-  const locale = useLocale() as LanguageCode;
+  const locale = useLocale() as LocaleCode;
 
   const [suggestion, setSuggestion] = useState(locale);
   const localStorage = useLocalStorage();

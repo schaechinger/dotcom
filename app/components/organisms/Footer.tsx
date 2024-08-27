@@ -1,15 +1,15 @@
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 
-import { l, type LanguageCode } from '@/i18n';
 import HeartEmpty from '@components/icons/HeartEmpty';
 import LanguageSelection from '@components/language/LanguageSelection';
 import SnesButtons from '@components/mario/SnesButtons';
 import SocialLinks from '@components/molecules/SocialLinks';
+import { l, type LocaleCode } from '@lib/router';
 
 const Footer = () => {
   const t = useTranslations('layout.footer');
-  const locale = useLocale() as LanguageCode;
+  const locale = useLocale() as LocaleCode;
 
   return (
     <footer className="footer mb-6 mt-10 sm:text-left text-sm">

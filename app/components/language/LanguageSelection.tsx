@@ -5,10 +5,11 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import translations from '@/messages/language';
-import { splitPath, l, type LanguageCode, supportedLangs } from '@/i18n';
+import { supportedLangs } from '@app/config';
 import { type IconProps } from '@components/icons/Icon';
 import WorldEast from '@components/icons/WorldEast';
 import WorldWest from '@components/icons/WorldWest';
+import { splitPath, l, type LocaleCode } from '@lib/router';
 
 type IconComponent = (_p: IconProps) => JSX.Element;
 
@@ -16,7 +17,7 @@ const LanguageSelection = () => {
   const pathname = usePathname();
   const [path, setPath] = useState(splitPath(pathname));
 
-  const IconMapper: Record<LanguageCode, IconComponent> = {
+  const IconMapper: Record<LocaleCode, IconComponent> = {
     de: WorldEast,
     en: WorldWest,
   };

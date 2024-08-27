@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import { useLocale, useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
-import { l, type LanguageCode } from '@/i18n';
 import KonamiCode from '@components/KonamiCode';
 import LinkButton from '@components/atoms/LinkButton';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
+import { l, type LocaleCode } from '@lib/router';
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const t = await getTranslations('errors.projectNotFound');
@@ -18,7 +18,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
 const ProjectNotFound = () => {
   const t = useTranslations('errors');
-  const locale = useLocale() as LanguageCode || 'en';
+  const locale = useLocale() as LocaleCode || 'en';
 
   return (
     <PageContainer name="not-found" narrow>

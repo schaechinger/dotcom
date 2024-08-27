@@ -1,4 +1,4 @@
-import { LanguageCode } from '@/i18n';
+import { type LocaleCode } from '@lib/router';
 
 export type SportType = 'running' | 'cycling' | 'multisport' | 'swimming';
 
@@ -89,7 +89,7 @@ const KM_TO_M = 1000;
 const MILE_TO_M = 1609.334;
 const YARD_TO_M = 0.9144;
 
-export const getSpeed = (participation: ParticipationData, locale: LanguageCode): string => {
+export const getSpeed = (participation: ParticipationData, locale: LocaleCode): string => {
   if (!participation.time || !(participation.sections || [])[0]?.distance) {
     return '';
   }

@@ -1,10 +1,10 @@
 import { useLocale, useTranslations } from 'next-intl';
 
-import { type LanguageCode } from '@/i18n';
+import { type LocaleCode } from '@lib/router';
 
 const Address = () => {
   const t = useTranslations('general.address');
-  const locale = useLocale() as LanguageCode;
+  const locale = useLocale() as LocaleCode;
 
   return (
     <>

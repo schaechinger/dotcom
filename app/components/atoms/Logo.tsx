@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 
-import { l, type LanguageCode } from '@/i18n';
+import { l, type LocaleCode } from '@lib/router';
 
 const Logo = () => {
   const t = useTranslations('layout.header');
-  const locale = useLocale() as LanguageCode;
+  const locale = useLocale() as LocaleCode;
 
   return (
     <Link href={l('/', locale)}>

@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
 
-import { l, type LanguageCode } from '@/i18n';
 import HistoryItemDescription from '@components/atoms/HistoryItemDescription';
 import HistoryItemTechList from '@components/atoms/HistoryItemTechList';
 import TimeSpan from '@components/atoms/TimeSpan';
@@ -9,6 +8,7 @@ import ArrowRight from '@components/icons/ArrowRight';
 import HistoryItemHeader from '@components/molecules/HistoryItemHeader';
 import HistoryItemCompany from '@components/molecules/HistoryItemCompany';
 import HistoryItemContainer from '@components/organisms/HistoryItemContainer';
+import { l, type LocaleCode } from '@lib/router';
 import { type ProjectData } from '@models/project';
 
 type Props = {
@@ -17,10 +17,10 @@ type Props = {
 };
 
 const ProjectItem = ({ item, heading }: Props) => {
-  const locale = useLocale() as LanguageCode;
+  const locale = useLocale() as LocaleCode;
  
   return (
-    <HistoryItemContainer>
+    <HistoryItemContainer id={item.slug}>
       <HistoryItemHeader
         date={<TimeSpan startDate={item.startDate} endDate={item.endDate} />}
         heading={heading}

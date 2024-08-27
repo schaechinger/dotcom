@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation';
 import Script from 'next/script';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import { type LanguageCode, generatePageMeta, l } from '@/i18n';
 import { IMAGE_HOST } from '@app/config';
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/atoms/LinkButton';
@@ -13,16 +12,17 @@ import ProjectImages from '@components/projects/ProjectImages';
 import ProjectLinks from '@components/projects/ProjectLinks';
 import ProjectMasterData from '@components/projects/ProjectMasterData';
 import { loadProjectBySlug } from '@lib/contentful';
-import { generateBreadcrumbJson } from '@lib/seo';
+import { type LocaleCode, l } from '@lib/router';
+import { generateBreadcrumbJson, generatePageMeta } from '@lib/seo';
 
 interface Props extends PageProps {
   params: {
-    locale: LanguageCode;
+    locale: LocaleCode;
     slug: string;
   };
 }
 
-export const generateProjectMetadata = async (slug: string, locale: LanguageCode) => {
+export const generateProjectMetadata = async (slug: string, locale: LocaleCode) => {
   const t = await getTranslations('pages.projects.details');
   const project = await loadProjectBySlug(slug, locale);
 
@@ -69,22 +69,22 @@ const ProjectPage = async ({ params: { locale, slug } }: Props) => {
       <PageContainer name={`${project.slug}-project`}>
         <ProjectMasterData project={project} />
 
-        { project.details?.description
-          && <DetailBlock id="description" content={project.details.description} /> }
+        {project.details?.description
+          && <DetailBlock id="description" content={project.details.description} />}
 
-        { project.images && <ProjectImages images={project.images} slug={slug} /> }
+        {project.images && <ProjectImages images={project.images} slug={slug} />}
 
-        { project.details?.requirements
-          && <DetailBlock id="requirements" content={project.details.requirements} /> }
+        {project.details?.requirements
+          && <DetailBlock id="requirements" content={project.details.requirements} />}
 
-        { project.details?.goal
-          && <DetailBlock id="goal" content={project.details.goal} /> }
+        {project.details?.goal
+          && <DetailBlock id="goal" content={project.details.goal} />}
 
-        { project.details?.implementation
-          && <DetailBlock id="implementation" content={project.details.implementation} /> }
+        {project.details?.implementation
+          && <DetailBlock id="implementation" content={project.details.implementation} />}
 
-        { project.details?.features
-          && <DetailBlock id="features" content={project.details.features} /> }
+        {project.details?.features
+          && <DetailBlock id="features" content={project.details.features} />}
 
         <ProjectLinks links={project.links} />
 

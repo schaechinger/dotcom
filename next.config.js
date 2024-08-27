@@ -2,8 +2,7 @@ const createNextIntlPlugin = require('next-intl/plugin');
 
 const withNextIntl = createNextIntlPlugin();
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig = withNextIntl({
   images: {
     remotePatterns: [
       {
@@ -16,6 +15,41 @@ const nextConfig = {
   },
   skipTrailingSlashRedirect: false,
   output: 'standalone',
-};
 
-module.exports = withNextIntl(nextConfig);
+  redirects() {
+    return [
+      {
+        source: '/datenschutz',
+        destination: '/privacy',
+        permanent: true,
+      },
+      {
+        source: '/kontakt',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/impressum',
+        destination: '/imprint',
+        permanent: true,
+      },
+      {
+        source: '/lebenslauf',
+        destination: '/resume',
+        permanent: true,
+      },
+      {
+        source: '/projekte',
+        destination: '/projects',
+        permanent: true,
+      },
+      {
+        source: '/ueber-mich',
+        destination: '/about',
+        permanent: true,
+      },
+    ];
+  },
+});
+
+module.exports = nextConfig;

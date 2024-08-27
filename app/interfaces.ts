@@ -1,15 +1,15 @@
-import { type LanguageCode } from '@/i18n';
+import { type LocaleCode } from '@lib/router';
 
 export type LayoutProps = {
   children: React.ReactNode;
   params: {
-    locale: LanguageCode;
+    locale: LocaleCode;
   };
 };
 
 export type PageProps = {
   params: {
-    locale: LanguageCode;
+    locale: LocaleCode;
   };
   searchParams: { [key: string]: string | string[] | undefined };
 };

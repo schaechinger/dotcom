@@ -1,7 +1,7 @@
 import { useLocale, useTranslations } from 'next-intl';
 
 import { formatDate } from '@app/utils';
-import { type LanguageCode } from '@/i18n';
+import { type LocaleCode } from '@lib/router';
 
 type Props = {
   startDate: string;
@@ -10,7 +10,7 @@ type Props = {
 
 const TimeSpan = async ({ startDate, endDate }: Props) => {
   const t = useTranslations('timeSpan');
-  const locale = useLocale() as LanguageCode;
+  const locale = useLocale() as LocaleCode;
 
   const start = formatDate(startDate, locale);
 
