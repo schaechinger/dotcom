@@ -42,7 +42,6 @@ export const generateProfileJson = () => wrapJson(
         'https://xing.com/profile/Manuel_Schaechinger',
         'https://github.com/schaechinger',
       ],
-      alternateName: 'schaechinger',
     },
   },
 );
