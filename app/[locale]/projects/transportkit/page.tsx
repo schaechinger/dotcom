@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import { notFound } from 'next/navigation';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
@@ -11,6 +12,7 @@ import DetailBlock from '@components/projects/DetailBlock';
 import ProjectLinks from '@components/projects/ProjectLinks';
 import ProjectMasterData from '@components/projects/ProjectMasterData';
 import { loadProjectBySlug } from '@lib/contentful';
+import { generateBreadcrumbJson } from '@lib/seo';
 
 import { generateProjectMetadata } from '../[slug]/page';
 
@@ -29,53 +31,62 @@ const TransportKitPage = async ({ params: { locale } }: PageProps) => {
     return notFound();
   }
 
+  const jsonLd = generateBreadcrumbJson([
+    { page: '/projects', title: t('title') },
+    { title: project.title },
+  ], locale);
+
   return (
-    <PageContainer name={`${slug}-project-page`}>
-      <link rel="stylesheet"
-        href={`${STATIC_HOST}/projects/transportkit/latest/transportkit.min.css?gc=v4`} />
-      <ProjectMasterData project={project} />
+    <>
+      <PageContainer name={`${slug}-project-page`}>
+        <link rel="stylesheet"
+          href={`${STATIC_HOST}/projects/transportkit/latest/transportkit.min.css?gc=v4`} />
+        <ProjectMasterData project={project} />
 
-      { project.details?.description
-        && <DetailBlock id="description" content={project.details.description} /> }
+        { project.details?.description
+          && <DetailBlock id="description" content={project.details.description} /> }
 
-      <PageSection id="munich" dense>
-        <h2 className="text-h2">{t('slug.transportkit.munich')}</h2>
+        <PageSection id="munich" dense>
+          <h2 className="text-h2">{t('slug.transportkit.munich')}</h2>
 
-        <h3 className="text-h3">U-Bahn</h3>
-        { ['u1', 'u2', 'u3', 'u4', 'u5', 'u6', 'u7', 'u8'].map((line) => (
-          <span key={line} className={`transportkit-munich transportkit-munich--${line} transportkit-munich--contrast`}>{ line }</span>
-        )) }
+          <h3 className="text-h3">U-Bahn</h3>
+          { ['u1', 'u2', 'u3', 'u4', 'u5', 'u6', 'u7', 'u8'].map((line) => (
+            <span key={line} className={`transportkit-munich transportkit-munich--${line} transportkit-munich--contrast`}>{ line }</span>
+          )) }
 
-        <h3 className="text-h3 mt-2">S-Bahn</h3>
-        { ['s1', 's2', 's3', 's4', 's6', 's7', 's8', 's20'].map((line) => (
-          <span key={line} className={`transportkit-munich transportkit-munich--${line} transportkit-munich--contrast`}>{ line }</span>
-        )) }
+          <h3 className="text-h3 mt-2">S-Bahn</h3>
+          { ['s1', 's2', 's3', 's4', 's6', 's7', 's8', 's20'].map((line) => (
+            <span key={line} className={`transportkit-munich transportkit-munich--${line} transportkit-munich--contrast`}>{ line }</span>
+          )) }
 
-        <h3 className="text-h3 mt-2">Bus</h3>
-        { [['b', '132', '210'], ['bx', 'X30', 'X200'], ['bm', '53'], ['bn', 'N41'],['bnw', 'N80']].map(([type, ...lines]) => (
-          lines.map((line) => (
-            <span key={`${type}-${line}`} className={`transportkit-munich transportkit-munich--${type} transportkit-munich--contrast`}>{ line }</span>
-          ))
-        )) }
+          <h3 className="text-h3 mt-2">Bus</h3>
+          { [['b', '132', '210'], ['bx', 'X30', 'X200'], ['bm', '53'], ['bn', 'N41'],['bnw', 'N80']].map(([type, ...lines]) => (
+            lines.map((line) => (
+              <span key={`${type}-${line}`} className={`transportkit-munich transportkit-munich--${type} transportkit-munich--contrast`}>{ line }</span>
+            ))
+          )) }
 
-        <h3 className="text-h3 mt-2">Tram</h3>
-        { [['t', '17', 'N20'], ['tp', '22']].map(([type, ...lines]) => (
-          lines.map((line) => (
-            <span key={`${type}-${line}`} className={`transportkit-munich transportkit-munich--${type} transportkit-munich--contrast`}>{ line }</span>
-          ))
-        )) }
-        <br />
-        { ['12', '15', '16', '17', '18', '19', '20', '21', '22', '23', '25', '27', '28'].map((line) => (
-          <span key={line} className={`transportkit-munich transportkit-munich--t${line} transportkit-munich--contrast`}>{ line }</span>
-        )) }
-      </PageSection>
+          <h3 className="text-h3 mt-2">Tram</h3>
+          { [['t', '17', 'N20'], ['tp', '22']].map(([type, ...lines]) => (
+            lines.map((line) => (
+              <span key={`${type}-${line}`} className={`transportkit-munich transportkit-munich--${type} transportkit-munich--contrast`}>{ line }</span>
+            ))
+          )) }
+          <br />
+          { ['12', '15', '16', '17', '18', '19', '20', '21', '22', '23', '25', '27', '28'].map((line) => (
+            <span key={line} className={`transportkit-munich transportkit-munich--t${line} transportkit-munich--contrast`}>{ line }</span>
+          )) }
+        </PageSection>
 
-      <ProjectLinks links={project.links} />
+        <ProjectLinks links={project.links} />
 
-      <p className="mt-4">
-        <LinkButton href={l('/projects', locale)} label={t('goto.projects')} back />
-      </p>
-    </PageContainer>
+        <p className="mt-4">
+          <LinkButton href={l('/projects', locale)} label={t('goto.projects')} back />
+        </p>
+      </PageContainer>
+
+      <Script type="application/ld+json" id="jsonld">{JSON.stringify(jsonLd)}</Script>
+    </>
   );
 };
 

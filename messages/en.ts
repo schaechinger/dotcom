@@ -7,6 +7,7 @@
 
 const general = {
   meta: {
+    title: 'Fullstack JavaScript Engineer & Consultant',
     description: 'Senior Fullstack JavaScript Engineer and consultant for complex and scalable software systems in Munich.',
   },
   address: {
@@ -391,12 +392,12 @@ const translations = {
 
   errors: {
     notFound: {
-      title: 'Page not found',
+      title: 'Page not Found',
       text: 'Hier geht es nicht weiter, bitte geh zur Startseite oder wähle einen passenden Punkt aus dem Menü aus.',
       goto: 'Go to homepage',
     },
     projectNotFound: {
-      title: 'Project not found',
+      title: 'Project not Found',
       text: 'The project does not exist or is no longer available. Please have a look at my other projects and find a matching one.',
       goto: 'Go to project list',
     },

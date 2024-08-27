@@ -5,10 +5,9 @@
  * Name: Deutsch
  */
 
-import KonamiCode from "@/app/components/KonamiCode";
-
 const general = {
   meta: {
+    title: 'Fullstack JavaScript Engineer & Consultant',
     description: 'Senior Fullstack JavaScript Engineer und Berater für komplexe und skalierbare Softwaresysteme in München.',
   },
   address: {

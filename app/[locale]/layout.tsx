@@ -18,19 +18,25 @@ export const generateStaticParams = () => (
   supportedLangs.map((locale) => ({ locale }))
 );
 
-export const generateMetadata = async (): Promise<Metadata> => {
+export const generateMetadata = async ({ params: { locale } }: LayoutProps): Promise<Metadata> => {
   const t = await getTranslations('general');
 
   return {
     title: {
       template: '%s – Manuel Schächinger',
-      default: 'Manuel Schächinger',
+      default: t('meta.title'),
     },
     description: t('meta.description'),
     metadataBase: new URL(WEB_HOST),
+    authors: {
+      name: 'Manuel Schächinger',
+      url: 'https://www.schaechinger.com',
+    },
     openGraph: {
       images: '/images/opengraph-schaechinger.jpg',
+      siteName: 'Manuel Schächinger',
       type: 'website',
+      locale,
     },
   };
 };
@@ -44,7 +50,7 @@ const RootLayout = async ({ children, params: { locale } }: LayoutProps) => {
       <head>
         <link type="text/plain" rel="author" href={`${WEB_HOST}/humans.txt`} />
       </head>
-      <body className="dark:text-dark-200 dark:bg-dark-800">
+      <body className="text-dark-950 dark:text-dark-200 bg-dark-50 dark:bg-dark-800">
         <NextIntlClientProvider messages={messages}>
           <Provider>
             <div className="lg:flex lg:gap-8 w-full max-w-screen-xl mx-auto">
