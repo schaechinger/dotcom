@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Script from 'next/script';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import { IMAGE_HOST } from '@app/config';
 import type { PageProps } from '@app/interfaces';
+import JsonLd from '@components/atoms/JsonLd';
 import LinkButton from '@components/atoms/LinkButton';
 import PageContainer from '@components/organisms/PageContainer';
 import DetailBlock from '@components/projects/DetailBlock';
@@ -93,7 +93,7 @@ const ProjectPage = async ({ params: { locale, slug } }: Props) => {
         </p>
       </PageContainer>
 
-      <Script type="application/ld+json" id="jsonld">{JSON.stringify(jsonLd)}</Script>
+      <JsonLd json={jsonLd} />
     </>
   );
 };

@@ -1,9 +1,9 @@
-import Script from 'next/script';
 import { notFound } from 'next/navigation';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import { STATIC_HOST } from '@app/config';
 import type { PageProps } from '@app/interfaces';
+import JsonLd from '@components/atoms/JsonLd';
 import LinkButton from '@components/atoms/LinkButton';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
@@ -85,7 +85,7 @@ const TransportKitPage = async ({ params: { locale } }: PageProps) => {
         </p>
       </PageContainer>
 
-      <Script type="application/ld+json" id="jsonld">{JSON.stringify(jsonLd)}</Script>
+      <JsonLd json={jsonLd} />
     </>
   );
 };

@@ -30,7 +30,8 @@ const ProjectImages = ({ slug, images }: Props) => {
               width={1024}
               height={576}
               alt={getImageLabel(images[selected])}
-              className="h-auto max-w-full rounded-lg"
+              className="h-auto max-w-full rounded-sm border-2 border-slate-300"
+              priority
             />
         </div>
         { 1 < images.length
@@ -42,7 +43,7 @@ const ProjectImages = ({ slug, images }: Props) => {
                   width={160}
                   height={90}
                   alt={getImageLabel(image)}
-                  className={clsx('h-auto max-w-full rounded-lg border-slate-300', i === selected && 'border-2')}
+                  className={clsx('h-auto max-w-full rounded-sm border-slate-300', i === selected && 'border-2')}
                 />
               </div>
             )) }

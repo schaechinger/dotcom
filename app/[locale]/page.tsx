@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Script from 'next/script';
 import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
@@ -8,6 +7,7 @@ import type { PageProps } from '@app/interfaces';
 import { getYearSpan } from '@app/utils';
 import AvailabilityIndicator from '@components/atoms/AvailabilityIndicator';
 import HighlightLabel from '@components/atoms/HighlightLabel';
+import JsonLd from '@components/atoms/JsonLd';
 import LinkButton from '@components/atoms/LinkButton';
 import CareerList from '@components/career/CareerList';
 import CertificationList from '@components/certifications/CertificationList';
@@ -22,13 +22,12 @@ export const generateMetadata = ({ params: { locale } }: PageProps): Metadata =>
 const HomePage = ({ params: { locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
   const t = useTranslations('pages.home');
-
+  
+  const jsonLd = generateProfileJson();
   const aboutTextOptions = {
     highlight: (label: React.ReactNode) => <HighlightLabel>{label}</HighlightLabel>,
     years: getYearSpan('2014-02-01'),
   };
-
-  const jsonLd = generateProfileJson();
 
   return (
     <>
@@ -88,7 +87,7 @@ const HomePage = ({ params: { locale } }: PageProps) => {
         </PageSection>
       </PageContainer>
 
-      <Script type="application/ld+json" id="jsonld">{JSON.stringify(jsonLd)}</Script>
+      <JsonLd json={jsonLd} />
     </>
   );
 };
