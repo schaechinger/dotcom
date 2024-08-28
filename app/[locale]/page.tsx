@@ -9,11 +9,11 @@ import AvailabilityIndicator from '@components/atoms/AvailabilityIndicator';
 import HighlightLabel from '@components/atoms/HighlightLabel';
 import JsonLd from '@components/atoms/JsonLd';
 import LinkButton from '@components/atoms/LinkButton';
-import CareerList from '@components/career/CareerList';
-import CertificationList from '@components/certifications/CertificationList';
+import CareerList from '@components/organisms/CareerList';
+import CertificationList from '@components/organisms/CertificationList';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
-import ProjectList from '@components/projects/ProjectList';
+import ProjectList from '@components/organisms/ProjectList';
 import { l } from '@lib/router';
 import { generatePageMeta, generateProfileJson } from '@lib/seo';
 

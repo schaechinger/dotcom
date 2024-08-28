@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import LinkButton from '@components/atoms/LinkButton';
 import ArrowRight from '@components/icons/ArrowRight';
-import PageSection from './organisms/PageSection';
+import PageSection from '@components/organisms/PageSection';
 
 const code = ['arrowup', 'arrowup', 'arrowdown', 'arrowdown', 'arrowleft', 'arrowright', 'arrowleft', 'arrowright', 'b', 'a'];
 

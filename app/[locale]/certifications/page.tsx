@@ -3,8 +3,8 @@ import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import { PageProps } from '@app/interfaces';
-import CertificationList from '@components/certifications/CertificationList';
-import Breadcrumbs from '@components/molecules/Breadcumbs';
+import Breadcrumbs from '@components/atoms/Breadcumbs';
+import CertificationList from '@components/organisms/CertificationList';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import { generatePageMeta } from '@lib/seo';

@@ -2,7 +2,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 
 import LinkButton from '@components/atoms/LinkButton';
 import HistoryItemList from '@components/organisms/HistoryItemList';
-import ProjectItem from '@components/projects/ProjectItem';
+import ProjectItem from '@components/organisms/ProjectItem';
 import { loadProjects } from '@lib/contentful';
 import { l, type LocaleCode } from '@lib/router';
 

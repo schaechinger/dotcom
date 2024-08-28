@@ -3,10 +3,10 @@ import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import type { PageProps } from '@app/interfaces';;
+import Breadcrumbs from '@components/atoms/Breadcumbs';
+import CareerList from '@components/organisms/CareerList';
+import CertificationList from '@components/organisms/CertificationList';
 import HistoryItemTechList from '@components/atoms/HistoryItemTechList';
-import CareerList from '@components/career/CareerList';
-import CertificationList from '@components/certifications/CertificationList';
-import Breadcrumbs from '@components/molecules/Breadcumbs';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import { generatePageMeta } from '@lib/seo';

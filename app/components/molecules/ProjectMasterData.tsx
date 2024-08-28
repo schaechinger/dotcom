@@ -1,11 +1,11 @@
 
 import { useTranslations } from 'next-intl';
 
+import Breadcrumbs from '@components/atoms/Breadcumbs';
 import CompanyLink from '@components/atoms/CompanyLink';
 import ProjectTypeLabel from '@components/atoms/ProjectTypeLabel';
 import TechItem from '@components/atoms/TechItem';
 import TimeSpan from '@components/atoms/TimeSpan';
-import Breadcrumbs from '@components/molecules/Breadcumbs';
 import PageSection from '@components/organisms/PageSection';
 import { type ProjectData } from '@models/project';
 

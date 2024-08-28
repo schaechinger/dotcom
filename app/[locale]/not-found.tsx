@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { useLocale, useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
-import KonamiCode from '@components/KonamiCode';
 import LinkButton from '@components/atoms/LinkButton';
+import KonamiCode from '@components/molecules/KonamiCode';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import { l, type LocaleCode } from '@lib/router';

@@ -4,8 +4,8 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import { PageProps } from '@app/interfaces';
 import Address from '@components/atoms/Address';
+import Breadcrumbs from '@components/atoms/Breadcumbs';
 import LinkButton from '@components/atoms/LinkButton';
-import Breadcrumbs from '@components/molecules/Breadcumbs';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import { generatePageMeta } from '@lib/seo';

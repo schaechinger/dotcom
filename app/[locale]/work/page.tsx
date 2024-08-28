@@ -3,9 +3,9 @@ import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import type { PageProps } from '@app/interfaces';
+import Breadcrumbs from '@components/atoms/Breadcumbs';
 import LinkButton from '@components/atoms/LinkButton';
 import Separator from '@components/atoms/Separator';
-import Breadcrumbs from '@components/molecules/Breadcumbs';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import { l } from '@lib/router';

@@ -1,8 +1,8 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 
 import { STATIC_HOST } from '@app/config';
+import CareerItem from '@components/organisms/CareerItem';
 import LinkButton from '@components/atoms/LinkButton';
-import CareerItem from '@components/career/CareerItem';
 import HistoryItemList from '@components/organisms/HistoryItemList';
 import { loadCareer } from '@lib/contentful';
 import { l, type LocaleCode } from '@lib/router';

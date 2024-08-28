@@ -4,11 +4,11 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { STATIC_HOST } from '@app/config';
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/atoms/LinkButton';
+import DetailBlock from '@components/molecules/DetailBlock';
+import ProjectLinks from '@components/molecules/ProjectLinks';
+import ProjectMasterData from '@components/molecules/ProjectMasterData';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
-import DetailBlock from '@components/projects/DetailBlock';
-import ProjectLinks from '@components/projects/ProjectLinks';
-import ProjectMasterData from '@components/projects/ProjectMasterData';
 import { loadProjectBySlug } from '@lib/contentful';
 import { l } from '@lib/router';
 

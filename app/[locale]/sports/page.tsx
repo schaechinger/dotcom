@@ -2,8 +2,8 @@ import { type Metadata } from 'next';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import type { PageProps } from '@app/interfaces';
+import Breadcrumbs from '@components/atoms/Breadcumbs';
 import LinkButton from '@components/atoms/LinkButton';
-import Breadcrumbs from '@components/molecules/Breadcumbs';
 import ContestParticipation from '@components/molecules/ContestParticipation';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';

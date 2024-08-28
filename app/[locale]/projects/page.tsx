@@ -3,11 +3,11 @@ import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import type { PageProps } from '@app/interfaces';
+import Breadcrumbs from '@components/atoms/Breadcumbs';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
-import ProjectList from '@components/projects/ProjectList';
+import ProjectList from '@components/organisms/ProjectList';
 import { generatePageMeta } from '@lib/seo';
-import Breadcrumbs from '@/app/components/molecules/Breadcumbs';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.projects');
