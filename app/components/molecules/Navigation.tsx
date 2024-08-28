@@ -1,13 +1,9 @@
 'use client';
 
-import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLocale } from 'next-intl';
-import { useState } from 'react';
 
-import Menu from '@components/icons/Menu';
-import MenuClose from '@components/icons/MenuClose';
 import LanguageSwitch from '@components/language/LanguageSwitch';
 import ThemeToggle from '@components/molecules/ThemeToggle';
 import { l, type LocaleCode } from '@lib/router';
@@ -19,7 +15,6 @@ type Props = {
 
 const Navigation = ({ translations, themeTranslations }: Props) => {
   const path = usePathname();
-  const [isOpen, setOpen] = useState(false);
   const locale = useLocale() as LocaleCode;
 
   const itemClasses = {
@@ -29,41 +24,25 @@ const Navigation = ({ translations, themeTranslations }: Props) => {
 
   return (
     <>
-      <button type="button" className="lg:hidden items-center p-2 rounded-full self-center"
-        aria-controls="navbar-default" aria-expanded="false"
-        onClick={() => setOpen((cur) => !cur)}
-      >
-        <span className="sr-only">{ isOpen ? translations.close : translations.open }</span>
-        { isOpen ? <MenuClose className="text-xl" /> : <Menu className="text-xl" /> }
-      </button>
-      <nav className={clsx(isOpen ? 'h-auto' : 'h-0', '-mx-1 px-1 w-full lg:h-auto transition-transform overflow-hidden')}>
-        <ul className="flex flex-col gap-2 pt-8 lg:pt-0">
-          {/* <li>
-            <Link
-              href={l('/', locale)}
-              className={`/${locale}` === path ? itemClasses.active : itemClasses.normal}
-              onClick={() => setOpen(false)}
-            >{translations.home}</Link>
-          </li> */}
+      <div className="flex items-center gap-2 lg:gap-6 lg:order-2">
+        <ThemeToggle translations={themeTranslations} />
+        <LanguageSwitch />
+      </div>
+      <nav className="-mx-1 px-1 w-full lg:h-auto transition-transform overflow-x-auto no-scrollbar">
+        <ul className="flex flex-row lg:flex-col flex-nowrap gap-4 lg:gap-2 pt-3 lg:pt-0">
           {[
             'about',
             'resume',
             'projects',
             'contact',
           ].map((page) => (
-            <li key={page}>
+            <li key={page} className="whitespace-nowrap">
               <Link
                 href={l(page, locale)}
                 className={path.startsWith(`/${locale}/${page}`) ? itemClasses.active : itemClasses.normal}
-                onClick={() => setOpen(false)}
               >{ translations[page] }</Link>
             </li>
           ))}
-
-          <li className="mt-5 lg:mt-7 flex gap-6">
-            <ThemeToggle translations={themeTranslations} />
-            <LanguageSwitch />
-          </li>
         </ul>
       </nav>
     </>
