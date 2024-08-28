@@ -30,7 +30,7 @@ const ProjectMasterData = ({ project }: Props) => {
       </p>
 
       { project.company
-        && <p className="mb-2">{t('company')}: <CompanyLink company={project.company} /></p> }
+        && <p className="mb-2">{t('company')}: <CompanyLink company={project.company} inline /></p> }
 
       <ul className="flex flex-wrap mt-3 gap-2">
         { (project.tech || []).map((t) => (

@@ -11,7 +11,7 @@ const AvailabilityIndicator = async () => {
 
   return (
     <div className="text-primary-500 rounded-sm font-bold inline-block">
-      { !!days && <Clock className="text-primary-300 -mt-1 mr-2 text-xl" />}
+      <Clock className="text-primary-400 -mt-1 mr-2 text-xl" />
       { !!days && <span className="text-xl mr-1">{days}</span>}{t('days', { days })}
     </div>
   );

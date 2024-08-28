@@ -68,7 +68,11 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
         <h2 className="text-h2">{t('complaint.title')}</h2>
 
         <p>{t.rich('complaint.text', {
-          link: (link) => <a href={link as string} target="_blank">www.bfdi.bund.de</a>,
+          link: (link) => (
+          <a href={link as string}
+            target="_blank"
+            className="inline-link">www.bfdi.bund.de</a>
+          ),
         })}</p>
       </PageSection>
 

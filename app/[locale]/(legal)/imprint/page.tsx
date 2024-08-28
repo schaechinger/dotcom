@@ -44,7 +44,11 @@ const ImprintPage = ({ params: { locale } }: PageProps) => {
         <p>
           <strong>{t('odr.title')}:</strong>&nbsp;
           {t.rich('odr.text', {
-            link: () => <a href="https://ec.europa.eu/consumers/odr" target="_blank" className="inline-link">ec.europa.eu/consumers/odr</a>,
+            link: () => (
+            <a href="https://ec.europa.eu/consumers/odr"
+              target="_blank"
+              className="inline-link">ec.europa.eu/consumers/odr</a>
+            ),
             br: () => <br />,
           })}
         </p>

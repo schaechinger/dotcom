@@ -58,16 +58,28 @@ const AboutPage = ({ params: { locale } }: PageProps) => {
             <p className="mb-2">{t('profile.bullets.coffee')}</p>
             <p className="mb-2">{t('profile.bullets.work', { years })}</p>
             <p className="mb-2">{t.rich('profile.bullets.stack', {
-              link: (label: React.ReactNode) => <Link href={l('/work#stack', locale)}>{label}</Link>,
+              link: (label: React.ReactNode) => (
+                <Link href={l('/work#stack', locale)}
+                  className="inline-link">{label}</Link>
+              ),
             })}</p>
             <p className="mb-2">{t.rich('profile.bullets.education', {
-              link: (label: React.ReactNode) => <Link href={l('/resume#hm', locale)}>{label}</Link>,
+              link: (label: React.ReactNode) => (
+                <Link href={l('/resume#hm', locale)}
+                  className="inline-link">{label}</Link>
+              ),
             })}</p>
             <p className="mb-2">{t.rich('profile.bullets.sports', {
-              link: (label: React.ReactNode) => <Link href={l('/sports#marathons', locale)}>{label}</Link>,
+              link: (label: React.ReactNode) => (
+                <Link href={l('/sports#marathons', locale)}
+                  className="inline-link">{label}</Link>
+              ),
             })}</p>
             <p className="mb-">{t.rich('profile.bullets.medalmonday', {
-              link: (label: React.ReactNode) => <Link href={l('/projects/medalmonday', locale)}>{label}</Link>,
+              link: (label: React.ReactNode) => (
+                <Link href={l('/projects/medalmonday', locale)}
+                  className="inline-link">{label}</Link>
+              ),
             })}</p>
           </BulletList>
         </PageSection>
