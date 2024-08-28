@@ -32,7 +32,7 @@ export const generateMetadata = async ({ params: { locale } }: LayoutProps): Pro
       url: 'https://www.schaechinger.com',
     },
     openGraph: {
-      images: '/images/opengraph-schaechinger.jpg',
+      images: `${WEB_HOST}/images/opengraph-schaechinger.jpg`,
       siteName: 'Manuel Schächinger',
       type: 'website',
       locale,
@@ -45,7 +45,7 @@ const RootLayout = async ({ children, params: { locale } }: LayoutProps) => {
   const messages = await getMessages();
 
   return (
-    <html className={clsx(clearSans.className, 'dark')} style={{ colorScheme: 'dark' }} lang={locale} dir="ltr">
+    <html className={clsx(clearSans.className)} lang={locale} dir="ltr">
       <head>
         <link type="text/plain" rel="author" href={`${WEB_HOST}/humans.txt`} />
       </head>

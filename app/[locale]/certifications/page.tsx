@@ -4,6 +4,7 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import { PageProps } from '@app/interfaces';
 import CertificationList from '@components/certifications/CertificationList';
+import Breadcrumbs from '@components/molecules/Breadcumbs';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import { generatePageMeta } from '@lib/seo';
@@ -25,6 +26,8 @@ const CertificationsPage = ({ params: { locale } }: PageProps) => {
   return (
     <PageContainer name="certifications" narrow>
       <PageSection id="certifications" first>
+        <Breadcrumbs list={[{ title: t('title') }]} />
+
         <h1 className="text-h1">{t('title')}</h1>
 
         <CertificationList />

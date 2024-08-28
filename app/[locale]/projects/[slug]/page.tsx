@@ -4,7 +4,6 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import { IMAGE_HOST } from '@app/config';
 import type { PageProps } from '@app/interfaces';
-import JsonLd from '@components/atoms/JsonLd';
 import LinkButton from '@components/atoms/LinkButton';
 import PageContainer from '@components/organisms/PageContainer';
 import DetailBlock from '@components/projects/DetailBlock';
@@ -13,7 +12,7 @@ import ProjectLinks from '@components/projects/ProjectLinks';
 import ProjectMasterData from '@components/projects/ProjectMasterData';
 import { loadProjectBySlug } from '@lib/contentful';
 import { type LocaleCode, l } from '@lib/router';
-import { generateBreadcrumbJson, generatePageMeta } from '@lib/seo';
+import { generatePageMeta } from '@lib/seo';
 
 interface Props extends PageProps {
   params: {
@@ -52,49 +51,40 @@ export const generateMetadata = async ({ params: { locale, slug } }: Props) => (
 
 const ProjectPage = async ({ params: { locale, slug } }: Props) => {
   unstable_setRequestLocale(locale);
-  const t = await getTranslations('pages.projects');
+  const t = await getTranslations('pages.projects.details');
   const project = await loadProjectBySlug(slug, locale);
 
   if (!project) {
     return notFound();
   }
 
-  const jsonLd = generateBreadcrumbJson([
-    { page: '/projects', title: t('title') },
-    { title: project.title },
-  ], locale);
-
   return (
-    <>
-      <PageContainer name={`${project.slug}-project`}>
-        <ProjectMasterData project={project} />
+    <PageContainer name={`${project.slug}-project`}>
+      <ProjectMasterData project={project} />
 
-        {project.details?.description
-          && <DetailBlock id="description" content={project.details.description} />}
+      {project.details?.description
+        && <DetailBlock id="description" content={project.details.description} />}
 
-        {project.images && <ProjectImages images={project.images} slug={slug} />}
+      {project.images && <ProjectImages images={project.images} slug={slug} />}
 
-        {project.details?.requirements
-          && <DetailBlock id="requirements" content={project.details.requirements} />}
+      {project.details?.requirements
+        && <DetailBlock id="requirements" content={project.details.requirements} />}
 
-        {project.details?.goal
-          && <DetailBlock id="goal" content={project.details.goal} />}
+      {project.details?.goal
+        && <DetailBlock id="goal" content={project.details.goal} />}
 
-        {project.details?.implementation
-          && <DetailBlock id="implementation" content={project.details.implementation} />}
+      {project.details?.implementation
+        && <DetailBlock id="implementation" content={project.details.implementation} />}
 
-        {project.details?.features
-          && <DetailBlock id="features" content={project.details.features} />}
+      {project.details?.features
+        && <DetailBlock id="features" content={project.details.features} />}
 
-        <ProjectLinks links={project.links} />
+      <ProjectLinks links={project.links} />
 
-        <p className="mt-4">
-          <LinkButton href={l('/projects', locale)} label={t('details.goto.projects')} back />
-        </p>
-      </PageContainer>
-
-      <JsonLd json={jsonLd} />
-    </>
+      <p className="mt-4">
+        <LinkButton href={l('/projects', locale)} label={t('goto.projects')} back />
+      </p>
+    </PageContainer>
   );
 };
 

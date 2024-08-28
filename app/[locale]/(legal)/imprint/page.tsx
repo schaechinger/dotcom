@@ -5,6 +5,7 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { PageProps } from '@app/interfaces';
 import Address from '@components/atoms/Address';
 import LinkButton from '@components/atoms/LinkButton';
+import Breadcrumbs from '@components/molecules/Breadcumbs';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import { generatePageMeta } from '@lib/seo';
@@ -26,6 +27,8 @@ const ImprintPage = ({ params: { locale } }: PageProps) => {
   return (
     <PageContainer name="imprint">
       <PageSection id="imprint" first dense>
+        <Breadcrumbs list={[{ title: t('title') }]} />
+
         <h1 className="text-h1">{t('title')}</h1>
 
         <h2 className="text-h2">{t('owner.title')}</h2>

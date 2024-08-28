@@ -10,6 +10,7 @@ const general = {
     title: 'Manuel Schächinger – Fullstack JavaScript Engineer & Consultant',
     description: 'Senior Fullstack JavaScript Engineer und Berater für komplexe und skalierbare Softwaresysteme in München.',
   },
+  home: 'Startseite',
   address: {
     germany: 'Deutschland',
   },
@@ -371,7 +372,7 @@ const translations = {
         'performance-kritische Softwaresysteme.',
       ],
       navigation: {
-        home: 'Startseite',
+        home: general.home,
         about: about.title,
         resume: resume.title,
         projects: projects.title,

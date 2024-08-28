@@ -7,6 +7,7 @@ import type { PageProps } from '@app/interfaces';
 import Address from '@components/atoms/Address';
 import BulletList from '@components/atoms/BulletList';
 import LinkButton from '@components/atoms/LinkButton';
+import Breadcrumbs from '@components/molecules/Breadcumbs';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import { l } from '@lib/router';
@@ -29,6 +30,8 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
   return (
     <PageContainer name="privacy">
       <PageSection id="privacy" first dense>
+        <Breadcrumbs list={[{ title: t('title') }]} />
+
         <h1 className="text-h1">{t('title')}</h1>
 
         <h2 className="text-h2">{t('overview')}</h2>

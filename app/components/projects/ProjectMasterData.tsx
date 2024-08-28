@@ -5,6 +5,7 @@ import CompanyLink from '@components/atoms/CompanyLink';
 import ProjectTypeLabel from '@components/atoms/ProjectTypeLabel';
 import TechItem from '@components/atoms/TechItem';
 import TimeSpan from '@components/atoms/TimeSpan';
+import Breadcrumbs from '@components/molecules/Breadcumbs';
 import PageSection from '@components/organisms/PageSection';
 import { type ProjectData } from '@models/project';
 
@@ -13,24 +14,29 @@ type Props = {
 };
 
 const ProjectMasterData = ({ project }: Props) => {
-  const t = useTranslations('pages.projects.details');
+  const t = useTranslations('pages.projects');
 
   return (
     <PageSection id={project.slug} first dense>
+      <Breadcrumbs list={[
+        { page: '/projects', title: t('title') },
+        { title: project.title },
+      ]} />
+
       <h1 className="text-h1">{ project.title }</h1>
 
       <p className="mb-2">{ project.description }</p>
 
       <p className="mb-2">
-        {t('timeSpan')}: <TimeSpan startDate={project.startDate} endDate={project.endDate} />
+        {t('details.timeSpan')}: <TimeSpan startDate={project.startDate} endDate={project.endDate} />
       </p>
 
       <p className="mb-2">
-        {t('type')}: <ProjectTypeLabel type={project.type} label />
+        {t('details.type')}: <ProjectTypeLabel type={project.type} label />
       </p>
 
       { project.company
-        && <p className="mb-2">{t('company')}: <CompanyLink company={project.company} inline /></p> }
+        && <p className="mb-2">{t('details.company')}: <CompanyLink company={project.company} inline /></p> }
 
       <ul className="flex flex-wrap mt-3 gap-2">
         { (project.tech || []).map((t) => (

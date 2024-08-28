@@ -8,7 +8,7 @@ const wrapJson = (type: string, json: any) => ({
   ...json,
 });
 
-type BreadcrumbData = {
+export type BreadcrumbData = {
   page?: string;
   title: string;
 };
@@ -16,11 +16,11 @@ type BreadcrumbData = {
 export const generateBreadcrumbJson = (breadcrumbs: BreadcrumbData[], locale: LocaleCode) => wrapJson(
   'BreadcrumbList',
   {
-    itemListElement: breadcrumbs.map((data, i) => ({
+    itemListElement: breadcrumbs.map((item, i) => ({
       '@type': 'ListItem',
       position: i + 1,
-      name: data.title,
-      item: data.page && `${WEB_HOST}${l(data.page, locale)}`,
+      name: item.title,
+      item: item.page && `${WEB_HOST}${l(item.page, locale)}`,
     })),
   },
 );

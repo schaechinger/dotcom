@@ -8,12 +8,12 @@ import wallpaper from '@/public/images/opengraph-schaechinger.jpg';
 import type { PageProps } from '@app/interfaces';
 import { getYearSpan } from '@/app/utils';
 import BulletList from '@components/atoms/BulletList';
-import JsonLd from '@components/atoms/JsonLd';
 import LinkButton from '@components/atoms/LinkButton';
+import Breadcrumbs from '@components/molecules/Breadcumbs';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import { l } from '@lib/router';
-import { generateBreadcrumbJson, generatePageMeta } from '@lib/seo';
+import { generatePageMeta } from '@lib/seo';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.about');
@@ -31,73 +31,69 @@ const AboutPage = ({ params: { locale } }: PageProps) => {
   const age = getYearSpan('1991-02-14');
   const years = getYearSpan('2014-02-01');
 
-  const jsonLd = generateBreadcrumbJson([{ title: t('title') }], locale);
-
   return (
-    <>
-      <PageContainer name="about" narrow>
-        <PageSection id="profile" first dense>
-          <h1 className="text-h1">{t('pageTitle')}</h1>
+    <PageContainer name="about" narrow>
+      <PageSection id="profile" first dense>
+        <Breadcrumbs list={[{ title: t('title') }]} />
 
-          <div className="my-8">
-            <Image
-              src={wallpaper}
-              alt={t('profile.imageAlt')}
-              sizes="(max-width: 640px) 100vw, 640px"
-              className="rounded-sm border-2 border-slate-300"
-              priority
-            />
-            <p className="text-sm mt-2">{t('profile.imageAlt')}</p>
-          </div>
+        <h1 className="text-h1">{t('pageTitle')}</h1>
 
-          <h2 className="text-h2">{t('profile.title')}</h2>
+        <div className="mb-8">
+          <Image
+            src={wallpaper}
+            alt={t('profile.imageAlt')}
+            sizes="(max-width: 640px) 100vw, 640px"
+            className="rounded-sm border-2 border-slate-300"
+            priority
+          />
+          <p className="text-sm mt-2">{t('profile.imageAlt')}</p>
+        </div>
 
-          <BulletList>
-            <p className="mb-2">{t('profile.bullets.age', { age })}</p>
-            <p className="mb-2">{t('profile.bullets.location', { age })}</p>
-            <p className="mb-2">{t('profile.bullets.coffee')}</p>
-            <p className="mb-2">{t('profile.bullets.work', { years })}</p>
-            <p className="mb-2">{t.rich('profile.bullets.stack', {
-              link: (label: React.ReactNode) => (
-                <Link href={l('/work#stack', locale)}
-                  className="inline-link">{label}</Link>
-              ),
-            })}</p>
-            <p className="mb-2">{t.rich('profile.bullets.education', {
-              link: (label: React.ReactNode) => (
-                <Link href={l('/resume#hm', locale)}
-                  className="inline-link">{label}</Link>
-              ),
-            })}</p>
-            <p className="mb-2">{t.rich('profile.bullets.sports', {
-              link: (label: React.ReactNode) => (
-                <Link href={l('/sports#marathons', locale)}
-                  className="inline-link">{label}</Link>
-              ),
-            })}</p>
-            <p className="mb-">{t.rich('profile.bullets.medalmonday', {
-              link: (label: React.ReactNode) => (
-                <Link href={l('/projects/medalmonday', locale)}
-                  className="inline-link">{label}</Link>
-              ),
-            })}</p>
-          </BulletList>
-        </PageSection>
+        <h2 className="text-h2">{t('profile.title')}</h2>
 
-        <PageSection id="links" dense>
-          <p>{t('profile.text')}</p>
+        <BulletList>
+          <p className="mb-2">{t('profile.bullets.age', { age })}</p>
+          <p className="mb-2">{t('profile.bullets.location', { age })}</p>
+          <p className="mb-2">{t('profile.bullets.coffee')}</p>
+          <p className="mb-2">{t('profile.bullets.work', { years })}</p>
+          <p className="mb-2">{t.rich('profile.bullets.stack', {
+            link: (label: React.ReactNode) => (
+              <Link href={l('/work#stack', locale)}
+                className="inline-link">{label}</Link>
+            ),
+          })}</p>
+          <p className="mb-2">{t.rich('profile.bullets.education', {
+            link: (label: React.ReactNode) => (
+              <Link href={l('/resume#hm', locale)}
+                className="inline-link">{label}</Link>
+            ),
+          })}</p>
+          <p className="mb-2">{t.rich('profile.bullets.sports', {
+            link: (label: React.ReactNode) => (
+              <Link href={l('/sports#marathons', locale)}
+                className="inline-link">{label}</Link>
+            ),
+          })}</p>
+          <p className="mb-">{t.rich('profile.bullets.medalmonday', {
+            link: (label: React.ReactNode) => (
+              <Link href={l('/projects/medalmonday', locale)}
+                className="inline-link">{label}</Link>
+            ),
+          })}</p>
+        </BulletList>
+      </PageSection>
 
-          <p className="mt-4">
-            <LinkButton href={l('/resume', locale)} label={t('profile.goto.resume')} />
-          </p>
-          <p className="mt-2">
-            <LinkButton href={l('/projects', locale)} label={t('profile.goto.projects')} />
-          </p>
-        </PageSection>
-      </PageContainer>
+      <PageSection id="links" dense>
+        <p>{t('profile.text')}</p>
 
-      <JsonLd json={jsonLd} />
-    </>
+        <p className="mt-4">
+          <LinkButton href={l('/resume', locale)} label={t('profile.goto.resume')} />
+        </p>
+        <p className="mt-2">
+          <LinkButton href={l('/projects', locale)} label={t('profile.goto.projects')} />
+        </p>
+      </PageSection>
+    </PageContainer>
   );
 };
 
