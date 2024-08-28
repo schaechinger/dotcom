@@ -20,7 +20,7 @@ const general = {
 const about = {
   title: 'Über mich',
   pageTitle: 'Servus, ich bin Manuel.',
-  description: '',
+  description: 'Ein kurzer Steckbrief zu mir.',
 
   profile: {
     title: 'Kurz zu mir:',

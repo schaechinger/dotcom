@@ -50,6 +50,7 @@ const AboutPage = ({ params: { locale } }: PageProps) => {
 
         <BulletList>
           <p className="mb-2">{t('profile.bullets.age', { age })}</p>
+          <p className="mb-2">{t('profile.bullets.location', { age })}</p>
           <p className="mb-2">{t('profile.bullets.coffee')}</p>
           <p className="mb-2">{t('profile.bullets.work', { years })}</p>
           <p className="mb-2">{t.rich('profile.bullets.stack', {
