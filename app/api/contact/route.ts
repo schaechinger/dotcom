@@ -3,6 +3,7 @@ import { ZodError, z } from 'zod';
 
 import { RECAPTCHA_SECRET_KEY } from '@app/config';
 import { sendMessage } from '@lib/slack';
+import { isProd } from '@/app/utils';
 
 export type ContactFormState = {
   success: boolean;
@@ -40,6 +41,7 @@ export const POST = async (req: NextRequest) => {
     });
 
     const captchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+      cache: 'no-store',
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: `secret=${RECAPTCHA_SECRET_KEY}&response=${payload.token}`,
@@ -48,7 +50,9 @@ export const POST = async (req: NextRequest) => {
     if (captchaResponse.success && 0.5 < captchaResponse.score) {
       const message = `Neue Kontakt-Anfrage: *${parsed.name}* (${parsed.email}):\n${parsed.message}`;
 
-      await sendMessage(message);
+      if (isProd()) {
+        await sendMessage(message);
+      }
 
       response = { success: true };
     }
