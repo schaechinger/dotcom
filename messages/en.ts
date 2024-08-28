@@ -26,7 +26,7 @@ const about = {
     title: 'My Profile:',
     imageAlt: 'Me in front of the wall of Osaka Castle, Japan.',
     bullets: {
-      age: 'I am currently {age} years old.',
+      age: 'I am {age} years old.',
       location: 'I live in Ottobrunn next to Munich.',
       coffee: 'I love coffee.',
       work: 'I am a software engineer for more than {years} years.',

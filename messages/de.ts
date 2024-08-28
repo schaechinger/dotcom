@@ -26,8 +26,8 @@ const about = {
     title: 'Kurz zu mir:',
     imageAlt: 'Ich vor dem Wall der Burg Osaka, Japan.',
     bullets: {
-      age: 'Ich bin zur Zeit {age} Jahre alt.',
-      location: 'Ich lebe im schönen Ottobrunn direkt neben München.',
+      age: 'Ich bin {age} Jahre alt.',
+      location: 'Ich lebe in Ottobrunn direkt neben München.',
       coffee: 'Ich liebe Kaffee.',
       work: 'Ich bin seit über {years} Jahren Softwareentwickler.',
       stack: 'Mein Fokus liegt auf <link>JavaScript</link>.',

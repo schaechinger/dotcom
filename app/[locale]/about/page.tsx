@@ -43,7 +43,7 @@ const AboutPage = ({ params: { locale } }: PageProps) => {
             <Image
               src={wallpaper}
               alt={t('profile.imageAlt')}
-              width={640}
+              sizes="(max-width: 640px) 100vw, 640px"
               className="rounded-sm border-2 border-slate-300"
               priority
             />
