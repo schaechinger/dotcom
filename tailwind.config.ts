@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss';
-import defaultTheme from 'tailwindcss/defaultTheme';
+// import defaultTheme from 'tailwindcss/defaultTheme';
 
 const config: Config = {
   content: [
@@ -49,8 +49,7 @@ const config: Config = {
         }
       },
       fontFamily: {
-        sans: ['var(--font-clear-sans)', ...defaultTheme.fontFamily.sans],
-        // mono: ['var(--font-best-choice)', ...defaultTheme.fontFamily.mono],
+        sans: ['var(--font-clear-sans)'], // , ...defaultTheme.fontFamily.sans],
       },
     },
   },

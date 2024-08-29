@@ -27,7 +27,6 @@ const LocaleLink = ({ children, href, className, locale, onClick, target, title 
       dir={locale ? 'ltr' : undefined}
       className={className}
       title={title}
-      prefetch={false}
       onClick={onClick}
     >{children}</Component>
   );
