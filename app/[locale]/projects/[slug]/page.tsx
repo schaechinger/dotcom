@@ -6,11 +6,12 @@ import { IMAGE_HOST } from '@app/config';
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/atoms/LinkButton';
 import DetailBlock from '@components/molecules/DetailBlock';
-import ProjectImages, { getImageLabel } from '@components/molecules/ProjectImages';
+import ProjectImages from '@components/molecules/ProjectImages';
 import ProjectLinks from '@components/molecules/ProjectLinks';
 import ProjectMasterData from '@components/molecules/ProjectMasterData';
 import PageContainer from '@components/organisms/PageContainer';
 import { loadProjectBySlug } from '@lib/contentful';
+import { getImageLabel } from '@lib/images';
 import { type LocaleCode, l } from '@lib/router';
 import { generatePageMeta } from '@lib/seo';
 
@@ -42,7 +43,7 @@ export const generateProjectMetadata = async (slug: string, locale: LocaleCode) 
         url: `${IMAGE_HOST}/projects/${slug}/${image.src}`,
         alt: getImageLabel(image, locale) || undefined,
         width: 1024,
-        height: 576,
+        height: 768,
       })),
     };
   }
