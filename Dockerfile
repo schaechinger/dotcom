@@ -21,8 +21,6 @@ ENV NEXT_PUBLIC_WEB_HOST=${NEXT_PUBLIC_WEB_HOST}
 
 RUN npm run build
 
-RUN echo "Build for $NEXT_PUBLIC_WEB_HOST"
-
 # Production image
 FROM base AS runner
 WORKDIR /app
