@@ -6,10 +6,10 @@ import { getMessages, getTranslations, unstable_setRequestLocale } from 'next-in
 import { supportedLangs, WEB_HOST } from '@app/config';
 import { clearSans } from '@app/font';
 import type { LayoutProps } from '@app/interfaces';
-import Provider from '@app/provider';
 import Footer from '@components/organisms/Footer';
 import Header from '@components/organisms/Header';
 import LanguageSuggestion from '@components/organisms/LanguageSuggestion';
+import ThemeProvider from '@components/organisms/ThemeProvider';
 
 import '@/css/style.scss';
 
@@ -54,8 +54,8 @@ const RootLayout = async ({ children, params: { locale } }: LayoutProps) => {
         <link type="text/plain" rel="author" href={`${WEB_HOST}/humans.txt`} />
       </head>
       <body className="text-dark-950 dark:text-dark-200 bg-dark-50 dark:bg-dark-800 font-sans">
-        <NextIntlClientProvider messages={messages}>
-          <Provider>
+        <ThemeProvider>
+          <NextIntlClientProvider messages={messages}>
             <div className="lg:flex lg:gap-8 w-full max-w-screen-xl mx-auto">
               <Header />
 
@@ -68,8 +68,8 @@ const RootLayout = async ({ children, params: { locale } }: LayoutProps) => {
                 <Footer />
               </div>
             </div>
-          </Provider>
-        </NextIntlClientProvider>
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
