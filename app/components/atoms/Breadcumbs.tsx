@@ -24,8 +24,8 @@ const Breadcrumbs = ({ list }: Props) => {
         <ul className="flex list-none text-xs">
           <li key="home" className={clsx(visible && 'hidden sm:inline-block', 'flex-none')}>
             <Link href={l('/', locale)} className="text-gray-400 dark:text-gray-400">
-              <Home className="hidden sm:inline-block text-[0.875rem] relative -top-0.5" />
-              <ChevronRight className={clsx(visible && 'hidden', 'sm:hidden mr-2 rotate-180 relative -top-0.5 text-gray-400 dark:text-gray-400')} />
+              <Home className="hidden sm:inline-block text-[0.875rem] relative -top-[1px]" />
+              <ChevronRight className={clsx(visible && 'hidden', 'sm:hidden mr-2 rotate-180 relative -top-[1px] text-gray-400 dark:text-gray-400')} />
               <span className={clsx(visible && 'hidden', 'sm:hidden')}>{t('home')}</span>
             </Link>
           </li>
@@ -34,7 +34,7 @@ const Breadcrumbs = ({ list }: Props) => {
 
             return (
               <li key={item.page || item.title} className={clsx(i != list.length - 2 && 'hidden sm:inline-block', 'flex-none')}>
-                <ChevronRight className="mr-2 sm:ml-2 rotate-180 sm:rotate-0 relative -top-0.5 text-gray-400 dark:text-gray-400" />
+                <ChevronRight className="mr-2 sm:ml-2 rotate-180 sm:rotate-0 relative -top-[1px] text-gray-400 dark:text-gray-400" />
                 <Item
                   href={item.page ? l(item.page, locale) : ''}
                   className={clsx(item.page && 'text-gray-400 dark:text-gray-400')}

@@ -1,11 +1,12 @@
-import Script from 'next/script';
-
 type Props = {
   json: any;
 };
 
 const JsonLd = ({ json }: Props) => (
-  <Script type="application/ld+json" id="jsonld">{JSON.stringify(json)}</Script>
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{ __html: JSON.stringify(json) }}
+  />
 );
 
 export default JsonLd;

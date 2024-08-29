@@ -45,11 +45,11 @@ const RootLayout = async ({ children, params: { locale } }: LayoutProps) => {
   const messages = await getMessages();
 
   return (
-    <html className={clsx(clearSans.className)} lang={locale} dir="ltr">
+    <html className={clsx(clearSans.className/*, bestChoice.variable*/)} lang={locale} dir="ltr">
       <head>
         <link type="text/plain" rel="author" href={`${WEB_HOST}/humans.txt`} />
       </head>
-      <body className="text-dark-950 dark:text-dark-200 bg-dark-50 dark:bg-dark-800">
+      <body className="text-dark-950 dark:text-dark-200 bg-dark-50 dark:bg-dark-800 font-sans">
         <NextIntlClientProvider messages={messages}>
           <Provider>
             <div className="lg:flex lg:gap-8 w-full max-w-screen-xl mx-auto">

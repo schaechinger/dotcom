@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 const config: Config = {
   content: [
@@ -17,23 +18,13 @@ const config: Config = {
           500: '#00a5db',
           900: '#57bc90',
         },
-        medalmonday: {
-          100: '#2d5e4d1b',
-          200: '#2d5e4d4c',
-          300: '#2d5e4d66',
-          400: '#2d5e4d99',
-          500: '#2d5e4d',
-        },
-        flyby: {
-          500: '#d9fc1a',
-          900: '#001427',
-        },
         dark: {
           50: '#fff',
           200: '#ccc',
           700: '#22292e',
           800: '#0f2127',
-          900: '#181818',
+          900: '#1c2129',
+          // 900: '#181818',
           950: '#111',
         },
         js: '#ffe70b',
@@ -54,7 +45,8 @@ const config: Config = {
         }
       },
       fontFamily: {
-        sans: ['var(--font-clear-sans)'],
+        sans: ['var(--font-clear-sans)', ...defaultTheme.fontFamily.sans],
+        // mono: ['var(--font-best-choice)', ...defaultTheme.fontFamily.mono],
       },
     },
   },

@@ -6,7 +6,15 @@
 @import 'components/history-item';
 @import 'components/lists';
 
+body {
+  font-family: var(--font-clear-sans), system-ui, sans-serif !important;
+}
+
 @layer base {
+  // .font-best-choice {
+  //   font-family: var(--font-best-choice);
+  // }
+
   .text-h1 {
     position: relative;
 

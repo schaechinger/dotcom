@@ -8,7 +8,7 @@ const HistoryItemList = ({ items, link, error }: Props) => (
   <div className="-mt-4">
     {items}
     {!items?.length ? <p className="py-4">{error}</p> : null}
-    {link}
+    {items.length && link}
   </div>
 );
 
