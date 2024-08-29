@@ -7,9 +7,9 @@ import { supportedLangs, WEB_HOST } from '@app/config';
 import { clearSans } from '@app/font';
 import type { LayoutProps } from '@app/interfaces';
 import Provider from '@app/provider';
-import LanguageSuggestion from '@components/language/LanguageSuggestion';
 import Footer from '@components/organisms/Footer';
 import Header from '@components/organisms/Header';
+import LanguageSuggestion from '@components/organisms/LanguageSuggestion';
 
 import '@/css/style.scss';
 

@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 import Menu from '@components/icons/Menu';
 import MenuClose from '@components/icons/MenuClose';
-import LanguageSwitch from '@components/language/LanguageSwitch';
+import LanguageSwitch from '@components/atoms/LanguageSwitch';
 import ThemeToggle from '@components/molecules/ThemeToggle';
 import { l, type LocaleCode } from '@lib/router';
 

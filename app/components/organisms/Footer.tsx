@@ -3,7 +3,7 @@ import { useLocale, useTranslations } from 'next-intl';
 
 import SnesButtons from '@components/atoms/SnesButtons';
 import HeartEmpty from '@components/icons/HeartEmpty';
-import LanguageSelection from '@components/language/LanguageSelection';
+import LanguageSelection from '@components/molecules/LanguageSelection';
 import SocialLinks from '@components/molecules/SocialLinks';
 import { l, type LocaleCode } from '@lib/router';
 
