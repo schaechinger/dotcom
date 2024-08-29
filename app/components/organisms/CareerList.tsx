@@ -5,7 +5,7 @@ import CareerItem from '@components/organisms/CareerItem';
 import LinkButton from '@components/atoms/LinkButton';
 import HistoryItemList from '@components/organisms/HistoryItemList';
 import { loadCareer } from '@lib/contentful';
-import { l, type LocaleCode } from '@lib/router';
+import { type LocaleCode } from '@lib/router';
 
 type Props = {
   heading?: string;
@@ -27,7 +27,7 @@ const CareerList = async ({ heading, latest }: Props) => {
         <CareerItem key={c.slug} item={c} heading={heading} />
       ))}
       link={<LinkButton
-        href={latest ? l('/resume', locale) : resumeLink}
+        href={latest ? '/resume' : resumeLink}
         label={t(`goto.${latest ? 'resume' : 'download'}`)}
       />}
       error={t('error')}

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
+import { Link } from '@/routing';
 import type { PageProps } from '@app/interfaces';
 import Address from '@components/atoms/Address';
 import BulletList from '@components/atoms/BulletList';
@@ -10,7 +10,6 @@ import Breadcrumbs from '@components/atoms/Breadcumbs';
 import LinkButton from '@components/atoms/LinkButton';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
-import { l } from '@lib/router';
 import { generatePageMeta } from '@lib/seo';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
@@ -57,7 +56,7 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
         </p>
 
         <p>
-          <LinkButton href={l('/imprint', locale)} label={t('responsible.goto.imprint')} />
+          <LinkButton href="/imprint" label={t('responsible.goto.imprint')} />
         </p>
       </PageSection>
 

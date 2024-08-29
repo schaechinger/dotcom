@@ -1,6 +1,6 @@
 import { supportedLangs, WEB_HOST } from '@app/config';
 import { isProd } from '@app/utils';
-import { l, type LocaleCode } from '@lib/router';
+import { type LocaleCode } from '@lib/router';
 
 const wrapJson = (type: string, json: any) => ({
   '@context': 'https://schema.org',
@@ -20,7 +20,7 @@ export const generateBreadcrumbJson = (breadcrumbs: BreadcrumbData[], locale: Lo
       '@type': 'ListItem',
       position: i + 1,
       name: item.title,
-      item: item.page && `${WEB_HOST}${l(item.page, locale)}`,
+      item: item.page && `${WEB_HOST}/${locale}${item.page}`,
     })),
   },
 );
@@ -49,7 +49,7 @@ export const generateProfileJson = () => wrapJson(
 export const generatePageMeta = (identifier: string, locale: LocaleCode) => {
   const languages: Record<string, string> = {};
   supportedLangs.forEach((lang) => {
-    languages[lang] = `${WEB_HOST}${l(identifier, lang)}`;
+    languages[lang] = `${WEB_HOST}/${locale}${identifier}`;
   });
 
   return {

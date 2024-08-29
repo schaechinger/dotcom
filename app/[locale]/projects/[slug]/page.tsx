@@ -12,7 +12,7 @@ import ProjectMasterData from '@components/molecules/ProjectMasterData';
 import PageContainer from '@components/organisms/PageContainer';
 import { loadProjectBySlug } from '@lib/contentful';
 import { getImageLabel } from '@lib/images';
-import { type LocaleCode, l } from '@lib/router';
+import { type LocaleCode } from '@lib/router';
 import { generatePageMeta } from '@lib/seo';
 
 interface Props extends PageProps {
@@ -88,7 +88,7 @@ const ProjectPage = async ({ params: { locale, slug } }: Props) => {
       <ProjectLinks links={project.links} />
 
       <p className="mt-4">
-        <LinkButton href={l('/projects', locale)} label={t('goto.projects')} back />
+        <LinkButton href="/projects" label={t('goto.projects')} back />
       </p>
     </PageContainer>
   );

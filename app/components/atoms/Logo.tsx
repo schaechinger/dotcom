@@ -1,14 +1,12 @@
-import Link from 'next/link';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
-import { l, type LocaleCode } from '@lib/router';
+import { Link } from '@/routing';
 
 const Logo = () => {
   const t = useTranslations('layout.header');
-  const locale = useLocale() as LocaleCode;
 
   return (
-    <Link href={l('/', locale)}>
+    <Link href="/">
       <p className="text-xl sm:text-2xl">
         <span className="text-primary-500 font-thin">Manuel</span>
         <span className="text-dark-950 dark:text-dark-50 font-normal">Schächinger</span>

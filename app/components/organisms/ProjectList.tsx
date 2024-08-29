@@ -4,7 +4,7 @@ import LinkButton from '@components/atoms/LinkButton';
 import HistoryItemList from '@components/organisms/HistoryItemList';
 import ProjectItem from '@components/organisms/ProjectItem';
 import { loadProjects } from '@lib/contentful';
-import { l, type LocaleCode } from '@lib/router';
+import { type LocaleCode } from '@lib/router';
 
 type Props = {
   heading?: string;
@@ -21,7 +21,7 @@ const ProjectList = async ({ heading, highlights }: Props) => {
       items={projects.map((p) => (
         <ProjectItem key={p.slug} item={p} heading={heading} />
       ))}
-      link={highlights && <LinkButton href={l('/projects', locale)} label={t('goto')} />}
+      link={highlights && <LinkButton href="/projects" label={t('goto')} />}
       error={t('error')}
     />
   );

@@ -1,11 +1,11 @@
 import clsx from 'clsx';
-import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 
+import { Link } from '@/routing';
 import JsonLd from '@components/atoms/JsonLd';
 import ChevronRight from '@components/icons/ChevronRight';
 import Home from '@components/icons/Home';
-import { l, type LocaleCode } from '@lib/router';
+import { type LocaleCode } from '@lib/router';
 import { BreadcrumbData, generateBreadcrumbJson } from '@lib/seo';
 
 type Props = {
@@ -23,7 +23,7 @@ const Breadcrumbs = ({ list }: Props) => {
       <nav aria-label="Breadcrumb">
         <ul className="flex list-none text-xs">
           <li key="home" className={clsx(visible && 'hidden sm:inline-block', 'flex-none')}>
-            <Link href={l('/', locale)} className="text-gray-400 dark:text-gray-400">
+            <Link href="/" className="text-gray-400 dark:text-gray-400">
               <Home className="hidden sm:inline-block text-[0.875rem] relative -top-[1px]" />
               <ChevronRight className={clsx(visible && 'hidden', 'sm:hidden mr-2 rotate-180 relative -top-[1px] text-gray-400 dark:text-gray-400')} />
               <span className={clsx(visible && 'hidden', 'sm:hidden')}>{t('home')}</span>
@@ -36,7 +36,7 @@ const Breadcrumbs = ({ list }: Props) => {
               <li key={item.page || item.title} className={clsx(i != list.length - 2 && 'hidden sm:inline-block', 'flex-none')}>
                 <ChevronRight className="mr-2 sm:ml-2 rotate-180 sm:rotate-0 relative -top-[1px] text-gray-400 dark:text-gray-400" />
                 <Item
-                  href={item.page ? l(item.page, locale) : ''}
+                  href={item.page ? item.page : '/'}
                   className={clsx(item.page && 'text-gray-400 dark:text-gray-400')}
                 >{item.title}</Item>
               </li>

@@ -1,19 +1,18 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import { useEffect, useState } from 'react';
 
+import { usePathname } from '@/routing';
 import translations from '@/messages/language';
 import { LANGUAGE_SUGGESTION_OPT_OUT } from '@app/config';
 import { isBrowser, useLocalStorage } from '@app/utils';
 import LinkButton from '@components/atoms/LinkButton';
 import MenuClose from '@components/icons/MenuClose';
-import { splitPath, l, type LocaleCode, matchLocale } from '@lib/router';
+import { type LocaleCode, matchLocale } from '@lib/router';
 
 const LanguageSuggestion = () => {
-  const pathname = usePathname();
-  const { page } = splitPath(pathname);
+  const page = usePathname();
   const locale = useLocale() as LocaleCode;
 
   const [suggestion, setSuggestion] = useState(locale);
@@ -50,7 +49,8 @@ const LanguageSuggestion = () => {
         </p>
         <p className="mt-2">
           <LinkButton
-            href={l(page, suggestion)}
+            href={page}
+            locale={suggestion}
             label={translations.suggestion.goto[suggestion]}
           />
         </p>

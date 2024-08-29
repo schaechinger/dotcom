@@ -18,6 +18,7 @@ type Props = {
 const ProjectImages = ({ slug, images }: Props) => {
   const locale = useLocale() as LocaleCode;
   const [selected, setSelected] = useState(0);
+  const description = getImageLabel(images[selected], locale);
 
   return (
     <div className="grid gap-4 mt-10">
@@ -26,11 +27,12 @@ const ProjectImages = ({ slug, images }: Props) => {
               src={`${IMAGE_HOST}/projects/${slug}/${images[selected].src}`}
               width={1024}
               height={768}
-              alt={getImageLabel(images[selected], locale)}
+              alt={description}
               className="h-auto max-w-full rounded-sm border-2 border-slate-300"
               sizes="(max-width: 640px) 100vw, 1024px"
               priority
             />
+            {!!description && <p className="text-sm mt-2">{description}</p>}
         </div>
         { 1 < images.length
           && <div className="grid grid-cols-6 gap-x-2">

@@ -1,11 +1,13 @@
 import clsx from 'clsx';
-import Link from 'next/link';
 import React from 'react';
 
+import { Link } from '@/routing';
 import ChevronRight from '@components/icons/ChevronRight';
+import { LocaleCode } from '@lib/router';
 
 type Props = {
   href: string;
+  locale?: LocaleCode
   label?: string;
   target?: string;
   children?: React.ReactNode;
@@ -21,6 +23,7 @@ const LinkButton = (props: Props) => {
   return (
     <Component
       href={props.href}
+      locale={props.locale}
       className="group"
       target={target}
       replace={props.replace}

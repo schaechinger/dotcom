@@ -1,15 +1,13 @@
-import Link from 'next/link';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
+import { Link } from '@/routing';
 import SnesButtons from '@components/atoms/SnesButtons';
 import HeartEmpty from '@components/icons/HeartEmpty';
 import LanguageSelection from '@components/molecules/LanguageSelection';
 import SocialLinks from '@components/molecules/SocialLinks';
-import { l, type LocaleCode } from '@lib/router';
 
 const Footer = () => {
   const t = useTranslations('layout.footer');
-  const locale = useLocale() as LocaleCode;
   const sectionClassName = 'font-bold mb-2 text-base';
 
   return (
@@ -32,7 +30,7 @@ const Footer = () => {
           <ul className="flex flex-col gap-2 sm:gap-0 justify-center">
             {['imprint', 'privacy'].map((page) => (
               <li key={page} className="py-1.5">
-                <Link href={l(page, locale)} className="font-normal">{t(page)}</Link>
+                <Link href={page} className="font-normal">{t(page)}</Link>
               </li>
             ))}
           </ul>

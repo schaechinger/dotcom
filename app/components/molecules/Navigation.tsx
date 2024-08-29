@@ -1,16 +1,16 @@
 'use client';
 
 import clsx from 'clsx';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import { useState } from 'react';
 
+import { Link } from '@/routing';
 import Menu from '@components/icons/Menu';
 import MenuClose from '@components/icons/MenuClose';
 import LanguageSwitch from '@components/atoms/LanguageSwitch';
 import ThemeToggle from '@components/molecules/ThemeToggle';
-import { l, type LocaleCode } from '@lib/router';
+import { type LocaleCode } from '@lib/router';
 
 type Props = {
   themeTranslations: Record<string, string>;
@@ -40,7 +40,7 @@ const Navigation = ({ translations, themeTranslations }: Props) => {
         <ul className="flex flex-col gap-2 pt-8 lg:pt-0">
           {/* <li>
             <Link
-              href={l('/', locale)}
+              href="/""
               className={`/${locale}` === path ? itemClasses.active : itemClasses.normal}
               onClick={() => setOpen(false)}
             >{translations.home}</Link>
@@ -53,7 +53,7 @@ const Navigation = ({ translations, themeTranslations }: Props) => {
           ].map((page) => (
             <li key={page}>
               <Link
-                href={l(page, locale)}
+                href={`/${page}`}
                 className={path.startsWith(`/${locale}/${page}`) ? itemClasses.active : itemClasses.normal}
                 onClick={() => setOpen(false)}
               >{ translations[page] }</Link>

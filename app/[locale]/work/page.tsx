@@ -8,7 +8,6 @@ import LinkButton from '@components/atoms/LinkButton';
 import Separator from '@components/atoms/Separator';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
-import { l } from '@lib/router';
 import { generatePageMeta } from '@lib/seo';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
@@ -57,7 +56,7 @@ const WorkPage = ({ params: { locale } }: PageProps) => {
         </div>
 
         <p className="mt-4">
-          <LinkButton href={l('/projects', locale)} label={t('goto.projects')} />
+          <LinkButton href="/projects" label={t('goto.projects')} />
         </p>
       </PageSection>
 

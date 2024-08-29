@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import wallpaper from '@/public/images/opengraph-schaechinger.jpg';
+import { Link } from '@/routing';
 import type { PageProps } from '@app/interfaces';
 import { getYearSpan } from '@/app/utils';
 import BulletList from '@components/atoms/BulletList';
@@ -12,7 +12,6 @@ import Breadcrumbs from '@components/atoms/Breadcumbs';
 import LinkButton from '@components/atoms/LinkButton';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
-import { l } from '@lib/router';
 import { generatePageMeta } from '@lib/seo';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
@@ -58,26 +57,22 @@ const AboutPage = ({ params: { locale } }: PageProps) => {
           <p className="mb-2">{t('profile.bullets.work', { years })}</p>
           <p className="mb-2">{t.rich('profile.bullets.stack', {
             link: (label: React.ReactNode) => (
-              <Link href={l('/work#stack', locale)}
-                className="inline-link">{label}</Link>
+              <Link href="/work#stack" className="inline-link">{label}</Link>
             ),
           })}</p>
           <p className="mb-2">{t.rich('profile.bullets.education', {
             link: (label: React.ReactNode) => (
-              <Link href={l('/resume#hm', locale)}
-                className="inline-link">{label}</Link>
+              <Link href="/resume#hm" className="inline-link">{label}</Link>
             ),
           })}</p>
           <p className="mb-2">{t.rich('profile.bullets.sports', {
             link: (label: React.ReactNode) => (
-              <Link href={l('/sports#marathons', locale)}
-                className="inline-link">{label}</Link>
+              <Link href="/sports#marathons" className="inline-link">{label}</Link>
             ),
           })}</p>
           <p className="mb-">{t.rich('profile.bullets.medalmonday', {
             link: (label: React.ReactNode) => (
-              <Link href={l('/projects/medalmonday', locale)}
-                className="inline-link">{label}</Link>
+              <Link href="/projects/medalmonday" className="inline-link">{label}</Link>
             ),
           })}</p>
         </BulletList>
@@ -87,10 +82,10 @@ const AboutPage = ({ params: { locale } }: PageProps) => {
         <p>{t('profile.text')}</p>
 
         <p className="mt-4">
-          <LinkButton href={l('/resume', locale)} label={t('profile.goto.resume')} />
+          <LinkButton href="/resume" label={t('profile.goto.resume')} />
         </p>
         <p className="mt-2">
-          <LinkButton href={l('/projects', locale)} label={t('profile.goto.projects')} />
+          <LinkButton href="/projects" label={t('profile.goto.projects')} />
         </p>
       </PageSection>
     </PageContainer>

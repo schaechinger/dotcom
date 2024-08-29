@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
+import { Link } from '@/routing';
 import type { PageProps } from '@app/interfaces';
 import { getYearSpan } from '@app/utils';
 import AvailabilityIndicator from '@components/atoms/AvailabilityIndicator';
@@ -14,7 +14,6 @@ import CertificationList from '@components/organisms/CertificationList';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import ProjectList from '@components/organisms/ProjectList';
-import { l } from '@lib/router';
 import { generatePageMeta, generateProfileJson } from '@lib/seo';
 
 export const generateMetadata = ({ params: { locale } }: PageProps): Metadata => generatePageMeta('/', locale);
@@ -38,12 +37,12 @@ const HomePage = ({ params: { locale } }: PageProps) => {
           <p>{t.rich('about.text.0', aboutTextOptions)}</p>
           <p className="mt-2">{t.rich('about.text.1', aboutTextOptions)}</p>
           <p className="my-4">
-            <LinkButton href={l('/work', locale)} label={t('about.goto.work')} />
+            <LinkButton href="/work" label={t('about.goto.work')} />
           </p>
 
           <p>{t.rich('about.text.2', aboutTextOptions)}</p>
           <p className="mt-4">
-            <LinkButton href={l('/sports', locale)} label={t('about.goto.marathons')} />
+            <LinkButton href="/sports" label={t('about.goto.marathons')} />
           </p>
         </PageSection>
 
@@ -54,7 +53,7 @@ const HomePage = ({ params: { locale } }: PageProps) => {
 
           <p className="mt-4">
             {t.rich('availability.text', {
-              contact: (label: React.ReactNode) => <Link href={l('/contact', locale)}
+              contact: (label: React.ReactNode) => <Link href="/contact"
               className="inline-link">{label}</Link>,
             })}
           </p>
@@ -83,7 +82,7 @@ const HomePage = ({ params: { locale } }: PageProps) => {
 
           <p className="mb-4">{t("contact.text")}</p>
 
-          <LinkButton href={l('/contact', locale)} label={t('contact.goto')} />
+          <LinkButton href="/contact" label={t('contact.goto')} />
         </PageSection>
       </PageContainer>
 

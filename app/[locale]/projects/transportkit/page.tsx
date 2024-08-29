@@ -10,7 +10,6 @@ import ProjectMasterData from '@components/molecules/ProjectMasterData';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import { loadProjectBySlug } from '@lib/contentful';
-import { l } from '@lib/router';
 
 import { generateProjectMetadata } from '../[slug]/page';
 
@@ -73,7 +72,7 @@ const TransportKitPage = async ({ params: { locale } }: PageProps) => {
       <ProjectLinks links={project.links} />
 
       <p className="mt-4">
-        <LinkButton href={l('/projects', locale)} label={t('goto.projects')} back />
+        <LinkButton href="/projects" label={t('goto.projects')} back />
       </p>
     </PageContainer>
   );

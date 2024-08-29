@@ -3,14 +3,6 @@ import { supportedLangs } from '@app/config';
 
 export type LocaleCode = 'de' | 'en';
 
-export const l = (identifier: string, locale: LocaleCode) => {
-  const link = `/${[locale || 'en', ...identifier.split(/[\/\.]/g)]
-    .filter((p) => !!p)
-    .join('/')}`;
-
-  return link.replace(/\/+$/, '') || '/';
-};
-
 export const matchLocale = (languages: readonly string[]) => (
   match(languages, supportedLangs, 'en') as LocaleCode
 );
