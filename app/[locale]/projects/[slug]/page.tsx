@@ -6,7 +6,7 @@ import { IMAGE_HOST } from '@app/config';
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/atoms/LinkButton';
 import DetailBlock from '@components/molecules/DetailBlock';
-import ProjectImages from '@components/molecules/ProjectImages';
+import ProjectImages, { getImageLabel } from '@components/molecules/ProjectImages';
 import ProjectLinks from '@components/molecules/ProjectLinks';
 import ProjectMasterData from '@components/molecules/ProjectMasterData';
 import PageContainer from '@components/organisms/PageContainer';
@@ -38,7 +38,12 @@ export const generateProjectMetadata = async (slug: string, locale: LocaleCode) 
       description: metadata.description,
       type: 'article',
       locale,
-      images: project.images?.length ? `${IMAGE_HOST}/projects/${slug}/${project.images[0].src}` : undefined,
+      images: (project.images || []).map((image) => ({
+        url: `${IMAGE_HOST}/projects/${slug}/${image.src}`,
+        alt: getImageLabel(image, locale) || undefined,
+        width: 1024,
+        height: 576,
+      })),
     };
   }
 

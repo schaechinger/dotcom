@@ -32,7 +32,11 @@ export const generateMetadata = async ({ params: { locale } }: LayoutProps): Pro
       url: 'https://www.schaechinger.com',
     },
     openGraph: {
-      images: `${WEB_HOST}/images/opengraph-schaechinger.jpg`,
+      images: {
+        url: `${WEB_HOST}/images/opengraph-schaechinger.jpg`,
+        width: 2400,
+        height: 1260,
+      },
       siteName: 'Manuel Schächinger',
       type: 'website',
       locale,
