@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { useLocale, useTranslations } from 'next-intl';
 
-import { Link } from '@/routing';
+import { Link } from '@lib/router';
 import JsonLd from '@components/atoms/JsonLd';
 import ChevronRight from '@components/icons/ChevronRight';
 import Home from '@components/icons/Home';

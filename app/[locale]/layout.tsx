@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import { supportedLangs, WEB_HOST } from '@app/config';
 import { clearSans } from '@app/font';
@@ -46,7 +46,6 @@ export const generateMetadata = async ({ params: { locale } }: LayoutProps): Pro
 
 const RootLayout = async ({ children, params: { locale } }: LayoutProps) => {
   unstable_setRequestLocale(locale);
-  const messages = await getMessages();
 
   return (
     <html className={clsx(clearSans.className/*, bestChoice.variable*/)} lang={locale} dir="ltr" suppressHydrationWarning>
@@ -55,7 +54,7 @@ const RootLayout = async ({ children, params: { locale } }: LayoutProps) => {
       </head>
       <body className="text-dark-950 dark:text-dark-200 bg-dark-50 dark:bg-dark-800 font-sans">
         <ThemeProvider>
-          <NextIntlClientProvider messages={messages}>
+          <NextIntlClientProvider>
             <div className="lg:flex lg:gap-8 w-full max-w-screen-xl mx-auto">
               <Header />
 

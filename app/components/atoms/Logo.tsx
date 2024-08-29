@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 
-import { Link } from '@/routing';
+import { Link } from '@lib/router';
 
 const Logo = () => {
   const t = useTranslations('layout.header');

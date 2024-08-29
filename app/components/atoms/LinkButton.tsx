@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 
-import { Link } from '@/routing';
+import { Link } from '@lib/router';
 import ChevronRight from '@components/icons/ChevronRight';
 import { LocaleCode } from '@lib/router';
 

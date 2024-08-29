@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import { Link } from '@/routing';
+import { Link } from '@lib/router';
 
 const SnesButtons = () => {
   const className = 'absolute w-6 h-6 text-center font-bold rounded-full transition-colors border border-dark-200 dark:border-dark-600 text-dark-200 dark:text-dark-600';

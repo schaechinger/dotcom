@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
-import { Link } from '@/routing';
+import { Link } from '@lib/router';
 import type { PageProps } from '@app/interfaces';
 import { getYearSpan } from '@app/utils';
 import AvailabilityIndicator from '@components/atoms/AvailabilityIndicator';

@@ -2,9 +2,8 @@
 
 import { useLocale } from 'next-intl';
 
-import { Link, usePathname } from '@/routing';
+import { Link, type LocaleCode, usePathname } from '@lib/router';
 import language from '@/messages/language';
-import { type LocaleCode } from '@lib/router';
 
 const LanguageSwitch = () => {
   const page = usePathname();

@@ -2,7 +2,7 @@
 
 
 import translations from '@/messages/language';
-import { Link, usePathname } from '@/routing';
+import { Link, usePathname } from '@lib/router';
 import { supportedLangs } from '@app/config';
 
 const LanguageSelection = () => {

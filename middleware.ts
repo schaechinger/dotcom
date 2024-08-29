@@ -3,7 +3,7 @@ import { type NextRequest, NextResponse } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
 
 import { supportedLangs } from '@app/config';
-import { matchLocale, splitPath } from '@lib/router';
+import { matchLocale, routing, splitPath } from '@lib/router';
 
 const getLocale = (req: NextRequest) => {
   const headers = { 'accept-language': req.headers.get('accept-language') || '' };
@@ -22,8 +22,7 @@ export function middleware(request: NextRequest) {
 
   if (foundLang) {
     return createMiddleware({
-      defaultLocale: 'en',
-      locales: supportedLangs,
+      ...routing,
       localeDetection: false,
     })(request);
   }

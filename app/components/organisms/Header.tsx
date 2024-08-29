@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 import image from '@/public/images/schaechinger.jpg';
-import { Link } from '@/routing';
+import { Link } from '@lib/router';
 import Logo from '@components/atoms/Logo';
 import Navigation from '@components/molecules/Navigation';
 

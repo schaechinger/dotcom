@@ -3,7 +3,7 @@
 import { useLocale } from 'next-intl';
 import { useEffect, useState } from 'react';
 
-import { usePathname } from '@/routing';
+import { usePathname } from '@lib/router';
 import translations from '@/messages/language';
 import { LANGUAGE_SUGGESTION_OPT_OUT } from '@app/config';
 import { isBrowser, useLocalStorage } from '@app/utils';

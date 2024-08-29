@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import { useState } from 'react';
 
-import { Link } from '@/routing';
+import { Link } from '@lib/router';
 import Menu from '@components/icons/Menu';
 import MenuClose from '@components/icons/MenuClose';
 import LanguageSwitch from '@components/atoms/LanguageSwitch';
