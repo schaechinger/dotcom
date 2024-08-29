@@ -21,11 +21,16 @@ const config: Config = {
         dark: {
           50: '#fff',
           200: '#ccc',
+          600: '#444a4f',
           700: '#22292e',
           800: '#0f2127',
           900: '#1c2129',
-          // 900: '#181818',
           950: '#111',
+        },
+        medalmonday: {
+          primary: '#2e5d4e',
+          light: '#698e80',
+          dark: '#1e332b',
         },
         js: '#ffe70b',
         node: '#026e00',

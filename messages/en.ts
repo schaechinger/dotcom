@@ -361,6 +361,9 @@ const translations = {
 
   layout: {
     footer: {
+      social: 'Social Networks',
+      languages: 'Languages',
+      legal: 'Legal',
       imprint: imprint.title,
       privacy: privacy.title,
       dev: 'Crafted with <love></love> in Munich.',

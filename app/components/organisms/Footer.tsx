@@ -10,34 +10,45 @@ import { l, type LocaleCode } from '@lib/router';
 const Footer = () => {
   const t = useTranslations('layout.footer');
   const locale = useLocale() as LocaleCode;
+  const sectionClassName = 'font-bold mb-2 text-base';
 
   return (
-    <footer className="footer mb-6 mt-10 sm:text-left text-sm">
+    <footer className="footer flex flex-col gap-8 mb-6 mt-10 sm:text-left text-sm lg:max-w-screen-sm">
       <SnesButtons />
 
-      <div className="mt-6 mb-4">
-        <SocialLinks />
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-6">
+        <div>
+          <p className={sectionClassName}>{t('social')}</p>
+          <SocialLinks />
+        </div>
+
+        <div>
+          <p className={sectionClassName}>{t('languages')}</p>
+          <LanguageSelection />
+        </div>
+
+        <div>
+          <p className={sectionClassName}>{t('legal')}</p>
+          <ul className="flex flex-col gap-2 sm:gap-0 justify-center">
+            {['imprint', 'privacy'].map((page) => (
+              <li key={page} className="py-1.5">
+                <Link href={l(page, locale)} className="font-normal">{t(page)}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
-      <div className="my-4">
-        <LanguageSelection />
+      <div>
+        <p className="footer__copyright mb-2">
+          {t('copyright', { year: new Date().getFullYear() })}
+        </p>
+        <p className="footer__love">
+          {t.rich('dev', {
+            love: (_chunk: React.ReactNode) => <HeartEmpty className="text-lg -mt-1 mx-1 text-snes-a" />,
+          })}
+        </p>
       </div>
-
-      <ul className="flex justify-start gap-4 my-4">
-        {['imprint', 'privacy'].map((page) => (
-          <li key={page}>
-            <Link href={l(page, locale)} className="font-normal">{t(page)}</Link>
-          </li>
-        ))}
-      </ul>
-      <p className="footer__copyright mb-2">
-        {t('copyright', { year: new Date().getFullYear() })}
-      </p>
-      <p className="footer__love">
-        {t.rich('dev', {
-          love: (_chunk: React.ReactNode) => <HeartEmpty className="text-lg -mt-1 mx-1 text-snes-a" />,
-        })}
-      </p>
     </footer>
   );
 };

@@ -28,12 +28,12 @@ const LanguageSelection = () => {
   }, [pathname]);
 
   return (
-    <ul className="flex justify-start gap-4 mt-6 mb-4">
-      <li>
+    <ul className="flex flex-col gap-2 sm:gap-0 justify-center">
+      <li className="hidden">
         <Icon className="text-xl -mt-1" />
       </li>
       {supportedLangs.map((lang) => (
-        <li key={lang}>
+        <li key={lang} className="py-1.5">
           <Link
             href={l(path.page, lang)}
             lang={lang}

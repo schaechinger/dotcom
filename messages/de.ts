@@ -360,6 +360,9 @@ const translations = {
 
   layout: {
     footer: {
+      social: 'Soziale Netzwerke',
+      languages: 'Sprachen',
+      legal: 'Rechtliches',
       imprint: imprint.title,
       privacy: privacy.title,
       dev: 'Mit viel <love></love> in München entwickelt.',
