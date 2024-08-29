@@ -1,7 +1,7 @@
 import { revalidatePath } from 'next/cache';
 import { NextResponse } from 'next/server';
 
-import { supportedLangs } from '@app/config';
+import { supportedLangs, WEB_HOST } from '@app/config';
 
 export const GET = () => {
   revalidatePath('/', 'layout');
@@ -11,5 +11,7 @@ export const GET = () => {
   return NextResponse.json({
     success: true,
     languages: supportedLangs,
+    host: WEB_HOST,
+    env: process.env.NODE_ENV,
   });
 };

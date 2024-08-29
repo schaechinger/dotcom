@@ -5,6 +5,7 @@ import { WEB_HOST } from '@app/config';
 import { isProd } from '@app/utils';
 
 export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 const robots = async (): Promise<MetadataRoute.Robots> => {
   // force dynamic to get correct web host
