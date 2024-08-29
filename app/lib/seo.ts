@@ -49,7 +49,7 @@ export const generateProfileJson = () => wrapJson(
 export const generatePageMeta = (identifier: string, locale: LocaleCode) => {
   const languages: Record<string, string> = {};
   supportedLangs.forEach((lang) => {
-    languages[lang] = `${WEB_HOST}/${locale}${identifier.replace(/\/+$/, '')}`;
+    languages[lang] = `${WEB_HOST}/${lang}${identifier.replace(/\/+$/, '')}`;
   });
 
   return {
