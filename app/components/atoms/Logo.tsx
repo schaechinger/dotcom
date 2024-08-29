@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 
-import { Link } from '@lib/router';
+import Link from '@components/atoms/Link';
 
 const Logo = () => {
   const t = useTranslations('layout.header');

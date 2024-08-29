@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 
-import { Link } from '@lib/router';
+import Link from '@components/atoms/Link';
 import PageSection from '@components/organisms/PageSection';
 import { type ProjectLinkData } from '@models/project';
 

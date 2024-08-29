@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 
-import { Link } from '@lib/router';
+import Link from '@components/atoms/Link';
 import SnesButtons from '@components/atoms/SnesButtons';
 import HeartEmpty from '@components/icons/HeartEmpty';
 import LanguageSelection from '@components/molecules/LanguageSelection';

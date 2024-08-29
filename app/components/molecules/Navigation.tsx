@@ -2,15 +2,14 @@
 
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
-import { useLocale } from 'next-intl';
 import { useState } from 'react';
 
-import { Link } from '@lib/router';
+import Link from '@components/atoms/Link';
 import Menu from '@components/icons/Menu';
 import MenuClose from '@components/icons/MenuClose';
 import LanguageSwitch from '@components/atoms/LanguageSwitch';
 import ThemeToggle from '@components/molecules/ThemeToggle';
-import { type LocaleCode } from '@lib/router';
+import { splitPath } from '@lib/router';
 
 type Props = {
   themeTranslations: Record<string, string>;
@@ -18,9 +17,9 @@ type Props = {
 };
 
 const Navigation = ({ translations, themeTranslations }: Props) => {
-  const path = usePathname();
+  const pathname = usePathname();
   const [isOpen, setOpen] = useState(false);
-  const locale = useLocale() as LocaleCode;
+  const { page } = splitPath(pathname);
 
   const itemClasses = {
     normal: 'font-normal py-1 inline-block',
@@ -41,7 +40,7 @@ const Navigation = ({ translations, themeTranslations }: Props) => {
           {/* <li>
             <Link
               href="/""
-              className={`/${locale}` === path ? itemClasses.active : itemClasses.normal}
+              className={'' === page ? itemClasses.active : itemClasses.normal}
               onClick={() => setOpen(false)}
             >{translations.home}</Link>
           </li> */}
@@ -50,13 +49,13 @@ const Navigation = ({ translations, themeTranslations }: Props) => {
             'resume',
             'projects',
             'contact',
-          ].map((page) => (
-            <li key={page}>
+          ].map((identifier) => (
+            <li key={identifier}>
               <Link
-                href={`/${page}`}
-                className={path.startsWith(`/${locale}/${page}`) ? itemClasses.active : itemClasses.normal}
+                href={`/${identifier}`}
+                className={page.startsWith(`/${identifier}`) ? itemClasses.active : itemClasses.normal}
                 onClick={() => setOpen(false)}
-              >{ translations[page] }</Link>
+              >{ translations[identifier] }</Link>
             </li>
           ))}
 

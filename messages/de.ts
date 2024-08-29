@@ -29,11 +29,11 @@ const about = {
     bullets: {
       age: 'Ich bin {age} Jahre alt.',
       location: 'In Ottobrunn lebe ich.',
-      coffee: 'Meine Tag starten mit einem Kaffee.',
+      coffee: 'Meine Tage starten mit einem Kaffee.',
       work: 'Seit über {years} Jahren bin ich Softwareentwickler.',
       stack: 'Mein Fokus liegt auf <link>JavaScript</link>.',
       education: 'In <link>Informatik</link> habe ich einen Bachelor.',
-      sports: '<link>Marathonläufer</link> ist meine Leidenschaft.',
+      sports: '<link>Marathonlaufen</link> ist meine Leidenschaft.',
       medalmonday: '2022 habe ich <link>Medal Monday</link> mitgegründet.',
     },
 

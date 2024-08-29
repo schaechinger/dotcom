@@ -1,4 +1,4 @@
-import { Link } from '@lib/router';
+import Link from '@components/atoms/Link';
 import HistoryItemDescription from '@components/atoms/HistoryItemDescription';
 import HistoryItemTechList from '@components/atoms/HistoryItemTechList';
 import TimeSpan from '@components/atoms/TimeSpan';

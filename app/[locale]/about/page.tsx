@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import wallpaper from '@/public/images/opengraph-schaechinger.jpg';
-import { Link } from '@lib/router';
+import Link from '@components/atoms/Link';
 import type { PageProps } from '@app/interfaces';
 import { getYearSpan } from '@/app/utils';
 import BulletList from '@components/atoms/BulletList';
