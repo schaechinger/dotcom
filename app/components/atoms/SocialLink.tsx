@@ -16,7 +16,7 @@ const SocialLink = ({ className, iconClassName, href, icon: Icon, title }: Props
       className={clsx('flex gap-2 items-center group', className)}
       title={title}
     >
-      <span className={clsx('w-8 h-8 text-xl flex items-center justify-center rounded-full', iconClassName)}>{Icon}</span>
+      <span className={clsx('w-7 h-7 text-xl flex items-center justify-center rounded-full transition-colors', iconClassName)}>{Icon}</span>
       <span className="font-normal">{title}</span>
     </a>
   </>
