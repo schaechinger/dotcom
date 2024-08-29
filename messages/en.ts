@@ -372,7 +372,7 @@ const translations = {
     header: {
       profession: 'Fullstack JavaScript Engineer',
       text: [
-        'Senior engineer of scalable and',
+        'Senior engineer for scalable and',
         'performance critical software systems.'
       ],
       navigation: {
