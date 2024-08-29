@@ -86,7 +86,7 @@ const ContactForm = ({ translations }: Props) => {
   return (
     <form onSubmit={handleSubmit}>
       <label className="block mb-8">
-        <span className="text-sm text-dark-900 dark:text-slate-200">{translations.name}</span>
+        <span className="text-sm text-dark-800 dark:text-slate-200">{translations.name}</span>
         <input
           type="text"
           name="name"
@@ -99,7 +99,7 @@ const ContactForm = ({ translations }: Props) => {
       </label>
 
       <label className="block mb-8">
-        <span className="text-sm text-dark-900 dark:text-slate-200">{translations.email}</span>
+        <span className="text-sm text-dark-800 dark:text-slate-200">{translations.email}</span>
         <input
           type="email"
           name="email"
@@ -112,7 +112,7 @@ const ContactForm = ({ translations }: Props) => {
       </label>
 
       <label className="block mb-8">
-        <span className="text-sm text-dark-900 dark:text-slate-200">{translations.message}</span>
+        <span className="text-sm text-dark-800 dark:text-slate-200">{translations.message}</span>
         <textarea
           name="message"
           className="mt-0 block bg-transparent w-full px-0 border-0 border-b-2 border-slate-200 dark:border-slate-600 focus:ring-0 focus:border-primary-500 focus:dark:border-primary-500 focus:outline-none"
