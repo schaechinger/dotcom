@@ -47,11 +47,26 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       - uses: docker/build-push-action@v6
+        name: Stage build
+        if: github.ref == 'refs/heads/develop'
         with:
           context: ./
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
-            "BUILD_HASH=${{ env.GIT_SHA }}"
-            "NEXT_PUBLIC_WEB_HOST=${{ vars.NEXT_PUBLIC_WEB_HOST }}"
+            BUILD_HASH=${{ env.GIT_SHA }}
+            NODE_ENV=staging
+            NEXT_PUBLIC_WEB_HOST=https://dev.schaechinger.com
+      - uses: docker/build-push-action@v6
+        name: Production build
+        if: github.ref == 'refs/heads/main'
+        with:
+          context: ./
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            BUILD_HASH=${{ env.GIT_SHA }}
+            NODE_ENV=production
+            NEXT_PUBLIC_WEB_HOST=https://www.schaechinger.com

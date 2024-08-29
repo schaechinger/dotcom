@@ -6,7 +6,6 @@ import { supportedLangs, WEB_HOST } from '@app/config';
 export const GET = () => {
   revalidatePath('/', 'layout');
   revalidatePath('/robots.txt');
-  revalidatePath('/robots');
 
   return NextResponse.json({
     success: true,
