@@ -49,7 +49,7 @@ const RootLayout = async ({ children, params: { locale } }: LayoutProps) => {
   const messages = await getMessages();
 
   return (
-    <html className={clsx(clearSans.className/*, bestChoice.variable*/)} lang={locale} dir="ltr">
+    <html className={clsx(clearSans.className/*, bestChoice.variable*/)} lang={locale} dir="ltr" suppressHydrationWarning>
       <head>
         <link type="text/plain" rel="author" href={`${WEB_HOST}/humans.txt`} />
       </head>
