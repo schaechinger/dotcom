@@ -6,8 +6,7 @@ import { supportedLangs } from '@app/config';
 
 export type LocaleCode = 'de' | 'en';
 
-
-export const routing = defineRouting({
+const routing = defineRouting({
   locales: supportedLangs,
   defaultLocale: 'en',
 });

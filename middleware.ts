@@ -1,9 +1,8 @@
 import Negotiator from 'negotiator'
 import { type NextRequest, NextResponse } from 'next/server';
-import createMiddleware from 'next-intl/middleware';
 
 import { supportedLangs } from '@app/config';
-import { matchLocale, routing, splitPath } from '@lib/router';
+import { matchLocale, splitPath } from '@lib/router';
 
 const getLocale = (req: NextRequest) => {
   const headers = { 'accept-language': req.headers.get('accept-language') || '' };
@@ -21,10 +20,7 @@ export function middleware(request: NextRequest) {
   const locale = getLocale(request);
 
   if (foundLang) {
-    return createMiddleware({
-      ...routing,
-      localeDetection: false,
-    })(request);
+    return;
   }
 
   // Detect unknown language code
