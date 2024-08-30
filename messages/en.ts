@@ -1,10 +1,11 @@
+import 'server-only';
+
 /**
  * English language file.
- * 
+ *
  * Code: en
  * Name: English
  */
-
 const general = {
   meta: {
     title: 'Manuel Schächinger – Fullstack JavaScript Engineer & Consultant',
@@ -125,7 +126,7 @@ const imprint = {
 
   owner: {
     title: 'Owner According to § 5 TMG (German Law)',
-    ustidnr: 'USt-IdNr. gem. § 27a UStG: {id}',
+    ustidnr: 'Sales tax ID according to section 27a of the Sales Tax Law (UStG): {id}',
   },
   contact: {
     goto: 'Send an email',
@@ -361,7 +362,7 @@ const translations = {
 
   layout: {
     footer: {
-      social: 'Social Networks',
+      social: 'My Profiles',
       languages: 'Languages',
       legal: 'Legal',
       imprint: imprint.title,

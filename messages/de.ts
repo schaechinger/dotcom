@@ -1,10 +1,11 @@
+import 'server-only';
+
 /**
  * German language file.
- * 
+ *
  * Code: de
  * Name: Deutsch
  */
-
 const general = {
   meta: {
     title: 'Manuel Schächinger – Fullstack JavaScript Engineer & Consultant',
@@ -360,7 +361,7 @@ const translations = {
 
   layout: {
     footer: {
-      social: 'Soziale Netzwerke',
+      social: 'Meine Profile',
       languages: 'Sprachen',
       legal: 'Rechtliches',
       imprint: imprint.title,

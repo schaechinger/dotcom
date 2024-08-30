@@ -36,16 +36,17 @@ const ImprintPage = ({ params: { locale } }: PageProps) => {
         <p className="mb-4">
           <Address />
         </p>
+
+        <p className="mb-4">
+          <LinkButton href="mailto:manuel@schaechinger.com" label={t('contact.goto')} />
+        </p>
+
         <p className="mb-4">
           {t('owner.ustidnr', { id: 'DE324539715' })}
         </p>
 
-        <p className="mb-4">
-            <LinkButton href="mailto:manuel@schaechinger.com" label={t('contact.goto')} />
-        </p>
-
         <p>
-          <strong>{t('odr.title')}:</strong>&nbsp;
+          <strong className="dark:text-dark-50">{t('odr.title')}:</strong>&nbsp;
           {t.rich('odr.text', {
             link: () => (
             <a href="https://ec.europa.eu/consumers/odr"
@@ -61,22 +62,22 @@ const ImprintPage = ({ params: { locale } }: PageProps) => {
         <h2 className="text-h2">{t('liability')}</h2>
 
         <p className="mb-2">
-          <strong>{t('disclaimer.title')}:</strong>&nbsp;
+          <strong className="dark:text-dark-50">{t('disclaimer.title')}:</strong>&nbsp;
           {t('disclaimer.text')}
         </p>
 
         <p className="mb-2">
-          <strong>{t('links.title')}:</strong>&nbsp;
+          <strong className="dark:text-dark-50">{t('links.title')}:</strong>&nbsp;
           {t('links.text')}
         </p>
 
         <p className="mb-2">
-          <strong>{t('copyright.title')}:</strong>&nbsp;
+          <strong className="dark:text-dark-50">{t('copyright.title')}:</strong>&nbsp;
           {t('copyright.text')}
         </p>
 
         <p>
-          <strong>{t('violations.title')}:</strong>&nbsp;
+          <strong className="dark:text-dark-50">{t('violations.title')}:</strong>&nbsp;
           {t('violations.text')}
         </p>
       </PageSection>

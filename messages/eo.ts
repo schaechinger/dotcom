@@ -15,12 +15,17 @@ const general = {
 
 const about = {
   title: 'Pri mi',
+  pageTitle: 'Saluton, mi estas Manuel.',
 };
 
 const home = {
   about: {
-    title: 'Saluton, mi estas Manuel.',
+    title: about.pageTitle,
   },
+};
+
+const projects = {
+  title: 'Projektoj',
 };
 
 const translations = {
@@ -29,6 +34,7 @@ const translations = {
   pages: {
     about,
     home,
+    projects,
   },
 
   // layout

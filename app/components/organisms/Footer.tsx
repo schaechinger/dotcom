@@ -30,7 +30,7 @@ const Footer = () => {
           <ul className="flex flex-col gap-2 sm:gap-0 justify-center">
             {['imprint', 'privacy'].map((page) => (
               <li key={page} className="py-1.5">
-                <Link href={page} className="font-normal">{t(page)}</Link>
+                <Link href={`/${page}`} className="font-normal">{t(page)}</Link>
               </li>
             ))}
           </ul>
