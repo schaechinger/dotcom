@@ -55,7 +55,7 @@ const BrandBook = () => {
           </div>
         </SplitSection>
 
-        <SplitSection id="banner" label="Banner">
+        <SplitSection id="banners" label="Banners">
           <div className="flex-1 flex flex-col gap-4">
             <MessageBanner text="Default message banner" />
             <MessageBanner title="Success" text="Your inquiry has been submitted" success />
@@ -65,7 +65,7 @@ const BrandBook = () => {
 
         <SplitSection id="navigation" label="Navigation">
           <div className="flex flex-col gap-2">
-            <NavigationItem href="#navigation" label="Navigation item" />
+            <NavigationItem href="#navigation" label="Navigation items" />
             <NavigationItem href="#navigation" label="Active navigation item" active />
           </div>
         </SplitSection>
@@ -87,7 +87,7 @@ const BrandBook = () => {
           </ul>
         </SplitSection>
 
-        <SplitSection id="colors" label="Colors">
+        <SplitSection id="colors" label="Color Palette">
           <div className="flex flex-col gap-2">
             <div className="flex gap-2">
               <div className="w-8 h-8 rounded-full bg-primary" title="primary" />
