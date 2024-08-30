@@ -10,7 +10,7 @@ type Props = {
 
 const HistoryItemCompany = ({ company, type }: Props) => (
   (company || type) && <div className="font-thin">
-    {type && <ProjectTypeLabel type={type} label={!company} />}
+    {type && <ProjectTypeLabel type={type} label={!company} colored />}
     {company && <CompanyLink company={company} />}
   </div>
 );

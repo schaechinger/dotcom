@@ -8,6 +8,8 @@ import LinkButton from '@components/atoms/LinkButton';
 import MessageBanner from '@components/molecules/MessageBanner';
 
 import SplitSection from './SplitSection';
+import TechItem from '../components/atoms/TechItem';
+import ProjectTypeLabel from '../components/atoms/ProjectTypeLabel';
 
 export const metadata: Metadata = {
   title: 'Brandbook – Manuel Schächinger',
@@ -53,7 +55,7 @@ const BrandBook = () => {
           </div>
         </SplitSection>
 
-        <SplitSection id="banner" label="Banners">
+        <SplitSection id="banner" label="Banner">
           <div className="flex-1 flex flex-col gap-4">
             <MessageBanner text="Default message banner" />
             <MessageBanner title="Success" text="Your inquiry has been submitted" success />
@@ -68,12 +70,28 @@ const BrandBook = () => {
           </div>
         </SplitSection>
 
+        <SplitSection id="tech" label="Tech Item">
+          <ul className="flex gap-2">
+            <TechItem>JavaScript</TechItem>
+            <TechItem>Node.js</TechItem>
+            <TechItem>Next.js</TechItem>
+          </ul>
+        </SplitSection>
+
+        <SplitSection id="project-types" label="Project Types">
+          <ul className="flex flex-col gap-2">
+            <li><ProjectTypeLabel type="founder" label colored /></li>
+            <li><ProjectTypeLabel type="freelance" label /></li>
+            <li><ProjectTypeLabel type="private" colored /></li>
+            <li><ProjectTypeLabel type="employee" /></li>
+          </ul>
+        </SplitSection>
+
         <SplitSection id="colors" label="Colors">
           <div className="flex flex-col gap-2">
             <div className="flex gap-2">
               <div className="w-8 h-8 rounded-full bg-primary" title="primary" />
-              <div className="w-8 h-8 rounded-full bg-secondary" title="secondary" />
-              <div className="w-8 h-8 rounded-full bg-discreet-shade" title="discreet-shade" />
+              <div className="w-8 h-8 rounded-full bg-secondary" title="discreet-shade" />
               <div className="w-8 h-8 rounded-full bg-discreet-light" title="discreet-light" />
               <div className="w-8 h-8 rounded-full bg-discreet-egg" title="discreet-egg" />
               <div className="w-8 h-8 rounded-full bg-squash-red" title="squash-red" />

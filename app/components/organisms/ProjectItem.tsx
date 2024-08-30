@@ -21,7 +21,7 @@ const ProjectItem = ({ item, heading }: Props) => (
       title={(
         <Link href={`/projects/${item.slug}`} className="group">
           { item.title }
-          <ArrowRight className="inline-block -mt-0.5 ml-1 text-discreet-shade/60 dark:text-discreet-primary/60 -rotate-45 transition-colors group-hover:text-current group-hover:text-xl group-hover:-mt-0.5 group-hover:ml-0.5" />
+          <ArrowRight className="inline-block -mt-0.5 ml-1 text-secondary/60 dark:text-primary/60 -rotate-45 transition-colors group-hover:text-current group-hover:text-xl group-hover:-mt-0.5 group-hover:ml-0.5" />
         </Link>
       )}
     />

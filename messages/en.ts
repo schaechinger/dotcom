@@ -226,8 +226,8 @@ const projects = {
   details: {
     title: 'Project Details',
     company: 'Company',
-    timeSpan: 'Time span',
-    type: 'Project type',
+    timeSpan: 'Period',
+    type: 'Type',
 
     goto: {
       projects: 'Go to projects',

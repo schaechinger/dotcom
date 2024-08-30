@@ -5,7 +5,7 @@
       content: " |";
       opacity: 0;
 
-      @apply text-discreet-shade dark:text-discreet-primary font-bold right-0;
+      @apply text-secondary dark:text-primary font-bold right-0;
     }
 
     @keyframes cursor {

@@ -23,16 +23,16 @@ const ProjectMasterData = ({ project }: Props) => {
         { title: project.title },
       ]} />
 
-      <h1 className="text-h1">{ project.title }</h1>
+      <h1 className="text-h1">{project.title}</h1>
 
-      <p className="mb-2">{ project.description }</p>
+      <p className="mb-2">{project.description}</p>
 
       <p className="mb-2">
         {t('details.timeSpan')}: <TimeSpan startDate={project.startDate} endDate={project.endDate} />
       </p>
 
       <p className="mb-2">
-        {t('details.type')}: <ProjectTypeLabel type={project.type} label />
+        {t('details.type')}: <ProjectTypeLabel type={project.type} colored label />
       </p>
 
       { project.company

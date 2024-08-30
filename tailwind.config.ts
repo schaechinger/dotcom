@@ -11,9 +11,8 @@ const config: Config = {
     extend: {
       colors: {
         primary: '#00a5db',
+        secondary: '#006ea0',
         discreet: {
-          primary: '#00a5db',
-          shade: '#006ea0',
           light: '#e7fcff',
           egg: '#eee8a9'
         },
@@ -25,11 +24,9 @@ const config: Config = {
           800: '#cc5803',
         },
         squash: {
-          primary: '#00a5db',
           red: '#f96b72',
           green: '#02af79',
         },
-        secondary: '#0a558c',
         dark: {
           50: '#fff',
           200: '#ccc',

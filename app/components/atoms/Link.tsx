@@ -7,6 +7,7 @@ import { useLocale } from 'next-intl';
 type Props = {
   children: React.ReactNode;
   href: string;
+  accessKey?: string;
   className?: string;
   inline?: boolean;
   locale?: LocaleCode;
@@ -15,7 +16,7 @@ type Props = {
   onClick?: React.MouseEventHandler;
 };
 
-const Link = ({ children, className, href, inline, locale, onClick, target, title }: Props) => {
+const Link = ({ accessKey, children, className, href, inline, locale, onClick, target, title }: Props) => {
   // const currentLocale = useLocale() as LocaleCode;
   const intlLocale = useLocale();
   const linkLocale = locale || intlLocale;
@@ -32,6 +33,7 @@ const Link = ({ children, className, href, inline, locale, onClick, target, titl
       className={clsx(className, inline && 'inline-link')}
       title={title}
       onClick={onClick}
+      accessKey={accessKey}
     >{children}</NextLink>
   );
 };

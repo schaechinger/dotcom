@@ -27,7 +27,7 @@ body {
       width: 3.5rem;
       height: 4px;
 
-      @apply bg-discreet-shade/80 dark:bg-discreet-primary/60 rounded-full;
+      @apply bg-secondary/80 dark:bg-primary/60 rounded-full;
     }
   }
 
@@ -39,7 +39,7 @@ body {
   }
 
   a {
-    @apply text-dark-950 dark:text-dark-50 font-bold hover:text-discreet-shade hover:dark:text-discreet-primary transition-colors;
+    @apply text-dark-950 dark:text-dark-50 font-bold hover:text-secondary hover:dark:text-primary transition-colors;
 
     &.inline-link {
       @apply hover:underline hover:underline-offset-4;

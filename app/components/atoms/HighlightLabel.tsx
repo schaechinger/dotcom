@@ -5,7 +5,7 @@ type Props = {
 
 const HighlightLabel = ({ children, label }: Props) => (
   <strong
-    className="text-transparent bg-clip-text bg-gradient-to-br from-discreet-primary to-discreet-shade"
+    className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-secondary"
   >{ label || children }</strong>
 );
 

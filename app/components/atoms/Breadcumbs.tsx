@@ -36,8 +36,8 @@ const Breadcrumbs = ({ list }: Props) => {
               <li key={item.page || item.title} className={clsx(i != list.length - 2 && 'hidden sm:inline-block', 'flex-none')}>
                 <ChevronRight className="mr-2 sm:ml-2 rotate-180 sm:rotate-0 relative -top-[1px] text-gray-400 dark:text-gray-400" />
                 <Item
-                  href={item.page ? item.page : '/'}
-                  className={clsx(item.page && 'text-gray-400 dark:text-gray-400')}
+                  href={item.page ? item.page : ''}
+                  className="font-bold text-gray-400 dark:text-gray-400"
                 >{item.title}</Item>
               </li>
             );

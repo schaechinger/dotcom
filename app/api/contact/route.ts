@@ -24,14 +24,14 @@ export const POST = async (req: NextRequest) => {
   };
 
   if (!RECAPTCHA_SECRET_KEY) {
-    return NextResponse.json(response);
+    return NextResponse.json(response, { status: 500 });
   }
 
   try {
     const payload = await req.json();
 
     if (!payload.token) {
-      return NextResponse.json(response);
+      return NextResponse.json(response, { status: 400 });
     }
 
     const parsed = ContactMessage.parse({
@@ -64,5 +64,5 @@ export const POST = async (req: NextRequest) => {
     }
   }
 
-  return NextResponse.json(response);
+  return NextResponse.json(response, { status: response.success ? 201 : 400 });
 };

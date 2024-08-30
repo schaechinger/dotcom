@@ -37,15 +37,15 @@ const AboutPage = ({ params: { locale } }: PageProps) => {
 
         <h1 className="text-h1">{t('pageTitle')}</h1>
 
-        <div className="mb-8">
+        <div className="mb-8 -mx-4 sm:-mx-2">
           <Image
             src={wallpaper}
             alt={t('profile.imageAlt')}
             sizes="(max-width: 640px) 100vw, 640px"
-            className="rounded-sm border-2 border-slate-300"
+            className="rounded-sm border-y-2 sm:border-x-2 border-slate-300"
             priority
           />
-          <p className="text-sm mt-2">{t('profile.imageAlt')}</p>
+          <p className="text-sm mt-2 px-4 sm:px-2">{t('profile.imageAlt')}</p>
         </div>
 
         <h2 className="text-h2">{t('profile.title')}</h2>

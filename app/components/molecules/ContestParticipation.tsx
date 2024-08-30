@@ -19,7 +19,7 @@ const ContestParticipation = ({ participation }: Props) => {
   const speed = !!participation.time && getSpeed(participation, locale);
 
   return (
-    <article className="md:flex md:gap-2 md:items-center sm:hover:bg-discreet-shade/10 sm:hover:dark:bg-discreet-primary/15 transition-colors sm:rounded-md my-2 sm:my-0 -mx-4 px-4 py-4">
+    <article className="md:flex md:gap-2 md:items-center sm:hover:bg-secondary/10 sm:hover:dark:bg-primary/15 transition-colors sm:rounded-md my-2 sm:my-0 -mx-4 px-4 py-4">
       <header className="mb-2 md:mb-0 md:flex-1">
         <h3 className="text-h3 mb-0">{participation.event}</h3>
         <p className="text-sm">{formatDate(participation.date, locale, true)}</p>

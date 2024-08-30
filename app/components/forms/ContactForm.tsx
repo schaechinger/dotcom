@@ -17,7 +17,7 @@ const ContactForm = ({ translations }: Props) => {
   const [state, setState] = useState({
     success: false,
     loading: false,
-    field: 'name',
+    field: '',
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -85,25 +85,28 @@ const ContactForm = ({ translations }: Props) => {
         name="name"
         label={translations.name}
         error={'name' === state.field && translations.nameError}
-      />
+        disabled={state.loading}
+        />
 
       <InputField
         name="email"
         type="email"
         label={translations.email}
         error={'email' === state.field && translations.emailError}
-      />
+        disabled={state.loading}
+        />
 
       <TextArea
         name="message"
         label={translations.message}
         error={'message' === state.field && translations.messageError}
+        disabled={state.loading}
       />
 
       <div>
         { 'form' === state.field
             && <MessageBanner text={translations.submitError} classname="mb-4" error /> }
-        <SubmitButton disabled={false || state.loading}>{translations.submit}</SubmitButton>
+        <SubmitButton disabled={state.loading}>{translations.submit}</SubmitButton>
       </div>
     </form>
   );

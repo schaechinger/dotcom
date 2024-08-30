@@ -226,7 +226,7 @@ const projects = {
   details: {
     title: 'Projektdetails',
     company: 'Firma',
-    timeSpan: 'Zeitspanne',
+    timeSpan: 'Zeitraum',
     type: 'Projektart',
 
     goto: {

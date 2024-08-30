@@ -1,12 +1,13 @@
 import { type TechData } from '@models/history';
 
 type Props = {
-  item: TechData;
+  children?: React.ReactNode;
+  item?: TechData;
 };
 
-const TechItem = ({ item }: Props) => (
-  <li key={item.slug} className="text-discreet-shade dark:text-discreet-primary border-discreet-shade/60 border-2 rounded-full px-2">
-    {item.name}
+const TechItem = ({ children, item }: Props) => (
+  <li className="text-secondary dark:text-primary border-secondary/60 border-2 rounded-full px-2">
+    {item?.name || children}
   </li>
 );
 
