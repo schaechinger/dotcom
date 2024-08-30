@@ -5,8 +5,8 @@ type Props = {
 };
 
 const TechItem = ({ item }: Props) => (
-  <li key={item.slug} className="text-primary-500 bg-primary-100 border-primary-300 border-2 rounded-full px-2">
-    <span>{ item.name }</span>
+  <li key={item.slug} className="text-discreet-shade dark:text-discreet-primary border-discreet-shade/60 border-2 rounded-full px-2">
+    {item.name}
   </li>
 );
 

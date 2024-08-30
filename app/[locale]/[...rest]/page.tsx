@@ -1,5 +1,12 @@
 import { notFound } from 'next/navigation';
+import { unstable_setRequestLocale } from 'next-intl/server';
+
+import { PageProps } from '@app/interfaces';
  
-export default function CatchAllPage() {
+const CatchAllPage = ({ params: { locale } }: PageProps) => {
+  unstable_setRequestLocale(locale);
+
   notFound();
 };
+
+export default CatchAllPage;

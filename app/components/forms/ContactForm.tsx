@@ -1,10 +1,12 @@
 'use client';
 
 import { useReCaptcha } from 'next-recaptcha-v3';
-
-import { SubmitButton } from '@components/forms/SubmitButton';
-import CircleCheck from '@components/icons/CircleCheck';
 import { useState } from 'react';
+
+import SubmitButton from '@components/atoms/SubmitButton';
+import MessageBanner from '@components/molecules/MessageBanner';
+import InputField from '../atoms/InputField';
+import TextArea from '../atoms/TextArea';
 
 type Props = {
   translations: Record<string, string>;
@@ -15,7 +17,7 @@ const ContactForm = ({ translations }: Props) => {
   const [state, setState] = useState({
     success: false,
     loading: false,
-    field: '',
+    field: 'name',
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -73,59 +75,36 @@ const ContactForm = ({ translations }: Props) => {
 
   if (state.success) {
     return (
-      <div>
-        <p className="text-lg mb-2">
-          <CircleCheck className="text-2xl text-primary-500 -mt-1 mr-2" />
-          {translations.successTitle}
-        </p>
-        <p>{translations.successText}</p>
-      </div>
+      <MessageBanner title={translations.successTitle} text={translations.successText} success />
     );
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label className="block mb-8">
-        <span className="text-sm text-dark-800 dark:text-slate-200">{translations.name}</span>
-        <input
-          type="text"
-          name="name"
-          className="mt-0 block bg-transparent w-full px-0 border-0 border-b-2 border-slate-200 dark:border-slate-600 focus:ring-0 focus:border-primary-500 focus:dark:border-primary-500 focus:outline-none"
-          placeholder=""
-          required
-        />
-        { 'name' === state.field
-          && <p className="text-sm text-red-500 mt-1">{translations.nameError}</p> }
-      </label>
+    <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+      <InputField
+        name="name"
+        label={translations.name}
+        error={'name' === state.field && translations.nameError}
+      />
 
-      <label className="block mb-8">
-        <span className="text-sm text-dark-800 dark:text-slate-200">{translations.email}</span>
-        <input
-          type="email"
-          name="email"
-          className="mt-0 block bg-transparent w-full px-0 border-0 border-b-2 border-slate-200 dark:border-slate-600 focus:ring-0 focus:border-primary-500 focus:dark:border-primary-500 focus:outline-none"
-          placeholder=""
-          required
-        />
-        { 'email' === state.field
-          && <p className="text-sm text-red-500 mt-1">{translations.emailError}</p> }
-      </label>
+      <InputField
+        name="email"
+        type="email"
+        label={translations.email}
+        error={'email' === state.field && translations.emailError}
+      />
 
-      <label className="block mb-8">
-        <span className="text-sm text-dark-800 dark:text-slate-200">{translations.message}</span>
-        <textarea
-          name="message"
-          className="mt-0 block bg-transparent w-full px-0 border-0 border-b-2 border-slate-200 dark:border-slate-600 focus:ring-0 focus:border-primary-500 focus:dark:border-primary-500 focus:outline-none"
-          placeholder=""
-          rows={4}
-        />
-        { 'message' === state.field
-          && <p className="text-sm text-red-500 mt-1">{translations.messageError}</p> }
-      </label>
+      <TextArea
+        name="message"
+        label={translations.message}
+        error={'message' === state.field && translations.messageError}
+      />
 
-      <SubmitButton disabled={state.loading}>{translations.submit}</SubmitButton>
-      { 'form' === state.field
-          && <p className="text-sm text-red-500 mt-2">{translations.submitError}</p> }
+      <div>
+        { 'form' === state.field
+            && <MessageBanner text={translations.submitError} classname="mb-4" error /> }
+        <SubmitButton disabled={false || state.loading}>{translations.submit}</SubmitButton>
+      </div>
     </form>
   );
 };

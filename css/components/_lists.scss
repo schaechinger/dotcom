@@ -10,7 +10,8 @@ ul.bullet-list {
       top: 0.7em;
       width: 0.42rem;
 
-      @apply bg-slate-700 dark:bg-slate-300;
+      @apply bg-discreet-shade/80 dark:bg-discreet-primary;
+      // @apply bg-slate-700 dark:bg-slate-300;
     }
   }
 }

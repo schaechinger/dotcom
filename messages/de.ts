@@ -410,7 +410,7 @@ const translations = {
   },
   projectList: {
     error: 'Leider können die bisherigen Projekte nicht geladen werden.',
-    goto: 'Alle Projekte ansehen',
+    goto: '{count, plural, =0 {Alle Projekte ansehen} other {Alle # Projekte ansehen}}',
   },
   timeSpan: {
     span: 'bis',

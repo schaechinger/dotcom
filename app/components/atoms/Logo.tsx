@@ -8,7 +8,7 @@ const Logo = () => {
   return (
     <Link href="/">
       <p className="text-xl sm:text-2xl">
-        <span className="text-primary-500 font-thin">Manuel</span>
+        <span className="text-discreet-shade dark:text-discreet-primary font-thin">Manuel</span>
         <span className="text-dark-950 dark:text-dark-50 font-normal">Schächinger</span>
       </p>
       <p className="text-xs sm:text-sm text-dark-950 dark:text-dark-50 tracking-wide font-normal">{t('profession')}</p>

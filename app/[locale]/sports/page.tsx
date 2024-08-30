@@ -44,7 +44,7 @@ const SportsPage = async ({ params: { locale } }: PageProps) => {
         <h2 className="text-h2">{t('marathons.title')}</h2>
 
         <p>{t('marathons.text.0')}</p>
-        <p className="mt-2">{t('marathons.text.1')}</p>
+        <p className="my-2">{t('marathons.text.1')}</p>
 
         {marathons?.map((marathon) => (
           <ContestParticipation key={marathon.slug} participation={marathon} />

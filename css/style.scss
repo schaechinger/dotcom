@@ -5,6 +5,7 @@
 @import 'footer';
 @import 'components/history-item';
 @import 'components/lists';
+@import 'components/navigation';
 
 body {
   font-family: var(--font-clear-sans), system-ui, sans-serif !important;
@@ -16,9 +17,7 @@ body {
   // }
 
   .text-h1 {
-    position: relative;
-
-    @apply text-3xl text-dark-950 dark:text-dark-50 mb-7 font-normal;
+    @apply relative text-3xl text-dark-950 dark:text-dark-50 mb-7 font-normal;
 
     &::before {
       position: absolute;
@@ -27,8 +26,8 @@ body {
       bottom: -0.375rem;
       width: 3.5rem;
       height: 4px;
-      
-      @apply bg-primary-300 rounded-full;
+
+      @apply bg-discreet-shade/80 dark:bg-discreet-primary/60 rounded-full;
     }
   }
 
@@ -40,7 +39,7 @@ body {
   }
 
   a {
-    @apply text-dark-950 dark:text-dark-50 font-bold hover:text-primary-500 hover:dark:text-primary-500 transition-colors;
+    @apply text-dark-950 dark:text-dark-50 font-bold hover:text-discreet-shade hover:dark:text-discreet-primary transition-colors;
 
     &.inline-link {
       @apply hover:underline hover:underline-offset-4;

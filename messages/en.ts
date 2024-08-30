@@ -411,7 +411,7 @@ const translations = {
   },
   projectList: {
     error: 'There was an error loading the project list.',
-    goto: 'List all projects',
+    goto: '{count, plural, =0 {List all projects} other {List all # projects}}',
   },
   timeSpan: {
     span: 'to',

@@ -1,0 +1,13 @@
+.navigation-item {
+  @apply relative;
+
+  &--active::before {
+    content: '';
+    left: -0.625rem;
+    top: 0.25rem;
+    width: 4px;
+    height: 1.5rem;
+
+    @apply absolute bg-discreet-shade/80 dark:bg-discreet-primary/60 rounded-full;
+  }
+}

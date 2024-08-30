@@ -15,7 +15,7 @@ type Props = {
 };
 
 const LinkButton = (props: Props) => {
-  const iconClasses = 'inline-block transition-all text-primary-300 group-hover:text-current group-hover:text-lg';
+  const className = 'inline-block transition-all text-discreet-shade/60 dark:text-discreet-primary/60 group-hover:text-current group-hover:text-lg';
 
   return (
     <Link
@@ -23,9 +23,9 @@ const LinkButton = (props: Props) => {
       locale={props.locale}
       className="group"
     >
-      {props.back && <ChevronRight className={clsx('rotate-180 mr-1 group-hover:mr-0.5 -mt-1', iconClasses)} />}
+      {props.back && <ChevronRight className={clsx(className, 'rotate-180 mr-1 group-hover:mr-0.5 -mt-1')} />}
       {props.label || props.children}
-      {!props.back && <ChevronRight className={clsx('ml-1 group-hover:ml-0.5 -mt-0.5', iconClasses)} />}
+      {!props.back && <ChevronRight className={clsx(className, 'ml-1 group-hover:ml-0.5 -mt-0.5')} />}
     </Link>
   );
 };

@@ -4,7 +4,7 @@ type Props = {
 };
 
 const HistoryItemContainer = ({ children, id }: Props) => (
-  <article id={id} className="history-item max-w-screen-sm sm:hover:bg-primary-100 transition-colors sm:rounded-md my-4 -mx-4 px-4 py-4">
+  <article id={id} className="history-item max-w-screen-sm sm:hover:bg-discreet-shade/10 sm:hover:dark:bg-discreet-primary/15 transition-colors sm:rounded-md my-4 -mx-4 px-4 py-4">
     {children}
   </article>
 );

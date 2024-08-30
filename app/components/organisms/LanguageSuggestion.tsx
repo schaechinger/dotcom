@@ -10,6 +10,7 @@ import { isBrowser, useLocalStorage } from '@app/utils';
 import LinkButton from '@components/atoms/LinkButton';
 import MenuClose from '@components/icons/MenuClose';
 import { type LocaleCode, matchLocale, splitPath } from '@lib/router';
+import MessageBanner from '../molecules/MessageBanner';
 
 const LanguageSuggestion = () => {
   const pathname = usePathname();
@@ -37,7 +38,7 @@ const LanguageSuggestion = () => {
 
   return suggestion !== locale && (
     <aside lang={suggestion} dir="ltr" className="language-suggestion pt-4 lg:pt-10 lg:max-w-screen-sm">
-      <section className="border-y sm:border-x border-primary-300 bg-primary-100 -mx-4 sm:rounded-md px-4 py-2 relative">
+      <MessageBanner classname="relative">
         <button
           onClick={hide}
           className="absolute right-3 top-1"
@@ -55,7 +56,7 @@ const LanguageSuggestion = () => {
             label={translations.suggestion.goto[suggestion]}
           />
         </p>
-      </section>
+      </MessageBanner>
     </aside>
   );
 };

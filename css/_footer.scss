@@ -3,11 +3,9 @@
     &:after {
       animation: cursor 1s infinite;
       content: " |";
-      font-weight: bold;
       opacity: 0;
-      right: 0;
 
-      @apply text-primary-500;
+      @apply text-discreet-shade dark:text-discreet-primary font-bold right-0;
     }
 
     @keyframes cursor {

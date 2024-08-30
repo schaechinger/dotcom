@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
@@ -10,8 +9,6 @@ import Footer from '@components/organisms/Footer';
 import Header from '@components/organisms/Header';
 import LanguageSuggestion from '@components/organisms/LanguageSuggestion';
 import ThemeProvider from '@components/organisms/ThemeProvider';
-
-import '@/css/style.scss';
 
 export const generateStaticParams = () => (
   supportedLangs.map((locale) => ({ locale }))
@@ -48,7 +45,7 @@ const RootLayout = async ({ children, params: { locale } }: LayoutProps) => {
   unstable_setRequestLocale(locale);
 
   return (
-    <html className={clsx(clearSans.className/*, bestChoice.variable*/)} lang={locale} dir="ltr" suppressHydrationWarning>
+    <html className={clearSans.className} lang={locale} dir="ltr" suppressHydrationWarning>
       <head>
         <link type="text/plain" rel="author" href={`${WEB_HOST}/humans.txt`} />
       </head>

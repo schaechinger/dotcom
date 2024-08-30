@@ -10,14 +10,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          100: '#00a5db1b', // 0.1
-          200: '#00a5db4c', // 0.3
-          300: '#00a5db66', // 0.4
-          400: '#00a5db99', // 0.6
-          500: '#00a5db',
-          900: '#57bc90',
+        primary: '#00a5db',
+        discreet: {
+          primary: '#00a5db',
+          shade: '#006ea0',
+          light: '#e7fcff',
+          egg: '#eee8a9'
         },
+        warning: {
+          200: '#ffc971',
+          300: '#ffb627',
+          500: '#ff9505',
+          700: '#e2711d',
+          800: '#cc5803',
+        },
+        squash: {
+          primary: '#00a5db',
+          red: '#f96b72',
+          green: '#02af79',
+        },
+        secondary: '#0a558c',
         dark: {
           50: '#fff',
           200: '#ccc',

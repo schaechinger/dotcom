@@ -53,8 +53,7 @@ const HomePage = ({ params: { locale } }: PageProps) => {
 
           <p className="mt-4">
             {t.rich('availability.text', {
-              contact: (label: React.ReactNode) => <Link href="/contact"
-              className="inline-link">{label}</Link>,
+              contact: (label: React.ReactNode) => <Link href="/contact" inline>{label}</Link>,
             })}
           </p>
         </PageSection>

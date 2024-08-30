@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import LinkButton from '@components/atoms/LinkButton';
 import KonamiCode from '@components/molecules/KonamiCode';

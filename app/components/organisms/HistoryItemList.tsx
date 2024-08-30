@@ -1,3 +1,5 @@
+import MessageBanner from '@/app/components/molecules/MessageBanner';
+
 type Props = {
   items: React.ReactNode[];
   link?: React.ReactNode | false;
@@ -7,8 +9,8 @@ type Props = {
 const HistoryItemList = ({ items, link, error }: Props) => (
   <div className="-mt-4">
     {items}
-    {!items?.length ? <p className="py-4">{error}</p> : null}
-    {items.length && link}
+    {!items?.length && <MessageBanner text={error} classname="mt-12" error />}
+    {!!items.length && link}
   </div>
 );
 

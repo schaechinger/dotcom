@@ -21,7 +21,7 @@ const ProjectList = async ({ heading, highlights }: Props) => {
       items={projects.map((p) => (
         <ProjectItem key={p.slug} item={p} heading={heading} />
       ))}
-      link={highlights && <LinkButton href="/projects" label={t('goto')} />}
+      link={highlights && <LinkButton href="/projects" label={t('goto', { count: 0 })} />}
       error={t('error')}
     />
   );
