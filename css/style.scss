@@ -2,35 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'footer';
-@import 'components/history-item';
-@import 'components/lists';
-@import 'components/navigation';
-
 body {
   font-family: var(--font-clear-sans), system-ui, sans-serif !important;
 }
 
 @layer base {
-  // .font-best-choice {
-  //   font-family: var(--font-best-choice);
-  // }
-
+  // headings
   .text-h1 {
     @apply relative text-3xl text-dark-950 dark:text-dark-50 mb-7 font-normal;
 
     &::before {
-      position: absolute;
       content: '';
-      left: -0.5rem;
-      bottom: -0.375rem;
-      width: 3.5rem;
-      height: 4px;
 
-      @apply bg-secondary/80 dark:bg-primary/60 rounded-full;
+      @apply h-1 w-14 absolute -left-2 -bottom-1.5 bg-secondary/80 dark:bg-primary/60 rounded-full;
     }
   }
-
   .text-h2 {
     @apply text-2xl text-dark-950 dark:text-dark-50 mb-2 font-normal;
   }
@@ -38,11 +24,82 @@ body {
     @apply text-lg text-dark-950 dark:text-dark-50 mb-2 font-normal;
   }
 
+  // links
   a {
     @apply text-dark-950 dark:text-dark-50 font-bold hover:text-secondary hover:dark:text-primary transition-colors;
 
     &.inline-link {
       @apply hover:underline hover:underline-offset-4;
+    }
+  }
+
+  // navigation
+  .navigation-item {
+    @apply relative;
+
+    &--active::before {
+      content: '';
+
+      @apply w-1 h-6 absolute top-1 -left-2.5 bg-secondary/80 dark:bg-primary/60 rounded-full;
+    }
+  }
+
+  // list
+  ul.bullet-list {
+    li {
+      @apply relative ml-5;
+  
+      &::before {
+        content: '';
+        height: 1px;
+        left: -1.05rem;
+        top: 0.7em;
+        width: 0.42rem;
+  
+        @apply absolute bg-secondary/80 dark:bg-primary;
+      }
+    }
+  }
+
+  // history item
+  .history-item__date {
+    position: relative;
+  
+    @media (min-width: 640px) {
+      padding-left: 1.5rem;
+  
+      &::before {
+        content: '';
+        height: 1px;
+        left: 0.54rem;
+        top: 0.55em;
+        width: 0.42rem;
+  
+        @apply absolute bg-slate-700 dark:bg-slate-300;
+      }
+    }
+  }
+
+  // footer
+  .footer__love {
+    &::after {
+      animation: cursor 1s infinite;
+      content: ' |';
+      opacity: 0;
+
+      @apply text-secondary dark:text-primary font-bold right-0;
+    }
+
+    @keyframes cursor {
+      0%,
+      40%,
+      100% {
+        opacity: 0;
+      }
+      50%,
+      90% {
+        opacity: 1;
+      }
     }
   }
 }
