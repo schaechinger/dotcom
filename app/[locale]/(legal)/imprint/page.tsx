@@ -5,6 +5,7 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { PageProps } from '@app/interfaces';
 import Address from '@components/atoms/Address';
 import Breadcrumbs from '@components/atoms/Breadcumbs';
+import Link from '@components/atoms/Link';
 import LinkButton from '@components/atoms/LinkButton';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
@@ -49,9 +50,7 @@ const ImprintPage = ({ params: { locale } }: PageProps) => {
           <strong className="dark:text-dark-50">{t('odr.title')}:</strong>&nbsp;
           {t.rich('odr.text', {
             link: () => (
-            <a href="https://ec.europa.eu/consumers/odr"
-              target="_blank"
-              className="inline-link">ec.europa.eu/consumers/odr</a>
+              <Link href="https://ec.europa.eu/consumers/odr" inline>ec.europa.eu/consumers/odr</Link>
             ),
             br: () => <br />,
           })}

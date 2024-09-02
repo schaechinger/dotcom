@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import Link from '@components/atoms/Link';
 import type { PageProps } from '@app/interfaces';
 import Address from '@components/atoms/Address';
 import BulletList from '@components/atoms/BulletList';
 import Breadcrumbs from '@components/atoms/Breadcumbs';
+import Link from '@components/atoms/Link';
 import LinkButton from '@components/atoms/LinkButton';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
@@ -71,9 +71,7 @@ const PrivacyPage = ({ params: { locale } }: PageProps) => {
 
         <p>{t.rich('complaint.text', {
           link: (link) => (
-          <a href={link as string}
-            target="_blank"
-            className="inline-link">www.bfdi.bund.de</a>
+            <Link href={(link as string[])[0]} inline>www.bfdi.bund.de</Link>
           ),
         })}</p>
       </PageSection>

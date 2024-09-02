@@ -26,7 +26,7 @@ const Link = ({ accessKey, children, className, href, inline, locale, onClick, t
 
   return (
     <NextLink
-      href={external ? href : `/${linkLocale}${href}`}
+      href={/^\//.test(href) ? `/${linkLocale}${href}` : href}
       target={linkTarget}
       lang={locale}
       dir={locale ? 'ltr' : undefined}
