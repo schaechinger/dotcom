@@ -126,9 +126,10 @@ const connect = () => {
 }
 
 const parseEntry = (entry: Entry) => {
+  entry.fields.updatedAt = entry.sys.updatedAt;
+
   for (let key in entry.fields) {
     const value = entry.fields[key];
-
     if (Array.isArray(value) && (value[0] as Entry)?.sys) {
       // @ts-ignore
       entry.fields[key] = value.map((e) => parseEntry(e));
@@ -227,6 +228,7 @@ export const loadProjects = async (locale?: LocaleCode, highlights = false) => {
           links: p.links,
           type: p.type,
           highlight: p.highlight,
+          updatedAt: p.updatedAt,
         }))
       ))
       .catch(() => null)

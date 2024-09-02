@@ -361,7 +361,7 @@ const translations = {
 
   layout: {
     footer: {
-      social: 'Meine Profile',
+      social: 'Profile in Netz',
       languages: 'Sprachen',
       legal: 'Rechtliches',
       imprint: imprint.title,

@@ -16,21 +16,12 @@ const nextConfig = withNextIntl({
   skipTrailingSlashRedirect: false,
   output: 'standalone',
 
-  redirects() {
+  async redirects() {
     return [
-      {
-        source: '/datenschutz',
-        destination: '/privacy',
-        permanent: true,
-      },
+      // pages
       {
         source: '/kontakt',
         destination: '/contact',
-        permanent: true,
-      },
-      {
-        source: '/impressum',
-        destination: '/imprint',
         permanent: true,
       },
       {
@@ -46,6 +37,23 @@ const nextConfig = withNextIntl({
       {
         source: '/ueber-mich',
         destination: '/about',
+        permanent: true,
+      },
+      // projects
+      {
+        source: '/transportkit',
+        destination: '/projects/transportkit',
+        permanent: true,
+      },
+      // legal
+      {
+        source: '/datenschutz',
+        destination: '/privacy',
+        permanent: true,
+      },
+      {
+        source: '/impressum',
+        destination: '/imprint',
         permanent: true,
       },
     ];

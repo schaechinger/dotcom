@@ -39,12 +39,12 @@ export const generateProjectMetadata = async (slug: string, locale: LocaleCode) 
       description: metadata.description,
       type: 'article',
       locale,
-      images: (project.images || []).map((image) => ({
+      images: project.images?.length ? project.images.map((image) => ({
         url: `${IMAGE_HOST}/projects/${slug}/${image.src}`,
         alt: getImageLabel(image, locale) || undefined,
         width: 1024,
         height: 768,
-      })),
+      })) : undefined,
     };
   }
 

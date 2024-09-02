@@ -39,10 +39,10 @@ const sitemap = async () => {
     });
 
   const projects = await loadProjects();
-  let latestProject = modified;
+  let latestProject = new Date(0);
 
   projects?.forEach((project) => {
-    const projectModified = new Date(project.endDate || project.startDate);
+    const projectModified = new Date(project.updatedAt || project.endDate || project.startDate);
     if (latestProject.getTime() < projectModified.getTime()) {
       latestProject = projectModified;
     }
@@ -55,7 +55,7 @@ const sitemap = async () => {
         url: `${WEB_HOST}/${locale}${page}`,
         lastModified: projectModified,
         changeFrequency: 'monthly',
-        priority: 0.7,
+        priority: project.highlight ? 0.8 : 0.7,
         alternates: { languages: alternates.languages },
       });
     });

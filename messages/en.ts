@@ -362,7 +362,7 @@ const translations = {
 
   layout: {
     footer: {
-      social: 'My Profiles',
+      social: 'Profiles on the Web',
       languages: 'Languages',
       legal: 'Legal',
       imprint: imprint.title,
