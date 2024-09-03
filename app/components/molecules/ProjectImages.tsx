@@ -28,7 +28,7 @@ const ProjectImages = ({ slug, images }: Props) => {
               width={1024}
               height={768}
               alt={description}
-              className="h-auto max-w-full rounded-sm border-y-2 sm:border-x-2 border-slate-300"
+              className="h-auto max-w-full border-y-2 sm:border-x-2 sm:rounded-sm border-dark-950/25 dark:border-dark-200/80"
               sizes="(max-width: 640px) 100vw, 1024px"
               priority
             />

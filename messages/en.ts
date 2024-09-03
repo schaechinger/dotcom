@@ -383,6 +383,9 @@ const translations = {
         projects: projects.title,
         contact: contact.title,
 
+        imprint: imprint.title,
+        privacy: privacy.title,
+
         close: 'Close navigation',
         open: 'Open navigation',
       },
@@ -415,8 +418,9 @@ const translations = {
     goto: '{count, plural, =0 {List all projects} other {List all # projects}}',
   },
   timeSpan: {
-    span: 'to',
-    ongoing: 'since',
+    ongoing: 'since {startDate}',
+    period: '{startDate} to {endDate}',
+    single: '{endDate}',
   },
   yearInFigures: {
     title: 'My Year in Figures',

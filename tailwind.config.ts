@@ -37,7 +37,7 @@ const config: Config = {
         },
         coffee: {
           light: '#6f4e37',
-          dark: '#966a4a',
+          dark: '#896044',
         },
         medalmonday: {
           primary: '#2e5d4e',

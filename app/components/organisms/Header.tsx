@@ -16,7 +16,7 @@ const Header = () => {
           <Image
             src={image}
             alt="Manuel Schächinger"
-            className="w-9 sm:w-11 rounded-full border-2 border-slate-300 mt-0 mb-0 mx-auto ml-0 mr-4"
+            className="w-9 sm:w-11 rounded-full border-2 border-dark-950/25 dark:border-dark-200/80 mt-0 mb-0 mx-auto ml-0 mr-4"
             priority
           />
         </Link>

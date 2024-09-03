@@ -382,6 +382,9 @@ const translations = {
         projects: projects.title,
         contact: contact.title,
 
+        imprint: imprint.title,
+        privacy: privacy.title,
+
         close: 'Menü schließen',
         open: 'Menü öffnen',
       },
@@ -414,8 +417,9 @@ const translations = {
     goto: '{count, plural, =0 {Alle Projekte ansehen} other {Alle # Projekte ansehen}}',
   },
   timeSpan: {
-    span: 'bis',
-    ongoing: 'seit',
+    ongoing: 'seit {startDate}',
+    period: '{startDate} bis {endDate}',
+    single: '{endDate}',
   },
   yearInFigures: {
     title: 'Mein Jahr in Zahlen',
