@@ -3,12 +3,11 @@ import { useLocale } from 'next-intl';
 import { formatDate } from '@app/utils';
 import HistoryItemDescription from '@components/atoms/HistoryItemDescription';
 import HistoryItemTechList from '@components/atoms/HistoryItemTechList';
-import LinkButton from '@components/atoms/LinkButton';
 import HistoryItemCompany from '@components/molecules/HistoryItemCompany';
 import HistoryItemHeader from '@components/molecules/HistoryItemHeader';
 import HistoryItemContainer from '@components/organisms/HistoryItemContainer';
-import { type CertificationData } from '@models/certification';
 import { type LocaleCode } from '@lib/router';
+import { type CertificationData } from '@models/certification';
 
 type Props = {
   heading?: string;
@@ -24,12 +23,10 @@ const CertificationItem = ({ heading, item }: Props) => {
         date={formatDate(item.date, locale)}
         heading={heading}
         title={item.title}
+        link={item.link?.link}
       />
       <HistoryItemCompany company={item.company} />
       <HistoryItemDescription description={item.description} bullets={item.bullets} />
-      {item.link && <div className="mt-2">
-        <LinkButton href={item.link.link} label={item.link.label} />
-      </div>}
       <HistoryItemTechList tech={item.tech} />
     </HistoryItemContainer>
   );

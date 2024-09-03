@@ -1,10 +1,14 @@
+import Link from "../atoms/Link";
+import ArrowRight from "../icons/ArrowRight";
+
 type Props = {
+  title: React.ReactNode;
   date?: React.ReactNode;
   heading?: string;
-  title: React.ReactNode;
+  link?: string;
 };
 
-const HistoryItemHeader = ({ date, heading, title }: Props) => {
+const HistoryItemHeader = ({ date, heading, link, title }: Props) => {
   const Heading = (heading || 'h3') as React.ElementType;
 
   return (
@@ -13,7 +17,12 @@ const HistoryItemHeader = ({ date, heading, title }: Props) => {
         {date}
       </div>}
       <Heading className="text-h3 font-bold mb-0 sm:order-1">
-        {title}
+        {link ? (
+          <Link href={link} className="group">
+            {title}
+            <ArrowRight className="inline-block transition-all text-secondary/60 dark:text-primary/60 group-hover:text-current group-hover:text-xl -rotate-45 -mt-1 ml-1 group-hover:ml-0.5" />
+          </Link>
+        ) : title}
       </Heading>
     </header>
   );
