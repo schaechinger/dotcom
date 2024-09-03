@@ -17,7 +17,7 @@ const MessageBanner = ({ children, classname, error, success, text, title }: Pro
 
   return (
     <div className={clsx(
-      'flex gap-3 p-2 sm:rounded-md -mx-4 sm:-mx-2',
+      'flex gap-3 px-4 py-2 sm:px-2 sm:rounded-md -mx-4 sm:-mx-2',
       error && 'bg-warning-200/30 dark:bg-warning-800/40 text-warning-800 dark:text-warning-300',
       success && 'text-primary',
       !error && 'bg-secondary/10 dark:bg-primary/15',
