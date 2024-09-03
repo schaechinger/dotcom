@@ -11,6 +11,9 @@ export const matchLocale = (languages: readonly string[]) => (
 export const splitPath = (pathname: string) => {
   const parts = pathname.split('/');
   const [locale] = parts.splice(1, 1);
+  if (1 === parts.length) {
+    parts.unshift('');
+  }
 
   return {
     page: parts.join('/'),
