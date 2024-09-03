@@ -44,7 +44,7 @@ const WideNavigation = ({ translations }: Props) => {
           <nav className="-mx-1 px-1 w-full flex-grow">
             <ul className="flex flex-col gap-6 lg:gap-2 pt-8">
               {MAIN_NAVIGATION.map((identifier) => (
-                <li key={identifier} className="pl-4 sm:pl-14 lg:pl-[4.5rem]">
+                <li key={identifier} className="pl-4 sm:pl-[3.75rem] lg:pl-[4.5rem]">
                   <NavigationItem
                     href={`/${identifier}`}
                     active={page.startsWith(`/${identifier}`)}
@@ -55,7 +55,7 @@ const WideNavigation = ({ translations }: Props) => {
               ))}
             </ul>
           </nav>
-          <ul className="flex flex-row gap-4 content-start pl-4 sm:pl-14 lg:pl-[4.5rem] py-4">
+          <ul className="flex flex-row gap-4 content-start pl-4 sm:pl-[3.75rem] lg:pl-[4.5rem] py-4">
             {LEGAL_NAVIGATION.map((page) => (
               <li key={page}>
                 <Link
