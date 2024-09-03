@@ -418,6 +418,12 @@ const translations = {
     span: 'to',
     ongoing: 'since',
   },
+  yearInFigures: {
+    title: 'My Year in Figures',
+    coffees: '{count, plural, =1 {Coffee} other {Coffees}}',
+    marathons: '{count, plural, =1 {Marathon} other {Marathons}}',
+    outages: '{count, plural, =1 {Server outage} other {Server outages}}',
+  },
 
   errors: {
     notFound: {

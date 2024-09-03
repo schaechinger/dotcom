@@ -4,8 +4,10 @@ import Clock from '@components/icons/Clock';
 import { loadAvailability } from '@lib/contentful';
 
 const AvailabilityIndicator = async () => {
-  const t = await getTranslations('availability');
-  const availability = await loadAvailability();
+  const [availability, t] = await Promise.all([
+    loadAvailability(),
+    getTranslations('availability'),
+  ]);
 
   const days = +(availability?.days || 0);
 

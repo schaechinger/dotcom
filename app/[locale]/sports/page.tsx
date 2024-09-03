@@ -22,9 +22,10 @@ export const generateMetadata = async ({ params: { locale } }: PageProps): Promi
 
 const SportsPage = async ({ params: { locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
-  const t = await getTranslations('pages.sports');
-
-  const marathons = await loadParticipationsByContest('marathon', locale);
+  const [marathons, t] = await Promise.all([
+    loadParticipationsByContest('marathon', locale),
+    getTranslations('pages.sports'),
+  ]);
 
   return (
     <PageContainer name="sports">

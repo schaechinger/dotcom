@@ -14,13 +14,22 @@ import { type CareerData, sortCareerList } from '@models/career';
 import { type CertificationData, sortCertificationList } from '@models/certification';
 import { type ParticipationData, sortParticipationList } from '@models/participation';
 import { type ProjectData } from '@models/project';
-
+import { FiguresData } from '../models/figures';
 
 type AvailabilityEntrySkeleton = {
   contentTypeId: 'availability',
   fields: {
     days: EntryFieldTypes.Integer,
     job: EntryFieldTypes.Boolean,
+  },
+};
+
+type FiguresEntrySkeleton = {
+  contentTypeId: 'figures',
+  fields: {
+    year: EntryFieldTypes.Text,
+    marathons: EntryFieldTypes.Number,
+    outages: EntryFieldTypes.Number,
   },
 };
 
@@ -158,6 +167,23 @@ export const loadAvailability = async () => {
     })
       .then(getEntryFields<AvailabilityData>)
       .then((availabilities) => availabilities[0])
+      .catch(() => null)
+  ))();
+};
+
+export const loadFigures = async () => {
+  const client = connect();
+  if (!client) {
+    return null;
+  }
+
+  return cache(async () => (
+    await client.getEntries<FiguresEntrySkeleton>({
+      content_type: 'figures',
+      'fields.year': `${new Date().getFullYear()}`,
+    })
+      .then(getEntryFields<FiguresData>)
+      .then((figures) => (figures || [{}])[0])
       .catch(() => null)
   ))();
 };

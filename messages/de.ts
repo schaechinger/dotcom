@@ -417,6 +417,12 @@ const translations = {
     span: 'bis',
     ongoing: 'seit',
   },
+  yearInFigures: {
+    title: 'Mein Jahr in Zahlen',
+    coffees: '{count, plural, =1 {Kaffee} other {Kaffees}}',
+    marathons: '{count, plural, =1 {Marathon} other {Marathons}}',
+    outages: '{count, plural, =1 {Serverausfall} other {Serverausfälle}}',
+  },
 
   errors: {
     notFound: {

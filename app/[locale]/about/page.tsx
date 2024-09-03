@@ -4,12 +4,13 @@ import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import wallpaper from '@/public/images/opengraph-schaechinger.jpg';
-import Link from '@components/atoms/Link';
 import type { PageProps } from '@app/interfaces';
 import { getYearSpan } from '@/app/utils';
 import BulletList from '@components/atoms/BulletList';
 import Breadcrumbs from '@components/atoms/Breadcumbs';
+import Link from '@components/atoms/Link';
 import LinkButton from '@components/atoms/LinkButton';
+import YearInFigures from '@/app/components/atoms/YearInFigures';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import { generatePageMeta } from '@lib/seo';
@@ -76,6 +77,10 @@ const AboutPage = ({ params: { locale } }: PageProps) => {
             ),
           })}</p>
         </BulletList>
+      </PageSection>
+
+      <PageSection id="figures" dense>
+        <YearInFigures />
       </PageSection>
 
       <PageSection id="links" dense>

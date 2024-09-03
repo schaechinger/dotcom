@@ -35,6 +35,10 @@ const config: Config = {
           800: '#0f2127',
           950: '#111',
         },
+        coffee: {
+          light: '#6f4e37',
+          dark: '#966a4a',
+        },
         medalmonday: {
           primary: '#2e5d4e',
           light: '#698e80',

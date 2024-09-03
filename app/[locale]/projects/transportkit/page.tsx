@@ -21,8 +21,10 @@ export const generateMetadata = async ({ params: { locale } }: PageProps) => (
 
 const TransportKitPage = async ({ params: { locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
-  const t = await getTranslations('pages.projects.details');
-  const project = await loadProjectBySlug(slug, locale);
+  const [project, t] = await Promise.all([
+    loadProjectBySlug(slug, locale),
+    getTranslations('pages.projects.details'),
+  ]);
 
   if (!project) {
     return notFound();

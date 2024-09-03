@@ -23,8 +23,10 @@ interface Props extends PageProps {
 }
 
 export const generateProjectMetadata = async (slug: string, locale: LocaleCode) => {
-  const t = await getTranslations('pages.projects.details');
-  const project = await loadProjectBySlug(slug, locale);
+  const [project, t] = await Promise.all([
+    loadProjectBySlug(slug, locale),
+    getTranslations('pages.projects.details'),
+  ]);
 
   let metadata: Metadata = {
     title: t('title'),
@@ -57,8 +59,10 @@ export const generateMetadata = async ({ params: { locale, slug } }: Props) => (
 
 const ProjectPage = async ({ params: { locale, slug } }: Props) => {
   unstable_setRequestLocale(locale);
-  const t = await getTranslations('pages.projects.details');
-  const project = await loadProjectBySlug(slug, locale);
+  const [project, t] = await Promise.all([
+    loadProjectBySlug(slug, locale),
+    getTranslations('pages.projects.details'),
+  ]);
 
   if (!project) {
     return notFound();

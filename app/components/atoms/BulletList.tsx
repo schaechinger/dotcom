@@ -10,7 +10,7 @@ type Props = {
 const BulletList = ({ bullets, children, className, clear }: Props) => (
   <ul className={clsx(!clear && 'bullet-list', className)}>
     { (children || bullets)?.map((text, i) => (
-      <li key={i}>{ text }</li>
+      <li key={i}>{text}</li>
     )) }
   </ul>
 );
