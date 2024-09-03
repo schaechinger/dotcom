@@ -35,7 +35,6 @@ const WideNavigation = ({ translations }: Props) => {
                 className="w-24 rounded-full border-2 border-dark-950/25 dark:border-dark-200/80"
                 sizes="96px"
                 onClick={() => setOpen(false)}
-                priority
               />
             </Link>
             <Logo />
