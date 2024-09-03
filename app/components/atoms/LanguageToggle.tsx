@@ -1,5 +1,6 @@
 'use client';
 
+import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 import { useLocale } from 'next-intl';
 
@@ -7,7 +8,11 @@ import language from '@/messages/language';
 import Link from '@components/atoms/Link';
 import { splitPath, type LocaleCode } from '@lib/router';
 
-const LanguageToggle = () => {
+type Props = {
+  className?: string;
+};
+
+const LanguageToggle = ({ className }: Props) => {
   const pathname = usePathname();
   const locale = useLocale();
 
@@ -19,7 +24,7 @@ const LanguageToggle = () => {
       href={page}
       locale={switchLocale}
       title={language.name[switchLocale]}
-      className="-ml-1 w-8 h-8 relative flex justify-center items-center rounded-full transition-colors hover:bg-secondary/60 hover:dark:bg-primary/80 hover:text-dark-800 hover:dark:text-dark-50"
+      className={clsx('-ml-1 w-8 h-8 relative flex justify-center items-center rounded-full transition-colors hover:bg-secondary/60 hover:dark:bg-primary/80 hover:text-dark-800 hover:dark:text-dark-50', className)}
     >
       <span>{switchLocale}</span>
       <span className="sr-only">{language.name[switchLocale]}</span>

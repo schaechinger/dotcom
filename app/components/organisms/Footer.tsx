@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 
+import { LEGAL_NAVIGATION } from '@app/config';
 import Link from '@components/atoms/Link';
 import SnesButtons from '@components/atoms/SnesButtons';
 import HeartEmpty from '@components/icons/HeartEmpty';
@@ -28,7 +29,7 @@ const Footer = () => {
         <div>
           <p className={sectionClassName}>{t('legal')}</p>
           <ul className="flex flex-col gap-2 sm:gap-0 justify-center">
-            {['imprint', 'privacy'].map((page) => (
+            {LEGAL_NAVIGATION.map((page) => (
               <li key={page} className="py-1.5">
                 <Link href={`/${page}`} className="font-normal">{t(page)}</Link>
               </li>

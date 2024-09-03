@@ -370,7 +370,6 @@ const translations = {
       copyright: '© {year} Manuel Schächinger. Alle Rechte vorbehalten.',
     },
     header: {
-      profession: 'Fullstack JavaScript Engineer',
       text: [
         'Senior Engineer für skalierbare und',
         'performance-kritische Softwaresysteme.',
