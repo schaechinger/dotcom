@@ -24,7 +24,12 @@ const WideNavigation = ({ translations }: Props) => {
 
   return (
     <>
-      <MenuButton open={open} onClick={() => setOpen((cur) => !cur)} className="lg:hidden ml-2 z-50" />
+      <MenuButton
+        open={open}
+        onClick={() => setOpen((cur) => !cur)}
+        translations={translations}
+        className="lg:hidden ml-2 z-50"
+      />
       {(
         <div className={clsx(open ? 'left-0' : '-left-full', 'fixed lg:hidden top-0 w-screen max-w-screen-xl min-h-screen z-40 px-4 sm:px-10 md:px-20 lg:px-4 pt-20 sm:pt-20 lg:pt-24 flex flex-col transition-all bg-dark-50 dark:bg-dark-800')}>
           <div className="sm:hidden flex flex-col gap-4 items-center">

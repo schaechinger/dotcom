@@ -49,18 +49,18 @@ body {
     @apply relative items-center w-8 h-8 rounded-full self-center hover:bg-secondary/60 hover:dark:bg-primary/80;
 
     &__bar {
-      &:first-child {
+      &:first-of-type {
         @apply top-3;
       }
-      &:last-child {
+      &:nth-child(2) {
         @apply top-5;
       }
 
       &--rotated {
-        &:first-child {
+        &:first-of-type {
           transform: translate(0,0.25rem) rotate(-45deg);
         }
-        &:last-child {
+        &:nth-child(2) {
           transform: translate(0, -0.25rem) rotate(45deg);
         }
       }
