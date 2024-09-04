@@ -32,7 +32,9 @@ body {
       @apply hover:underline hover:underline-offset-4;
     }
   }
+}
 
+@layer components {
   // navigation
   .navigation-item {
     @apply relative;
