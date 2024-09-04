@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: var(--font-clear-sans), system-ui, sans-serif !important;
-}
-
 @layer base {
   // headings
   .text-h1 {
@@ -45,36 +41,32 @@ body {
       @apply w-1 h-6 absolute top-1 -left-2.5 bg-secondary/80 dark:bg-primary/60 rounded-full;
     }
   }
-  .menu-button {
-    @apply relative items-center w-8 h-8 rounded-full self-center hover:bg-secondary/60 hover:dark:bg-primary/80;
+  .menu-button__bar {
+    &:nth-child(1) {
+      @apply top-3 w-4 left-2;
+    }
+    &:nth-child(2) {
+      @apply top-4 w-4 left-2;
+    }
+    &:nth-child(3) {
+      @apply top-5 w-3 left-3;
+    }
 
-    &__bar {
+    &--rotated {
       &:nth-child(1) {
-        @apply top-3 w-4 left-2;
+        transform: translate(0,0.25rem) rotate(-45deg);
       }
       &:nth-child(2) {
-        @apply top-4 w-4 left-2;
+        @apply w-0 left-6 opacity-0;
       }
       &:nth-child(3) {
-        @apply top-5 w-3 left-3;
+        transform: translate(0, -0.25rem) rotate(45deg);
+
+        @apply w-4 left-2;
       }
-
-      &--rotated {
-        &:nth-child(1) {
-          transform: translate(0,0.25rem) rotate(-45deg);
-        }
-        &:nth-child(2) {
-          @apply w-0 left-6 opacity-0;
-        }
-        &:nth-child(3) {
-          transform: translate(0, -0.25rem) rotate(45deg);
-
-          @apply w-4 left-2;
-        }
-      }
-
-      @apply absolute h-0.5 rounded-md transition-all bg-dark-800 dark:bg-dark-50;
     }
+
+    @apply absolute h-0.5 rounded-md transition-all bg-dark-800 dark:bg-dark-50;
   }
 
   // list

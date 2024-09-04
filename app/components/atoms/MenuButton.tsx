@@ -9,7 +9,7 @@ type Props = {
 
 const MenuButton = ({ className, onClick, open, translations }: Props) => (
   <button
-    className={clsx('menu-button group', className)}
+    className={clsx('menu-button relative items-center w-8 h-8 rounded-full self-center', className)}
     type="button"
     onClick={onClick}
   >

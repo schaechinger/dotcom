@@ -45,7 +45,7 @@ const RootLayout = async ({ children, params: { locale } }: LayoutProps) => {
   unstable_setRequestLocale(locale);
 
   return (
-    <html className={clearSans.className} lang={locale} dir="ltr" suppressHydrationWarning>
+    <html className={clearSans.variable} lang={locale} dir="ltr" suppressHydrationWarning>
       <head>
         <link type="text/plain" rel="author" href={`${WEB_HOST}/humans.txt`} />
       </head>
