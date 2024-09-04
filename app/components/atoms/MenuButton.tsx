@@ -15,6 +15,7 @@ const MenuButton = ({ className, onClick, open, translations }: Props) => (
   >
     <span className={clsx('menu-button__bar', open && 'menu-button__bar--rotated')} />
     <span className={clsx('menu-button__bar', open && 'menu-button__bar--rotated')} />
+    <span className={clsx('menu-button__bar', open && 'menu-button__bar--rotated')} />
     <span className="sr-only">{open ? translations.close : translations.open}</span>
   </button>
 );
