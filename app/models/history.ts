@@ -15,6 +15,8 @@ export type LinkData = {
   label: string;
 };
 
+export type HistoryType = 'freelance' | 'employee' | 'private' | 'founder' | 'education';
+
 export type HistoryData = {
   title: string;
   slug: string;
@@ -22,6 +24,7 @@ export type HistoryData = {
   description?: string;
   bullets?: string[];
   tech: TechData[];
+  type?: HistoryType;
 
   updatedAt?: string;
 };

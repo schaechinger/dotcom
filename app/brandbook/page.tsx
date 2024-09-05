@@ -9,7 +9,7 @@ import MessageBanner from '@components/molecules/MessageBanner';
 
 import SplitSection from './SplitSection';
 import TechItem from '../components/atoms/TechItem';
-import ProjectTypeLabel from '../components/atoms/ProjectTypeLabel';
+import HistoryItemTypeLabel from '../components/atoms/HistoryItemTypeLabel';
 
 export const metadata: Metadata = {
   title: 'Brandbook – Manuel Schächinger',
@@ -80,10 +80,10 @@ const BrandBook = () => {
 
         <SplitSection id="project-types" label="Project Types">
           <ul className="flex flex-col gap-2">
-            <li><ProjectTypeLabel type="founder" label colored /></li>
-            <li><ProjectTypeLabel type="freelance" label /></li>
-            <li><ProjectTypeLabel type="private" colored /></li>
-            <li><ProjectTypeLabel type="employee" /></li>
+            <li><HistoryItemTypeLabel type="founder" label colored /></li>
+            <li><HistoryItemTypeLabel type="freelance" label /></li>
+            <li><HistoryItemTypeLabel type="private" colored /></li>
+            <li><HistoryItemTypeLabel type="employee" /></li>
           </ul>
         </SplitSection>
 

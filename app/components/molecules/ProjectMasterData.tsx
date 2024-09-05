@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 
 import Breadcrumbs from '@components/atoms/Breadcumbs';
 import CompanyLink from '@components/atoms/CompanyLink';
-import ProjectTypeLabel from '@components/atoms/ProjectTypeLabel';
+import HistoryItemTypeLabel from '@/app/components/atoms/HistoryItemTypeLabel';
 import TechItem from '@components/atoms/TechItem';
 import TimeSpan from '@components/atoms/TimeSpan';
 import PageSection from '@components/organisms/PageSection';
@@ -32,7 +32,7 @@ const ProjectMasterData = ({ project }: Props) => {
       </p>
 
       <p className="mb-2">
-        {t('details.type')}: <ProjectTypeLabel type={project.type} colored label />
+        {t('details.type')}: <HistoryItemTypeLabel type={project.type} colored label />
       </p>
 
       { project.company

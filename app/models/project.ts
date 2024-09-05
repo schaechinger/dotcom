@@ -2,8 +2,6 @@ import { type LocaleCode } from '@lib/router';
 
 import type { HistoryData, LinkData } from './history';
 
-export type ProjectType = 'freelance' | 'employee' | 'private' | 'founder';
-
 export type ProjectLinkData = {
   project?: LinkData;
   code?: LinkData;
@@ -37,7 +35,6 @@ export type ProjectImage = {
 
 export interface ProjectData extends HistoryData {
   links?: ProjectLinkData;
-  type: ProjectType;
   highlight?: boolean;
   images?: ProjectImage[];
   details?: ProjectDetailData;

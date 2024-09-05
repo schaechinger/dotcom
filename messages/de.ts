@@ -15,6 +15,16 @@ const general = {
   address: {
     germany: 'Deutschland',
   },
+  history: {
+    types: {
+      education: 'Akademische Ausbildung',
+      employee: 'Angestellter',
+      founder: 'Gründer',
+      freelance: 'Freiberuflich',
+      private: 'Privat',
+      volunteer: 'Ehrenamtlich',
+    },
+  },
 };
 
 // pages
@@ -252,13 +262,6 @@ const projects = {
     project: 'Das Projekt findest du auf <link></link>.',
     code: 'Den Code zum Projekt findest du auf <link></link>.',
     package: 'Du kannst das Package mit <link></link> in dein Projekt einbinden.'
-  },
-  types: {
-    employee: 'Angestellter',
-    founder: 'Gründer',
-    freelance: 'Freiberuflich',
-    private: 'Privat',
-    volunteer: 'Ehrenamtlich',
   },
 };
 

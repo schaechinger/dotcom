@@ -7,8 +7,8 @@ import HistoryItemContainer from '@components/organisms/HistoryItemContainer';
 import { type CareerData } from '@models/career';
 
 type Props = {
-  heading?: string;
   item: CareerData;
+  heading?: string;
 };
 
 const CareerItem = ({ heading, item }: Props) => (
@@ -18,7 +18,7 @@ const CareerItem = ({ heading, item }: Props) => (
       heading={heading}
       title={item.title}
     />
-    <HistoryItemCompany company={item.company} />
+    <HistoryItemCompany company={item.company} type={item.type} />
     <HistoryItemDescription description={item.description} bullets={item.bullets} />
     <HistoryItemTechList tech={item.tech} />
   </HistoryItemContainer>

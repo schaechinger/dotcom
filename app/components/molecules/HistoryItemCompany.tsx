@@ -1,16 +1,15 @@
 import CompanyLink from '@components/atoms/CompanyLink';
-import ProjectTypeLabel from '@components/atoms/ProjectTypeLabel';
-import type { Company } from '@models/history';
-import { ProjectType } from '@models/project';
+import HistoryItemTypeLabel from '@/app/components/atoms/HistoryItemTypeLabel';
+import type { Company, HistoryType } from '@models/history';
 
 type Props = {
   company?: Company;
-  type?: ProjectType;
+  type?: HistoryType;
 };
 
 const HistoryItemCompany = ({ company, type }: Props) => (
   (company || type) && <div className="font-thin">
-    {type && <ProjectTypeLabel type={type} label={!company} colored />}
+    {type && <HistoryItemTypeLabel type={type} label={!company} colored />}
     {company && <CompanyLink company={company} />}
   </div>
 );

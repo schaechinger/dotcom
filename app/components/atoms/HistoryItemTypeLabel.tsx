@@ -1,21 +1,24 @@
-import Banknotes from '@components/icons/Banknotes';
-import BuildingsCity from '@components/icons/BuildingsCity';
-import HeartEmpty from '@components/icons/HeartEmpty';
-import Knight from '@components/icons/Knight';
-import { type ProjectType } from '@models/project';
 import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 
+import Banknotes from '@components/icons/Banknotes';
+import BuildingsCity from '@components/icons/BuildingsCity';
+import Education from '@components/icons/Education';
+import HeartEmpty from '@components/icons/HeartEmpty';
+import Knight from '@components/icons/Knight';
+import { type HistoryType } from '@models/history';
+
 
 type Props = {
-  type: ProjectType;
+  type: HistoryType;
   colored?: boolean;
   label?: boolean;
 }
 
-const ProjectTypeLabel = ({ colored, label, type }: Props) => {
-  const t = useTranslations('pages.projects.types')
+const HistoryItemTypeLabel = ({ colored, label, type }: Props) => {
+  const t = useTranslations('general.history.types')
   const TypeIcon = {
+    education: Education,
     employee: BuildingsCity,
     founder: HeartEmpty,
     freelance: Banknotes,
@@ -34,4 +37,4 @@ const ProjectTypeLabel = ({ colored, label, type }: Props) => {
   );
 };
 
-export default ProjectTypeLabel;
+export default HistoryItemTypeLabel;
