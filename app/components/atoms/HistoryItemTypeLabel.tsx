@@ -17,13 +17,15 @@ type Props = {
 
 const HistoryItemTypeLabel = ({ colored, label, type }: Props) => {
   const t = useTranslations('general.history.types')
-  const TypeIcon = {
-    education: Education,
-    employee: BuildingsCity,
-    founder: HeartEmpty,
-    freelance: Banknotes,
-    private: Knight,
-  }[type];
+  const TypeIcon = type
+    ? {
+      education: Education,
+      employee: BuildingsCity,
+      founder: HeartEmpty,
+      freelance: Banknotes,
+      private: Knight,
+    }[type]
+    : null;
 
   if (!TypeIcon) {
     return null;

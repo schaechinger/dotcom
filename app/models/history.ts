@@ -24,7 +24,7 @@ export type HistoryData = {
   description?: string;
   bullets?: string[];
   tech: TechData[];
-  type?: HistoryType;
+  type: HistoryType;
 
   updatedAt?: string;
 };
