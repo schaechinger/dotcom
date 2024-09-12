@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 
+import { MAIN_NAVIGATION } from '@app/config';
 import NavigationItem from '@components/atoms/NavigationItem';
 import LanguageToggle from '@/app/components/atoms/LanguageToggle';
 import ThemeToggle from '@components/molecules/ThemeToggle';
@@ -24,12 +25,7 @@ const Navigation = ({ translations, themeTranslations }: Props) => {
       </div>
       <nav className="hidden lg:block -mx-1 px-1 w-full lg:h-auto transition-transform lg:overflow-visible">
         <ul className="flex flex-col gap-2 pt-8 lg:pt-0">
-          {[
-            'about',
-            'resume',
-            'projects',
-            'contact',
-          ].map((identifier) => (
+          {MAIN_NAVIGATION.map(({ page: identifier }) => (
             <li key={identifier}>
               <NavigationItem
                 href={`/${identifier}`}

@@ -3,7 +3,7 @@
     Owner: Manuel Schächinger
     Site: https://www.schaechinger.com
     GitHub: schaechinger
-    Location: Munich, Germany
+    Location: Ottobrunn, Germany
 
 
 /* SITE */

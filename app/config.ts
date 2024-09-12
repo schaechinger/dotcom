@@ -1,5 +1,10 @@
 import { type LocaleCode } from '@lib/router';
 
+import Briefcase from '@components/icons/Briefcase';
+import Chemistry from '@components/icons/Chemistry';
+import Handshake from '@components/icons/Handshake';
+import UserBoy from '@components/icons/UserBoy';
+
 // hosts
 export const PROD_HOST = 'https://www.schaechinger.com';
 export const WEB_HOST = process.env.NEXT_PUBLIC_WEB_HOST || PROD_HOST;
@@ -14,10 +19,10 @@ export const LANGUAGE_SUGGESTION_OPT_OUT = 'ls-opt-out';
 
 // navigation
 export const MAIN_NAVIGATION = [
-  'about',
-  'resume',
-  'projects',
-  'contact',
+  { page: 'about', icon: UserBoy },
+  { page: 'resume', icon: Briefcase },
+  { page: 'projects', icon: Chemistry },
+  { page: 'contact', icon: Handshake },
 ];
 export const LEGAL_NAVIGATION = [
   'imprint',

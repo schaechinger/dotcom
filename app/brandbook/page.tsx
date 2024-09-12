@@ -84,6 +84,7 @@ const BrandBook = () => {
             <li><HistoryItemTypeLabel type="freelance" label /></li>
             <li><HistoryItemTypeLabel type="private" colored /></li>
             <li><HistoryItemTypeLabel type="employee" /></li>
+            <li><HistoryItemTypeLabel type="education" /></li>
           </ul>
         </SplitSection>
 
