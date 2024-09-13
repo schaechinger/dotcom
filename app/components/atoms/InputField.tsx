@@ -11,17 +11,22 @@ type Props = {
 };
 
 const InputField = ({ className, disabled, error, label, name, required, type = 'text' }: Props) => (
-  <label className={clsx('block', className)}>
-    <span className="text-dark-800 dark:text-slate-200">{label}</span>
-    <input
-      type={type}
-      name={name}
-      className="mt-1 block w-full px-3 py-2.5 bg-secondary/10 dark:bg-secondary/30 border border-secondary/30 dark:border-secondary/50 rounded-md text-sm focus:outline-none focus:border-secondary/60 focus:dark:border-primary/60 focus:ring-1 focus:ring-secondary disabled:cursor-not-allowed disabled:bg-slate-400/50 disabled:dark:bg-slate-400/30"
-      disabled={disabled}
-      required={!!required}
-    />
+  <div className={clsx('my-1', className)}>
+    <label className="relative">
+      <input
+        type={type}
+        name={name}
+        className="block py-2.5 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary focus:outline-none focus:ring-0 focus:border-secondary placeholder-transparent peer"
+        placeholder=" "
+        disabled={disabled}
+        required={required}
+        />
+      <span className="absolute text-sm text-dark-800 dark:text-slate-200 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-secondary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+        {label}
+      </span>
+    </label>
     {!!error && <p className="peer text-sm text-squash-red mt-1">{error}</p>}
-  </label>
+  </div>
 );
 
 export default InputField;

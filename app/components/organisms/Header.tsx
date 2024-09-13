@@ -19,6 +19,7 @@ const Header = () => {
               src={image}
               alt="Manuel Schächinger"
               className="w-9 sm:w-11 rounded-full border-2 border-dark-950/25 dark:border-dark-200/80 mt-0 mb-0 mx-auto ml-0 mr-4"
+              loading="eager"
               priority
             />
           </Link>

@@ -39,15 +39,16 @@ const WideNavigation = ({ translations }: Props) => {
               className="w-24 rounded-full border-2 border-dark-950/25 dark:border-dark-200/80"
               sizes="96px"
               onClick={() => setOpen(false)}
+              loading="lazy"
             />
           </Link>
           <Logo />
         </div>
 
         <nav className="-mx-1 px-1 w-full flex-grow">
-          <ul className="flex flex-col gap-6 lg:gap-2 pt-8">
+          <ul className="flex flex-col gap-6 pt-8">
             {MAIN_NAVIGATION.map(({ icon, page: identifier }) => (
-              <li key={identifier} className="pl-4 sm:pl-[1.25rem] lg:pl-[2rem]">
+              <li key={identifier} className="pl-4 sm:pl-5 lg:pl-20">
                 <NavigationItem
                   href={`/${identifier}`}
                   active={page.startsWith(`/${identifier}`)}
