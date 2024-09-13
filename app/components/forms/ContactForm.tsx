@@ -86,7 +86,7 @@ const ContactForm = ({ translations }: Props) => {
         label={translations.name}
         error={'name' === state.field && translations.nameError}
         disabled={state.loading}
-        />
+      />
 
       <InputField
         name="email"
@@ -94,7 +94,7 @@ const ContactForm = ({ translations }: Props) => {
         label={translations.email}
         error={'email' === state.field && translations.emailError}
         disabled={state.loading}
-        />
+      />
 
       <TextArea
         name="message"
