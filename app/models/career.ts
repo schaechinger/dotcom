@@ -4,7 +4,7 @@ export interface CareerData extends HistoryData {
   startDate: string;
   endDate?: string;
 
-  compayJobIndex: number;
+  companyJobIndex?: number;
 };
 
 export const sortCareerList = <T extends CareerData>(list: T[]) => {
@@ -38,7 +38,7 @@ export const sortCareerList = <T extends CareerData>(list: T[]) => {
         currentCompany.index += 1;
       }
 
-      c.compayJobIndex = currentCompany.index;
+      c.companyJobIndex = currentCompany.index;
 
       return c;
     });

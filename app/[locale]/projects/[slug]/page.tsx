@@ -1,8 +1,6 @@
-import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import { IMAGE_HOST } from '@app/config';
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/atoms/LinkButton';
 import DetailBlock from '@components/molecules/DetailBlock';
@@ -11,9 +9,8 @@ import ProjectLinks from '@components/molecules/ProjectLinks';
 import ProjectMasterData from '@components/molecules/ProjectMasterData';
 import PageContainer from '@components/organisms/PageContainer';
 import { loadProjectBySlug } from '@lib/contentful';
-import { getImageLabel } from '@lib/images';
+import { generateProjectMetadata } from '@lib/projects';
 import { type LocaleCode } from '@lib/router';
-import { generatePageMeta } from '@lib/seo';
 
 interface Props extends PageProps {
   params: {
@@ -21,37 +18,6 @@ interface Props extends PageProps {
     slug: string;
   };
 }
-
-export const generateProjectMetadata = async (slug: string, locale: LocaleCode) => {
-  const [project, t] = await Promise.all([
-    loadProjectBySlug(slug, locale),
-    getTranslations('pages.projects.details'),
-  ]);
-
-  let metadata: Metadata = {
-    title: t('title'),
-  };
-
-  if (project) {
-    metadata = generatePageMeta(`/projects/${project.slug}`, locale);
-    metadata.title = project.title;
-    metadata.description = project.description;
-    metadata.openGraph = {
-      title: metadata.title,
-      description: metadata.description,
-      type: 'article',
-      locale,
-      images: project.images?.length ? project.images.map((image) => ({
-        url: `${IMAGE_HOST}/projects/${slug}/${image.src}`,
-        alt: getImageLabel(image, locale) || undefined,
-        width: 1024,
-        height: 768,
-      })) : undefined,
-    };
-  }
-
-  return metadata;
-};
 
 export const generateMetadata = async ({ params: { locale, slug } }: Props) => (
   generateProjectMetadata(slug, locale)

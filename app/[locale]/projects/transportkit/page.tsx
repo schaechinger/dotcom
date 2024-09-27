@@ -10,8 +10,7 @@ import ProjectMasterData from '@components/molecules/ProjectMasterData';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import { loadProjectBySlug } from '@lib/contentful';
-
-import { generateProjectMetadata } from '../[slug]/page';
+import { generateProjectMetadata } from '@lib/projects';
 
 const slug = 'transportkit';
 

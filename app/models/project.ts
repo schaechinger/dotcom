@@ -41,4 +41,6 @@ export interface ProjectData extends HistoryData {
 
   startDate: string;
   endDate?: string;
+
+  companyJobIndex?: number;
 }
