@@ -15,6 +15,7 @@ import { type CertificationData, sortCertificationList } from '@models/certifica
 import { type ParticipationData, sortParticipationList } from '@models/participation';
 import { type ProjectData } from '@models/project';
 import { FiguresData } from '../models/figures';
+import { HistoryType } from '../models/history';
 
 type AvailabilityEntrySkeleton = {
   contentTypeId: 'availability',
@@ -190,13 +191,13 @@ export const loadFigures = async () => {
 
 const getLocale = (locale?: LocaleCode) => (locale || 'en').startsWith('de') ? 'de' : 'en';
 
-export const loadCareer = async (locale?: LocaleCode) => {
+export const loadCareer = async (locale?: LocaleCode, type?: HistoryType) => {
   const client = connect();
   if (!client) {
     return null;
   }
 
-  return cache(async () => (
+  const list = await cache(async () => (
     await client.getEntries<CareerEntrySkeleton>({
       content_type: 'career',
       // @ts-ignore
@@ -206,6 +207,8 @@ export const loadCareer = async (locale?: LocaleCode) => {
       .then(sortCareerList)
       .catch(() => null)
   ))();
+
+  return (list || []).filter((item) => type ? type === item.type : 'education' !== item.type);
 };
 
 export const loadCertifications = async (locale?: LocaleCode) => {

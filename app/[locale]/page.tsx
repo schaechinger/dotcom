@@ -4,7 +4,7 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 
 import Link from '@components/atoms/Link';
 import type { PageProps } from '@app/interfaces';
-import { getYearSpan } from '@app/utils';
+import { getTimeDuration } from '@app/utils';
 import AvailabilityIndicator from '@components/atoms/AvailabilityIndicator';
 import HighlightLabel from '@components/atoms/HighlightLabel';
 import JsonLd from '@components/atoms/JsonLd';
@@ -25,7 +25,7 @@ const HomePage = ({ params: { locale } }: PageProps) => {
   const jsonLd = generateProfileJson();
   const aboutTextOptions = {
     highlight: (label: React.ReactNode) => <HighlightLabel>{label}</HighlightLabel>,
-    years: getYearSpan('2014-02-01'),
+    years: getTimeDuration('2014-02-01'),
   };
 
   return (

@@ -57,13 +57,31 @@ export const useLocalStorage = () => ({
   },
 });
 
-export const getYearSpan = (start: string) => {
+export const getTimeDuration = (start: string, end?: string, includeMonths = false) => {
   const date = new Date(start);
-  const now = new Date();
-  let age = now.getFullYear() - date.getFullYear();
+  const endObj = new Date(end || Date.now());
+  let age = endObj.getFullYear() - date.getFullYear();
 
-  if (now.getMonth() < date.getMonth() || (now.getMonth() === date.getMonth() && date.getDate() > now.getDate())) {
+  const startMonth = date.getMonth();
+  const startDate = date.getDate();
+  let endMonth = endObj.getMonth();
+  const endDate = endObj.getDate();
+
+  if (endObj.getMonth() < date.getMonth() || (endMonth === startMonth && startDate > endDate)) {
     age -= 1;
+  }
+
+  if (includeMonths) {
+    if (endMonth < startMonth) {
+      endMonth += 12;
+    }
+
+    let months = (endMonth - startMonth) + 1;
+    if (startDate > endDate) {
+      months -= 1;
+    }
+
+    age += months / 12;
   }
 
   return age;

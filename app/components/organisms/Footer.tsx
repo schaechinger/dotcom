@@ -12,7 +12,7 @@ const Footer = () => {
   const sectionClassName = 'font-bold mb-2 text-base';
 
   return (
-    <footer className="footer flex flex-col gap-8 mb-6 mt-10 sm:text-left text-sm lg:max-w-screen-sm">
+    <footer className="footer flex flex-col gap-8 mb-6 mt-10 sm:text-left text-sm lg:max-w-screen-md">
       <SnesButtons />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-6">

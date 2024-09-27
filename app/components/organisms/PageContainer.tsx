@@ -7,7 +7,7 @@ type Props = {
 };
 
 const PageContainer = ({ children, name, narrow }: Props) => (
-  <div className={clsx('pt-4 lg:pt-10', name && `${name}-page`, narrow && 'lg:max-w-screen-sm')}>
+  <div className={clsx('pt-4 lg:pt-10', name && `${name}-page`, narrow && 'lg:max-w-screen-md')}>
     {children}
   </div>
 );

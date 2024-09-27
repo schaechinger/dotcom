@@ -6,16 +6,19 @@ import LinkButton from '@components/atoms/LinkButton';
 import HistoryItemList from '@components/organisms/HistoryItemList';
 import { loadCareer } from '@lib/contentful';
 import { type LocaleCode } from '@lib/router';
+import { HistoryType } from '@/app/models/history';
 
 type Props = {
   heading?: string;
   latest?: boolean;
+  noLink?: boolean;
+  type?: HistoryType;
 };
 
-const CareerList = async ({ heading, latest }: Props) => {
+const CareerList = async ({ heading, latest, noLink, type }: Props) => {
   const t = await getTranslations('careerList');
   const locale = await getLocale() as LocaleCode;
-  const career = (await loadCareer(locale) || []).slice(0, latest ? 3 : undefined);
+  const career = (await loadCareer(locale, type) || []).slice(0, latest ? 3 : undefined);
 
   const resumeLink = 'de' === locale
     ? `${STATIC_HOST}/de/lebenslauf-manuel-schaechinger.pdf`
@@ -26,10 +29,12 @@ const CareerList = async ({ heading, latest }: Props) => {
       items={career.map((c) => (
         <CareerItem key={c.slug} item={c} heading={heading} />
       ))}
-      link={<LinkButton
-        href={latest ? '/resume' : resumeLink}
-        label={t(`goto.${latest ? 'resume' : 'download'}`)}
-      />}
+      link={!noLink &&(
+        <LinkButton
+          href={latest ? '/resume' : resumeLink}
+          label={t(`goto.${latest ? 'resume' : 'download'}`)}
+        />
+      )}
       error={t('error')}
     />
   );

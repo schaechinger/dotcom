@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 
 import Banknotes from '@components/icons/Banknotes';
 import BuildingsCity from '@components/icons/BuildingsCity';
+import Certificate from '@components/icons/Certificate';
 import Education from '@components/icons/Education';
 import HeartEmpty from '@components/icons/HeartEmpty';
 import Knight from '@components/icons/Knight';
@@ -19,6 +20,7 @@ const HistoryItemTypeLabel = ({ colored, label, type }: Props) => {
   const t = useTranslations('general.history.types')
   const TypeIcon = type
     ? {
+      certificate: Certificate,
       education: Education,
       employee: BuildingsCity,
       founder: HeartEmpty,

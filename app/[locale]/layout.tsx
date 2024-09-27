@@ -52,16 +52,18 @@ const RootLayout = async ({ children, params: { locale } }: LayoutProps) => {
       <body className="text-dark-950 dark:text-dark-200 bg-dark-50 dark:bg-dark-800 font-sans">
         <ThemeProvider>
           <NextIntlClientProvider>
-            <div className="lg:flex lg:gap-8 w-full max-w-screen-xl mx-auto">
-              <Header />
+            <div className="w-full mx-auto">
+              <Header className="max-w-screen-lg" />
 
-              <div className="lg:flex-auto lg:w-3/4 px-4 sm:px-10 md:px-20 lg:px-4">
-                <main className="min-h-screen">
-                  <LanguageSuggestion />
-                  {children}
-                </main>
+              <div className="max-w-screen-lg mx-auto">
+                <div className="px-4 sm:px-10 md:px-20 lg:px-4">
+                  <main className="min-h-screen">
+                    <LanguageSuggestion />
+                    {children}
+                  </main>
 
-                <Footer />
+                  <Footer />
+                </div>
               </div>
             </div>
           </NextIntlClientProvider>

@@ -28,7 +28,7 @@ const SportsPage = async ({ params: { locale } }: PageProps) => {
   ]);
 
   return (
-    <PageContainer name="sports">
+    <PageContainer name="sports" narrow>
       <PageSection id="sports" first>
         <Breadcrumbs list={[{ title: t('title') }]} />
 

@@ -28,49 +28,51 @@ const WideNavigation = ({ translations }: Props) => {
         open={open}
         onClick={() => setOpen((cur) => !cur)}
         translations={translations}
-        className="lg:hidden ml-2 z-50 -mr-2"
+        className="ml-2 z-50 -mr-2"
       />
-      <div className={clsx(open ? 'left-0' : '-left-[100vw]', 'fixed lg:hidden top-0 w-screen max-w-screen-xl min-h-screen z-40 px-4 sm:px-10 md:px-20 lg:px-4 pt-20 sm:pt-20 lg:pt-24 flex flex-col transition-all duration-300 bg-dark-50 dark:bg-dark-800')}>
-        <div className="sm:hidden flex flex-col gap-4 items-center">
-          <Link href="/">
-            <Image
-              src={image}
-              alt="Manuel Schächinger"
-              className="w-24 rounded-full border-2 border-dark-950/25 dark:border-dark-200/80"
-              sizes="96px"
-              onClick={() => setOpen(false)}
-              loading="lazy"
-            />
-          </Link>
-          <Logo />
-        </div>
+      <div className={clsx(open ? 'left-0' : '-left-[100vw]', 'fixed top-0 w-full min-h-screen z-40 px-4 sm:px-10 md:px-20 lg:px-4 pt-20 sm:pt-20 lg:pt-24 transition-all duration-300 bg-dark-50 dark:bg-dark-800 backdrop-blur-md')}>
+        <div className="max-w-screen-lg mx-auto flex flex-col">
+          <div className="sm:hidden flex flex-col gap-4 items-center">
+            <Link href="/">
+              <Image
+                src={image}
+                alt="Manuel Schächinger"
+                className="w-24 rounded-full border-2 border-dark-950/25 dark:border-dark-200/80"
+                sizes="96px"
+                onClick={() => setOpen(false)}
+                loading="lazy"
+              />
+            </Link>
+            <Logo />
+          </div>
 
-        <nav className="-mx-1 px-1 w-full flex-grow">
-          <ul className="flex flex-col gap-6 pt-8">
-            {MAIN_NAVIGATION.map(({ icon, page: identifier }) => (
-              <li key={identifier} className="pl-4 sm:pl-5 lg:pl-20">
-                <NavigationItem
-                  href={`/${identifier}`}
-                  active={page.startsWith(`/${identifier}`)}
+          <nav className="-mx-1 px-1 w-full flex-grow">
+            <ul className="flex flex-col gap-6 pt-6 lg:pt-0">
+              {MAIN_NAVIGATION.map(({ icon, page: identifier }) => (
+                <li key={identifier} className="pl-4 sm:pl-5 xl:pl-[2.25rem]">
+                  <NavigationItem
+                    href={`/${identifier}`}
+                    active={page.startsWith(`/${identifier}`)}
+                    onClick={() => setOpen(false)}
+                    label={translations[identifier]}
+                    icon={icon}
+                  />
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <ul className="flex flex-row gap-4 content-start pl-4 sm:pl-[3.75rem] xl:pl-[5rem] pt-6">
+            {LEGAL_NAVIGATION.map((page) => (
+              <li key={page}>
+                <Link
+                  href={`/${page}`}
+                  className="font-normal"
                   onClick={() => setOpen(false)}
-                  label={translations[identifier]}
-                  icon={icon}
-                />
+                >{translations[page]}</Link>
               </li>
             ))}
           </ul>
-        </nav>
-        <ul className="flex flex-row gap-4 content-start pl-4 sm:pl-[3.75rem] lg:pl-[4.5rem] py-4">
-          {LEGAL_NAVIGATION.map((page) => (
-            <li key={page}>
-              <Link
-                href={`/${page}`}
-                className="font-normal"
-                onClick={() => setOpen(false)}
-              >{translations[page]}</Link>
-            </li>
-          ))}
-        </ul>
+        </div>
       </div>
     </>
   );

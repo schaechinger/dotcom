@@ -5,7 +5,7 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import wallpaper from '@/public/images/opengraph-schaechinger.jpg';
 import type { PageProps } from '@app/interfaces';
-import { getYearSpan } from '@/app/utils';
+import { getTimeDuration } from '@/app/utils';
 import BulletList from '@components/atoms/BulletList';
 import Breadcrumbs from '@components/atoms/Breadcumbs';
 import Link from '@components/atoms/Link';
@@ -28,8 +28,8 @@ export const generateMetadata = async ({ params: { locale } }: PageProps): Promi
 const AboutPage = ({ params: { locale } }: PageProps) => {
   unstable_setRequestLocale(locale);
   const t = useTranslations('pages.about');
-  const age = getYearSpan('1991-02-14');
-  const years = getYearSpan('2014-02-01');
+  const age = getTimeDuration('1991-02-14');
+  const years = getTimeDuration('2014-02-01');
 
   return (
     <PageContainer name="about" narrow>
@@ -53,7 +53,7 @@ const AboutPage = ({ params: { locale } }: PageProps) => {
 
         <BulletList>
           <p className="mb-2">{t('profile.bullets.age', { age })}</p>
-          <p className="mb-2">{t('profile.bullets.location', { age })}</p>
+          <p className="mb-2">{t('profile.bullets.location')}</p>
           <p className="mb-2">{t('profile.bullets.coffee')}</p>
           <p className="mb-2">{t('profile.bullets.work', { years })}</p>
           <p className="mb-2">{t.rich('profile.bullets.stack', {

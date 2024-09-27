@@ -1,7 +1,6 @@
 import HistoryItemDescription from '@components/atoms/HistoryItemDescription';
 import HistoryItemTechList from '@components/atoms/HistoryItemTechList';
-import TimeSpan from '@components/atoms/TimeSpan';
-import HistoryItemCompany from '@components/molecules/HistoryItemCompany';
+import HistoryItemContent from '@components/molecules/HistoryItemContent';
 import HistoryItemHeader from '@components/molecules/HistoryItemHeader';
 import HistoryItemContainer from '@components/organisms/HistoryItemContainer';
 import { type CareerData } from '@models/career';
@@ -14,13 +13,16 @@ type Props = {
 const CareerItem = ({ heading, item }: Props) => (
   <HistoryItemContainer id={item.slug}>
     <HistoryItemHeader
-      date={<TimeSpan startDate={item.startDate} endDate={item.endDate} />}
+      dates={[item.startDate, item.endDate]}
+      company={item.company}
       heading={heading}
       title={item.title}
+      type={item.type}
     />
-    <HistoryItemCompany company={item.company} type={item.type} />
-    <HistoryItemDescription description={item.description} bullets={item.bullets} />
-    <HistoryItemTechList tech={item.tech} />
+    <HistoryItemContent indented>
+      <HistoryItemDescription description={item.description} bullets={item.bullets} />
+      <HistoryItemTechList tech={item.tech} />
+    </HistoryItemContent>
   </HistoryItemContainer>
 );
 

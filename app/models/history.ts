@@ -1,5 +1,6 @@
 export type Company = {
   name: string;
+  slug: string;
   location?: string;
   link?: string;
 };
@@ -15,7 +16,7 @@ export type LinkData = {
   label: string;
 };
 
-export type HistoryType = 'freelance' | 'employee' | 'private' | 'founder' | 'education';
+export type HistoryType = 'freelance' | 'employee' | 'private' | 'founder' | 'education' | 'certificate';
 
 export type HistoryData = {
   title: string;

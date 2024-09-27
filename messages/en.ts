@@ -6,6 +6,7 @@ import 'server-only';
  * Code: en
  * Name: English
  */
+
 const general = {
   meta: {
     title: 'Manuel Schächinger – Fullstack JavaScript Engineer & Consultant',
@@ -17,6 +18,7 @@ const general = {
   },
   history: {
     types: {
+      certificate: 'Certification',
       education: 'Academic Education',
       employee: 'Employee',
       founder: 'Founder',
@@ -271,6 +273,9 @@ const resume = {
   certifications: {
     title: certifications.title,
   },
+  education: {
+    title: 'Educational',
+  },
   skills: {
     title: 'Skills',
     languages: 'Programming Languages',
@@ -279,7 +284,6 @@ const resume = {
     tools: 'Tools & Others',
   },
 };
-
 
 const sports = {
   title: 'Sports Achievements',
@@ -420,6 +424,7 @@ const translations = {
     goto: '{count, plural, =0 {List all projects} other {List all # projects}}',
   },
   timeSpan: {
+    duration: '{years, plural, =0 {} =1 {# year} other {# years}} {months, plural, =0 {} =1 {# month} other {# months}}',
     ongoing: 'since {startDate}',
     period: '{startDate} to {endDate}',
     single: '{endDate}',

@@ -35,6 +35,12 @@ const ResumePage = ({ params: { locale } }: PageProps) => {
         <CareerList heading="h2" />
       </PageSection>
 
+      <PageSection id="education">
+        <h2 className="text-h2">{t('education.title')}</h2>
+
+        <CareerList type="education" noLink />
+      </PageSection>
+
       <PageSection id="certifications">
         <h2 className="text-h2">{t('certifications.title')}</h2>
 

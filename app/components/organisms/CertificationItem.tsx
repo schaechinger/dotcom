@@ -1,12 +1,8 @@
-import { useLocale } from 'next-intl';
-
-import { formatDate } from '@app/utils';
 import HistoryItemDescription from '@components/atoms/HistoryItemDescription';
 import HistoryItemTechList from '@components/atoms/HistoryItemTechList';
-import HistoryItemCompany from '@components/molecules/HistoryItemCompany';
+import HistoryItemContent from '@components/molecules/HistoryItemContent';
 import HistoryItemHeader from '@components/molecules/HistoryItemHeader';
 import HistoryItemContainer from '@components/organisms/HistoryItemContainer';
-import { type LocaleCode } from '@lib/router';
 import { type CertificationData } from '@models/certification';
 
 type Props = {
@@ -14,22 +10,21 @@ type Props = {
   item: CertificationData;
 };
 
-const CertificationItem = ({ heading, item }: Props) => {
-  const locale = useLocale() as LocaleCode;
-
-  return (
-    <HistoryItemContainer>
-      <HistoryItemHeader
-        date={formatDate(item.date, locale)}
-        heading={heading}
-        title={item.title}
-        link={item.link?.link}
-      />
-      <HistoryItemCompany company={item.company} />
+const CertificationItem = ({ heading, item }: Props) => (
+  <HistoryItemContainer>
+    <HistoryItemHeader
+      dates={['', item.date]}
+      company={item.company}
+      heading={heading}
+      title={item.title}
+      link={item.link?.link}
+      type="certificate"
+    />
+    <HistoryItemContent indented>
       <HistoryItemDescription description={item.description} bullets={item.bullets} />
       <HistoryItemTechList tech={item.tech} />
-    </HistoryItemContainer>
-  );
-};
+    </HistoryItemContent>
+  </HistoryItemContainer>
+);
 
 export default CertificationItem;

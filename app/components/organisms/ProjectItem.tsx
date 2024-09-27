@@ -1,8 +1,7 @@
 import HistoryItemDescription from '@components/atoms/HistoryItemDescription';
 import HistoryItemTechList from '@components/atoms/HistoryItemTechList';
-import TimeSpan from '@components/atoms/TimeSpan';
+import HistoryItemContent from '@components/molecules/HistoryItemContent';
 import HistoryItemHeader from '@components/molecules/HistoryItemHeader';
-import HistoryItemCompany from '@components/molecules/HistoryItemCompany';
 import HistoryItemContainer from '@components/organisms/HistoryItemContainer';
 import { type ProjectData } from '@models/project';
 
@@ -19,14 +18,17 @@ type Props = {
 const ProjectItem = ({ heading, item }: Props) => (
   <HistoryItemContainer id={item.slug}>
     <HistoryItemHeader
-      date={<TimeSpan startDate={item.startDate} endDate={item.endDate} />}
+      dates={[item.startDate, item.endDate]}
+      company={item.company}
       heading={heading}
       title={item.title}
       link={`/projects/${item.slug}`}
+      type={item.type}
     />
-    <HistoryItemCompany company={item.company} type={item.type} />
-    <HistoryItemDescription description={item.description} bullets={item.bullets} />
-    <HistoryItemTechList tech={item.tech} />
+    <HistoryItemContent indented>
+      <HistoryItemDescription description={item.description} bullets={item.bullets} />
+      <HistoryItemTechList tech={item.tech} />
+    </HistoryItemContent>
   </HistoryItemContainer>
 );
 

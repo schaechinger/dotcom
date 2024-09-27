@@ -69,7 +69,7 @@ const ProjectPage = async ({ params: { locale, slug } }: Props) => {
   }
 
   return (
-    <PageContainer name={`${project.slug}-project`}>
+    <PageContainer name={`${project.slug}-project`} narrow>
       <ProjectMasterData project={project} />
 
       {project.details?.description
