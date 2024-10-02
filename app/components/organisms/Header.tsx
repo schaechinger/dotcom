@@ -17,7 +17,7 @@ const Header = ({ className }: Props) => {
   return (
     <header className="sticky top-0 bg-dark-50/80 dark:bg-dark-800/80 backdrop-blur-sm z-30 border-b-2 border-b-dark-300 dark:border-b-dark-700">
       <div className={clsx('w-full mx-auto flex flex-wrap justify-between px-4 pt-4 pb-2 sm:px-10 md:px-20 lg:px-4', className)}>
-        <div className="flex flex-shrink-0 flex-grow items-center sm:z-50">
+        <div className="flex flex-shrink-0 flex-grow items-center">
           <Link href="/" className="hidden sm:block md:-ml-[3.75rem] lg:ml-0 xl:-ml-[3.75rem]">
             <Image
               src={image}

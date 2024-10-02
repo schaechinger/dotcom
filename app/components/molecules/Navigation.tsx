@@ -8,7 +8,6 @@ import { useState } from 'react';
 import image from '@/public/images/schaechinger.jpg';
 import { LEGAL_NAVIGATION, MAIN_NAVIGATION } from '@app/config';
 import Link from '@components/atoms/Link';
-import Logo from '@components/atoms/Logo';
 import MenuButton from '@components/atoms/MenuButton';
 import NavigationItem from '@components/atoms/NavigationItem';
 import ThemeToggle from '@components/atoms/ThemeToggle';
@@ -31,9 +30,9 @@ const WideNavigation = ({ themeTranslations, translations }: Props) => {
         open={open}
         onClick={() => setOpen((cur) => !cur)}
         translations={translations}
-        className="ml-2 z-50 -mr-2"
+        className="ml-2 -mr-2"
       />
-      <div className={clsx(open ? 'left-0' : '-left-[100vw]', 'fixed top-0 w-full min-h-screen z-40 px-4 sm:px-10 md:px-20 lg:px-0 xl:px-4 pt-20 sm:pt-20 lg:pt-24 transition-all duration-300 bg-dark-50 dark:bg-dark-800 backdrop-blur-md')}>
+      <div className={clsx(open ? 'left-0' : '-left-[100vw]', 'fixed top-[4.125rem] sm:top-[4.6125rem] w-full min-h-screen px-4 sm:px-10 md:px-20 lg:px-0 xl:px-4 pt-6 transition-all duration-300 bg-dark-50 dark:bg-dark-800 backdrop-blur-sm')}>
         <div className="max-w-screen-lg mx-auto flex flex-col">
           <div className="sm:hidden flex flex-col gap-4 items-center">
             <Link href="/">
@@ -46,7 +45,6 @@ const WideNavigation = ({ themeTranslations, translations }: Props) => {
                 loading="lazy"
               />
             </Link>
-            <Logo />
           </div>
 
           <nav className="-mx-1 px-1 w-full flex-grow">

@@ -38,7 +38,7 @@ const about = {
 
   profile: {
     title: 'My Profile:',
-    imageAlt: 'Me in front of the wall of Osaka Castle, Japan.',
+    imageAlt: 'In front of the wall of Osaka Castle, Japan.',
     bullets: {
       age: 'I am {age} years old.',
       location: 'Ottobrunn is my base.',
