@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import { notFound } from 'next/navigation';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
