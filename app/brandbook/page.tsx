@@ -2,14 +2,14 @@ import { type Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { clearSans } from '@app/font';
-import NavigationItem from '@components/atoms/NavigationItem';
+import HistoryItemTypeLabel from '@components/atoms/HistoryItemTypeLabel';
 import Link from '@components/atoms/Link';
 import LinkButton from '@components/atoms/LinkButton';
+import NavigationItem from '@components/atoms/NavigationItem';
+import TechItem from '@components/atoms/TechItem';
 import MessageBanner from '@components/molecules/MessageBanner';
 
 import SplitSection from './SplitSection';
-import TechItem from '../components/atoms/TechItem';
-import HistoryItemTypeLabel from '../components/atoms/HistoryItemTypeLabel';
 
 export const metadata: Metadata = {
   title: 'Brandbook – Manuel Schächinger',

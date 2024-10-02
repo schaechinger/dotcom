@@ -3,10 +3,10 @@
 import { useReCaptcha } from 'next-recaptcha-v3';
 import { useState } from 'react';
 
+import InputField from '@components/atoms/InputField';
 import SubmitButton from '@components/atoms/SubmitButton';
+import TextArea from '@components/atoms/TextArea';
 import MessageBanner from '@components/molecules/MessageBanner';
-import InputField from '../atoms/InputField';
-import TextArea from '../atoms/TextArea';
 
 type Props = {
   translations: Record<string, string>;

@@ -9,8 +9,8 @@ import { LANGUAGE_SUGGESTION_OPT_OUT } from '@app/config';
 import { isBrowser, useLocalStorage } from '@app/utils';
 import LinkButton from '@components/atoms/LinkButton';
 import MenuClose from '@components/icons/MenuClose';
+import MessageBanner from '@components/molecules/MessageBanner';
 import { type LocaleCode, matchLocale, splitPath } from '@lib/router';
-import MessageBanner from '../molecules/MessageBanner';
 
 const LanguageSuggestion = () => {
   const pathname = usePathname();

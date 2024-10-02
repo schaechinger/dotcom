@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 
 import CircleAlert from '@components/icons/CircleAlert';
-import CircleCheck from '../icons/CircleCheck';
+import CircleCheck from '@components/icons/CircleCheck';
 
 type Props = {
   children?: React.ReactNode;
