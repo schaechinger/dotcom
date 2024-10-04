@@ -3,7 +3,7 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import image from '@/public/images/schaechinger.jpg';
 import { LEGAL_NAVIGATION, MAIN_NAVIGATION } from '@app/config';
@@ -23,6 +23,10 @@ const WideNavigation = ({ themeTranslations, translations }: Props) => {
   const { page } = splitPath(pathname);
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
   return (
     <>
       <ThemeToggle translations={themeTranslations} />
@@ -32,7 +36,7 @@ const WideNavigation = ({ themeTranslations, translations }: Props) => {
         translations={translations}
         className="ml-2 -mr-2"
       />
-      <div className={clsx(open ? 'left-0' : '-left-[100vw]', 'fixed top-[4.125rem] sm:top-[4.6125rem] w-full min-h-screen px-4 sm:px-10 md:px-20 lg:px-0 xl:px-4 pt-6 transition-all duration-300 bg-dark-50 dark:bg-dark-800 backdrop-blur-sm')}>
+      <div className={clsx(open ? 'left-0' : '-left-[100vw]', 'fixed top-[4.625rem] sm:top-[5.125rem] w-full min-h-screen px-4 sm:px-10 md:px-20 lg:px-0 xl:px-4 pt-6 transition-all duration-300 bg-dark-50 dark:bg-dark-800')}>
         <div className="max-w-screen-lg mx-auto flex flex-col">
           <div className="sm:hidden flex flex-col gap-4 items-center">
             <Link href="/">
@@ -41,7 +45,6 @@ const WideNavigation = ({ themeTranslations, translations }: Props) => {
                 alt="Manuel Schächinger"
                 className="w-24 rounded-full border-2 border-dark-950/25 dark:border-dark-200/80"
                 sizes="96px"
-                onClick={() => setOpen(false)}
                 loading="lazy"
               />
             </Link>
@@ -54,7 +57,6 @@ const WideNavigation = ({ themeTranslations, translations }: Props) => {
                   <NavigationItem
                     href={`/${identifier}`}
                     active={page.startsWith(`/${identifier}`)}
-                    onClick={() => setOpen(false)}
                     label={translations[identifier]}
                     icon={icon}
                   />
@@ -65,11 +67,7 @@ const WideNavigation = ({ themeTranslations, translations }: Props) => {
           <ul className="flex flex-row gap-4 content-start pl-4 sm:pl-[3.75rem] md:pl-0 lg:pl-[4.75rem] xl:pl-4 pt-6">
             {LEGAL_NAVIGATION.map((page) => (
               <li key={page}>
-                <Link
-                  href={`/${page}`}
-                  className="font-normal"
-                  onClick={() => setOpen(false)}
-                >{translations[page]}</Link>
+                <Link href={`/${page}`} className="font-normal">{translations[page]}</Link>
               </li>
             ))}
           </ul>

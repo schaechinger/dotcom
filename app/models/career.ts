@@ -14,7 +14,7 @@ export const sortCareerList = <T extends CareerData>(list: T[]) => {
   };
 
   return list
-    .toSorted((a: CareerData, b: CareerData) => {
+    .toSorted((a, b) => {
       const aDate = a.endDate || a.startDate;
       const bDate = b.endDate || b.startDate;
 

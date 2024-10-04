@@ -20,7 +20,7 @@ export type ParticipationData = {
 };
 
 export const sortParticipationList = <T extends ParticipationData>(list: T[]) => (
-  list.toSorted((a: ParticipationData, b: ParticipationData) => {
+  list.toSorted((a, b) => {
     if (!!a.date !== !!b.date) {
       return a.date ? 1 : -1;
     }
@@ -32,6 +32,18 @@ export const sortParticipationList = <T extends ParticipationData>(list: T[]) =>
     return a.date >= b.date ? -1 : 1;
   })
 );
+
+export const getPb = <T extends ParticipationData>(list: T[]) => {
+  let pb: ParticipationData = list[0];
+
+  sortParticipationList(list).forEach((p) => {
+    if (p.time && p.time <= (pb.time || Number.MAX_VALUE)) {
+      pb = p;
+    }
+  });
+
+  return pb;
+};
 
 const multiplier = [1, 60, 3600];
 
@@ -116,4 +128,4 @@ export const getSpeed = (participation: ParticipationData, locale: LocaleCode): 
       return `${segmentTimeToString(Math.round(time / (distance / (
         isMetric ? KM_TO_M : MILE_TO_M)))).replace(/^0/, '')} ${isMetric ? 'km/h' : 'mph'}`;
   }
-}
+};

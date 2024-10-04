@@ -57,9 +57,8 @@ const ResumePage = ({ params: { locale } }: PageProps) => {
             { slug: 'javascript', name: 'JavaScript' },
             { slug: 'typescript', name: 'TypeScript' },
             { slug: 'css', name: 'CSS/Sass' },
-            { slug: 'sql', name: 'SQL' },
-            { slug: 'php', name: 'PHP' },
             { slug: 'python', name: 'Python' },
+            { slug: 'sql', name: 'SQL' },
           ]} />
         </div>
 
@@ -74,8 +73,8 @@ const ResumePage = ({ params: { locale } }: PageProps) => {
             { slug: 'react', name: 'React' },
             { slug: 'nextjs', name: 'Next.js' },
             { slug: 'express', name: 'Express.js' },
+            { slug: 'jest', name: 'Jest' },
             { slug: 'mqtt', name: 'MQTT' },
-            { slug: 'mocha', name: 'Mocha' },
             { slug: 'graphql', name: 'GraphQL' },
           ]} />
         </div>
@@ -87,6 +86,7 @@ const ResumePage = ({ params: { locale } }: PageProps) => {
             { slug: 'postgresql', name: 'PostgreSQL' },
             { slug: 'dynamodb', name: 'DynamoDB' },
             { slug: 'elasticsearch', name: 'Elasticsearch' },
+            { slug: 'mongodb', name: 'MongoDB' },
           ]} />
         </div>
 
@@ -102,7 +102,7 @@ const ResumePage = ({ params: { locale } }: PageProps) => {
             { slug: 'rest', name: 'REST' },
             { slug: 'responsivedesign', name: 'Reponsive Design' },
             { slug: 'ui', name: 'Reponsive UI/UX' },
-            { slug: 'auth', name: 'Authentifizierung' },
+            { slug: 'auth', name: t('skills.auth') },
           ]} />
         </div>
       </PageSection>

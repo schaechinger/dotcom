@@ -41,6 +41,11 @@
       @apply w-1 h-6 absolute top-1 -left-2.5 bg-secondary/80 dark:bg-primary/60 rounded-full;
     }
   }
+  .menu-button:hover {
+    .menu-button__bar:nth-child(1):not(.menu-button__bar--rotated) {
+      @apply left-3 w-3;
+    }
+  }
   .menu-button__bar {
     @apply absolute h-0.5 rounded-md transition-all duration-300 bg-dark-800 dark:bg-dark-50;
 

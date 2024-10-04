@@ -282,6 +282,7 @@ const resume = {
     frameworks: 'Frameworks & Librarys',
     databases: 'Datenbanken',
     tools: 'Tools & Sonstiges',
+    auth: 'Authentifizierung',
   },
 };
 

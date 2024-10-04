@@ -9,6 +9,7 @@ import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import { loadParticipationsByContest } from '@lib/contentful';
 import { generatePageMeta } from '@lib/seo';
+import { getPb } from '@/app/models/participation';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
   const t = await getTranslations('pages.sports');
@@ -26,6 +27,8 @@ const SportsPage = async ({ params: { locale } }: PageProps) => {
     loadParticipationsByContest('marathon', locale),
     getTranslations('pages.sports'),
   ]);
+
+  const pb = getPb(marathons || []);
 
   return (
     <PageContainer name="sports" narrow>
@@ -48,7 +51,7 @@ const SportsPage = async ({ params: { locale } }: PageProps) => {
         <p className="my-2">{t('marathons.text.1')}</p>
 
         {marathons?.map((marathon) => (
-          <ContestParticipation key={marathon.slug} participation={marathon} />
+          <ContestParticipation key={marathon.slug} participation={marathon} pb={pb.slug === marathon.slug} />
         ))}
       </PageSection>
     </PageContainer>
