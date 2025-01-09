@@ -8,9 +8,9 @@
 
 /* SITE */
 
-    Last update: 2024/08/20
+    Last update: 2025/01/09
     Language: Deutsch, English
     Doctype: HTML5
-    Standards:   ES6, CSS3, HTML5
+    Standards: ES6, CSS3, HTML5
     Components: Next.js, React, Tailwind CSS, Contentful
     IDE: Visual Studio Code, GIMP

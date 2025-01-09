@@ -2,14 +2,10 @@ import { type LocaleCode } from '@lib/router';
 
 export type LayoutProps = {
   children: React.ReactNode;
-  params: {
-    locale: LocaleCode;
-  };
+  params: Promise<{ locale: LocaleCode }>;
 };
 
 export type PageProps = {
-  params: {
-    locale: LocaleCode;
-  };
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: Promise<{ locale: LocaleCode }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };

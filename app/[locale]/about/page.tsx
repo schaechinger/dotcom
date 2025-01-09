@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import wallpaper from '@/public/images/opengraph-schaechinger.jpg';
@@ -15,7 +14,8 @@ import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import { generatePageMeta } from '@lib/seo';
 
-export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+  const { locale } = await params;
   const t = await getTranslations('pages.about');
 
   return {
@@ -25,9 +25,10 @@ export const generateMetadata = async ({ params: { locale } }: PageProps): Promi
   };
 };
 
-const AboutPage = ({ params: { locale } }: PageProps) => {
+const AboutPage = async ({ params }: PageProps) => {
+  const { locale } = await params;
   unstable_setRequestLocale(locale);
-  const t = useTranslations('pages.about');
+  const t = await getTranslations('pages.about');
   const age = getTimeDuration('1991-02-14');
   const years = getTimeDuration('2014-02-01');
 

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import Link from '@components/atoms/Link';
 import type { PageProps } from '@app/interfaces';
@@ -16,11 +15,15 @@ import PageSection from '@components/organisms/PageSection';
 import ProjectList from '@components/organisms/ProjectList';
 import { generatePageMeta, generateProfileJson } from '@lib/seo';
 
-export const generateMetadata = ({ params: { locale } }: PageProps): Metadata => generatePageMeta('/', locale);
+export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+  const { locale } = await params;
+  return generatePageMeta('/', locale);
+};
 
-const HomePage = ({ params: { locale } }: PageProps) => {
+const HomePage = async ({ params }: PageProps) => {
+  const { locale } = await params;
   unstable_setRequestLocale(locale);
-  const t = useTranslations('pages.home');
+  const t = await getTranslations('pages.home');
   
   const jsonLd = generateProfileJson();
   const aboutTextOptions = {

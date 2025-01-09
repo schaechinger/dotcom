@@ -11,7 +11,8 @@ import { loadParticipationsByContest } from '@lib/contentful';
 import { generatePageMeta } from '@lib/seo';
 import { getPb } from '@/app/models/participation';
 
-export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+  const { locale } = await params;
   const t = await getTranslations('pages.sports');
 
   return {
@@ -21,7 +22,8 @@ export const generateMetadata = async ({ params: { locale } }: PageProps): Promi
   };
 };
 
-const SportsPage = async ({ params: { locale } }: PageProps) => {
+const SportsPage = async ({ params }: PageProps) => {
+  const { locale } = await params;
   unstable_setRequestLocale(locale);
   const [marathons, t] = await Promise.all([
     loadParticipationsByContest('marathon', locale),

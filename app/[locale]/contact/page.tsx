@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { ReCaptchaProvider } from 'next-recaptcha-v3';
 
@@ -13,7 +12,8 @@ import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import { generatePageMeta } from '@lib/seo';
 
-export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+  const { locale } = await params;
   const t = await getTranslations('pages.contact');
 
   return {
@@ -25,9 +25,10 @@ export const generateMetadata = async ({ params: { locale } }: PageProps): Promi
 
 export const dynamic = 'force-dynamic';
 
-const ContactPage = ({ params: { locale } }: PageProps) => {
+const ContactPage = async ({ params }: PageProps) => {
+  const { locale } = await params;
   unstable_setRequestLocale(locale);
-  const t = useTranslations('pages.contact');
+  const t = await getTranslations('pages.contact');
 
   return (
     <PageContainer name="contact" narrow>

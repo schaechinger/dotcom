@@ -16,11 +16,14 @@ import TransportKitLine from './TransportKitLine';
 
 const slug = 'transportkit';
 
-export const generateMetadata = async ({ params: { locale } }: PageProps) => (
-  generateProjectMetadata(slug, locale)
-);
+export const generateMetadata = async ({ params }: PageProps) => {
+  const { locale } = await params;
 
-const TransportKitPage = async ({ params: { locale } }: PageProps) => {
+  return generateProjectMetadata(slug, locale)
+};
+
+const TransportKitPage = async ({ params }: PageProps) => {
+  const { locale } = await params;
   unstable_setRequestLocale(locale);
   const [project, t] = await Promise.all([
     loadProjectBySlug(slug, locale),

@@ -13,17 +13,20 @@ import { generateProjectMetadata } from '@lib/projects';
 import { type LocaleCode } from '@lib/router';
 
 interface Props extends PageProps {
-  params: {
+  params: Promise<{
     locale: LocaleCode;
     slug: string;
-  };
+  }>;
 }
 
-export const generateMetadata = async ({ params: { locale, slug } }: Props) => (
-  generateProjectMetadata(slug, locale)
-);
+export const generateMetadata = async ({ params }: Props) => {
+  const { locale, slug } = await params;
 
-const ProjectPage = async ({ params: { locale, slug } }: Props) => {
+  return generateProjectMetadata(slug, locale)
+};
+
+const ProjectPage = async ({ params }: Props) => {
+  const { locale, slug } = await params;
   unstable_setRequestLocale(locale);
   const [project, t] = await Promise.all([
     loadProjectBySlug(slug, locale),

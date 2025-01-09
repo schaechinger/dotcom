@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import type { PageProps } from '@app/interfaces';
@@ -10,7 +9,8 @@ import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import { generatePageMeta } from '@lib/seo';
 
-export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+  const { locale } = await params;
   const t = await getTranslations('pages.work');
 
   return {
@@ -20,9 +20,10 @@ export const generateMetadata = async ({ params: { locale } }: PageProps): Promi
   };
 };
 
-const WorkPage = ({ params: { locale } }: PageProps) => {
+const WorkPage = async ({ params }: PageProps) => {
+  const { locale } = await params;
   unstable_setRequestLocale(locale);
-  const t = useTranslations('pages.work');
+  const t = await getTranslations('pages.work');
 
   return (
     <PageContainer name="work" narrow>

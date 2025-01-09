@@ -8,7 +8,7 @@ type Props = {
   endDate?: string;
 };
 
-const TimeSpan = async ({ startDate, endDate }: Props) => {
+const TimeSpan = ({ startDate, endDate }: Props) => {
   const t = useTranslations('timeSpan');
   const locale = useLocale() as LocaleCode;
 

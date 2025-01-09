@@ -14,7 +14,8 @@ export const generateStaticParams = () => (
   supportedLangs.map((locale) => ({ locale }))
 );
 
-export const generateMetadata = async ({ params: { locale } }: LayoutProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: LayoutProps): Promise<Metadata> => {
+  const { locale } = await params;
   const t = await getTranslations('general');
 
   return {
@@ -41,7 +42,8 @@ export const generateMetadata = async ({ params: { locale } }: LayoutProps): Pro
   };
 };
 
-const RootLayout = async ({ children, params: { locale } }: LayoutProps) => {
+const RootLayout = async ({ children, params }: LayoutProps) => {
+  const { locale } = await params;
   unstable_setRequestLocale(locale);
 
   return (

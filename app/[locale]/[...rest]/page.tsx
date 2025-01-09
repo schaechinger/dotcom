@@ -3,7 +3,8 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { PageProps } from '@app/interfaces';
  
-const CatchAllPage = ({ params: { locale } }: PageProps) => {
+const CatchAllPage = async ({ params }: PageProps) => {
+  const { locale } = await params;
   unstable_setRequestLocale(locale);
 
   notFound();
