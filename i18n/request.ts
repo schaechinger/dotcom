@@ -6,7 +6,10 @@ import { supportedLangs } from '@app/config';
 import { LocaleCode } from '@lib/router';
 
 export default getRequestConfig(async (options) => {
-  const locale = await options.requestLocale || await options.locale;
+  let locale = await options.requestLocale;
+  if (!locale) {
+    locale = await options.locale;
+  }
 
   if (!supportedLangs.includes(locale as LocaleCode)) {
     notFound();
