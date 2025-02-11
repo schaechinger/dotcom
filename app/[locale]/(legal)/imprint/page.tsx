@@ -43,10 +43,6 @@ const ImprintPage = async ({ params }: PageProps) => {
           <LinkButton href="mailto:manuel@schaechinger.com" label={t('contact.goto')} />
         </p>
 
-        <p className="mb-4">
-          {t('owner.ustidnr', { id: 'DE324539715' })}
-        </p>
-
         <p>
           <strong className="dark:text-dark-50">{t('odr.title')}:</strong>&nbsp;
           {t.rich('odr.text', {
