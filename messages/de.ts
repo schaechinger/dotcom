@@ -105,7 +105,7 @@ const home = {
     text: [
       'Seit über {years} Jahren entwickle ich professionelle Software-Anwendungen sowohl im Backend als auch im Frontend. Ich habe mich auf <highlight>JavaScript</highlight> spezialisiert, da diese Sprache ein fast grenzenloses Spektrum an Möglichkeiten und Einsatzgebieten bietet.',
       'Meine Aufgabenbereiche erstrecken sich über komplexe APIs mit <highlight>Node.js</highlight>, performante Frontends mit <highlight>React</highlight> und <highlight>Vue.js</highlight>, Absicherung von Systemen sowie Deployment und Übergabe an Kunden.',
-      'Abseits der Arbeit bin ich leidenschaftlicher Läufer. Mein großes Ziel ist die Teilnahmen an den sechs Major Marathons, von denen ich bis auf Boston schon fünf abschließen konnte.',
+      'Abseits der Arbeit bin ich leidenschaftlicher Läufer. Mein großes Ziel ist die Teilnahme an den sechs Major Marathons, von denen ich bis auf Boston schon fünf abschließen konnte.',
     ],
     goto: {
       marathons: 'Meine sportlichen Erfolge',
@@ -114,7 +114,7 @@ const home = {
   },
   availability: {
     title: 'Aktuelle Verfügbarkeit',
-    text: 'Auch wenn meine Verfügbarkeit für die Bedürfnisse nicht ausreicht, <contact>kontaktiere</contact> mich gerne. Wir finden einen Weg, dein Projekt umzusetzen.',
+    text: 'Auch wenn meine Verfügbarkeit für deine Bedürfnisse nicht ausreicht, <contact>kontaktiere</contact> mich gerne. Wir finden einen Weg, dein Projekt umzusetzen.',
   },
   certifications: {
     title: certifications.title,
