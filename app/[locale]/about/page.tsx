@@ -72,7 +72,7 @@ const AboutPage = async ({ params }: PageProps) => {
               <Link href="/sports#marathons" className="inline-link">{label}</Link>
             ),
           })}</p>
-          <p className="mb-">{t.rich('profile.bullets.medalmonday', {
+          <p>{t.rich('profile.bullets.medalmonday', {
             link: (label: React.ReactNode) => (
               <Link href="/projects/medalmonday" className="inline-link">{label}</Link>
             ),

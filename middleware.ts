@@ -19,8 +19,6 @@ export function middleware(request: NextRequest) {
 
   const locale = getLocale(request);
 
-  console.log('mw', path, foundLang, locale);
-
   if (foundLang) {
     return;
   }
