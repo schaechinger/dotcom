@@ -37,7 +37,7 @@ const WideNavigation = ({ themeTranslations, translations }: Props) => {
         className="ml-2 -mr-2"
       />
       <div className={clsx(open ? 'top-[3.75rem] sm:top-[4.5rem]' : '-top-[30rem]', 'right-0 absolute -z-10 w-full sm:w-80 transition-all duration-300')}>
-        <div className="max-w-screen-lg mx-auto blurred-container flex flex-col px-4 sm:px-6 md:px-10 lg:px-4 py-3 h-full">
+        <div className="blurred-container rounded-xl overflow-hidden max-w-screen-lg mx-auto flex flex-col h-full">
           <div className="sm:hidden flex flex-col gap-4 items-center mt-3 mb-6">
             <Link href="/">
               <Image
@@ -50,8 +50,8 @@ const WideNavigation = ({ themeTranslations, translations }: Props) => {
             </Link>
           </div>
 
-          <nav className="-mx-1 px-1 w-full flex-grow">
-            <ul className="flex flex-col gap-4 lg:pt-0">
+          <nav className="">
+            <ul className="flex flex-col lg:pt-0">
               {MAIN_NAVIGATION.map(({ icon, page: identifier }) => (
                 <li key={identifier}>
                   <NavigationItem

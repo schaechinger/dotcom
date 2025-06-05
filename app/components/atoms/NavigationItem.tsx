@@ -16,14 +16,15 @@ const NavigationItem = ({ active, href, icon: Icon, label, onClick }: Props) => 
   <Link
     href={href}
     className={clsx(
-      'py-1 inline-block navigation-item group',
-      active ? 'font-bold navigation-item--active' : 'font-normal',
+      'navigation-item px-4 py-3 block group',
+      active ? 'navigation-item--active font-bold' : 'font-normal',
     )}
     onClick={onClick}
   >
     {Icon && <Icon className={clsx(
-      'text-2xl inline-block -mt-1 mr-4 group-hover:text-secondary/80 dark:group-hover:text-primary/80',
+      'text-2xl inline-block -mt-1 mr-4',
       active ? 'text-dark-950 dark:text-dark-50' : 'text-dark-950/80 dark:text-dark-50/80',
+      'group-hover:text-current'
       )} />}
     {label}
   </Link>

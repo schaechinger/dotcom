@@ -6,7 +6,7 @@ type Props = {
 };
 
 const TechItem = ({ children, item }: Props) => (
-  <li className="text-secondary dark:text-primary border-secondary/60 border-2 rounded-full px-2">
+  <li className="blurred-container text-secondary dark:text-primary border-secondary/30 dark:border-primary/10 rounded-full px-2">
     {item?.name || children}
   </li>
 );
