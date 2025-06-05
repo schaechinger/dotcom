@@ -44,7 +44,7 @@ const AboutPage = async ({ params }: PageProps) => {
             src={wallpaper}
             alt={t('profile.imageAlt')}
             sizes="(max-width: 640px) 100vw, 640px"
-            className="border-y-2 sm:border-x-2 sm:rounded-sm border-dark-950/25 dark:border-dark-200/80"
+            className="border-y-2 sm:border-x-2 sm:rounded-md border-neutral-300/30 dark:border-dark-600/50"
             priority
           />
           <p className="text-sm mt-2 px-4 sm:px-2">{t('profile.imageAlt')}</p>

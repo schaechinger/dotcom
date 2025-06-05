@@ -31,6 +31,17 @@
 }
 
 @layer components {
+  // header
+  .blurred-container {
+    @apply relative;
+
+    &::before {
+      @apply bg-neutral-100/50 dark:bg-dark-800/50 backdrop-blur-lg saturate-150 border-2 border-neutral-100/30 dark:border-dark-700/30 rounded-xl absolute top-0 left-0 w-full h-full block;
+
+      content: "";
+      z-index: -1;
+    }
+  }
   // navigation
   .navigation-item {
     @apply relative;

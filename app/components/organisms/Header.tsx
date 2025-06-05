@@ -15,14 +15,14 @@ const Header = ({ className }: Props) => {
   const t = useTranslations('layout.header');
 
   return (
-    <header className="sticky top-0 bg-dark-50/80 dark:bg-dark-800/80 backdrop-blur-sm z-30 border-b-2 border-b-dark-300 dark:border-b-dark-700">
-      <div className={clsx('w-full mx-auto flex flex-wrap justify-between px-4 sm:px-10 md:px-20 lg:px-4 py-4', className)}>
+    <header className="sticky top-0 pt-2 md:pt-4 z-30 mx-1 sm:mx-4 md:mx-10 lg:mx-1">
+      <div className={clsx('blurred-container w-full mx-auto flex flex-wrap justify-between px-4 sm:px-6 md:px-10 lg:px-4 py-2', className)}>
         <div className="flex flex-shrink-0 flex-grow items-center">
-          <Link href="/" className="hidden sm:block md:-ml-[3.75rem] lg:ml-0 xl:-ml-[3.75rem]">
+          <Link href="/" className="hidden sm:block">
             <Image
               src={image}
               alt="Manuel Schächinger"
-              className="w-9 sm:w-11 rounded-full border-2 border-dark-950/25 dark:border-dark-200/80 mt-0 mb-0 mr-4"
+              className="w-9 sm:w-11 rounded-full border-2 border-neutral-200/50 dark:border-dark-600/50 mt-0 mb-0 mr-4"
               loading="eager"
               priority
             />
