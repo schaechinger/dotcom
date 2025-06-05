@@ -375,7 +375,7 @@ const translations = {
       legal: 'Rechtliches',
       imprint: imprint.title,
       privacy: privacy.title,
-      dev: 'Mit viel <love></love> in München entwickelt.',
+      dev: 'Mit viel <love></love> in Ottobrunn entwickelt.',
       copyright: '© {year} Manuel Schächinger. Alle Rechte vorbehalten.',
     },
     header: {

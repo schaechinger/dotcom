@@ -1,4 +1,4 @@
-'use server';
+import 'server-only';
 
 /**
  * Esperanto language file.

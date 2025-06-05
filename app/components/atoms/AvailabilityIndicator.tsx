@@ -12,7 +12,7 @@ const AvailabilityIndicator = async () => {
   const days = +(availability?.days || 0);
 
   return (
-    <div className="text-secondary dark:text-primary rounded-sm font-bold inline-block">
+    <div className="text-secondary dark:text-primary font-bold inline-block">
       <Clock className="text-secondary -mt-1 mr-2 text-xl" />
       { !!days && <span className="text-xl mr-1">{days}</span>}{t('days', { days })}
     </div>

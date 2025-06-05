@@ -37,7 +37,7 @@ const LanguageSuggestion = () => {
   };
 
   return suggestion !== locale && (
-    <aside lang={suggestion} dir="ltr" className="language-suggestion pt-4 lg:max-w-screen-sm">
+    <aside lang={suggestion} dir="ltr" className="language-suggestion pt-4 lg:max-w-screen-md">
       <MessageBanner classname="relative">
         <button
           onClick={hide}
