@@ -167,6 +167,12 @@ const imprint = {
   },
 };
 
+const now = {
+  title: 'Now',
+  pageTitle: 'Was ich gerade mache',
+  description: 'Hier findest du meine aktuellen Neuigkeiten und Projekte, an denen ich arbeite.',
+};
+
 const privacy = {
   title: 'Datenschutz',
   description: 'Deine Daten sind wichtig, lies dir daher durch wie ich mit Daten umgehe.',
@@ -359,6 +365,7 @@ const translations = {
     contact,
     home,
     imprint,
+    now,
     privacy,
     projects,
     resume,
@@ -375,7 +382,7 @@ const translations = {
       legal: 'Rechtliches',
       imprint: imprint.title,
       privacy: privacy.title,
-      dev: 'Mit viel <love></love> in Ottobrunn entwickelt.',
+      dev: 'Mit <tech></tech> und viel <love></love> in Ottobrunn entwickelt.',
       copyright: '© {year} Manuel Schächinger. Alle Rechte vorbehalten.',
     },
     header: {
@@ -419,6 +426,10 @@ const translations = {
   },
   certificationList: {
     error: 'Leider können meine Zertifizierungen nicht geladen werden.',
+  },
+  nowList: {
+    error: 'Leider können die aktuellen Neuigkeiten nicht geladen werden.',
+    goto: 'Alle Neuigkeiten ansehen',
   },
   projectList: {
     error: 'Leider können die bisherigen Projekte nicht geladen werden.',

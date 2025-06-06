@@ -36,7 +36,7 @@
     @apply relative border border-neutral-200/50 dark:border-dark-700/50 rounded-xl;
 
     &::before {
-      @apply bg-neutral-100/50 dark:bg-dark-800/50 backdrop-blur-lg saturate-150 absolute top-0 left-0 w-full h-full block rounded-lg;
+      @apply bg-neutral-100/50 dark:bg-dark-800/50 backdrop-blur-lg saturate-150 absolute top-0 left-0 w-full h-full block rounded-[11px];
 
       content: "";
       z-index: -1;
@@ -44,7 +44,7 @@
   }
   // navigation
   .navigation-item {
-    @apply relative sm:hover:bg-secondary/60 sm:hover:dark:bg-primary/20 hover:text-dark-50 dark:hover:text-dark-50;
+    @apply relative hover:bg-secondary/60 hover:dark:bg-primary/20 hover:text-dark-50 dark:hover:text-dark-50;
 
     &--active::before {
       content: '';
