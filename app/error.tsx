@@ -5,7 +5,7 @@ import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 
 const ServerError = () => (
-  <PageContainer name="error" narrow>
+  <PageContainer name="error">
     <PageSection id="error" first>
       <h1 className="text-h1">Content not Available</h1>
 

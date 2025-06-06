@@ -1,5 +1,4 @@
 import { type Metadata } from 'next';
-import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { clearSans } from '@app/font';
 import HistoryItemTypeLabel from '@components/atoms/HistoryItemTypeLabel';
@@ -19,8 +18,6 @@ export const metadata: Metadata = {
 };
 
 const BrandBook = () => {
-  unstable_setRequestLocale('en');
-
   return (
     <html className={clearSans.className} lang="en">
       <body className="w-full max-w-screen-xl mx-auto font-sans">
@@ -91,8 +88,8 @@ const BrandBook = () => {
         <SplitSection id="colors" label="Color Palette">
           <div className="flex flex-col gap-2">
             <div className="flex gap-2">
-              <div className="w-8 h-8 rounded-full bg-primary" title="primary" />
-              <div className="w-8 h-8 rounded-full bg-secondary" title="discreet-shade" />
+              <div className="w-8 h-8 rounded-full bg-primary-dark" title="primary" />
+              <div className="w-8 h-8 rounded-full bg-primary-light" title="discreet-shade" />
               <div className="w-8 h-8 rounded-full bg-discreet-light" title="discreet-light" />
               <div className="w-8 h-8 rounded-full bg-discreet-egg" title="discreet-egg" />
               <div className="w-8 h-8 rounded-full bg-squash-red" title="squash-red" />

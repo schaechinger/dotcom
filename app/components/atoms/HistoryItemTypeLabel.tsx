@@ -35,7 +35,7 @@ const HistoryItemTypeLabel = ({ colored, label, type }: Props) => {
 
   return (
     <>
-      <TypeIcon title={t(type)} className={clsx('inline-block -mt-1 mr-2', colored && 'text-secondary/60 dark:text-primary/60')} />
+      <TypeIcon title={t(type)} className={clsx('inline-block -mt-1 mr-2', colored && 'text-primary-light/60 dark:text-primary-dark/60')} />
       {label && t(type)}
     </>
   );

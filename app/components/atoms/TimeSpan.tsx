@@ -13,11 +13,11 @@ const TimeSpan = ({ startDate, endDate }: Props) => {
   const locale = useLocale() as LocaleCode;
 
   const dates = {
-    startDate: startDate ? formatDate(startDate, locale) : undefined,
-    endDate: endDate ? formatDate(endDate, locale) : undefined,
+    startDate: startDate ? formatDate(startDate, locale) : 0,
+    endDate: endDate ? formatDate(endDate, locale) : 0,
   };
 
-  let identifier = 'ongoing';
+  let identifier: 'ongoing' | 'period' | 'single' = 'ongoing';
   if (dates.startDate && dates.endDate) {
     identifier = 'period';
   } else if (dates.endDate) {

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
 import type { PageProps } from '@app/interfaces';
 import Address from '@components/atoms/Address';
@@ -22,9 +22,7 @@ export const generateMetadata = async ({ params }: PageProps): Promise<Metadata>
   };
 };
 
-const PrivacyPage = async ({ params }: PageProps) => {
-  const { locale } = await params;
-  unstable_setRequestLocale(locale);
+const PrivacyPage = async () => {
   const t = await getTranslations('pages.privacy');
 
   return (

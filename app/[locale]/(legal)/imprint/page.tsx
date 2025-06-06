@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
 import { PageProps } from '@app/interfaces';
 import Address from '@components/atoms/Address';
@@ -21,9 +21,7 @@ export const generateMetadata = async ({ params }: PageProps): Promise<Metadata>
   };
 };
 
-const ImprintPage = async ({ params }: PageProps) => {
-  const { locale } = await params;
-  unstable_setRequestLocale(locale);
+const ImprintPage = async () => {
   const t = await getTranslations('pages.imprint');
 
   return (

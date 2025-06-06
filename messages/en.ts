@@ -167,6 +167,12 @@ const imprint = {
   },
 };
 
+const now = {
+  title: 'Now',
+  pageTitle: 'What I am currently doing',
+  description: 'This is a summary of my current doings and projects I work on.',
+};
+
 const privacy = {
   title: 'Data Privacy',
   description: 'Your data is important. Please have a look at how I handle the data.',
@@ -359,6 +365,7 @@ const translations = {
     contact,
     home,
     imprint,
+    now,
     privacy,
     projects,
     resume,
@@ -375,7 +382,7 @@ const translations = {
       legal: 'Legal',
       imprint: imprint.title,
       privacy: privacy.title,
-      dev: 'Crafted with <tech></tech and <love></love> in Ottobrunn.',
+      dev: 'Crafted with <tech></tech> and <love></love> in Ottobrunn.',
       copyright: '© {year} Manuel Schächinger. All rights reserved.',
     },
     header: {

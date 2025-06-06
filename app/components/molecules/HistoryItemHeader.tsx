@@ -42,7 +42,7 @@ const HistoryItemHeader = ({ company, dates, heading, link, title, type }: Props
           {link ? (
             <Link href={link} className="group">
               {title}
-              <ArrowRight className="inline-block transition-all text-secondary/60 dark:text-primary/60 group-hover:text-current group-hover:text-xl -rotate-45 -mt-1 ml-1 group-hover:ml-0.5" />
+              <ArrowRight className="inline-block transition-all text-primary-light/60 dark:text-primary-dark/60 group-hover:text-current group-hover:text-xl -rotate-45 -mt-1 ml-1 group-hover:ml-0.5" />
             </Link>
           ) : title}
         </Heading>

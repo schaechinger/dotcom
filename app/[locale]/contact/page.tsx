@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 import { ReCaptchaProvider } from 'next-recaptcha-v3';
 
 import { RECAPTCHA_SITE_KEY } from '@app/config';
@@ -27,11 +27,10 @@ export const dynamic = 'force-dynamic';
 
 const ContactPage = async ({ params }: PageProps) => {
   const { locale } = await params;
-  unstable_setRequestLocale(locale);
   const t = await getTranslations('pages.contact');
 
   return (
-    <PageContainer name="contact" narrow>
+    <PageContainer name="contact">
       <PageSection id="contact" first>
         <Breadcrumbs list={[{ title: t('title') }]} />
 
@@ -62,7 +61,7 @@ const ContactPage = async ({ params }: PageProps) => {
             <h2  className="text-h2">{t('types.write.title')}</h2>
 
             <ReCaptchaProvider reCaptchaKey={RECAPTCHA_SITE_KEY} language={locale}>
-              <ContactForm translations={t.raw('form')} />
+              <ContactForm translations={t.raw<any>('form')} />
             </ReCaptchaProvider>
           </div>
         </div>

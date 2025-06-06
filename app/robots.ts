@@ -12,11 +12,11 @@ const robots = async (): Promise<MetadataRoute.Robots> => {
   headers();
 
   let allow: string | undefined = '/';
-  let disallow = '/downloads/';
+  let disallow = ['/downloads/', '/brandbook'];
 
   if (!isProd()) {
     allow = undefined;
-    disallow = '/';
+    disallow = ['/'];
   }
 
   return {

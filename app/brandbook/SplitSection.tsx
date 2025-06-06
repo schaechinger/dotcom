@@ -8,7 +8,7 @@ const SplitSection = ({ children, id, label }: Props) => (
   <section id={id} className="font-sans">
     {label && (
       <div className="text-2xl pt-10 pb-4 px-4">
-        <span className="text-primary/60">#</span> {label}
+        <span className="text-primary-dark/60">#</span> {label}
       </div>
     )}
     <div className="flex flex-col sm:flex-row">

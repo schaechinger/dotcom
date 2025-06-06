@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
 import { supportedLangs, WEB_HOST } from '@app/config';
 import { clearSans } from '@app/font';
@@ -44,7 +44,6 @@ export const generateMetadata = async ({ params }: LayoutProps): Promise<Metadat
 
 const RootLayout = async ({ children, params }: LayoutProps) => {
   const { locale } = await params;
-  unstable_setRequestLocale(locale);
 
   return (
     <html className={clearSans.variable} lang={locale} dir="ltr" suppressHydrationWarning>

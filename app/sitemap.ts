@@ -18,8 +18,9 @@ const sitemap = async () => {
     { page: '/projects', freq: 'weekly', priority: 0.8 },
     { page: '/about', freq: 'monthly', priority: 0.7 },
     { page: '/contact', freq: 'monthly', priority: 0.6 },
-    { page: '/certifications', freq: 'monthly', priority: 0.6 },
-    { page: '/sports', freq: 'weekly', priority: 0.7 },
+    { page: '/certifications', freq: 'monthly', priority: 0.7 },
+    { page: '/sports', freq: 'monthly', priority: 0.7 },
+    { page: '/now', freq: 'weekly', priority: 0.7 },
     // legal
     { page: '/imprint', freq: 'monthly', priority: 0.3 },
     { page: '/privacy', freq: 'monthly', priority: 0.3 },

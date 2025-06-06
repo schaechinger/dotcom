@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
-import Link from '@components/atoms/Link';
 import type { PageProps } from '@app/interfaces';
 import { getTimeDuration } from '@app/utils';
 import AvailabilityIndicator from '@components/atoms/AvailabilityIndicator';
 import HighlightLabel from '@components/atoms/HighlightLabel';
 import JsonLd from '@components/atoms/JsonLd';
+import Link from '@components/atoms/Link';
 import LinkButton from '@components/atoms/LinkButton';
 import CareerList from '@components/organisms/CareerList';
 import CertificationList from '@components/organisms/CertificationList';
@@ -20,20 +20,18 @@ export const generateMetadata = async ({ params }: PageProps): Promise<Metadata>
   return generatePageMeta('/', locale);
 };
 
-const HomePage = async ({ params }: PageProps) => {
-  const { locale } = await params;
-  unstable_setRequestLocale(locale);
+const HomePage = async () => {
   const t = await getTranslations('pages.home');
-  
+
   const jsonLd = generateProfileJson();
   const aboutTextOptions = {
     highlight: (label: React.ReactNode) => <HighlightLabel>{label}</HighlightLabel>,
     years: getTimeDuration('2014-02-01'),
-  };
+  } as any;
 
   return (
     <>
-      <PageContainer name="home" narrow>
+      <PageContainer name="home">
         <PageSection id="about" first>
           <h1 className="text-h1">{t('about.title')}</h1>
 

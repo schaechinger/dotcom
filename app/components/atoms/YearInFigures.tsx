@@ -55,7 +55,7 @@ const YearInFigures = async () => {
                 <Icon className={clsx('text-3xl mr-3', figure.iconClassName)} />
                 <div>
                   <div className="text-xl dark:text-dark-50">{figure.count}</div>
-                  <div className="text-sm">{t(figure.type, { count: figure.count })}</div>
+                  <div className="text-sm">{t(figure.type as 'coffees', { count: figure.count })}</div>
                 </div>
               </div>
             );

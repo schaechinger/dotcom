@@ -9,7 +9,7 @@ type Props = {
 const Logo = ({ slim }: Props) => (
   <Link href="/">
     <p className="text-xl leading-6 sm:text-2xl sm:leading-7">
-      <span className="text-secondary dark:text-primary font-thin">
+      <span className="text-primary-light dark:text-primary-dark font-thin">
         M<span className={clsx(slim && 'hidden sm:inline-block')}>anuel</span>
       </span>
       <span className="text-dark-950 dark:text-dark-50 font-normal">Schächinger</span>

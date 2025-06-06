@@ -11,9 +11,9 @@ type Props = {
 };
 
 'ml-1 group-hover:ml-0.5 -mt-0.5'
-'inline-block transition-all text-secondary/60 dark:text-primary/60 group-hover:text-current group-hover:text-lg'
+'inline-block transition-all text-primary-light/60 dark:text-primary-dark/60 group-hover:text-current group-hover:text-lg'
 
-'inline-block transition-all text-secondary/60 dark:text-primary/60 group-hover:text-current group-hover:text-xl -rotate-45 -mt-0.5 ml-1 group-hover:-mt-0.5 group-hover:ml-0.5'
+'inline-block transition-all text-primary-light/60 dark:text-primary-dark/60 group-hover:text-current group-hover:text-xl -rotate-45 -mt-0.5 ml-1 group-hover:-mt-0.5 group-hover:ml-0.5'
 
 const ProjectItem = ({ heading, item }: Props) => (
   <HistoryItemContainer id={item.slug}>
