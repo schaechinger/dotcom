@@ -28,13 +28,16 @@ const config: Config = {
           red: '#f96b72',
           green: '#02af79',
         },
-        dark: {
-          50: '#fff',
-          200: '#ccc',
-          600: '#444a4f',
-          700: '#142a32',
-          800: '#0f2127',
-          950: '#111',
+        contrast: {
+          50: '#fff', // light background
+          100: '#f2f3f5',
+          200: '#e5e5e5', // light header blur border
+          300: '#ccc',
+          500: '#818181',
+          700: '#4d4d4d',
+          800: '#262626', // dark header blur border
+          900: '#161616', // dark background
+          950: '#111', // text color
         },
         coffee: {
           light: '#6f4e37',
@@ -63,7 +66,7 @@ const config: Config = {
         }
       },
       fontFamily: {
-        sans: ['var(--font-clear-sans)'], // , ...defaultTheme.fontFamily.sans],
+        sans: ['var(--font-clear-sans)'],
       },
     },
   },

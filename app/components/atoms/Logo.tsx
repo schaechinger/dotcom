@@ -12,9 +12,9 @@ const Logo = ({ slim }: Props) => (
       <span className="text-primary-light dark:text-primary-dark font-thin">
         M<span className={clsx(slim && 'hidden sm:inline-block')}>anuel</span>
       </span>
-      <span className="text-dark-950 dark:text-dark-50 font-normal">Schächinger</span>
+      <span className="text-contrast-950 dark:text-contrast-50 font-normal">Schächinger</span>
     </p>
-    <p className={clsx(slim && 'hidden sm:block', 'text-xs sm:text-sm text-dark-950 dark:text-dark-50 tracking-wide font-normal')}>
+    <p className={clsx(slim && 'hidden sm:block', 'text-xs sm:text-sm text-contrast-950 dark:text-contrast-50 tracking-wide font-normal')}>
       Fullstack JavaScript Engineer
     </p>
   </Link>

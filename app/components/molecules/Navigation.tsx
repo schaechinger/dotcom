@@ -43,7 +43,7 @@ const WideNavigation = ({ themeTranslations, translations }: Props) => {
               <Image
                 src={image}
                 alt="Manuel Schächinger"
-                className="w-24 rounded-full border-2 border-neutral-200/50 dark:border-dark-600/50"
+                className="w-24 rounded-full border-2 border-contrast-200/50 dark:border-contrast-700/80"
                 sizes="96px"
                 loading="lazy"
               />

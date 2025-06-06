@@ -22,7 +22,7 @@ const Header = ({ className }: Props) => {
             <Image
               src={image}
               alt="Manuel Schächinger"
-              className="w-9 sm:w-11 rounded-full border-2 border-neutral-200/50 dark:border-dark-600/50 mt-0 mb-0 mr-4"
+              className="w-9 sm:w-11 rounded-full border-2 border-contrast-200/50 dark:border-contrast-700/50 mt-0 mb-0 mr-4"
               loading="eager"
               priority
             />

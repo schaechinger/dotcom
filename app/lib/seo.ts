@@ -1,6 +1,8 @@
+import type { Metadata } from 'next';
+
 import { supportedLangs, WEB_HOST } from '@app/config';
 import { isProd } from '@app/utils';
-import { type LocaleCode } from '@lib/router';
+import type { LocaleCode } from '@lib/router';
 
 const wrapJson = (type: string, json: any) => ({
   '@context': 'https://schema.org',
@@ -46,11 +48,15 @@ export const generateProfileJson = () => wrapJson(
   },
 );
 
-export const generatePageMeta = (identifier: string, locale: LocaleCode) => {
+export const generatePageMeta = (identifier: string, locale: LocaleCode): Metadata => {
   const languages: Record<string, string> = {};
   supportedLangs.forEach((lang) => {
     languages[lang] = `${WEB_HOST}/${lang}${identifier.replace(/\/+$/, '')}`;
   });
+
+  if ('/' === identifier) {
+    languages['x-default'] = WEB_HOST;
+  }
 
   return {
     alternates: {
