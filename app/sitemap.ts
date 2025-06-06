@@ -28,13 +28,17 @@ const sitemap = async () => {
     .forEach(({ page, freq, priority }) => {
       supportedLangs.forEach((locale) => {
         const { alternates } = generatePageMeta(page, locale);
+        const languages = alternates?.languages ?? {};
+        if (languages['x-default']) {
+          delete languages['x-default'];
+        }
 
         sitemap.push({
           url: `${WEB_HOST}/${locale}${page}`,
           lastModified: modified,
           changeFrequency: freq,
           priority,
-          alternates: { languages: alternates.languages },
+          alternates: { languages: languages as { de: string } },
         });
       });
     });
@@ -57,7 +61,7 @@ const sitemap = async () => {
         lastModified: projectModified,
         changeFrequency: 'monthly',
         priority: project.highlight ? 0.8 : 0.7,
-        alternates: { languages: alternates.languages },
+        alternates: { languages: (alternates?.languages ?? {}) as { de: string } },
       });
     });
   });
