@@ -24,7 +24,7 @@ const LanguageToggle = ({ className }: Props) => {
       href={page}
       locale={switchLocale}
       title={language.name[switchLocale]}
-      className={clsx('-ml-1 w-8 h-8 relative flex justify-center items-center rounded-full transition-colors hover:bg-secondary/60 hover:dark:bg-primary/80 hover:text-dark-800 hover:dark:text-dark-50', className)}
+      className={clsx('-ml-1 w-8 h-8 relative flex justify-center items-center rounded-full transition-colors hover:bg-primary-light/60 hover:dark:bg-primary-dark/80 hover:text-dark-800 hover:dark:text-dark-50', className)}
     >
       <span>{switchLocale}</span>
       <span className="sr-only">{language.name[switchLocale]}</span>

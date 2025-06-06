@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
 import { STATIC_HOST } from '@app/config';
 import type { PageProps } from '@app/interfaces';
@@ -24,7 +24,6 @@ export const generateMetadata = async ({ params }: PageProps) => {
 
 const TransportKitPage = async ({ params }: PageProps) => {
   const { locale } = await params;
-  unstable_setRequestLocale(locale);
   const [project, t] = await Promise.all([
     loadProjectBySlug(slug, locale),
     getTranslations('pages.projects.details'),
@@ -37,7 +36,7 @@ const TransportKitPage = async ({ params }: PageProps) => {
   const city = 'munich';
 
   return (
-    <PageContainer name={`${slug}-project-page`} narrow>
+    <PageContainer name={`${slug}-project-page`}>
       <link rel="stylesheet"
         href={`${STATIC_HOST}/projects/transportkit/latest/transportkit.min.css?gc=v4`} />
       <ProjectMasterData project={project} />

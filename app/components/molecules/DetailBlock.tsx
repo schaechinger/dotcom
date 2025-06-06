@@ -14,7 +14,7 @@ const DetailBlock = ({ id, title, content }: Props) => {
 
   return (
     <PageSection id={id} dense>
-      <h2 className="text-h2">{title || t(id)}</h2>
+      <h2 className="text-h2">{title || t(id as 'description')}</h2>
 
       {(content || []).map((p, i) => (
         <p className={clsx(i < ((content.length || 0) - 1) && 'mb-2')}

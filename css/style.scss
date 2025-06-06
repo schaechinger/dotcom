@@ -10,7 +10,7 @@
     &::before {
       content: '';
 
-      @apply h-1 w-14 absolute -left-2 -bottom-1.5 bg-secondary/80 dark:bg-primary/60 rounded-full;
+      @apply h-1 w-14 absolute -left-2 -bottom-1.5 bg-primary-light/80 dark:bg-primary-dark/60 rounded-full;
     }
   }
   .text-h2 {
@@ -22,7 +22,7 @@
 
   // links
   a {
-    @apply text-dark-950 dark:text-dark-50 font-bold hover:text-secondary hover:dark:text-primary transition-colors;
+    @apply text-dark-950 dark:text-dark-50 font-bold hover:text-primary-light hover:dark:text-primary-dark transition-colors;
 
     &.inline-link {
       @apply hover:underline hover:underline-offset-4;
@@ -44,12 +44,12 @@
   }
   // navigation
   .navigation-item {
-    @apply relative hover:bg-secondary/60 hover:dark:bg-primary/20 hover:text-dark-50 dark:hover:text-dark-50;
+    @apply relative hover:bg-primary-light/60 hover:dark:bg-primary-dark/20 hover:text-dark-50 dark:hover:text-dark-50;
 
     &--active::before {
       content: '';
 
-      @apply w-1 h-6 absolute top-3 left-1.5 bg-secondary/80 dark:bg-primary/60 rounded-full;
+      @apply w-1 h-6 absolute top-3 left-1.5 bg-primary-light/80 dark:bg-primary-dark/60 rounded-full;
     }
   }
   .menu-button:hover {
@@ -97,7 +97,7 @@
         top: 0.7em;
         width: 0.42rem;
 
-        @apply absolute bg-secondary/80 dark:bg-primary;
+        @apply absolute bg-primary-light/80 dark:bg-primary-dark;
       }
     }
   }
@@ -116,7 +116,7 @@
         top: 0.7em;
         width: 0.42rem;
 
-        @apply absolute bg-secondary/80 dark:bg-primary;
+        @apply absolute bg-primary-light/80 dark:bg-primary-dark;
       }
     }
   }
@@ -128,7 +128,7 @@
       content: ' |';
       opacity: 0;
 
-      @apply text-secondary dark:text-primary font-bold right-0;
+      @apply text-primary-light dark:text-primary-dark font-bold right-0;
     }
 
     @keyframes cursor {

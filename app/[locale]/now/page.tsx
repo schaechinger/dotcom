@@ -5,34 +5,34 @@ import type { PageProps } from '@app/interfaces';
 import Breadcrumbs from '@components/atoms/Breadcumbs';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
-import ProjectList from '@components/organisms/ProjectList';
+import NowList from '@components/organisms/NowList';
 import { generatePageMeta } from '@lib/seo';
 
 export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
   const { locale } = await params;
-  const t = await getTranslations('pages.projects');
+  const t = await getTranslations('pages.now');
 
   return {
-    ...generatePageMeta('/projects', locale),
+    ...generatePageMeta('/now', locale),
     title: t('title'),
     description: t('description'),
   };
 };
 
-const ProjectsPage = async () => {
-  const t = await getTranslations('pages.projects');
+const NowPage = async () => {
+  const t = await getTranslations('pages.now');
 
   return (
-    <PageContainer name="projects">
-      <PageSection id="projects" first>
+    <PageContainer name="now">
+      <PageSection id="now" first>
         <Breadcrumbs list={[{ title: t('title') }]} />
 
-        <h1 className="text-h1">{t('title')}</h1>
+        <h1 className="text-h1">{t('pageTitle')}</h1>
 
-        <ProjectList heading="h2" />
+        <NowList />
       </PageSection>
     </PageContainer>
   );
 };
 
-export default ProjectsPage;
+export default NowPage;

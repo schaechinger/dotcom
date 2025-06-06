@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
 import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/atoms/LinkButton';
@@ -27,7 +27,6 @@ export const generateMetadata = async ({ params }: Props) => {
 
 const ProjectPage = async ({ params }: Props) => {
   const { locale, slug } = await params;
-  unstable_setRequestLocale(locale);
   const [project, t] = await Promise.all([
     loadProjectBySlug(slug, locale),
     getTranslations('pages.projects.details'),
@@ -38,7 +37,7 @@ const ProjectPage = async ({ params }: Props) => {
   }
 
   return (
-    <PageContainer name={`${project.slug}-project`} narrow>
+    <PageContainer name={`${project.slug}-project`}>
       <ProjectMasterData project={project} />
 
       {project.details?.description

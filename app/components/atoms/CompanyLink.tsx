@@ -15,7 +15,7 @@ const CompanyLink = ({ company, inline }: Props) => {
       <CompanyTag
         href={company?.link}
         target="_blank"
-        className={clsx(company?.link ? 'font-normal hover:text-secondary hover:dark:text-primary' : 'font-thin', company?.link && inline && 'inline-link')}
+        className={clsx(company?.link ? 'font-normal hover:text-primary-light hover:dark:text-primary-dark' : 'font-thin', company?.link && inline && 'inline-link')}
       >{ company?.name }</CompanyTag>{company?.location ? `, ${company.location}` : '' }
     </>
   );

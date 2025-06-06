@@ -14,6 +14,7 @@ import { type CareerData, sortCareerList } from '@models/career';
 import { type CertificationData, sortCertificationList } from '@models/certification';
 import { FiguresData } from '@models/figures';
 import { HistoryType } from '@models/history';
+import { type NowData } from '@models/now';
 import { type ParticipationData, sortParticipationList } from '@models/participation';
 import { type ProjectData } from '@models/project';
 
@@ -40,6 +41,13 @@ type CompanyEntrySkeleton = {
     name: EntryFieldTypes.Text,
     link: EntryFieldTypes.Text,
     location: EntryFieldTypes.Text,
+  },
+};
+
+type NowEntrySkeleton = {
+  contentTypeId: 'now',
+  fields: {
+    activities: EntryFieldTypes.Object,
   },
 };
 
@@ -226,6 +234,24 @@ export const loadCertifications = async (locale?: LocaleCode) => {
       .then(getEntryFields<CertificationData>)
       .then(sortCertificationList)
       .catch(() => null)
+  ))();
+};
+
+export const loadNow = async (locale?: LocaleCode) => {
+  const client = connect();
+  if (!client) {
+    return null;
+  }
+
+  return cache(async () => (
+    await client.getEntries<NowEntrySkeleton>({
+      content_type: 'now',
+      // @ts-ignore
+      locale: getLocale(locale),
+    })
+      .then(getEntryFields<NowData>)
+      .then((now) => now[0].activities)
+      .catch(() => [])
   ))();
 };
 

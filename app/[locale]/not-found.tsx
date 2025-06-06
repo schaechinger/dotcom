@@ -19,7 +19,7 @@ const LocalizedNotFoundPage = () => {
   const t = useTranslations('errors');
 
   return (
-    <PageContainer name="not-found" narrow>
+    <PageContainer name="not-found">
       <PageSection id="not-found" first>
         <h1 className="text-h1">{t('notFound.title')}</h1>
 
@@ -27,7 +27,7 @@ const LocalizedNotFoundPage = () => {
 
         <LinkButton href="/" label={t('notFound.goto')} />
 
-        <KonamiCode translations={t.raw('konamiCode')} />
+        <KonamiCode translations={t.raw<any>('konamiCode')} />
       </PageSection>
     </PageContainer>
   );

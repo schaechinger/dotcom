@@ -1,20 +1,20 @@
 
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
 import Breadcrumbs from '@components/atoms/Breadcumbs';
 import CompanyLink from '@components/atoms/CompanyLink';
-import HistoryItemTypeLabel from '@/app/components/atoms/HistoryItemTypeLabel';
+import HistoryItemTypeLabel from '@components/atoms/HistoryItemTypeLabel';
 import TechItem from '@components/atoms/TechItem';
 import TimeSpan from '@components/atoms/TimeSpan';
 import PageSection from '@components/organisms/PageSection';
-import { type ProjectData } from '@models/project';
+import type { ProjectData } from '@models/project';
 
-type Props = {
+type Props = Readonly<{
   project: ProjectData;
-};
+}>;
 
-const ProjectMasterData = ({ project }: Props) => {
-  const t = useTranslations('pages.projects');
+const ProjectMasterData = async ({ project }: Props) => {
+  const t = await getTranslations('pages.projects');
 
   return (
     <PageSection id={project.slug} first dense>

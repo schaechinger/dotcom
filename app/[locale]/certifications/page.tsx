@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
 import { PageProps } from '@app/interfaces';
 import Breadcrumbs from '@components/atoms/Breadcumbs';
@@ -19,13 +19,11 @@ export const generateMetadata = async ({ params }: PageProps): Promise<Metadata>
   };
 };
 
-const CertificationsPage = async ({ params }: PageProps) => {
-  const { locale } = await params;
-  unstable_setRequestLocale(locale);
+const CertificationsPage = async () => {
   const t = await getTranslations('pages.certifications');
 
   return (
-    <PageContainer name="certifications" narrow>
+    <PageContainer name="certifications">
       <PageSection id="certifications" first>
         <Breadcrumbs list={[{ title: t('title') }]} />
 

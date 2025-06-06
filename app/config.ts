@@ -1,9 +1,8 @@
-import { type LocaleCode } from '@lib/router';
-
 import Briefcase from '@components/icons/Briefcase';
 import Chemistry from '@components/icons/Chemistry';
 import Handshake from '@components/icons/Handshake';
 import UserBoy from '@components/icons/UserBoy';
+import type { LocaleCode } from '@lib/router';
 
 // hosts
 export const PROD_HOST = 'https://www.schaechinger.com';
@@ -33,7 +32,7 @@ export const LEGAL_NAVIGATION = [
 export const CORE_TECHNOLOGIES = [
   { name: 'Next.js', href: 'https://nextjs.org/' },
   { name: 'Tailwind CSS', href: 'https://tailwindcss.com/' },
-  { name: 'Contentful', href: 'https://www.contentful.com/' },
+  { name: 'Contentful', href: 'https://contentful.com/' },
 ];
 
 // recaptcha

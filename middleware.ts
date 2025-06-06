@@ -1,7 +1,9 @@
 import Negotiator from 'negotiator'
 import { type NextRequest, NextResponse } from 'next/server';
+import createMiddleware from 'next-intl/middleware';
 
 import { supportedLangs } from '@app/config';
+import { routing } from '@/i18n/routing';
 import { matchLocale, splitPath } from '@lib/router';
 
 const getLocale = (req: NextRequest) => {
@@ -17,11 +19,11 @@ export function middleware(request: NextRequest) {
   const path = splitPath(pathname);
   const foundLang = supportedLangs.find((lang) => path.locale === lang);
 
-  const locale = getLocale(request);
-
   if (foundLang) {
-    return;
+    return createMiddleware(routing)(request);
   }
+
+  const locale = getLocale(request);
 
   // Detect unknown language code
   if (/^[a-z]{2}$/.test(path.locale)) {
@@ -37,6 +39,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/((?!_next/image|_next/images/|_next/static/|images/|api/|brandbook|revalidate|favicon.ico|apple-icon.png|robots.txt|humans.txt|sitemap.xml|manifest.webmanifest|sw.js).*)',
+    '/((?!_next/image|_next/static/|images/|api/|brandbook|revalidate|.*\\..*).*)',
   ],
 };

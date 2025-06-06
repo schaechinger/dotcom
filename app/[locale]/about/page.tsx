@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
 import wallpaper from '@/public/images/opengraph-schaechinger.jpg';
 import type { PageProps } from '@app/interfaces';
@@ -25,15 +25,13 @@ export const generateMetadata = async ({ params }: PageProps): Promise<Metadata>
   };
 };
 
-const AboutPage = async ({ params }: PageProps) => {
-  const { locale } = await params;
-  unstable_setRequestLocale(locale);
+const AboutPage = async () => {
   const t = await getTranslations('pages.about');
   const age = getTimeDuration('1991-02-14');
   const years = getTimeDuration('2014-02-01');
 
   return (
-    <PageContainer name="about" narrow>
+    <PageContainer name="about">
       <PageSection id="profile" first dense>
         <Breadcrumbs list={[{ title: t('title') }]} />
 

@@ -15,7 +15,7 @@ type Props = {
 };
 
 const LinkButton = (props: Props) => {
-  const className = 'inline-block transition-all text-secondary/60 dark:text-primary/60 group-hover:text-current group-hover:text-lg';
+  const className = 'inline-block transition-all text-primary-light/60 dark:text-primary-dark/60 group-hover:text-current group-hover:text-lg';
 
   return (
     <Link
