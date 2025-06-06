@@ -29,6 +29,13 @@ export const LEGAL_NAVIGATION = [
   'privacy',
 ];
 
-// recaptch
+// technologies
+export const CORE_TECHNOLOGIES = [
+  { name: 'Next.js', href: 'https://nextjs.org/' },
+  { name: 'Tailwind CSS', href: 'https://tailwindcss.com/' },
+  { name: 'Contentful', href: 'https://www.contentful.com/' },
+];
+
+// recaptcha
 export const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 export const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;

@@ -375,7 +375,7 @@ const translations = {
       legal: 'Legal',
       imprint: imprint.title,
       privacy: privacy.title,
-      dev: 'Crafted with <love></love> in Ottobrunn.',
+      dev: 'Crafted with <tech></tech and <love></love> in Ottobrunn.',
       copyright: '© {year} Manuel Schächinger. All rights reserved.',
     },
     header: {

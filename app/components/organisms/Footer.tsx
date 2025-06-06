@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 
-import { LEGAL_NAVIGATION } from '@app/config';
+import { CORE_TECHNOLOGIES, LEGAL_NAVIGATION } from '@app/config';
 import Link from '@components/atoms/Link';
 import SnesButtons from '@components/atoms/SnesButtons';
 import HeartEmpty from '@components/icons/HeartEmpty';
@@ -45,6 +45,9 @@ const Footer = () => {
         <p className="footer__love">
           {t.rich('dev', {
             love: (_chunk: React.ReactNode) => <HeartEmpty className="text-lg -mt-1 mx-1 text-snes-a" />,
+            tech: () => (CORE_TECHNOLOGIES.map(({ name, href }, i) => (
+              <span key={name}><Link href={href} className="font-normal">{name}</Link>{2 > i && <>,&nbsp;</>}</span>
+            ))),
           })}
         </p>
       </div>
