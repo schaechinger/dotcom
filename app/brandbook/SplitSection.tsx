@@ -12,10 +12,10 @@ const SplitSection = ({ children, id, label }: Props) => (
       </div>
     )}
     <div className="flex flex-col sm:flex-row">
-      <div className="flex-1 p-4 text-dark-950 bg-dark-50">
+      <div className="flex-1 p-4 text-contrast-950 bg-contrast-50">
         {children}
       </div>
-      <div className="flex-1 p-4 dark text-dark-200 bg-dark-800">
+      <div className="flex-1 p-4 dark text-contrast-200 bg-contrast-950">
         {children}
       </div>
     </div>

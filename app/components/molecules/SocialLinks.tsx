@@ -9,28 +9,28 @@ const SocialLinks = () => (
     <SocialLink
       href="https://linkedin.com/in/schaechinger"
       className="hover:text-social-linkedin hover:dark:text-social-linkedin"
-      iconClassName="group-hover:text-dark-50 group-hover:dark:text-dark-50 group-hover:bg-social-linkedin"
+      iconClassName="group-hover:text-contrast-50 group-hover:dark:text-contrast-50 group-hover:bg-social-linkedin"
       title="LinkedIn"
       icon={<LinkedIn />}
     />
     <SocialLink
       href="https://xing.com/profile/Manuel_Schaechinger"
       className="hover:text-social-xing hover:dark:text-social-xing"
-      iconClassName="group-hover:text-dark-50 group-hover:dark:text-dark-50 group-hover:bg-social-xing"
+      iconClassName="group-hover:text-contrast-50 group-hover:dark:text-contrast-50 group-hover:bg-social-xing"
       title="Xing"
       icon={<Xing />}
     />
     <SocialLink
       href="https://github.com/schaechinger"
-      className="hover:text-social-github hover:dark:text-dark-50"
-      iconClassName="group-hover:text-dark-50 group-hover:dark:text-social-github group-hover:bg-social-github group-hover:dark:bg-dark-50"
+      className="hover:text-social-github hover:dark:text-contrast-50"
+      iconClassName="group-hover:text-contrast-50 group-hover:dark:text-social-github group-hover:bg-social-github group-hover:dark:bg-contrast-50"
       title="GitHub"
       icon={<GitHub />}
     />
     <SocialLink
       href="https://instagram.com/theschaechinger"
       className="hover:text-social-instagram hover:dark:text-social-instagram"
-      iconClassName="group-hover:text-dark-50 group-hover:dark:text-dark-50 group-hover:bg-social-instagram"
+      iconClassName="group-hover:text-contrast-50 group-hover:dark:text-contrast-50 group-hover:bg-social-instagram"
       title="Instagram"
       icon={<Instagram />}
     />

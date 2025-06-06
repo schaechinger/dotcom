@@ -42,7 +42,7 @@ const ImprintPage = async () => {
         </p>
 
         <p>
-          <strong className="dark:text-dark-50">{t('odr.title')}:</strong>&nbsp;
+          <strong className="dark:text-contrast-50">{t('odr.title')}:</strong>&nbsp;
           {t.rich('odr.text', {
             link: () => (
               <Link href="https://ec.europa.eu/consumers/odr" inline>ec.europa.eu/consumers/odr</Link>
@@ -56,22 +56,22 @@ const ImprintPage = async () => {
         <h2 className="text-h2">{t('liability')}</h2>
 
         <p className="mb-2">
-          <strong className="dark:text-dark-50">{t('disclaimer.title')}:</strong>&nbsp;
+          <strong className="dark:text-contrast-50">{t('disclaimer.title')}:</strong>&nbsp;
           {t('disclaimer.text')}
         </p>
 
         <p className="mb-2">
-          <strong className="dark:text-dark-50">{t('links.title')}:</strong>&nbsp;
+          <strong className="dark:text-contrast-50">{t('links.title')}:</strong>&nbsp;
           {t('links.text')}
         </p>
 
         <p className="mb-2">
-          <strong className="dark:text-dark-50">{t('copyright.title')}:</strong>&nbsp;
+          <strong className="dark:text-contrast-50">{t('copyright.title')}:</strong>&nbsp;
           {t('copyright.text')}
         </p>
 
         <p>
-          <strong className="dark:text-dark-50">{t('violations.title')}:</strong>&nbsp;
+          <strong className="dark:text-contrast-50">{t('violations.title')}:</strong>&nbsp;
           {t('violations.text')}
         </p>
       </PageSection>

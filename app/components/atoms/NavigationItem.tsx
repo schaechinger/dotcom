@@ -23,7 +23,7 @@ const NavigationItem = ({ active, href, icon: Icon, label, onClick }: Props) => 
   >
     {Icon && <Icon className={clsx(
       'text-2xl inline-block -mt-1 mr-4',
-      active ? 'text-dark-950 dark:text-dark-50' : 'text-dark-950/80 dark:text-dark-50/80',
+      active ? 'text-contrast-950 dark:text-contrast-50' : 'text-contrast-950/80 dark:text-contrast-50/80',
       'group-hover:text-current'
       )} />}
     {label}

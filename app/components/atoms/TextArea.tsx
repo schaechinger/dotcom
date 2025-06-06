@@ -23,7 +23,7 @@ const TextArea = ({ className, disabled, error, label, name, required }: Props) 
        />
       <label
         htmlFor={name}
-        className="absolute text-sm text-dark-800 dark:text-slate-200 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-primary-light peer-focus:dark:text-primary-dark peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+        className="absolute text-sm text-contrast-900 dark:text-slate-200 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-primary-light peer-focus:dark:text-primary-dark peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
       >{label}</label>
     </div>
     {!!error && <p className="text-sm text-squash-red mt-1">{error}</p>}

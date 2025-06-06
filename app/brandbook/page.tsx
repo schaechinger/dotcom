@@ -88,10 +88,8 @@ const BrandBook = () => {
         <SplitSection id="colors" label="Color Palette">
           <div className="flex flex-col gap-2">
             <div className="flex gap-2">
-              <div className="w-8 h-8 rounded-full bg-primary-dark" title="primary" />
-              <div className="w-8 h-8 rounded-full bg-primary-light" title="discreet-shade" />
-              <div className="w-8 h-8 rounded-full bg-discreet-light" title="discreet-light" />
-              <div className="w-8 h-8 rounded-full bg-discreet-egg" title="discreet-egg" />
+              <div className="w-8 h-8 rounded-full bg-primary-dark" title="primary-dark" />
+              <div className="w-8 h-8 rounded-full bg-primary-light" title="primary-light" />
               <div className="w-8 h-8 rounded-full bg-squash-red" title="squash-red" />
               <div className="w-8 h-8 rounded-full bg-squash-green" title="sqash-green" />
             </div>
@@ -103,12 +101,17 @@ const BrandBook = () => {
               <div className="w-8 h-8 rounded-full bg-warning-800" title="warning-800" />
             </div>
             <div className="flex gap-2">
-              <div className="w-8 h-8 rounded-full bg-dark-50" title="dark-50" />
-              <div className="w-8 h-8 rounded-full bg-dark-200" title="dark-200" />
-              <div className="w-8 h-8 rounded-full bg-dark-600" title="dark-600" />
-              <div className="w-8 h-8 rounded-full bg-dark-700" title="dark-700" />
-              <div className="w-8 h-8 rounded-full bg-dark-800" title="dark-800" />
-              <div className="w-8 h-8 rounded-full bg-dark-950" title="dark-950" />
+              <div className="w-8 h-8 rounded-full bg-contrast-50" title="contrast-50" />
+              <div className="w-8 h-8 rounded-full bg-contrast-100" title="contrast-100" />
+              <div className="w-8 h-8 rounded-full bg-contrast-200" title="contrast-200" />
+              <div className="w-8 h-8 rounded-full bg-contrast-300" title="contrast-300" />
+              <div className="w-8 h-8 rounded-full bg-contrast-400" title="contrast-400" />
+              <div className="w-8 h-8 rounded-full bg-contrast-500" title="contrast-500" />
+              <div className="w-8 h-8 rounded-full bg-contrast-600" title="contrast-600" />
+              <div className="w-8 h-8 rounded-full bg-contrast-700" title="contrast-700" />
+              <div className="w-8 h-8 rounded-full bg-contrast-800" title="contrast-800" />
+              <div className="w-8 h-8 rounded-full bg-contrast-900" title="contrast-900" />
+              <div className="w-8 h-8 rounded-full bg-contrast-950" title="contrast-950" />
             </div>
           </div>
         </SplitSection>
