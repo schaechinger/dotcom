@@ -54,13 +54,36 @@
     }
   }
   // navigation
+  .navigation {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+
+    &.navigation--open {
+      max-height: 50rem;
+      transition: max-height 0.3s ease-in;
+
+      .navigation-item {
+        & > span,
+        & > svg {
+          opacity: 1;
+        }
+      }
+    }
+  }
   .navigation-item {
     @apply relative hover:bg-primary-light/60 hover:dark:bg-primary-dark/30 hover:text-contrast-50 dark:hover:text-contrast-50;
 
-    &--active::before {
-      content: '';
+    & > span,
+    & > svg {
+      opacity: 0;
+      transition: opacity 0.5s linear;
+    }
 
+    &--active::before {
       @apply w-1 h-6 absolute top-3 left-1.5 bg-primary-light/80 dark:bg-primary-dark/60 rounded-full;
+
+      content: '';
     }
   }
   .menu-button,
