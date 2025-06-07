@@ -36,7 +36,7 @@ const WideNavigation = ({ themeTranslations, translations }: Props) => {
         translations={translations}
         className="ml-2 -mr-2"
       />
-      <div className={clsx(open ? 'top-[3.75rem] sm:top-[4.5rem]' : '-top-[30rem]', 'right-0 absolute -z-10 w-full sm:w-80 transition-all duration-300')}>
+      <div className={clsx('navigation top-[3.75rem] sm:top-[4.25rem]', open && 'navigation--open', 'right-0 absolute -z-10 w-full sm:w-80')}>
         <div className="blurred-container rounded-xl overflow-hidden max-w-screen-lg mx-auto flex flex-col h-full">
           <div className="sm:hidden flex flex-col gap-4 items-center my-6">
             <Link href="/">

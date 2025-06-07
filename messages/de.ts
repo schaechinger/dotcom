@@ -396,6 +396,7 @@ const translations = {
         resume: resume.title,
         projects: projects.title,
         contact: contact.title,
+        now: now.title,
 
         imprint: imprint.title,
         privacy: privacy.title,

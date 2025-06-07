@@ -26,7 +26,7 @@ const NavigationItem = ({ active, href, icon: Icon, label, onClick }: Props) => 
       active ? 'text-contrast-950 dark:text-contrast-50' : 'text-contrast-950/80 dark:text-contrast-50/80',
       'group-hover:text-current'
       )} />}
-    {label}
+    <span>{label}</span>
   </Link>
 );
 

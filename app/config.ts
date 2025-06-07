@@ -1,6 +1,7 @@
 import Briefcase from '@components/icons/Briefcase';
 import Chemistry from '@components/icons/Chemistry';
 import Handshake from '@components/icons/Handshake';
+import Paperclip from '@components/icons/Paperclip';
 import UserBoy from '@components/icons/UserBoy';
 import type { LocaleCode } from '@lib/router';
 
@@ -22,6 +23,7 @@ export const MAIN_NAVIGATION = [
   { page: 'resume', icon: Briefcase },
   { page: 'projects', icon: Chemistry },
   { page: 'contact', icon: Handshake },
+  { page: 'now', icon: Paperclip },
 ];
 export const LEGAL_NAVIGATION = [
   'imprint',
