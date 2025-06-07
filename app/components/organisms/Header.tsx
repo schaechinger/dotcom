@@ -16,7 +16,7 @@ const Header = ({ className }: Props) => {
 
   return (
     <header className="sticky top-0 pt-2 md:pt-4 z-30 mx-1 sm:mx-4 md:mx-10 lg:mx-1">
-      <div className={clsx('blurred-container w-full mx-auto flex flex-wrap justify-between px-4 sm:px-6 md:px-10 lg:px-4 py-2', className)}>
+      <div className={clsx('blurred-container w-full mx-auto flex flex-wrap justify-between px-[11px] sm:px-[23px] md:px-[39px] lg:px-3 py-2', className)}>
         <div className="flex flex-shrink-0 flex-grow items-center">
           <Link href="/" className="hidden sm:block">
             <Image

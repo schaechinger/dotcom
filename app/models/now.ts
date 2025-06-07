@@ -1,3 +1,3 @@
 export type NowData = {
-  activities: string[];
+  tasks: { category: string; description: string; }[];
 };

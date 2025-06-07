@@ -47,7 +47,7 @@ type CompanyEntrySkeleton = {
 type NowEntrySkeleton = {
   contentTypeId: 'now',
   fields: {
-    activities: EntryFieldTypes.Object,
+    tasks: EntryFieldTypes.Object,
   },
 };
 
@@ -250,7 +250,7 @@ export const loadNow = async (locale?: LocaleCode) => {
       locale: getLocale(locale),
     })
       .then(getEntryFields<NowData>)
-      .then((now) => now[0].activities)
+      .then((now) => now[0].tasks)
       .catch(() => [])
   ))();
 };
