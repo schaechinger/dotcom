@@ -44,7 +44,7 @@
 @layer components {
   // header
   .blurred-container {
-    @apply relative border border-contrast-200/50 dark:border-contrast-800/50 rounded-xl;
+    @apply relative border border-contrast-200/50 dark:border-contrast-800/80 rounded-xl;
 
     &::before {
       @apply bg-contrast-100/50 dark:bg-contrast-900/65 backdrop-blur-lg absolute top-0 left-0 w-full h-full block rounded-[11px];
@@ -72,7 +72,7 @@
     }
   }
   .navigation-item {
-    @apply relative hover:bg-primary-light/60 hover:dark:bg-primary-dark/30 hover:text-contrast-50 dark:hover:text-contrast-50;
+    @apply relative hover:bg-primary-light/15 hover:dark:bg-primary-dark/20 hover:text-contrast-950 dark:hover:text-contrast-50;
 
     & > span,
     & > svg {

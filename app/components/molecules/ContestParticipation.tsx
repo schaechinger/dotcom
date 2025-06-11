@@ -22,7 +22,7 @@ const ContestParticipation = ({ participation, pb }: Props) => {
   const speed = !!participation.time && getSpeed(participation, locale);
 
   return (
-    <article className="md:flex md:gap-2 md:items-center sm:hover:bg-primary-light/10 sm:hover:dark:bg-primary-dark/15 transition-colors sm:rounded-md -mx-4 sm:-mx-3 my-4 px-4 sm:px-3 py-2">
+    <article className="md:flex md:gap-2 md:items-center sm:hover:bg-primary-light/10 sm:hover:dark:bg-primary-dark/20 transition-colors sm:rounded-lg -mx-4 sm:-mx-3 my-4 px-4 sm:px-3 py-2">
       <header className="mb-2 md:mb-0 md:flex-1">
         <h3 className="text-h3 mb-0">{participation.event}{pb
           && <Medal className="-mt-1 ml-1 text-amber-500" title="Bestzeit" />}</h3>

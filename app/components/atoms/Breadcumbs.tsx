@@ -37,7 +37,7 @@ const Breadcrumbs = ({ list }: Props) => {
                     href={item.page}
                     className="font-bold text-gray-400 dark:text-gray-400"
                   >{item.title}</Link>
-                : <span className="font-bold text-gray-400 dark:text-gray-400">{item.title}</span>}
+                : <span className="text-gray-400 dark:text-gray-400">{item.title}</span>}
             </li>
           ))}
         </ul>

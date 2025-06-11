@@ -1,3 +1,3 @@
 export type NowData = {
-  tasks: { category: string; description: string; }[];
+  tasks: { category: string; tasks: string[]; description?: string; }[];
 };

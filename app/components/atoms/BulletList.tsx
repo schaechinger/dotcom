@@ -1,7 +1,8 @@
 import clsx from 'clsx';
+import { ReactNode } from 'react';
 
 type Props = {
-  bullets?: string[];
+  bullets?: (string | ReactNode)[];
   children?: React.ReactNode[] | string[];
   className?: string;
   clear?: boolean;

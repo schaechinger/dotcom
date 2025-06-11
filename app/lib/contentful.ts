@@ -250,7 +250,13 @@ export const loadNow = async (locale?: LocaleCode) => {
       locale: getLocale(locale),
     })
       .then(getEntryFields<NowData>)
-      .then((now) => now[0].tasks)
+      .then((now) => now[0].tasks.map((activity) => {
+        if (!Array.isArray(activity.tasks)) {
+          activity.tasks = [activity.description || activity.tasks];
+        }
+
+        return activity;
+      }))
       .catch(() => [])
   ))();
 };
