@@ -431,6 +431,7 @@ const translations = {
   nowList: {
     error: 'Leider können die aktuellen Neuigkeiten nicht geladen werden.',
     goto: 'Alle Neuigkeiten ansehen',
+    updatedAt: 'Zuletzt aktualisiert am {date}',
   },
   projectList: {
     error: 'Leider können die bisherigen Projekte nicht geladen werden.',

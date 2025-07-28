@@ -1,26 +1,33 @@
-import { getLocale } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 import { loadNow } from '@lib/contentful';
 import { type LocaleCode } from '@lib/router';
 import BulletList from '../atoms/BulletList';
-import { ReactNode } from 'react';
+import { formatDate } from '@/app/utils';
 
 const NowList = async () => {
   const locale = await getLocale() as LocaleCode;
-  const activities = await loadNow(locale) || [];
-
-  const tasks: ReactNode[] = [];
-
-  activities.forEach((activity) => {
-    activity.tasks.forEach((task) => {
-      tasks.push(<div key={`${activity.category}-${task}`}>
-        <strong>{activity.category}</strong> {task}
-      </div>);
-    });
-  });
+  const t = await getTranslations('nowList');;
+  const { activities, updatedAt } = (await loadNow(locale)) || {
+    activities: [],
+    updatedAt: '',
+  };
 
   return (
-    <BulletList bullets={tasks} />
+    <>
+      <BulletList>
+        {activities.map((activity) => (
+          activity.tasks.map((task) => (
+            <p key={`${activity.category}-${task}`} className="mb-2">
+              <strong>{activity.category}</strong> {task}
+            </p>
+          ))
+        ))}
+      </BulletList>
+      {!!updatedAt && (
+        <p className="text-sm">{t('updatedAt', { date: formatDate(updatedAt, locale, true) })}</p>
+      )}
+    </>
   )
 };
 

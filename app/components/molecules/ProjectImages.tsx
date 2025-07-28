@@ -29,7 +29,7 @@ const ProjectImages = ({ slug, images }: Props) => {
               height={768}
               alt={description}
               className="h-auto max-w-full border-y-2 sm:border-x-2 sm:rounded-lg border-contrast-200/80 dark:border-contrast-700/80"
-              sizes="(max-width: 640px) 100vw, 1024px"
+              sizes="(max-width: 1024px) 100vw, 1024px"
               priority
             />
             {!!description && <p className="text-sm mt-2 px-4 sm:px-2">{description}</p>}

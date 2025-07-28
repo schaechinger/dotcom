@@ -428,6 +428,11 @@ const translations = {
   certificationList: {
     error: 'There was an error loading the certifications.',
   },
+  nowList: {
+    error: 'There was an error loading the current doings.',
+    goto: 'Browse my current doings',
+    updatedAt: 'Last updated at {date}',
+  },
   projectList: {
     error: 'There was an error loading the project list.',
     goto: '{count, plural, =0 {List all projects} other {List all # projects}}',

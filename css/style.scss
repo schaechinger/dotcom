@@ -39,6 +39,14 @@
       @apply hover:underline hover:underline-offset-4;
     }
   }
+
+  // scroll offset
+  article {
+    @apply scroll-m-[4.625rem] md:scroll-m-[5.625rem];
+  }
+  section {
+    @apply scroll-m-[4.125rem];
+  }
 }
 
 @layer components {
