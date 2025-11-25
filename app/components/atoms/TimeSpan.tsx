@@ -1,7 +1,7 @@
 import { useLocale, useTranslations } from 'next-intl';
 
 import { formatDate } from '@app/utils';
-import { type LocaleCode } from '@lib/router';
+import type { LocaleCode } from '@lib/router';
 
 type Props = {
   startDate?: string;

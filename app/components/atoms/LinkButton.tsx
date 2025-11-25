@@ -3,7 +3,7 @@ import React from 'react';
 
 import Link from '@components/atoms/Link';
 import ChevronRight from '@components/icons/ChevronRight';
-import { LocaleCode } from '@lib/router';
+import type { LocaleCode } from '@lib/router';
 
 type Props = {
   href: string;

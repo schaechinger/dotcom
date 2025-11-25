@@ -1,4 +1,4 @@
-import { HistoryData, LinkData } from './history';
+import type { HistoryData, LinkData } from '@models/history';
 
 export interface CertificationData extends HistoryData {
   date: string;

@@ -1,4 +1,4 @@
-import { HistoryData } from './history';
+import type { HistoryData } from '@models/history';
 
 export interface CareerData extends HistoryData {
   startDate: string;

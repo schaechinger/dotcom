@@ -2,9 +2,9 @@ import { useLocale, useTranslations } from 'next-intl';
 
 import { formatDate } from '@app/utils';
 import LabeledContent from '@components/atoms/LabeledContent';
+import Medal from '@components/icons/Medal';
+import type { LocaleCode } from '@lib/router';
 import { getSpeed, type ParticipationData } from '@models/participation';
-import { type LocaleCode } from '@lib/router';
-import Medal from '../icons/Medal';
 
 export type SportType = 'running' | 'cycling' | 'multisport';
 

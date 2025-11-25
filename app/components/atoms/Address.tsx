@@ -1,6 +1,6 @@
 import { useLocale, useTranslations } from 'next-intl';
 
-import { type LocaleCode } from '@lib/router';
+import type { LocaleCode } from '@lib/router';
 
 const Address = () => {
   const t = useTranslations('general.address');

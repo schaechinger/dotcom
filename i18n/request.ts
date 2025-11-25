@@ -4,7 +4,8 @@ import { hasLocale, type Formats } from 'next-intl';
 import { getRequestConfig } from 'next-intl/server';
 
 import { supportedLangs } from '@app/config';
-import { LocaleCode } from '@lib/router';
+import type { LocaleCode } from '@lib/router';
+
 import { routing } from './routing';
 
 export const formats = {

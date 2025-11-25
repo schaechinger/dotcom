@@ -1,5 +1,5 @@
 import { PROD_HOST, WEB_HOST } from '@app/config';
-import { type LocaleCode } from '@lib/router';
+import type { LocaleCode } from '@lib/router';
 
 /**
  * Format the date in mm.yyyy format.

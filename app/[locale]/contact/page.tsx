@@ -3,7 +3,6 @@ import { getTranslations } from 'next-intl/server';
 import { ReCaptchaProvider } from 'next-recaptcha-v3';
 
 import { RECAPTCHA_SITE_KEY } from '@app/config';
-import type { PageProps } from '@app/interfaces';
 import AvailabilityIndicator from '@components/atoms/AvailabilityIndicator';
 import Breadcrumbs from '@components/atoms/Breadcumbs';
 import LinkButton from '@components/atoms/LinkButton';
@@ -12,7 +11,7 @@ import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import { generatePageMeta } from '@lib/seo';
 
-export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: PageProps<"/[locale]/contact">): Promise<Metadata> => {
   const { locale } = await params;
   const t = await getTranslations('pages.contact');
 
@@ -25,7 +24,7 @@ export const generateMetadata = async ({ params }: PageProps): Promise<Metadata>
 
 export const dynamic = 'force-dynamic';
 
-const ContactPage = async ({ params }: PageProps) => {
+const ContactPage = async ({ params }: PageProps<"/[locale]/contact">) => {
   const { locale } = await params;
   const t = await getTranslations('pages.contact');
 

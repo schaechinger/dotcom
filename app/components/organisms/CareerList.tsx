@@ -5,7 +5,7 @@ import CareerItem from '@components/organisms/CareerItem';
 import LinkButton from '@components/atoms/LinkButton';
 import HistoryItemList from '@components/organisms/HistoryItemList';
 import { loadCareer } from '@lib/contentful';
-import { type LocaleCode } from '@lib/router';
+import type { LocaleCode } from '@lib/router';
 import { HistoryType } from '@/app/models/history';
 
 type Props = {

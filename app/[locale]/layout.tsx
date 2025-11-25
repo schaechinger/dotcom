@@ -4,7 +4,6 @@ import { getTranslations } from 'next-intl/server';
 
 import { supportedLangs, WEB_HOST } from '@app/config';
 import { clearSans } from '@app/font';
-import type { LayoutProps } from '@app/interfaces';
 import Footer from '@components/organisms/Footer';
 import Header from '@components/organisms/Header';
 import LanguageSuggestion from '@components/organisms/LanguageSuggestion';
@@ -14,7 +13,7 @@ export const generateStaticParams = () => (
   supportedLangs.map((locale) => ({ locale }))
 );
 
-export const generateMetadata = async ({ params }: LayoutProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: LayoutProps<"/[locale]">): Promise<Metadata> => {
   const { locale } = await params;
   const t = await getTranslations('general');
 
@@ -42,7 +41,7 @@ export const generateMetadata = async ({ params }: LayoutProps): Promise<Metadat
   };
 };
 
-const RootLayout = async ({ children, params }: LayoutProps) => {
+const RootLayout = async ({ children, params }: LayoutProps<"/[locale]">) => {
   const { locale } = await params;
 
   return (

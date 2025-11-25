@@ -1,6 +1,6 @@
-import { type LocaleCode } from '@lib/router';
+import type { LocaleCode } from '@lib/router';
 
-import type { HistoryData, LinkData } from './history';
+import type { HistoryData, LinkData } from '@models/history';
 
 export type ProjectLinkData = {
   project?: LinkData;

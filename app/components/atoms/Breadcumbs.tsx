@@ -5,7 +5,7 @@ import Link from '@components/atoms/Link';
 import JsonLd from '@components/atoms/JsonLd';
 import ChevronRight from '@components/icons/ChevronRight';
 import Home from '@components/icons/Home';
-import { type LocaleCode } from '@lib/router';
+import type { LocaleCode } from '@lib/router';
 import { BreadcrumbData, generateBreadcrumbJson } from '@lib/seo';
 
 type Props = {

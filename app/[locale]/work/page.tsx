@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
-import type { PageProps } from '@app/interfaces';
 import Breadcrumbs from '@components/atoms/Breadcumbs';
 import LinkButton from '@components/atoms/LinkButton';
 import Separator from '@components/atoms/Separator';
@@ -9,7 +8,7 @@ import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import { generatePageMeta } from '@lib/seo';
 
-export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: PageProps<"/[locale]/work">): Promise<Metadata> => {
   const { locale } = await params;
   const t = await getTranslations('pages.work');
 

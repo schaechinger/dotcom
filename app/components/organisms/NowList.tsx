@@ -1,9 +1,9 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 
+import { formatDate } from '@app/utils';
+import BulletList from '@components/atoms/BulletList';
 import { loadNow } from '@lib/contentful';
-import { type LocaleCode } from '@lib/router';
-import BulletList from '../atoms/BulletList';
-import { formatDate } from '@/app/utils';
+import type { LocaleCode } from '@lib/router';
 
 const NowList = async () => {
   const locale = await getLocale() as LocaleCode;

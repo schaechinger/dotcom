@@ -8,15 +8,15 @@ import {
 } from 'contentful';
 import { cache } from 'react';
 
-import { type LocaleCode } from '@lib/router';
-import { type AvailabilityData } from '@models/availability';
+import type { LocaleCode } from '@lib/router';
+import type { AvailabilityData } from '@models/availability';
 import { type CareerData, sortCareerList } from '@models/career';
 import { type CertificationData, sortCertificationList } from '@models/certification';
 import { FiguresData } from '@models/figures';
 import { HistoryType } from '@models/history';
-import { type NowData } from '@models/now';
+import type { NowData } from '@models/now';
 import { type ParticipationData, sortParticipationList } from '@models/participation';
-import { type ProjectData } from '@models/project';
+import type { ProjectData } from '@models/project';
 
 type AvailabilityEntrySkeleton = {
   contentTypeId: 'availability',

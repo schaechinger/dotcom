@@ -1,17 +1,17 @@
 import { type Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
-import type { PageProps } from '@app/interfaces';
 import Breadcrumbs from '@components/atoms/Breadcumbs';
 import LinkButton from '@components/atoms/LinkButton';
 import ContestParticipation from '@components/molecules/ContestParticipation';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import { loadParticipationsByContest } from '@lib/contentful';
+import type { LocaleCode } from '@lib/router';
 import { generatePageMeta } from '@lib/seo';
-import { getPb } from '@/app/models/participation';
+import { getPb } from '@models/participation';
 
-export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: PageProps<"/[locale]/sports">): Promise<Metadata> => {
   const { locale } = await params;
   const t = await getTranslations('pages.sports');
 
@@ -22,10 +22,10 @@ export const generateMetadata = async ({ params }: PageProps): Promise<Metadata>
   };
 };
 
-const SportsPage = async ({ params }: PageProps) => {
+const SportsPage = async ({ params }: PageProps<"/[locale]/sports">) => {
   const { locale } = await params;
   const [marathons, t] = await Promise.all([
-    loadParticipationsByContest('marathon', locale),
+    loadParticipationsByContest('marathon', locale as LocaleCode),
     getTranslations('pages.sports'),
   ]);
 

@@ -4,7 +4,7 @@ import LinkButton from '@components/atoms/LinkButton';
 import HistoryItemList from '@components/organisms/HistoryItemList';
 import ProjectItem from '@components/organisms/ProjectItem';
 import { loadProjects } from '@lib/contentful';
-import { type LocaleCode } from '@lib/router';
+import type { LocaleCode } from '@lib/router';
 
 type Props = {
   heading?: string;

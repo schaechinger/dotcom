@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 
-import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/atoms/LinkButton';
 import DetailBlock from '@components/molecules/DetailBlock';
 import ProjectImages from '@components/molecules/ProjectImages';
@@ -10,25 +9,20 @@ import ProjectMasterData from '@components/molecules/ProjectMasterData';
 import PageContainer from '@components/organisms/PageContainer';
 import { loadProjectBySlug } from '@lib/contentful';
 import { generateProjectMetadata } from '@lib/projects';
-import { type LocaleCode } from '@lib/router';
+import type { LocaleCode } from '@lib/router';
 
-interface Props extends PageProps {
-  params: Promise<{
-    locale: LocaleCode;
-    slug: string;
-  }>;
-}
+type Props = PageProps<"/[locale]/projects/[slug]">;
 
 export const generateMetadata = async ({ params }: Props) => {
   const { locale, slug } = await params;
 
-  return generateProjectMetadata(slug, locale)
+  return generateProjectMetadata(slug, locale as LocaleCode)
 };
 
 const ProjectPage = async ({ params }: Props) => {
   const { locale, slug } = await params;
   const [project, t] = await Promise.all([
-    loadProjectBySlug(slug, locale),
+    loadProjectBySlug(slug, locale as LocaleCode),
     getTranslations('pages.projects.details'),
   ]);
 

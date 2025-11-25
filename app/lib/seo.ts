@@ -48,7 +48,7 @@ export const generateProfileJson = () => wrapJson(
   },
 );
 
-export const generatePageMeta = (identifier: string, locale: LocaleCode): Metadata => {
+export const generatePageMeta = (identifier: string, locale: string | LocaleCode): Metadata => {
   const languages: Record<string, string> = {};
   supportedLangs.forEach((lang) => {
     languages[lang] = `${WEB_HOST}/${lang}${identifier.replace(/\/+$/, '')}`;

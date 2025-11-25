@@ -1,4 +1,4 @@
-import { type LocaleCode } from '@lib/router';
+import type { LocaleCode } from '@lib/router';
 
 export type SportType = 'running' | 'cycling' | 'multisport' | 'swimming';
 

@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 import { IMAGE_HOST } from '@app/config';
 import { getImageLabel } from '@lib/images';
-import { type LocaleCode } from '@lib/router';
+import type { LocaleCode } from '@lib/router';
 import { type ProjectImage } from '@models/project';
 
 type Props = {

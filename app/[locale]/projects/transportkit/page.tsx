@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 
 import { STATIC_HOST } from '@app/config';
-import type { PageProps } from '@app/interfaces';
 import LinkButton from '@components/atoms/LinkButton';
 import DetailBlock from '@components/molecules/DetailBlock';
 import ProjectLinks from '@components/molecules/ProjectLinks';
@@ -11,21 +10,24 @@ import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import { loadProjectBySlug } from '@lib/contentful';
 import { generateProjectMetadata } from '@lib/projects';
+import type { LocaleCode } from '@lib/router';
 
 import TransportKitLine from './TransportKitLine';
 
 const slug = 'transportkit';
 
-export const generateMetadata = async ({ params }: PageProps) => {
+type Props = PageProps<"/[locale]/projects/transportkit">;
+
+export const generateMetadata = async ({ params }: Props) => {
   const { locale } = await params;
 
-  return generateProjectMetadata(slug, locale)
+  return generateProjectMetadata(slug, locale as LocaleCode)
 };
 
-const TransportKitPage = async ({ params }: PageProps) => {
+const TransportKitPage = async ({ params }: Props) => {
   const { locale } = await params;
   const [project, t] = await Promise.all([
-    loadProjectBySlug(slug, locale),
+    loadProjectBySlug(slug, locale as LocaleCode),
     getTranslations('pages.projects.details'),
   ]);
 

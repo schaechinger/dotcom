@@ -3,7 +3,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import CertificationItem from '@components/organisms/CertificationItem';
 import HistoryItemList from '@components/organisms/HistoryItemList';
 import { loadCertifications } from '@lib/contentful';
-import { type LocaleCode } from '@lib/router';
+import type { LocaleCode } from '@lib/router';
 
 const CertificationList = async () => {
   const t = await getTranslations('certificationList');

@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import NextLink from 'next/link';
-
-import { type LocaleCode } from '@lib/router';
 import { useLocale } from 'next-intl';
+
+import type { LocaleCode } from '@lib/router';
 
 type Props = {
   children: React.ReactNode;

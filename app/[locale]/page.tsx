@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
-import type { PageProps } from '@app/interfaces';
 import { getTimeDuration } from '@app/utils';
 import AvailabilityIndicator from '@components/atoms/AvailabilityIndicator';
 import HighlightLabel from '@components/atoms/HighlightLabel';
@@ -15,7 +14,7 @@ import PageSection from '@components/organisms/PageSection';
 import ProjectList from '@components/organisms/ProjectList';
 import { generatePageMeta, generateProfileJson } from '@lib/seo';
 
-export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: PageProps<"/[locale]">): Promise<Metadata> => {
   const { locale } = await params;
   return generatePageMeta('/', locale);
 };

@@ -4,7 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import { IMAGE_HOST } from '@app/config';
 import { loadProjectBySlug } from '@lib/contentful';
 import { getImageLabel } from '@lib/images';
-import { type LocaleCode } from '@lib/router';
+import type { LocaleCode } from '@lib/router';
 import { generatePageMeta } from '@lib/seo';
 
 export const generateProjectMetadata = async (slug: string, locale: LocaleCode) => {
