@@ -1,6 +1,85 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@use "tailwindcss";
+
+// @custom-variant dark (&:where(.dark, .dark *));
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+:root {
+  --primary: #006ea0;
+  --background: #fff;
+  --background-blurred: #e5e5e5;
+  --foreground: #111;
+}
+
+@theme inline {
+  --color-primary-dark: #00a5db;
+  --color-primary-light: #006ea0;
+  --color-primary: var(--primary);
+
+  --color-background: var(--background);
+  --color-background-blurred: var(--background-blurred);
+  --color-foreground: var(--foreground);
+
+  --color-warning-200: #ffc971;
+  --color-warning-300: #ffb627;
+  --color-warning-500: #ff9505;
+  --color-warning-700: #e2711d;
+  --color-warning-800: #cc5803;
+
+  --color-squash-red: #f96b72;
+  --color-squash-green: #02af79;
+
+  --color-contrast-50: #fff; // light background
+  --color-contrast-100: #f2f3f5;
+  --color-contrast-200: #e5e5e5; // light header blur border
+  --color-contrast-300: #ccc;
+  --color-contrast-500: #818181;
+  --color-contrast-700: #4d4d4d;
+  --color-contrast-800: #262626; // dark header blur border
+  --color-contrast-900: #161616; // dark background
+  --color-contrast-950: #111; // text color
+
+  --color-coffee-light: #6f4e37;
+  --color-coffee-dark: #896044;
+
+  --color-medalmonday-primary: #2e5d4e;
+  --color-medalmonday-light: #698e80;
+  --color-medalmonday-dark: #1e332b;
+
+  --color-js: #ffe70b;
+  --color-node: #026e00;
+  --color-react: #149eca;
+  --color-vue: #42d392;
+
+  --color-snes-a: #e60012;
+  --color-snes-b: #ffe100;
+  --color-snes-x: #00a7eb;
+  --color-snes-y: #6eb92b;
+
+  --color-social-github: #24292e;
+  --color-social-instagram: #fb3958;
+  --color-social-linkedin: #0077b5;
+  --color-social-xing: #0698a0;
+
+  --font-sans: var(--font-clear-sans);
+}
+
+[data-theme="dark"] {
+  :root {
+    --primary: #00a5db;
+    --background: #161616;
+    --background-blurred: #262626;
+
+    // text-contrast-950 dark:text-contrast-200
+    // bg-contrast-50 dark:bg-contrast-950
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  // font-family: Arial, Helvetica, sans-serif;
+}
 
 @layer base {
   .text-h1,
@@ -33,7 +112,7 @@
 
   // links
   a {
-    @apply font-bold hover:text-primary-light hover:dark:text-primary-dark transition-colors;
+    @apply font-bold hover:text-primary transition-colors;
 
     &.inline-link {
       @apply hover:underline hover:underline-offset-4;
@@ -49,13 +128,15 @@
   }
 }
 
+accessCode=531-476-938 locale=en-US clickNum=756589394882120
+
 @layer components {
   // header
   .blurred-container {
     @apply relative border border-contrast-200/50 dark:border-contrast-800/80 rounded-xl;
 
     &::before {
-      @apply bg-contrast-100/50 dark:bg-contrast-900/65 backdrop-blur-lg absolute top-0 left-0 w-full h-full block rounded-[11px];
+      @apply bg-background-blurred/50 dark:bg-background-blurred/65 backdrop-blur-lg absolute top-0 left-0 w-full h-full block rounded-[11px];
 
       content: "";
       z-index: -1;

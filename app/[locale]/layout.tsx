@@ -50,7 +50,7 @@ const RootLayout = async ({ children, params }: LayoutProps) => {
       <head>
         <link type="text/plain" rel="author" href={`${WEB_HOST}/humans.txt`} />
       </head>
-      <body className="text-contrast-950 dark:text-contrast-200 bg-contrast-50 dark:bg-contrast-950 font-sans">
+      <body className="text-foreground bg-background font-sans">
         <ThemeProvider>
           <NextIntlClientProvider>
             <div className="w-full mx-auto">
