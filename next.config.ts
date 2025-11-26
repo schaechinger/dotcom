@@ -16,6 +16,8 @@ const nextConfig = withNextIntl({
   skipTrailingSlashRedirect: false,
   output: 'standalone',
 
+  // cacheComponents: true,
+
   async redirects() {
     return [
       // pages
