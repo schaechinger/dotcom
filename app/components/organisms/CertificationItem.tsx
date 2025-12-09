@@ -1,12 +1,13 @@
+import type { HeadingTag } from '@components/atoms/Heading';
 import HistoryItemDescription from '@components/atoms/HistoryItemDescription';
 import HistoryItemTechList from '@components/atoms/HistoryItemTechList';
 import HistoryItemContent from '@components/molecules/HistoryItemContent';
 import HistoryItemHeader from '@components/molecules/HistoryItemHeader';
 import HistoryItemContainer from '@components/organisms/HistoryItemContainer';
-import { type CertificationData } from '@models/certification';
+import type { CertificationData } from '@models/certification';
 
 type Props = {
-  heading?: string;
+  heading?: HeadingTag;
   item: CertificationData;
 };
 

@@ -1,13 +1,11 @@
 @use "tailwindcss";
 
-// @custom-variant dark (&:where(.dark, .dark *));
-
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 :root {
   --primary: #006ea0;
   --background: #fff;
-  --background-blurred: #e5e5e5;
+  --background-blurred: #f2f3f5;
   --foreground: #111;
 }
 
@@ -64,15 +62,11 @@
   --font-sans: var(--font-clear-sans);
 }
 
-[data-theme="dark"] {
-  :root {
-    --primary: #00a5db;
-    --background: #161616;
-    --background-blurred: #262626;
-
-    // text-contrast-950 dark:text-contrast-200
-    // bg-contrast-50 dark:bg-contrast-950
-  }
+:root[data-theme="dark"] {
+  --primary: #00a5db;
+  --background: #111;
+  --background-blurred: #161616;
+  --foreground: #e5e5e5;
 }
 
 body {
@@ -82,32 +76,8 @@ body {
 }
 
 @layer base {
-  .text-h1,
-  .text-h2,
-  .text-h3,
   a {
     @apply text-contrast-950 dark:text-contrast-50;
-  }
-  // headings
-  .text-h1,
-  .text-h2,
-  .text-h3 {
-    @apply font-normal;
-  }
-  .text-h1 {
-    @apply relative text-3xl mb-7;
-
-    &::before {
-      content: '';
-
-      @apply h-1 w-14 absolute -left-2 -bottom-1.5 bg-primary-light/80 dark:bg-primary-dark/60 rounded-full;
-    }
-  }
-  .text-h2 {
-    @apply text-2xl mb-2;
-  }
-  .text-h3 {
-    @apply text-lg mb-2;
   }
 
   // links
@@ -128,15 +98,13 @@ body {
   }
 }
 
-accessCode=531-476-938 locale=en-US clickNum=756589394882120
-
 @layer components {
   // header
   .blurred-container {
     @apply relative border border-contrast-200/50 dark:border-contrast-800/80 rounded-xl;
 
     &::before {
-      @apply bg-background-blurred/50 dark:bg-background-blurred/65 backdrop-blur-lg absolute top-0 left-0 w-full h-full block rounded-[11px];
+      @apply bg-background-blurred/50 dark:bg-background-blurred/80 backdrop-blur-lg absolute top-0 left-0 w-full h-full block rounded-[11px];
 
       content: "";
       z-index: -1;

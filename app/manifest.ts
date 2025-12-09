@@ -3,7 +3,7 @@ import type { MetadataRoute } from 'next';
 const manifest = (): MetadataRoute.Manifest => ({
     name: 'Manuel Schächinger',
     short_name: 'Manuel Schächinger',
-    description: 'Senior Fullstack JavaScript Engineer und Berater für komplexe und skalierbare Softwaresysteme in München.',
+    description: 'Senior Fullstack TypeScript Engineer und Berater für komplexe und skalierbare Softwaresysteme in München.',
     start_url: '/',
     display: 'standalone',
     icons: [

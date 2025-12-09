@@ -1,5 +1,6 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 
+import type { HeadingTag } from '@components/atoms/Heading';
 import LinkButton from '@components/atoms/LinkButton';
 import HistoryItemList from '@components/organisms/HistoryItemList';
 import ProjectItem from '@components/organisms/ProjectItem';
@@ -7,7 +8,7 @@ import { loadProjects } from '@lib/contentful';
 import type { LocaleCode } from '@lib/router';
 
 type Props = {
-  heading?: string;
+  heading?: HeadingTag;
   highlights?: boolean;
 };
 

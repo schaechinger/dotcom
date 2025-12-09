@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 
 import Address from '@components/atoms/Address';
 import Breadcrumbs from '@components/atoms/Breadcumbs';
+import Heading from '@components/atoms/Heading';
 import Link from '@components/atoms/Link';
 import LinkButton from '@components/atoms/LinkButton';
 import PageContainer from '@components/organisms/PageContainer';
@@ -28,9 +29,9 @@ const ImprintPage = async () => {
       <PageSection id="imprint" first dense>
         <Breadcrumbs list={[{ title: t('title') }]} />
 
-        <h1 className="text-h1">{t('title')}</h1>
+        <Heading level={1} title={t('title')} />
 
-        <h2 className="text-h2">{t('owner.title')}</h2>
+        <Heading level={2} title={t('owner.title')} />
 
         <p className="mb-4">
           <Address />
@@ -52,7 +53,7 @@ const ImprintPage = async () => {
       </PageSection>
 
       <PageSection id="disclaimer" dense>
-        <h2 className="text-h2">{t('liability')}</h2>
+        <Heading level={2} title={t('liability')} />
 
         <p className="mb-2">
           <strong className="dark:text-contrast-50">{t('disclaimer.title')}:</strong>&nbsp;

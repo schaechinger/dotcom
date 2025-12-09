@@ -13,6 +13,7 @@ import { generateProjectMetadata } from '@lib/projects';
 import type { LocaleCode } from '@lib/router';
 
 import TransportKitLine from './TransportKitLine';
+import Heading from '@/app/components/atoms/Heading';
 
 const slug = 'transportkit';
 
@@ -47,26 +48,26 @@ const TransportKitPage = async ({ params }: Props) => {
         && <DetailBlock id="description" content={project.details.description} />}
 
       <PageSection id="munich" dense>
-        <h2 className="text-h2">{t('slug.transportkit.munich')}</h2>
+        <Heading level={2} title={t('slug.transportkit.munich')} />
 
-        <h3 className="text-h3">U-Bahn</h3>
+        <Heading level={3} title="U-Bahn" />
         { ['u1', 'u2', 'u3', 'u4', 'u5', 'u6', 'u7', 'u8'].map((line) => (
           <TransportKitLine key={line} city={city} line={line} label={line} />
         )) }
 
-        <h3 className="text-h3 mt-2">S-Bahn</h3>
+        <Heading level={3} className="mt-2" title="S-Bahn" />
         { ['s1', 's2', 's3', 's4', 's6', 's7', 's8', 's20'].map((line) => (
           <TransportKitLine key={line} city={city} line={line} label={line} />
         )) }
 
-        <h3 className="text-h3 mt-2">Bus</h3>
+        <Heading level={3} className="mt-2" title="Bus" />
         { [['b', '132', '210'], ['bx', 'X30', 'X200'], ['bm', '53'], ['bn', 'N41'],['bnw', 'N80']].map(([type, ...lines]) => (
           lines.map((line) => (
             <TransportKitLine key={`${type}-${line}`} city={city} line={type} label={line} />
           ))
         )) }
 
-        <h3 className="text-h3 mt-2">Tram</h3>
+        <Heading level={3} className="mt-2" title="Tram" />
         { [['t', '17', 'N20'], ['tp', '22']].map(([type, ...lines]) => (
           lines.map((line) => (
             <TransportKitLine key={`${type}-${line}`} city={city} line={type} label={line} />

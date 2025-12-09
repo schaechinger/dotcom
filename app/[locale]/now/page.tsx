@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
 import Breadcrumbs from '@components/atoms/Breadcumbs';
+import Heading from '@components/atoms/Heading';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
 import NowList from '@components/organisms/NowList';
@@ -26,7 +27,7 @@ const NowPage = async () => {
       <PageSection id="now" first>
         <Breadcrumbs list={[{ title: t('title') }]} />
 
-        <h1 className="text-h1">{t('pageTitle')}</h1>
+        <Heading level={1} title={t('pageTitle')} />
 
         <NowList />
       </PageSection>

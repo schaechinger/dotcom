@@ -6,6 +6,7 @@ import wallpaper from '@/public/images/opengraph-schaechinger.jpg';
 import { getTimeDuration } from '@/app/utils';
 import BulletList from '@components/atoms/BulletList';
 import Breadcrumbs from '@components/atoms/Breadcumbs';
+import Heading from '@components/atoms/Heading';
 import Link from '@components/atoms/Link';
 import LinkButton from '@components/atoms/LinkButton';
 import YearInFigures from '@/app/components/atoms/YearInFigures';
@@ -34,7 +35,7 @@ const AboutPage = async () => {
       <PageSection id="profile" first dense>
         <Breadcrumbs list={[{ title: t('title') }]} />
 
-        <h1 className="text-h1">{t('pageTitle')}</h1>
+        <Heading level={1} title={t('pageTitle')} />
 
         <div className="mb-8 -mx-4 sm:-mx-2">
           <Image
@@ -47,7 +48,7 @@ const AboutPage = async () => {
           <p className="text-sm mt-2 px-4 sm:px-2">{t('profile.imageAlt')}</p>
         </div>
 
-        <h2 className="text-h2">{t('profile.title')}</h2>
+        <Heading level={2} title={t('profile.title')} />
 
         <BulletList>
           <p className="mb-2">{t('profile.bullets.age', { age })}</p>

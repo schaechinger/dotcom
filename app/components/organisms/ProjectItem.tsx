@@ -1,3 +1,4 @@
+import type { HeadingTag } from '@components/atoms/Heading';
 import HistoryItemDescription from '@components/atoms/HistoryItemDescription';
 import HistoryItemTechList from '@components/atoms/HistoryItemTechList';
 import HistoryItemContent from '@components/molecules/HistoryItemContent';
@@ -7,7 +8,7 @@ import { type ProjectData } from '@models/project';
 
 type Props = {
   item: ProjectData;
-  heading?: string;
+  heading?: HeadingTag;
 };
 
 'ml-1 group-hover:ml-0.5 -mt-0.5'

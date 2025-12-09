@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 
 import { getTimeDuration } from '@app/utils';
+import Heading, { type HeadingTag } from '@components/atoms/Heading';
 import Link from '@components/atoms/Link';
 import TimeSpan from '@components/atoms/TimeSpan';
 import ArrowRight from '@components/icons/ArrowRight';
@@ -11,13 +12,12 @@ type Props = {
   title: React.ReactNode;
   company?: Company;
   dates?: (string | undefined)[];
-  heading?: string;
+  heading?: HeadingTag;
   link?: string;
   type?: HistoryType;
 };
 
 const HistoryItemHeader = ({ company, dates, heading, link, title, type }: Props) => {
-  const Heading = (heading || 'h3') as React.ElementType;
   const t = useTranslations('timeSpan');
   const duration: number[] = [];
   if (!!dates?.length && dates[0]) {
@@ -38,7 +38,7 @@ const HistoryItemHeader = ({ company, dates, heading, link, title, type }: Props
             <HistoryItemCompany company={company} type={type} />
           </div>
         )}
-        <Heading className="text-h3 font-bold mb-0">
+        <Heading level={3} tag={heading || 'h3'} className="font-bold! mb-0!">
           {link ? (
             <Link href={link} className="group">
               {title}

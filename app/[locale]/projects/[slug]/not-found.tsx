@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
 import LinkButton from '@components/atoms/LinkButton';
+import Heading from '@components/atoms/Heading';
 import KonamiCode from '@components/molecules/KonamiCode';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
@@ -21,7 +22,7 @@ const ProjectNotFound = () => {
   return (
     <PageContainer name="not-found">
       <PageSection id="not-found" first>
-        <h1 className="text-h1">{t('projectNotFound.title')}</h1>
+        <Heading level={1} title={t('projectNotFound.title')} />
 
         <p className="mb-4">{t('projectNotFound.text')}</p>
 

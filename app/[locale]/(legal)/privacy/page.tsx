@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import Address from '@components/atoms/Address';
 import BulletList from '@components/atoms/BulletList';
 import Breadcrumbs from '@components/atoms/Breadcumbs';
+import Heading from '@components/atoms/Heading';
 import Link from '@components/atoms/Link';
 import LinkButton from '@components/atoms/LinkButton';
 import PageContainer from '@components/organisms/PageContainer';
@@ -29,9 +30,9 @@ const PrivacyPage = async () => {
       <PageSection id="privacy" first dense>
         <Breadcrumbs list={[{ title: t('title') }]} />
 
-        <h1 className="text-h1">{t('title')}</h1>
+        <Heading level={1} title={t('title')} />
 
-        <h2 className="text-h2">{t('overview')}</h2>
+        <Heading level={2} title={t('overview')} />
 
         <BulletList>
           <Link href="#responsible">{t('responsible.title')}</Link>
@@ -47,7 +48,7 @@ const PrivacyPage = async () => {
       </PageSection>
 
       <PageSection id="responsible" dense>
-        <h2 className="text-h2">{t('responsible.title')}</h2>
+        <Heading level={2} title={t('responsible.title')} />
 
         <p className="mb-4">
           <Address />
@@ -59,13 +60,13 @@ const PrivacyPage = async () => {
       </PageSection>
 
       <PageSection id="revokation" dense>
-        <h2 className="text-h2">{t('revokation.title')}</h2>
+        <Heading level={2} title={t('revokation.title')} />
 
         <p>{t('revokation.text')}</p>
       </PageSection>
 
       <PageSection id="complaint" dense>
-        <h2 className="text-h2">{t('complaint.title')}</h2>
+        <Heading level={2} title={t('complaint.title')} />
 
         <p>{t.rich('complaint.text', {
           link: (link) => (
@@ -75,25 +76,25 @@ const PrivacyPage = async () => {
       </PageSection>
 
       <PageSection id="data-transfer" dense>
-        <h2 className="text-h2">{t('dataTransfer.title')}</h2>
+        <Heading level={2} title={t('dataTransfer.title')} />
 
         <p>{t('dataTransfer.text')}</p>
       </PageSection>
 
       <PageSection id="information" dense>
-        <h2 className="text-h2">{t('information.title')}</h2>
+        <Heading level={2} title={t('information.title')} />
 
         <p>{t('information.text')}</p>
       </PageSection>
 
       <PageSection id="ssl" dense>
-        <h2 className="text-h2">{t('ssl.title')}</h2>
+        <Heading level={2} title={t('ssl.title')} />
 
         <p>{t('ssl.text')}</p>
       </PageSection>
 
       <PageSection id="logs" dense>
-        <h2 className="text-h2">{t('logs.title')}</h2>
+        <Heading level={2} title={t('logs.title')} />
 
         <p className="mb-2">{t('logs.text.0')}</p>
 
@@ -103,7 +104,7 @@ const PrivacyPage = async () => {
       </PageSection>
 
       <PageSection id="contact" dense>
-        <h2 className="text-h2">{t('contact.title')}</h2>
+        <Heading level={2} title={t('contact.title')} />
 
         <p className="mb-2">{t('contact.text.0')}</p>
         <p className="mb-2">{t('contact.text.1')}</p>
@@ -111,7 +112,7 @@ const PrivacyPage = async () => {
       </PageSection>
 
       <PageSection id="cookies" dense>
-        <h2 className="text-h2">{t('cookies.title')}</h2>
+        <Heading level={2} title={t('cookies.title')} />
 
         <p className="mb-2">{t('cookies.text.0')}</p>
         <p className="mb-2">{t('cookies.text.1')}</p>

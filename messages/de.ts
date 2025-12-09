@@ -9,8 +9,8 @@ import 'server-only';
 
 const general = {
   meta: {
-    title: 'Manuel Schächinger – Fullstack JavaScript Engineer & Consultant',
-    description: 'Senior Fullstack JavaScript Engineer und Berater für komplexe und skalierbare Softwaresysteme in München.',
+    title: 'Manuel Schächinger – Fullstack TypeScript Engineer & Consultant',
+    description: 'Senior Fullstack TypeScript Engineer und Berater für komplexe und skalierbare Softwaresysteme in München.',
   },
   home: 'Startseite',
   address: {
@@ -44,7 +44,7 @@ const about = {
       location: 'In Ottobrunn lebe ich.',
       coffee: 'Mein Tag startet mit einem Kaffee.',
       work: 'Seit über {years} Jahren bin ich Softwareentwickler.',
-      stack: 'Mein Fokus liegt auf <link>JavaScript</link>.',
+      stack: 'Mein Fokus liegt auf <link>TypeScript</link>.',
       education: 'In <link>Informatik</link> habe ich einen Bachelor.',
       sports: '<link>Marathonlaufen</link> ist meine Leidenschaft.',
       medalmonday: '2022 habe ich <link>Medal Monday</link> mitgegründet.',
@@ -103,7 +103,7 @@ const home = {
   about: {
     title: about.pageTitle,
     text: [
-      'Seit über {years} Jahren entwickle ich professionelle Software-Anwendungen sowohl im Backend als auch im Frontend. Ich habe mich auf <highlight>JavaScript</highlight> spezialisiert, da diese Sprache ein fast grenzenloses Spektrum an Möglichkeiten und Einsatzgebieten bietet.',
+      'Seit über {years} Jahren entwickle ich professionelle Software-Anwendungen sowohl im Backend als auch im Frontend. Ich habe mich auf <highlight>TypeScript</highlight> spezialisiert, da diese Sprache ein fast grenzenloses Spektrum an Möglichkeiten und Einsatzgebieten bietet, das sich mit Frameworks wie <highlight>Next.js</highlight> voll ausschöpfen lässt.',
       'Meine Aufgabenbereiche erstrecken sich über komplexe APIs mit <highlight>Node.js</highlight>, performante Frontends mit <highlight>React</highlight> und <highlight>Vue.js</highlight>, Absicherung von Systemen sowie Deployment und Übergabe an Kunden.',
       'Abseits der Arbeit bin ich leidenschaftlicher Läufer. Mein großes Ziel ist die Teilnahme an den sechs Major Marathons, von denen ich bis auf Boston schon fünf abschließen konnte.',
     ],
@@ -326,7 +326,7 @@ const work = {
     title: 'Umsetzung',
     text: [
       'Ich unterstütze aktiv die Implementierung des Projekts und nutze meine Fähigkeiten, um das bestmögliche Produkt zu erhalten.',
-      'Meist im JavaScript-Umfeld, sowohl im Backend mit Node.js und TypeScript als auch im Frontend mit React, Vue.js und SASS.',
+      'Meist im TypeScript-Umfeld, sowohl im Backend mit Node.js oder Next.js als auch im Frontend mit React, Vue.js und SCSS.',
     ],
   },
   concept: {
@@ -463,7 +463,7 @@ const translations = {
     },
     konamiCode: {
       goto: 'Ich möchte einen Kaffee',
-      subject: 'Projekt-Anfrage über Homepage',
+      subject: 'Anfrage über Homepage',
     },
   },
 };

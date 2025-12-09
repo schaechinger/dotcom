@@ -1,3 +1,4 @@
+import type { HeadingTag } from '@components/atoms/Heading';
 import HistoryItemDescription from '@components/atoms/HistoryItemDescription';
 import HistoryItemTechList from '@components/atoms/HistoryItemTechList';
 import HistoryItemContent from '@components/molecules/HistoryItemContent';
@@ -7,7 +8,7 @@ import { type CareerData } from '@models/career';
 
 type Props = {
   item: CareerData;
-  heading?: string;
+  heading?: HeadingTag;
 };
 
 const CareerItem = ({ heading, item }: Props) => (

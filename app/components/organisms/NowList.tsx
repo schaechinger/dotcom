@@ -25,7 +25,7 @@ const NowList = async () => {
         ))}
       </BulletList>
       {!!updatedAt && (
-        <p className="text-sm">{t('updatedAt', { date: formatDate(updatedAt, locale, true) })}</p>
+        <p className="text-sm mt-3">{t('updatedAt', { date: formatDate(updatedAt, locale, true) })}</p>
       )}
     </>
   )

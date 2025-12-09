@@ -15,7 +15,7 @@ const Logo = ({ slim }: Props) => (
       <span className="text-contrast-950 dark:text-contrast-50 font-normal">Schächinger</span>
     </p>
     <p className={clsx(slim && 'hidden sm:block', 'text-xs sm:text-sm text-contrast-950 dark:text-contrast-50 tracking-wide font-normal')}>
-      Fullstack JavaScript Engineer
+      Fullstack TypeScript Engineer
     </p>
   </Link>
 );

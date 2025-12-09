@@ -9,8 +9,8 @@ import 'server-only';
 
 const general = {
   meta: {
-    title: 'Manuel Schächinger – Fullstack JavaScript Engineer & Consultant',
-    description: 'Senior Fullstack JavaScript Engineer and consultant for complex and scalable software systems in Munich.',
+    title: 'Manuel Schächinger – Fullstack TypeScript Engineer & Consultant',
+    description: 'Senior Fullstack TypeScript Engineer and consultant for complex and scalable software systems in Munich.',
   },
   home: 'Home',
   address: {
@@ -44,7 +44,7 @@ const about = {
       location: 'Ottobrunn is my base.',
       coffee: 'My days start with a coffee.',
       work: 'For more than {years} years I am a software engineer.',
-      stack: 'My focus is on <link>JavaScript</link>.',
+      stack: 'My focus is on <link>TypeScript</link>.',
       education: 'I have a Bachelor\'s degree in <link>Computer Science</link>.',
       sports: '<link>Marathon running</link> is my passion.',
       medalmonday: 'In 2022 I co-founded <link>Medal Monday</link>.',
@@ -103,7 +103,7 @@ const home = {
   about: {
     title: about.pageTitle,
     text: [
-      'For more than {years} years, I have been developing professional software applications in both backend and frontend. I focus on <highlight>JavaScript</highlight> as this language offers a wide variety of opportunities and fields of application.',
+      'For more than {years} years, I have been developing professional software applications in both backend and frontend. I focus on <highlight>TypeScript</highlight> as this language offers a wide variety of opportunities and fields of application that can be fully utilized with frameworks like <highlight>Next.js</highlight>.',
       'My responsibilities include complex APIs in <highlight>Node.js</highlight>, high performance frontends in <highlight>React</highlight> and <highlight>Vue.js</highlight>, protection of systems as well as deployment and handover to the customer.',
       'Besides work I am a passionate runner. My ultimate goal is to take part in all of the six World Major Marathons, of which I already participated in five except for Boston.',
     ],
@@ -326,7 +326,7 @@ const work = {
     title: 'Implementation',
     text: [
       'I actively support in the implementation of a product and use my skills to craft the best possible piece of software.',
-      'Within the JavaScript ecosystem I work both in backend with Node.js and TypeScript and in the frontend with React, Vue.js and SASS.',
+      'Within the TypeScript ecosystem I work both in backend with Node.js or Next.js and in the frontend with React, Vue.js and SCSS.',
     ],
   },
   concept: {

@@ -206,7 +206,7 @@ export const loadCareer = async (locale?: LocaleCode, type?: HistoryType) => {
   }
 
   const list = await cache(async () => (
-    await client.getEntries<CareerEntrySkeleton>({
+    client.getEntries<CareerEntrySkeleton>({
       content_type: 'career',
       // @ts-ignore
       locale: getLocale(locale),

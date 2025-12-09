@@ -13,7 +13,7 @@ const getLocale = (req: NextRequest) => {
   return matchLocale(languages);
 };
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   // Check for supported language code in path
   const { pathname } = request.nextUrl;
   const path = splitPath(pathname);

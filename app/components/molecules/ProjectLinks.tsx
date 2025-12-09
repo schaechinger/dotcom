@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 
+import Heading from '@components/atoms/Heading';
 import Link from '@components/atoms/Link';
 import PageSection from '@components/organisms/PageSection';
 import { type ProjectLinkData } from '@models/project';
@@ -13,7 +14,7 @@ const ProjectLinks = ({ links }: Props) => {
 
   return (
     <PageSection id="links" dense>
-      <h2 className="text-h2">{t('title')}</h2>
+      <Heading level={2} title={t('title')} />
 
       {!links && <p>{t('internal')}</p>}
       {links?.project && <p className="link--project mb-2">{t.rich('project', {

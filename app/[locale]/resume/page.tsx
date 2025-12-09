@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
 import Breadcrumbs from '@components/atoms/Breadcumbs';
+import Heading from '@components/atoms/Heading';
 import CareerList from '@components/organisms/CareerList';
 import CertificationList from '@components/organisms/CertificationList';
 import HistoryItemTechList from '@components/atoms/HistoryItemTechList';
@@ -28,48 +29,48 @@ const ResumePage = async () => {
       <PageSection id="experience" first>
         <Breadcrumbs list={[{ title: t('title') }]} />
 
-        <h1 className="text-h1">{t('title')}</h1>
+        <Heading level={1} title={t('title')} />
 
         <CareerList heading="h2" />
       </PageSection>
 
       <PageSection id="education">
-        <h2 className="text-h2">{t('education.title')}</h2>
+        <Heading level={2} title={t('education.title')} />
 
         <CareerList type="education" noLink />
       </PageSection>
 
       <PageSection id="certifications">
-        <h2 className="text-h2">{t('certifications.title')}</h2>
+        <Heading level={2} title={t('certifications.title')} />
 
         <CertificationList />
       </PageSection>
 
       <PageSection id="skills">
-        <h2 className="text-h2">{t('skills.title')}</h2>
+        <Heading level={2} title={t('skills.title')} />
 
         <div className="mt-4">
-          <h3 className="text-h3">{t('skills.languages')}</h3>
+          <Heading level={3} title={t('skills.languages')} />
 
           <HistoryItemTechList tech={[
             { slug: 'javascript', name: 'JavaScript' },
             { slug: 'typescript', name: 'TypeScript' },
-            { slug: 'css', name: 'CSS/Sass' },
+            { slug: 'css', name: 'CSS/SCSS' },
             { slug: 'python', name: 'Python' },
             { slug: 'sql', name: 'SQL' },
           ]} />
         </div>
 
         <div className="mt-6">
-          <h3 className="text-h3">{t('skills.frameworks')}</h3>
+          <Heading level={3} title={t('skills.frameworks')} />
 
           <HistoryItemTechList tech={[
             { slug: 'nodejs', name: 'Node.js' },
+            { slug: 'react', name: 'React' },
+            { slug: 'nextjs', name: 'Next.js' },
             { slug: 'vue', name: 'Vue.js' },
             { slug: 'pinia', name: 'Pinia' },
             { slug: 'quasar', name: 'Quasar' },
-            { slug: 'react', name: 'React' },
-            { slug: 'nextjs', name: 'Next.js' },
             { slug: 'express', name: 'Express.js' },
             { slug: 'jest', name: 'Jest' },
             { slug: 'mqtt', name: 'MQTT' },
@@ -78,18 +79,18 @@ const ResumePage = async () => {
         </div>
 
         <div className="mt-6">
-          <h3 className="text-h3">{t('skills.databases')}</h3>
+          <Heading level={3} title={t('skills.databases')} />
 
           <HistoryItemTechList tech={[
             { slug: 'postgresql', name: 'PostgreSQL' },
             { slug: 'dynamodb', name: 'DynamoDB' },
-            { slug: 'elasticsearch', name: 'Elasticsearch' },
             { slug: 'mongodb', name: 'MongoDB' },
+            { slug: 'elasticsearch', name: 'Elasticsearch' },
           ]} />
         </div>
 
         <div className="mt-6">
-          <h3 className="text-h3">{t('skills.tools')}</h3>
+          <Heading level={3} title={t('skills.tools')} />
 
           <HistoryItemTechList tech={[
             { slug: 'linux', name: 'Linux' },

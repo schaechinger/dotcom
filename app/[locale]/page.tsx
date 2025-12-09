@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 
 import { getTimeDuration } from '@app/utils';
 import AvailabilityIndicator from '@components/atoms/AvailabilityIndicator';
+import Heading from '@components/atoms/Heading';
 import HighlightLabel from '@components/atoms/HighlightLabel';
 import JsonLd from '@components/atoms/JsonLd';
 import Link from '@components/atoms/Link';
@@ -32,7 +33,7 @@ const HomePage = async () => {
     <>
       <PageContainer name="home">
         <PageSection id="about" first>
-          <h1 className="text-h1">{t('about.title')}</h1>
+          <Heading level={1} title={t('about.title')} />
 
           <p>{t.rich('about.text.0', aboutTextOptions)}</p>
           <p className="mt-2">{t.rich('about.text.1', aboutTextOptions)}</p>
@@ -47,7 +48,7 @@ const HomePage = async () => {
         </PageSection>
 
         <PageSection id="availability">
-          <h2 className="text-h1">{t("availability.title")}</h2>
+          <Heading level={1} tag="h2" title={t("availability.title")} />
 
           <AvailabilityIndicator />
 
@@ -59,25 +60,25 @@ const HomePage = async () => {
         </PageSection>
 
         <PageSection id="experience">
-          <h2 className="text-h1">{t("experience.title")}</h2>
+          <Heading level={1} tag="h2" title={t("experience.title")} />
 
           <CareerList latest />
         </PageSection>
 
         <PageSection id="certifications">
-          <h2 className="text-h1">{t("certifications.title")}</h2>
+          <Heading level={1} tag="h2" title={t("certifications.title")} />
 
           <CertificationList />
         </PageSection>
 
         <PageSection id="projects">
-          <h2 className="text-h1">{t("projects.title")}</h2>
+          <Heading level={1} tag="h2" title={t("projects.title")} />
 
           <ProjectList highlights />
         </PageSection>
 
         <PageSection id="contact">
-          <h2 className="text-h1">{t("contact.title")}</h2>
+          <Heading level={1} tag="h2" title={t("contact.title")} />
 
           <p className="mb-4">{t("contact.text")}</p>
 

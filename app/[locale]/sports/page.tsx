@@ -2,6 +2,7 @@ import { type Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
 import Breadcrumbs from '@components/atoms/Breadcumbs';
+import Heading from '@components/atoms/Heading';
 import LinkButton from '@components/atoms/LinkButton';
 import ContestParticipation from '@components/molecules/ContestParticipation';
 import PageContainer from '@components/organisms/PageContainer';
@@ -36,7 +37,7 @@ const SportsPage = async ({ params }: PageProps<"/[locale]/sports">) => {
       <PageSection id="sports" first>
         <Breadcrumbs list={[{ title: t('title') }]} />
 
-        <h1 className="text-h1">{t('title')}</h1>
+        <Heading level={1} title={t('title')} />
 
         <p>{t('text')}</p>
 
@@ -46,7 +47,7 @@ const SportsPage = async ({ params }: PageProps<"/[locale]/sports">) => {
       </PageSection>
 
       <PageSection id="marathons">
-        <h2 className="text-h2">{t('marathons.title')}</h2>
+        <Heading level={2} title={t('marathons.title')} />
 
         <p>{t('marathons.text.0')}</p>
         <p className="my-2">{t('marathons.text.1')}</p>

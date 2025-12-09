@@ -1,15 +1,16 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 
 import { STATIC_HOST } from '@app/config';
-import CareerItem from '@components/organisms/CareerItem';
+import type { HeadingTag } from '@components/atoms/Heading';
 import LinkButton from '@components/atoms/LinkButton';
+import CareerItem from '@components/organisms/CareerItem';
 import HistoryItemList from '@components/organisms/HistoryItemList';
 import { loadCareer } from '@lib/contentful';
 import type { LocaleCode } from '@lib/router';
 import { HistoryType } from '@/app/models/history';
 
 type Props = {
-  heading?: string;
+  heading?: HeadingTag;
   latest?: boolean;
   noLink?: boolean;
   type?: HistoryType;

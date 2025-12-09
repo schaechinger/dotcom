@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
+import Heading from '@components/atoms/Heading';
 import LinkButton from '@components/atoms/LinkButton';
 import KonamiCode from '@components/molecules/KonamiCode';
 import PageContainer from '@components/organisms/PageContainer';
@@ -21,7 +22,7 @@ const LocalizedNotFoundPage = () => {
   return (
     <PageContainer name="not-found">
       <PageSection id="not-found" first>
-        <h1 className="text-h1">{t('notFound.title')}</h1>
+        <Heading level={1} title={t('notFound.title')} />
 
         <p className="mb-4">{t('notFound.text')}</p>
 

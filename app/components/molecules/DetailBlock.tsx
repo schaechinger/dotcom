@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 
+import Heading from '@components/atoms/Heading';
 import PageSection from '@components/organisms/PageSection';
 
 type Props = {
@@ -14,7 +15,7 @@ const DetailBlock = ({ id, title, content }: Props) => {
 
   return (
     <PageSection id={id} dense>
-      <h2 className="text-h2">{title || t(id as 'description')}</h2>
+      <Heading level={2} title={title || t(id as 'description')} />
 
       {(content || []).map((p, i) => (
         <p className={clsx(i < ((content.length || 0) - 1) && 'mb-2')}

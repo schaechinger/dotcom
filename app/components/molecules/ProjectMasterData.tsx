@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 
 import Breadcrumbs from '@components/atoms/Breadcumbs';
 import CompanyLink from '@components/atoms/CompanyLink';
+import Heading from '@components/atoms/Heading';
 import HistoryItemTypeLabel from '@components/atoms/HistoryItemTypeLabel';
 import TechItem from '@components/atoms/TechItem';
 import TimeSpan from '@components/atoms/TimeSpan';
@@ -23,7 +24,7 @@ const ProjectMasterData = async ({ project }: Props) => {
         { title: project.title },
       ]} />
 
-      <h1 className="text-h1">{project.title}</h1>
+      <Heading level={1} title={project.title} />
 
       <p className="mb-2">{project.description}</p>
 

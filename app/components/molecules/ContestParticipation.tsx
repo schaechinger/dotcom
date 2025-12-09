@@ -5,6 +5,7 @@ import LabeledContent from '@components/atoms/LabeledContent';
 import Medal from '@components/icons/Medal';
 import type { LocaleCode } from '@lib/router';
 import { getSpeed, type ParticipationData } from '@models/participation';
+import Heading from '../atoms/Heading';
 
 export type SportType = 'running' | 'cycling' | 'multisport';
 
@@ -24,8 +25,8 @@ const ContestParticipation = ({ participation, pb }: Props) => {
   return (
     <article className="md:flex md:gap-2 md:items-center sm:hover:bg-primary-light/10 sm:hover:dark:bg-primary-dark/20 transition-colors sm:rounded-lg -mx-4 sm:-mx-3 my-4 px-4 sm:px-3 py-2">
       <header className="mb-2 md:mb-0 md:flex-1">
-        <h3 className="text-h3 mb-0">{participation.event}{pb
-          && <Medal className="-mt-1 ml-1 text-amber-500" title="Bestzeit" />}</h3>
+        <Heading level={3} className="mb-0!">{participation.event}{pb
+          && <Medal className="-mt-1 ml-1 text-amber-500" title="Bestzeit" />}</Heading>
         <p className="text-sm">{formatDate(participation.date, locale, true)}</p>
       </header>
       <div className="flex md:flex-1">

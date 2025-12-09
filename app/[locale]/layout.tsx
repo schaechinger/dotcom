@@ -47,7 +47,7 @@ const RootLayout = async ({ children, params }: LayoutProps<"/[locale]">) => {
   return (
     <html className={clearSans.variable} lang={locale} dir="ltr" suppressHydrationWarning>
       <head>
-        <link type="text/plain" rel="author" href={`${WEB_HOST}/humans.txt`} />
+        <link type="text/plain" rel="author" href="humans.txt" />
       </head>
       <body className="text-foreground bg-background font-sans">
         <ThemeProvider>

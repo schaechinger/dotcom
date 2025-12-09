@@ -1,6 +1,7 @@
 import { type Metadata } from 'next';
 
 import { clearSans } from '@app/font';
+import Heading from '@components/atoms/Heading';
 import HistoryItemTypeLabel from '@components/atoms/HistoryItemTypeLabel';
 import Link from '@components/atoms/Link';
 import LinkButton from '@components/atoms/LinkButton';
@@ -22,9 +23,9 @@ const BrandBook = () => {
     <html className={clearSans.className} lang="en">
       <body className="w-full max-w-screen-xl mx-auto font-sans">
         <SplitSection id="headings" label="Headings">
-          <h1 className="text-h1">Heading H1</h1>
-          <h2 className="text-h2">Heading H2</h2>
-          <h3 className="text-h3">Heading H3</h3>
+          <Heading level={1} title="Heading H1" />
+          <Heading level={2} title="Heading H2" />
+          <Heading level={3} title="Heading H3" />
         </SplitSection>
 
         <SplitSection id="text" label="Text">
@@ -69,7 +70,7 @@ const BrandBook = () => {
 
         <SplitSection id="tech" label="Tech Item">
           <ul className="flex gap-2">
-            <TechItem>JavaScript</TechItem>
+            <TechItem>TypeScript</TechItem>
             <TechItem>Node.js</TechItem>
             <TechItem>Next.js</TechItem>
           </ul>

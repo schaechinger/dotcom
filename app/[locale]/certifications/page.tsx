@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
 import Breadcrumbs from '@components/atoms/Breadcumbs';
+import Heading from '@components/atoms/Heading';
 import CertificationList from '@components/organisms/CertificationList';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
@@ -26,7 +27,7 @@ const CertificationsPage = async () => {
       <PageSection id="certifications" first>
         <Breadcrumbs list={[{ title: t('title') }]} />
 
-        <h1 className="text-h1">{t('title')}</h1>
+        <Heading level={1} title={t('title')} />
 
         <CertificationList />
       </PageSection>
