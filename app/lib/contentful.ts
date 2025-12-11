@@ -1,9 +1,9 @@
 import 'server-only';
 import {
-  ContentfulClientApi,
-  Entry,
-  EntryCollection,
-  EntryFieldTypes,
+  type ContentfulClientApi,
+  type Entry,
+  type EntryCollection,
+  type EntryFieldTypes,
   createClient,
 } from 'contentful';
 import { cache } from 'react';
@@ -138,10 +138,12 @@ const connect = () => {
       space: process.env.CONTENTFUL_SPACE!,
       accessToken: process.env.CONTENTFUL_API_KEY,
       requestLogger: (axios) => {
-        console.log(
-          'request',
-          (axios as Record<string, string>).params,
-        );
+        if ('development' === process.env.NODE_ENV) {
+          console.log(
+            'request',
+            (axios as Record<string, string>).params,
+          );
+        }
       }
     });
   }

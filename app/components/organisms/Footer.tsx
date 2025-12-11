@@ -31,7 +31,7 @@ const Footer = () => {
           <ul className="flex flex-col gap-2 sm:gap-0 justify-center">
             {LEGAL_NAVIGATION.map((page) => (
               <li key={page} className="py-1.5">
-                <Link href={`/${page}`} className="font-normal">{t(page as 'imprint')}</Link>
+                <Link href={`/${page}`} className="font-normal" prefetch={false}>{t(page as 'imprint')}</Link>
               </li>
             ))}
           </ul>

@@ -11,12 +11,13 @@ type Props = {
   className?: string;
   inline?: boolean;
   locale?: LocaleCode;
+  prefetch?: boolean;
   target?: string;
   title?: string;
   onClick?: React.MouseEventHandler;
 };
 
-const Link = ({ accessKey, children, className, href, inline, locale, onClick, target, title }: Props) => {
+const Link = ({ accessKey, children, className, href, inline, locale, onClick, prefetch, target, title }: Props) => {
   // const currentLocale = useLocale() as LocaleCode;
   const intlLocale = useLocale();
   const linkLocale = locale || intlLocale;
@@ -34,6 +35,7 @@ const Link = ({ accessKey, children, className, href, inline, locale, onClick, t
       title={title}
       onClick={onClick}
       accessKey={accessKey}
+      prefetch={prefetch}
     >{children}</NextLink>
   );
 };
