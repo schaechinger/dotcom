@@ -137,6 +137,12 @@ const connect = () => {
     instance = createClient({
       space: process.env.CONTENTFUL_SPACE!,
       accessToken: process.env.CONTENTFUL_API_KEY,
+      requestLogger: (axios) => {
+        console.log(
+          'request',
+          (axios as Record<string, string>).params,
+        );
+      }
     });
   }
 
@@ -164,190 +170,150 @@ const getEntryFields = <T>(collection: EntryCollection<any>) => (
   (collection?.items || []).map((e) => parseEntry(e)) as T[]
 );
 
-export const loadAvailability = async () => {
+export const loadAvailability = cache(() => {
   const client = connect();
-  if (!client) {
-    return null;
-  }
 
-  return cache(async () => (
-    await client.getEntries<AvailabilityEntrySkeleton>({
-      content_type: 'availability',
-    })
-      .then(getEntryFields<AvailabilityData>)
-      .then((availabilities) => availabilities[0])
-      .catch(() => null)
-  ))();
-};
+  return client?.getEntries<AvailabilityEntrySkeleton>({
+    content_type: 'availability',
+  })
+    .then(getEntryFields<AvailabilityData>)
+    .then((availabilities) => availabilities[0])
+    .catch(() => null);
+});
 
-export const loadFigures = async () => {
+export const loadFigures = cache((year: number) => {
   const client = connect();
-  if (!client) {
-    return null;
-  }
 
-  return cache(async () => (
-    await client.getEntries<FiguresEntrySkeleton>({
-      content_type: 'figures',
-      'fields.year': `${new Date().getFullYear()}`,
-    })
-      .then(getEntryFields<FiguresData>)
-      .then((figures) => (figures || [{}])[0])
-      .catch(() => null)
-  ))();
-};
+  return client?.getEntries<FiguresEntrySkeleton>({
+    content_type: 'figures',
+    'fields.year': `${year}`,
+  })
+    .then(getEntryFields<FiguresData>)
+    .then((figures) => (figures || [{}])[0])
+    .catch(() => null);
+});
 
 const getLocale = (locale?: LocaleCode) => (locale || 'en').startsWith('de') ? 'de' : 'en';
 
-export const loadCareer = async (locale?: LocaleCode, type?: HistoryType) => {
+export const loadCareer = cache((locale?: LocaleCode, type?: HistoryType) => {
   const client = connect();
-  if (!client) {
-    return null;
-  }
 
-  const list = await cache(async () => (
-    client.getEntries<CareerEntrySkeleton>({
-      content_type: 'career',
-      // @ts-ignore
-      locale: getLocale(locale),
-    })
-      .then(getEntryFields<CareerData>)
-      .then(sortCareerList)
-      .catch(() => null)
-  ))();
+  return client?.getEntries<CareerEntrySkeleton>({
+    content_type: 'career',
+    // @ts-ignore
+    locale: getLocale(locale),
+  })
+    .then(getEntryFields<CareerData>)
+    .then(sortCareerList)
+    .then((list) => (
+      list.filter((item) => type ? type === item.type : 'education' !== item.type)
+    ))
+    .catch(() => null);
+});
 
-  return (list || []).filter((item) => type ? type === item.type : 'education' !== item.type);
-};
-
-export const loadCertifications = async (locale?: LocaleCode) => {
+export const loadCertifications = cache((locale?: LocaleCode) => {
   const client = connect();
-  if (!client) {
-    return null;
-  }
 
-  return cache(async () => (
-    await client.getEntries<CertificationEntrySkeleton>({
-      content_type: 'certification',
-      // @ts-ignore
-      locale: getLocale(locale),
-    })
-      .then(getEntryFields<CertificationData>)
-      .then(sortCertificationList)
-      .catch(() => null)
-  ))();
-};
+  return client?.getEntries<CertificationEntrySkeleton>({
+    content_type: 'certification',
+    // @ts-ignore
+    locale: getLocale(locale),
+  })
+    .then(getEntryFields<CertificationData>)
+    .then(sortCertificationList)
+    .catch(() => null);
+});
 
-export const loadNow = async (locale?: LocaleCode) => {
+export const loadNow = cache((locale?: LocaleCode) => {
   const client = connect();
-  if (!client) {
-    return null;
-  }
 
-  return cache(async () => (
-    await client.getEntries<NowEntrySkeleton>({
-      content_type: 'now',
-      // @ts-ignore
-      locale: getLocale(locale),
-    })
-      .then(getEntryFields<NowData>)
-      .then((now) => ({
-        ...now[0],
-        activities: now[0].tasks.map((activity) => {
-          if (!Array.isArray(activity.tasks)) {
-            activity.tasks = [activity.description || activity.tasks];
-          }
-
-          return activity;
-        }),
-      }))
-      .catch(() => ({
-        updatedAt: '',
-        activities: [],
-      }))
-  ))();
-};
-
-export const loadProjects = async (locale?: LocaleCode, highlights = false) => {
-  const client = connect();
-  if (!client) {
-    return null;
-  }
-
-  return cache(async () => (
-    await client.getEntries<ProjectEntrySkeleton>({
-      content_type: 'project',
-      'fields.highlight': highlights || undefined,
-      // @ts-ignore
-      locale: getLocale(locale),
-    })
-      .then(getEntryFields<ProjectData>)
-      .then(sortCareerList)
-      .then((projects) => (
-        projects.map((p) => ({
-          title: p.title,
-          slug: p.slug,
-          company: p.company,
-          description: p.description,
-          bullets: p.bullets,
-          tech: p.tech,
-          startDate: p.startDate,
-          endDate: p.endDate,
-          links: p.links,
-          type: p.type,
-          highlight: p.highlight,
-          updatedAt: p.updatedAt,
-        }))
-      ))
-      .catch(() => null)
-  ))();
-};
-
-export const loadParticipationsByContest = async (contest: string, locale?: LocaleCode) => {
-  const client = connect();
-  if (!client) {
-    return null;
-  }
-
-  return cache(async () => (
-    await client.getEntries<ParticipationEntrySkeleton>({
-      content_type: 'participation',
-      'fields.contest': contest,
-      // @ts-ignore
-      locale: getLocale(locale),
-    })
-      .then(getEntryFields<ParticipationData>)
-      .then(sortParticipationList)
-      .catch(() => null)
-  ))();
-};
-
-export const loadProjectBySlug = async (slug: string, locale: LocaleCode) => {
-  const client = connect();
-  if (!client) {
-    return null;
-  }
-
-  const contentfulLocale = getLocale(locale);
-
-  return cache(async () => (
-    client.getEntries<ProjectEntrySkeleton>({
-      content_type: 'project',
-      'fields.slug': slug,
-      // @ts-ignore
-      locale: contentfulLocale,
-    })
-      .then(getEntryFields<ProjectData>)
-      .then((projects) => {
-        const [project] = projects;
-
-        if (project?.images) {
-          project.images = project.images.filter((image) => (
-            !image.lang || image.lang === contentfulLocale
-          ));
+  return client?.getEntries<NowEntrySkeleton>({
+    content_type: 'now',
+    // @ts-ignore
+    locale: getLocale(locale),
+  })
+    .then(getEntryFields<NowData>)
+    .then((now) => ({
+      ...now[0],
+      activities: now[0].tasks.map((activity) => {
+        if (!Array.isArray(activity.tasks)) {
+          activity.tasks = [activity.description || activity.tasks];
         }
 
-        return project;
-      })
-      .catch(() => null)
-  ))();
-};
+        return activity;
+      }),
+    }))
+    .catch(() => ({
+      updatedAt: '',
+      activities: [],
+    }));
+});
+
+export const loadProjects = cache((locale: LocaleCode = 'en', highlights = false) => {
+  const client = connect();
+
+  return client?.getEntries<ProjectEntrySkeleton>({
+    content_type: 'project',
+    'fields.highlight': highlights || undefined,
+    // @ts-ignore
+    locale: getLocale(locale),
+  })
+    .then(getEntryFields<ProjectData>)
+    .then(sortCareerList)
+    .then((projects) => (
+      projects.map((p) => ({
+        title: p.title,
+        slug: p.slug,
+        company: p.company,
+        description: p.description,
+        bullets: p.bullets,
+        tech: p.tech,
+        startDate: p.startDate,
+        endDate: p.endDate,
+        links: p.links,
+        type: p.type,
+        highlight: p.highlight,
+        updatedAt: p.updatedAt,
+      }))
+    ))
+    .catch(() => null);
+});
+
+export const loadProjectBySlug = cache((slug: string, locale: LocaleCode) => {
+  const client = connect();
+  const contentfulLocale = getLocale(locale);
+
+  return client?.getEntries<ProjectEntrySkeleton>({
+    content_type: 'project',
+    'fields.slug': slug,
+    // @ts-ignore
+    locale: contentfulLocale,
+  })
+    .then(getEntryFields<ProjectData>)
+    .then((projects) => {
+      const [project] = projects;
+
+      if (project?.images) {
+        project.images = project.images.filter((image) => (
+          !image.lang || image.lang === contentfulLocale
+        ));
+      }
+
+      return project;
+    })
+    .catch(() => null)
+});
+
+export const loadParticipationsByContest = cache((contest: string, locale?: LocaleCode) => {
+  const client = connect();
+
+  return client?.getEntries<ParticipationEntrySkeleton>({
+    content_type: 'participation',
+    'fields.contest': contest,
+    // @ts-ignore
+    locale: getLocale(locale),
+  })
+    .then(getEntryFields<ParticipationData>)
+    .then(sortParticipationList)
+    .catch(() => null);
+});
