@@ -15,7 +15,7 @@ const LanguageSelection = () => {
     <ul className="flex flex-col gap-2 sm:gap-0 justify-center">
       {supportedLangs.map((lang) => (
         <li key={lang} className="py-1.5">
-          <Link href={page} locale={lang} className="font-normal">{translations.name[lang]}</Link>
+          <Link href={page} locale={lang} prefetch={false} className="font-normal">{translations.name[lang]}</Link>
         </li>
       ))}
     </ul>

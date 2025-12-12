@@ -57,22 +57,22 @@ const AboutPage = async () => {
           <p className="mb-2">{t('profile.bullets.work', { years })}</p>
           <p className="mb-2">{t.rich('profile.bullets.stack', {
             link: (label: React.ReactNode) => (
-              <Link href="/work#stack" className="inline-link">{label}</Link>
+              <Link href="/work#stack" inline>{label}</Link>
             ),
           })}</p>
           <p className="mb-2">{t.rich('profile.bullets.education', {
             link: (label: React.ReactNode) => (
-              <Link href="/resume#hm" className="inline-link">{label}</Link>
+              <Link href="/resume#hm" inline>{label}</Link>
             ),
           })}</p>
           <p className="mb-2">{t.rich('profile.bullets.sports', {
             link: (label: React.ReactNode) => (
-              <Link href="/sports#marathons" className="inline-link">{label}</Link>
+              <Link href="/sports#marathons" inline>{label}</Link>
             ),
           })}</p>
           <p>{t.rich('profile.bullets.medalmonday', {
             link: (label: React.ReactNode) => (
-              <Link href="/projects/medalmonday" className="inline-link">{label}</Link>
+              <Link href="/projects/medalmonday" inline>{label}</Link>
             ),
           })}</p>
         </BulletList>

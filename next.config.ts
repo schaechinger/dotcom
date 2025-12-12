@@ -16,6 +16,10 @@ const nextConfig = withNextIntl({
   skipTrailingSlashRedirect: false,
   output: 'standalone',
 
+  turbopack: {
+    root: __dirname,
+  },
+
   // cacheComponents: true,
 
   async redirects() {

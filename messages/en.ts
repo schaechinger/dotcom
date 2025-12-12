@@ -128,7 +128,7 @@ const home = {
     title: 'Professional Experience',
   },
   projects: {
-    title: 'Current Projects',
+    title: 'Selected Projects',
   },
 };
 

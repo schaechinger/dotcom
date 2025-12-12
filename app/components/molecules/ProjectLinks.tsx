@@ -21,35 +21,35 @@ const ProjectLinks = ({ links }: Props) => {
         link: () => <Link
             href={links.project!.link}
             target="_blank"
-            className="inline-link"
+            inline
           >{ links.project!.label }</Link>
       })}</p>}
       {links?.code && <p className="link--code mb-2">{t.rich('code', {
         link: () => <Link
             href={links.code!.link}
             target="_blank"
-            className="inline-link"
+            inline
           >{ links.code!.label }</Link>
       })}</p>}
       {links?.github && <p className="link--github mb-2">{t.rich('code', {
         link: () => <Link
             href={`https://github.com/${links.github!.join('/')}`}
             target="_blank"
-            className="inline-link"
+            inline
           >GitHub</Link>
       })}</p>}
       {links?.package && <p className="link--package mb-2">{t.rich('package', {
         link: () => <Link
             href={links.package!.link}
             target="_blank"
-            className="inline-link"
+            inline
           >{ links.package!.label }</Link>
       })}</p>}
       {links?.npm && <p className="link--npm mb-2">{t.rich('package', {
         link: () => <Link
             href={`https://npmjs.org/package/${links.npm}`}
             target="_blank"
-            className="inline-link"
+            inline
           >npm</Link>
       })}</p>}
     </PageSection>

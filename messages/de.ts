@@ -128,7 +128,7 @@ const home = {
     title: 'Berufliche Erfahrung',
   },
   projects: {
-    title: 'Aktuelle Projekte',
+    title: 'Ausgewählte Projekte',
   },
 };
 

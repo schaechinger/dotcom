@@ -16,7 +16,10 @@ const calcDays = (factor = 1) => {
 };
 
 const YearInFigures = async () => {
-  const [data, t] = await Promise.all([loadFigures(), getTranslations('yearInFigures')]);
+  const [data, t] = await Promise.all([
+    loadFigures(new Date().getFullYear()),
+    getTranslations('yearInFigures'),
+  ]);
   
   const figures = [
     {
