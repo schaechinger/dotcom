@@ -25,8 +25,7 @@ const Breadcrumbs = ({ list }: Props) => {
           <li key="home" className={clsx(visible && 'hidden sm:inline-block', 'flex-none')}>
             <Link href="/" className="text-gray-400 dark:text-gray-400">
               <Home className="hidden sm:inline-block text-[0.875rem] relative -top-[1px]" />
-              <ChevronRight className={clsx(visible && 'hidden', 'sm:hidden mr-2 rotate-180 relative -top-[1px] text-gray-400 dark:text-gray-400')} />
-              <span className={clsx(visible && 'hidden', 'sm:hidden')}>{t('home')}</span>
+              <span className={clsx(visible && 'hidden', 'ml-2 sm:hidden')}>{t('home')}</span>
             </Link>
           </li>
           {list.map((item, i) => (
