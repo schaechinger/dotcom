@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
 import { IMAGE_HOST } from '@app/config';
-import { loadProjectBySlug } from '@lib/contentful';
+import { loadProjectBySlug } from '@dal/projects';
 import { getImageLabel } from '@lib/images';
 import type { LocaleCode } from '@lib/router';
 import { generatePageMeta } from '@lib/seo';

@@ -8,7 +8,7 @@ import ProjectLinks from '@components/molecules/ProjectLinks';
 import ProjectMasterData from '@components/molecules/ProjectMasterData';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
-import { loadProjectBySlug } from '@lib/contentful';
+import { loadProjectBySlug } from '@dal/projects';
 import { generateProjectMetadata } from '@lib/projects';
 import type { LocaleCode } from '@lib/router';
 

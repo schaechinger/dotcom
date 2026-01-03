@@ -183,21 +183,20 @@ export const loadAvailability = cache(() => {
     .catch(() => null);
 });
 
-export const loadFigures = cache((year: number) => {
+export const loadFigures = cache(() => {
   const client = connect();
 
   return client?.getEntries<FiguresEntrySkeleton>({
     content_type: 'figures',
-    'fields.year': `${year}`,
   })
     .then(getEntryFields<FiguresData>)
-    .then((figures) => (figures || [{}])[0])
+    .then((figures) => (figures || [{}]))
     .catch(() => null);
 });
 
 const getLocale = (locale?: LocaleCode) => (locale || 'en').startsWith('de') ? 'de' : 'en';
 
-export const loadCareer = cache((locale?: LocaleCode, type?: HistoryType) => {
+export const loadCareer = cache((locale?: LocaleCode) => {
   const client = connect();
 
   return client?.getEntries<CareerEntrySkeleton>({
@@ -207,9 +206,6 @@ export const loadCareer = cache((locale?: LocaleCode, type?: HistoryType) => {
   })
     .then(getEntryFields<CareerData>)
     .then(sortCareerList)
-    .then((list) => (
-      list.filter((item) => type ? type === item.type : 'education' !== item.type)
-    ))
     .catch(() => null);
 });
 
@@ -251,33 +247,16 @@ export const loadNow = cache((locale?: LocaleCode) => {
     }));
 });
 
-export const loadProjects = cache((locale: LocaleCode = 'en', highlights = false) => {
+export const loadProjects = cache((locale: LocaleCode = 'en') => {
   const client = connect();
 
   return client?.getEntries<ProjectEntrySkeleton>({
     content_type: 'project',
-    'fields.highlight': highlights || undefined,
     // @ts-ignore
     locale: getLocale(locale),
   })
     .then(getEntryFields<ProjectData>)
     .then(sortCareerList)
-    .then((projects) => (
-      projects.map((p) => ({
-        title: p.title,
-        slug: p.slug,
-        company: p.company,
-        description: p.description,
-        bullets: p.bullets,
-        tech: p.tech,
-        startDate: p.startDate,
-        endDate: p.endDate,
-        links: p.links,
-        type: p.type,
-        highlight: p.highlight,
-        updatedAt: p.updatedAt,
-      }))
-    ))
     .catch(() => null);
 });
 
@@ -306,12 +285,11 @@ export const loadProjectBySlug = cache((slug: string, locale: LocaleCode) => {
     .catch(() => null)
 });
 
-export const loadParticipationsByContest = cache((contest: string, locale?: LocaleCode) => {
+export const loadParticipations = cache((locale?: LocaleCode) => {
   const client = connect();
 
   return client?.getEntries<ParticipationEntrySkeleton>({
     content_type: 'participation',
-    'fields.contest': contest,
     // @ts-ignore
     locale: getLocale(locale),
   })

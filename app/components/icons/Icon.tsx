@@ -11,7 +11,7 @@ const Icon = (props: IconProps) => (
       height="1em"
       { ...{
         ...props,
-        className: `inline-block${props.className ? ` ${props.className}` : ''}`,
+        className: `${!props.className?.startsWith('hidden') ? 'inline-block' : ''}${props.className ? ` ${props.className}` : ''}`,
         style: { ...(props.style || {}), fill: 'currentColor' },
         children: undefined,
         title: undefined,

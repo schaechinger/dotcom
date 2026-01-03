@@ -7,7 +7,7 @@ import LinkButton from '@components/atoms/LinkButton';
 import ContestParticipation from '@components/molecules/ContestParticipation';
 import PageContainer from '@components/organisms/PageContainer';
 import PageSection from '@components/organisms/PageSection';
-import { loadParticipationsByContest } from '@lib/contentful';
+import { loadParticipationsByContest } from '@dal/participations';
 import type { LocaleCode } from '@lib/router';
 import { generatePageMeta } from '@lib/seo';
 import { getPb } from '@models/participation';

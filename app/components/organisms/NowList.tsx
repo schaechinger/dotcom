@@ -2,7 +2,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 
 import { formatDate } from '@app/utils';
 import BulletList from '@components/atoms/BulletList';
-import { loadNow } from '@lib/contentful';
+import { loadNow } from '@dal/now';
 import type { LocaleCode } from '@lib/router';
 
 const NowList = async () => {

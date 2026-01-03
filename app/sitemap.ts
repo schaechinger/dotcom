@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 import { supportedLangs, WEB_HOST } from '@app/config';
-import { loadProjects } from '@lib/contentful';
+import { loadProjects } from '@dal/projects';
 import { generatePageMeta } from '@lib/seo';
 
 export const dynamic = 'force-dynamic';
@@ -43,7 +43,7 @@ const sitemap = async () => {
       });
     });
 
-  const projects = await loadProjects();
+  const projects = await loadProjects("en");
   let latestProject = new Date(0);
 
   projects?.forEach((project) => {

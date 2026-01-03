@@ -19,12 +19,13 @@ const Breadcrumbs = ({ list }: Props) => {
   const visible = 1 < list.length;
 
   return (
-    <div className={clsx(list.length && 'mb-4', visible ? 'sm:mb-4' : 'sm:hidden')}>
+    <div className={clsx(list.length && 'mb-4 sm:mb-4', !list.length && 'hidden')}>
       <nav aria-label="Breadcrumb">
         <ul className="flex list-none text-xs">
           <li key="home" className={clsx(visible && 'hidden sm:inline-block', 'flex-none')}>
             <Link href="/" className="text-gray-400 dark:text-gray-400">
-              <Home className="hidden sm:inline-block text-[0.875rem] relative -top-[1px]" />
+              <Home className="hidden sm:inline-block text-[0.875rem] relative -top-[1.5px]" />
+              <ChevronRight className="rotate-180 sm:hidden relative -top-[1px] text-gray-400 dark:text-gray-400" />
               <span className={clsx(visible && 'hidden', 'ml-2 sm:hidden')}>{t('home')}</span>
             </Link>
           </li>

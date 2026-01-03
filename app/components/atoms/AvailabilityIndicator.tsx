@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 
 import Clock from '@components/icons/Clock';
-import { loadAvailability } from '@lib/contentful';
+import { loadAvailability } from '@dal/availability';
 
 const AvailabilityIndicator = async () => {
   const [availability, t] = await Promise.all([

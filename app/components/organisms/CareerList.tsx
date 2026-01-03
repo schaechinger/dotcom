@@ -5,7 +5,7 @@ import type { HeadingTag } from '@components/atoms/Heading';
 import LinkButton from '@components/atoms/LinkButton';
 import CareerItem from '@components/organisms/CareerItem';
 import HistoryItemList from '@components/organisms/HistoryItemList';
-import { loadCareer } from '@lib/contentful';
+import { loadCareer } from '@dal/career';
 import type { LocaleCode } from '@lib/router';
 import { HistoryType } from '@/app/models/history';
 

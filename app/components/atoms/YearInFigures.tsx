@@ -5,7 +5,7 @@ import Heading from '@components/atoms/Heading';
 import CoffeeToGo from '@components/icons/CoffeeToGo';
 import Medal from '@components/icons/Medal';
 import Server from '@components/icons/Server';
-import { loadFigures } from '@lib/contentful';
+import { loadFigures } from '@dal/figures';
 
 const calcDays = (factor = 1) => {
   var date = new Date();
