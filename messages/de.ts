@@ -77,7 +77,7 @@ const contact = {
     email: 'E-Mail-Adresse',
     emailError: 'Bitte gib deine E-Mail-Adresse an.',
     message: 'Nachricht',
-    messageError: 'Bitte schildere dein Anliegen.',
+    messageError: 'Bitte schildere dein Anliegen ausführlicher.',
     submit: 'Absenden',
     submitError: 'Deine Nachricht konnte nicht gesendet werden.',
     successTitle: 'Deine Anfrage wurde versendet!',

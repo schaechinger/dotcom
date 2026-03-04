@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { supportedLangs, WEB_HOST } from '@app/config';
+import { CONTACT_EMAIL, supportedLangs, WEB_HOST } from '@app/config';
 import { isProd } from '@app/utils';
 import type { LocaleCode } from '@lib/router';
 
@@ -36,7 +36,7 @@ export const generateProfileJson = () => wrapJson(
       jobTitle: 'Senior Software Engineer',
       nationality: 'German',
       image: `${WEB_HOST}/images/schaechinger.jpg`,
-      email: 'manuel@schaechinger.com',
+      email: CONTACT_EMAIL,
       url: 'https://www.schaechinger.com',
       sameAs: [
         'https://instagram.com/theschaechinger',

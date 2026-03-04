@@ -77,7 +77,7 @@ const contact = {
     email: 'Mail Address',
     emailError: 'Please enter your mail address.',
     message: 'Message',
-    messageError: 'Please provide some details.',
+    messageError: 'Please provide more details.',
     submit: 'Send',
     submitError: 'Your message could not be sent.',
     successTitle: 'Your inquiry has been sent!',

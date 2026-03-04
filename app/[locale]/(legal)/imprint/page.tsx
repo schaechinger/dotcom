@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
+import { CONTACT_EMAIL } from '@app/config';
 import Address from '@components/atoms/Address';
 import Breadcrumbs from '@components/atoms/Breadcumbs';
 import Heading from '@components/atoms/Heading';
@@ -38,7 +39,7 @@ const ImprintPage = async () => {
         </p>
 
         <p className="mb-4">
-          <LinkButton href="mailto:manuel@schaechinger.com" label={t('contact.goto')} />
+          <LinkButton href={`mailto:${CONTACT_EMAIL}`} label={t('contact.goto')} />
         </p>
 
         <p>

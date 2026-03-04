@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
+import { CONTACT_EMAIL } from '@app/config';
 import LinkButton from '@components/atoms/LinkButton';
 import ArrowRight from '@components/icons/ArrowRight';
 import PageSection from '@components/organisms/PageSection';
@@ -76,7 +77,7 @@ const KonamiCode = ({ translations }: Props) => {
       { 10 <= index
         && <p className="mt-4">
           <LinkButton
-            href={`mailto:manuel@schaechinger.com?subject=${translations.subject} [${
+            href={`mailto:${CONTACT_EMAIL}?subject=${translations.subject} [${
               code.map((c, i) => c[index - (i + 1)]).reverse().join('')}]`}
             label={translations.goto}
           />

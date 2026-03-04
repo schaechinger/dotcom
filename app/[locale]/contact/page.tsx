@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { ReCaptchaProvider } from 'next-recaptcha-v3';
 
-import { RECAPTCHA_SITE_KEY } from '@app/config';
+import { CONTACT_EMAIL, RECAPTCHA_SITE_KEY } from '@app/config';
 import AvailabilityIndicator from '@components/atoms/AvailabilityIndicator';
 import Breadcrumbs from '@components/atoms/Breadcumbs';
 import Heading from '@components/atoms/Heading';
@@ -48,7 +48,7 @@ const ContactPage = async ({ params }: PageProps<"/[locale]/contact">) => {
           <div className="flex-1">
             <Heading level={2} title={t('types.mail.title')} />
 
-            <LinkButton href="mailto:manuel@schaechinger.com" label={t('types.mail.goto')} />
+            <LinkButton href={`mailto:${CONTACT_EMAIL}`} label={t('types.mail.goto')} />
           </div>
 
           <div className="flex-1">

@@ -30,6 +30,9 @@ export const LEGAL_NAVIGATION = [
   'privacy',
 ];
 
+// email
+export const CONTACT_EMAIL = 'schaechinger.starfish943@passmail.com';
+
 // technologies
 export const CORE_TECHNOLOGIES = [
   { name: 'Next.js', href: 'https://nextjs.org/' },
