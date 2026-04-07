@@ -31,7 +31,7 @@ export const LEGAL_NAVIGATION = [
 ];
 
 // email
-export const CONTACT_EMAIL = 'schaechinger.starfish943@passmail.com';
+export const CONTACT_EMAIL = 'schaechinger.starfish943@schchn.gr';
 
 // technologies
 export const CORE_TECHNOLOGIES = [
