@@ -13,7 +13,7 @@
     "@formatjs/intl-localematcher": "^0.8.7",
     "@slack/web-api": "^7.15.2",
     "clsx": "^2.1.1",
-    "contentful": "^11.12.2",
+    "contentful": "^11.12.10",
     "negotiator": "^1.0.0",
     "next": "^16.4.6",
     "next-intl": "^4.12.0",
