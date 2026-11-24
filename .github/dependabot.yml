@@ -1,0 +1,12 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # optional: alles von Next.js in einem PR bündeln
+    groups:
+      next:
+        patterns:
+          - "next"
+          - "eslint-config-next"
